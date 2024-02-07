@@ -79,11 +79,11 @@ export const alchemyResources = {
     reagents: [
       {
         resource: ALCHEMY_RESOURCE.TIME,
-        amount: 8
+        amount: 4
       },
       {
         resource: ALCHEMY_RESOURCE.REPLICATION,
-        amount: 7
+        amount: 3
       }
     ]
   },
@@ -101,11 +101,11 @@ export const alchemyResources = {
     reagents: [
       {
         resource: ALCHEMY_RESOURCE.TIME,
-        amount: 11
+        amount: 5
       },
       {
         resource: ALCHEMY_RESOURCE.INFINITY,
-        amount: 4
+        amount: 2
       }
     ]
   },
@@ -123,11 +123,11 @@ export const alchemyResources = {
     reagents: [
       {
         resource: ALCHEMY_RESOURCE.POWER,
-        amount: 10
+        amount: 5
       },
       {
         resource: ALCHEMY_RESOURCE.INFINITY,
-        amount: 5
+        amount: 2
       }
     ]
   },
@@ -146,11 +146,11 @@ export const alchemyResources = {
     reagents: [
       {
         resource: ALCHEMY_RESOURCE.POWER,
-        amount: 9
+        amount: 4
       },
       {
         resource: ALCHEMY_RESOURCE.DILATION,
-        amount: 6
+        amount: 3
       }
     ]
   },
@@ -169,11 +169,11 @@ export const alchemyResources = {
     reagents: [
       {
         resource: ALCHEMY_RESOURCE.REPLICATION,
-        amount: 5
+        amount: 2
       },
       {
         resource: ALCHEMY_RESOURCE.DILATION,
-        amount: 10
+        amount: 5
       }
     ]
   },
@@ -211,15 +211,15 @@ export const alchemyResources = {
     reagents: [
       {
         resource: ALCHEMY_RESOURCE.EFFARIG,
-        amount: 3
+        amount: 2
       },
       {
         resource: ALCHEMY_RESOURCE.REPLICATION,
-        amount: 16
+        amount: 8
       },
       {
         resource: ALCHEMY_RESOURCE.INFINITY,
-        amount: 14
+        amount: 7
       }
     ]
   },
@@ -239,15 +239,15 @@ export const alchemyResources = {
     reagents: [
       {
         resource: ALCHEMY_RESOURCE.EFFARIG,
-        amount: 11
+        amount: 5
       },
       {
         resource: ALCHEMY_RESOURCE.POWER,
-        amount: 4
+        amount: 2
       },
       {
         resource: ALCHEMY_RESOURCE.TIME,
-        amount: 20
+        amount: 10
       }
     ]
   },
@@ -266,11 +266,11 @@ export const alchemyResources = {
     reagents: [
       {
         resource: ALCHEMY_RESOURCE.EFFARIG,
-        amount: 13
+        amount: 6
       },
       {
         resource: ALCHEMY_RESOURCE.ALTERNATION,
-        amount: 8
+        amount: 4
       }
     ]
   },
@@ -290,11 +290,11 @@ export const alchemyResources = {
     reagents: [
       {
         resource: ALCHEMY_RESOURCE.INFLATION,
-        amount: 18
+        amount: 9
       },
       {
         resource: ALCHEMY_RESOURCE.SYNERGISM,
-        amount: 3
+        amount: 2
       }
     ]
   },
@@ -312,11 +312,11 @@ export const alchemyResources = {
     reagents: [
       {
         resource: ALCHEMY_RESOURCE.DIMENSIONALITY,
-        amount: 7
+        amount: 4
       },
       {
         resource: ALCHEMY_RESOURCE.MOMENTUM,
-        amount: 8
+        amount: 4
       }
     ]
   },
@@ -334,15 +334,15 @@ export const alchemyResources = {
     reagents: [
       {
         resource: ALCHEMY_RESOURCE.INFINITY,
-        amount: 20
+        amount: 10
       },
       {
         resource: ALCHEMY_RESOURCE.EFFARIG,
-        amount: 6
+        amount: 3
       },
       {
         resource: ALCHEMY_RESOURCE.CARDINALITY,
-        amount: 16
+        amount: 8
       }
     ]
   },
@@ -360,11 +360,11 @@ export const alchemyResources = {
     reagents: [
       {
         resource: ALCHEMY_RESOURCE.ETERNITY,
-        amount: 13
+        amount: 6
       },
       {
         resource: ALCHEMY_RESOURCE.INFLATION,
-        amount: 18
+        amount: 9
       }
     ]
   },
@@ -383,11 +383,11 @@ export const alchemyResources = {
     reagents: [
       {
         resource: ALCHEMY_RESOURCE.ALTERNATION,
-        amount: 16
+        amount: 8
       },
       {
         resource: ALCHEMY_RESOURCE.DECOHERENCE,
-        amount: 3
+        amount: 2
       }
     ]
   },
@@ -407,15 +407,15 @@ export const alchemyResources = {
     reagents: [
       {
         resource: ALCHEMY_RESOURCE.EFFARIG,
-        amount: 15
+        amount: 7
       },
       {
         resource: ALCHEMY_RESOURCE.DECOHERENCE,
-        amount: 3
+        amount: 2
       },
       {
         resource: ALCHEMY_RESOURCE.SYNERGISM,
-        amount: 10
+        amount: 5
       }
     ]
   },
@@ -454,6 +454,47 @@ export const alchemyResources = {
       },
       {
         resource: ALCHEMY_RESOURCE.UNPREDICTABILITY,
+        amount: 1
+      }
+    ]
+  },
+  "reality": {
+    id: ALCHEMY_RESOURCE.GLITCH,
+    name: "glitch",
+    symbol: "V",
+    isBaseResource: false,
+    effect: amount => Math.floor(amount),
+    tier: 6,
+    unlockedAt: 25,
+    description: "unkown",
+    formatEffect: value => `unkown ${formatInt(value)} Reality Glyph`,
+    reagents: [
+      {
+        resource: ALCHEMY_RESOURCE.REALITY,
+        amount: 1
+      },
+      {
+        resource: ALCHEMY_RESOURCE.POWER,
+        amount: 1
+      },
+      {
+        resource: ALCHEMY_RESOURCE.EFFARIG,
+        amount: 1
+      },
+      {
+        resource: ALCHEMY_RESOURCE.TIME,
+        amount: 1
+      },
+      {
+        resource: ALCHEMY_RESOURCE.INFINITY,
+        amount: 1
+      },
+      {
+        resource: ALCHEMY_RESOURCE.REPLICATION,
+        amount: 1
+      },
+      {
+        resource: ALCHEMY_RESOURCE.DILATION,
         amount: 1
       }
     ]
