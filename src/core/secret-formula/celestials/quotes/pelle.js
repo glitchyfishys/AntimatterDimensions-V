@@ -41,6 +41,7 @@ const usurper =      ["Usurper",       "Deity",         "Monarch"];
 const pride =        ["Pride",         "Deity",         "Monarch"];
 const forgotten =    ["Forgotten",     "Deity",         "Monarch"];
 const paramount =    ["Paramount",     "Deity",         "Monarch"];
+const never =        ["never",   "gonna",   "give",  "you",  "up"];
 /* eslint-enable no-multi-spaces */
 
 export const pelleQuotes = {
@@ -431,6 +432,9 @@ export const pelleQuotes = {
         background: flashCelestial,
       }, {
         text: "You have doomed us all.",
+        background: flashCelestial,
+      },{
+        text: "$1", 1: never,
         background: flashCelestial,
       },
     ],
