@@ -39,7 +39,7 @@ dev.disablecomformations = function() {
       player.confirmations.dimensionBoost = false;
       player.confirmations.switchAutomatorMode = false;
       player.confirmations.respecIAP = false;
-  }
+  };
 
 // Know that both dev.doubleEverything and dev.tripleEverything are both broken
 // with this error https://i.imgur.com/ZMEBNTv.png
