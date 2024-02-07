@@ -470,10 +470,6 @@ export const alchemyResources = {
     formatEffect: value => `unkown ${formatInt(value)} Reality Glyph`,
     reagents: [
       {
-        resource: ALCHEMY_RESOURCE.REALITY,
-        amount: 1
-      },
-      {
         resource: ALCHEMY_RESOURCE.POWER,
         amount: 1
       },
