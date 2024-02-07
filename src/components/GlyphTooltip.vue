@@ -227,7 +227,7 @@ export default {
       return Theme.current().isDark() ? "#cccccc" : "black";
     },
     sacrificeText() {
-      if (this.type === "companion" || this.type === "cursed") return "";
+      if (this.type === "companion" || this.type === "cursed" || this.type === "glitch") return "";
       const powerText = `${format(this.sacrificeReward, 2, 2)}`;
       const isCurrentAction = this.currentAction === "sacrifice";
       return `<span style="font-weight: ${isCurrentAction ? "bold" : ""};">
@@ -235,7 +235,7 @@ export default {
               </span>`;
     },
     refineText() {
-      if (this.type === "companion" || this.type === "cursed" || this.type === "reality") return "";
+      if (this.type === "companion" || this.type === "cursed" || this.type === "reality" || this.type === "glitch") return "";
       if (!AlchemyResource[this.type].isUnlocked) return "";
       let refinementText = `${format(this.uncappedRefineReward, 2, 2)} ${GLYPH_SYMBOLS[this.type]}`;
       if (this.uncappedRefineReward !== this.refineReward) {
@@ -247,7 +247,7 @@ export default {
               </span>`;
     },
     scoreText() {
-      if (this.type === "companion" || this.type === "cursed" || this.type === "reality") return "";
+      if (this.type === "companion" || this.type === "cursed" || this.type === "reality" || this.type === "glitch") return "";
       const showFilterScoreModes = [AUTO_GLYPH_SCORE.SPECIFIED_EFFECT, AUTO_GLYPH_SCORE.EFFECT_SCORE];
       if (!showFilterScoreModes.includes(this.scoreMode)) return "";
       return `Score: ${format(AutoGlyphProcessor.filterValue(this.$parent.glyph), 1, 1)}`;
