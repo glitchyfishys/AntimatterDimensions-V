@@ -34,8 +34,7 @@ export class AlchemyCircleLayout {
       new AlchemyOrbitLayout(2, 3),
       new AlchemyOrbitLayout(3, 2, Math.PI / 3),
       new AlchemyOrbitLayout(4, 1, -Math.PI / 6),
-      new AlchemyOrbitLayout(5, 0),
-      new AlchemyOrbitLayout(6, 5)
+      new AlchemyOrbitLayout(5, 0)
     ];
     const nodes = [];
     for (const orbitNodes of this.orbits.map(o => o.nodes)) {
