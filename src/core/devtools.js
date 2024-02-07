@@ -17,6 +17,30 @@ dev.giveAllAchievements = function() {
   for (const achievement of allAchievements) achievement.unlock();
 };
 
+dev.disablecomformations = function() {
+      player.confirmations.armageddon = false;
+      player.confirmations.sacrifice = false;
+      player.confirmations.challenges = false;
+      player.confirmations.exitChallenge = false;
+      player.confirmations.eternity = false;
+      player.confirmations.dilation = false;
+      player.confirmations.resetReality = false;
+      player.confirmations.glyphReplace = false;
+      player.confirmations.glyphSacrifice = false;
+      player.confirmations.autoClean = false;
+      player.confirmations.sacrificeAll = false;
+      player.confirmations.glyphSelection = false,
+      player.confirmations.glyphUndo = false;
+      player.confirmations.deleteGlyphSetSave = false;
+      player.confirmations.glyphRefine = false;
+      player.confirmations.bigCrunch = false,
+      player.confirmations.replicantiGalaxy = false;
+      player.confirmations.antimatterGalaxy = false;
+      player.confirmations.dimensionBoost = false;
+      player.confirmations.switchAutomatorMode = false;
+      player.confirmations.respecIAP = false;
+  }
+
 // Know that both dev.doubleEverything and dev.tripleEverything are both broken
 // with this error https://i.imgur.com/ZMEBNTv.png
 
