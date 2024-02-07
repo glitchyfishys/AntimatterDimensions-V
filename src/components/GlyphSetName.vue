@@ -42,6 +42,10 @@ const GLYPH_NAMES = {
     adjective: { high: "Dilated", mid: "Attenuated", low: "Diluted" },
     noun: "Dilation"
   },
+  glitch: {
+    adjective: { high: "Atuned", mid: "Altered", low: "Shifted" },
+    noun: "Glitch"
+  },
 };
 
 export default {
@@ -70,8 +74,9 @@ export default {
         { type: "effarig", perc: 0, adjOrder: 2 },
         { type: "music", perc: 0, adjOrder: 3 },
         { type: "reality", perc: 0, adjOrder: 4 },
-        { type: "companion", perc: 0, adjOrder: 5 },
+        { type: "companion", perc: 0, adjOrder: 7 },
         { type: "cursed", perc: 0, adjOrder: 6 },
+        { type: "glitch", perc: 0, adjOrder: 5 },
       ],
       sortedGlyphs: [],
       slotCount: 0
