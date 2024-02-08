@@ -18,28 +18,37 @@ dev.giveAllAchievements = function() {
 };
 
 dev.disablecomformations = function() {
-      confirmations.armageddon = false;
-      confirmations.sacrifice = false;
-      confirmations.challenges = false;
-      confirmations.exitChallenge = false;
-      confirmations.eternity = false;
-      confirmations.dilation = false;
-      confirmations.resetReality = false;
-      confirmations.glyphReplace = false;
-      confirmations.glyphSacrifice = false;
-      confirmations.autoClean = false;
-      confirmations.sacrificeAll = false;
-      confirmations.glyphSelection = false,
-      confirmations.glyphUndo = false;
-      confirmations.deleteGlyphSetSave = false;
-      confirmations.glyphRefine = false;
-      confirmations.bigCrunch = false,
-      confirmations.replicantiGalaxy = false;
-      confirmations.antimatterGalaxy = false;
-      confirmations.dimensionBoost = false;
-      confirmations.switchAutomatorMode = false;
-      confirmations.respecIAP = false;
+      player.options.confirmations.armageddon = false;
+      player.optionsconfirmations.sacrifice = false;
+      player.optionsconfirmations.challenges = false;
+      player.optionsconfirmations.exitChallenge = false;
+      player.optionsconfirmations.eternity = false;
+      player.optionsconfirmations.dilation = false;
+      player.optionsconfirmations.resetReality = false;
+      player.optionsconfirmations.glyphReplace = false;
+      player.optionsconfirmations.glyphSacrifice = false;
+      player.optionsconfirmations.autoClean = false;
+      player.optionsconfirmations.sacrificeAll = false;
+      player.optionsconfirmations.glyphSelection = false,
+      player.optionsconfirmations.glyphUndo = false;
+      player.optionsconfirmations.deleteGlyphSetSave = false;
+      player.optionsconfirmations.glyphRefine = false;
+      player.optionsconfirmations.bigCrunch = false,
+      player.optionsconfirmations.replicantiGalaxy = false;
+      player.optionsconfirmations.antimatterGalaxy = false;
+      player.optionsconfirmations.dimensionBoost = false;
+      player.optionsconfirmations.switchAutomatorMode = false;
+      player.optionsconfirmations.respecIAP = false;
   };
+
+dev.disableanimations = function() {
+player.options.animations.bigCrunch = false;
+player.options.animations.eternity = false;
+player.options.animations.dilation = false;
+player.options.animations.tachyonParticles = false;
+player.options.animations.reality = false;
+player.options.animations.background = false;
+};
 
 // Know that both dev.doubleEverything and dev.tripleEverything are both broken
 // with this error https://i.imgur.com/ZMEBNTv.png
