@@ -197,7 +197,7 @@ export const v = {
       description: value => `Reach ${formatInt(value)}. antimatter without time studies`,
       values: [DC.E1000000, DC.E2000000, DC.E3000000, DC.E4000000, DC.E5000000],
       condition: () => V.isRunning,
-      currentValue: () => gainedGlyphLevel().actualLevel,
+      currentValue: () => Currency.antimatter.value.log10(),
       formatRecord: x => formatInt(x),
       shardReduction: tiers => Math.floor(500 * tiers),
       maxShardReduction: () => 500,
