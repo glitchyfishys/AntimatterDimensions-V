@@ -428,6 +428,7 @@ export const alchemyResources = {
     isBaseResource: false,
     effect: amount => Math.floor(amount),
     tier: 5,
+    uiOrder: 1
     unlockedAt: 25,
     description: "can be consumed to create Reality Glyphs",
     formatEffect: value => `Consume all Reality Resource to create a level ${formatInt(value)} Reality Glyph`,
@@ -458,14 +459,16 @@ export const alchemyResources = {
       }
     ]
   },
+
+  // glitched T6
   "glitch": {
     id: ALCHEMY_RESOURCE.GLITCH,
     name: "glitch",
-    symbol: "V",
+    symbol: "∑",
     isBaseResource: false,
     effect: amount => Math.floor(amount),
-    tier: 1,
-    uiOrder: 7,
+    tier: 6,
+    uiOrder: 1,
     unlockedAt: 25,
     description: "unkown",
     formatEffect: value => `unkown ${formatInt(value)} GLITCHED Glyph`,
