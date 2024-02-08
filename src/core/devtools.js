@@ -18,27 +18,27 @@ dev.giveAllAchievements = function() {
 };
 
 dev.disablecomformations = function() {
-      player.confirmations.armageddon = false;
-      player.confirmations.sacrifice = false;
-      player.confirmations.challenges = false;
-      player.confirmations.exitChallenge = false;
-      player.confirmations.eternity = false;
-      player.confirmations.dilation = false;
-      player.confirmations.resetReality = false;
-      player.confirmations.glyphReplace = false;
-      player.confirmations.glyphSacrifice = false;
-      player.confirmations.autoClean = false;
-      player.confirmations.sacrificeAll = false;
-      player.confirmations.glyphSelection = false,
-      player.confirmations.glyphUndo = false;
-      player.confirmations.deleteGlyphSetSave = false;
-      player.confirmations.glyphRefine = false;
-      player.confirmations.bigCrunch = false,
-      player.confirmations.replicantiGalaxy = false;
-      player.confirmations.antimatterGalaxy = false;
-      player.confirmations.dimensionBoost = false;
-      player.confirmations.switchAutomatorMode = false;
-      player.confirmations.respecIAP = false;
+      confirmations.armageddon = false;
+      confirmations.sacrifice = false;
+      confirmations.challenges = false;
+      confirmations.exitChallenge = false;
+      confirmations.eternity = false;
+      confirmations.dilation = false;
+      confirmations.resetReality = false;
+      confirmations.glyphReplace = false;
+      confirmations.glyphSacrifice = false;
+      confirmations.autoClean = false;
+      confirmations.sacrificeAll = false;
+      confirmations.glyphSelection = false,
+      confirmations.glyphUndo = false;
+      confirmations.deleteGlyphSetSave = false;
+      confirmations.glyphRefine = false;
+      confirmations.bigCrunch = false,
+      confirmations.replicantiGalaxy = false;
+      confirmations.antimatterGalaxy = false;
+      confirmations.dimensionBoost = false;
+      confirmations.switchAutomatorMode = false;
+      confirmations.respecIAP = false;
   };
 
 // Know that both dev.doubleEverything and dev.tripleEverything are both broken
