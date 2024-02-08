@@ -42,13 +42,19 @@ dev.disablecomformations = function() {
   };
 
 dev.disableanimations = function() {
-player.options.animations.bigCrunch = false;
-player.options.animations.eternity = false;
-player.options.animations.dilation = false;
-player.options.animations.tachyonParticles = false;
-player.options.animations.reality = false;
-player.options.animations.background = false;
+  player.options.animations.bigCrunch = false;
+  player.options.animations.eternity = false;
+  player.options.animations.dilation = false;
+  player.options.animations.tachyonParticles = false;
+  player.options.animations.reality = false;
+  player.options.animations.background = false;
 };
+
+dev.disableoptions = function {
+  disablecomformations();
+  disableanimations();
+  player.options.automaticTabSwitching;
+}
 
 // Know that both dev.doubleEverything and dev.tripleEverything are both broken
 // with this error https://i.imgur.com/ZMEBNTv.png
