@@ -459,7 +459,7 @@ export const alchemyResources = {
     ]
   },
   "glitch": {
-    id: 21,
+    id: ALCHEMY_RESOURCE.GLITCH,
     name: "glitch",
     symbol: "V",
     isBaseResource: false,
