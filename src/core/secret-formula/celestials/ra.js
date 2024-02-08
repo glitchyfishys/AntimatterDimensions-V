@@ -39,6 +39,16 @@ export const ra = {
       requiredUnlock: () => Ra.unlocks.vUnlock,
       rawMemoryChunksPerSecond: () => 4 * Math.pow(Currency.infinityPower.value.pLog10() / 1e7, 1.5),
       memoryProductionMultiplier: () => Ra.unlocks.vXP.effectOrDefault(1)
+    },
+    glitchyfishys: {
+      id: "glitchyfishys",
+      name: "Glitchyfishys",
+      color: "#60FF30",
+      chunkGain: "Infinity Power",
+      memoryGain: "total Memory levels",
+      requiredUnlock: () => Ra.unlocks.unlockHardV,
+      rawMemoryChunksPerSecond: () => 3 * Math.pow(Currency.infinityPower.value.pLog10() / 1e4, 1.7),
+      memoryProductionMultiplier: () => Ra.unlocks.gXP.effectOrDefault(1)
     }
   },
   unlocks: {
@@ -290,6 +300,42 @@ export const ra = {
       pet: "v",
       level: 25,
       displayIcon: `<i class="fab fa-buffer"></i>`,
+      disabledByPelle: true
+    },
+    memroygain1: {
+      id: 28,
+      reward: () => `increase memory gain by 10 times`,
+      effect: 1,
+      pet: "glitchyfishys",
+      level: 1,
+      displayIcon: `<i class="far fa-dot-circle"></i>`,
+      disabledByPelle: true
+    },
+    memroygain2: {
+      id: 29,
+      reward: () => `increase memory gain by 10 times`,
+      effect: 10,
+      pet: "glitchyfishys",
+      level: 5,
+      displayIcon: `<i class="far fa-dot-circle"></i>`,
+      disabledByPelle: true
+    },
+    memroygain3: {
+      id: 30,
+      reward: () => `increase memory gain by 10 times`,
+      effect: 10,
+      pet: "glitchyfishys",
+      level: 10,
+      displayIcon: `<i class="far fa-dot-circle"></i>`,
+      disabledByPelle: true
+    },
+    memroygain4: {
+      id: 31,
+      reward: () => `increase memory gain by 10 times`,
+      effect: 10,
+      pet: "glitchyfishys",
+      level: 15,
+      displayIcon: `<i class="far fa-dot-circle"></i>`,
       disabledByPelle: true
     }
   }
