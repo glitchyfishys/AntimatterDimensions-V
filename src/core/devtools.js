@@ -18,7 +18,7 @@ dev.giveAllAchievements = function() {
 };
 
 dev.disablecomformations = function() {
-      player.confirmations.armageddon = false;
+      confirmations.armageddon = false;
       confirmations.sacrifice = false;
       confirmations.challenges = false;
       confirmations.exitChallenge = false;
