@@ -48,7 +48,7 @@ dev.disableanimations = function() {
   player.options.animations.background = false;
 };
 
-dev.disableoptions = function {
+dev.disableoptions = function() {
   disablecomformations();
   disableanimations();
   player.options.automaticTabSwitching;
