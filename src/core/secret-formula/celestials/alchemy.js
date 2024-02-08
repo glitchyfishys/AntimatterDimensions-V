@@ -468,7 +468,7 @@ export const alchemyResources = {
     uiOrder: 7,
     unlockedAt: 25,
     description: "unkown",
-    formatEffect: value => `unkown ${formatInt(value)} Reality Glyph`,
+    formatEffect: value => `unkown ${formatInt(value)} GLITCHED Glyph`,
     reagents: [
       {
         resource: ALCHEMY_RESOURCE.POWER,
