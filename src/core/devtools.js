@@ -1,6 +1,6 @@
 import { sha512_256 } from "js-sha512";
 
-import { DC } from "./constants";
+import { player } from "./player";
 import FullScreenAnimationHandler from "./full-screen-animation-handler";
 
 /* eslint-disable no-console */
