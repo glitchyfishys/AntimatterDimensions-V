@@ -908,6 +908,7 @@ window.player = {
     autoRealityForFilter: false,
   },
   IAP: {
+    STDcoins: 0,
     enabled: false,
     checkoutSession: {
       id: false,
