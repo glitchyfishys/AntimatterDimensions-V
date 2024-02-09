@@ -148,7 +148,7 @@ export const v = {
       name: "Requiem for a Glyph",
       description: value => `Unlock Reality with at most ${formatInt(-value)} Glyphs equipped for the entire Reality.`,
       // This achievement has internally negated values since the check is always greater than
-      values: [1, 4, 7, 10, 13],
+      values: [1, 4, 7, 10, 13, 16, 19],
       condition: () => V.isRunning && TimeStudy.reality.isBought,
       currentValue: () => -player.requirementChecks.reality.maxGlyphs,
       formatRecord: x => formatInt(-x),
@@ -162,7 +162,7 @@ export const v = {
       name: "Post-destination",
       description: value => `Get ${formatInt(400000)} Time Theorems with a /${format(Decimal.pow10(value), 2, 2)}
         Black Hole or slower, without discharging or entering EC12.`,
-      values: [100, 150, 200, 250, 300],
+      values: [ 50, 100, 150, 200, 250, 300],
       condition: () => V.isRunning,
       currentValue: () => (
         // Dirty hack I know lmao
@@ -181,7 +181,7 @@ export const v = {
       id: 8,
       name: "Shutter Glyph",
       description: value => `Reach a Glyph of level ${formatInt(value)}.`,
-      values: [6500, 7000, 8000, 9000, 10000],
+      values: [6500, 7000, 8000, 9000, 10000, 15000, 20000, 25000],
       condition: () => V.isRunning,
       currentValue: () => gainedGlyphLevel().actualLevel,
       formatRecord: x => formatInt(x),
@@ -194,10 +194,10 @@ export const v = {
     {
       id: 9,
       name: "glitched",
-      description: value => `Reach ${formatInt(value)}. antimatter without time studies`,
-      values: [DC.E1000000, DC.E2000000, DC.E3000000, DC.E4000000, DC.E5000000],
+      description: value => `Reach ${formatInt(value)} antimatter without time studies`,
+      values: [1000000, 2000000, 3000000, 4000000, 5000000, 6000000, 7000000],
       condition: () => V.isRunning,
-      currentValue: () => Currency.antimatter.value.log10(),
+      currentValue: () => Currency.antimatter.value.log10() && player.timestudy.studies.length = 0,
       formatRecord: x => formatInt(x),
       shardReduction: tiers => Math.floor(500 * tiers),
       maxShardReduction: () => 500,
