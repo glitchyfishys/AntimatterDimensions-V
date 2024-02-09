@@ -919,7 +919,7 @@ window.player = {
     checkoutSession: {
       id: false,
     }
-  },
+  }
 };
 
 export const Player = {
