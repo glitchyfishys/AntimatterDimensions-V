@@ -1,5 +1,5 @@
-import { AutomatorPanels } from "@/components/tabs/automator/AutomatorDocs";
 import { GlyphInfo } from "@/components/modals/options/SelectGlyphInfoDropdown";
+import { AutomatorPanels } from "@/components/tabs/automator/AutomatorDocs";
 
 import { AUTOMATOR_MODE, AUTOMATOR_TYPE } from "./automator/automator-backend";
 import { DC } from "./constants";
@@ -919,7 +919,7 @@ window.player = {
     checkoutSession: {
       id: false,
     },
-  },
+  }
 };
 
 export const Player = {
