@@ -48,7 +48,7 @@ export const ra = {
       memoryGain: "Time Shards",
       requiredUnlock: () => Ra.unlocks.unlockHardV,
       rawMemoryChunksPerSecond: () => 3 * Math.pow(Currency.infinityPower.value.pLog10() / 1e4, 1.8),
-      memoryProductionMultiplier: () => Ra.unlocks.gXP.effectOrDefault(1)
+      memoryProductionMultiplier: () => Ra.unlocks.glitchyfishysXP.effectOrDefault(1)
     }
   },
   unlocks: {
@@ -320,16 +320,16 @@ export const ra = {
       displayIcon: `<i class="far fa-dot-circle"></i>`,
       disabledByPelle: true
     },
-    memroygain3: {
+    glitchyfishysXP: {
       id: 30,
-      reward: () => `increase memory gain by 10 times`,
-      effect: 10,
+      reward: () => `increase all memory gain by Reality Machines AND Antimatter`,
+      effect: 1 + Math.pow(Currency.realityMachines.value.pLog10() / 100, 0.2) * Math.pow(Currency.antimatter.value.pLog10(), 0.3),
       pet: "glitchyfishys",
       level: 10,
       displayIcon: `<i class="far fa-dot-circle"></i>`,
       disabledByPelle: true
     },
-    memroygain4: {
+    memroygain3: {
       id: 31,
       reward: () => `increase memory gain by 10 times`,
       effect: 10,
@@ -338,7 +338,7 @@ export const ra = {
       displayIcon: `<i class="far fa-dot-circle"></i>`,
       disabledByPelle: true
     },
-    memroygain5: {
+    memroygain4: {
       id: 32,
       reward: () => `increase memory gain by 10 times`,
       effect: 10,
@@ -347,8 +347,8 @@ export const ra = {
       displayIcon: `<i class="far fa-dot-circle"></i>`,
       disabledByPelle: true
     },
-    memroygain6: {
-      id: -,
+    memroygain5: {
+      id: 33,
       reward: () => `increase memory gain by 10 times`,
       effect: 10,
       pet: "glitchyfishys",
@@ -356,8 +356,8 @@ export const ra = {
       displayIcon: `<i class="far fa-dot-circle"></i>`,
       disabledByPelle: true
     },
-    memroygain7: {
-      id: 0,
+    memroygain6: {
+      id: 34,
       reward: () => `increase memory gain by 10 times`,
       effect: 10,
       pet: "glitchyfishys",
