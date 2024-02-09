@@ -81,8 +81,8 @@ export const Pelle = {
     }
     for (const type of BASIC_GLYPH_TYPES) Glyphs.addToInventory(GlyphGenerator.doomedGlyph(type));
     Glyphs.refreshActive();
-    player.options.confirmations.glyphReplace = true;
-    player.reality.automator.state.repeat = false;
+    player.options.confirmations.glyphReplace = false;
+    player.reality.automator.state.repeat = true;
     player.reality.automator.state.forceRestart = false;
     if (BlackHoles.arePaused) BlackHoles.togglePause();
     player.celestials.pelle.doomed = true;
@@ -354,7 +354,7 @@ export const Pelle = {
     return zalgo(str, Math.floor(stage ** 2 * 7));
   },
 
-  endTabNames: "End Is Nigh Destruction Is Imminent Help Us Good Bye Forever".split(" "),
+  endTabNames: "Never Gonna Give You Up Never Gonna Let You Down :)".split(" "),
 
   quotes: Quotes.pelle,
 };
