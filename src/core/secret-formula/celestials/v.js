@@ -62,7 +62,7 @@ export const v = {
       progress: () => emphasizeEnd(Currency.realityMachines.value.pLog10() / 60),
     },
     antimatter: {
-      id: y,
+      id: 7,
       name: "Antimatter",
       resource: () => Currency.antimatter.value,
       requirement: DC.E100000000,
