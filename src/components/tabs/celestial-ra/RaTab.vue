@@ -61,8 +61,8 @@ export default {
         pet: Ra.pets.glitchyfishys,
         scalingUpgradeVisible: () => Ra.unlocks.unlockHardV.isUnlocked,
         scalingUpgradeText: () => {
-          const () => Ra.unlocks.glitchyfishysEX.effectOrDefault(0);
-          return `memory gain`;
+          const  memory () => Ra.unlocks.glitchyfishysEX.effectOrDefault(0);
+          return `memory ${quantifyInt("gain", memory)}.`;
         },
       }
     ],
