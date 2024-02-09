@@ -348,7 +348,7 @@ export const ra = {
       disabledByPelle: true
     },
     memroygain6: {
-      id: 33,
+      id: -,
       reward: () => `increase memory gain by 10 times`,
       effect: 10,
       pet: "glitchyfishys",
@@ -357,7 +357,7 @@ export const ra = {
       disabledByPelle: true
     },
     memroygain7: {
-      id: 34,
+      id: 0,
       reward: () => `increase memory gain by 10 times`,
       effect: 10,
       pet: "glitchyfishys",
