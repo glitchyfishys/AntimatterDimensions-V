@@ -24,7 +24,7 @@ export const pelleUpgrades = {
     cost: [10, 1e3, 41, 100],
     effect: x => Pelle.antimatterDimensionMult(x),
     formatEffect: x => formatX(x, 2, 2),
-    cap: 44
+    cap: 47
   }),
   timeSpeedMult: rebuyable({
     id: "timeSpeedMult",
@@ -32,7 +32,7 @@ export const pelleUpgrades = {
     cost: [20, 1e3, 30, 1e5],
     effect: x => Decimal.pow(1.3, x),
     formatEffect: x => formatX(x, 2, 2),
-    cap: 35
+    cap: 37
   }),
   glyphLevels: rebuyable({
     id: "glyphLevels",
@@ -40,7 +40,7 @@ export const pelleUpgrades = {
     cost: [30, 1e3, 25, 1e15],
     effect: x => Math.floor(((3 * (x + 1)) - 2) ** 1.6),
     formatEffect: x => formatInt(x),
-    cap: 26
+    cap: 28
   }),
   infConversion: rebuyable({
     id: "infConversion",
@@ -48,7 +48,7 @@ export const pelleUpgrades = {
     cost: [40, 1e3, 20, 1e18],
     effect: x => (x * 3.5) ** 0.37,
     formatEffect: x => `+${format(x, 2, 2)}`,
-    cap: 21
+    cap: 23
   }),
   galaxyPower: rebuyable({
     id: "galaxyPower",
@@ -56,7 +56,7 @@ export const pelleUpgrades = {
     cost: [1000, 1e3, 10, 1e30],
     effect: x => 1 + x / 50,
     formatEffect: x => formatX(x, 2, 2),
-    cap: 9
+    cap: 11
   }),
   antimatterDimAutobuyers1: {
     id: 0,
