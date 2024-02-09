@@ -209,7 +209,7 @@ export const secretAchievements = [
   },
   {
     id: 54,
-    name: Pelle",
+    name: "Pelle",
     description: "Click on this Achievement."
   },
   {
