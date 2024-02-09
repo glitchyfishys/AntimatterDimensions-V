@@ -636,7 +636,13 @@ window.player = {
           memoryChunks: 0,
           memoryUpgrades: 0,
           chunkUpgrades: 0
-        }
+        },
+        glitchyfishys: {
+          level: 1,
+          memories: 0,
+          memoryChunks: 0,
+          memoryUpgrades: 0,
+          chunkUpgrades: 0
       },
       alchemy: Array.repeat(0, 22)
         .map(() => ({
