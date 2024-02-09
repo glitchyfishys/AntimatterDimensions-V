@@ -643,7 +643,8 @@ window.player = {
           memoryChunks: 0,
           memoryUpgrades: 0,
           chunkUpgrades: 0
-      }
+        }
+      },
       alchemy: Array.repeat(0, 22)
         .map(() => ({
           amount: 0,
