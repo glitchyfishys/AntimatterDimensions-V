@@ -17,7 +17,7 @@ export const ra = {
       chunkGain: "Relic Shards gained",
       memoryGain: "best Glyph level",
       requiredUnlock: () => Ra.unlocks.effarigUnlock,
-      rawMemoryChunksPerSecond: () => 4 * Math.pow(Effarig.shardsGained, 0.1),
+      rawMemoryChunksPerSecond: () => 4 * Math.pow(Effarig.shardsGained, 0.15),
       memoryProductionMultiplier: () => Ra.unlocks.effarigXP.effectOrDefault(1)
     },
     enslaved: {
@@ -323,7 +323,7 @@ export const ra = {
     glitchyfishysXP: {
       id: 30,
       reward: () => `increase all memory gain by Reality Machines AND Antimatter`,
-      effect: 1 + Math.pow(Currency.realityMachines.value.pLog10() / 100, 0.2),
+      effect: () => 1 + Math.pow(Currency.realityMachines.value.pLog10() / 10, 0.5) * Math.pow(Currency.antimatter.value.pLog10() / 1e4, 0.3),
       pet: "glitchyfishys",
       level: 6,
       displayIcon: `<i class="far fa-dot-circle"></i>`,
