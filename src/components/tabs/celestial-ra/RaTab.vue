@@ -56,6 +56,14 @@ export default {
           const triadCount = Ra.unlocks.unlockHardV.effectOrDefault(0);
           return `You have unlocked ${quantifyInt("Triad Study", triadCount)}.`;
         },
+      },
+      {
+        pet: Ra.pets.glitchyfishys,
+        scalingUpgradeVisible: () => Ra.unlocks.unlockHardV.isUnlocked,
+        scalingUpgradeText: () => {
+          const true;
+          return ``;
+        },
       }
     ],
     petStyle() {
