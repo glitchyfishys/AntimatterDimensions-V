@@ -428,7 +428,7 @@ export const alchemyResources = {
     isBaseResource: false,
     effect: amount => Math.floor(amount),
     tier: 5,
-    uiOrder: 1
+    uiOrder: 1,
     unlockedAt: 25,
     description: "can be consumed to create Reality Glyphs",
     formatEffect: value => `Consume all Reality Resource to create a level ${formatInt(value)} Reality Glyph`,
