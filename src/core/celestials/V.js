@@ -199,11 +199,11 @@ export const V = {
       unlockBits: 0,
       run: false,
       quotes: [],
-      runUnlocks: [0, 0, 0, 0, 0, 0, 0, 0, 0],
-      goalReductionSteps: [0, 0, 0, 0, 0, 0, 0, 0, 0],
+      runUnlocks: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      goalReductionSteps: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
       STSpent: 0,
-      runGlyphs: [[], [], [], [], [], [], [], [], []],
-      runRecords: [-10, 0, 0, 0, 0, 0, 0, 0, 0],
+      runGlyphs: [[], [], [], [], [], [], [], [], [], [] ],
+      runRecords: [-10, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     };
     this.spaceTheorems = 0;
   },
