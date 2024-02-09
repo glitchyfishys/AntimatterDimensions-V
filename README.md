@@ -25,8 +25,12 @@ occasionally crash, so check your terminal from time to time and run `serve`
 again if needed.
 
 ## changes to add
-3 more alchemy types.
-2 new glyphs.
-2 new Ra memorys, one to speed up Ra.
-maybe a new celestal.
+3 more alchemy types
+
+2 new glyphs
+
+2 new Ra memorys, one to speed up Ra
+
+maybe a new celestal
+
 ...
