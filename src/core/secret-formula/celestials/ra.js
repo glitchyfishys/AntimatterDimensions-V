@@ -44,10 +44,10 @@ export const ra = {
       id: "glitchyfishys",
       name: "Glitchyfishys",
       color: "#60FF30",
-      chunkGain: "Infinity Power",
-      memoryGain: "total Memory levels",
+      chunkGain: "current RM",
+      memoryGain: "Time Shards",
       requiredUnlock: () => Ra.unlocks.unlockHardV,
-      rawMemoryChunksPerSecond: () => 3 * Math.pow(Currency.infinityPower.value.pLog10() / 1e4, 1.7),
+      rawMemoryChunksPerSecond: () => 3 * Math.pow(Currency.infinityPower.value.pLog10() / 1e4, 1.8),
       memoryProductionMultiplier: () => Ra.unlocks.gXP.effectOrDefault(1)
     }
   },
