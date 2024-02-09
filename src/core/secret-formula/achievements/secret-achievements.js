@@ -192,4 +192,44 @@ export const secretAchievements = [
     name: "Stack overflow",
     description: "Have more Automator errors than lines."
   },
+  {
+    id: 51,
+    name: "V",
+    description: "get all of V's Achievements."
+  },
+  {
+    id: 52,
+    name: "nameless",
+    description: "Click on this Achievement."
+  },
+  {
+    id: 53,
+    name: "Teresa",
+    description: "Click on this Achievement."
+  },
+  {
+    id: 54,
+    name: Pelle",
+    description: "Click on this Achievement."
+  },
+  {
+    id: 55,
+    name: "Laitela",
+    description: "Click on this Achievement."
+  },
+  {
+    id: 56,
+    name: "Ra",
+    description: "Click on this Achievement."
+  },
+  {
+    id: 57,
+    name: "Effarig",
+    description: "Click on this Achievement."
+  },
+  {
+    id: 58,
+    name: "hmm",
+    description: "Click on this Achievement."
+  },
 ];
