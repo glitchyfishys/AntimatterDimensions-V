@@ -129,7 +129,7 @@ export const ra = {
     effarigXP: {
       id: 9,
       reward: "All Memory Chunks produce more Memories based on highest Glyph level",
-      effect: () => 1 + player.records.bestReality.glyphLevel / 7000,
+      effect: () => 1 + player.records.bestReality.glyphLevel / 6000,
       pet: "effarig",
       level: 5,
       displayIcon: `<span class="fas fa-clone"></span>`
@@ -188,7 +188,7 @@ export const ra = {
     enslavedXP: {
       id: 16,
       reward: "All Memory Chunks produce more Memories based on total time played",
-      effect: () => 1 + Math.log10(player.records.totalTimePlayed) / 200,
+      effect: () => 1 + Math.log10(player.records.totalTimePlayed) / 175,
       pet: "enslaved",
       level: 5,
       displayIcon: `<span class="fas fa-stopwatch"></span>`
@@ -323,7 +323,7 @@ export const ra = {
     glitchyfishysXP: {
       id: 30,
       reward: () => `increase all memory gain by Reality Machines AND Antimatter`,
-      effect: 1 + Math.pow(Currency.realityMachines.value.pLog10() / 100, 0.2) * Math.pow(Currency.antimatter.value.pLog10(), 0.3),
+      effect: 1 + Math.pow(Currency.realityMachines.value.pLog10() / 100, 0.2) /* * Math.pow(Currency.antimatter.value.pLog10(), 0.3) */,
       pet: "glitchyfishys",
       level: 10,
       displayIcon: `<i class="far fa-dot-circle"></i>`,
