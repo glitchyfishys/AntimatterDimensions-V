@@ -45,9 +45,9 @@ export const ra = {
       name: "Glitchyfishys",
       color: "#60FF30",
       chunkGain: "current RM",
-      memoryGain: "Time Shards",
+      memoryGain: "reality .realityMachines",
       requiredUnlock: () => Ra.unlocks.unlockHardV,
-      rawMemoryChunksPerSecond: () => 3 * Math.pow(Currency.infinityPower.value.pLog10() / 1e4, 1.8),
+      rawMemoryChunksPerSecond: () => 3 * Math.pow(Currency.realityMachines.value.pLog10() / 1e4, 1.8),
       memoryProductionMultiplier: () => Ra.unlocks.glitchyfishysXP.effectOrDefault(1)
     }
   },
@@ -323,9 +323,9 @@ export const ra = {
     glitchyfishysXP: {
       id: 30,
       reward: () => `increase all memory gain by Reality Machines AND Antimatter`,
-      effect: 1 + Math.pow(Currency.realityMachines.value.pLog10() / 100, 0.2) * Math.pow(Currency.antimatter.value.pLog10() / 100, 0.2),
+      effect: 1 + Math.pow(Currency.realityMachines.value.pLog10() / 100, 0.2),
       pet: "glitchyfishys",
-      level: 10,
+      level: 6,
       displayIcon: `<i class="far fa-dot-circle"></i>`,
       disabledByPelle: true
     },
@@ -352,7 +352,7 @@ export const ra = {
       reward: () => `increase memory gain by 10 times`,
       effect: 10,
       pet: "glitchyfishys",
-      level: 25,
+      level: 20,
       displayIcon: `<i class="far fa-dot-circle"></i>`,
       disabledByPelle: true
     },
@@ -361,7 +361,7 @@ export const ra = {
       reward: () => `increase memory gain by 10 times`,
       effect: 10,
       pet: "glitchyfishys",
-      level: 25,
+      level: 20,
       displayIcon: `<i class="far fa-dot-circle"></i>`,
       disabledByPelle: true
     }
