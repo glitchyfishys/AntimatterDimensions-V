@@ -6,7 +6,7 @@ import { GameMechanicState } from "./game-mechanic";
 export class BitUpgradeState extends GameMechanicState {
   constructor(config) {
     super(config);
-    if (this.id < 0 || this.id > 31) throw new Error(`Id ${this.id} out of bit range`);
+    if (this.id < 0 || this.id > 42) throw new Error(`Id ${this.id} out of bit range`);
   }
 
   /**
