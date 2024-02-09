@@ -918,8 +918,8 @@ window.player = {
     enabled: false,
     checkoutSession: {
       id: false,
-    }
-  }
+    },
+  },
 };
 
 export const Player = {
