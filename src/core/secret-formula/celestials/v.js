@@ -61,6 +61,14 @@ export const v = {
       format: x => format(x, 2),
       progress: () => emphasizeEnd(Currency.realityMachines.value.pLog10() / 60),
     },
+    antimatter: {
+      id: y,
+      name: "Antimatter",
+      resource: () => Currency.antimatter.value,
+      requirement: DC.E100000000,
+      format: x => format(x, 2),
+      progress: () => emphasizeEnd(Currency.antimatter.value.pLog10() / 100000000),
+    },
   },
   runUnlocks: [
     {
@@ -196,7 +204,7 @@ export const v = {
       name: "glitched",
       description: value => `Reach ${formatInt(value)} antimatter without time studies`,
       values: [1000000, 2000000, 3000000, 4000000, 5000000, 6000000, 7000000],
-      condition: () => V.isRunning && player.timestudy.studies.length = 0,
+      condition: () => V.isRunning && player.timestudy.studies.length == 0,
       currentValue: () => Currency.antimatter.value.log10(),
       formatRecord: x => formatInt(x),
       shardReduction: tiers => Math.floor(500 * tiers),
