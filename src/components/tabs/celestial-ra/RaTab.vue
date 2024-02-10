@@ -64,7 +64,7 @@ export default {
           const  memory = Ra.unlocks.glitchyfishysEX.effectOrDefault(0);
           return `memory ${quantifyInt("gain", memory)}.`;
         },
-      }
+      },
     ],
     petStyle() {
       return {
