@@ -298,7 +298,7 @@ export const Ra = {
     return this.pets.all.map(pet => (pet.isUnlocked ? pet.level : 0)).sum();
   },
   get levelCap() {
-    return 25;
+    return 50;
   },
   get maxTotalPetLevel() {
     return this.levelCap * this.pets.all.length;
