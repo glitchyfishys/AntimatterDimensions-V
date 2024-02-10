@@ -802,7 +802,6 @@ export const Glyphs = {
       this.addToInventory(GlyphGenerator.glitchGlyph());
       GameUI.notify.error("Created a glitched Glyph");
     }
-  },
 };
 
 class GlyphSacrificeState extends GameMechanicState { }
