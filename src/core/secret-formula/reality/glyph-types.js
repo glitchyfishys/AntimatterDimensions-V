@@ -77,6 +77,14 @@ export const glyphTypes = {
     isUnlocked: () => false,
     canCustomize: () => false,
   },
+  glitch: {
+    id: "glitch",
+    symbol: "G",
+    color: "#123783",
+    fixedSymbolColor: true,
+    isUnlocked: () => false,
+    canCustomize: () => false,
+  }
 };
 
 export const cosmeticGlyphs = {
