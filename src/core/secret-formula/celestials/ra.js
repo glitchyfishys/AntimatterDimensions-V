@@ -6,7 +6,7 @@ export const ra = {
       color: "#8596ea",
       chunkGain: "Eternity Points",
       memoryGain: "current RM",
-      requiredUnlock: true,
+      requiredUnlock: () => undefined,
       rawMemoryChunksPerSecond: () => 4 * Math.pow(Currency.eternityPoints.value.pLog10() / 1e4, 3),
       memoryProductionMultiplier: () => Ra.unlocks.teresaXP.effectOrDefault(1)
     },
