@@ -43,13 +43,13 @@ export const ra = {
     glitchyfishys: {
       id: "glitchyfishys",
       name: "Glitchyfishys",
-      color: "#60FF30",
+      color: "#B0FF60",
       chunkGain: "current RM",
       memoryGain: "realityMachines AND antimatter",
-      requiredUnlock: () => Ra.unlocks.autoTP,
+      requiredUnlock: () => undefined,
       rawMemoryChunksPerSecond: () => 3 * Math.pow(Currency.realityMachines.value.pLog10() / 10, 1.8),
       memoryProductionMultiplier: () => Ra.unlocks.glitchyfishysXP.effectOrDefault(1)
-    }
+    },
   },
   unlocks: {
     autoTP: {
@@ -305,7 +305,7 @@ export const ra = {
     memroygain1: {
       id: 28,
       reward: () => `increase memory gain by 10 times`,
-      effect: 1,
+      effect: 10,
       pet: "glitchyfishys",
       level: 1,
       displayIcon: `<i class="far fa-dot-circle"></i>`,
@@ -350,7 +350,7 @@ export const ra = {
     memroygain5: {
       id: 33,
       reward: () => `increase memory gain by 10 times`,
-      effect: 10,
+      effect: () => 10,
       pet: "glitchyfishys",
       level: 20,
       displayIcon: `<i class="far fa-dot-circle"></i>`,
