@@ -45,11 +45,11 @@ export const ra = {
       name: "Glitchyfishys",
       color: "#B0FF60",
       chunkGain: "current RM",
-      memoryGain: "realityMachines AND antimatter",
+      memoryGain: "reality machines and antimatter",
       requiredUnlock: () => undefined,
       rawMemoryChunksPerSecond: () => 3 * Math.pow(Currency.realityMachines.value.pLog10() / 10, 1.8),
       memoryProductionMultiplier: () => Ra.unlocks.glitchyfishysXP.effectOrDefault(1)
-    },
+    }
   },
   unlocks: {
     autoTP: {
@@ -309,7 +309,6 @@ export const ra = {
       pet: "glitchyfishys",
       level: 1,
       displayIcon: `<i class="far fa-dot-circle"></i>`,
-      disabledByPelle: true
     },
     memroygain2: {
       id: 29,
@@ -318,7 +317,6 @@ export const ra = {
       pet: "glitchyfishys",
       level: 5,
       displayIcon: `<i class="far fa-dot-circle"></i>`,
-      disabledByPelle: true
     },
     glitchyfishysXP: {
       id: 30,
@@ -327,7 +325,6 @@ export const ra = {
       pet: "glitchyfishys",
       level: 6,
       displayIcon: `<i class="far fa-dot-circle"></i>`,
-      disabledByPelle: true
     },
     memroygain3: {
       id: 31,
@@ -336,7 +333,6 @@ export const ra = {
       pet: "glitchyfishys",
       level: 15,
       displayIcon: `<i class="far fa-dot-circle"></i>`,
-      disabledByPelle: true
     },
     memroygain4: {
       id: 32,
@@ -345,7 +341,6 @@ export const ra = {
       pet: "glitchyfishys",
       level: 20,
       displayIcon: `<i class="far fa-dot-circle"></i>`,
-      disabledByPelle: true
     },
     memroygain5: {
       id: 33,
@@ -354,7 +349,6 @@ export const ra = {
       pet: "glitchyfishys",
       level: 20,
       displayIcon: `<i class="far fa-dot-circle"></i>`,
-      disabledByPelle: true
     },
     memroygain6: {
       id: 34,
@@ -363,7 +357,6 @@ export const ra = {
       pet: "glitchyfishys",
       level: 20,
       displayIcon: `<i class="far fa-dot-circle"></i>`,
-      disabledByPelle: true
-    }
+    },
   }
 };
