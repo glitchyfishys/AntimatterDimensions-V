@@ -156,6 +156,20 @@ export const GlyphGenerator = {
       effects: effectBitmask,
     };
   },
+  glitchGlyph(level) {
+    const str = rarityToStrength(110);
+    const effectBitmask = effectBitmask = makeGlyphEffectBitmask(effects)
+    );
+    return {
+      id: undefined,
+      idx: null,
+      type: "glitch",
+      strength: str,
+      level,
+      rawLevel: level,
+      effects: effectBitmask,
+    };
+  },
 
   // These Glyphs are given on entering Doomed to prevent the player
   // from having none of each basic glyphs which are requied to beat pelle
