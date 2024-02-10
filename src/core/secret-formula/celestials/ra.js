@@ -46,7 +46,7 @@ export const ra = {
       color: "#60FF30",
       chunkGain: "current RM",
       memoryGain: "realityMachines AND antimatter",
-      requiredUnlock: () => undefined,
+      requiredUnlock: () => Ra.unlocks.autoTP,
       rawMemoryChunksPerSecond: () => 3 * Math.pow(Currency.realityMachines.value.pLog10() / 10, 1.8),
       memoryProductionMultiplier: () => Ra.unlocks.glitchyfishysXP.effectOrDefault(1)
     }
