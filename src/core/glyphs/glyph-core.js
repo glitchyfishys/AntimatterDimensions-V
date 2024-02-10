@@ -1,6 +1,6 @@
 import { GameMechanicState } from "../game-mechanics";
 
-export const orderedEffectList = ["powerpow", "infinitypow", "replicationpow", "timepow",
+export const orderedEffectList = [ "glitch", "shift", "powerpow", "infinitypow", "replicationpow", "timepow",
   "dilationpow", "timeshardpow", "powermult", "powerdimboost", "powerbuy10",
   "dilationTTgen", "infinityinfmult", "infinityIP", "timeEP",
   "dilationDT", "replicationdtgain", "replicationspeed",
@@ -651,10 +651,10 @@ export const Glyphs = {
     return 1000000;
   },
   get instabilityThreshold() {
-    return 1000 + getAdjustedGlyphEffect("effarigglyph") + ImaginaryUpgrade(7).effectOrDefault(0);
+    return 1500 + getAdjustedGlyphEffect("effarigglyph") + ImaginaryUpgrade(7).effectOrDefault(0);
   },
   get hyperInstabilityThreshold() {
-    return 3000 + this.instabilityThreshold;
+    return 4000 + this.instabilityThreshold;
   },
   clearUndo() {
     player.reality.glyphs.undo = [];
@@ -791,6 +791,16 @@ export const Glyphs = {
     } else {
       this.addToInventory(GlyphGenerator.cursedGlyph());
       GameUI.notify.error("Created a Cursed Glyph");
+    }
+  },
+  giveGlitchGlyph() {
+    if (GameCache.glyphInventorySpace.value === 0) {
+      Modal.message.show("No available inventory space; Sacrifice some Glyphs to free up space.",
+        { closeEvent: GAME_EVENT.GLYPHS_CHANGED });
+      return;
+    }
+      this.addToInventory(GlyphGenerator.glitchGlyph());
+      GameUI.notify.error("Created a glitched Glyph");
     }
   }
 };
