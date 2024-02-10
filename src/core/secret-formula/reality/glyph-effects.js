@@ -645,7 +645,7 @@ export const glyphEffects = {
     genericDesc: "Dilated Time factor for Glyph level",
     shortDesc: "DT pow. for level +{value}",
     // You can only get this effect on level 25000 reality glyphs anyway, might as well make it look nice
-    effect: () => 0.1,
+    effect: () => level / 25000,
     formatEffect: x => format(x, 2, 2),
     combine: GlyphCombiner.add,
   },
@@ -682,6 +682,38 @@ export const glyphEffects = {
     effect: (level, strength) => Decimal.pow10(1e6 * strengthToRarity(strength)),
     formatEffect: x => formatPostBreak(x, 2),
     combine: GlyphCombiner.multiplyDecimal,
+    enabledInDoomed: true,
+  },
+  shift: {
+    id: "shift",
+    bitmaskIndex: 10,
+    isGenerated: true,
+    glyphTypes: ["glitch"],
+    singleDesc: "my Dimension multipliers ×{value}",
+    shortDesc: "dim ×{value}",
+    effect: (level, strength) => (GlyphAlteration.isEmpowered("power")
+      ? DC.D11111.pow(level * 220)
+      : Decimal.pow(level * strength * 10, level * strength * 10)),
+    formatEffect: x => formatPostBreak(x, 2, 0),
+    combine: GlyphCombiner.multiplyDecimal,
+    alteredColor: () => GlyphAlteration.getEmpowermentColor("power"),
+    alterationType: ALTERATION_TYPE.ADDITION,
+    enabledInDoomed: true,
+  },
+  glitch: {
+    id: "powermult",
+    bitmaskIndex: 11,
+    isGenerated: true,
+    glyphTypes: ["glitch"],
+    singleDesc: "galaxies ×{value}",
+    shortDesc: "galaxies ×{value}",
+    effect: (level, strength) => (GlyphAlteration.isEmpowered("power")
+      ? DC.D11111.pow(level * 220)
+      : Decimal.pow(level * strength * 10, level * strength * 10)),
+    formatEffect: x => formatPostBreak(x, 2, 0),
+    combine: GlyphCombiner.multiplyDecimal,
+    alteredColor: () => GlyphAlteration.getEmpowermentColor("power"),
+    alterationType: ALTERATION_TYPE.ADDITION,
     enabledInDoomed: true,
   }
 };
