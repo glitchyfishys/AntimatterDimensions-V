@@ -74,6 +74,8 @@ export default {
           return true;
         case "V":
           return Math.min(Math.floor(this.level / 6), 4) !== Math.min(Math.floor((this.level + 1) / 6), 4);
+        case "Glitchyfishys":
+          return true;
         default:
           return false;
       }
@@ -90,6 +92,8 @@ export default {
           return `${formatX(20)} to stored game time, and you can store an additional hour of real time`;
         case "V":
           return "You can purchase an additional Triad Study";
+        case "Glitchyfishys":
+          return "increase memory gain";
         default:
           return "false";
       }
