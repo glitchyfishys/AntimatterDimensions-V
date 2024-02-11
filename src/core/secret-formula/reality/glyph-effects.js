@@ -644,7 +644,6 @@ export const glyphEffects = {
       ➜ ^(${format(1.3, 1, 1)} + {value})`,
     genericDesc: "Dilated Time factor for Glyph level",
     shortDesc: "DT pow. for level +{value}",
-    // You can only get this effect on level 25000 reality glyphs anyway, might as well make it look nice
     effect: () => level / 25000,
     formatEffect: x => format(x, 2, 2),
     combine: GlyphCombiner.add,
@@ -689,11 +688,12 @@ export const glyphEffects = {
     bitmaskIndex: 1,
     isGenerated: true,
     glyphTypes: ["glitch"],
-    singleDesc: "my Dimension multipliers ×{value}",
-    shortDesc: "dim ×{value}",
+    singleDesc: "my Dimension multipliers ^{value}",
+    shortDesc: "dim ^{value}",
+    genericDesc: "dim ^x",
     effect: (level, strength) => (level * strength),
     formatEffect: x => format(x, 2, 2),
-    combine: GlyphCombiner.add,
+    combine: GlyphCombiner.multiplyDecimal,
     enabledInDoomed: true,
   },
   glitchy: {
@@ -703,9 +703,10 @@ export const glyphEffects = {
     glyphTypes: ["glitch"],
     singleDesc: "galaxies ×{value}",
     shortDesc: "galaxies ×{value}",
+    genericDesc: "galaxies ×x",
     effect: (level, strength) => (level * strength),
     formatEffect: x => format(x, 2, 2),
-    combine: GlyphCombiner.add,
+    combine: GlyphCombiner.multiplyDecimal,
     enabledInDoomed: true,
   }
 };
