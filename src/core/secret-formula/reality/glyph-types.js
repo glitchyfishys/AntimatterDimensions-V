@@ -79,11 +79,12 @@ export const glyphTypes = {
   },
   glitch: {
     id: "glitch",
-    symbol: ALCHEMY_RESOURCE.GLITCH,
+    symbol: GLYPH_SYMBOLS.GLITCH,
     color: "#123783",
     fixedSymbolColor: true,
     isUnlocked: () => false,
     canCustomize: () => false,
+    alchemyResource: ALCHEMY_RESOURCE.GLITCH
   }
 };
 
