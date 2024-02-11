@@ -692,10 +692,8 @@ export const glyphEffects = {
     singleDesc: "my Dimension multipliers ×{value}",
     shortDesc: "dim ×{value}",
     effect: (level, strength) => (level * strength),
-    formatEffect: x => formatPostBreak(x, 2, 0),
+    formatEffect: x => format(x, 2, 2),
     combine: GlyphCombiner.add,
-    alteredColor: () => GlyphAlteration.getEmpowermentColor("glitch"),
-    alterationType: ALTERATION_TYPE.ADDITION,
     enabledInDoomed: true,
   },
   glitchy: {
@@ -706,10 +704,8 @@ export const glyphEffects = {
     singleDesc: "galaxies ×{value}",
     shortDesc: "galaxies ×{value}",
     effect: (level, strength) => (level * strength),
-    formatEffect: x => formatPostBreak(x, 2, 0),
+    formatEffect: x => format(x, 2, 2),
     combine: GlyphCombiner.add,
-    alteredColor: () => GlyphAlteration.getEmpowermentColor("glitch"),
-    alterationType: ALTERATION_TYPE.ADDITION,
     enabledInDoomed: true,
   }
 };
