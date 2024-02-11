@@ -241,7 +241,14 @@ window.GLYPH_MIME_TYPE = "text/x-ivark-glyph";
 // These need to be in descending order for searching over them to work trivially, and all need to be hex codes
 // in order for reality glyph color parsing to work properly in the cosmetic handler
 window.GlyphRarities = [
-  {
+   {
+    minStrength: 3.6,
+    name: "Antaloni",
+    darkColor: "#170275",
+    lightColor: "#6346e8",
+    darkHighContrast: "#2700db",
+    lightHighContrast: "#8a70ff"
+  }, {
     minStrength: 3.5,
     name: "Celestial",
     darkColor: "#3d3dec",
@@ -315,7 +322,8 @@ window.GLYPH_TYPES = [
   "effarig",
   "reality",
   "cursed",
-  "companion"
+  "companion",
+  "glitch"
 ];
 
 window.BASIC_GLYPH_TYPES = [
