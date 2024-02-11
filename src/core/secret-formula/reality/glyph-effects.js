@@ -686,33 +686,29 @@ export const glyphEffects = {
   },
   shift: {
     id: "shift",
-    bitmaskIndex: 10,
+    bitmaskIndex: 1,
     isGenerated: true,
     glyphTypes: ["glitch"],
     singleDesc: "my Dimension multipliers ×{value}",
     shortDesc: "dim ×{value}",
-    effect: (level, strength) => (GlyphAlteration.isEmpowered("power")
-      ? DC.D11111.pow(level * 220)
-      : Decimal.pow(level * strength * 10, level * strength * 10)),
+    effect: (level, strength) => (level * strength),
     formatEffect: x => formatPostBreak(x, 2, 0),
     combine: GlyphCombiner.multiplyDecimal,
-    alteredColor: () => GlyphAlteration.getEmpowermentColor("power"),
+    alteredColor: () => GlyphAlteration.getEmpowermentColor("glitch"),
     alterationType: ALTERATION_TYPE.ADDITION,
     enabledInDoomed: true,
   },
-  glitch: {
-    id: "powermult",
-    bitmaskIndex: 11,
+  glitchy: {
+    id: "glitchy",
+    bitmaskIndex: 2,
     isGenerated: true,
     glyphTypes: ["glitch"],
     singleDesc: "galaxies ×{value}",
     shortDesc: "galaxies ×{value}",
-    effect: (level, strength) => (GlyphAlteration.isEmpowered("power")
-      ? DC.D11111.pow(level * 220)
-      : Decimal.pow(level * strength * 10, level * strength * 10)),
+    effect: (level, strength) => (level * strength),
     formatEffect: x => formatPostBreak(x, 2, 0),
     combine: GlyphCombiner.multiplyDecimal,
-    alteredColor: () => GlyphAlteration.getEmpowermentColor("power"),
+    alteredColor: () => GlyphAlteration.getEmpowermentColor("glitch"),
     alterationType: ALTERATION_TYPE.ADDITION,
     enabledInDoomed: true,
   }
