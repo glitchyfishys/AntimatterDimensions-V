@@ -249,8 +249,10 @@ export const Ra = {
     for (const pet of Ra.pets.all) pet.reset();
   },
   memoryTick(realDiff, generateChunks) {
+    console.log("in");
     if (!this.isUnlocked) return;
-    for (const pet of Ra.pets.all) pet.tick(realDiff, generateChunks);
+    console.log("pass");
+    for (const pet of Ra.pets.all) pet.tick(realDiff, generateChunks); console.log(pet.name);
   },
   get productionPerMemoryChunk() {
     let res = Effects.product(Ra.unlocks.continuousTTBoost.effects.memories, Achievement(168));
