@@ -249,9 +249,7 @@ export const Ra = {
     for (const pet of Ra.pets.all) pet.reset();
   },
   memoryTick(realDiff, generateChunks) {
-    console.log("in");
     if (!this.isUnlocked) return;
-    console.log("pass");
     for (const pet of Ra.pets.all) pet.tick(realDiff, generateChunks); console.log(pet.name);
   },
   get productionPerMemoryChunk() {
