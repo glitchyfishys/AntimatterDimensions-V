@@ -75,6 +75,7 @@ export function getGlyphEffectValues(effectKey) {
 
 // Combines all specified glyph effects, reduces some boilerplate
 function getTotalEffect(effectKey) {
+  console.log(GlyphEffects[effectKey].combine)
   return GlyphEffects[effectKey].combine(getGlyphEffectValues(effectKey));
 }
 
