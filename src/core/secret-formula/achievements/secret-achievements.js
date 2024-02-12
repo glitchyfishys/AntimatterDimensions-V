@@ -194,42 +194,42 @@ export const secretAchievements = [
   },
   {
     id: 51,
-    name: "V",
+    name: "Teresa",
     description: "get all of V's Achievements."
   },
   {
     id: 52,
-    name: "nameless",
-    description: "Click on this Achievement."
+    name: "Effarig",
+    description: "???"
   },
   {
     id: 53,
-    name: "Teresa",
-    description: "Click on this Achievement."
+    name: "nameless",
+    description: "get 1e1000 reality muchines in the nameless ones reality"
   },
   {
     id: 54,
-    name: "Pelle",
-    description: "Click on this Achievement."
+    name: "V",
+    description: "get all of V's Achievements."
   },
   {
     id: 55,
-    name: "Laitela",
-    description: "Click on this Achievement."
+    name: "Ra",
+    description: "get all of Ra's memorys back."
   },
   {
     id: 56,
-    name: "Ra",
-    description: "Click on this Achievement."
+    name: "Laitela",
+    description: "???"
   },
   {
     id: 57,
-    name: "Effarig",
-    description: "Click on this Achievement."
+    name: "Pelle",
+    description: "???"
   },
   {
     id: 58,
     name: "hmm",
-    description: "Click on this Achievement."
+    description: "???"
   },
 ];
