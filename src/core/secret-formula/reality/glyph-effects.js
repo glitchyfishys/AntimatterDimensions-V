@@ -682,7 +682,7 @@ export const glyphEffects = {
     formatEffect: x => formatPostBreak(x, 2),
     combine: GlyphCombiner.multiplyDecimal,
     enabledInDoomed: true,
-  },
+  }/*,
   shift: {
     id: "shift",
     bitmaskIndex: 1,
@@ -708,5 +708,5 @@ export const glyphEffects = {
     formatEffect: x => format(x, 2, 2),
     combine: GlyphCombiner.multiplyDecimal,
     enabledInDoomed: true,
-  }
+  }*/
 };
