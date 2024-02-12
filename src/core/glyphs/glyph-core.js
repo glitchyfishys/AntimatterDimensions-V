@@ -1,6 +1,6 @@
 import { GameMechanicState } from "../game-mechanics";
 
-export const orderedEffectList = [ "glitch", "shift", "powerpow", "infinitypow", "replicationpow", "timepow",
+export const orderedEffectList = [ "glitchglitchy", "glitchshift", "powerpow", "infinitypow", "replicationpow", "timepow",
   "dilationpow", "timeshardpow", "powermult", "powerdimboost", "powerbuy10",
   "dilationTTgen", "infinityinfmult", "infinityIP", "timeEP",
   "dilationDT", "replicationdtgain", "replicationspeed",
