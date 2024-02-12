@@ -684,7 +684,7 @@ export const glyphEffects = {
     enabledInDoomed: true,
   },
   glitchshift: {
-    id: "shift",
+    id: "glitchshift",
     bitmaskIndex: 1,
     isGenerated: true,
     glyphTypes: ["glitch"],
@@ -697,7 +697,7 @@ export const glyphEffects = {
     enabledInDoomed: true,
   },
   glitchglitchy: {
-    id: "glitchy",
+    id: "glitchglitchy",
     bitmaskIndex: 2,
     isGenerated: true,
     glyphTypes: ["glitch"],
