@@ -693,7 +693,7 @@ export const glyphEffects = {
     genericDesc: "dim ^x",
     effect: (level, strength) => (level * strength),
     formatEffect: x => format(x, 2, 2),
-    combine: x => x.reduce(Decimal.prodReducer, DC.D1),
+    combine: GlyphCombiner.multiplyDecimal,
     enabledInDoomed: true,
   },
   glitchy: {
@@ -706,7 +706,7 @@ export const glyphEffects = {
     genericDesc: "galaxies ×x",
     effect: (level, strength) => (level * strength),
     formatEffect: x => format(x, 2, 2),
-    combine: x => x.reduce(Decimal.prodReducer, DC.D1),
+    combine: GlyphCombiner.multiplyDecimal,
     enabledInDoomed: true,
   }
 };
