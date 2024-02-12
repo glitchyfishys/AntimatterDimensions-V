@@ -27,12 +27,15 @@ export class BitUpgradeState extends GameMechanicState {
     return !this.isUnlocked;
   }
 
+  bit() {
+    return (this.bits % this.id) < (2 ** this.id)
+  }
   // eslint-disable-next-line no-empty-function
   onUnlock() { }
 
   unlock() {
     if (!this.canBeUnlocked) return;
-    this.bits |= (1 << this.id);
+    bit();
     this.onUnlock();
   }
 }
