@@ -16,7 +16,7 @@ export class BitUpgradeState extends GameMechanicState {
   set bits(value) { throw new NotImplementedError(); }
 
   get isUnlocked() {
-    return Boolean(this.bits & (1 << this.id));
+    return Boolean(bitf());
   }
 
   get canBeApplied() {
