@@ -15,7 +15,7 @@ dev.giveAllAchievements = function() {
   for (const achievement of allAchievements) achievement.unlock();
 };
 
-dev.disablecomformations = function() {
+dev.disableComformations = function() {
       player.options.confirmations.armageddon = false;
       player.options.confirmations.sacrifice = false;
       player.options.confirmations.challenges = false;
@@ -39,7 +39,7 @@ dev.disablecomformations = function() {
       player.options.confirmations.respecIAP = false;
   };
 
-dev.disableanimations = function() {
+dev.disableAnimations = function() {
   player.options.animations.bigCrunch = false;
   player.options.animations.eternity = false;
   player.options.animations.dilation = false;
@@ -48,10 +48,14 @@ dev.disableanimations = function() {
   player.options.animations.background = false;
 };
 
-dev.disableoptions = function() {
-  disablecomformations();
-  disableanimations();
+dev.disableOptions = function() {
+  dev.disableComformations();
+  dev.disableAnimations();
   player.options.automaticTabSwitching;
+}
+dev.unlockallrealityupgrades = function() {
+  player.reality.upgReqs=(2**28)-1
+  player.reality.upgradeBits = (2**28)-1
 }
 
 // Know that both dev.doubleEverything and dev.tripleEverything are both broken
