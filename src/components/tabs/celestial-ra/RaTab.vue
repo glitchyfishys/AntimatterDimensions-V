@@ -68,7 +68,7 @@ export default {
         Ra.unlocks.memroygain4.effectOrDefault(1) *
         Ra.unlocks.memroygain5.effectOrDefault(1) *
         Ra.unlocks.memroygain6.effectOrDefault(1);
-          return `memory ${quantifyInt("gain", memory)}.`;
+          return `memory x${quantifyInt(memory)}. gain`;
         },
       },
     ],
