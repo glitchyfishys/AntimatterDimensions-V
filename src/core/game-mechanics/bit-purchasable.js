@@ -20,14 +20,16 @@ export class BitPurchasableMechanicState extends PurchasableMechanicState {
   get bitIndex() { throw new NotImplementedError(); }
 
   get isBought() {
-    return ((this.bits % this.bitIndex) >= (2 ** (this.bitIndex + 1))) !== 0;
+    const m = 2 ** (this.bitIndex + 1);
+    return ((this.bits % m) >= m !== 0;
   }
 
   set isBought(value) {
+    const m = 2 ** (this.bitIndex + 1);
     if (value) {
-      this.bits |= (2 ** (this.bitIndex + 1));
+      this.bits |= m;
     } else {
-      this.bits &= ~(2 ** (this.bitIndex + 1));
+      this.bits &= ~m;
     }
   }
 }
