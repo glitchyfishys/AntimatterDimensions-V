@@ -31,7 +31,7 @@ export class BitUpgradeState extends GameMechanicState {
 
   unlock() {
     if (!this.canBeUnlocked) return;
-    this.bits |= (this.bits % this.id);
+    this.bits |= (2 ** (this.id + 1));
     this.onUnlock();
   }
 }
