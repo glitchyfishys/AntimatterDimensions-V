@@ -1,6 +1,6 @@
 import { GameMechanicState } from "../game-mechanics";
 
-export const orderedEffectList = [ "glitchglitchy", "glitchshift", "powerpow", "infinitypow", "replicationpow", "timepow",
+export const orderedEffectList = [ "powerpow", "infinitypow", "replicationpow", "timepow",
   "dilationpow", "timeshardpow", "powermult", "powerdimboost", "powerbuy10",
   "dilationTTgen", "infinityinfmult", "infinityIP", "timeEP",
   "dilationDT", "replicationdtgain", "replicationspeed",
@@ -10,7 +10,7 @@ export const orderedEffectList = [ "glitchglitchy", "glitchshift", "powerpow", "
   "effarigforgotten", "effarigdimensions", "effarigantimatter",
   "cursedgalaxies", "cursedtickspeed", "curseddimensions", "cursedEP",
   "realityglyphlevel", "realitygalaxies", "realityrow1pow", "realityDTglyph",
-  "companiondescription", "companionEP"];
+  "companiondescription", "companionEP", "glitchglitchy", "glitchshift"];
 
 export const generatedTypes = ["power", "infinity", "replication", "time", "dilation", "effarig"];
 
@@ -74,7 +74,7 @@ export const Glyphs = {
     return 10 * player.reality.glyphs.protectedRows;
   },
   get totalSlots() {
-    return 120;
+    return 150;
   },
   changeProtectedRows(rowChange) {
     // Always ensure at least one unprotected row for new glyphs, to prevent some potentially odd-looking behavior
