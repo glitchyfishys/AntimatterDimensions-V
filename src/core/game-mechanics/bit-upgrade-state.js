@@ -16,8 +16,7 @@ export class BitUpgradeState extends GameMechanicState {
   set bits(value) { throw new NotImplementedError(); }
 
   get isUnlocked() {
-    const m = 2 ** (this.id + 1);
-    return Boolean((this.bits % m) >= m);
+    return Boolean((this.bits % (2 ** (this.id + 1))) >= (2 ** (this.id + 1)));
   }
 
   get canBeApplied() {
@@ -31,9 +30,8 @@ export class BitUpgradeState extends GameMechanicState {
   onUnlock() { }
 
   unlock() {
-    const m = 2 ** (this.bitIndex + 1);
     if (!this.canBeUnlocked) return;
-    this.bits |= m;
+    this.bits |= (2 ** (this.id + 1));
     this.onUnlock();
   }
 }
