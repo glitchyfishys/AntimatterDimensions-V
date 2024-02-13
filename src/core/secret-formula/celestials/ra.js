@@ -339,7 +339,7 @@ export const ra = {
       reward: () => `increase memory gain by 10 times`,
       effect: 10,
       pet: "glitchyfishys",
-      level: 20,
+      level: 25,
       displayIcon: `<i class="far fa-dot-circle"></i>`,
     },
     memroygain5: {
@@ -347,7 +347,7 @@ export const ra = {
       reward: () => `increase memory gain by 10 times`,
       effect: () => 10,
       pet: "glitchyfishys",
-      level: 20,
+      level: 30,
       displayIcon: `<i class="far fa-dot-circle"></i>`,
     },
     memroygain6: {
@@ -355,7 +355,7 @@ export const ra = {
       reward: () => `increase memory gain by 10 times`,
       effect: 10,
       pet: "glitchyfishys",
-      level: 20,
+      level: 40,
       displayIcon: `<i class="far fa-dot-circle"></i>`,
     },
   }
