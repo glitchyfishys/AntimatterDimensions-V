@@ -16,7 +16,7 @@ export class BitUpgradeState extends GameMechanicState {
   set bits(value) { throw new NotImplementedError(); }
 
   get isUnlocked() {
-    return Boolean(bitf());
+    return Boolean((this.bits % this.id) < (2 ** this.id));
   }
 
   get canBeApplied() {
@@ -26,16 +26,12 @@ export class BitUpgradeState extends GameMechanicState {
   get canBeUnlocked() {
     return !this.isUnlocked;
   }
-
-  get bitf() {
-    return (this.bits % this.id) < (2 ** this.id);
-  }
   // eslint-disable-next-line no-empty-function
   onUnlock() { }
 
   unlock() {
     if (!this.canBeUnlocked) return;
-    this.bits |= bitf();
+    this.bits |= (this.bits % this.id) < (2 ** this.id);
     this.onUnlock();
   }
 }
