@@ -27,7 +27,7 @@ export class BitPurchasableMechanicState extends PurchasableMechanicState {
     if (value) {
       this.bits |= (this.bits % this.bitIndex);
     } else {
-      this.bits &= ~(1 << this.bitIndex);
+      this.bits &= ~(this.bits % this.bitIndex);
     }
   }
 }
