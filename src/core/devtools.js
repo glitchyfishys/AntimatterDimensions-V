@@ -56,6 +56,8 @@ dev.disableOptions = function() {
 dev.unlockallrealityupgrades = function() {
   player.reality.upgReqs=(2**28)-1
   player.reality.upgradeBits = (2**28)-1
+  player.blackHole[0].unlocked=true
+  player.blackHole[1].unlocked=true
 }
 
 // Know that both dev.doubleEverything and dev.tripleEverything are both broken
