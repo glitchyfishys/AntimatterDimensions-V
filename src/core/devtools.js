@@ -51,7 +51,7 @@ dev.disableAnimations = function() {
 dev.disableOptions = function() {
   dev.disableComformations();
   dev.disableAnimations();
-  player.options.automaticTabSwitching;
+  player.options.automaticTabSwitching = false;
 }
 dev.unlockallrealityupgrades = function() {
   player.reality.upgReqs=(2**28)-1
