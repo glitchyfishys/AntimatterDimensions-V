@@ -23,7 +23,19 @@ class AchievementState extends GameMechanicState {
   get column() {
     return this._column;
   }
-
+  
+  get isPreInfinity() {
+    return this.row < 3;
+  }
+  
+  get isPreBreakInfinity() {
+    return this.row < 8;
+  }
+  
+  get isPreEternity() {
+    return this.row < 10;
+  }
+  
   get isPreReality() {
     return this.row < 14;
   }
