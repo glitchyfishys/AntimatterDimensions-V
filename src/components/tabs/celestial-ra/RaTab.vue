@@ -59,9 +59,15 @@ export default {
       },
       {
         pet: Ra.pets.glitchyfishys,
-        scalingUpgradeVisible: () => Ra.unlocks.glitchyfishysXP.isUnlocked,
+        scalingUpgradeVisible: () => Ra.unlocks.memroygain1.isUnlocked,
         scalingUpgradeText: () => {
-          const  memory = Ra.unlocks.glitchyfishysXP.effectOrDefault(0);
+          const  memory = Ra.unlocks.glitchyfishysXP.effectOrDefault(1) *
+        Ra.unlocks.memroygain1.effectOrDefault(1) *
+        Ra.unlocks.memroygain2.effectOrDefault(1) *
+        Ra.unlocks.memroygain3.effectOrDefault(1) *
+        Ra.unlocks.memroygain4.effectOrDefault(1) *
+        Ra.unlocks.memroygain5.effectOrDefault(1) *
+        Ra.unlocks.memroygain6.effectOrDefault(1);
           return `memory ${quantifyInt("gain", memory)}.`;
         },
       },
