@@ -20,7 +20,7 @@ export class BitPurchasableMechanicState extends PurchasableMechanicState {
   get bitIndex() { throw new NotImplementedError(); }
 
   get isBought() {
-    return (this.bits % (2 ** this.id)) >= (2 ** this.id);
+    return (this.bits % (2 ** this.id)) >= (2 ** (this.id - 1));
   }
 
   set isBought(value) {
