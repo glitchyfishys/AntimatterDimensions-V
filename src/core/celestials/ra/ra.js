@@ -232,7 +232,7 @@ export const Ra = {
   pets,
   remembrance: {
     multiplier: 15,
-    nerf: 0.75,
+    nerf: 0.8,
     requiredLevels: 25,
     get isUnlocked() {
       return Ra.totalPetLevel >= this.requiredLevels;
@@ -250,7 +250,7 @@ export const Ra = {
   },
   memoryTick(realDiff, generateChunks) {
     if (!this.isUnlocked) return;
-    for (const pet of Ra.pets.all) pet.tick(realDiff, generateChunks); console.log(pet.name);
+    for (const pet of Ra.pets.all) pet.tick(realDiff, generateChunks);
   },
   get productionPerMemoryChunk() {
     let res = Effects.product(Ra.unlocks.continuousTTBoost.effects.memories, Achievement(168));
