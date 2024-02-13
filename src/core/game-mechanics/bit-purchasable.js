@@ -21,15 +21,14 @@ export class BitPurchasableMechanicState extends PurchasableMechanicState {
 
   get isBought() {
     if(this.bits == 0 ) {return false};
-    return ((this.bits % m) >= (2 ** (this.id + 1));
+    return ((this.bits % m) >= (2 ** (this.id + 1))
   }
 
   set isBought(value) {
-    const m = 2 ** (this.bitIndex + 1);
     if (value) {
-      this.bits |= (2 ** (this.id + 1));
+      this.bits |= (2 ** (this.id + 1))
     } else {
-      this.bits &= ~(2 ** (this.id + 1));
+      this.bits &= ~(2 ** (this.id + 1))
     }
   }
 }
