@@ -16,7 +16,6 @@ export class BitUpgradeState extends GameMechanicState {
   set bits(value) { throw new NotImplementedError(); }
 
   get isUnlocked() {
-    console.log((this.bits % this.id) < (2 ** this.id))
     return Boolean((this.bits % this.id) < (2 ** this.id));
   }
 
