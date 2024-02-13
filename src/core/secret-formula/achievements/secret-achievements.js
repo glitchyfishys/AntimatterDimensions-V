@@ -195,7 +195,7 @@ export const secretAchievements = [
   {
     id: 51,
     name: "Teresa",
-    description: "get all of V's Achievements."
+    description: "???"
   },
   {
     id: 52,
