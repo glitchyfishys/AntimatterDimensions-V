@@ -799,7 +799,7 @@ export const Glyphs = {
         { closeEvent: GAME_EVENT.GLYPHS_CHANGED });
       return;
     }
-      this.addToInventory(GlyphGenerator.glitchGlyph());
+      this.addToInventory(GlyphGenerator.glitchGlyph(15));
       GameUI.notify.error("Created a glitched Glyph");
     }
 };
