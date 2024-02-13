@@ -151,13 +151,13 @@ window.player = {
     },
     replicantiUpgrades: {
       all: Array.range(0, 3).map(() => ({
-        isActive: false,
+        isActive: true,
         lastTick: 0,
       })),
       isActive: true,
     },
     timeTheorems: {
-      isActive: false,
+      isActive: true,
     },
     dilationUpgrades: {
       all: Array.range(0, 3).map(() => ({
