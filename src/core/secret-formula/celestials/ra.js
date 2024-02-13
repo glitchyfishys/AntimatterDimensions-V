@@ -48,13 +48,7 @@ export const ra = {
       memoryGain: "reality machines and antimatter",
       requiredUnlock: () => undefined,
       rawMemoryChunksPerSecond: () => 3 * Math.pow(Currency.realityMachines.value.pLog10() / 10, 1.8),
-      memoryProductionMultiplier: () => Ra.unlocks.glitchyfishysXP.effectOrDefault(1) *
-        Ra.unlocks.memroygain1.effectOrDefault(1) *
-        Ra.unlocks.memroygain2.effectOrDefault(1) *
-        Ra.unlocks.memroygain3.effectOrDefault(1) *
-        Ra.unlocks.memroygain4.effectOrDefault(1) *
-        Ra.unlocks.memroygain5.effectOrDefault(1) *
-        Ra.unlocks.memroygain6.effectOrDefault(1);
+      memoryProductionMultiplier: () => Ra.unlocks.glitchyfishysXP.effectOrDefault(1) * Ra.unlocks.memroygain1.effectOrDefault(1) * Ra.unlocks.memroygain2.effectOrDefault(1) * Ra.unlocks.memroygain3.effectOrDefault(1) * Ra.unlocks.memroygain4.effectOrDefault(1) * Ra.unlocks.memroygain5.effectOrDefault(1) * Ra.unlocks.memroygain6.effectOrDefault(1);
     }
   },
   unlocks: {
