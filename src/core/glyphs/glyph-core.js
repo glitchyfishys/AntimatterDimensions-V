@@ -553,7 +553,7 @@ export const Glyphs = {
     let compareThreshold = glyph.type === "effarig" || glyph.type === "reality" ? 1 : 5;
     compareThreshold = Math.clampMax(compareThreshold, threshold);
     if (toCompare.length < compareThreshold) return false;
-    const comparedEffects = getGlyphEffectsFromBitmask(glyph.effects).filter(x => x.id.startsWith(glyph.type));
+    const comparedEffects = getGlyphEffectsFromBitmask(glyph.effects, glyph.type).filter(x => x.id.startsWith(glyph.type));
     const betterCount = toCompare.countWhere(other => !hasSomeBetterEffects(glyph, other, comparedEffects));
     return betterCount >= compareThreshold;
   },
