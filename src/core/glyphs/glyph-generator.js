@@ -158,7 +158,7 @@ export const GlyphGenerator = {
   },
   glitchGlyph(level) {
     const str = rarityToStrength(110);
-    const effectBitmask = effectBitmask = makeGlyphEffectBitmask(orderedEffectList.filter(effect => effect.match("glitch*"));
+    const effectBitmask = effectBitmask = makeGlyphEffectBitmask(orderedEffectList.filter(effect => effect.match("glitch*")));
     return {
       id: undefined,
       idx: null,
