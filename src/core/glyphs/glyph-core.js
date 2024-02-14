@@ -5,7 +5,7 @@ export const orderedEffectList = [ "powerpow", "powermult", "powerdimboost", "po
                                   "replicationpow", "replicationdtgain", "replicationspeed", "replicationglyphlevel",
                                   "timepow", "timeEP", "timeetermult", "timespeed","timeshardpow",  
                                   "dilationpow", "dilationTTgen", "dilationDT", "dilationgalaxyThreshold",
-                                  "effarigrm, effarigglyph", "effarigblackhole", "effarigachievement",
+                                  "effarigrm", "effarigglyph", "effarigblackhole", "effarigachievement",
                                   "effarigforgotten", "effarigdimensions", "effarigantimatter",
                                   "cursedgalaxies", "cursedtickspeed", "curseddimensions", "cursedEP",
                                   "realityglyphlevel", "realitygalaxies", "realityrow1pow", "realityDTglyph",
