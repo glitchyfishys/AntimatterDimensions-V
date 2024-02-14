@@ -15,7 +15,7 @@ export const orderedEffectList = [ "powerpow", "powermult", "powerdimboost", "po
 export const generatedTypes = ["power", "infinity", "replication", "time", "dilation", "effarig"];
 
 // eslint-disable-next-line no-unused-vars
-export const GlyphEffectOrder = orderedEffectList.mapToObject(e => e, (e, idx) => idx);
+export const GlyphEffectOrder = orderedEffectList;
 
 export function rarityToStrength(x) {
   return x * 2.5 / 100 + 1;
