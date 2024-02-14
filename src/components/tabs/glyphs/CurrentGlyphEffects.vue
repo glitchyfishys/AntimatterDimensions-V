@@ -12,7 +12,7 @@ const glyphEffectsOrder =
     "effarigforgotten", "effarigdimensions", "effarigantimatter",
     "cursedgalaxies", "cursedtickspeed", "curseddimensions", "cursedEP",
     "realityglyphlevel", "realitygalaxies", "realityrow1pow", "realityDTglyph",
-    "companiondescription", "companionEP"];
+    "companiondescription", "companionEP", "glitchshift", "glitchglitchy"];
 
 export default {
   name: "CurrentGlyphEffects",
