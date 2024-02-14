@@ -1,15 +1,10 @@
 import { GameMechanicState } from "../game-mechanics";
 
-export const orderedEffectList = [ "powerpow", "infinitypow", "replicationpow", "timepow",
-  "dilationpow", "timeshardpow", "powermult", "powerdimboost", "powerbuy10",
-  "dilationTTgen", "infinityinfmult", "infinityIP", "timeEP",
-  "dilationDT", "replicationdtgain", "replicationspeed",
-  "timeetermult", "dilationgalaxyThreshold", "infinityrate", "replicationglyphlevel",
-  "timespeed",
-  "effarigrm", "effarigglyph", "effarigblackhole", "effarigachievement",
+export const orderedEffectList = [ "powerpow", "infinitypow", "replicationpow", "timepow", "dilationpow", "timeshardpow", "powermult", "powerdimboost", "powerbuy10",
+  "dilationTTgen", "infinityinfmult", "infinityIP", "timeEP", "dilationDT", "replicationdtgain", "replicationspeed",
+  "timeetermult", "dilationgalaxyThreshold", "infinityrate", "replicationglyphlevel", "timespeed", "effarigrm", "effarigglyph", "effarigblackhole", "effarigachievement",
   "effarigforgotten", "effarigdimensions", "effarigantimatter",
-  "cursedgalaxies", "cursedtickspeed", "curseddimensions", "cursedEP",
-  "realityglyphlevel", "realitygalaxies", "realityrow1pow", "realityDTglyph",
+  "cursedgalaxies", "cursedtickspeed", "curseddimensions", "cursedEP", "realityglyphlevel", "realitygalaxies", "realityrow1pow", "realityDTglyph",
   "companiondescription", "companionEP", "glitchglitchy", "glitchshift"];
 
 export const generatedTypes = ["power", "infinity", "replication", "time", "dilation", "effarig"];
