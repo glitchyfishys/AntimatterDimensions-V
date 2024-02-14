@@ -103,7 +103,7 @@ export const glyphEffects = {
   },
   dilationDT: {
     id: "dilationDT",
-    bitmaskIndex: 4,
+    bitmaskIndex: 0,
     isGenerated: true,
     glyphTypes: ["dilation"],
     singleDesc: "Multiply Dilated Time gain by {value}",
@@ -119,7 +119,7 @@ export const glyphEffects = {
   },
   dilationgalaxyThreshold: {
     id: "dilationgalaxyThreshold",
-    bitmaskIndex: 5,
+    bitmaskIndex: 1,
     isGenerated: true,
     glyphTypes: ["dilation"],
     singleDesc: "Tachyon Galaxy threshold multiplier ×{value}",
@@ -141,7 +141,7 @@ export const glyphEffects = {
   dilationTTgen: {
     // TTgen slowly generates TT, value amount is per second, displayed per hour
     id: "dilationTTgen",
-    bitmaskIndex: 6,
+    bitmaskIndex: 2,
     isGenerated: true,
     glyphTypes: ["dilation"],
     singleDesc: () => (GlyphAlteration.isAdded("dilation")
@@ -167,7 +167,7 @@ export const glyphEffects = {
   },
   dilationpow: {
     id: "dilationpow",
-    bitmaskIndex: 7,
+    bitmaskIndex: 3,
     isGenerated: true,
     glyphTypes: ["dilation"],
     singleDesc: "Antimatter Dimension power +{value} while Dilated",
@@ -182,7 +182,7 @@ export const glyphEffects = {
   },
   replicationspeed: {
     id: "replicationspeed",
-    bitmaskIndex: 8,
+    bitmaskIndex: 0,
     isGenerated: true,
     glyphTypes: ["replication"],
     singleDesc: "Multiply Replication speed by {value}",
@@ -199,7 +199,7 @@ export const glyphEffects = {
   },
   replicationpow: {
     id: "replicationpow",
-    bitmaskIndex: 9,
+    bitmaskIndex: 1,
     isGenerated: true,
     glyphTypes: ["replication"],
     singleDesc: "Replicanti multiplier power +{value}",
@@ -216,7 +216,7 @@ export const glyphEffects = {
   },
   replicationdtgain: {
     id: "replicationdtgain",
-    bitmaskIndex: 10,
+    bitmaskIndex: 2,
     isGenerated: true,
     glyphTypes: ["replication"],
     singleDesc: () => (GlyphAlteration.isAdded("replication")
@@ -250,7 +250,7 @@ export const glyphEffects = {
   },
   replicationglyphlevel: {
     id: "replicationglyphlevel",
-    bitmaskIndex: 11,
+    bitmaskIndex: 3,
     isGenerated: true,
     glyphTypes: ["replication"],
     singleDesc: () => `Replicanti factor for Glyph level:\n ^${format(0.4, 1, 1)}
@@ -272,7 +272,7 @@ export const glyphEffects = {
   },
   infinitypow: {
     id: "infinitypow",
-    bitmaskIndex: 12,
+    bitmaskIndex: 0,
     isGenerated: true,
     glyphTypes: ["infinity"],
     singleDesc: "Infinity Dimension power +{value}",
@@ -289,7 +289,7 @@ export const glyphEffects = {
   },
   infinityrate: {
     id: "infinityrate",
-    bitmaskIndex: 13,
+    bitmaskIndex: 1,
     isGenerated: true,
     glyphTypes: ["infinity"],
     singleDesc: () => `Infinity Power conversion rate: \n^${formatInt(7)}
@@ -305,7 +305,7 @@ export const glyphEffects = {
   },
   infinityIP: {
     id: "infinityIP",
-    bitmaskIndex: 14,
+    bitmaskIndex: 2,
     isGenerated: true,
     glyphTypes: ["infinity"],
     singleDesc: () => (GlyphAlteration.isAdded("infinity")
@@ -332,7 +332,7 @@ export const glyphEffects = {
   },
   infinityinfmult: {
     id: "infinityinfmult",
-    bitmaskIndex: 15,
+    bitmaskIndex: 3,
     isGenerated: true,
     glyphTypes: ["infinity"],
     singleDesc: "Multiply Infinity gain by {value}",
@@ -349,7 +349,7 @@ export const glyphEffects = {
   },
   powerpow: {
     id: "powerpow",
-    bitmaskIndex: 16,
+    bitmaskIndex: 0,
     isGenerated: true,
     glyphTypes: ["power"],
     singleDesc: () => (GlyphAlteration.isAdded("power")
@@ -376,7 +376,7 @@ export const glyphEffects = {
   },
   powermult: {
     id: "powermult",
-    bitmaskIndex: 17,
+    bitmaskIndex: 1,
     isGenerated: true,
     glyphTypes: ["power"],
     singleDesc: "Antimatter Dimension multipliers ×{value}",
@@ -392,7 +392,7 @@ export const glyphEffects = {
   },
   powerdimboost: {
     id: "powerdimboost",
-    bitmaskIndex: 18,
+    bitmaskIndex: 2,
     isGenerated: true,
     glyphTypes: ["power"],
     singleDesc: "Dimension Boost multiplier ×{value}",
@@ -408,7 +408,7 @@ export const glyphEffects = {
   },
   powerbuy10: {
     id: "powerbuy10",
-    bitmaskIndex: 19,
+    bitmaskIndex: 3,
     isGenerated: true,
     glyphTypes: ["power"],
     singleDesc: () => `Increase the bonus from buying ${formatInt(10)} Antimatter Dimensions by {value}`,
@@ -422,7 +422,7 @@ export const glyphEffects = {
   },
   effarigrm: {
     id: "effarigrm",
-    bitmaskIndex: 20,
+    bitmaskIndex: 0,
     isGenerated: true,
     glyphTypes: ["effarig"],
     singleDesc: "Reality Machine multiplier ×{value}",
@@ -438,7 +438,7 @@ export const glyphEffects = {
   },
   effarigglyph: {
     id: "effarigglyph",
-    bitmaskIndex: 21,
+    bitmaskIndex: 1,
     isGenerated: true,
     glyphTypes: ["effarig"],
     singleDesc: "Glyph Instability starting level +{value}",
@@ -450,7 +450,7 @@ export const glyphEffects = {
   },
   effarigblackhole: {
     id: "effarigblackhole",
-    bitmaskIndex: 22,
+    bitmaskIndex: 2,
     isGenerated: true,
     glyphTypes: ["effarig"],
     singleDesc: "Game speed power +{value}",
@@ -464,7 +464,7 @@ export const glyphEffects = {
   },
   effarigachievement: {
     id: "effarigachievement",
-    bitmaskIndex: 23,
+    bitmaskIndex: 3,
     isGenerated: true,
     glyphTypes: ["effarig"],
     singleDesc: "Achievement multiplier power +{value}",
@@ -481,7 +481,7 @@ export const glyphEffects = {
   },
   effarigforgotten: {
     id: "effarigforgotten",
-    bitmaskIndex: 24,
+    bitmaskIndex: 4,
     isGenerated: true,
     glyphTypes: ["effarig"],
     singleDesc: () => (GlyphAlteration.isAdded("effarig")
@@ -506,7 +506,7 @@ export const glyphEffects = {
   },
   effarigdimensions: {
     id: "effarigdimensions",
-    bitmaskIndex: 25,
+    bitmaskIndex: 5,
     isGenerated: true,
     glyphTypes: ["effarig"],
     singleDesc: "All Dimension power +{value}",
@@ -520,7 +520,7 @@ export const glyphEffects = {
   },
   effarigantimatter: {
     id: "effarigantimatter",
-    bitmaskIndex: 26,
+    bitmaskIndex: 6,
     isGenerated: true,
     glyphTypes: ["effarig"],
     singleDesc: () => `Antimatter production:\n${formatInt(10)}^x ➜ ${formatInt(10)}^(x^{value})`,
@@ -532,7 +532,7 @@ export const glyphEffects = {
   },
   timeshardpow: {
     id: "timeshardpow",
-    bitmaskIndex: 27,
+    bitmaskIndex: 7,
     isGenerated: true,
     // This gets explicitly added to time glyphs elsewhere (once unlocked)
     glyphTypes: [],
@@ -599,7 +599,7 @@ export const glyphEffects = {
   },
   realityglyphlevel: {
     id: "realityglyphlevel",
-    bitmaskIndex: 4,
+    bitmaskIndex: 0,
     isGenerated: false,
     glyphTypes: ["reality"],
     singleDesc: "Increase the effective level of equipped basic Glyphs by {value}",
@@ -611,7 +611,7 @@ export const glyphEffects = {
   },
   realitygalaxies: {
     id: "realitygalaxies",
-    bitmaskIndex: 5,
+    bitmaskIndex: 1,
     isGenerated: false,
     glyphTypes: ["reality"],
     singleDesc: "All Galaxies are {value} stronger",
@@ -623,7 +623,7 @@ export const glyphEffects = {
   },
   realityrow1pow: {
     id: "realityrow1pow",
-    bitmaskIndex: 6,
+    bitmaskIndex: 2,
     isGenerated: false,
     glyphTypes: ["reality"],
     singleDesc: "Multiplier from Reality Upgrade Amplifiers ^{value}",
@@ -635,7 +635,7 @@ export const glyphEffects = {
   },
   realityDTglyph: {
     id: "realityDTglyph",
-    bitmaskIndex: 7,
+    bitmaskIndex: 3,
     isGenerated: false,
     glyphTypes: ["reality"],
     singleDesc: () => `Dilated Time factor for Glyph level: \n^${format(1.3, 1, 1)}
@@ -650,7 +650,7 @@ export const glyphEffects = {
   },
   companiondescription: {
     id: "companiondescription",
-    bitmaskIndex: 8,
+    bitmaskIndex: 0,
     isGenerated: false,
     glyphTypes: ["companion"],
     singleDesc: "It does nothing but sit there and cutely smile at you, whisper into your dreams politely, " +
@@ -669,7 +669,7 @@ export const glyphEffects = {
   },
   companionEP: {
     id: "companionEP",
-    bitmaskIndex: 9,
+    bitmaskIndex: 1,
     isGenerated: false,
     glyphTypes: ["companion"],
     singleDesc: "Thanks for your dedication for the game! You reached {value} Eternity Points on your first Reality.",
@@ -685,7 +685,7 @@ export const glyphEffects = {
   },
   glitchshift: {
     id: "glitchshift",
-    bitmaskIndex: 1,
+    bitmaskIndex: 0,
     isGenerated: true,
     glyphTypes: ["glitch"],
     singleDesc: "my Dimension multipliers ^{value}",
@@ -698,7 +698,7 @@ export const glyphEffects = {
   },
   glitchglitchy: {
     id: "glitchglitchy",
-    bitmaskIndex: 2,
+    bitmaskIndex: 1,
     isGenerated: true,
     glyphTypes: ["glitch"],
     singleDesc: "galaxies ×{value}",
