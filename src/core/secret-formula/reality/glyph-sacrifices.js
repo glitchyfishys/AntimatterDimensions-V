@@ -94,5 +94,24 @@ export const glyphSacrifice = {
     },
     description: amount => `Multiply Memory Chunk gain by ${formatX(amount, 2, 3)}`,
     cap: () => GlyphSacrificeHandler.maxSacrificeForEffects
+  },
+  "glitch": {
+    id: "glitchr",
+    effect: added => {
+      if (Pelle.isDisabled("glyphsac")) return 0;
+      const sac = player.reality.glyphs.sac.power + (added ?? 0);
+      const capped = Math.clampMax(sac, GlyphSacrificeHandler.maxSacrificeForEffects);
+      const base = Math.log10(capped + 1) / Math.log10(GlyphSacrificeHandler.maxSacrificeForEffects);
+      return Math.floor(750 * Math.pow(base, 1.2));
+    },
+    description: amount => {
+      const sacCap = GlyphSacrificeHandler.maxSacrificeForEffects;
+      const nextDistantGalaxy = Math.pow(10, Math.pow((amount + 1) / 750, 1 / 1.2) * Math.log10(sacCap)) - 1;
+      const nextGalaxyText = amount < 750
+        ? ` (next at ${format(nextDistantGalaxy, 2, 2)})`
+        : "";
+      return `... ${formatInt(amount)} later${nextGalaxyText}`;
+    },
+    cap: () => GlyphSacrificeHandler.maxSacrificeForEffects
   }
 };
