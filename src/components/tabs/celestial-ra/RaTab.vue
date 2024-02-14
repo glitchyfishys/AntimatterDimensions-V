@@ -62,7 +62,7 @@ export default {
         scalingUpgradeVisible: () => Ra.unlocks.memroygain1.isUnlocked,
         scalingUpgradeText: () => {
           const  memory = Ra.unlocks.glitchyfishysXP.effectOrDefault(1);
-          return `memory gain x${quantifyInt(memory)}.`;
+          return `memory x${quantifyInt("gain",memory)}.`;
         },
       },
     ],
