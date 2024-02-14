@@ -164,7 +164,7 @@ export const GlyphGenerator = {
       idx: null,
       type: "glitch",
       strength: str,
-      level,
+      level : level,
       rawLevel: level,
       effects: effectBitmask,
     };
