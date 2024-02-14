@@ -96,7 +96,7 @@ export const glyphSacrifice = {
     cap: () => GlyphSacrificeHandler.maxSacrificeForEffects
   },
   "glitch": {
-    id: "glitchr",
+    id: "glitch",
     effect: added => {
       if (Pelle.isDisabled("glyphsac")) return 0;
       const sac = player.reality.glyphs.sac.power + (added ?? 0);
