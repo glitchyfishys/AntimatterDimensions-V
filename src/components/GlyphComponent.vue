@@ -411,34 +411,8 @@ export default {
     // This finds all the effects of a glyph and shifts all their IDs so that type's lowest-ID effect is 0 and all
     // other effects count up to 3 (or 6 for effarig). Used to add dots in unique positions on glyphs to show effects.
     glyphEffects() {
-      let minEffectID = 0;
-      switch (this.glyph.type) {
-        case "time":
-        case "cursed":
-        case "companion":
-          minEffectID = 0;
-          break;
-        case "dilation":
-        case "reality":
-          minEffectID = 4;
-          break;
-        case "replication":
-          minEffectID = 8;
-          break;
-        case "infinity":
-          minEffectID = 12;
-          break;
-        case "power":
-          minEffectID = 16;
-          break;
-        case "effarig":
-          minEffectID = 20;
-          break;
-        default:
-          throw new Error(`Unrecognized glyph type "${this.glyph.type}" in glyph effect icons`);
-      }
       const effectIDs = [];
-      let remainingEffects = this.glyph.effects >> minEffectID;
+      let remainingEffects = (this.glyph.effects >> 0);
       for (let id = 0; remainingEffects > 0; id++) {
         if ((remainingEffects & 1) === 1) effectIDs.push(id);
         remainingEffects >>= 1;
