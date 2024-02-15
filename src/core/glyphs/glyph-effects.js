@@ -129,10 +129,10 @@ export function countValuesFromBitmask(bitmask) {
 }
 
 // Returns both effect value and softcap status
-export function getActiveGlyphEffects(type) {
+export function getActiveGlyphEffects() {
   let effectValues = orderedEffectList
     .map(effect => ({ effect, values: getGlyphEffectValues(effect) }))
-    .filter(ev => ev.values.length > 0 && ev.id == type)
+    .filter(ev => ev.values.length > 0 && ev.id == "powerpow")
     .map(ev => ({
       id: ev.effect,
       value: GlyphEffects[ev.effect].combine(ev.values),
