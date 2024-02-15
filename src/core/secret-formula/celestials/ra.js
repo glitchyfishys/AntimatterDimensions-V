@@ -321,7 +321,7 @@ export const ra = {
     glitchyfishysXP: {
       id: 30,
       reward: () => `increase all memory gain by Reality Machines AND Antimatter`,
-      effect: () => 1 + Math.pow(Currency.realityMachines.value.pLog10() / 25, 0.3) * Math.pow(Currency.antimatter.value.pLog10() / 1e4, 0.25),
+      effect: () => 1 + Math.pow(Currency.realityMachines.value.pLog10() / 25, 0.1) * Math.pow(Currency.antimatter.value.pLog10() / 1e5, 0.1),
       pet: "glitchyfishys",
       level: 6,
       displayIcon: `<i class="far fa-dot-circle"></i>`,
