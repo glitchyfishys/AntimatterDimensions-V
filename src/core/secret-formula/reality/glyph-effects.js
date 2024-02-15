@@ -644,7 +644,7 @@ export const glyphEffects = {
       ➜ ^(${format(1.3, 1, 1)} + {value})`,
     genericDesc: "Dilated Time factor for Glyph level",
     shortDesc: "DT pow. for level +{value}",
-    effect: 0.12,
+    effect: level => 0.12,
     formatEffect: x => format(x, 2, 2),
     combine: GlyphCombiner.add,
   },
