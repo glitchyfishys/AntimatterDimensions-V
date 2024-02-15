@@ -132,7 +132,7 @@ export function countValuesFromBitmask(bitmask) {
 export function getActiveGlyphEffects() {
   let effectValues = orderedEffectList
     .map(effect => ({ effect, values: getGlyphEffectValues(effect) }))
-    .filter(ev => ev.values.length > 0 && ev.id == "powerpow")
+    .filter(ev => ev.values.length > 0)
     .map(ev => ({
       id: ev.effect,
       value: GlyphEffects[ev.effect].combine(ev.values),
