@@ -41,7 +41,7 @@ export default {
         "text-shadow": `-1px 1px 1px var(--color-text-base), 1px 1px 1px var(--color-text-base),
                             -1px -1px 1px var(--color-text-base), 1px -1px 1px var(--color-text-base),
                             0 0 3px ${typeObject.currentColor.border}`,
-        animation: typeObject.id === "reality" ? "a-reality-glyph-description-cycle 10s infinite" : undefined,
+        animation: typeObject.id === "reality" ? "a-reality-glyph-description-cycle 2s infinite" : undefined,
       };
     },
     valueClass() {
