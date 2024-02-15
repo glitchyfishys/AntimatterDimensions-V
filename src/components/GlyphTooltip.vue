@@ -174,7 +174,7 @@ export default {
       return {
         "border-color": color,
         "box-shadow": `0 0 0.5rem 0.1rem ${color}, 0 0 0.8rem ${color} inset`,
-        animation: isReality ? "a-reality-glyph-tooltip-header-cycle 10s infinite" : undefined,
+        animation: isReality ? "a-reality-glyph-tooltip-header-cycle 2s infinite" : undefined,
         color: this.textColor,
         background: this.baseColor
       };
@@ -227,7 +227,7 @@ export default {
       return Theme.current().isDark() ? "#cccccc" : "black";
     },
     sacrificeText() {
-      if (this.type === "companion" || this.type === "cursed" || this.type === "glitch") return "";
+      if (this.type === "companion" || this.type === "cursed") return "";
       const powerText = `${format(this.sacrificeReward, 2, 2)}`;
       const isCurrentAction = this.currentAction === "sacrifice";
       return `<span style="font-weight: ${isCurrentAction ? "bold" : ""};">
