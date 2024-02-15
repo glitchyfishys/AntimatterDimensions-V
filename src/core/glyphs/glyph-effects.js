@@ -68,7 +68,7 @@ export function getGlyphEffectValues(effectKey) {
     throw new Error(`Unknown Glyph effect requested "${effectKey}"'`);
   }
   return player.reality.glyphs.active
-    .filter(glyph => ((1 << GlyphEffects[effectKey].bitmaskIndex) & glyph.effects) !== 0)
+    .filter(glyph => ((1 << GlyphEffects[effectKey].bitmaskIndex) & glyph.effects && GlyphEffects[effectKey].id.includes(glyph.type)) !== 0)
     .filter(glyph => generatedTypes.includes(glyph.type) === GlyphEffects[effectKey].isGenerated)
     .map(glyph => getSingleGlyphEffectFromBitmask(effectKey, glyph));
 }
