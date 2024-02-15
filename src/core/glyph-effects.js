@@ -204,7 +204,7 @@ export function makeGlyphEffectBitmask(effectList) {
   return effectList.reduce((mask, eff) => mask + (1 << GlyphEffects[eff].bitmaskIndex), 0);
 }
 
-export function getGlyphEffectsFromBitmask(bitmask, id = "pow") {
+export function getGlyphEffectsFromBitmask(bitmask, id) {
   return orderedEffectList
     .map(effectName => GlyphEffects[effectName])
     .filter(effect => (bitmask & (1 << effect.bitmaskIndex)) !== 0 && effect.id.includes(id) );
