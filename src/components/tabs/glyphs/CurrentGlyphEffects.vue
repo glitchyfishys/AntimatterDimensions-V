@@ -40,7 +40,7 @@ export default {
       if (this.hasEffarig) uniqueGlyphs.push(
         `<span style="color: ${GlyphAppearanceHandler.getBorderColor("effarig")};">Effarig</span>`);
       if (this.hasReality) uniqueGlyphs.push(
-        `<span style="animation: a-reality-glyph-description-cycle 10s infinite;">Reality</span>`);
+        `<span style="animation: a-reality-glyph-description-cycle 2s infinite;">Reality</span>`);
       return `You cannot have more than one ${uniqueGlyphs.join(" or ")}
         Glyph equipped${uniqueGlyphs.length > 1 ? " each." : "."}`;
     },
