@@ -92,14 +92,14 @@ export const GalaxyGenerator = {
       }
 
     }
-    player.celestials.pelle.galaxyGenerator.generatedGalaxies += this.gainPerSecond * diff / 1000;
+    player.celestials.pelle.galaxyGenerator.generatedGalaxies += this.gainPerSecond * diff / 100;
     player.celestials.pelle.galaxyGenerator.generatedGalaxies = Math.min(
       player.celestials.pelle.galaxyGenerator.generatedGalaxies,
       this.generationCap
     );
 
     if (!this.capRift) {
-      PelleRifts.all.forEach(r => r.reducedTo = Math.min(r.reducedTo + 0.03 * diff / 1000, 2));
+      PelleRifts.all.forEach(r => r.reducedTo = Math.min(r.reducedTo + 0.03 * diff / 100, 2));
       if (PelleRifts.vacuum.milestones[0].canBeApplied && !this.hasReturnedGlyphSlot) {
         Glyphs.refreshActive();
         EventHub.dispatch(GAME_EVENT.GLYPHS_EQUIPPED_CHANGED);
