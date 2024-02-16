@@ -61,7 +61,7 @@ dev.unlockAllRealityUpgrades = function() {
   player.realities += 1;
 }
 dev.getAllPerks = function() {
-  player.reality.perkpoints += 100;
+  player.reality.perkPoints += 100;
   dev.buyAllPerks();
   player.realities += 1;
 }
