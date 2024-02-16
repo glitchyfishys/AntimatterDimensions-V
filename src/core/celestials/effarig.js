@@ -62,7 +62,7 @@ export const Effarig = {
     }
   },
   get glyphEffectAmount() {
-    const genEffectBitmask = Guniqueglyphs();
+    const genEffectBitmask = uniqueglyphs();
     return countValuesFromBitmask(genEffectBitmask);
   },
   get shardsGained() {
