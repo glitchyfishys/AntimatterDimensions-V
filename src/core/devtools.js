@@ -38,7 +38,20 @@ dev.disableComformations = function() {
       player.options.confirmations.switchAutomatorMode = false;
       player.options.confirmations.respecIAP = false;
   };
-
+dev.completeECs = function() {
+  player.eternityChalls.eterc1=5;
+  player.eternityChalls.eterc2=5;
+  player.eternityChalls.eterc3=5;
+  player.eternityChalls.eterc4=5;
+  player.eternityChalls.eterc5=5;
+  player.eternityChalls.eterc6=5;
+  player.eternityChalls.eterc7=5;
+  player.eternityChalls.eterc8=5;
+  player.eternityChalls.eterc9=5;
+  player.eternityChalls.eterc10=5;
+  player.eternityChalls.eterc11=5;
+  player.eternityChalls.eterc12=5;
+}
 dev.disableAnimations = function() {
   player.options.animations.bigCrunch = false;
   player.options.animations.eternity = false;
