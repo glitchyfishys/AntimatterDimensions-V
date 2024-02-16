@@ -42,12 +42,12 @@ export default {
       return this.isFlipped && this.wantsFlipped
         ? [
           VRunUnlocks.all[6],
-          {},
-          {},
-          {},
-          { isRunButton: true },
           VRunUnlocks.all[7],
           VRunUnlocks.all[8],
+          {},
+          { isRunButton: true },
+          VRunUnlocks.all[9],
+          {},
           {},
           {}
         ]
