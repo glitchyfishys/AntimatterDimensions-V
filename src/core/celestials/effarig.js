@@ -72,15 +72,14 @@ export const Effarig = {
   },
   get uniqueglyphs() {
     let c = 1;
-    let m = Glyphs.activeWithoutCompanion;
-    if (m.filter(g => generatedTypes.includes(g.type)).filter(k => k.type == "power" ) > 0) c *= 2;
-    if (m.filter(g => generatedTypes.includes(g.type)).filter(k => k.type == "time" ) > 0) c *= 2;
-    if (m.filter(g => generatedTypes.includes(g.type)).filter(k => k.type == "infinity" ) > 0) c *= 2;
-    if (m.filter(g => generatedTypes.includes(g.type)).filter(k => k.type == "dilation" ) > 0) c *= 2;
-    if (m.filter(g => generatedTypes.includes(g.type)).filter(k => k.type == "replication" ) > 0) c *= 2;
-    if (m.filter(g => generatedTypes.includes(g.type)).filter(k => k.type == "effarig" ) > 0) c *= 2;
-    if (m.filter(g => !generatedTypes.includes(g.type)).filter(k => k.type == "reality" ) > 0) c *= 2;
-    if (m.filter(g => !generatedTypes.includes(g.type)).filter(k => k.type == "cursed" ) > 0) c *= 2;
+    if (Glyphs.activeWithoutCompanion.filter(g => generatedTypes.includes(g.type)).filter(k => k.type == "power" ).length > 0) c *= 2;
+    if (Glyphs.activeWithoutCompanion.filter(g => generatedTypes.includes(g.type)).filter(k => k.type == "time" ).length > 0) c *= 2;
+    if (Glyphs.activeWithoutCompanion.filter(g => generatedTypes.includes(g.type)).filter(k => k.type == "infinity" ).length > 0) c *= 2;
+    if (Glyphs.activeWithoutCompanion.filter(g => generatedTypes.includes(g.type)).filter(k => k.type == "dilation" ).length > 0) c *= 2;
+    if (Glyphs.activeWithoutCompanion.filter(g => generatedTypes.includes(g.type)).filter(k => k.type == "replication" ).length > 0) c *= 2;
+    if (Glyphs.activeWithoutCompanion.filter(g => generatedTypes.includes(g.type)).filter(k => k.type == "effarig" ).length > 0) c *= 2;
+    if (Glyphs.activeWithoutCompanion.filter(g => !generatedTypes.includes(g.type)).filter(k => k.type == "reality" ).length > 0) c *= 2;
+    if (Glyphs.activeWithoutCompanion.filter(g => !generatedTypes.includes(g.type)).filter(k => k.type == "cursed" ).length > 0) c *= 2;
     return c;
   },
   get maxRarityBoost() {
