@@ -63,15 +63,15 @@ export const Effarig = {
   },
   get uniqueglyphs() {
     let c = 1;
-    if (Glyphs.activeWithoutCompanion.filter(g => generatedTypes.includes(g.type)).filter(k => k.type == "power" ).length > 0) c++;
-    if (Glyphs.activeWithoutCompanion.filter(g => generatedTypes.includes(g.type)).filter(k => k.type == "time" ).length > 0) c++;
-    if (Glyphs.activeWithoutCompanion.filter(g => generatedTypes.includes(g.type)).filter(k => k.type == "infinity" ).length > 0) c++;
-    if (Glyphs.activeWithoutCompanion.filter(g => generatedTypes.includes(g.type)).filter(k => k.type == "dilation" ).length > 0) c++;
-    if (Glyphs.activeWithoutCompanion.filter(g => generatedTypes.includes(g.type)).filter(k => k.type == "replication" ).length > 0) c++;
-    if (Glyphs.activeWithoutCompanion.filter(g => generatedTypes.includes(g.type)).filter(k => k.type == "effarig" ).length > 0) c++;
-    if (Glyphs.activeWithoutCompanion.filter(g => !generatedTypes.includes(g.type)).filter(k => k.type == "reality" ).length > 0) c++;
-    if (Glyphs.activeWithoutCompanion.filter(g => !generatedTypes.includes(g.type)).filter(k => k.type == "cursed" ).length > 0) c++;
-    if (Glyphs.activeWithoutCompanion.filter(g => !generatedTypes.includes(g.type)).filter(k => k.type == "glitch" ).length > 0) c *= 2;
+    if (Glyphs.activeWithoutCompanion.filter(g => generatedTypes.includes(g.type)).filter(k => k.type == "power" ).length > 0) c+=1.25;
+    if (Glyphs.activeWithoutCompanion.filter(g => generatedTypes.includes(g.type)).filter(k => k.type == "time" ).length > 0) c+=1.25;
+    if (Glyphs.activeWithoutCompanion.filter(g => generatedTypes.includes(g.type)).filter(k => k.type == "infinity" ).length > 0) c+=1.25;
+    if (Glyphs.activeWithoutCompanion.filter(g => generatedTypes.includes(g.type)).filter(k => k.type == "dilation" ).length > 0) c+=1.25;
+    if (Glyphs.activeWithoutCompanion.filter(g => generatedTypes.includes(g.type)).filter(k => k.type == "replication" ).length > 0) c+=1.25;
+    if (Glyphs.activeWithoutCompanion.filter(g => generatedTypes.includes(g.type)).filter(k => k.type == "effarig" ).length > 0) c+=1.25;
+    if (Glyphs.activeWithoutCompanion.filter(g => !generatedTypes.includes(g.type)).filter(k => k.type == "reality" ).length > 0) c+=1.25;
+    if (Glyphs.activeWithoutCompanion.filter(g => !generatedTypes.includes(g.type)).filter(k => k.type == "cursed" ).length > 0) c+=1.25;
+    if (Glyphs.activeWithoutCompanion.filter(g => !generatedTypes.includes(g.type)).filter(k => k.type == "glitch" ).length > 0) c+=1.25;
     return c;
   },
   get glyphEffectAmount() {
