@@ -211,6 +211,7 @@ export function getGlyphEffectsFromBitmask(bitmask, id) {
 }
 
 export function getGlyphIDsFromBitmask(bitmask, id) {
+  console.log(bitmask);
   return getGlyphEffectsFromBitmask(bitmask, id).map(x => x.id);
 }
 
