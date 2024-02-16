@@ -62,7 +62,7 @@ export const Effarig = {
     }
   },
   get glyphEffectAmount() {
-    const genEffectBitmask = this.uniqueglyphs();
+    const genEffectBitmask = this.uniqueglyphs;
     return countValuesFromBitmask(genEffectBitmask);
   },
   get shardsGained() {
@@ -80,6 +80,7 @@ export const Effarig = {
     if (Glyphs.activeWithoutCompanion.filter(g => generatedTypes.includes(g.type)).filter(k => k.type == "effarig" ).length > 0) c *= 2;
     if (Glyphs.activeWithoutCompanion.filter(g => !generatedTypes.includes(g.type)).filter(k => k.type == "reality" ).length > 0) c *= 2;
     if (Glyphs.activeWithoutCompanion.filter(g => !generatedTypes.includes(g.type)).filter(k => k.type == "cursed" ).length > 0) c *= 2;
+    if (Glyphs.activeWithoutCompanion.filter(g => !generatedTypes.includes(g.type)).filter(k => k.type == "glitch" ).length > 0) c *= 2;
     return c;
   },
   get maxRarityBoost() {
