@@ -43,12 +43,12 @@ export default {
         ? [
           VRunUnlocks.all[6],
           VRunUnlocks.all[7],
-          VRunUnlocks.all[8],
+          {},
           {},
           { isRunButton: true },
+          VRunUnlocks.all[8],
+          {},
           VRunUnlocks.all[9],
-          {},
-          {},
           {}
         ]
         : [
