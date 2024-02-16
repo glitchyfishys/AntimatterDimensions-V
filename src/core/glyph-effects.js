@@ -210,8 +210,8 @@ export function getGlyphEffectsFromBitmask(bitmask, id) {
     .filter(effect => (bitmask & (1 << effect.bitmaskIndex)) !== 0 && effect.id.includes(id) );
 }
 
-export function getGlyphIDsFromBitmask(bitmask) {
-  return getGlyphEffectsFromBitmask(bitmask).map(x => x.id);
+export function getGlyphIDsFromBitmask(bitmask, id) {
+  return getGlyphEffectsFromBitmask(bitmask, id).map(x => x.id);
 }
 
 class FunctionalGlyphType {
