@@ -130,7 +130,7 @@ export default {
           <br>
           More Eternity Points slightly increases Relic Shards
           <br>
-          gained. More distinct Glyph effects significantly
+          gained. More distinct Glyphs significantly
           <br>
           increases Relic Shards gained.
         </div>
