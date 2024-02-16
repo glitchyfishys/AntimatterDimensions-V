@@ -62,18 +62,26 @@ export const Effarig = {
     }
   },
   get glyphEffectAmount() {
-    const genEffectBitmask = Glyphs.activeWithoutCompanion
-      .filter(g => generatedTypes.includes(g.type))
-      .reduce((prev, curr) => prev | curr.effects, 0);
-    const nongenEffectBitmask = Glyphs.activeWithoutCompanion
-      .filter(g => !generatedTypes.includes(g.type))
-      .reduce((prev, curr) => prev | curr.effects, 0);
-    return countValuesFromBitmask(genEffectBitmask) + countValuesFromBitmask(nongenEffectBitmask);
+    const genEffectBitmask = Guniqueglyphs();
+    return countValuesFromBitmask(genEffectBitmask);
   },
   get shardsGained() {
     if (!TeresaUnlocks.effarig.canBeApplied) return 0;
     return Math.floor(Math.pow(Currency.eternityPoints.exponent / 7500, this.glyphEffectAmount)) *
       AlchemyResource.effarig.effectValue;
+  },
+  get uniqueglyphs() {
+    let c = 1;
+    let m = Glyphs.activeWithoutCompanion;
+    if (m.filter(g => generatedTypes.includes(g.type)).inclues("power")) c *= 2;
+    if (m.filter(g => generatedTypes.includes(g.type)).inclues("time")) c *= 2;
+    if (m.filter(g => generatedTypes.includes(g.type)).inclues("infinity")) c *= 2;
+    if (m.filter(g => generatedTypes.includes(g.type)).inclues("dilation")) c *= 2;
+    if (m.filter(g => generatedTypes.includes(g.type)).inclues("replication")) c *= 2;
+    if (m.filter(g => generatedTypes.includes(g.type)).inclues("effarig")) c *= 2;
+    if (m.filter(g => !generatedTypes.includes(g.type)).inclues("reality")) c *= 2;
+    if (m.filter(g => !generatedTypes.includes(g.type)).inclues("cursed")) c *= 2;
+    return c;
   },
   get maxRarityBoost() {
     return 5 * Math.log10(Math.log10(Currency.relicShards.value + 10));
