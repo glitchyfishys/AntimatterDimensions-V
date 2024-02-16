@@ -54,43 +54,25 @@ dev.disableOptions = function() {
   player.options.automaticTabSwitching = false;
 }
 dev.unlockallrealityupgrades = function() {
-  player.reality.upgReqs=(2**28)-1
-  player.reality.upgradeBits = (2**28)-1
-  player.blackHole[0].unlocked=true
-  player.blackHole[1].unlocked=true
+  player.reality.upgReqs=(2**28)-1;
+  player.reality.upgradeBits = (2**28)-1;
+  player.blackHole[0].unlocked=true;
+  player.blackHole[1].unlocked=true;
+  player.realities += 1;
+}
+dev.getperks = function() {
+  player.reality.perkpoints += 100;
+  dev.buyAllPerks();
+  player.realities += 1;
 }
 
 // Know that both dev.doubleEverything and dev.tripleEverything are both broken
 // with this error https://i.imgur.com/ZMEBNTv.png
 
-dev.doubleEverything = function() {
-  Object.keys(player).forEach(key => {
-    if (typeof player[key] === "number") player[key] *= 2;
-    if (typeof player[key] === "object" && player[key].constructor !== Object) player[key] = player[key].times(2);
-    if (typeof player[key] === "object" && !isFinite(player[key])) {
-      Object.keys(player[key]).forEach(key2 => {
-        if (typeof player[key][key2] === "number") player[key][key2] *= 2;
-        if (typeof player[key][key2] === "object" && player[key][key2].constructor !== Object)
-          player[key][key2] = player[key][key2].times(2);
-      });
-    }
-  });
-};
-
-dev.tripleEverything = function() {
-  Object.keys(player).forEach(key => {
-    if (typeof player[key] === "number") player[key] *= 3;
-    if (typeof player[key] === "object" && player[key].constructor !== Object) player[key] = player[key].times(3);
-    if (typeof player[key] === "object" && !isFinite(player[key])) {
-      Object.keys(player[key]).forEach(key3 => {
-        if (typeof player[key][key3] === "number") player[key][key3] *= 3;
-        if (typeof player[key][key3] === "object" && player[key][key3].constructor !== Object)
-          player[key][key3] = player[key][key3].times(3);
-      });
-    }
-  });
-};
-
+dev.boostEverything = function() {
+  
+}
+    
 dev.barrelRoll = function() {
   FullScreenAnimationHandler.display("a-barrel-roll", 5);
 };
