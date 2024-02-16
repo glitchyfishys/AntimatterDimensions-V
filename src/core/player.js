@@ -599,12 +599,12 @@ window.player = {
       unlockBits: 0,
       run: false,
       quoteBits: 0,
-      runUnlocks: [0, 0, 0, 0, 0, 0, 0, 0, 0],
-      goalReductionSteps: [0, 0, 0, 0, 0, 0, 0, 0, 0],
+      runUnlocks: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      goalReductionSteps: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
       STSpent: 0,
-      runGlyphs: [[], [], [], [], [], [], [], [], []],
+      runGlyphs: [[], [], [], [], [], [], [], [], [], []],
       // The -10 is for glyph count, as glyph count for V is stored internally as a negative number
-      runRecords: [-10, 0, 0, 0, 0, 0, 0, 0, 0],
+      runRecords: [-10, 0, 0, 0, 0, 0, 0, 0, 0, 0],
       wantsFlipped: true,
     },
     ra: {
