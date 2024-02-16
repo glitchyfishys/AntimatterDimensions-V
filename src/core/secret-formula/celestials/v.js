@@ -202,9 +202,9 @@ export const v = {
     {
       id: 9,
       name: "glitched",
-      description: value => `Reach ${formatInt(value)} antimatter without time studies`,
-      values: [1000000, 2000000, 3000000, 4000000, 5000000, 6000000, 7000000],
-      condition: () => V.isRunning && player.timestudy.studies.length == 0,
+      description: value => `Reach ${formatInt(value)} antimatter without time studies or dilation unlocked`,
+      values: [10000000, 20000000, 30000000, 40000000, 50000000, 60000000, 70000000],
+      condition: () => V.isRunning && player.timestudy.studies.length == 0 && !PlayerProgress.dilationUnlocked(),
       currentValue: () => Currency.antimatter.value.log10(),
       formatRecord: x => formatInt(x),
       shardReduction: tiers => Math.floor(500 * tiers),
