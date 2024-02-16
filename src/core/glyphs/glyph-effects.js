@@ -111,7 +111,7 @@ export function getGlyphEffectValuesFromBitmask(bitmask, level, baseStrength, ty
 // Pulls out a single effect value from a glyph's bitmask, returning just the value (nothing for missing effects)
 export function getSingleGlyphEffectFromBitmask(effectName, glyph) {
   const glyphEffect = GlyphEffects[effectName];
-  if ((glyph.effects & (1 << glyphEffect.bitmaskIndex)) === 0 && glyphEffect.includes(glyph.type)) {
+  if ((glyph.effects & (1 << glyphEffect.bitmaskIndex)) === 0 && glyphEffect.id.includes(glyph.type)) {
     return undefined;
   }
   return glyphEffect.effect(getAdjustedGlyphLevel(glyph), Pelle.isDoomed ? Pelle.glyphStrength : glyph.strength);
