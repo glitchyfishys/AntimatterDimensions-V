@@ -19,7 +19,7 @@ export const v = {
       resource: () => Currency.realities.value,
       requirement: 5000,
       format: x => formatInt(x),
-      progress: () => Currency.realities.value / 10000,
+      progress: () => Currency.realities.value / 1000,
     },
     eternities: {
       id: 2,
@@ -27,7 +27,7 @@ export const v = {
       resource: () => Currency.eternities.value,
       requirement: 1e65,
       format: x => format(x, 2),
-      progress: () => emphasizeEnd(Currency.eternities.value.pLog10() / 70),
+      progress: () => emphasizeEnd(Currency.eternities.value.pLog10() / 65),
     },
     infinities: {
       id: 3,
@@ -35,7 +35,7 @@ export const v = {
       resource: () => Currency.infinitiesTotal.value,
       requirement: 1e150,
       format: x => format(x, 2),
-      progress: () => emphasizeEnd(Currency.infinitiesTotal.value.pLog10() / 160),
+      progress: () => emphasizeEnd(Currency.infinitiesTotal.value.pLog10() / 150),
     },
     dilatedTime: {
       id: 4,
@@ -43,7 +43,7 @@ export const v = {
       resource: () => player.records.thisReality.maxDT,
       requirement: DC.E300,
       format: x => format(x, 2),
-      progress: () => emphasizeEnd(player.records.thisReality.maxDT.pLog10() / 320),
+      progress: () => emphasizeEnd(player.records.thisReality.maxDT.pLog10() / 300),
     },
     replicanti: {
       id: 5,
@@ -51,7 +51,7 @@ export const v = {
       resource: () => player.records.thisReality.maxReplicanti,
       requirement: DC.E300000,
       format: x => format(x, 2),
-      progress: () => emphasizeEnd(player.records.thisReality.maxReplicanti.pLog10() / 320000),
+      progress: () => emphasizeEnd(player.records.thisReality.maxReplicanti.pLog10() / 300000),
     },
     realityMachines: {
       id: 6,
@@ -59,7 +59,7 @@ export const v = {
       resource: () => Currency.realityMachines.value,
       requirement: 1e55,
       format: x => format(x, 2),
-      progress: () => emphasizeEnd(Currency.realityMachines.value.pLog10() / 60),
+      progress: () => emphasizeEnd(Currency.realityMachines.value.pLog10() / 55),
     },
     antimatter: {
       id: 7,
