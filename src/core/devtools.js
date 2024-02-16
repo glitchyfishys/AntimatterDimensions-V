@@ -53,17 +53,26 @@ dev.disableOptions = function() {
   dev.disableAnimations();
   player.options.automaticTabSwitching = false;
 }
-dev.unlockallrealityupgrades = function() {
+dev.unlockAllRealityUpgrades = function() {
   player.reality.upgReqs=(2**28)-1;
   player.reality.upgradeBits = (2**28)-1;
   player.blackHole[0].unlocked=true;
   player.blackHole[1].unlocked=true;
   player.realities += 1;
 }
-dev.getperks = function() {
+dev.getAllPerks = function() {
   player.reality.perkpoints += 100;
   dev.buyAllPerks();
   player.realities += 1;
+}
+dev.completereality = function() {
+  dev.getAllPerks();
+  dev.unlockAllRealityUpgrades();
+}
+dev.giveAllAchievementsButLast = function() {
+  const allAchievements = Achievements.all.concat(SecretAchievements.all);
+  for (const achievement of allAchievements) achievement.unlock();
+  player.achievementBits[17]=127;
 }
 
 // Know that both dev.doubleEverything and dev.tripleEverything are both broken
