@@ -314,7 +314,7 @@ export const perks = {
     id: 72,
     label: "ECR",
     family: PERK_FAMILY.ETERNITY,
-    description: "Remove non-Time Theorem requirements for unlocking Eternity Challenges.",
+    description: "Remove non-Time Theorem requirements for unlocking Eternity Challenges and Remove the Eternity Challenge 10 requirement from Time Studys 191,192,193.",
     automatorPoints: 10,
     shortDescription: () => "Remove EC secondary requirements",
     layoutPosList: [67521, 78600, 81398, 80604, 78600, 40599],
