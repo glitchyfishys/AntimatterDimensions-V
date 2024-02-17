@@ -282,6 +282,8 @@ export const GlyphGenerator = {
     Array.range(0, 7 - GlyphTypes[type].effects.length).forEach(() => rng.uniform());
     if (type === "effarig") {
       // This is effarigrm/effarigglyph
+      console.log(effectValues[0])
+      console.log(effectValues[1])
       const unincluded = effectValues[0] < effectValues[1] ? 0 : 1;
       effectValues[unincluded] = -1;
     }
