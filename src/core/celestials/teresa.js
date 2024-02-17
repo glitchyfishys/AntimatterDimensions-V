@@ -6,7 +6,7 @@ import { Quotes } from "./quotes";
 export const Teresa = {
   timePoured: 0,
   lastUnlock: "shop",
-  pouredAmountCap: 1e50,
+  pouredAmountCap: 1e40,
   displayName: "Teresa",
   possessiveName: "Teresa's",
   get isUnlocked() {
@@ -40,13 +40,13 @@ export const Teresa = {
     player.celestials.teresa.pouredAmount = amount;
   },
   get fill() {
-    return Math.min(Math.log10(this.pouredAmount) / 50, 1);
+    return Math.min(Math.log10(this.pouredAmount) / 40, 1);
   },
   get possibleFill() {
-    return Math.min(Currency.realityMachines.value.plus(this.pouredAmount).log10() / 50, 1);
+    return Math.min(Currency.realityMachines.value.plus(this.pouredAmount).log10() / 40, 1);
   },
   get rmMultiplier() {
-    return Math.max(250 * Math.pow(this.pouredAmount / 1e24, 0.1), 1);
+    return Math.max(250 * Math.pow(this.pouredAmount / 1e20, 0.1), 1);
   },
   get runRewardMultiplier() {
     return this.rewardMultiplier(player.celestials.teresa.bestRunAM);
