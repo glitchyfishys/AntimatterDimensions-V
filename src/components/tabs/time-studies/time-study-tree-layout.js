@@ -82,7 +82,7 @@ export class TimeStudyTreeLayout {
       normalRow(                      TS(101), TS(102), TS(103)                       )
     );
     
-   if(!Perk.studyECRequirement.isBought){
+   if(Perk.studyECRequirement.isBought){
     this.rows.push(
       normalRow(                      EC(6),  TS(111),  EC(7)                        ),
       normalRow(               null, TS(121), TS(122), TS(123), null                 ),
@@ -94,6 +94,7 @@ export class TimeStudyTreeLayout {
       normalRow(               EC(6), TS(131), TS(132), TS(133), EC(8)                )
 
    }
+    
     this.rows.push(
       normalRow(                      TS(141), TS(142), TS(143)                       ),
       normalRow(               null,   EC(9), TS(151),   null,   EC(4)                ),
