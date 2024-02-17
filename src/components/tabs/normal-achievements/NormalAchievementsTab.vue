@@ -122,8 +122,8 @@ export default {
     isObscured(row) {
       if(this.isDoomed) return row >= 18;
       if(PlayerProgress.realityUnlocked()) return row >= 17;
-      if(PlayerProgress.eternityUnlocked()) return row >= 14;
-      if(PlayerProgress.hasBroken()) return row >= 8
+      if(PlayerProgress.eternityUnlocked()) return row >= 13;
+      if(PlayerProgress.hasBroken()) return row >= 9
       if(PlayerProgress.infinityUnlocked()) return row >= 4;
       return row >= 2
     },
