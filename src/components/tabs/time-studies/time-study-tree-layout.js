@@ -104,22 +104,36 @@ export class TimeStudyTreeLayout {
     
     if (type === STUDY_TREE_LAYOUT_TYPE.ALTERNATIVE_181 || type === STUDY_TREE_LAYOUT_TYPE.ALTERNATIVE_62_181 ||
       type === STUDY_TREE_LAYOUT_TYPE.ALTERNATIVE_TRIAD_STUDIES) {
+      if(!Perk.studyECRequirement.isBought && !Pelle.isDoomed){
+      this.rows.push(
+        normalRow(                         EC(1), TS(171),  EC(2)                        ),
+        normalRow(                        EC(10), TS(181),  EC(3)                        )
+      }else{
       this.rows.push(
         normalRow(                         EC(1), TS(171),  EC(2)                        ),
         normalRow(                        null, TS(181),  EC(3)                        )
+      }
+        
       );
     } else {
-      this.rows.push(
+      
+      if (!Perk.studyECRequirement.isBought && !Pelle.isDoomed){
+        this.rows.push(
         normalRow(                               TS(171)                                ),
         normalRow(                         EC(1), EC(2), EC(3)                          ),
-        normalRow(                               TS(181)                                )
+        normalRow(                         EC(10), TS(181), null                        )
+      } else {
+        this.rows.push(
+        normalRow(                               TS(171)                                ),
+        normalRow(                         EC(1), EC(2), EC(3)                          ),
+        normalRow(                               TS(181)                                ),
+        normalRow(                                EC(10)                                )
       );
-    } 
-    if(!Perk.studyECRequirement.isBought && !Pelle.isDoomed ){
-      this.rows.push(normalRow(                               EC(10)                                 ))
-    } else {
-      this.rows.push(normalRow(                        EC(10), null,  null                           ))
+        
+      }
+      
     }
+    
     this.rows.push(
       normalRow(             TS(191),          TS(192),          TS(193)              ),
       normalRow(                               TS(201)                                ),
