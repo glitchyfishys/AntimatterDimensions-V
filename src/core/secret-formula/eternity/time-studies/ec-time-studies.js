@@ -45,7 +45,7 @@ export const ecTimeStudies = [
     secondary: {
       resource: "Infinities",
       current: () => Currency.infinitiesTotal.value,
-      required: completions => new Decimal(1e8 + Math.min(completions, 4) * 2.5e7),
+      required: completions => new Decimal(1e7 + Math.min(completions, 4) * 2.5e6),
       formatValue: value => formatInt(Math.floor(value.toNumber()))
     }
   },
@@ -64,7 +64,11 @@ export const ecTimeStudies = [
   {
     id: 6,
     cost: 85,
-    requirement: [121],
+    if(TeresaUnlocks.EC6ReqireActive.isUnlocked){
+      requirement: [111],
+    }else{
+      requirement: [121],
+    }
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     secondary: {
       resource: "Replicanti Galaxies",
