@@ -61,8 +61,7 @@ export class TimeStudyTreeLayout {
       normalRow(                   null, TS(31), TS(32), TS(33)                       )
     ];
 
-    if (type === STUDY_TREE_LAYOUT_TYPE.ALTERNATIVE_62 || type === STUDY_TREE_LAYOUT_TYPE.ALTERNATIVE_62_181 ||
-      type === STUDY_TREE_LAYOUT_TYPE.ALTERNATIVE_TRIAD_STUDIES) {
+    if (type === STUDY_TREE_LAYOUT_TYPE.ALTERNATIVE_62) {
       this.rows.push(
         normalRow(                     null, TS(41), TS(42), EC(5)                      ),
         normalRow(                               TS(51)                                 )
@@ -102,8 +101,7 @@ export class TimeStudyTreeLayout {
       normalRow(                          TS(161), TS(162)                            )
     );
     
-    if (type === STUDY_TREE_LAYOUT_TYPE.ALTERNATIVE_181 || type === STUDY_TREE_LAYOUT_TYPE.ALTERNATIVE_62_181 ||
-      type === STUDY_TREE_LAYOUT_TYPE.ALTERNATIVE_TRIAD_STUDIES) {
+    if (type === STUDY_TREE_LAYOUT_TYPE.ALTERNATIVE_181) {
       if(Perk.studyECRequirement.isBought && !Pelle.isDoomed){
       this.rows.push(
         normalRow(                         EC(1), TS(171),  EC(2)                        ),
