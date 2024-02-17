@@ -39,7 +39,7 @@ export default {
   },
   computed: {
     unlockInfos: () => TeresaUnlocks.all,
-    pouredAmountCap: () => 1e50,
+    pouredAmountCap: () => Teresa.pouredAmountCap,
     showRunReward() {
       return this.bestAM.gt(1);
     },
@@ -126,7 +126,7 @@ export default {
     unlockDescriptionHeight(unlockInfo) {
       const maxPrice = TeresaUnlocks[Teresa.lastUnlock].price;
       const pos = Math.log1p(unlockInfo.price) / Math.log1p(maxPrice);
-      return `calc(${(100 * pos).toFixed(2)}% - 0.1rem)`;
+      return `calc(${(48 * pos).toFixed(2)}% - 0.1rem)`;
     },
     hasUnlock(unlockInfo) {
       return unlockInfo.isUnlocked;
