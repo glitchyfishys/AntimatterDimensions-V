@@ -100,10 +100,13 @@ export class TimeStudyTreeLayout {
         normalRow(                         EC(1), EC(2), EC(3)                          ),
         normalRow(                               TS(181)                                )
       );
-    }
-
-    this.rows.push(
+    } 
+    if(!Perk.studyECRequirement.isBought && !Pelle.isDoomed ){
       normalRow(                               EC(10)                                 ),
+    } else {
+      normalRow(                        EC(10), null,  null                           ),
+    }
+    this.rows.push(
       normalRow(             TS(191),          TS(192),          TS(193)              ),
       normalRow(                               TS(201)                                ),
       normalRow(    TS(211),          TS(212),          TS(213),          TS(214)     ),
@@ -214,6 +217,7 @@ export const STUDY_TREE_LAYOUT_TYPE = {
   get current() {
     const alt62 = Perk.bypassEC5Lock.isBought;
     const alt181 = Perk.bypassEC1Lock.isBought && Perk.bypassEC2Lock.isBought && Perk.bypassEC3Lock.isBought;
+    const altEC10 = Perk.studyECRequirement.isBought;
     if (Ra.canBuyTriad) return this.ALTERNATIVE_TRIAD_STUDIES;
     if (alt62 && alt181) return this.ALTERNATIVE_62_181;
     if (alt62) return this.ALTERNATIVE_62;
