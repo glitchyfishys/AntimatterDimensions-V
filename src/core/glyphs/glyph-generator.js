@@ -283,12 +283,13 @@ export const GlyphGenerator = {
     if (type === "effarig") {
       // This is effarigrm/effarigglyph
       console.log(effectValues)
-      const unincluded = effectValues[20] < effectValues[21] ? 20 : 21;
+      const unincluded = effectValues[0] < effectValues[1] ? 0 : 1;
       effectValues[unincluded] = -1;
       console.log(effectValues)
     }
     // This is timepow/infinitypow/powerpow
-    for (const i of [0, 12, 16]) {
+    if(type == "time" || type == "infinity" || type == "power"){
+    for (const i of [0]) {
       if (i in effectValues) {
         effectValues[i] = 2;
       }
