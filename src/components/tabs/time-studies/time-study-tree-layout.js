@@ -61,7 +61,7 @@ export class TimeStudyTreeLayout {
       normalRow(                   null, TS(31), TS(32), TS(33)                       )
     ];
 
-    if (type === STUDY_TREE_LAYOUT_TYPE.ALTERNATIVE_62) {
+    if (Perk.bypassEC5Lock.isBought) {
       this.rows.push(
         normalRow(                     null, TS(41), TS(42), EC(5)                      ),
         normalRow(                               TS(51)                                 )
@@ -81,7 +81,7 @@ export class TimeStudyTreeLayout {
       normalRow(                      TS(101), TS(102), TS(103)                       )
     );
     
-   if(Perk.studyECRequirement.isBought){
+   if(TeresaUnlocks.EC6ReqireActive.isUnlocked){
     this.rows.push(
       normalRow(                      EC(6),  TS(111),  EC(7)                        ),
       normalRow(               null, TS(121), TS(122), TS(123), null                 ),
@@ -101,7 +101,7 @@ export class TimeStudyTreeLayout {
       normalRow(                          TS(161), TS(162)                            )
     );
     
-    if (type === STUDY_TREE_LAYOUT_TYPE.ALTERNATIVE_181) {
+    if (Perk.bypassEC1Lock.isBought && Perk.bypassEC2Lock.isBought && Perk.bypassEC3Lock.isBought) {
       if(Perk.studyECRequirement.isBought && !Pelle.isDoomed){
       this.rows.push(
         normalRow(                         EC(1), TS(171),  EC(2)                        ),
