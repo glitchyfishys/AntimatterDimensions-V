@@ -80,8 +80,8 @@ TimeStudy.allConnections = (function() {
     [TS(122), TS(132)],
     [TS(123), TS(133)],
     
-    [TS(121), EC(6), () => !TeresaUnlocks.EC6ReqireActive.isUnlocked],
-    [TS(111), EC(6), () => TeresaUnlocks.EC6ReqireActive.isUnlocked],
+    [TS(121), EC(6), () => TeresaUnlocks.EC6ReqireActive.isUnlocked],
+    [TS(111), EC(6), () => !TeresaUnlocks.EC6ReqireActive.isUnlocked],
     
     [TS(123), EC(8)],
 
@@ -115,13 +115,13 @@ TimeStudy.allConnections = (function() {
 
     [TS(181), EC(10)],
     
-    [TS(181), TS(191), () => Perk.studyECRequirement.isBought],
-    [TS(181), TS(192), () => Perk.studyECRequirement.isBought],
-    [TS(181), TS(193), () => Perk.studyECRequirement.isBought],
+    [TS(181), TS(191), () => !Perk.studyECRequirement.isBought],
+    [TS(181), TS(192), () => !Perk.studyECRequirement.isBought],
+    [TS(181), TS(193), () => !Perk.studyECRequirement.isBought],
     
-    [EC(10), TS(191), () => !Perk.studyECRequirement.isBought],
-    [EC(10), TS(192), () => !Perk.studyECRequirement.isBought],
-    [EC(10), TS(193), () => !Perk.studyECRequirement.isBought],
+    [EC(10), TS(191), () => Perk.studyECRequirement.isBought],
+    [EC(10), TS(192), () => Perk.studyECRequirement.isBought],
+    [EC(10), TS(193), () => Perk.studyECRequirement.isBought],
 
     [TS(192), TS(201)],
 
