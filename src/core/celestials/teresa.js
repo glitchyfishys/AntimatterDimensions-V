@@ -16,7 +16,7 @@ export const Teresa = {
     if (this.pouredAmount >= Teresa.pouredAmountCap) return;
     this.timePoured += diff;
     const rm = Currency.realityMachines.value;
-    const rmPoured = Math.min((this.pouredAmount + 1e6) * 0.2 * Math.pow(this.timePoured, 2), rm.toNumber());
+    const rmPoured = Math.min((this.pouredAmount + 1e6) * 0.25 * Math.pow(this.timePoured, 2), rm.toNumber());
     this.pouredAmount += Math.min(rmPoured, Teresa.pouredAmountCap - this.pouredAmount);
     Currency.realityMachines.subtract(rmPoured);
     this.checkForUnlocks();
@@ -40,10 +40,10 @@ export const Teresa = {
     player.celestials.teresa.pouredAmount = amount;
   },
   get fill() {
-    return Math.min(Math.log10(this.pouredAmount) / 24, 1);
+    return Math.min(Math.log10(this.pouredAmount) / 50, 1);
   },
   get possibleFill() {
-    return Math.min(Currency.realityMachines.value.plus(this.pouredAmount).log10() / 50, 1);
+    return Math.min(Currency.realityMachines.value.plus(this.pouredAmount).log10() / 24, 1);
   },
   get rmMultiplier() {
     return Math.max(250 * Math.pow(this.pouredAmount / 1e20, 0.1), 1);
