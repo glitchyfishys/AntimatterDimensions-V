@@ -123,6 +123,7 @@ export class TimeStudyTreeLayout {
         normalRow(                               TS(171)                                ),
         normalRow(                         EC(1), EC(2), EC(3)                          ),
         normalRow(                         EC(10), TS(181), null                        )
+          );
       } else {
         this.rows.push(
         normalRow(                               TS(171)                                ),
