@@ -104,7 +104,7 @@ export class TimeStudyTreeLayout {
     
     if (type === STUDY_TREE_LAYOUT_TYPE.ALTERNATIVE_181 || type === STUDY_TREE_LAYOUT_TYPE.ALTERNATIVE_62_181 ||
       type === STUDY_TREE_LAYOUT_TYPE.ALTERNATIVE_TRIAD_STUDIES) {
-      if(!Perk.studyECRequirement.isBought && !Pelle.isDoomed){
+      if(Perk.studyECRequirement.isBought && !Pelle.isDoomed){
       this.rows.push(
         normalRow(                         EC(1), TS(171),  EC(2)                        ),
         normalRow(                        EC(10), TS(181),  EC(3)                        )
@@ -112,13 +112,14 @@ export class TimeStudyTreeLayout {
       }else{
       this.rows.push(
         normalRow(                         EC(1), TS(171),  EC(2)                        ),
-        normalRow(                        null, TS(181),  EC(3)                          )
+        normalRow(                        null, TS(181),  EC(3)                          ),
+        normalRow(                                EC(10)                                 )
         );
       }
       
     } else {
       
-      if (!Perk.studyECRequirement.isBought && !Pelle.isDoomed){
+      if (Perk.studyECRequirement.isBought && !Pelle.isDoomed){
         this.rows.push(
         normalRow(                               TS(171)                                ),
         normalRow(                         EC(1), EC(2), EC(3)                          ),
