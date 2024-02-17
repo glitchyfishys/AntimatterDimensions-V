@@ -102,9 +102,9 @@ export class TimeStudyTreeLayout {
       );
     } 
     if(!Perk.studyECRequirement.isBought && !Pelle.isDoomed ){
-      normalRow(                               EC(10)                                 ),
+      this.rows.push(normalRow(                               EC(10)                                 ))
     } else {
-      normalRow(                        EC(10), null,  null                           ),
+      this.rows.push(normalRow(                        EC(10), null,  null                           ))
     }
     this.rows.push(
       normalRow(             TS(191),          TS(192),          TS(193)              ),
