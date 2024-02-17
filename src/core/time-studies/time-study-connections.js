@@ -80,8 +80,8 @@ TimeStudy.allConnections = (function() {
     [TS(122), TS(132)],
     [TS(123), TS(133)],
     
-    [TS(121), EC(6) () => Perk.studyECRequirement.isBought],
-    [TS(111), EC(6) () => !Perk.studyECRequirement.isBought],
+    [TS(121), EC(6), () => Perk.studyECRequirement.isBought],
+    [TS(111), EC(6), () => !Perk.studyECRequirement.isBought],
     
     [TS(123), EC(8)],
 
