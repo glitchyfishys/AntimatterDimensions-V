@@ -39,7 +39,7 @@ export default {
   },
   computed: {
     unlockInfos: () => TeresaUnlocks.all,
-    pouredAmountCap: () => Teresa.pouredAmountCap,
+    pouredAmountCap: () => 1e50,
     showRunReward() {
       return this.bestAM.gt(1);
     },
