@@ -37,6 +37,12 @@ export const teresa = {
       onUnlock: () => {
         for (const id of [1, 2, 3, 4, 5, 6]) player.eternityUpgrades.add(id);
       },
+    },
+    EC6ReqireActive: {
+      id: 6,
+      price: 1e30,
+      description: "Eternity Challenge 6 no longer need the active path",
+      isDisabledInDoomed: true
     }
   }
 };
