@@ -91,8 +91,8 @@ export class TimeStudyTreeLayout {
     if (type === STUDY_TREE_LAYOUT_TYPE.ALTERNATIVE_181 || type === STUDY_TREE_LAYOUT_TYPE.ALTERNATIVE_62_181 ||
       type === STUDY_TREE_LAYOUT_TYPE.ALTERNATIVE_TRIAD_STUDIES) {
       this.rows.push(
-        normalRow(                         null, TS(171),  EC(2)                        ),
-        normalRow(                        EC(1), TS(181),  EC(3)                        )
+        normalRow(                         EC(1), TS(171),  EC(2)                        ),
+        normalRow(                        null, TS(181),  EC(3)                        )
       );
     } else {
       this.rows.push(
