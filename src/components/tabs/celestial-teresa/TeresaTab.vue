@@ -126,7 +126,7 @@ export default {
     unlockDescriptionHeight(unlockInfo) {
       const maxPrice = TeresaUnlocks[Teresa.lastUnlock].price;
       const pos = Math.log1p(unlockInfo.price) / Math.log1p(maxPrice);
-      return `calc(${(60 * pos).toFixed(2)}% - 0.1rem)`;
+      return `calc(${(80 * pos).toFixed(2)}% - 0.1rem)`;
     },
     hasUnlock(unlockInfo) {
       return unlockInfo.isUnlocked;
