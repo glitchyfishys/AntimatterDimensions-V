@@ -80,8 +80,8 @@ TimeStudy.allConnections = (function() {
     [TS(122), TS(132)],
     [TS(123), TS(133)],
     
-    [TS(121), EC(6), () => !Perk.studyECRequirement.isBought],
-    [TS(111), EC(6), () => Perk.studyECRequirement.isBought],
+    [TS(121), EC(6), () => !TeresaUnlocks.EC6ReqireActive.isUnlocked && !Pelle.Pelle.isDoomed],
+    [TS(111), EC(6), () => TeresaUnlocks.EC6ReqireActive.isUnlocked && !Pelle.Pelle.isDoomed],
     
     [TS(123), EC(8)],
 
@@ -113,15 +113,15 @@ TimeStudy.allConnections = (function() {
     [EC(2), TS(181), () => Perk.bypassEC2Lock.isBought],
     [EC(3), TS(181), () => Perk.bypassEC3Lock.isBought],
 
-    [TS(181), EC(10), () => Perk.studyECRequirement.isBought],
+    [TS(181), EC(10)],
     
-    [TS(181), TS(191), () => !Perk.studyECRequirement.isBought],
-    [TS(181), TS(192), () => !Perk.studyECRequirement.isBought],
-    [TS(181), TS(193), () => !Perk.studyECRequirement.isBought],
+    [TS(181), TS(191), () => Perk.studyECRequirement.isBought && !Pelle.Pelle.isDoomed],
+    [TS(181), TS(192), () => Perk.studyECRequirement.isBought && !Pelle.Pelle.isDoomed],
+    [TS(181), TS(193), () => Perk.studyECRequirement.isBought && !Pelle.Pelle.isDoomed],
     
-    [EC(10), TS(191), () => Perk.studyECRequirement.isBought],
-    [EC(10), TS(192), () => Perk.studyECRequirement.isBought],
-    [EC(10), TS(193), () => Perk.studyECRequirement.isBought],
+    [EC(10), TS(191), () => !Perk.studyECRequirement.isBought && !Pelle.Pelle.isDoomed],
+    [EC(10), TS(192), () => !Perk.studyECRequirement.isBought && !Pelle.Pelle.isDoomed],
+    [EC(10), TS(193), () => !Perk.studyECRequirement.isBought && !Pelle.Pelle.isDoomed],
 
     [TS(192), TS(201)],
 
