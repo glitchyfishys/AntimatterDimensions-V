@@ -286,6 +286,8 @@ export const GlyphGenerator = {
       console.log(effectValues[1])
       const unincluded = effectValues[0] < effectValues[1] ? 0 : 1;
       effectValues[unincluded] = -1;
+      console.log(effectValues[0])
+      console.log(effectValues[1])
     }
     // This is timepow/infinitypow/powerpow
     for (const i of [0, 12, 16]) {
