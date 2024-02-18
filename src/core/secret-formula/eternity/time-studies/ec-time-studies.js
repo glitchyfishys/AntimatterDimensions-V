@@ -68,7 +68,7 @@ export const ecTimeStudies = [
       requirement: [111]
     }else{
       requirement: [121]
-    }
+    },
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     secondary: {
       resource: "Replicanti Galaxies",
