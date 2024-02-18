@@ -81,19 +81,12 @@ export class TimeStudyTreeLayout {
       normalRow(                      TS(101), TS(102), TS(103)                       )
     );
     
-   if(TeresaUnlocks.EC6ReqireActive.isUnlocked){
+
     this.rows.push(
       normalRow(                      EC(6),  TS(111),  EC(7)                        ),
       normalRow(               null, TS(121), TS(122), TS(123), null                 ),
       normalRow(               null, TS(131), TS(132), TS(133), EC(8)                )
     );
-   } else{
-     this.rows.push(
-      normalRow(                       null,  TS(111),  EC(7)                         ),
-      normalRow(                      TS(121), TS(122), TS(123)                       ),
-      normalRow(               EC(6), TS(131), TS(132), TS(133), EC(8)                )
-       );
-   }
     
     this.rows.push(
       normalRow(                      TS(141), TS(142), TS(143)                       ),
