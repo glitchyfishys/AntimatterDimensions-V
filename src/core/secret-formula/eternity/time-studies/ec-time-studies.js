@@ -64,8 +64,7 @@ export const ecTimeStudies = [
   {
     id: 6,
     cost: 85,
-    requirement: [() => TeresaUnlocks.EC6ReqireActive.isUnlocked && player.timestudy.studies.includes(111),
-                  () => !TeresaUnlocks.EC6ReqireActive.isUnlocked && player.timestudy.studies.includes(121)],
+    requirement: [ 121, () => TeresaUnlocks.EC6ReqireActive.isUnlocked && player.timestudy.studies.includes(111)],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     secondary: {
       resource: "Replicanti Galaxies",
