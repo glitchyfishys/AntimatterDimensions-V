@@ -1,13 +1,5 @@
 import { DC } from "../../../constants";
 
-
-const or = () => {
-  if(TeresaUnlocks.EC6ReqireActive.isEffectActive){
-return 111
-  }else{
-return 121
-  }
-}
 export const ecTimeStudies = [
   {
     id: 1,
@@ -79,6 +71,14 @@ export const ecTimeStudies = [
       current: () => player.replicanti.galaxies,
       required: completions => 40 + Math.min(completions, 4) * 5,
       formatValue: formatInt
+    },
+    get or() {
+      if(TeresaUnlocks.EC6ReqireActive.isEffectActive){
+        return 111;
+      }
+      else{
+        return 121;
+      }
     }
   },
   {
