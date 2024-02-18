@@ -1,13 +1,13 @@
 import { DC } from "../../../constants";
 
 
-const or = m => {
+const or = () => {
   if(TeresaUnlocks.EC6ReqireActive.isEffectActive){
 return 111
   }else{
 return 121
   }
-  
+}
 export const ecTimeStudies = [
   {
     id: 1,
