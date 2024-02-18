@@ -64,7 +64,7 @@ export const ecTimeStudies = [
   {
     id: 6,
     cost: 85,
-    requirement: [ (player.celestials.teresa.unlockBits >= 64) ?  111 : 121], 121 ,
+    requirement: [ (player.celestials.teresa.unlockBits >= 64) ?  111 : 121, 121],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     secondary: {
       resource: "Replicanti Galaxies",
