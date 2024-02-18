@@ -64,21 +64,13 @@ export const ecTimeStudies = [
   {
     id: 6,
     cost: 85,
-    requirement: [ecTimeStudies[6].or],
+    requirement: [ TeresaUnlocks.EC6RequiresActive.iseffect ?  111 : 121],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     secondary: {
       resource: "Replicanti Galaxies",
       current: () => player.replicanti.galaxies,
       required: completions => 40 + Math.min(completions, 4) * 5,
       formatValue: formatInt
-    },
-    get or() {
-      if(TeresaUnlocks.EC6ReqireActive.isEffectActive){
-        return 111;
-      }
-      else{
-        return 121;
-      }
     }
   },
   {
