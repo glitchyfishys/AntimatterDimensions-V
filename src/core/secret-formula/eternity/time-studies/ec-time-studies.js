@@ -1,5 +1,14 @@
 import { DC } from "../../../constants";
 
+or = function(){
+  if(TeresaUnlocks.EC6ReqireActive.isUnlocked ){
+      return 111
+    }
+  else{
+      return 121
+    }
+}
+
 export const ecTimeStudies = [
   {
     id: 1,
@@ -63,12 +72,8 @@ export const ecTimeStudies = [
   },
   {
     id: 6,
-    cost: 85
-    if( () => TeresaUnlocks.EC6ReqireActive.isUnlocked ){
-      requirement: [111]
-    }else{
-      requirement: [121]
-    },
+    cost: 85,
+    requirement: [()=> or()],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     secondary: {
       resource: "Replicanti Galaxies",
