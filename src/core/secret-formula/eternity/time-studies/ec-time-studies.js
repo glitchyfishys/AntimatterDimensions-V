@@ -64,12 +64,12 @@ export const ecTimeStudies = [
   {
     id: 6,
     cost: 85,
-    requirement: [ 121, 111],
+    requirement: [111],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     secondary: {
       resource: "Replicanti Galaxies",
       current: () => player.replicanti.galaxies,
-      required: completions => 40 + Math.min(completions, 4) * 5 && ((player.timestudy.studies.includes(111) && TeresaUnlocks.EC6ReqireActive.isUnlocked) ||  (player.timestudy.studies.includes(121) && !TeresaUnlocks.EC6ReqireActive.isUnlocked)),
+      required: completions => 40 + Math.min(completions, 4) * 5,
       formatValue: formatInt
     }
   },
