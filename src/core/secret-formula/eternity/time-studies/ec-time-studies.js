@@ -1,14 +1,15 @@
 import { DC } from "../../../constants";
 
-function or(){
+export function or(){
   if(TeresaUnlocks.EC6ReqireActive.isUnlocked) 
   {
-    return 111
+    return 111;
   }
   else
   {
-    return 121
+    return 121;
   }
+  return true;
 }
 
 export const ecTimeStudies = [
