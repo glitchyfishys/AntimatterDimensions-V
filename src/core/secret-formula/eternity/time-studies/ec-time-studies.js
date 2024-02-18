@@ -63,11 +63,11 @@ export const ecTimeStudies = [
   },
   {
     id: 6,
-    cost: 85,
-    if(TeresaUnlocks.EC6ReqireActive.isUnlocked){
-      requirement: [111],
+    cost: 85
+    if( () => TeresaUnlocks.EC6ReqireActive.isUnlocked ){
+      requirement: [111]
     }else{
-      requirement: [121],
+      requirement: [121]
     }
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     secondary: {
