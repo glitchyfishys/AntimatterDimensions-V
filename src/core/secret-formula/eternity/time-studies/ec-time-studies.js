@@ -69,7 +69,7 @@ export const ecTimeStudies = [
     secondary: {
       resource: "Replicanti Galaxies",
       current: () => player.replicanti.galaxies,
-      required: completions => 40 + Math.min(completions, 4) * 5,
+      required: completions => 40 + Math.min(completions, 4) * 5 && ((player.timestudy.studies.includes(111) && TeresaUnlocks.EC6ReqireActive.isUnlocked) ||  (player.timestudy.studies.includes(121) && !TeresaUnlocks.EC6ReqireActive.isUnlocked)),
       formatValue: formatInt
     }
   },
