@@ -289,9 +289,10 @@ export const GlyphGenerator = {
     }
     // This is timepow/infinitypow/powerpow
     if(type == "time" || type == "infinity" || type == "power"){
-    for (const i of [0]) {
-      if (i in effectValues) {
-        effectValues[i] = 2;
+      for (const i of [0]) {
+        if (i in effectValues) {
+          effectValues[i] = 2;
+        }
       }
     }
     // Sort from highest to lowest value.
