@@ -72,7 +72,7 @@ export const ecTimeStudies = [
   {
     id: 6,
     cost: 85,
-    requirement: [or],
+    requirement: [this.or],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     secondary: {
       resource: "Replicanti Galaxies",
