@@ -3,7 +3,7 @@ import { DC } from "../../../constants";
 player = {
   celestials: {
     teresa: {
-      unlockBits = 0;
+      unlockBits: 0;
     }
   }
 }
