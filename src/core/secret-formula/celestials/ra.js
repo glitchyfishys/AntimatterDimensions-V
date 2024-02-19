@@ -42,13 +42,13 @@ export const ra = {
     },
     glitchyfishys: {
       id: "glitchyfishys",
-      name: "Glitchyfishys",
+      name: "Glitch",
       color: "#B0FF60",
       chunkGain: "current RM",
       memoryGain: "reality machines and antimatter",
       requiredUnlock: () => undefined,
       rawMemoryChunksPerSecond: () => 3 * Math.pow(Currency.realityMachines.value.pLog10() / 10, 1.8),
-      memoryProductionMultiplier: () => Ra.unlocks.glitchyfishysXP.effectOrDefault(1) * Ra.unlocks.memroygain1.effectOrDefault(1) * Ra.unlocks.memroygain2.effectOrDefault(1) * Ra.unlocks.memroygain3.effectOrDefault(1) * Ra.unlocks.memroygain4.effectOrDefault(1) * Ra.unlocks.memroygain5.effectOrDefault(1) * Ra.unlocks.memroygain6.effectOrDefault(1)
+      memoryProductionMultiplier: () => Ra.unlocks.glitchyfishysXP.effectOrDefault(1) * Ra.unlocks.memroygain1.effectOrDefault(1) * Ra.unlocks.memroygain2.effectOrDefault(1) * Ra.unlocks.memroygain3.effectOrDefault(1) * Ra.unlocks.memroygain4.effectOrDefault(1) * Ra.unlocks.memroygain5.effectOrDefault(1)
     }
   },
   unlocks: {
@@ -312,7 +312,7 @@ export const ra = {
     },
     memroygain2: {
       id: 29,
-      reward: () => `increase memory gain by 10 times`,
+      reward: () => `increase memory gain by 5 times`,
       effect: 5,
       pet: "glitchyfishys",
       level: 5,
@@ -350,10 +350,10 @@ export const ra = {
       level: 30,
       displayIcon: `<i class="far fa-dot-circle"></i>`,
     },
-    memroygain6: {
+    PassiveAlc: {
       id: 34,
-      reward: () => `increase memory gain by 10 times`,
-      effect: 5,
+      reward: () => `alchamy happens passively `,
+      effect: 1,
       pet: "glitchyfishys",
       level: 40,
       displayIcon: `<i class="far fa-dot-circle"></i>`,
