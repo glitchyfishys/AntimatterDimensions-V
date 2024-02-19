@@ -29,6 +29,14 @@ export const effarigUnlocks = {
       player.reality.showSidebarPanel = GLYPH_SIDEBAR_MODE.SAVED_SETS;
     }
   },
+  EC10Requirement: {
+    id: 7,
+    description: "Eternity Challenge 10 is not required for time studys 191, 192, 193",
+    cost: 5e17,
+    onPurchased: () => {
+      GameUI.notify.reality("EC10 has been moved",2500);
+    }
+  },
   run: {
     id: 3,
     description: "Effarig's Reality",
