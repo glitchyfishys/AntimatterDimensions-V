@@ -484,7 +484,7 @@ export function gameLoop(passDiff, options = {}) {
   GameCache.infinityDimensionCommonMultiplier.invalidate();
   GameCache.timeDimensionCommonMultiplier.invalidate();
   GameCache.totalIPMult.invalidate();
-
+  
   const blackHoleDiff = realDiff;
   const fixedSpeedActive = EternityChallenge(12).isRunning;
   if (!Enslaved.isReleaseTick && !fixedSpeedActive) {
@@ -661,6 +661,11 @@ function updatePrestigeRates() {
   if (currentRSmin > player.records.thisReality.bestRSmin && isRealityAvailable()) {
     player.records.thisReality.bestRSmin = currentRSmin;
     player.records.thisReality.bestRSminVal = Effarig.shardsGained;
+  }
+
+  if(Ra.unlocks.PassiveAlc.isEffectActive)
+  {
+    Ra.applyAlchemyReactions(realDiff);
   }
 }
 
