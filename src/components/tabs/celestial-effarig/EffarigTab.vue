@@ -31,7 +31,7 @@ export default {
     shopUnlocks: () => [
       EffarigUnlock.adjuster,
       EffarigUnlock.glyphFilter,
-      EffarigUnlock.setSaves
+      EffarigUnlock.setSaves,
       EffarigUnlock.EC10Requirement
     ],
     runUnlock: () => EffarigUnlock.run,
