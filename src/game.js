@@ -395,7 +395,11 @@ export function realTimeMechanics(realDiff) {
   if (AlchemyResource.momentum.isUnlocked) {
     player.celestials.ra.momentumTime += realDiff * Achievement(175).effectOrDefault(1);
   }
-
+  if(Ra.unlocks.PassiveAlc.isEffectActive)
+  {
+    Ra.applyAlchemyReactions(realDiff);
+  }
+  
   DarkMatterDimensions.tick(realDiff);
 
   // When storing real time, skip everything else having to do with production once stats are updated
@@ -661,11 +665,6 @@ function updatePrestigeRates() {
   if (currentRSmin > player.records.thisReality.bestRSmin && isRealityAvailable()) {
     player.records.thisReality.bestRSmin = currentRSmin;
     player.records.thisReality.bestRSminVal = Effarig.shardsGained;
-  }
-
-  if(Ra.unlocks.PassiveAlc.isEffectActive)
-  {
-    Ra.applyAlchemyReactions(realDiff);
   }
 }
 
