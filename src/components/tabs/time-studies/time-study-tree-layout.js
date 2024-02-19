@@ -95,7 +95,7 @@ export class TimeStudyTreeLayout {
     );
     
     if (Perk.bypassEC1Lock.isBought && Perk.bypassEC2Lock.isBought && Perk.bypassEC3Lock.isBought) {
-      if(Perk.studyECRequirement.isBought && !Pelle.isDoomed){
+      if(EffarigUnlock.EC10Requirement.canBeApplied && !Pelle.isDoomed){
       this.rows.push(
         normalRow(                         EC(1), TS(171),  EC(2)                        ),
         normalRow(                        EC(10), TS(181),  EC(3)                        )
@@ -110,7 +110,7 @@ export class TimeStudyTreeLayout {
       
     } else {
       
-      if (Perk.studyECRequirement.isBought && !Pelle.isDoomed){
+      if (EffarigUnlock.EC10Requirement.canBeApplied && !Pelle.isDoomed){
         this.rows.push(
         normalRow(                               TS(171)                                ),
         normalRow(                         EC(1), EC(2), EC(3)                          ),
