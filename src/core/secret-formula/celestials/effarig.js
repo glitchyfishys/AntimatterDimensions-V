@@ -32,7 +32,7 @@ export const effarigUnlocks = {
   EC10Requirement: {
     id: 7,
     description: "Eternity Challenge 10 is not required for time studys 191, 192, 193",
-    cost: 5e17,
+    cost: 5e20,
     onPurchased: () => {
       GameUI.notify.reality("EC10 has been moved",2500);
     }
