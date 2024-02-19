@@ -1,13 +1,5 @@
 import { DC } from "../../../constants";
 
-player = {
-  celestials: {
-    teresa: {
-      unlockBits: 0
-    }
-  }
-}
-
 export const ecTimeStudies = [
   {
     id: 1,
