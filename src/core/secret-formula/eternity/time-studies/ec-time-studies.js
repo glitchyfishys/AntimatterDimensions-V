@@ -64,13 +64,17 @@ export const ecTimeStudies = [
   {
     id: 6,
     cost: 85,
-    requirement: [ 121, 111],
+    requirement: [ 121, ecTimeStudies[5].or],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     secondary: {
       resource: "Replicanti Galaxies",
       current: () => player.replicanti.galaxies,
       required: completions => 40 + Math.min(completions, 4) * 5,
-      formatValue: formatInt
+      formatValue: formatInt,
+      get or(){
+        console.log("oops");
+        return 111;
+      }
     },
   },
   {
