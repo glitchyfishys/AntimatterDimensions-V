@@ -64,13 +64,17 @@ export const ecTimeStudies = [
   {
     id: 6,
     cost: 85,
-    requirement: [ (player.celestials.teresa.unlockBits >= 64) ?  111 : 121, 121],
+    requirement: [ 121, or],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     secondary: {
       resource: "Replicanti Galaxies",
       current: () => player.replicanti.galaxies,
       required: completions => 40 + Math.min(completions, 4) * 5,
       formatValue: formatInt
+    },
+    get or() {
+      console.log("oops");
+      return player.replicanti.galaxies;
     }
   },
   {
