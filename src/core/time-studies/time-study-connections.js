@@ -115,13 +115,13 @@ TimeStudy.allConnections = (function() {
 
     [TS(181), EC(10)],
     
-    [TS(181), TS(191), () => !Perk.studyECRequirement.isBought],
-    [TS(181), TS(192), () => !Perk.studyECRequirement.isBought],
-    [TS(181), TS(193), () => !Perk.studyECRequirement.isBought],
+    [TS(181), TS(191), () => !EffarigUnlock.EC10Requirement.canBeApplied],
+    [TS(181), TS(192), () => !EffarigUnlock.EC10Requirement.canBeApplied],
+    [TS(181), TS(193), () => !EffarigUnlock.EC10Requirement.canBeApplied],
     
-    [EC(10), TS(191), () => Perk.studyECRequirement.isBought],
-    [EC(10), TS(192), () => Perk.studyECRequirement.isBought],
-    [EC(10), TS(193), () => Perk.studyECRequirement.isBought],
+    [EC(10), TS(191), () => EffarigUnlock.EC10Requirement.canBeApplied],
+    [EC(10), TS(192), () => EffarigUnlock.EC10Requirement.canBeApplied],
+    [EC(10), TS(193), () => EffarigUnlock.EC10Requirement.canBeApplied],
 
     [TS(192), TS(201)],
 
