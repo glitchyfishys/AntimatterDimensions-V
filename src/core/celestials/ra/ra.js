@@ -301,7 +301,7 @@ export const Ra = {
     return 50;
   },
   get maxTotalPetLevel() {
-    return this.levelCap * this.pets.all.length;
+    return (this.levelCap -1) * this.pets.all.length;
   },
   checkForUnlocks() {
     if (!VUnlocks.raUnlock.canBeApplied) return;
