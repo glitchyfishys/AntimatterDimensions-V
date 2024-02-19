@@ -163,11 +163,11 @@ class RaPetState extends GameMechanicState {
   }
 
   get memoryUpgradeCapped() {
-    return this.memoryUpgradeCost >= 0.5 * Ra.requiredMemoriesForLevel(Ra.levelCap - 1);
+    return this.memoryUpgradeCost >= 0.5 * Ra.requiredMemoriesForLevel(Ra.levelCap);
   }
 
   get chunkUpgradeCapped() {
-    return this.chunkUpgradeCost >= 0.5 * Ra.requiredMemoriesForLevel(Ra.levelCap - 1);
+    return this.chunkUpgradeCost >= 0.5 * Ra.requiredMemoriesForLevel(Ra.levelCap);
   }
 
   purchaseMemoryUpgrade() {
@@ -301,7 +301,7 @@ export const Ra = {
     return 50;
   },
   get maxTotalPetLevel() {
-    return (this.levelCap -1) * this.pets.all.length;
+    return this.levelCap * (this.pets.all.length -1);
   },
   checkForUnlocks() {
     if (!VUnlocks.raUnlock.canBeApplied) return;
@@ -386,15 +386,15 @@ export const Ra = {
 export const GlyphAlteration = {
   // Adding a secondary effect to some effects
   get additionThreshold() {
-    return 1e36;
+    return 1e35;
   },
   // One-time massive boost of a single effect
   get empowermentThreshold() {
-    return 1e43;
+    return 1e42;
   },
   // Scaling boost from sacrifice quantity
   get boostingThreshold() {
-    return 1e60;
+    return 1e58;
   },
   getSacrificePower(type) {
     if (Pelle.isDisabled("alteration")) return 0;
