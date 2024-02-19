@@ -115,7 +115,7 @@ export const raQuotes = {
   },
   maxLevels: {
     id: 13,
-    requirement: () => Ra.totalPetLevel === Ra.maxTotalPetLevel,
+    requirement: () => Ra.totalPetLevel >= Ra.maxTotalPetLevel,
     lines: [
       "Finally, I remember everything.",
       "This darkness that banished me.",
