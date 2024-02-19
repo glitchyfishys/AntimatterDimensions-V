@@ -115,13 +115,13 @@ TimeStudy.allConnections = (function() {
 
     [TS(181), EC(10)],
     
-    [TS(181), TS(191), () => EffarigUnlock.EC10Requirement.canBeApplied && !Pelle.isDoomed],
-    [TS(181), TS(192), () => EffarigUnlock.EC10Requirement.canBeApplied && !Pelle.isDoomed],
-    [TS(181), TS(193), () => EffarigUnlock.EC10Requirement.canBeApplied && !Pelle.isDoomed],
+    [TS(181), TS(191), () => !EffarigUnlock.EC10Requirement.canBeApplied && !Pelle.isDoomed],
+    [TS(181), TS(192), () => !EffarigUnlock.EC10Requirement.canBeApplied && !Pelle.isDoomed],
+    [TS(181), TS(193), () => !EffarigUnlock.EC10Requirement.canBeApplied && !Pelle.isDoomed],
     
-    [EC(10), TS(191), () => !EffarigUnlock.EC10Requirement.canBeApplied || Pelle.isDoomed],
-    [EC(10), TS(192), () => !EffarigUnlock.EC10Requirement.canBeApplied || Pelle.isDoomed],
-    [EC(10), TS(193), () => !EffarigUnlock.EC10Requirement.canBeApplied || Pelle.isDoomed],
+    [EC(10), TS(191), () => EffarigUnlock.EC10Requirement.canBeApplied || Pelle.isDoomed],
+    [EC(10), TS(192), () => EffarigUnlock.EC10Requirement.canBeApplied || Pelle.isDoomed],
+    [EC(10), TS(193), () => EffarigUnlock.EC10Requirement.canBeApplied || Pelle.isDoomed],
 
     [TS(192), TS(201)],
 
