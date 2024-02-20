@@ -507,7 +507,37 @@ export const perks = {
     automatorPoints: 10,
     shortDescription: () => "Keep Achievements on Reality",
     layoutPosList: [29761, 81402, 81403, 79404, 79803, 84639],
-  }
+  },
+  autoGlyph: {
+    id: 301,
+    label: "AGL",
+    family: PERK_FAMILY.REALITY,
+    get description() {
+      return `all glyph levels are increase on reality.`;
+    },
+    effect: 4,
+    layoutPosList: [80250, 80250, 80250, 80250, 80238, 67819],
+  },
+  hold1: {
+    id: 302,
+    label: "HOLD",
+    family: PERK_FAMILY.REALITY,
+    get description() {
+      return `place holder`;
+    },
+    effect: 4,
+    layoutPosList: [80200, 80200, 80200, 80200, 80188, 67769],
+  },
+  hold2: {
+    id: 304,
+    label: "HOLD",
+    family: PERK_FAMILY.REALITY,
+    get description() {
+      return `place holder`;
+    },
+    effect: 4,
+    layoutPosList: [80200, 80200, 80200, 80200, 80188, 67769],
+  },
 };
 
 export const perkConnections = (function() {
