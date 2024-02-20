@@ -516,7 +516,7 @@ export const perks = {
       return `all glyph levels are increase on reality.`;
     },
     effect: 4,
-    layoutPosList: [80250, 80250, 80250, 80250, 80238, 67819],
+    layoutPosList: [110745, 83001, 78600, 80195, 80215, 0],
   },
   simReality: {
     id: 302,
@@ -526,7 +526,7 @@ export const perks = {
       return `simulate an additional reality and choose between 2 more glyphs`;
     },
     effect: 4,
-    layoutPosList: [80200, 80200, 80200, 80200, 80188, 67769],
+    layoutPosList: [20160, 81403, 81404, 79405, 79806, 0],
   },
   blackHoleBoost: {
     id: 303,
@@ -536,7 +536,7 @@ export const perks = {
       return `add ${formatInt(5)} levels to both black holes interval and duration`;
     },
     effect: 4,
-    layoutPosList: [80200, 80200, 80200, 80200, 80188, 67769],
+    layoutPosList: [72770, 77800, 81397, 81005, 78605, 0],
   },
 };
 
