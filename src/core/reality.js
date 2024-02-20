@@ -375,16 +375,16 @@ export function beginProcessReality(realityProps) {
   const glyphLevel = gainedGlyphLevel();
   finishProcessReality(realityProps);
 
-  
-  for (let i=0; i < player.reality.glyphs.inventory.length; i++){
-    if(player.reality.glyphs.inventory[i].level > glyphLevel.actualLevel){
-      player.reality.glyphs.inventory[i].level = glyphLevel.actualLevel;
+  if(Perk.autoGlyph.canBeApplied){
+    for (let i=0; i < player.reality.glyphs.inventory.length; i++){
+      if(player.reality.glyphs.inventory[i].level > glyphLevel.actualLevel){
+        player.reality.glyphs.inventory[i].level = glyphLevel.actualLevel;
+      }
     }
-    
-  }
-  for (let i=0; i < player.reality.glyphs.active.length; i++){
-    if(player.reality.glyphs.active[i].level > glyphLevel.actualLevel){
-    player.reality.glyphs.active[i].level = glyphLevel.actualLevel;
+    for (let i=0; i < player.reality.glyphs.active.length; i++){
+      if(player.reality.glyphs.active[i].level > glyphLevel.actualLevel){
+      player.reality.glyphs.active[i].level = glyphLevel.actualLevel;
+      }
     }
   }
   
