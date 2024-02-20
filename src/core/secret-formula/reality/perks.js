@@ -523,7 +523,7 @@ export const perks = {
     label: "ARS",
     family: PERK_FAMILY.REALITY,
     get description() {
-      return `simulate an additional reality`;
+      return `simulate an additional reality and choose between 2 more glyphs`;
     },
     effect: 4,
     layoutPosList: [80200, 80200, 80200, 80200, 80188, 67769],
@@ -570,6 +570,7 @@ export const perkConnections = (function() {
     [p.studyActiveEP, p.bypassEC2Lock, p.ttBuySingle],
     [p.studyIdleEP, p.bypassEC3Lock, p.autocompleteEC1],
     [p.studyECRequirement, p.studyECBulk],
+    [p.studyECBulk , p.blackHoleBoost],
     [p.retroactiveTP1, p.bypassTGReset, p.startTP, p.retroactiveTP2],
     [p.retroactiveTP2, p.retroactiveTP3],
     [p.retroactiveTP3, p.retroactiveTP4],
@@ -581,6 +582,7 @@ export const perkConnections = (function() {
     [p.achievementGroup2, p.achievementGroup3],
     [p.achievementGroup3, p.achievementGroup4],
     [p.achievementGroup4, p.achievementGroup5],
+    [p.achievementGroup5 ,p.simReality]
   ];
   const connections = {};
   for (const perk of Object.values(perks)) {
