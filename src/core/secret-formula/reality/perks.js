@@ -558,7 +558,7 @@ export const perkConnections = (function() {
     [p.autounlockDilation2, p.autounlockDilation3],
     [p.autounlockDilation3, p.autobuyerFasterDilation, p.autounlockTD],
     [p.autounlockTD, p.autounlockReality],
-    [p.autounlockReality, p.autoGlyph, p.hold1, p.hold2],
+    [p.autounlockReality, p.autoGlyph, p.simReality, p.blackHoleBoost],
     [p.bypassTGReset, p.autobuyerDilation, p.retroactiveTP1],
     [p.bypassEC1Lock, p.bypassEC2Lock, p.bypassEC3Lock, p.studyECRequirement],
     [p.bypassEC2Lock, p.studyActiveEP, p.bypassEC1Lock],
