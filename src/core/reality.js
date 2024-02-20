@@ -13,7 +13,7 @@ export const GlyphSelection = {
 
   get choiceCount() {
     let m = 0;
-    if(Perk.simReality){
+    if(Perk.simReality.isBought){
       m += 2;
     }
     return Effects.max(1, Perk.firstPerk) *
