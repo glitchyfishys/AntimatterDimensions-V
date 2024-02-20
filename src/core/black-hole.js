@@ -113,7 +113,11 @@ class BlackHoleState {
    * Exists to avoid recursion in calculation of whether the black hole is permanent.
    */
   get rawInterval() {
-    return this.intervalUpgrade.value * Achievement(145).effectOrDefault(1);
+    let c = 1
+    if(Perk.blackHoleBoost.isBought){
+      c = (0.8 ** 5)
+    }
+    return this.intervalUpgrade.value * Achievement(145).effectOrDefault(1) * c;
   }
 
   /**
@@ -134,7 +138,11 @@ class BlackHoleState {
    * Amount of time the black hole is active for.
    */
   get duration() {
-    return this.durationUpgrade.value * Achievement(155).effectOrDefault(1);
+    let c = 1
+    if(Perk.blackHoleBoost.isBought){
+      c = (1.5 ** 5)
+    }
+    return this.durationUpgrade.value * Achievement(155).effectOrDefault(1) * c;
   }
 
   get isUnlocked() {
@@ -221,7 +229,7 @@ class BlackHoleState {
   }
 
   get isPermanent() {
-    return this.dutyCycle >= 0.9999;
+    return this.dutyCycle >= 0.99999;
   }
 
   /**
