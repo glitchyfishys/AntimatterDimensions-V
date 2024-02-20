@@ -12,8 +12,12 @@ export const GlyphSelection = {
   },
 
   get choiceCount() {
+    let m = 0;
+    if(Perk.simReality){
+      m += 2;
+    }
     return Effects.max(1, Perk.firstPerk) *
-      Ra.unlocks.extraGlyphChoicesAndRelicShardRarityAlwaysMax.effectOrDefault(1);
+      Ra.unlocks.extraGlyphChoicesAndRelicShardRarityAlwaysMax.effectOrDefault(1) + m;
   },
 
   glyphUncommonGuarantee(glyphList, rng) {
@@ -126,10 +130,14 @@ export function simulatedRealityCount(advancePartSimCounters) {
   const amplifiedSim = Enslaved.boostReality ? Enslaved.realityBoostRatio - 1 : 0;
   const multiversalSim = AlchemyResource.multiversal.effectValue;
   const simCount = (multiversalSim + 1) * (amplifiedSim + 1) + player.partSimulatedReality - 1;
-  if (advancePartSimCounters) {
-    player.partSimulatedReality = simCount - Math.floor(simCount);
+  let c = 0
+  if(Perk.simReality.isBought){
+    c++;
   }
-  return Math.floor(simCount);
+  if (advancePartSimCounters) {
+    player.partSimulatedReality = (simCount + c) - Math.floor(simCount + c);
+  }
+  return Math.floor(simCount + c);
 }
 
 /**
