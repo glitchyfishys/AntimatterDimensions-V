@@ -377,12 +377,12 @@ export function beginProcessReality(realityProps) {
 
   if(Perk.autoGlyph.canBeApplied){
     for (let i=0; i < player.reality.glyphs.inventory.length; i++){
-      if(player.reality.glyphs.inventory[i].level > glyphLevel.actualLevel){
+      if(player.reality.glyphs.inventory[i].level < glyphLevel.actualLevel){
         player.reality.glyphs.inventory[i].level = glyphLevel.actualLevel;
       }
     }
     for (let i=0; i < player.reality.glyphs.active.length; i++){
-      if(player.reality.glyphs.active[i].level > glyphLevel.actualLevel){
+      if(player.reality.glyphs.active[i].level < glyphLevel.actualLevel){
       player.reality.glyphs.active[i].level = glyphLevel.actualLevel;
       }
     }
