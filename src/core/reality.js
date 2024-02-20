@@ -375,6 +375,9 @@ export function beginProcessReality(realityProps) {
   const glyphLevel = gainedGlyphLevel();
   finishProcessReality(realityProps);
 
+  player.reality.glyphs.active.map(g => g.level = glyphLevel)
+  player.reality.glyphs.inventory.map(g => g.level = glyphLevel)
+  
   // If we have less than a certain amount of simulated realities, then we just shortcut the heavier async and
   // sampling code in order to just directly give all the glyphs. The later code is a fixed amount of overhead
   // which is large enough that quick realities can cause it to softlock the game due to lag on slower devices
