@@ -374,12 +374,18 @@ export function beginProcessReality(realityProps) {
   const rng = GlyphGenerator.getRNG(false);
   const glyphLevel = gainedGlyphLevel();
   finishProcessReality(realityProps);
+
   
   for (let i=0; i < player.reality.glyphs.inventory.length; i++){
-    player.reality.glyphs.inventory[i].level = glyphLevel.actualLevel;
+    if(player.reality.glyphs.inventory[i].level > glyphLevel.actualLevel){
+      player.reality.glyphs.inventory[i].level = glyphLevel.actualLevel;
+    }
+    
   }
   for (let i=0; i < player.reality.glyphs.active.length; i++){
+    if(player.reality.glyphs.active[i].level > glyphLevel.actualLevel){
     player.reality.glyphs.active[i].level = glyphLevel.actualLevel;
+    }
   }
   
   // If we have less than a certain amount of simulated realities, then we just shortcut the heavier async and
