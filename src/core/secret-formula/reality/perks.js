@@ -518,22 +518,22 @@ export const perks = {
     effect: 4,
     layoutPosList: [80250, 80250, 80250, 80250, 80238, 67819],
   },
-  hold1: {
+  simReality: {
     id: 302,
-    label: "HOLD",
+    label: "ARS",
     family: PERK_FAMILY.REALITY,
     get description() {
-      return `place holder`;
+      return `simulate an additional reality`;
     },
     effect: 4,
     layoutPosList: [80200, 80200, 80200, 80200, 80188, 67769],
   },
-  hold2: {
+  blackHoleBoost: {
     id: 303,
-    label: "HOLD",
+    label: "BHB",
     family: PERK_FAMILY.REALITY,
     get description() {
-      return `place holder`;
+      return `add ${formatInt(5)} levels to both black holes interval and duration`;
     },
     effect: 4,
     layoutPosList: [80200, 80200, 80200, 80200, 80188, 67769],
