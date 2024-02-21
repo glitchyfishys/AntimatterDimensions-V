@@ -188,7 +188,7 @@ class AlchemyReaction {
   }
 
   get isReality() {
-    return this._product.id >== ALCHEMY_RESOURCE.REALITY;
+    return this._product.id >= ALCHEMY_RESOURCE.REALITY;
   }
 
   // Reactions are per-10 products because that avoids decimals in the UI for reagents, but efficiency losses can make
