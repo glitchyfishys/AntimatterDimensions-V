@@ -459,17 +459,79 @@ export const alchemyResources = {
       }
     ]
   },
+  
+  "shifter": {
+    id: ALCHEMY_RESOURCE.SHIFTER,
+    name: "Sifter",
+    symbol: "∬",
+    isBaseResource: false,
+    effect: amount => Math.floor(amount),
+    tier: 5,
+    uiOrder: 2,
+    unlockedAt: 30,
+    description: "unkown",
+    formatEffect: value => `unkown`,
+    reagents: [
+      {
+        resource: ALCHEMY_RESOURCE.CARDINALITY,
+        amount: 1
+      },
+      {
+        resource: ALCHEMY_RESOURCE.ETERNITY,
+        amount: 1
+      },
+      {
+        resource: ALCHEMY_RESOURCE.DIMENSIONALITY,
+        amount: 1
+      },
+      {
+        resource: ALCHEMY_RESOURCE.INFLATION,
+        amount: 1
+      },
+      {
+        resource: ALCHEMY_RESOURCE.ALTERNATION,
+        amount: 1
+      }
+    ]
+  },
+  
+  "alter": {
+    id: ALCHEMY_RESOURCE.ALTER,
+    name: "Alter",
+    symbol: "∴",
+    isBaseResource: false,
+    effect: amount => Math.floor(amount),
+    tier: 5,
+    uiOrder: 3,
+    unlockedAt: 35,
+    description: "unkown",
+    formatEffect: value => `unkown`,
+    reagents: [
+      {
+        resource: ALCHEMY_RESOURCE.DECOHERENCE,
+        amount: 1
+      },
+      {
+        resource: ALCHEMY_RESOURCE.MOMENTUM,
+        amount: 1
+      },
+      {
+        resource: ALCHEMY_RESOURCE.SYNERGISM,
+        amount: 1
+      }
+    ]
+  },
 
   // glitched T6
   "glitch": {
     id: ALCHEMY_RESOURCE.GLITCH,
-    name: "glitch",
-    symbol: "∑",
+    name: "Glitch",
+    symbol: "Ĝ",
     isBaseResource: false,
     effect: amount => Math.floor(amount),
     tier: 6,
     uiOrder: 1,
-    unlockedAt: 25,
+    unlockedAt: 45,
     description: "unkown",
     formatEffect: value => `unkown ${formatInt(value)} GLITCHED Glyph`,
     reagents: [
