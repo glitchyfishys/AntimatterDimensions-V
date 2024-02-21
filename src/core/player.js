@@ -645,7 +645,7 @@ top.player = {
           chunkUpgrades: 0
         }
       },
-      alchemy: Array.repeat(0, 22)
+      alchemy: Array.repeat(0, 24)
         .map(() => ({
           amount: 0,
           reaction: false
@@ -694,7 +694,7 @@ top.player = {
         showCompleted: 0,
         sortOrder: 0,
       },
-      singularities: 0,
+      singularities: 100,
       singularityCapIncreases: 0,
       lastCheckedMilestones: 0,
       milestoneGlow: true,
