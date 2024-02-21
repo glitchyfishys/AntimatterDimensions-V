@@ -278,7 +278,7 @@ export const Ra = {
   requiredMemoriesForLevel(level) {
     if (level >= Ra.levelCap) return Infinity;
     const adjustedLevel = level + Math.pow(level, 2) / 10;
-    const post15Scaling = Math.pow(1.5, Math.max(0, level - 15));
+    const post15Scaling = Math.pow(1.4, Math.max(0, level - 15));
     return Math.floor(Math.pow(adjustedLevel, 5.52) * post15Scaling * 1e6);
   },
   // Returns a string containing a time estimate for gaining a specific amount of exp (UI only)
@@ -304,7 +304,7 @@ export const Ra = {
     return 50;
   },
   get maxTotalPetLevel() {
-    return this.levelCap * (this.pets.all.length -1);
+    return (this.levelCap / 2) * (this.pets.all.length);
   },
   checkForUnlocks() {
     if (!VUnlocks.raUnlock.canBeApplied) return;
