@@ -112,7 +112,7 @@ export const ra = {
     extraGlyphChoicesAndRelicShardRarityAlwaysMax: {
       id: 7,
       reward: () => `Get ${formatX(2)} Glyph choices and the bonus to Glyph rarity from Relic Shards
-        is always its maximum value`,
+        is always its maximum value (not from ARS perk)`,
       effect: 2,
       pet: "effarig",
       level: 1,
@@ -312,8 +312,8 @@ export const ra = {
     },
     memroygain2: {
       id: 29,
-      reward: () => `increase memory gain by 5 times`,
-      effect: 5,
+      reward: () => `increase memory gain by 15 times`,
+      effect: 15,
       pet: "glitchyfishys",
       level: 5,
       displayIcon: `<i class="far fa-dot-circle"></i>`,
@@ -321,14 +321,14 @@ export const ra = {
     glitchyfishysXP: {
       id: 30,
       reward: () => `increase all memory gain by Reality Machines AND Antimatter`,
-      effect: () => 1 + Math.pow(Currency.realityMachines.value.pLog10() / 25, 0.1) * Math.pow(Currency.antimatter.value.pLog10() / 1e5, 0.1),
+      effect: () => 1 + Math.pow(Currency.realityMachines.value.pLog10() / 25, 0.15) * Math.pow(Currency.antimatter.value.pLog10() / 1e5, 0.15),
       pet: "glitchyfishys",
-      level: 6,
+      level: 10,
       displayIcon: `<i class="far fa-dot-circle"></i>`,
     },
     memroygain3: {
       id: 31,
-      reward: () => `increase memory gain by 10 times`,
+      reward: () => `increase memory gain by 5 times`,
       effect: 5,
       pet: "glitchyfishys",
       level: 15,
@@ -336,7 +336,7 @@ export const ra = {
     },
     memroygain4: {
       id: 32,
-      reward: () => `increase memory gain by 10 times`,
+      reward: () => `increase memory gain by 5 times`,
       effect: 5,
       pet: "glitchyfishys",
       level: 25,
@@ -344,7 +344,7 @@ export const ra = {
     },
     memroygain5: {
       id: 33,
-      reward: () => `increase memory gain by 10 times`,
+      reward: () => `increase memory gain by 5 times`,
       effect: 5,
       pet: "glitchyfishys",
       level: 30,
@@ -357,6 +357,14 @@ export const ra = {
       pet: "glitchyfishys",
       level: 40,
       displayIcon: `<i class="far fa-dot-circle"></i>`,
+    },
+    gainoutside: {
+      id: 35,
+      reward: () => `gain momorys outside Ra's reality.`,
+      effect: 1,
+      pet: "glitchyfishys",
+      level: 50,
+      displayIcon: `<span class="fas fa-bolt"></span>`,
     },
   }
 };
