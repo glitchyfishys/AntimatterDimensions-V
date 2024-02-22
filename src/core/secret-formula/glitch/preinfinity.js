@@ -1,6 +1,6 @@
 
 
-export const preinfinityupgrades = [
+export const preinfinityUG = [
   {
     name: "Cosmically Duplicate",
     id: 0,
