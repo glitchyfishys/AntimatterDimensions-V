@@ -35,7 +35,7 @@ export default {
       :key="row"
       class="preinfinityUG_row">
         
-      <preinfinityUB
+      <preinfinityupgradebutton
         v-for="column in 2"
         :key="id(row, column)"
         :upgrade="upgrades[id(row, column)]"/>
