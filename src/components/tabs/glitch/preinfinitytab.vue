@@ -1,7 +1,7 @@
 <script>
 
 export default {
-  name: "preinfinity"
+  name: "preinfinity",
   data(){
     return{
       upgradebits: 0
