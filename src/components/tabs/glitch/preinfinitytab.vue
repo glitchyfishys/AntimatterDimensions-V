@@ -1,5 +1,6 @@
 <script>
-
+import preinfinityupgradebutton from "./preinfinityupgrade";
+  
 export default {
   name: "preinfinity",
   data(){
