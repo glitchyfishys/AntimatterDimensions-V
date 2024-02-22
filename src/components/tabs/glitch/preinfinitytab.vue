@@ -28,16 +28,16 @@ export default {
     <div class="c-preinfinity-infotext">
       hello destroyer.
     </div>
+  
       <div
       v-for="row in 2"
       :key="row"
-      class="preinfinityUG_row"
-    >
+      class="preinfinityUG_row">
       <preinfinityUB
         v-for="column in 2"
         :key="id(row, column)"
-        :upgrade="upgrades[id(row, column)]"
-      />
+        :upgrade="upgrades[id(row, column)]"/>
+    </div>
   
 </template>
 
