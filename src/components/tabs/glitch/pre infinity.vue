@@ -4,22 +4,24 @@ export default {
   name: "preinfinity"
   data(){
     return{
-      upgradebits: 0,
-      upgarades: []
+      upgradebits: 0
     }
   },
   update(){
     return{
-      upgradebits: player.glitch.upgradebits,
-      upgarades: []
+      upgradebits: player.glitch.upgradebits
     }
   },
   methods: {
     id(row, column) {
       return (row - 1) * 5 + column - 1;
     }
+  },
+  computed: {
+    upgrades: () => preinfinityUG.all
   }
 };
+  
 </script>
 
 <template>
