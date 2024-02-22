@@ -496,5 +496,49 @@ export const tabs = [
         hidable: true
       }
     ]
+  },
+  {
+    key: "glitch",
+    name: "Glitch",
+    hideAt: 5,
+    condition: () => true,
+    id: 11,
+    hidable: true,
+    subtabs: [
+      {
+        key: "entropy",
+        name: "entropy",
+        symbol: "Ω",
+        component: "entropy",
+        id: 0,
+        hidable: true
+      },
+      {
+        key: "preinfinity",
+        name: "Antimatter",
+        symbol: "Ω",
+        component: "glitchantimatter",
+        id: 1,
+        hidable: true
+      },
+      {
+        key: "infinity",
+        name: "postinfinity",
+        symbol: "∞",
+        component: "glitchinfinity",
+        condition: () => PlayerProgress.infinityUnlocked(),
+        id: 2,
+        hidable: true
+      },
+      {
+        key: "break",
+        name: "break infinity",
+        symbol: "Δ",
+        component: "glitchbreak",
+        condition: () => PlayerProgress.hasBroken(),
+        id: 3,
+        hidable: true
+      }
+    ],
   }
 ];
