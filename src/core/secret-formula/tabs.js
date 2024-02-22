@@ -501,6 +501,7 @@ export const tabs = [
     key: "glitch",
     name: "Glitch",
     hideAt: 5,
+    UIClass: "o-tab-btn--reality",
     condition: () => true,
     id: 11,
     hidable: true,
@@ -508,14 +509,14 @@ export const tabs = [
       {
         key: "entropy",
         name: "entropy",
-        symbol: "Ω",
+        symbol: "§",
         component: "entropy",
         id: 0,
         hidable: true
       },
       {
         key: "preinfinity",
-        name: "Antimatter",
+        name: "pre infinity",
         symbol: "Ω",
         component: "glitchantimatter",
         id: 1,
@@ -523,7 +524,7 @@ export const tabs = [
       },
       {
         key: "infinity",
-        name: "postinfinity",
+        name: "infinity",
         symbol: "∞",
         component: "glitchinfinity",
         condition: () => PlayerProgress.infinityUnlocked(),
@@ -533,10 +534,28 @@ export const tabs = [
       {
         key: "break",
         name: "break infinity",
-        symbol: "Δ",
+        symbol: "∝",
         component: "glitchbreak",
         condition: () => PlayerProgress.hasBroken(),
         id: 3,
+        hidable: true
+      },
+      {
+        key: "replicanti",
+        name: "replicanti",
+        symbol: "Ξ",
+        component: "glitchreplicanti",
+        condition: () => PlayerProgress.realityUnlocked(),
+        id: 4,
+        hidable: true
+      },
+      {
+        key: "eternity",
+        name: "eternity",
+        symbol: "Δ",
+        component: "glitcheternity",
+        condition: () => PlayerProgress.eternityUnlocked(),
+        id: 5,
         hidable: true
       }
     ],
