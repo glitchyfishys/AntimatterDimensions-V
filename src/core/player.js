@@ -920,6 +920,13 @@ top.player = {
     checkoutSession: {
       id: false,
     },
+  },
+  glitch: {
+    entropy: {
+      entropy: 0,
+      upgradebits: 0
+    }
+    
   }
 };
 
