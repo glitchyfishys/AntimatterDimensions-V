@@ -9,7 +9,7 @@ export default {
   },
   update(){
     return{
-      upgradebits: player.glitch.upgradebits
+      upgradebits: player.glitch.preinfinity.upgradebits
     }
   },
   methods: {
