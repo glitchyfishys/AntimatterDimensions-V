@@ -2,13 +2,28 @@
 
 export default {
   name: "preinfinity"
+  data(){
+    return{
+      upgradebits: 0,
+      upgarades: []
+    }
+  },
+  update(){
+    return{
+      upgradebits: player.glitch.upgradebits,
+      upgarades: []
+    }
+  },
 };
 </script>
 
 <template>
-    <div class="c-entropy-infotext">
+    <div class="c-preinfinity-infotext">
       hello destroyer.
     </div>
+  <div>
+      
+  </div>
 </template>
 
 <style scoped>
