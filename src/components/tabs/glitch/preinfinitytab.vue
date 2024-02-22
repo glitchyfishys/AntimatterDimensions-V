@@ -18,7 +18,7 @@ export default {
     }
   },
   computed: {
-    upgrades: () => GameDataBase.glitch.preinfinityUG.all
+    upgrades: () => GameDatabase.glitch.preinfinityUG.all
   }
 };
   
