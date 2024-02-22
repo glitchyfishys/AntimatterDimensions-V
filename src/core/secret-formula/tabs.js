@@ -516,9 +516,9 @@ export const tabs = [
       },
       {
         key: "preinfinity",
-        name: "pre infinity",
+        name: "antimater",
         symbol: "Ω",
-        component: "glitchantimatter",
+        component: "preinfinity",
         id: 1,
         hidable: true
       },
@@ -526,7 +526,7 @@ export const tabs = [
         key: "infinity",
         name: "infinity",
         symbol: "∞",
-        component: "glitchinfinity",
+        component: "postinfinity",
         condition: () => PlayerProgress.infinityUnlocked(),
         id: 2,
         hidable: true
