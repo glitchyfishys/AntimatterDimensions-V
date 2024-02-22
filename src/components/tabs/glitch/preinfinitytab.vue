@@ -18,7 +18,7 @@ export default {
     }
   },
   computed: {
-    upgrades: () => preinfinityUG.all
+    upgrades: () => GameDataBase.glitch.preinfinityUG.all
   }
 };
   
@@ -31,7 +31,7 @@ export default {
     </div>
   
       <div
-      v-for="row in 2"
+      v-for="row in 1"
       :key="row"
       class="preinfinityUG_row">
         
