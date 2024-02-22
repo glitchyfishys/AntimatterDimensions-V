@@ -7,6 +7,9 @@ export default {
       upgradebits: 0
     }
   },
+  components: {
+    preinfinityupgradebutton
+  },
   update(){
     return{
       upgradebits: player.glitch.preinfinity.upgradebits
