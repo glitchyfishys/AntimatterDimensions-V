@@ -27,12 +27,14 @@ export default {
   <div>
     <div class="c-preinfinity-infotext">
       hello destroyer.
+      <br>
+      i have tests for you.
     </div>
   
       <div
-      v-for="row in 1"
+      v-for="row in 2"
       :key="row"
-      class="preinfinityUG_row">
+      class="preinfinityupgradebutton_row">
         
       <preinfinityupgradebutton
         v-for="column in 2"
