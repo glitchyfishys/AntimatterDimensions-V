@@ -925,6 +925,9 @@ top.player = {
     entropy: {
       entropy: 0,
       upgradebits: 0
+    },
+    preinfinity: {
+      upgradebits: 0
     }
     
   }
