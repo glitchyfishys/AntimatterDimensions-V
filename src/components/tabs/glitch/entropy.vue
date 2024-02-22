@@ -1,8 +1,7 @@
 <script>
 
 export default {
-  name: "entropy",
-  }
+  name: "entropy"
 };
 </script>
 
