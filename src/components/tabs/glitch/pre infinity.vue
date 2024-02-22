@@ -14,7 +14,11 @@ export default {
       upgarades: []
     }
   },
-  
+  methods: {
+    id(row, column) {
+      return (row - 1) * 5 + column - 1;
+    }
+  }
 };
 </script>
 
@@ -23,12 +27,12 @@ export default {
       hello destroyer.
     </div>
       <div
-      v-for="row in 5"
+      v-for="row in 2"
       :key="row"
-      class="l-reality-upgrade-grid__row"
+      class="preinfinityUG_row"
     >
-      <RealityUpgradeButton
-        v-for="column in 5"
+      <preinfinityUB
+        v-for="column in 2"
         :key="id(row, column)"
         :upgrade="upgrades[id(row, column)]"
       />
