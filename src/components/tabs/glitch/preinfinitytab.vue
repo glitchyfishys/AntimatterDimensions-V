@@ -3,11 +3,6 @@ import preinfinityupgradebutton from "./preinfinityupgrade";
   
 export default {
   name: "preinfinity",
-  data(){
-    return{
-      upgradebits: 0
-    }
-  },
   components: {
     preinfinityupgradebutton
   },
