@@ -14,6 +14,7 @@ export default {
       upgarades: []
     }
   },
+  
 };
 </script>
 
@@ -21,9 +22,17 @@ export default {
     <div class="c-preinfinity-infotext">
       hello destroyer.
     </div>
-  <div>
-      
-  </div>
+      <div
+      v-for="row in 5"
+      :key="row"
+      class="l-reality-upgrade-grid__row"
+    >
+      <RealityUpgradeButton
+        v-for="column in 5"
+        :key="id(row, column)"
+        :upgrade="upgrades[id(row, column)]"
+      />
+  
 </template>
 
 <style scoped>
