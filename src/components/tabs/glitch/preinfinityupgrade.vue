@@ -109,16 +109,7 @@ export default {
             :config="config"
             br
           />
-          <CostDisplay
-            v-if="!isBought"
-            :config="config"
-            br
-            name="Reality Machine"
-          />
         </template>
-        <b v-if="automatorPoints && !isBought">
-          (+{{ formatInt(automatorPoints) }} AP)
-        </b>
       </span>
     </button>
     <div
