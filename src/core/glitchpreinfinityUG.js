@@ -61,7 +61,7 @@ class preinfinityUGState extends BitPurchasableMechanicState {
 
 preinfinityUGState.index = mapGameData(
   GameDatabase.glitch.preinfinityUG,
-  config => (new preinfinityUG(config))
+  config => (new preinfinityUGState(config))
 );
 
 export const preinfinityUG = id => preinfinityUGState.index[id];
