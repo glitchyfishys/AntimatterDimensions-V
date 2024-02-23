@@ -6,11 +6,6 @@ export default {
   components: {
     preinfinityupgradebutton
   },
-  update(){
-    return{
-      upgradebits: player.glitch.preinfinity.upgradebits
-    }
-  },
   methods: {
     id(row, column) {
       return (row - 1) * 5 + column - 1;
