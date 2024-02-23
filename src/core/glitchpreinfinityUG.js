@@ -1,6 +1,6 @@
 import { BitPurchasableMechanicState, RebuyableMechanicState } from "./game-mechanics";
 
-class preinfinityUG extends BitPurchasableMechanicState {
+class preinfinityUGState extends BitPurchasableMechanicState {
   constructor(config) {
     super(config);
     this.registerEvents(config.checkEvent, () => this.tryUnlock());
@@ -38,38 +38,8 @@ class preinfinityUG extends BitPurchasableMechanicState {
     player.reality.upgradeBits = value;
   }
 
-  get hasPlayerLock() {
-    return (player.reality.reqLock.reality & (1 << this.bitIndex)) !== 0;
-  }
-
-  set hasPlayerLock(value) {
-    if (value) player.reality.reqLock.reality |= 1 << this.bitIndex;
-    else player.reality.reqLock.reality &= ~(1 << this.bitIndex);
-  }
-
-  get isLockingMechanics() {
-    const shouldBypass = this.config.bypassLock?.() ?? false;
-    return this.hasPlayerLock && this.isPossible && !shouldBypass && !this.isAvailableForPurchase;
-  }
-
-  // Required to be changed this way to avoid direct prop mutation in Vue components
-  setMechanicLock(value) {
-    this.hasPlayerLock = value;
-  }
-
-  toggleMechanicLock() {
-    this.hasPlayerLock = !this.hasPlayerLock;
-  }
-
-  // Note we don't actually show the modal if we already failed or unlocked it
-  tryShowWarningModal(specialLockText) {
-    if (this.isPossible && !this.isAvailableForPurchase) {
-      Modal.upgradeLock.show({ upgrade: this, isImaginary: false, specialLockText });
-    }
-  }
-
   get isAvailableForPurchase() {
-    return (player.reality.upgReqs & (1 << this.id)) !== 0;
+    return (player.glitch.preinfinity.upgradebitss & (1 << this.id)) !== 0;
   }
 
   get isPossible() {
@@ -79,7 +49,7 @@ class preinfinityUG extends BitPurchasableMechanicState {
   tryUnlock() {
     if (this.isAvailableForPurchase || !this.config.checkRequirement()) return;
     player.glitch.preinfinity.upgradebits |= (1 << this.id);
-    GameUI.notify.reality(`You've unlocked a Reality Upgrade: ${this.config.name}`);
+    GameUI.notify.error(`You've unlocked a Upgrade: ${this.config.name}`);
     this.hasPlayerLock = false;
   }
 
@@ -89,15 +59,15 @@ class preinfinityUG extends BitPurchasableMechanicState {
   }
 }
 
-preinfinityUG.index = mapGameData(
+preinfinityUGState.index = mapGameData(
   GameDatabase.glitch.preinfinityUG,
   config => (new preinfinityUG(config))
 );
 
-export const preinfinityUG = id => preinfinityUG.index[id];
+export const preinfinityUG = id => preinfinityUGState.index[id];
 
 export const preinfinityUGs = {
-  all: preinfinityUG.index.compact(),
+  all: preinfinityUGState.index.compact(),
   get allBought() {
     return (player.glitch.preinfinity.upgradeBits >> 1) + 1 === 1 << (GameDatabase.glitch.preinfinityUG.length);
   }
