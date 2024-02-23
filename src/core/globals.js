@@ -88,5 +88,6 @@ export * from "./shop";
 export * from "./tabs";
 export * from "./tab-notifications";
 export * from "./speedrun";
+export * from "glitchpreinfinityUG";
 
 export * from "./automator/script-templates";
