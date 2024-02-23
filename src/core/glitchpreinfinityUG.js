@@ -31,11 +31,11 @@ class preinfinityUGState extends BitPurchasableMechanicState {
   }
 
   get bits() {
-    return player.reality.upgradeBits;
+    return player.glitch.preinfinity.upgradebits;
   }
 
   set bits(value) {
-    player.reality.upgradeBits = value;
+    player.glitch.preinfinity.upgradebits = value;
   }
 
   get isAvailableForPurchase() {
