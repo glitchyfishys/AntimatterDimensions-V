@@ -32,7 +32,7 @@ export default {
     </div>
   
       <div
-      v-for="row in 2"
+      v-for="row in 1"
       :key="row"
       class="preinfinityupgradebutton_row">
         
