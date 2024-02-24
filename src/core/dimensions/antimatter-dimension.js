@@ -41,10 +41,10 @@ export function antimatterDimensionCommonMultiplier() {
     EternityChallenge(10),
     AlchemyResource.dimensionality,
     PelleUpgrade.antimatterDimensionMult,
-    preinfinityUGs.all[0].effectOrDefault(1),
-    preinfinityUGs.all[1].effectOrDefault(1),
-    preinfinityUGs.all[2].effectOrDefault(1),
-    preinfinityUGs.all[3].effectOrDefault(1)
+    preinfinityUGs.all[0],
+    preinfinityUGs.all[1],
+    preinfinityUGs.all[2],
+    preinfinityUGs.all[3]
   );
 
   multiplier = multiplier.dividedByEffectOf(InfinityChallenge(6));
