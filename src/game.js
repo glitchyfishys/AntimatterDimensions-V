@@ -429,7 +429,7 @@ export function gameLoop(passDiff, options = {}) {
   EventHub.dispatch(GAME_EVENT.GAME_TICK_BEFORE);
 
   for (let i = 0; i < preinfinityUGs.all.length; i++) {
-    preinfinityUGs.all[i].tryUnlock()
+    if(!preinfinityUGs.all[i].isBought) preinfinityUGs.all[i].tryUnlock()
   }
   
   // In certain cases we want to allow the player to interact with the game's settings and tabs, but prevent any actual
