@@ -27,12 +27,12 @@ export default {
     </div>
   
       <div
-      v-for="row in 2"
+      v-for="row in 1"
       :key="row"
       class="preinfinityupgradebutton_row">
         
       <preinfinityupgradebutton
-        v-for="column in 2"
+        v-for="column in 4"
         :key="id(row, column)"
         :upgrade="upgrades[id(row, column)]"/>
     </div>
