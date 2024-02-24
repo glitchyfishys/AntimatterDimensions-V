@@ -8,7 +8,7 @@ export default {
   },
   methods: {
     id(row, column) {
-      return (row - 1) * 5 + column - 1;
+      return (row - 1) * 2 + column - 1;
     }
   },
   computed: {
@@ -27,12 +27,12 @@ export default {
     </div>
   
       <div
-      v-for="row in 1"
+      v-for="row in 3"
       :key="row"
       class="preinfinityupgradebutton_row">
         
       <preinfinityupgradebutton
-        v-for="column in 4"
+        v-for="column in 2"
         :key="id(row, column)"
         :upgrade="upgrades[id(row, column)]"/>
     </div>
