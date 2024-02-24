@@ -201,7 +201,10 @@ export const FreeTickspeed = {
   multToNext: 1.33,
 
   get amount() {
-    return player.totalTickGained;
+    let x = 0
+    x += preinfinityUGs.all[4].effectOrDefault(0)
+    x += preinfinityUGs.all[5].effectOrDefault(0)
+    return player.totalTickGained + x;
   },
 
   get softcap() {
