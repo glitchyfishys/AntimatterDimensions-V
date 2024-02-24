@@ -43,10 +43,9 @@ class preinfinityUGState extends BitPurchasableMechanicState {
   }
 
   tryUnlock() {
-    if (this.isAvailableForPurchase || !this.config.checkRequirement()) return;
+    if (!this.config.checkRequirement()) return;
     player.glitch.preinfinity.upgradebits |= (1 << this.id);
-    GameUI.notify.error(`You've unlocked a Upgrade: ${this.config.name}`);
-    this.hasPlayerLock = false;
+    GameUI.notify.error(`You've unlocked glitched Upgrade: ${this.config.name}`);
   }
 
   onPurchased() {
