@@ -22,5 +22,27 @@ export const preinfinityUG = [
     effect: () => 1 + player.dimensionBoosts / 5,
     formatEffect: value => formatX(value, 2, 2)
   },
+  {
+  name: "h",
+    id: 2,
+    requirement: " have 1e15 antimatter with one dimboost",
+    hasFailed: () => player.dimensionBoosts != 1 ,
+    checkRequirement: () => player.antimatter.e >= 25 && player.dimensionBoosts === 1,
+    checkevent: GAME_EVENT.GAME_TICK_BEFORE,
+    description: "AD muliplier from dimboost",
+    effect: () => 1 + player.dimensionBoosts / 5,
+    formatEffect: value => formatX(value, 2, 2)
+  },
+  {
+    name: "hi",
+    id: 3,
+    requirement: " have 1e15 antimatter with one dimboost",
+    hasFailed: () => player.galaxys == 12 ,
+    checkRequirement: () => player.antimatter.e >= 25 && player.dimensionBoosts === 1,
+    checkevent: GAME_EVENT.GAME_TICK_BEFORE,
+    description: "AD muliplier from dimboost",
+    effect: () => 1 + player.dimensionBoosts / 5,
+    formatEffect: value => formatX(value, 2, 2)
+  },
   
 ];
