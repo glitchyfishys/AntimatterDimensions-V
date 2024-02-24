@@ -764,7 +764,12 @@ top.player = {
         galaxies: false
       },
       showBought: false,
-    }
+    },
+    glitch: {
+      quoteBits: 0,
+      unlockBits: 0,
+      run: false,
+    },
   },
   isGameEnd: false,
   tabNotifications: new Set(),
