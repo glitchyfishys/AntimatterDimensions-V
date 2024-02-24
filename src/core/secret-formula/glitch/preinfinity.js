@@ -6,7 +6,6 @@ export const preinfinityUG = [
     requirement: "reach 1e15 antimater without dimboosts",
     hasFailed: () => player.dimensionBoosts != 0 ,
     checkRequirement: () => player.antimatter.e >= 15 && player.dimensionBoosts === 0,
-    lockEvent: "gain a Replicanti Galaxy",
     description: "AD muliplier from dimboost",
     effect: () => 1 + player.dimensionBoosts / 5,
     formatEffect: value => formatX(value, 2, 2)
@@ -17,7 +16,6 @@ export const preinfinityUG = [
     requirement: " have 1e15 antimatter with one dimboost",
     hasFailed: () => player.dimensionBoosts != 1 ,
     checkRequirement: () => player.antimatter.e >= 25 && player.dimensionBoosts === 1,
-    lockEvent: "gain a Replicanti Galaxy",
     description: "AD muliplier from dimboost",
     effect: () => 1 + player.dimensionBoosts / 5,
     formatEffect: value => formatX(value, 2, 2)
