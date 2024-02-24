@@ -175,4 +175,8 @@ export const Quotes = {
     GameDatabase.celestials.quotes.pelle,
     config => new CelQuotes(config, "pelle")
   ),
+  glitch: mapGameDataToObject(
+    GameDatabase.celestials.quotes.glitch,
+    config => new CelQuotes(config, "glitch")
+  ),
 };
