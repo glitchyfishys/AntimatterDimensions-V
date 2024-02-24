@@ -428,6 +428,10 @@ export function gameLoop(passDiff, options = {}) {
 
   EventHub.dispatch(GAME_EVENT.GAME_TICK_BEFORE);
 
+  for (let i = 0; i < preinfinityUGs.all.length; i++) {
+    preinfinityUGs.all[i].tryUnlock()
+  }
+  
   // In certain cases we want to allow the player to interact with the game's settings and tabs, but prevent any actual
   // resource generation from happening - in these cases, we have to make sure this all comes before the hibernation
   // check or else it'll attempt to run the game anyway
