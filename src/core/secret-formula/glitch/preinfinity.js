@@ -14,7 +14,7 @@ export const preinfinityUG = [
   {
   name: "costless",
     id: 1,
-    requirement: " have 1e15 antimatter with one dimboost",
+    requirement: " have 1e25 antimatter with one dimboost",
     hasFailed: () => player.dimensionBoosts != 1 ,
     checkRequirement: () => player.antimatter.e >= 25 && player.dimensionBoosts === 1,
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
@@ -25,7 +25,7 @@ export const preinfinityUG = [
   {
   name: "h",
     id: 2,
-    requirement: " have 1e15 antimatter with two dimboosts",
+    requirement: " have 1e50 antimatter with two dimboosts",
     hasFailed: () => player.dimensionBoosts != 2 ,
     checkRequirement: () => player.antimatter.e >= 50 && player.dimensionBoosts === 2,
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
