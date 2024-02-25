@@ -23,7 +23,7 @@ export default {
     <div class="c-preinfinity-infotext">
       hello destroyer.
       <br>
-      i have tests for you.
+      i have some tests for you.
     </div>
   
       <div
