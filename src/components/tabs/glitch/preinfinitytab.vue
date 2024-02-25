@@ -8,7 +8,7 @@ export default {
   },
   methods: {
     id(row, column) {
-      return (row - 1) * 2 + column - 1;
+      return (row - 1) * 3 + column - 1;
     }
   },
   computed: {
