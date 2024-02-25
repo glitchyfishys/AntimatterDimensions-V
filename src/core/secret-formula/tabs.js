@@ -523,30 +523,12 @@ export const tabs = [
         hidable: true
       },
       {
-        key: "infinity",
-        name: "infinity",
-        symbol: "∞",
-        component: "postinfinity",
-        condition: () => PlayerProgress.infinityUnlocked(),
-        id: 2,
-        hidable: true
-      },
-      {
         key: "break",
         name: "break infinity",
         symbol: "∝",
         component: "glitchbreak",
         condition: () => PlayerProgress.hasBroken(),
-        id: 3,
-        hidable: true
-      },
-      {
-        key: "replicanti",
-        name: "replicanti",
-        symbol: "Ξ",
-        component: "glitchreplicanti",
-        condition: () => PlayerProgress.realityUnlocked(),
-        id: 4,
+        id: 2,
         hidable: true
       },
       {
@@ -555,7 +537,7 @@ export const tabs = [
         symbol: "Δ",
         component: "glitcheternity",
         condition: () => PlayerProgress.eternityUnlocked(),
-        id: 5,
+        id: 3,
         hidable: true
       }
     ],
