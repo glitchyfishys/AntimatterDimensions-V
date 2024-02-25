@@ -14,7 +14,7 @@ export const preinfinityUG = [
   {
   name: "dimless2",
     id: 1,
-    requirement: " have 1e25 antimatter with one dimboost",
+    requirement: "have 1e25 antimatter with one dimboost",
     hasFailed: () => player.dimensionBoosts != 1 ,
     checkRequirement: () => player.antimatter.e >= 25 && player.dimensionBoosts == 1,
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
@@ -25,7 +25,7 @@ export const preinfinityUG = [
   {
   name: "dimless3",
     id: 2,
-    requirement: " have 1e35 antimatter with two dimboosts",
+    requirement: "have 1e35 antimatter with two dimboosts",
     hasFailed: () => player.dimensionBoosts != 2 ,
     checkRequirement: () => player.antimatter.e >= 35 && player.dimensionBoosts == 2,
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
@@ -36,7 +36,7 @@ export const preinfinityUG = [
   {
     name: "dimless4",
     id: 3,
-    requirement: " have 1e150 antimatter with four dimboosts",
+    requirement: "have 1e150 antimatter with four dimboosts",
     hasFailed: () => player.galaxys == 1 || player.dimensionBoosts > 4,
     checkRequirement: () => player.antimatter.e >= 150 && player.dimensionBoosts == 4,
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
@@ -47,7 +47,7 @@ export const preinfinityUG = [
   {
     name: "galatic inforcement",
     id: 4,
-    requirement: " have 1e7 antimatter with no dimboosts, one galaxy, up to ten 2st dimentsions",
+    requirement: "have 1e7 antimatter with no dimboosts, one galaxy, up to ten 2st dimentsions",
     hasFailed: () => player.dimensions.antimatter[1].amount.greaterThan(10) || player.galaxys > 1 || player.dimensionBoosts > 0,
     checkRequirement: () => player.antimatter.e >= 7,
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
@@ -58,12 +58,34 @@ export const preinfinityUG = [
   {
     name: "galatic limitaion",
     id: 5,
-    requirement: " have 1e20 antimatter with no dimboosts, one galaxy, up to 20 4st dimentsions",
+    requirement: "have 1e20 antimatter with no dimboosts, one galaxy, up to 20 4st dimentsions",
     hasFailed: () => player.dimensions.antimatter[3].amount.greaterThan(10) || player.galaxys > 1 || player.dimensionBoosts > 0,
     checkRequirement: () => player.antimatter.e >= 20,
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
     description: "additonal tickspeed prechases by there amount",
     effect: () => 1 + Math.floor(Math.log10(player.totalTickBought + 1 )),
+    formatEffect: value => formatX(value, 2, 2)
+  },
+  {
+    name: "galatic capacity",
+    id: 6,
+    requirement: "reach 1.8e308 antimatter one galaxy",
+    hasFailed: () => player.galaxys > 1,
+    checkRequirement: () => player.antimatter.GreaterThan(1.79e308),
+    checkevent: GAME_EVENT.GAME_TICK_BEFORE,
+    description: "double infinity point gain",
+    effect: () => 2,
+    formatEffect: value => formatX(value, 2, 2)
+  },
+  {
+    name: "galatic instance",
+    id: 7,
+    requirement: "have 3 antimatter galaxys without infinity broken",
+    hasFailed: () => PlayerProgress.hasBroken(),
+    checkRequirement: () => player.galaxies >= 3,
+    checkevent: GAME_EVENT.GAME_TICK_BEFORE,
+    description: "double infinity point gain",
+    effect: () => 2,
     formatEffect: value => formatX(value, 2, 2)
   },
   
