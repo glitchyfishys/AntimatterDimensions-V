@@ -176,10 +176,14 @@ export const Tickspeed = {
   },
 
   get totalUpgrades() {
+    let x = 0
+    x += preinfinityUGs.all[4].effectOrDefault(0)
+    x += preinfinityUGs.all[5].effectOrDefault(0)
+    
     let boughtTickspeed;
     if (Laitela.continuumActive) boughtTickspeed = this.continuumValue;
     else boughtTickspeed = player.totalTickBought;
-    return boughtTickspeed + player.totalTickGained;
+    return boughtTickspeed + player.totalTickGained + x;
   },
 
   get perSecond() {
@@ -201,10 +205,7 @@ export const FreeTickspeed = {
   multToNext: 1.33,
 
   get amount() {
-    let x = 0
-    x += preinfinityUGs.all[4].effectOrDefault(0)
-    x += preinfinityUGs.all[5].effectOrDefault(0)
-    return player.totalTickGained + x;
+    return player.totalTickGained;
   },
 
   get softcap() {
