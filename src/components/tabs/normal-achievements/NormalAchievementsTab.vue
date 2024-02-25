@@ -124,7 +124,7 @@ export default {
       if(PlayerProgress.realityUnlocked()) return row >= 17;
       if(PlayerProgress.eternityUnlocked()) return row >= 13;
       if(PlayerProgress.hasBroken()) return row >= 9
-      if(PlayerProgress.infinityUnlocked()) return row >= 4;
+      if(PlayerProgress.infinityUnlocked()) return row >= 5;
       return row >= 2
     },
     timeDisplay,
