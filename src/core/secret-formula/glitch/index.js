@@ -1,6 +1,8 @@
 import {preinfinityUG } from "./preinfinity";
+import {breakinfinityUG} from "./break infinity";
 
 export const glitch = {
-  preinfinityUG: preinfinityUG
+  preinfinityUG: preinfinityUG,
+  breakinfinityUG: breakinfinityUG
   
 };
