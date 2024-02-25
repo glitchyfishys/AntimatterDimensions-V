@@ -71,7 +71,7 @@ export const preinfinityUG = [
     id: 6,
     requirement: "reach 1.8e308 antimatter one galaxy",
     hasFailed: () => player.galaxys > 1,
-    checkRequirement: () => player.antimatter.GreaterThan(1.79e308),
+    checkRequirement: () => player.antimatter.greaterThan(1.79e308),
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
     description: "double infinity point gain",
     effect: () => 2,
