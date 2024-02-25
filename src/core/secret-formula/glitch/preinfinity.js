@@ -52,7 +52,7 @@ export const preinfinityUG = [
     checkRequirement: () => player.antimatter.e >= 7,
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
     description: "additonal tickspeed prechases by there amount",
-    effect: () => 1 + Math.floor(Math.log10(player.totalTickBought)),
+    effect: () => 1 + Math.floor(Math.log10(player.totalTickBought + 1)),
     formatEffect: value => formatX(value, 2, 2)
   },
   {
@@ -63,7 +63,7 @@ export const preinfinityUG = [
     checkRequirement: () => player.antimatter.e >= 20,
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
     description: "additonal tickspeed prechases by there amount",
-    effect: () => 1 + Math.floor(Math.log10(player.totalTickBought)),
+    effect: () => 1 + Math.floor(Math.log10(player.totalTickBought + 1 )),
     formatEffect: value => formatX(value, 2, 2)
   },
   
