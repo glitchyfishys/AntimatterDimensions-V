@@ -41,7 +41,7 @@ export default {
 </template>
 
 <style scoped>
-.c-reality-upgrade-infotext {
+.c-preinfinity-infotext {
   color: var(--color-text);
   margin: -1rem 0 1.5rem;
 }
