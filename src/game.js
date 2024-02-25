@@ -105,6 +105,10 @@ export function gainedInfinityPoints() {
     ip = ip.min(DC.E200);
   }
   ip = ip.times(GameCache.totalIPMult.value);
+  
+  ip = ip.times(preinfinityUGs.all[6].effectOrDefault(1));
+  ip = ip.times(preinfinityUGs.all[7].effectOrDefault(1));
+
   if (Teresa.isRunning) {
     ip = ip.pow(0.55);
   } else if (V.isRunning) {
@@ -115,7 +119,7 @@ export function gainedInfinityPoints() {
   if (GlyphAlteration.isAdded("infinity")) {
     ip = ip.pow(getSecondaryGlyphEffect("infinityIP"));
   }
-
+  
   return ip.floor();
 }
 
