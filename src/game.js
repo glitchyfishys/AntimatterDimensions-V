@@ -109,6 +109,11 @@ export function gainedInfinityPoints() {
   ip = ip.times(preinfinityUGs.all[6].effectOrDefault(1));
   ip = ip.times(preinfinityUGs.all[7].effectOrDefault(1));
 
+  breakinfinityUGs.all[0].effectOrDefault(1)
+  breakinfinityUGs.all[1].effectOrDefault(1)
+  breakinfinityUGs.all[2].effectOrDefault(1)
+  breakinfinityUGs.all[3].effectOrDefault(1)
+  
   if (Teresa.isRunning) {
     ip = ip.pow(0.55);
   } else if (V.isRunning) {
@@ -434,6 +439,9 @@ export function gameLoop(passDiff, options = {}) {
 
   for (let i = 0; i < preinfinityUGs.all.length; i++) {
     if(!preinfinityUGs.all[i].isBought) preinfinityUGs.all[i].tryUnlock()
+  }
+  for (let i = 0; i < breakinfinityUGs.all.length; i++) {
+    if(!breakinfinityUGs.all[i].isBought) pbreakinfinityUGs.all[i].tryUnlock()
   }
   
   // In certain cases we want to allow the player to interact with the game's settings and tabs, but prevent any actual
