@@ -34,9 +34,8 @@ export default {
     },
     classObject() {
       return {
-        "c-reality-upgrade-btn--useless": this.isUseless,
-        "c-reality-upgrade-btn--bought": this.isBought && !this.isUseless,
-        "c-reality-upgrade-btn--unavailable": !this.isBought && !this.canBeBought && this.isAvailableForPurchase,
+        "c-reality-upgrade-btn--bought": this.isBought,
+        "c-reality-upgrade-btn--unavailable": !this.isBought && this.isAvailableForPurchase,
         "c-reality-upgrade-btn--possible": !this.isAvailableForPurchase && this.isPossible,
         "c-reality-upgrade-btn--locked": !this.isAvailableForPurchase && !this.isPossible,
       };
@@ -52,11 +51,6 @@ export default {
     isUseless() {
       return Pelle.disabledRUPGs.includes(this.upgrade.id) && Pelle.isDoomed;
     },
-  },
-  watch: {
-    isAutobuyerOn(newValue) {
-      Autobuyer.realityUpgrade(this.upgrade.id).isActive = newValue;
-    }
   },
   methods: {
     update() {
