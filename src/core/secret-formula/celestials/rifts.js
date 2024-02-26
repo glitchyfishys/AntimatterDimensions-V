@@ -62,7 +62,7 @@ export const pelleRifts = {
     effect: totalFill => (PelleRifts.chaos.milestones[0].canBeApplied
       ? Decimal.sqrt(2000 + 1) : Decimal.sqrt(totalFill.plus(1).log10() + 1)),
     currency: () => Currency.replicanti,
-    galaxyGeneratorThreshold: 1e6,
+    galaxyGeneratorThreshold: 1e4,
     milestones: [
       {
         resource: "decay",
@@ -101,7 +101,7 @@ export const pelleRifts = {
     drainResource: ["Decay", "Collapse", "Disarray"],
     baseEffect: x => `Time Dimensions ${formatX(x, 2, 2)}`,
     strike: () => PelleStrikes.eternity,
-    percentage: totalFill => totalFill / 2,
+    percentage: totalFill => totalFill / 10,
     percentageToFill: percentage => 10 * percentage,
     effect: totalFill => {
       const fill = totalFill > 6.5
@@ -120,7 +120,7 @@ export const pelleRifts = {
         player.celestials.pelle.rifts.decay.percentageSpent += spent;
       }
     }),
-    galaxyGeneratorThreshold: 1e8,
+    galaxyGeneratorThreshold: 1e5,
     milestones: [
       {
         resource: "chaos",
@@ -153,7 +153,7 @@ export const pelleRifts = {
     percentageToFill: percentage => Decimal.pow(10, percentage ** 2.5 * 4000).minus(1),
     effect: totalFill => new Decimal(58 * totalFill.plus(1).log10() ** 0.2 / 4000 ** 0.2),
     currency: () => Currency.eternityPoints,
-    galaxyGeneratorThreshold: 1e9,
+    galaxyGeneratorThreshold: 1e6,
     milestones: [
       {
         resource: "recursion",
@@ -190,7 +190,7 @@ export const pelleRifts = {
     percentageToFill: percentage => Decimal.pow10(percentage * 100).minus(1),
     effect: totalFill => new Decimal(1 + totalFill.plus(1).log10() * 0.004),
     currency: () => Currency.dilatedTime,
-    galaxyGeneratorThreshold: 1e4,
+    galaxyGeneratorThreshold: 1e3,
     milestones: [
       {
         resource: "paradox",
