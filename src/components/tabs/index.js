@@ -43,7 +43,7 @@ import TimeStudiesTab from "./time-studies/TimeStudiesTab";
 import VTab from "./celestial-v/VTab";
 import entropy from "./glitch/entropy";
 import preinfinity from "./glitch/preinfinitytab";
-import glitchinfinity from "./glitch/breakinfinitytab";
+import glitchbreak from "./glitch/breakinfinitytab";
 
 const TabComponents = {
   AntimatterDimensionsTab,
@@ -90,7 +90,7 @@ const TabComponents = {
   MultiplierBreakdownTab,
   entropy,
   preinfinity,
-  glitchinfinity
+  glitchbreak
 };
 
 export default TabComponents;
