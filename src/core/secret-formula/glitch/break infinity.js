@@ -62,8 +62,8 @@ export const breakinfinityUG = [
     hasFailed: () => !player.replicanti.chance == 0.01 || !player.replicanti.interval == 1000 || PlayerProgress.eternityUnlocked(),
     checkRequirement: () => player.replicanti.amount.greaterThanOrEqualTo(1.79e308),
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
-    description: "IP muliplier from antimatter galaxies (pelle effective)",
-    effect: () => 1 + Math.pow(player.galaxies, 3.5),
+    description: "increase replcanti speed by their galxies (pelle effective)",
+    effect: () => 1 + Math.pow(player.replicanti.galaxies, 1.2),
     formatEffect: value => formatX(value, 2, 2)
   },
   
