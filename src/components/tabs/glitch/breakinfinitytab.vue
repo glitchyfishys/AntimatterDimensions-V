@@ -8,7 +8,7 @@ export default {
   },
   methods: {
     id(row, column) {
-      return (row - 1) * 2 + column - 1;
+      return (row - 1) * 3 + column - 1;
     }
   },
   computed: {
@@ -32,7 +32,7 @@ export default {
       class="l-reality-upgrade-grid__row">
         
       <preinfinityupgradebutton
-        v-for="column in 2"
+        v-for="column in 3"
         :key="id(row, column)"
         :upgrade="upgrades[id(row, column)]"/>
     </div>
