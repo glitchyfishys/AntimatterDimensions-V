@@ -21,9 +21,9 @@ export default {
 <template>
   <div>
     <div class="c-preinfinity-infotext">
-      hello destroyer.
+      progressing fast
       <br>
-      i have some tests for you.
+      these should slow you down
     </div>
   
       <div
