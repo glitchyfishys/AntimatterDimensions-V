@@ -44,5 +44,27 @@ export const breakinfinityUG = [
     effect: () => 1 + Math.pow(player.galaxies, 3.5),
     formatEffect: value => formatX(value, 2, 2)
   },
+  {
+    name: "replicated infinity",
+    id: 4,
+    requirement: "have 10 replicanti without any upgrades",
+    hasFailed: () => !player.replicanti.chance == 0.01 || !player.replicanti.interval == 1000 || PlayerProgress.eternityUnlocked(),
+    checkRequirement: () => player.replicanti.amount.greaterThanOrEqualTo(10),
+    checkevent: GAME_EVENT.GAME_TICK_BEFORE,
+    description: "Replicanti speed by it's amount (pelle effective)",
+    effect: () => 1 + player.replicanti.amount.log10(),
+    formatEffect: value => formatX(value, 2, 2)
+  },
+  {
+    name: "cloned replication",
+    id: 5,
+    requirement: "have 1.79e308 replicanti without any upgrades",
+    hasFailed: () => !player.replicanti.chance == 0.01 || !player.replicanti.interval == 1000 || PlayerProgress.eternityUnlocked(),
+    checkRequirement: () => player.replicanti.amount.greaterThanOrEqualTo(1.79e308),
+    checkevent: GAME_EVENT.GAME_TICK_BEFORE,
+    description: "IP muliplier from antimatter galaxies (pelle effective)",
+    effect: () => 1 + Math.pow(player.galaxies, 3.5),
+    formatEffect: value => formatX(value, 2, 2)
+  },
   
 ];
