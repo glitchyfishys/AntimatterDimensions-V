@@ -4,7 +4,7 @@ export const breakinfinityUG = [
     name: "limited space",
     id: 0,
     requirement: "reach 1e500 antimater up to 4 dimboosts",
-    hasFailed: () => player.dime > 4 ,
+    hasFailed: () => player.dimensionBoosts > 4 ,
     checkRequirement: () => player.antimatter.e >= 500,
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
     description: "IP muliplier from antimatter galaxies (pelle effective)",
