@@ -93,9 +93,17 @@ export function gainedInfinityPoints() {
     TimeStudy(111)
   );
   if (Pelle.isDisabled("IPMults")) {
+    let x = Decimal.add(1)
+    x = x.times(preinfinityUGs.all[6].effectOrDefault(1));
+    x = x.times(preinfinityUGs.all[7].effectOrDefault(1));
+
+    x = x.times(breakinfinityUGs.all[0].effectOrDefault(1));
+    x = x.times(breakinfinityUGs.all[1].effectOrDefault(1));
+    x = x.times(breakinfinityUGs.all[3].effectOrDefault(1));
+    
     return Decimal.pow10(player.records.thisInfinity.maxAM.log10() / div - 0.75)
       .timesEffectsOf(PelleRifts.vacuum)
-      .times(Pelle.specialGlyphEffect.infinity)
+      .times(Pelle.specialGlyphEffect.infinity).times(x)
       .floor();
   }
   let ip = player.break
