@@ -61,9 +61,13 @@ export default {
   methods: {
     update() {
       const upgrade = this.upgrade;
+      this.isAvailableForPurchase = upgrade.isAvailableForPurchase;
+      this.automatorPoints = this.config.automatorPoints;
       this.canBeBought = upgrade.canBeBought;
-      this.isBought = upgrade.isBought;
+      this.isRebuyable = upgrade.isRebuyable;
+      this.isBought = !upgrade.isRebuyable && upgrade.isBought;
       this.isPossible = upgrade.isPossible;
+      this.isAutoUnlocked = Ra.unlocks.instantECAndRealityUpgradeAutobuyers.canBeApplied;
       this.canBeLocked = upgrade.config.canLock && !this.isAvailableForPurchase;
       this.hasRequirementLock = upgrade.hasPlayerLock;
       if (this.isRebuyable) this.isAutobuyerOn = Autobuyer.realityUpgrade(upgrade.id).isActive;
