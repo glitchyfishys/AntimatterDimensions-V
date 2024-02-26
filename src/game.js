@@ -441,7 +441,7 @@ export function gameLoop(passDiff, options = {}) {
     if(!preinfinityUGs.all[i].isBought) preinfinityUGs.all[i].tryUnlock()
   }
   for (let i = 0; i < breakinfinityUGs.all.length; i++) {
-    if(!breakinfinityUGs.all[i].isBought) pbreakinfinityUGs.all[i].tryUnlock()
+    if(!breakinfinityUGs.all[i].isBought) breakinfinityUGs.all[i].tryUnlock()
   }
   
   // In certain cases we want to allow the player to interact with the game's settings and tabs, but prevent any actual
