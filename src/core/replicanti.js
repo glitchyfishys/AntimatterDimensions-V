@@ -142,6 +142,8 @@ export function totalReplicantiSpeedMult(overCap) {
     RealityUpgrade(2),
     RealityUpgrade(6),
     RealityUpgrade(23),
+    breakinfinityUGs.all[4],
+    breakinfinityUGs.all[5],
   );
   totalMult = totalMult.times(preCelestialEffects);
   if (TimeStudy(132).isBought && Perk.studyPassive.isBought) {
