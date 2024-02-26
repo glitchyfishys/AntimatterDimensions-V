@@ -61,7 +61,6 @@ export default {
   methods: {
     update() {
       const upgrade = this.upgrade;
-      this.isAvailableForPurchase = upgrade.isAvailableForPurchase;
       this.automatorPoints = this.config.automatorPoints;
       this.canBeBought = upgrade.canBeBought;
       this.isRebuyable = upgrade.isRebuyable;
