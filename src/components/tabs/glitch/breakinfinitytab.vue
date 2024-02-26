@@ -2,7 +2,7 @@
 import preinfinityupgradebutton from "./preinfinityupgrade";
   
 export default {
-  name: "breakinfinity",
+  name: "glitchinfinity",
   components: {
     preinfinityupgradebutton
   },
