@@ -48,9 +48,6 @@ export default {
     canLock() {
       return this.config.canLock && !(this.isAvailableForPurchase || this.isBought);
     },
-    isUseless() {
-      return Pelle.disabledRUPGs.includes(this.upgrade.id) && Pelle.isDoomed;
-    },
   },
   methods: {
     update() {
