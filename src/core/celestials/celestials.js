@@ -5,6 +5,7 @@ import { Pelle } from "./pelle/pelle";
 import { Ra } from "./ra/ra";
 import { Teresa } from "./teresa";
 import { V } from "./V";
+import { glitch } from "./glitch";
 
 export const Celestials = {
   teresa: Teresa,
@@ -13,7 +14,8 @@ export const Celestials = {
   v: V,
   ra: Ra,
   laitela: Laitela,
-  pelle: Pelle
+  pelle: Pelle,
+  glitch: glitch
 };
 
 GameDatabase.celestials.descriptions = [
@@ -110,5 +112,10 @@ GameDatabase.celestials.descriptions = [
       Doing this ${formatInt(8)} times will also give a ${formatX(8)} to Dark Energy gain.`;
     }
   },
-
+  {
+    name: "Glitch",
+    effects() {
+      return "this is the end";
+    },
+  },
 ];
