@@ -109,10 +109,10 @@ export function gainedInfinityPoints() {
   ip = ip.times(preinfinityUGs.all[6].effectOrDefault(1));
   ip = ip.times(preinfinityUGs.all[7].effectOrDefault(1));
 
-  breakinfinityUGs.all[0].effectOrDefault(1)
-  breakinfinityUGs.all[1].effectOrDefault(1)
-  breakinfinityUGs.all[2].effectOrDefault(1)
-  breakinfinityUGs.all[3].effectOrDefault(1)
+  ip = ip.times(breakinfinityUGs.all[0].effectOrDefault(1));
+  ip = ip.times(breakinfinityUGs.all[1].effectOrDefault(1));
+  ip = ip.times(breakinfinityUGs.all[2].effectOrDefault(1));
+  ip = ip.times(breakinfinityUGs.all[3].effectOrDefault(1));
   
   if (Teresa.isRunning) {
     ip = ip.pow(0.55);
