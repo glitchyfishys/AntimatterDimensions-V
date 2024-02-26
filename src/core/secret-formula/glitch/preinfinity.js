@@ -7,7 +7,7 @@ export const preinfinityUG = [
     hasFailed: () => player.dimensionBoosts != 0 ,
     checkRequirement: () => player.antimatter.e >= 15 && player.dimensionBoosts == 0,
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
-    description: "AD muliplier from dimboosts",
+    description: "AD muliplier from dimboosts (pelle effective)",
     effect: () => 1 + player.dimensionBoosts / 5,
     formatEffect: value => formatX(value, 2, 2)
   },
@@ -18,7 +18,7 @@ export const preinfinityUG = [
     hasFailed: () => player.dimensionBoosts != 1 ,
     checkRequirement: () => player.antimatter.e >= 25 && player.dimensionBoosts == 1,
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
-    description: "AD muliplier from dimboosts",
+    description: "AD muliplier from dimboosts (pelle effective)",
     effect: () => 1 + player.dimensionBoosts / 5,
     formatEffect: value => formatX(value, 2, 2)
   },
@@ -29,7 +29,7 @@ export const preinfinityUG = [
     hasFailed: () => player.dimensionBoosts != 2 ,
     checkRequirement: () => player.antimatter.e >= 35 && player.dimensionBoosts == 2,
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
-    description: "AD muliplier from dimboosts",
+    description: "AD muliplier from dimboosts (pelle effective)",
     effect: () => 1 + player.dimensionBoosts / 5,
     formatEffect: value => formatX(value, 2, 2)
   },
@@ -40,7 +40,7 @@ export const preinfinityUG = [
     hasFailed: () => player.galaxys == 1 || player.dimensionBoosts > 4,
     checkRequirement: () => player.antimatter.e >= 150 && player.dimensionBoosts == 4,
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
-    description: "AD muliplier from dimboosts",
+    description: "AD muliplier from dimboosts (pelle effective)",
     effect: () => 1 + player.dimensionBoosts / 5,
     formatEffect: value => formatX(value, 2, 2)
   },
@@ -51,7 +51,7 @@ export const preinfinityUG = [
     hasFailed: () => player.dimensions.antimatter[1].amount.greaterThan(10) || player.galaxys > 1 || player.dimensionBoosts > 0,
     checkRequirement: () => player.antimatter.e >= 7,
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
-    description: "additonal tickspeed prechases by there amount",
+    description: "additonal tickspeed prechases by there amount (pelle effective)",
     effect: () => 1 + Math.floor(Math.log10(player.totalTickBought + 1)),
     formatEffect: value => formatX(value, 2, 2)
   },
@@ -62,7 +62,7 @@ export const preinfinityUG = [
     hasFailed: () => player.dimensions.antimatter[3].amount.greaterThan(10) || player.galaxys > 1 || player.dimensionBoosts > 0,
     checkRequirement: () => player.antimatter.e >= 20,
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
-    description: "additonal tickspeed prechases by there amount",
+    description: "additonal tickspeed prechases by there amount (pelle effective)",
     effect: () => 1 + Math.floor(Math.log10(player.totalTickBought + 1 )),
     formatEffect: value => formatX(value, 2, 2)
   },
@@ -73,7 +73,7 @@ export const preinfinityUG = [
     hasFailed: () => player.galaxies > 1,
     checkRequirement: () => player.antimatter.greaterThan(1.79e308),
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
-    description: "double infinity point gain",
+    description: "double infinity point gain (pelle effective)",
     effect: () => 2,
     formatEffect: value => formatX(value, 2, 2)
   },
@@ -84,7 +84,7 @@ export const preinfinityUG = [
     hasFailed: () => PlayerProgress.hasBroken(),
     checkRequirement: () => player.galaxies >= 3,
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
-    description: "double infinity point gain",
+    description: "double infinity point gain (pelle effective)",
     effect: () => 2,
     formatEffect: value => formatX(value, 2, 2)
   },
