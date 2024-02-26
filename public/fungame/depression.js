@@ -1,6 +1,6 @@
 "use strict";
 
-const UPDATE_INTERVAL = 33;
+const UPDATE_INTERVAL = 1;
 const SAVE_INTERVAL = 5000;
 const notation = new ADNotations.ScientificNotation();
 
