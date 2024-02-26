@@ -524,10 +524,10 @@ export const tabs = [
       },
       {
         key: "break",
-        name: "break infinity",
+        name: "infinity",
         symbol: "∝",
         component: "glitchbreak",
-        condition: () => PlayerProgress.hasBroken(),
+        condition: () => PlayerProgress.infinityUnlocked(),
         id: 2,
         hidable: true
       },
