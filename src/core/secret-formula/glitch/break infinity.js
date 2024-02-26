@@ -7,7 +7,7 @@ export const breakinfinityUG = [
     hasFailed: () => player.dime > 4 ,
     checkRequirement: () => player.antimatter.e >= 500,
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
-    description: "IP muliplier from antimatter galaxies",
+    description: "IP muliplier from antimatter galaxies (pelle effective)",
     effect: () => 1 + Math.pow(player.galaxies, 1.25),
     formatEffect: value => formatX(value, 2, 2)
   },
@@ -18,7 +18,7 @@ export const breakinfinityUG = [
     hasFailed: () => player.dimensionBoosts > 4 || player.galaxies > 1 ,
     checkRequirement: () =>  gainedInfinityPoints().greaterThan(1000),
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
-    description: "x10 infinity points",
+    description: "x10 infinity points (pelle effective)",
     effect: () => 10,
     formatEffect: value => formatX(value, 2, 2)
   },
@@ -40,7 +40,7 @@ export const breakinfinityUG = [
     hasFailed: () => false,
     checkRequirement: () => player.infinityPoints.e >= 150,
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
-    description: "IP muliplier from antimatter galaxies",
+    description: "IP muliplier from antimatter galaxies (pelle effective)",
     effect: () => 1 + Math.pow(player.galaxies, 3.5),
     formatEffect: value => formatX(value, 2, 2)
   },
