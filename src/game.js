@@ -451,6 +451,9 @@ export function gameLoop(passDiff, options = {}) {
   for (let i = 0; i < breakinfinityUGs.all.length; i++) {
     if(!breakinfinityUGs.all[i].isBought) breakinfinityUGs.all[i].tryUnlock()
   }
+  for (let i = 0; i < eternityUGs.all.length; i++) {
+    if(!eternityUGs.all[i].isBought) eternityUGs.all[i].tryUnlock()
+  }
   
   // In certain cases we want to allow the player to interact with the game's settings and tabs, but prevent any actual
   // resource generation from happening - in these cases, we have to make sure this all comes before the hibernation
