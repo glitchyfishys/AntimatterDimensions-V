@@ -936,6 +936,9 @@ top.player = {
     },
     breakinfinity: {
       upgradebits: 0
+    },
+    eternity: {
+      upgradebits: 0
     }
   }
 };
