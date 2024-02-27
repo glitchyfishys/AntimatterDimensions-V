@@ -53,7 +53,7 @@ export const preinfinityUG = [
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
     description: "additonal tickspeed prechases by there amount (pelle effective)",
     effect: () => 1 + Math.floor(Math.log2(player.totalTickBought + 1)),
-    formatEffect: value => formatX(value, 2, 2)
+    formatEffect: value => "+" + formatInt(value)
   },
   {
     name: "galatic limitaion",
@@ -64,7 +64,7 @@ export const preinfinityUG = [
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
     description: "additonal tickspeed prechases by there amount (pelle effective)",
     effect: () => 1 + Math.floor(Math.log2(player.totalTickBought + 1 )),
-    formatEffect: value => formatX(value, 2, 2)
+    formatEffect: value => "+" + formatInt(value)
   },
   {
     name: "galatic capacity",
