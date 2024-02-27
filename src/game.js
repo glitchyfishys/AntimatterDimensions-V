@@ -148,7 +148,9 @@ function totalEPMult() {
         TimeStudy(121),
         TimeStudy(123),
         RealityUpgrade(12),
-        GlyphEffect.epMult
+        GlyphEffect.epMult,
+        eternityUGs[0],
+        eternityUGs[4]
       );
 }
 
