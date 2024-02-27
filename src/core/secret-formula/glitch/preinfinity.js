@@ -49,10 +49,10 @@ export const preinfinityUG = [
     id: 4,
     requirement: "have 1e7 antimatter with no dimboosts, one galaxy, up to ten 2nd dimentsions",
     hasFailed: () => player.dimensions.antimatter[1].amount.greaterThan(10) || player.galaxys > 1 || player.dimensionBoosts > 0 || PlayerProgress.infinityUnlocked(),
-    checkRequirement: () => player.antimatter.e >= 7 && !player.dimensions.antimatter[1].amount.greaterThan(10) && !player.galaxys > 1 && !player.dimensionBoosts > 0 && !PlayerProgress.infinityUnlocked(),
+    checkRequirement: () => player.antimatter.e >= 7 && !player.dimensions.antimatter[1].amount.greaterThan(10) && !player.galaxies > 1 && !player.dimensionBoosts > 0 && !PlayerProgress.infinityUnlocked(),
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
     description: "additonal tickspeed prechases by there amount (pelle effective)",
-    effect: () => 1 + Math.floor(Math.log10(player.totalTickBought + 1)),
+    effect: () => 1 + Math.floor(Math.log2(player.totalTickBought + 1)),
     formatEffect: value => formatX(value, 2, 2)
   },
   {
@@ -60,10 +60,10 @@ export const preinfinityUG = [
     id: 5,
     requirement: "have 1e25 antimatter with no dimboosts, one galaxy, up to 20 4st dimentsions",
     hasFailed: () => player.dimensions.antimatter[3].amount.greaterThan(10) || player.galaxys > 1 || player.dimensionBoosts > 0 || PlayerProgress.infinityUnlocked(),
-    checkRequirement: () => player.antimatter.e >= 25 && !player.dimensions.antimatter[3].amount.greaterThan(10) && !player.galaxys > 1 && !player.dimensionBoosts > 0 && !PlayerProgress.infinityUnlocked(),
+    checkRequirement: () => player.antimatter.e >= 25 && !player.dimensions.antimatter[3].amount.greaterThan(10) && !player.galaxies > 1 && !player.dimensionBoosts > 0 && !PlayerProgress.infinityUnlocked(),
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
     description: "additonal tickspeed prechases by there amount (pelle effective)",
-    effect: () => 1 + Math.floor(Math.log10(player.totalTickBought + 1 )),
+    effect: () => 1 + Math.floor(Math.log2(player.totalTickBought + 1 )),
     formatEffect: value => formatX(value, 2, 2)
   },
   {
