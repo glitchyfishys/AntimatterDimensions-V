@@ -179,6 +179,9 @@ export const Tickspeed = {
     let x = 0;
     x += preinfinityUGs.all[4].effectOrDefault(0);
     x += preinfinityUGs.all[5].effectOrDefault(0);
+    x += eternityUGs.all[3].effectOrDefault(0);
+    x += eternityUGs.all[5].effectOrDefault(0);
+    
     let boughtTickspeed;
     if (Laitela.continuumActive) boughtTickspeed = this.continuumValue;
     else boughtTickspeed = player.totalTickBought;
@@ -207,6 +210,8 @@ export const FreeTickspeed = {
     let x = 0;
     x += preinfinityUGs.all[4].effectOrDefault(0);
     x += preinfinityUGs.all[5].effectOrDefault(0);
+    x += eternityUGs.all[3].effectOrDefault(0);
+    x += eternityUGs.all[5].effectOrDefault(0);
     
     return player.totalTickGained + x;
   },
@@ -220,7 +225,7 @@ export const FreeTickspeed = {
   },
 
   fromShards(shards) {
-    const tickmult = (1 + (Effects.min(1.33, TimeStudy(171)) - 1) *
+    const tickmult = (1 + (Effects.min(1.33, TimeStudy(171), eternityUGs.all[1] ) - 1) *
       Math.max(getAdjustedGlyphEffect("cursedtickspeed"), 1));
     const logTickmult = Math.log(tickmult);
     const logShards = shards.ln();
