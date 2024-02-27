@@ -90,5 +90,6 @@ export * from "./tab-notifications";
 export * from "./speedrun";
 export * from "./glitchpreinfinityUG";
 export * from "./glitchbreakinfinityupgrade";
+export * from "./glitcheternityUG";
 
 export * from "./automator/script-templates";
