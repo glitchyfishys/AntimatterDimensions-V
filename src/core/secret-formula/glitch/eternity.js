@@ -20,7 +20,7 @@ export const eternityUG = [
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
     description: "free tick speed threshold decreased to 1.3",
     effect: () => 1.3,
-    formatEffect: value => formatX(value, 2, 2)
+    formatEffect: value => formatInt(value)
   },
   {
   name: "rifted",
@@ -31,7 +31,7 @@ export const eternityUG = [
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
     description: "gain 3 additonal RG",
     effect: () => 3,
-    formatEffect: value => formatX(value, 2, 2)
+    formatEffect: value => "+" + formatInt(value)
   },
   {
     name: "study forever",
@@ -42,7 +42,7 @@ export const eternityUG = [
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
     description: "250 free tick speed upgrades (pelle effective)",
     effect: () => 250,
-    formatEffect: value => formatX(value, 2, 2)
+    formatEffect: value => "+" + formatInt(value)
   },
   {
     name: "wrong timeline",
@@ -64,7 +64,7 @@ export const eternityUG = [
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
     description: "5000 free tick speed upgrades",
     effect: () => 5000,
-    formatEffect: value => formatX(value, 2, 2)
+    formatEffect: value => "+" + formatInt(value)
   },
 
 ];
