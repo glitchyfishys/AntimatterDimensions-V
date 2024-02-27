@@ -43,6 +43,6 @@ export default {
 <style scoped>
 .c-preinfinity-infotext {
   color: var(--color-text);
-  margin: 2rem 0 1.5rem;
+  margin: 1.5rem 0 1.5rem;
 }
 </style>
