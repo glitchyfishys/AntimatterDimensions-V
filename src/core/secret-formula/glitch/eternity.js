@@ -60,7 +60,7 @@ export const eternityUG = [
     id: 5,
     requirement: "get time study 181 without fully compleing EC1, EC2, E3",
     hasFailed: () => EternityChallenges.all[0].completions == 5 || EternityChallenges.all[1].completions == 5 || EternityChallenges.all[2].completions == 5 || PlayerProgress.realityUnlocked(),
-    checkRequirement: () => player.timestudy.studies.includes(181) && !EternityChallenges.all[0].completions == 5 && !EternityChallenges.all[1].completions == 5 && !EternityChallenges.all[2].completions == 5 || !PlayerProgress.realityUnlocked(),
+    checkRequirement: () => player.timestudy.studies.includes(181) && !EternityChallenges.all[0].completions == 5 && !EternityChallenges.all[1].completions == 5 && !EternityChallenges.all[2].completions == 5 && !PlayerProgress.realityUnlocked(),
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
     description: "5000 free tick speed upgrades",
     effect: () => 5000,
