@@ -49,7 +49,7 @@ class eternityUGState extends BitPurchasableMechanicState {
   tryUnlock() {
     if (!this.config.checkRequirement()) return;
     player.glitch.eternity.upgradebits |= (1 << this.id);
-    GameUI.notify.error(`You've unlocked glitched Upgrade: ${this.config.name}`);
+    GameUI.notify.error(`You've unlocked glitched eternity Upgrade: ${this.config.name}`);
   }
 
   onPurchased() {
