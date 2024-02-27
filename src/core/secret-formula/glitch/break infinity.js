@@ -52,7 +52,7 @@ export const breakinfinityUG = [
     checkRequirement: () => player.replicanti.amount.greaterThanOrEqualTo(10) && player.replicanti.chance == 0.01 && player.replicanti.interval >= 1000 && !PlayerProgress.eternityUnlocked(),
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
     description: "Replicanti speed by it's amount (pelle effective)",
-    effect: () => 1 + ( player.replicanti.amount.log10() / 10),
+    effect: () => 1 + Math.sqrt(player.replicanti.amount.log10()),
     formatEffect: value => formatX(value, 2, 2)
   },
   {
@@ -63,7 +63,7 @@ export const breakinfinityUG = [
     checkRequirement: () => player.replicanti.amount.greaterThanOrEqualTo(1.79e308) && player.replicanti.chance == 0.01 && player.replicanti.interval >= 1000 && !PlayerProgress.eternityUnlocked(),
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
     description: "increase replcanti speed by their galxies (pelle effective)",
-    effect: () => 1 + Math.pow(player.replicanti.galaxies, 1.2),
+    effect: () => 1 + (Math.pow(player.replicanti.galaxies, 1.2) / 10),
     formatEffect: value => formatX(value, 2, 2)
   },
   
