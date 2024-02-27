@@ -543,7 +543,8 @@ export const Replicanti = {
     get extra() {
       return Math.floor((Effects.sum(
         TimeStudy(225),
-        TimeStudy(226)
+        TimeStudy(226),
+        eternityUGs.all[2]
       ) + Effarig.bonusRG) * TimeStudy(303).effectOrDefault(1));
     },
     get total() {
