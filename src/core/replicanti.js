@@ -455,7 +455,7 @@ export const ReplicantiUpgrade = {
     }
 
     get extra() {
-      return Effects.max(0, TimeStudy(131)) + Effects.max(0, TimeStudy(141)) + PelleRifts.decay.milestones[2].effectOrDefault(0);
+      return Effects.max(0, TimeStudy(131)) + Effects.max(0, TimeStudy(132)) + PelleRifts.decay.milestones[2].effectOrDefault(0);
     }
 
     autobuyerTick() {
