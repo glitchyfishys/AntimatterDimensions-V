@@ -3,9 +3,9 @@ export const breakinfinityUG = [
   {
     name: "limited space",
     id: 0,
-    requirement: "reach 1e500 antimater up to 4 dimboosts",
-    hasFailed: () => player.dimensionBoosts > 4 ,
-    checkRequirement: () => player.antimatter.e >= 500 && !player.dimensionBoosts > 4,
+    requirement: "reach 1e500 antimater up to 4 dimboosts, one galaxy",
+    hasFailed: () => player.dimensionBoosts > 4 || player.galaxies > 1,
+    checkRequirement: () => player.antimatter.e >= 500 && player.dimensionBoosts <= 4,
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
     description: "IP muliplier from antimatter galaxies (pelle effective)",
     effect: () => 1 + Math.pow(player.galaxies, 1.25),
@@ -14,9 +14,9 @@ export const breakinfinityUG = [
   {
   name: "infinitly limiting",
     id: 1,
-    requirement: "reach 1000 (pending) infinity points with up to four dimboost and one antimatter galaxy",
+    requirement: "reach 2000 (pending) infinity points with up to four dimboost and one antimatter galaxy",
     hasFailed: () => player.dimensionBoosts > 4 || player.galaxies > 1 ,
-    checkRequirement: () =>  gainedInfinityPoints().greaterThan(1000) && !player.dimensionBoosts > 4 && !player.galaxies > 1,
+    checkRequirement: () =>  gainedInfinityPoints().greaterThan(2000) && player.dimensionBoosts <= 4 && player.galaxies <= 1,
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
     description: "x10 infinity points (pelle effective)",
     effect: () => 10,
@@ -27,7 +27,7 @@ export const breakinfinityUG = [
     id: 2,
     requirement: "finish IC1 without infinity dimensions",
     hasFailed: () => player.dimensions.infinity[0].amount.greaterThan(0),
-    checkRequirement: () => player.antimatter.greaterThan(1.79e308) && player.challenge.infinity.current == 1 && !player.dimensions.infinity[0].amount.greaterThan(0),
+    checkRequirement: () => player.antimatter.greaterThan(new Decimal("1e650")) && player.challenge.infinity.current == 1 && !player.dimensions.infinity[0].amount.greaterThan(0),
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
     description: "1e50 more infinity points",
     effect: () => 1e50,
@@ -41,7 +41,7 @@ export const breakinfinityUG = [
     checkRequirement: () => player.infinityPoints.e >= 150,
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
     description: "IP muliplier from antimatter galaxies (pelle effective)",
-    effect: () => 1 + Math.pow(player.galaxies, 3.5),
+    effect: () => 1 + Math.pow(player.galaxies, 3),
     formatEffect: value => formatX(value, 2, 2)
   },
   {
@@ -63,7 +63,7 @@ export const breakinfinityUG = [
     checkRequirement: () => player.replicanti.amount.greaterThanOrEqualTo(1.79e308) && player.replicanti.chance == 0.01 && player.replicanti.interval >= 1000 && !PlayerProgress.eternityUnlocked(),
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
     description: "increase replcanti speed by their galxies (pelle effective)",
-    effect: () => 1 + (Math.pow(player.replicanti.galaxies, 1.2) / 10),
+    effect: () => 1 + (Math.pow(player.replicanti.galaxies, 1.2) / 38),
     formatEffect: value => formatX(value, 2, 2)
   },
   
