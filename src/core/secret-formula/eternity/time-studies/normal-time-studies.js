@@ -15,7 +15,7 @@ const passiveIPMult = () => {
   const perkEffect = TimeSpan.fromMinutes(Perk.studyIdleEP.effectOrDefault(0));
   const totalSeconds = Time.thisInfinity.plus(perkEffect).totalSeconds;
   let c = thisInfinityMult(totalSeconds).divide(1e15).clampMin(1);
-  const normalValue = a * b * c;
+  const normalValue = Decimal.multiply(a,b).times(c);
   
   return isEffarigLimited
     ? Math.min(normalValue, Effarig.eternityCap.toNumber())
