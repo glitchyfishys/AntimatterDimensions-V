@@ -306,7 +306,8 @@ export const normalTimeStudies = [
         const totalSeconds = Time.thisEternity.plus(perkEffect).totalSeconds;
                    
         return Math.sqrt(1.1 * totalSeconds) * a * b;
-        }
+        },
+    formatEffect: value => (formatX(value, 1, 1)),
   },
   {
     id: 123,
