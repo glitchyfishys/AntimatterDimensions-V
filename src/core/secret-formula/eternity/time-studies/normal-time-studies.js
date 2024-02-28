@@ -305,7 +305,7 @@ export const normalTimeStudies = [
         const perkEffect = TimeSpan.fromMinutes(Perk.studyIdleEP.effectOrDefault(0));
         const totalSeconds = Time.thisEternity.plus(perkEffect).totalSeconds;
                    
-        return Math.ClampMin(Math.sqrt(totalSeconds / 15)), 1 * a * b;
+        return Math.clampMin(Math.sqrt(totalSeconds / 15)), 1 * a * b;
         },
     formatEffect: value => (formatX(value, 1, 1)),
   },
