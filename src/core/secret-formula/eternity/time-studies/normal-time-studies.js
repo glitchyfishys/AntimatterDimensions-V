@@ -8,7 +8,15 @@ const thisInfinityMult = thisInfinity => {
 };
 const passiveIPMult = () => {
   const isEffarigLimited = Effarig.isRunning && Effarig.currentStage === EFFARIG_STAGES.ETERNITY;
-  const normalValue = Perk.studyPassive.isBought ? 1e50 : 1e25;
+  let a = Perk.studyPassive.isBought ? 1e30 : 1e15;
+  
+  let b = (Perk.studyActiveEP.isBought ? DC.E15 : DC.E15.divide(thisInfinityMult(Time.thisInfinity.totalSeconds)).clampMin(1));
+      
+  const perkEffect = TimeSpan.fromMinutes(Perk.studyIdleEP.effectOrDefault(0));
+  const totalSeconds = Time.thisInfinity.plus(perkEffect).totalSeconds;
+  let c = thisInfinityMult(totalSeconds).divide(1e15).clampMin(1);
+  const normalValue = a * b * c;
+  
   return isEffarigLimited
     ? Math.min(normalValue, Effarig.eternityCap.toNumber())
     : normalValue;
@@ -289,10 +297,17 @@ export const normalTimeStudies = [
     requirement: [111],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     requiresST: [121, 123],
-    description: () => (Perk.studyPassive.isBought
-      ? `You gain ${formatX(50)} more Eternity Points`
-      : `You gain ${formatX(35)} more Eternity Points`),
-    effect: () => (Perk.studyPassive.isBought ? 50 : 35)
+    description: () => (Perk.studyPassive.isBought ? `You gain ${formatX(50)} more Eternity Points`
+      : `You gain more EP based on average eternity ${PlayerProgress.realityUnlocked() ? " (real time)" : "time"} and time in this eternity `),
+    effect: () => {
+        let a = (Perk.studyPassive.isBought ? 25 : 5)
+        let b = (Perk.studyActiveEP.isBought ? 25 : Math.clamp(15 / Player.averageRealTimePerEternity, 1, 25))
+      
+        const perkEffect = TimeSpan.fromMinutes(Perk.studyIdleEP.effectOrDefault(0));
+        const totalSeconds = Time.thisEternity.plus(perkEffect).totalSeconds;
+                   
+        return Math.sqrt(1.15 * totalSeconds) * a * b;
+        }
   },
   {
     id: 123,
@@ -329,9 +344,9 @@ export const normalTimeStudies = [
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     requiresST: [131, 133],
     description: () => (Perk.studyPassive.isBought && !Pelle.isDoomed
-      ? `Replicanti Galaxies are ${formatPercents(0.4)} stronger and Replicanti are ${format(3)} times faster`
-      : `Replicanti Galaxies are ${formatPercents(0.4)} stronger`),
-    effect: 0.4
+      ? `Replicanti Galaxies are 25% stronger and can get 25% more, Replicanti are also ${format(3)} times faster`
+      : `Replicanti Galaxies are 25% stronger and can get 25% more`),
+    effect: 0.25
   },
   {
     id: 133,
@@ -368,7 +383,7 @@ export const normalTimeStudies = [
     requirement: [132],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     requiresST: [141, 143],
-    description: () => `You gain ${formatX(passiveIPMult())} more Infinity Points`,
+    description: () => `You gain ${formatX(passiveIPMult())} more Infinity Points, which raises and decays with a static amount`,
     effect: passiveIPMult,
     cap: () => (Effarig.eternityCap === undefined ? undefined : Effarig.eternityCap.toNumber())
   },
