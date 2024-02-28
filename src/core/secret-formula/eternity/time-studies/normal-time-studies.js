@@ -346,7 +346,7 @@ export const normalTimeStudies = [
     description: () => (Perk.studyPassive.isBought && !Pelle.isDoomed
       ? `Replicanti Galaxies are 25% stronger and can get 25% more, Replicanti are also ${format(3)} times faster`
       : `Replicanti Galaxies are 25% stronger and can get 25% more`),
-    effect: Math.floor(player.replicanti.boughtGalaxyCap / 4)
+    effect: () => Math.floor(player.replicanti.boughtGalaxyCap / 4)
   },
   {
     id: 133,
