@@ -297,10 +297,10 @@ export const normalTimeStudies = [
     requirement: [111],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     requiresST: [121, 123],
-    description: () => `You gain more EP based on average eternity ${PlayerProgress.realityUnlocked() ? " (real time)" : "time"} and time in this eternity `),
+    description: () => `You gain more EP based on average eternity ${PlayerProgress.realityUnlocked() ? " (real time)" : "time"} and time in this eternity`,
     effect: () => {
-        let a = (Perk.studyPassive.isBought ? 15 : 5)
-        let b = (Perk.studyActiveEP.isBought ? 15 : Math.clamp(10 / Player.averageRealTimePerEternity, 1, 15))
+        let a = (Perk.studyPassive.isBought ? 15 : 5);
+        let b = (Perk.studyActiveEP.isBought ? 15 : Math.clamp(10 / Player.averageRealTimePerEternity, 1, 15));
       
         const perkEffect = TimeSpan.fromMinutes(Perk.studyIdleEP.effectOrDefault(0));
         const totalSeconds = Time.thisEternity.plus(perkEffect).totalSeconds;
