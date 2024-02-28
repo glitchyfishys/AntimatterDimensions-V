@@ -27,7 +27,7 @@ export const breakinfinityUG = [
     id: 2,
     requirement: "finish IC1 without infinity dimensions",
     hasFailed: () => player.dimensions.infinity[0].amount.greaterThan(0),
-    checkRequirement: () => player.antimatter.greaterThan(new Decimal("1e650")) && player.challenge.infinity.current == 1 && !player.dimensions.infinity[0].amount.greaterThan(0),
+    checkRequirement: () => player.antimatter.greaterThanOrEqualTo("1e650") && player.challenge.infinity.current == 1 && !player.dimensions.infinity[0].amount.greaterThan(0),
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
     description: "1e50 more infinity points",
     effect: () => 1e50,
