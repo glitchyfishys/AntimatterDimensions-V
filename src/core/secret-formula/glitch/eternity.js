@@ -47,8 +47,8 @@ export const eternityUG = [
   {
     name: "wrong timeline",
     id: 4,
-    requirement: "complete another EC first rather that EC1 ",
-    hasFailed: () => EternityChallenges.completions >= 1 || EternityChallenges.all[0].completions == 0 || PlayerProgress.realityUnlocked(),
+    requirement: "complete any other EC first rather than EC1 ",
+    hasFailed: () => EternityChallenges.all[0].completions > 0 || PlayerProgress.realityUnlocked(),
     checkRequirement: () => EternityChallenges.completions >= 1 && EternityChallenges.all[0].completions == 0 && !PlayerProgress.realityUnlocked(),
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
     description: "x15 EP gain (pelle effective)",
