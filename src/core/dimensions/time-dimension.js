@@ -118,6 +118,7 @@ export function timeDimensionCommonMultiplier() {
       Replicanti.areUnlocked && Replicanti.amount.gt(1) ? DilationUpgrade.tdMultReplicanti : null,
       Pelle.isDoomed ? null : RealityUpgrade(22),
       AlchemyResource.dimensionality,
+      realityUGs.all[3],
       PelleRifts.chaos
     );
 
