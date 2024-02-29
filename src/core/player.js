@@ -939,6 +939,9 @@ top.player = {
     },
     eternity: {
       upgradebits: 0
+    },
+    reality:{
+      upgradebits: 0
     }
   }
 };
