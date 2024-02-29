@@ -45,6 +45,7 @@ import entropy from "./glitch/entropy";
 import preinfinity from "./glitch/preinfinitytab";
 import glitchbreak from "./glitch/breakinfinitytab";
 import glitcheternity from "./glitch/eternitytab";
+import glitchreality from "./glitch/realitytab";
 
 const TabComponents = {
   AntimatterDimensionsTab,
@@ -92,7 +93,8 @@ const TabComponents = {
   entropy,
   preinfinity,
   glitchbreak,
-  glitcheternity
+  glitcheternity,
+  glitchreality
 };
 
 export default TabComponents;
