@@ -16,7 +16,7 @@ export const realityUG = [
     id: 1,
     requirement: "reach 1e1000 (pending) EP while dialated before your first reality (check multiplier breakdown)",
     hasFailed: () => player.realities != 0,
-    checkRequirement: () => gainedEternityPoints().greaterThanOrEqualTo("1e1000") && player.realities == 0,
+    checkRequirement: () => gainedEternityPoints().greaterThanOrEqualTo("1e1000") && player.dilation.active && player.realities == 0,
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
     description: "gain 10 times more tachyon particles",
     effect: () => 10,
