@@ -543,7 +543,7 @@ export const tabs = [
       {
         key: "reality",
         name: "reality",
-        symbol: "Δ",
+        symbol: "Ϟ",
         component: "glitchreality",
         condition: () => PlayerProgress.realityUnlocked() || TimeStudy.reality.isBought,
         id: 3,
