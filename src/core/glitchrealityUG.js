@@ -58,9 +58,9 @@ class realityUGState extends BitPurchasableMechanicState {
   }
 }
 
-eternityUGState.index = mapGameData(
+realityUGState.index = mapGameData(
   GameDatabase.glitch.realityUG,
-  config => (new eternityUGState(config))
+  config => (new realityUGState(config))
 );
 
 export const realityUG = id => realityUGState.index[id];
