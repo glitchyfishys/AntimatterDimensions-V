@@ -131,8 +131,9 @@ export function getDilationGainPerSecond() {
       RealityUpgrade(1),
       AlchemyResource.dilation,
       Ra.unlocks.continuousTTBoost.effects.dilatedTime,
-      Ra.unlocks.peakGamespeedDT
+      Ra.unlocks.peakGamespeedDT,
     );
+  dtRate = dtRate.times(realityUGs.all[1].effectOrDefault(1));
   dtRate = dtRate.times(getAdjustedGlyphEffect("dilationDT"));
   dtRate = dtRate.times(ShopPurchase.dilatedTimePurchases.currentMult);
   dtRate = dtRate.times(
@@ -152,7 +153,7 @@ export function tachyonGainMultiplier() {
     RealityUpgrade(4),
     RealityUpgrade(8),
     RealityUpgrade(15)
-  ).pow(pow);
+  ).times(realityUGs.all[0].effectOrDefault(1)).pow(pow);
 }
 
 export function rewardTP() {
