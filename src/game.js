@@ -456,7 +456,7 @@ export function gameLoop(passDiff, options = {}) {
   for (let i = 0; i < eternityUGs.all.length; i++) {
     if(!eternityUGs.all[i].isBought) eternityUGs.all[i].tryUnlock()
   }
-  for (let i = 0; i < eternityUGs.all.length; i++) {
+  for (let i = 0; i < realityUGs.all.length; i++) {
     if(!realityUGs.all[i].isBought) realityUGs.all[i].tryUnlock()
   }
   
