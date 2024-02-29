@@ -539,6 +539,15 @@ export const tabs = [
         condition: () => PlayerProgress.eternityUnlocked(),
         id: 3,
         hidable: true
+      },
+      {
+        key: "reality",
+        name: "reality",
+        symbol: "Δ",
+        component: "glitchreality",
+        condition: () => PlayerProgress.realityUnlocked(),
+        id: 3,
+        hidable: true
       }
     ],
   }
