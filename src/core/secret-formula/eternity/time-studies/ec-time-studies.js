@@ -40,7 +40,7 @@ export const ecTimeStudies = [
   {
     id: 4,
     cost: 70,
-    requirement: [143],
+    requirement: [143, () => realityUGs.all[3].effectOrDefault(0) == 1, () => realityUGs.all[3].effectOrDefault(0) == 1],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     secondary: {
       resource: "Infinities",
@@ -88,7 +88,7 @@ export const ecTimeStudies = [
   {
     id: 8,
     cost: 115,
-    requirement: [123],
+    requirement: [123, () => realityUGs.all[3].effectOrDefault(0) == 1, (), realityUGs.all[3].effectOrDefault(0) == 1],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     secondary: {
       resource: "Infinity Points",
