@@ -308,7 +308,7 @@ function updateRealityRecords(realityProps) {
 
 function giveRealityRewards(realityProps) {
   const multiplier = realityProps.simulatedRealities + 1;
-  const realityAndPPMultiplier = multiplier + binomialDistribution(multiplier, Achievement(154).effectOrDefault(0)) + realityUGs.all[2].effectOrDefault(1);
+  const realityAndPPMultiplier = multiplier + binomialDistribution(multiplier, Achievement(154).effectOrDefault(0)) + realityUGs.all[1].effectOrDefault(1);
   const gainedRM = Currency.realityMachines.gte(MachineHandler.hardcapRM) ? DC.D0 : realityProps.gainedRM;
   Currency.realityMachines.add(gainedRM.times(multiplier));
   updateRealityRecords(realityProps);
@@ -317,7 +317,7 @@ function giveRealityRewards(realityProps) {
     realityProps.gainedGlyphLevel.actualLevel, realityAndPPMultiplier, multiplier,
     MachineHandler.projectedIMCap);
   Currency.realities.add(realityAndPPMultiplier);
-  Currency.perkPoints.add(realityAndPPMultiplier);
+  Currency.perkPoints.add(realityAndPPMultiplier + realityUGs.all[2].effectOrDefault(1) );
   if (TeresaUnlocks.effarig.canBeApplied) {
     Currency.relicShards.add(realityProps.gainedShards * multiplier);
   }
