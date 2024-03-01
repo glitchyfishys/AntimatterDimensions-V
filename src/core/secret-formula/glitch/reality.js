@@ -52,7 +52,7 @@ export const realityUG = [
     checkRequirement: () => player.eternityPoints.e >= 5000 && Teresa.isRunning && player.celestials.teresa.bestRunAM.e < 10000,
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
     description: "sacrifice EC8 and EC4 have no path reqierment (unlock other paths at the same row)",
-    effect: true,
+    effect: 1,
     formatEffect: value => formatX(value, 2, 2)
   },
   {
