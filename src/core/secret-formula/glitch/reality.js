@@ -29,9 +29,9 @@ export const realityUG = [
     hasFailed: () => player.realities != 0,
     checkRequirement: () => player.eternityPoints.e >= 8000 && player.realities == 0,
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
-    description: "gain 25 times more perks and realitys ",
+    description: "gain 25 more perks and realitys",
     effect: () => 25,
-    formatEffect: value => formatX(value, 2, 2)
+    formatEffect: value => format(value, 2, 2)
   },
   {
     name: "immisinity",
@@ -43,6 +43,28 @@ export const realityUG = [
     description: "all TD gain a 1e100 multiplier",
     effect: () => Decimal.add(1e100),
     formatEffect: value => formatX(value, 2, 2)
+  },
+  {
+    name: "sacrifisal power",
+    id: 4,
+    requirement: "reach 1e5000 eternity points in teresa's reality the first time",
+    hasFailed: () => player.celestials.teresa.bestRunAM.e >= 10000,
+    checkRequirement: () => player.eternityPoints.e >= 5000 && Teresa.isRunning && player.celestials.teresa.bestRunAM.e < 10000,
+    checkevent: GAME_EVENT.GAME_TICK_BEFORE,
+    description: "sacrifice EC8 and EC4 have no path reqierment (unlock other paths at the same row)",
+    effect: true,
+    formatEffect: value => formatX(value, 2, 2)
+  },
+  {
+    name: "limiting reality",
+    id: 5,
+    requirement: "reach 1e24 RM",
+    hasFailed: () =>false,
+    checkRequirement: () => player.reality.realityMachines.e >= 24,
+    checkevent: GAME_EVENT.GAME_TICK_BEFORE,
+    description: "gain 25 more perk points",
+    effect: () => 25,
+    formatEffect: value => format(value, 2, 2)
   },
 
 ];
