@@ -546,7 +546,7 @@ export const tabs = [
         symbol: "Ϟ",
         component: "glitchreality",
         condition: () => PlayerProgress.realityUnlocked() || TimeStudy.reality.isBought,
-        id: 3,
+        id: 4,
         hidable: true
       }
     ],
