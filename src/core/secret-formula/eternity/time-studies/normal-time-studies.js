@@ -18,7 +18,7 @@ const passiveIPMult = () => {
   const normalValue = Decimal.multiply(a,b).times(c);
   
   return isEffarigLimited
-    ? Math.min(normalValue, Effarig.eternityCap.toNumber())
+    ? Math.min(normalValue.toNumber(), Effarig.eternityCap.toNumber())
     : normalValue;
 };
 
