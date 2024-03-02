@@ -51,7 +51,7 @@ export const realityUG = [
     hasFailed: () => player.celestials.teresa.bestRunAM.e >= 10000,
     checkRequirement: () => player.eternityPoints.e >= 5000 && Teresa.isRunning && player.celestials.teresa.bestRunAM.e < 10000,
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
-    description: "sacrifice EC8 and EC4 have no path reqierment (unlock other paths at the same row)",
+    description: "EC8 and EC4 have no path reqierment (unlock other paths at the same row)",
     effect: 1,
     formatEffect: value => formatX(value, 2, 2)
   },
@@ -62,9 +62,31 @@ export const realityUG = [
     hasFailed: () =>false,
     checkRequirement: () => player.reality.realityMachines.e >= 24,
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
-    description: "gain 25 more perk points",
+    description: "gain 25 additional perk points",
     effect: () => 25,
     formatEffect: value => format(value, 2, 2)
   },
-
+{
+    name: "exteral dilation",
+    id: 6,
+    requirement: "reach 1.8e308 antimater in effarigs reality (infinity layer) with three glyphs maxium??",
+    hasFailed: () => Effarig.currentStage > 1 || player.reality.glyphs.active.length > 3,
+    checkRequirement: () => player.antimatter.greaterThanOrEqualTo(1.79e308) && Effarig.isRunning && Effarig.currentStage == 1 && player.reality.glyphs.active.length <= 3,
+    checkevent: GAME_EVENT.GAME_TICK_BEFORE,
+    description: "glyphs have another effect",
+    effect: 1,
+    formatEffect: value => formatX(value, 2, 2)
+  },
+  {
+    name: "alternitve realitive",
+    id: 7,
+    requirement: "fill the nameless ones real time storage",
+    hasFailed: () =>false,
+    checkRequirement: () => player.celestials.enslaved.storedReal >= 28800000,
+    checkevent: GAME_EVENT.GAME_TICK_BEFORE,
+    description: "real time storing is fulled automatically",
+    effect: 1,
+    formatEffect: value => format(value, 2, 2)
+  },
+  
 ];
