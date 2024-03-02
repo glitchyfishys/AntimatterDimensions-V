@@ -423,7 +423,7 @@ export function realTimeMechanics(realDiff) {
   DarkMatterDimensions.tick(realDiff);
 
   // When storing real time, skip everything else having to do with production once stats are updated
-  if (Enslaved.isStoringRealTime) {
+  if (Enslaved.isStoringRealTime || realityUGs.all[7].isBought) {
     player.records.realTimePlayed += realDiff;
     player.records.thisInfinity.realTime += realDiff;
     player.records.thisEternity.realTime += realDiff;
