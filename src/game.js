@@ -424,16 +424,19 @@ export function realTimeMechanics(realDiff) {
 
   // When storing real time, skip everything else having to do with production once stats are updated
   if (Enslaved.isStoringRealTime || realityUGs.all[7].isBought) {
+    if(!realityUGs.all[7].isBought && Enslaved.isStoringRealTime){ 
     player.records.realTimePlayed += realDiff;
     player.records.thisInfinity.realTime += realDiff;
     player.records.thisEternity.realTime += realDiff;
     player.records.thisReality.realTime += realDiff;
+    }
     Enslaved.storeRealTime();
     // Most autobuyers will only tick usefully on the very first tick, but this needs to be here in order to allow
     // the autobuyers unaffected by time storage to tick as well
     Autobuyers.tick();
     GameUI.update();
-    return true;
+    if(realityUGs.all[7].isBought && !Enslaved.isStoringRealTime) return false;
+    return true
   }
   return false;
 }
