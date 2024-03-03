@@ -82,7 +82,7 @@ export const realityUG = [
     id: 7,
     requirement: "fill the nameless ones real time storage",
     hasFailed: () =>false,
-    checkRequirement: () => player.celestials.enslaved.storedReal >= 28800000,
+    checkRequirement: () =>  player.celestials.enslaved.storedReal >= Enslaved.storedRealTimeCap,
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
     description: "real time storing is fulled automatically",
     effect: 1,
