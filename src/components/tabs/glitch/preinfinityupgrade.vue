@@ -76,7 +76,7 @@ export default {
         class="l-hint-text--reality-upgrade c-hint-text--reality-upgrade">
         {{ config.name }}
       </HintText>
-      <span :class="{ 'o-pelle-disabled': pelle }">
+      <span :class="{ 'o-pelle-disabled': Pelle.isDoomed }">
         <DescriptionDisplay :config="config" />
         <template v-if="($viewModel.shiftDown === isAvailableForPurchase)">
           <br>
