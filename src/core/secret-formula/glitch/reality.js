@@ -9,7 +9,8 @@ export const realityUG = [
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
     description: "gain x1e25 more EP",
     effect: () => 1e25,
-    formatEffect: value => formatX(value, 2, 2)
+    formatEffect: value => formatX(value, 2, 2),
+    isUseless: () => Pelle.isDoomed
   },
   {
   name: "dialated",
@@ -53,7 +54,7 @@ export const realityUG = [
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
     description: "EC8 and EC4 have no path reqierment (unlock other paths at the same row)",
     effect: 1,
-    formatEffect: value => formatX(value, 2, 2)
+    formatEffect: value => formatX(value, 2, 2),
   },
   {
     name: "limiting reality",
