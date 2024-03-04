@@ -7,7 +7,7 @@ export const eternityUG = [
     hasFailed: () => PlayerProgress.eternityUnlocked(),
     checkRequirement: () => player.infinityPoints.e >= 350 && !PlayerProgress.eternityUnlocked(),
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
-    description: "gain x5 more EP (pelle effective)",
+    description: "gain x5 more EP",
     effect: () => 5,
     formatEffect: value => formatX(value, 2, 2)
   },
@@ -20,7 +20,8 @@ export const eternityUG = [
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
     description: "free tick speed threshold decreased to 1.3",
     effect: () => 1.3,
-    formatEffect: value => formatInt(value)
+    formatEffect: value => formatInt(value),
+    isUseless: () => Pelle.isDoomed
   },
   {
   name: "rifted",
@@ -40,9 +41,9 @@ export const eternityUG = [
     hasFailed: () => false,
     checkRequirement: () => player.eternityPoints.greaterThanOrEqualTo(1e20),
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
-    description: "250 free tick speed upgrades (pelle effective)",
+    description: "250 free tick speed upgrades",
     effect: () => 250,
-    formatEffect: value => "+" + formatInt(value)
+    formatEffect: value => "+" + formatInt(value),
   },
   {
     name: "wrong timeline",
@@ -51,7 +52,7 @@ export const eternityUG = [
     hasFailed: () => EternityChallenges.all[0].completions > 0 || PlayerProgress.realityUnlocked(),
     checkRequirement: () => EternityChallenges.completions >= 1 && EternityChallenges.all[0].completions == 0 && !PlayerProgress.realityUnlocked(),
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
-    description: "x15 EP gain (pelle effective)",
+    description: "x15 EP gain",
     effect: () => 15,
     formatEffect: value => formatX(value, 2, 2)
   },
@@ -64,7 +65,8 @@ export const eternityUG = [
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
     description: "5000 free tick speed upgrades",
     effect: () => 5000,
-    formatEffect: value => "+" + formatInt(value)
+    formatEffect: value => "+" + formatInt(value),
+    isUseless: () => Pelle.isDoomed
   },
 
 ];
