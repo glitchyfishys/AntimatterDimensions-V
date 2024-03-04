@@ -45,6 +45,10 @@ class eternityUGState extends BitPurchasableMechanicState {
   get isAvailableForPurchase() {
     return (player.glitch.eternity.upgradebits & (1 << this.id)) !== 0;
   }
+
+  get isUseless() {
+    return this.config.isUsless();
+  }
   
   tryUnlock() {
     if (!this.config.checkRequirement()) return;
