@@ -24,6 +24,7 @@ export default {
       isAvailableForPurchase: false,
       isBought: false,
       isPossible: false,
+      isUseless: false,
       canBeLocked: false,
       hasRequirementLock: false,
     };
@@ -54,6 +55,7 @@ export default {
   methods: {
     update() {
       const upgrade = this.upgrade;
+      this.isUseless = upgrade.isUseless,
       this.isAvailableForPurchase = upgrade.isAvailableForPurchase;
       this.automatorPoints = this.config.automatorPoints;
       this.canBeBought = upgrade.canBeBought;
