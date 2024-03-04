@@ -48,6 +48,9 @@ export default {
         description: this.config.requirement
       };
     },
+    pelle() {
+      return upgrade.isUseless && Pelle.isDoomed;
+    }
   },
   methods: {
     update() {
