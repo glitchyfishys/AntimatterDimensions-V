@@ -47,7 +47,7 @@ class preinfinityUGState extends BitPurchasableMechanicState {
   }
 
   get isUseless() {
-    return this.config.isUsless();
+    return this.config.isUseless();
   }
   
   tryUnlock() {
