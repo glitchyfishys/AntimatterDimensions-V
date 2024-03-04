@@ -45,6 +45,10 @@ class preinfinityUGState extends BitPurchasableMechanicState {
   get isAvailableForPurchase() {
     return (player.glitch.preinfinity.upgradebits & (1 << this.id)) !== 0;
   }
+
+  get isUseless() {
+    return this.config.isUsless();
+  }
   
   tryUnlock() {
     if (!this.config.checkRequirement()) return;
