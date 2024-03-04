@@ -54,7 +54,8 @@ export const breakinfinityUG = [
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
     description: "Replicanti speed by it's amount",
     effect: () => 1 + Math.sqrt(player.replicanti.amount.log10()),
-    formatEffect: value => formatX(value, 2, 2)
+    formatEffect: value => formatX(value, 2, 2),
+    isUseless: () => Pelle.isDoomed
   },
   {
     name: "cloned replication",
