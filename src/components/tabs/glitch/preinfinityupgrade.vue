@@ -48,6 +48,7 @@ export default {
       };
     },
     pelle() {
+      return true
       return this.upgrade.isUseless && Pelle.isDoomed;
     }
   },
