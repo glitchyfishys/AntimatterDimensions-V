@@ -47,7 +47,8 @@ class realityUGState extends BitPurchasableMechanicState {
   }
 
   get isUseless() {
-    return this.config.isUseless();
+    if(this.config.isUseless === "function") this.config.isUseless()
+    return false;
   }
   
   tryUnlock() {
