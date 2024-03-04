@@ -157,7 +157,8 @@ class RiftState extends GameMechanicState {
       // Don't drain resources if you only have 1 of it.
       // This is in place due to the fix to replicanti below.
       if (this.fillCurrency.value.lte(1)) return;
-      
+
+      console.log(this.rift);
       if (this.rift == "chaos") diff *= 1000;
       
       const afterTickAmount = this.fillCurrency.value.times((1 - Pelle.riftDrainPercent) ** (diff / 1000));
