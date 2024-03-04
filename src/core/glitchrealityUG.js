@@ -47,7 +47,7 @@ class realityUGState extends BitPurchasableMechanicState {
   }
 
   get isUseless() {
-    if(typeof this.config.isUseless === "function") this.config.isUseless()
+    if(typeof this.config.isUseless != "undefined") return (this.config.isUseless() && Pelle.isDoomed)
     return false;
   }
   
