@@ -134,6 +134,7 @@ export function totalReplicantiSpeedMult(overCap) {
   totalMult = totalMult.times(PelleRifts.decay.effectValue);
   totalMult = totalMult.times(Pelle.specialGlyphEffect.replication);
   totalMult = totalMult.times(ShopPurchase.replicantiPurchases.currentMult);
+  totalMult = totalMult.times(breakinfinityUGs.all[5].effectOrDefault(1));
   if (Pelle.isDisabled("replicantiIntervalMult")) return totalMult;
 
   const preCelestialEffects = Effects.product(
@@ -142,8 +143,7 @@ export function totalReplicantiSpeedMult(overCap) {
     RealityUpgrade(2),
     RealityUpgrade(6),
     RealityUpgrade(23),
-    breakinfinityUGs.all[4],
-    breakinfinityUGs.all[5],
+    breakinfinityUGs.all[4]
   );
   totalMult = totalMult.times(preCelestialEffects);
   if (TimeStudy(132).isBought && Perk.studyPassive.isBought) {
