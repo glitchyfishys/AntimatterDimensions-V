@@ -158,8 +158,7 @@ class RiftState extends GameMechanicState {
       // This is in place due to the fix to replicanti below.
       if (this.fillCurrency.value.lte(1)) return;
 
-      console.log(this.rift);
-      if (this.rift == "chaos") diff *= 1000;
+      if (this.config.key == "chaos") diff *= 10;
       
       const afterTickAmount = this.fillCurrency.value.times((1 - Pelle.riftDrainPercent) ** (diff / 1000));
       const spent = this.fillCurrency.value.minus(afterTickAmount);
