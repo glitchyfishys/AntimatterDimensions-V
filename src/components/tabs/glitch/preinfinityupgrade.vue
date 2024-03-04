@@ -35,7 +35,6 @@ export default {
     classObject() {
       return {
         "c-reality-upgrade-btn--useless": this.pelle,
-        "c-reality-upgrade-btn--bought": this.isBought && !this.pelle,
         "c-reality-upgrade-btn--bought": this.isBought,
         "c-reality-upgrade-btn--unavailable": !this.isBought && this.isAvailableForPurchase,
         "c-reality-upgrade-btn--possible": !this.isAvailableForPurchase && this.isPossible,
@@ -48,9 +47,8 @@ export default {
       };
     },
     pelle() {
-      return true
       return this.upgrade.isUseless && Pelle.isDoomed;
-    }
+    },
   },
   methods: {
     update() {
