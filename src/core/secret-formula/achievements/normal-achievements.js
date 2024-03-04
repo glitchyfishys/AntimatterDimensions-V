@@ -1156,10 +1156,8 @@ export const normalAchievements = [
     id: 157,
     name: "It's super effective!",
     get description() { return `Get a Glyph with ${formatInt(4)} effects.`; },
-    checkRequirement: () => Glyphs.activeList.concat(Glyphs.inventoryList).map(
-      glyph => getGlyphEffectsFromBitmask(glyph.effects, 0, 0)
-        .filter(effect => effect.isGenerated).length
-    ).max() >= 4,
+    checkRequirement: () => Glyphs.inventoryList.map(
+      glyph => (glyph.effects & 127) >= 15).includes(true),
     checkEvent: GAME_EVENT.GLYPHS_CHANGED
   },
   {
