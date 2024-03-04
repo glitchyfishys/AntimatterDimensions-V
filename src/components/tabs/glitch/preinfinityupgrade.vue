@@ -48,7 +48,7 @@ export default {
       };
     },
     pelle() {
-      return this.upgrade.isUseless;
+      return this.upgrade.isUseless && Pelle.isDoomed;
     }
   },
   methods: {
@@ -75,7 +75,7 @@ export default {
         class="l-hint-text--reality-upgrade c-hint-text--reality-upgrade">
         {{ config.name }}
       </HintText>
-      <span :class="{ 'o-pelle-disabled': Pelle.isDoomed }">
+      <span :class="{ 'o-pelle-disabled': pelle }">
         <DescriptionDisplay :config="config" />
         <template v-if="($viewModel.shiftDown === isAvailableForPurchase)">
           <br>
