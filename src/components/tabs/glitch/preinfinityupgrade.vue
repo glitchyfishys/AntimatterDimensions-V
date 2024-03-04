@@ -24,7 +24,7 @@ export default {
       isAvailableForPurchase: false,
       isBought: false,
       isPossible: false,
-      isUseless: false,
+      pelle: false,
       canBeLocked: false,
       hasRequirementLock: false,
     };
@@ -35,8 +35,8 @@ export default {
     },
     classObject() {
       return {
-        "c-reality-upgrade-btn--useless": this.isUseless,
-        "c-reality-upgrade-btn--bought": this.isBought && !this.isUseless,
+        "c-reality-upgrade-btn--useless": this.pelle,
+        "c-reality-upgrade-btn--bought": this.isBought && !this.pelle,
         "c-reality-upgrade-btn--bought": this.isBought,
         "c-reality-upgrade-btn--unavailable": !this.isBought && this.isAvailableForPurchase,
         "c-reality-upgrade-btn--possible": !this.isAvailableForPurchase && this.isPossible,
@@ -48,29 +48,18 @@ export default {
         description: this.config.requirement
       };
     },
-    canLock() {
-      return this.config.canLock && !(this.isAvailableForPurchase || this.isBought);
-    },
   },
   methods: {
     update() {
       const upgrade = this.upgrade;
-      this.isUseless = upgrade.isUseless,
+      this.pelle = upgrade.isUseless;
       this.isAvailableForPurchase = upgrade.isAvailableForPurchase;
       this.automatorPoints = this.config.automatorPoints;
       this.canBeBought = upgrade.canBeBought;
-      this.isRebuyable = upgrade.isRebuyable;
-      this.isBought = !upgrade.isRebuyable && upgrade.isBought;
+      this.isBought = upgrade.isBought;
       this.isPossible = upgrade.isPossible;
-      this.isAutoUnlocked = Ra.unlocks.instantECAndRealityUpgradeAutobuyers.canBeApplied;
-      this.canBeLocked = upgrade.config.canLock && !this.isAvailableForPurchase;
-      this.hasRequirementLock = upgrade.hasPlayerLock;
-      if (this.isRebuyable) this.isAutobuyerOn = Autobuyer.realityUpgrade(upgrade.id).isActive;
+      this.canBeLocked = upgrade.config.canLock;
     },
-    toggleLock(upgrade) {
-      if (this.isRebuyable) return;
-      upgrade.toggleMechanicLock();
-    }
   }
 };
 </script>
@@ -85,7 +74,7 @@ export default {
         class="l-hint-text--reality-upgrade c-hint-text--reality-upgrade">
         {{ config.name }}
       </HintText>
-      <span :class="{ 'o-pelle-disabled': isUseless }">
+      <span :class="{ 'o-pelle-disabled': pelle }">
         <DescriptionDisplay :config="config" />
         <template v-if="($viewModel.shiftDown === isAvailableForPurchase) && !isRebuyable">
           <br>
@@ -103,25 +92,7 @@ export default {
         </template>
       </span>
     </button>
-    <div
-      v-if="canBeLocked"
-      class="o-requirement-lock"
-    >
-      <i
-        v-if="hasRequirementLock"
-        class="fas fa-lock"
-      />
-      <i
-        v-else-if="canLock"
-        class="fas fa-lock-open"
-      />
-    </div>
-    <PrimaryToggleButton
-      v-if="isRebuyable && isAutoUnlocked"
-      v-model="isAutobuyerOn"
-      label="Auto:"
-      class="l--spoon-btn-group__little-spoon-reality-btn o-primary-btn--reality-upgrade-toggle"
-    />
+
   </div>
 </template>
 
