@@ -47,7 +47,7 @@ class eternityUGState extends BitPurchasableMechanicState {
   }
 
   get isUseless() {
-    if(typeof this.config.isUseless === "function") this.config.isUseless()
+    if(typeof this.config.isUseless != "undefined") this.config.isUseless()
     return false;
   }
   
