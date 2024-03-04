@@ -48,7 +48,6 @@ export default {
       };
     },
     pelle() {
-      console.log(this.upgrade.isUseless)
       return this.upgrade.isUseless;
     }
   },
