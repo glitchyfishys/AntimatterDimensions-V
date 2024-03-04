@@ -76,7 +76,7 @@ export default {
       </HintText>
       <span :class="{ 'o-pelle-disabled': pelle }">
         <DescriptionDisplay :config="config" />
-        <template v-if="($viewModel.shiftDown === isAvailableForPurchase) && !isRebuyable">
+        <template v-if="($viewModel.shiftDown === isAvailableForPurchase)">
           <br>
           <DescriptionDisplay
             :config="requirementConfig"
