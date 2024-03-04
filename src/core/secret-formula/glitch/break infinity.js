@@ -7,7 +7,7 @@ export const breakinfinityUG = [
     hasFailed: () => player.dimensionBoosts > 4 || player.galaxies > 1,
     checkRequirement: () => player.antimatter.e >= 500 && player.dimensionBoosts <= 4,
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
-    description: "IP muliplier from antimatter galaxies (pelle effective)",
+    description: "IP muliplier from antimatter galaxies",
     effect: () => 1 + Math.pow(player.galaxies, 1.25),
     formatEffect: value => formatX(value, 2, 2)
   },
@@ -18,7 +18,7 @@ export const breakinfinityUG = [
     hasFailed: () => player.dimensionBoosts > 4 || player.galaxies > 1 ,
     checkRequirement: () =>  gainedInfinityPoints().greaterThan(2000) && player.dimensionBoosts <= 4 && player.galaxies <= 1,
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
-    description: "x10 infinity points (pelle effective)",
+    description: "x10 infinity points",
     effect: () => 10,
     formatEffect: value => formatX(value, 2, 2)
   },
@@ -31,7 +31,8 @@ export const breakinfinityUG = [
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
     description: "1e50 more infinity points",
     effect: () => 1e50,
-    formatEffect: value => formatX(value, 2, 2)
+    formatEffect: value => formatX(value, 2, 2),
+    isUseless: () => Pelle.isDoomed
   },
   {
     name: "cosmic infinity",
@@ -40,7 +41,7 @@ export const breakinfinityUG = [
     hasFailed: () => false,
     checkRequirement: () => player.infinityPoints.e >= 150,
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
-    description: "IP muliplier from antimatter galaxies (pelle effective)",
+    description: "IP muliplier from antimatter galaxies",
     effect: () => 1 + Math.pow(player.galaxies, 3),
     formatEffect: value => formatX(value, 2, 2)
   },
@@ -51,7 +52,7 @@ export const breakinfinityUG = [
     hasFailed: () => player.replicanti.chance > 0.01 || !player.replicanti.interval < 1000 || PlayerProgress.eternityUnlocked(),
     checkRequirement: () => player.replicanti.amount.greaterThanOrEqualTo(10) && player.replicanti.chance == 0.01 && player.replicanti.interval >= 1000 && !PlayerProgress.eternityUnlocked(),
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
-    description: "Replicanti speed by it's amount (pelle effective)",
+    description: "Replicanti speed by it's amount",
     effect: () => 1 + Math.sqrt(player.replicanti.amount.log10()),
     formatEffect: value => formatX(value, 2, 2)
   },
@@ -62,7 +63,7 @@ export const breakinfinityUG = [
     hasFailed: () => player.replicanti.chance > 0.01 || player.replicanti.interval < 1000 || PlayerProgress.eternityUnlocked(),
     checkRequirement: () => player.replicanti.amount.greaterThanOrEqualTo(1.79e308) && player.replicanti.chance == 0.01 && player.replicanti.interval >= 1000 && !PlayerProgress.eternityUnlocked(),
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
-    description: "increase replcanti speed by their galxies (pelle effective)",
+    description: "increase replcanti speed by their galxies",
     effect: () => 1 + (Math.pow(player.replicanti.galaxies, 1.2) / 38),
     formatEffect: value => formatX(value, 2, 2)
   },
