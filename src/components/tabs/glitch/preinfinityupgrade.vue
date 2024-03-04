@@ -49,7 +49,7 @@ export default {
     },
     pelle() {
       console.log(this.upgrade.isUseless)
-      return this.upgrade.isUseless && Pelle.isDoomed;
+      return this.upgrade.isUseless;
     }
   },
   methods: {
