@@ -47,7 +47,8 @@ class breakinfinityUGState extends BitPurchasableMechanicState {
   }
 
   get isUseless() {
-    return this.config.isUseless();
+    if(typeof this.config.isUseless === "function") this.config.isUseless()
+    return false;
   }
   
   tryUnlock() {
