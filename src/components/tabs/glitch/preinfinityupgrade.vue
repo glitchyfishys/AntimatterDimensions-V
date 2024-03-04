@@ -24,7 +24,6 @@ export default {
       isAvailableForPurchase: false,
       isBought: false,
       isPossible: false,
-      pelle: false,
       canBeLocked: false,
       hasRequirementLock: false,
     };
@@ -49,13 +48,12 @@ export default {
       };
     },
     pelle() {
-      return upgrade.isUseless && Pelle.isDoomed;
+      return this.upgrade.isUseless && Pelle.isDoomed;
     }
   },
   methods: {
     update() {
       const upgrade = this.upgrade;
-      this.pelle = upgrade.isUseless;
       this.isAvailableForPurchase = upgrade.isAvailableForPurchase;
       this.automatorPoints = this.config.automatorPoints;
       this.canBeBought = upgrade.canBeBought;
