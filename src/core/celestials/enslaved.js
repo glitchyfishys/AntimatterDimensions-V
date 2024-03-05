@@ -74,6 +74,7 @@ export const Enslaved = {
     return this.canModifyRealTimeStorage && player.celestials.enslaved.isStoringReal;
   },
   get storedRealTimeEfficiency() {
+    
     return 0.7;
   },
   get storedRealTimeCap() {
@@ -86,7 +87,7 @@ export const Enslaved = {
   storeRealTime() {
     if (Pelle.isDoomed) return;
     const thisUpdate = Date.now();
-    const diff = Math.max(thisUpdate - player.lastUpdate, 0);
+    const diff = Math.max(thisUpdate - player.lastUpdate, 0) * realityUGs.all[7].effectOrDefault(0);
     const efficiency = this.storedRealTimeEfficiency;
     const maxTime = this.storedRealTimeCap;
     player.celestials.enslaved.storedReal += diff * efficiency;
@@ -291,7 +292,7 @@ export const Tesseracts = {
   // Note that costs go a bit past e9e15 because while AM is capped at e9e15, most other resources (including IP)
   // aren't and can go a tiny bit past it.
   // The formula is a hardcoded 2, 4, 6 followed by successive multiplication by 2x, 4x, 6x, and so on.
-  BASE_COSTS: [2, 4, 6, 12, 48, 288, 2304, 23040, 276480, 3870720, 61931520, 1114767360],
+  BASE_COSTS: [2, 4, 6, 12, 48, 288, 2304, 23040, 276480, 3870720, 61931520, 1114767360, 8918138880],
   costs(index) {
     // In practice this should never happen, but have it just to be safe
     if (index >= this.BASE_COSTS.length) return Decimal.pow10(Number.MAX_VALUE);
