@@ -15,12 +15,12 @@ export const realityUG = [
   {
   name: "dialated",
     id: 1,
-    requirement: "reach 1e1000 (pending) EP while dialated before your first reality (check multiplier breakdown)",
+    requirement: "reach 1e1050 (pending) EP while dialated before your first reality (check multiplier breakdown)",
     hasFailed: () => player.realities != 0,
-    checkRequirement: () => gainedEternityPoints().greaterThanOrEqualTo("1e1000") && player.dilation.active && player.realities == 0,
+    checkRequirement: () => gainedEternityPoints().greaterThanOrEqualTo("1e1050") && player.dilation.active && player.realities == 0,
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
-    description: "gain 25 times more tachyon particles",
-    effect: () => 25,
+    description: "gain 15 times more tachyon particles",
+    effect: () => 15,
     formatEffect: value => formatX(value, 2, 2)
   },
   {
