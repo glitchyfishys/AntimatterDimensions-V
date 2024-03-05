@@ -153,8 +153,7 @@ export function tachyonGainMultiplier() {
     RealityUpgrade(4),
     RealityUpgrade(8),
     RealityUpgrade(15),
-    realityUGs.all[1]
-  ).pow(pow);
+  ).times(realityUGs.all[1].effectOrDefault(1)).pow(pow);
 }
 
 export function rewardTP() {
