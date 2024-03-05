@@ -89,5 +89,27 @@ export const realityUG = [
     effect: 100,
     formatEffect: value => format(value, 2, 2)
   },
+  {
+    name: "i hate V",
+    id: 8,
+    requirement: "unlock V",
+    hasFailed: () =>false,
+    checkRequirement: () =>  player.celestials.v.unlockBits != 0,
+    checkevent: GAME_EVENT.GAME_TICK_BEFORE,
+    description: "gain space theorem",
+    effect: 10,
+    formatEffect: value => format(value, 2, 2)
+  },
+  {
+    name: "memorys",
+    id: 9,
+    requirement: "unlock a glitched memory",
+    hasFailed: () =>false,
+    checkRequirement: () =>  Ra.isUnlocked,
+    checkevent: GAME_EVENT.GAME_TICK_BEFORE,
+    description: "unlock Ra",
+    effect: 1,
+    formatEffect: value => format(value, 2, 2)
+  },
   
 ];
