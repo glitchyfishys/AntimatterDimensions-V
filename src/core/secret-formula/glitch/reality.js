@@ -85,8 +85,8 @@ export const realityUG = [
     hasFailed: () =>false,
     checkRequirement: () =>  player.celestials.enslaved.storedReal >= Enslaved.storedRealTimeCap,
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
-    description: "real time storing is fulled automatically",
-    effect: 1,
+    description: "real time storing is fulled automatically and 100 times faster",
+    effect: 100,
     formatEffect: value => format(value, 2, 2)
   },
   
