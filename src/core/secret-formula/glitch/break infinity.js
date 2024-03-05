@@ -49,7 +49,7 @@ export const breakinfinityUG = [
     name: "replicated infinity",
     id: 4,
     requirement: "have 10 replicanti without any upgrades",
-    hasFailed: () => player.replicanti.chance > 0.01 || !player.replicanti.interval < 1000 || PlayerProgress.eternityUnlocked(),
+    hasFailed: () => player.replicanti.chance > 0.01 || player.replicanti.interval > 1000 || PlayerProgress.eternityUnlocked(),
     checkRequirement: () => player.replicanti.amount.greaterThanOrEqualTo(10) && player.replicanti.chance == 0.01 && player.replicanti.interval >= 1000 && !PlayerProgress.eternityUnlocked(),
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
     description: "Replicanti speed by it's amount",
