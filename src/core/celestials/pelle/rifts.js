@@ -151,7 +151,6 @@ class RiftState extends GameMechanicState {
       this.rift.active = false;
       return;
     }
-    console.log(this.config.key)
     if (this.config.key == "chaos") diff *= 10;
     
     if (!this.isActive || this.isMaxed) return;
