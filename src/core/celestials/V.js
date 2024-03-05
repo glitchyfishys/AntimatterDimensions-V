@@ -188,6 +188,7 @@ export const V = {
   },
   updateTotalRunUnlocks() {
     let sum = 0;
+    if (realityUGs.all[8].isBought) sum += 10;
     for (let i = 0; i < player.celestials.v.runUnlocks.length; i++) {
       if (i < 6) sum += player.celestials.v.runUnlocks[i];
       else sum += player.celestials.v.runUnlocks[i] * 2;
