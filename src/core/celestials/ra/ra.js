@@ -86,6 +86,8 @@ class RaPetState extends GameMechanicState {
   }
 
   get isUnlocked() {
+    if(this.name == "Glitch") return realityUGs.all[9].isBought;
+    
     return this.requiredUnlock === undefined || this.requiredUnlock.isUnlocked;
   }
 
