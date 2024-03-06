@@ -435,7 +435,7 @@ export function realTimeMechanics(realDiff) {
     // the autobuyers unaffected by time storage to tick as well
     Autobuyers.tick();
     GameUI.update();
-    if(realityUGs.all[7].isBought && !Enslaved.isStoringRealTime) return false;
+    if(realityUGs.all[7].isBought) return false;
     return true
   }
   return false;
