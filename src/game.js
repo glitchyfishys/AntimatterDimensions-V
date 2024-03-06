@@ -424,7 +424,7 @@ export function realTimeMechanics(realDiff) {
 
   // When storing real time, skip everything else having to do with production once stats are updated
   if (Enslaved.isStoringRealTime || realityUGs.all[7].isBought) {
-    if(!realityUGs.all[7].isBought && Enslaved.isStoringRealTime){ 
+    if(Enslaved.isStoringRealTime){
     player.records.realTimePlayed += realDiff;
     player.records.thisInfinity.realTime += realDiff;
     player.records.thisEternity.realTime += realDiff;
