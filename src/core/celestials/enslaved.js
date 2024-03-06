@@ -87,7 +87,7 @@ export const Enslaved = {
   storeRealTime() {
     if (Pelle.isDoomed) return;
     const thisUpdate = Date.now();
-    const diff = Math.max(thisUpdate - player.lastUpdate, 0) * realityUGs.all[7].effectOrDefault(0);
+    const diff = Math.max(thisUpdate - player.lastUpdate, 0) * realityUGs.all[7].effectOrDefault(1);
     const efficiency = this.storedRealTimeEfficiency;
     const maxTime = this.storedRealTimeCap;
     player.celestials.enslaved.storedReal += diff * efficiency;
