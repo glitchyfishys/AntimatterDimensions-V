@@ -42,7 +42,6 @@ export const teresa = {
       id: 6,
       price: 1e30,
       description: "Eternity Challenge 6 no longer need the active path",
-      isDisabledInDoomed: true
     }
   }
 };
