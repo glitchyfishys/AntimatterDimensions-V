@@ -1003,7 +1003,7 @@ export const Player = {
 
   get infinityLimit() {
     const challenge = NormalChallenge.current || InfinityChallenge.current;
-    return challenge === undefined ? Decimal.MAX_VALUE : challenge.goal;
+    return challenge === undefined ? Decimal.add("1e10000000000000000000") : challenge.goal;
   },
 
   get eternityGoal() {
