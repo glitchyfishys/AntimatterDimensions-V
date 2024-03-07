@@ -124,7 +124,7 @@ class RiftState extends GameMechanicState {
   }
 
   get maxValue() {
-    return this.config.percentageToFill(9 + this.spentPercentage);
+    return this.config.percentageToFill(2 + this.spentPercentage);
   }
 
   get isMaxed() {
