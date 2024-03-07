@@ -217,7 +217,7 @@ export const Pelle = {
         ? Currency.eternityPoints.value.plus(1).pow(0.3)
         : DC.D1,
       replication: isActive("replication")
-        ? 10 ** 53 ** (PelleRifts.vacuum.percentage)
+        ? 10 ** 55 ** (PelleRifts.vacuum.percentage)
         : 1,
       dilation: isActive("dilation")
         ? Decimal.pow(player.dilation.totalTachyonGalaxies, 1.5).max(1)
@@ -241,7 +241,7 @@ export const Pelle = {
         return `Eternity Point gain ${formatX(Currency.eternityPoints.value.plus(1).pow(0.3), 2)}
           (based on current EP)`;
       case "replication":
-        return `Replication speed ${formatX(10 ** 53 ** (PelleRifts.vacuum.percentage), 2)} \
+        return `Replication speed ${formatX(10 ** 55 ** (PelleRifts.vacuum.percentage), 2)} \
         (based on ${wordShift.wordCycle(PelleRifts.vacuum.name)})`;
       case "dilation":
         return `Dilated Time gain ${formatX(Decimal.pow(player.dilation.totalTachyonGalaxies, 1.5).max(1), 2)}
@@ -276,7 +276,7 @@ export const Pelle = {
     // Since 5th strike previously did not reset your current EP the previous reset value was kind of useless which
     // lead to some balancing problems, this hopefully prevents people starting dilation too early and getting
     // softlocked, or starting it too late and getting not-softlocked.
-    this.cel.records.totalEternityPoints = new Decimal("1e1050");
+    this.cel.records.totalEternityPoints = new Decimal("1e1100");
   },
 
   get remnantsGain() {
