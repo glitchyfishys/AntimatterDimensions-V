@@ -998,12 +998,12 @@ export const Player = {
 
   get infinityGoal() {
     const challenge = NormalChallenge.current || InfinityChallenge.current;
-    return challenge === undefined ? Decimal.add("1e10000000000000000000") : challenge.goal;
+    return challenge === undefined ? Decimal.MAX_VALUE.pow(100) : challenge.goal;
   },
 
   get infinityLimit() {
     const challenge = NormalChallenge.current || InfinityChallenge.current;
-    return challenge === undefined ? Decimal.add("1e10000000000000000000") : challenge.goal;
+    return challenge === undefined ? Decimal.MAX_VALUE.pow(100) : challenge.goal;
   },
 
   get eternityGoal() {
