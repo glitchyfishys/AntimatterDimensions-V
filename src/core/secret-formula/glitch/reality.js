@@ -130,7 +130,7 @@ export const realityUG = [
     checkRequirement: () =>  player.celestials.laitela.singularities >= 10000,
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
     description: "singularities gain is boosted by their amount",
-    effect: Math.sqrt(player.celestials.laitela.singularities),
+    effect: () => Math.sqrt(player.celestials.laitela.singularities),
     formatEffect: () => "active"
   },
   
