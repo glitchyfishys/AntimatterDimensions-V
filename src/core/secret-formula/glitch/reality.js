@@ -103,13 +103,35 @@ export const realityUG = [
   {
     name: "memorys",
     id: 9,
-    requirement: "unlock a glitched memory",
+    requirement: "unlock Ra",
     hasFailed: () =>false,
     checkRequirement: () =>  Ra.isUnlocked,
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
-    description: "unlock Ra",
+    description: "unlock a glitched memory",
     effect: 1,
     formatEffect: value => format(value, 2, 2)
+  },
+  {
+    name: "astral confrontment",
+    id: 10,
+    requirement: "unlock lai'tela",
+    hasFailed: () => false,
+    checkRequirement: () =>  Laitela.isUnlocked,
+    checkevent: GAME_EVENT.GAME_TICK_BEFORE,
+    description: "dark matter energy gained is 50 times faster",
+    effect: 50,
+    formatEffect: () => "active"
+  },
+  {
+    name: "galatic overload",
+    id: 11,
+    requirement: "have 10000 singularities",
+    hasFailed: () => false,
+    checkRequirement: () =>  player.celestials.laitela.singularities >= 10000,
+    checkevent: GAME_EVENT.GAME_TICK_BEFORE,
+    description: "singularities gain is boosted by their amount",
+    effect: Math.sqrt(player.celestials.laitela.singularities),
+    formatEffect: () => "active"
   },
   
 ];
