@@ -63,18 +63,17 @@ window.bulkBuyBinarySearch = function bulkBuyBinarySearch(money, costInfo, alrea
   // The amount we can actually buy is in the interval [canBuy/2, canBuy), we do a binary search
   // to find the exact value:
   let canBuy = cantBuy / 2;
-  if (cantBuy > Number.MAX_SAFE_INTEGER) canBuy = Number.MAX_SAFE_INTEGER;
+  if (cantBuy > Number.MAX_SAFE_INTEGER) cantBuy = Number.MAX_SAFE_INTEGER;
+  if (canBuy > Number.MAX_SAFE_INTEGER /2) canBuy = Number.MAX_SAFE_INTEGER / 2;
   
-  if (cantBuy < Number.MAX_SAFE_INTEGER){
   while (cantBuy - canBuy > 1) {
     const middle = Math.floor((canBuy + cantBuy) / 2);
-    if (money.gte(costFunction(alreadyBought + middle - 1))) {
-      canBuy = middle;
-    } else {
-      cantBuy = middle;
+      if (money.gte(costFunction(alreadyBought + middle - 1))) {
+        canBuy = middle;
+      } else {
+        cantBuy = middle;
+      }
     }
-  }
-  }
   
   const baseCost = costFunction(alreadyBought + canBuy - 1);
   if (!isCumulative) {
