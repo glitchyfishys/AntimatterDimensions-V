@@ -67,6 +67,27 @@ const rarityBorderStyles = {
       colorSplit: [65, 85],
     },
   ],
+  antaloni: [
+    {
+      lineType: "spike",
+      center: [40, 40],
+      angles: [305,325],
+    },
+    {
+      lineType: "spike",
+      center: [60, 60],
+      angles: [125, 145],
+    },
+    {
+      lineType: "linear",
+      angles: [45],
+      colorSplit: [14, 16, 84, 86],
+    },
+    {
+      lineType: "radial",
+      colorSplit: [65, 85],
+    },
+  ],
   cursed: [
     {
       lineType: "spike",
