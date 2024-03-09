@@ -698,7 +698,8 @@ function updatePrestigeRates() {
   }
 
   const currentRSmin = Effarig.shardsGained / Math.clampMin(0.0005, Time.thisRealityRealTime.totalMinutes);
-  if (currentRSmin > player.records.thisReality.bestRSmin && isRealityAvailable()) {
+  if(currentRSmin >= Number.MAX_VALUE) currentRSmin = Number.MAX_VALUE;
+  if (currentRSmin > player.records.thisReality.bestRSmin && isRealityAvailable() ) {
     player.records.thisReality.bestRSmin = currentRSmin;
     player.records.thisReality.bestRSminVal = Effarig.shardsGained;
   }
