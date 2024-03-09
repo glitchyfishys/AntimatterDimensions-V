@@ -64,6 +64,8 @@ window.bulkBuyBinarySearch = function bulkBuyBinarySearch(money, costInfo, alrea
   // to find the exact value:
   let canBuy = cantBuy / 2;
   if (cantBuy > Number.MAX_SAFE_INTEGER) canBuy = Number.MAX_SAFE_INTEGER;
+  
+  if (cantBuy < Number.MAX_SAFE_INTEGER){
   while (cantBuy - canBuy > 1) {
     const middle = Math.floor((canBuy + cantBuy) / 2);
     if (money.gte(costFunction(alreadyBought + middle - 1))) {
@@ -72,6 +74,8 @@ window.bulkBuyBinarySearch = function bulkBuyBinarySearch(money, costInfo, alrea
       cantBuy = middle;
     }
   }
+  }
+  
   const baseCost = costFunction(alreadyBought + canBuy - 1);
   if (!isCumulative) {
     return { quantity: canBuy, purchasePrice: baseCost };
