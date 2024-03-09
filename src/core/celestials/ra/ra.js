@@ -42,6 +42,10 @@ class RaUnlockState extends BitUpgradeState {
     return this.pet.level >= this.level && !this.isUnlocked;
   }
 
+  get maxMemories() {
+    return Number.MAX_VALUE
+  }
+
   onUnlock() {
     this.config.onUnlock?.();
   }
@@ -214,6 +218,8 @@ class RaPetState extends GameMechanicState {
       this.memoryUpgradeCurrentMult;
     this.memoryChunks += newMemoryChunks;
     this.memories += newMemories;
+    if(this.memories > this.maxmemories) this.memories = this.maxmemories
+    if(this.memoryChunks > this.maxmemories) this.memoryChunks = this.maxmemories
   }
 
   reset() {
