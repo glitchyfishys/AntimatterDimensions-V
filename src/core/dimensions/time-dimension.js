@@ -67,6 +67,9 @@ export function buyMaxTimeDimension(tier, portionToSpend = 1, isMaxAll = false) 
     return false;
   }
   if (Enslaved.isRunning) return buySingleTimeDimension(tier);
+  if (dim.bought > 1e18) dim.bought = 1e18
+  if (dim.bought >= 1e18) return true
+  
   const bulk = bulkBuyBinarySearch(canSpend, {
     costFunction: bought => dim.nextCost(bought),
     cumulative: true,
