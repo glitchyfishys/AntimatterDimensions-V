@@ -9,7 +9,7 @@ export const ecTimeStudies = [
     secondary: {
       resource: "Eternities",
       current: () => Currency.eternities.value,
-      required: completions => new Decimal(20000 + Math.min(completions, Enslaved.isRunning ? 999 : 4) * 20000),
+      required: completions => new Decimal(1000 + Math.min(completions, Enslaved.isRunning ? 999 : 4) * 1000),
       formatValue: formatInt
     }
   },
