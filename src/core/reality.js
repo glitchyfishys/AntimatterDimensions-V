@@ -383,15 +383,17 @@ export function beginProcessReality(realityProps) {
   const glyphLevel = gainedGlyphLevel();
   finishProcessReality(realityProps);
 
+  let gl = glyphLevel.actualLevel
+  if(gl >= 100000) gl = 100000;
   if(Perk.autoGlyph.canBeApplied){
     for (let i=0; i < player.reality.glyphs.inventory.length; i++){
-      if(player.reality.glyphs.inventory[i].level < glyphLevel.actualLevel && !(player.reality.glyphs.inventory[i].type == "reality" || player.reality.glyphs.inventory[i].type == "cursed") ){
-        player.reality.glyphs.inventory[i].level = glyphLevel.actualLevel;
+      if(player.reality.glyphs.inventory[i].level < gl && !(player.reality.glyphs.inventory[i].type == "reality" || player.reality.glyphs.inventory[i].type == "cursed") ){
+        player.reality.glyphs.inventory[i].level = gl;
       }
     }
     for (let i=0; i < player.reality.glyphs.active.length; i++){
-      if(player.reality.glyphs.active[i].level < glyphLevel.actualLevel && !(player.reality.glyphs.active[i].type == "reality" || player.reality.glyphs.active[i].type == "cursed") ){
-      player.reality.glyphs.active[i].level = glyphLevel.actualLevel;
+      if(player.reality.glyphs.active[i].level < gl && !(player.reality.glyphs.active[i].type == "reality" || player.reality.glyphs.active[i].type == "cursed") ){
+      player.reality.glyphs.active[i].level = gl;
       }
     }
   }
