@@ -88,7 +88,7 @@ export class DarkMatterDimensionState extends DimensionState {
     if (!this.isUnlocked || Pelle.isDoomed) return 0;
     const tierFactor = Math.pow(15, this.tier - 1);
     const destabilizeBoost = Laitela.isFullyDestabilized ? 8 : 1;
-    return new Decimal(((1 + this.data.powerDEUpgrades * 0.1) *
+    let DEmult = new Decimal(((1 + this.data.powerDEUpgrades * 0.1) *
       Math.pow(1.005, this.data.powerDEUpgrades)) * tierFactor / 1000)
       .times(this.commonDarkMult)
       .times(Math.pow(POWER_DE_PER_ASCENSION, this.ascensions))
@@ -97,6 +97,8 @@ export class DarkMatterDimensionState extends DimensionState {
         SingularityMilestone.realityDEMultiplier,
         SingularityMilestone.multFromInfinitied
       ).times(realityUGs.all[10].effectOrDefault(1)).toNumber() * destabilizeBoost;
+      if (DEmult.gte(Decimal.MAX_VALUE)) DEmult = Decimal.MAX_VALUE;
+    return DEmuti
   }
 
   get intervalAfterAscension() {
