@@ -319,7 +319,7 @@ class EPMultiplierState extends GameMechanicState {
       if (!auto) RealityUpgrade(15).tryShowWarningModal();
       return false;
     }
-    if(this.boughtAmount > 1e9) {
+    if(this.boughtAmount >= 1e9) {
       this.boughtAmount = 1e9;
       return true;
     }
