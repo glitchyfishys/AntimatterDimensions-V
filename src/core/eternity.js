@@ -319,6 +319,11 @@ class EPMultiplierState extends GameMechanicState {
       if (!auto) RealityUpgrade(15).tryShowWarningModal();
       return false;
     }
+    if(this.boughtAmount > 1e9) {
+      this.boughtAmount = 1e9;
+      return true;
+    }
+    
     const bulk = bulkBuyBinarySearch(Currency.eternityPoints.value, {
       costFunction: this.costAfterCount,
       cumulative: true,
