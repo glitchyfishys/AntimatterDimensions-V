@@ -387,12 +387,12 @@ export function beginProcessReality(realityProps) {
   if(gl >= 100000) gl = 100000;
   if(Perk.autoGlyph.canBeApplied){
     for (let i=0; i < player.reality.glyphs.inventory.length; i++){
-      if(player.reality.glyphs.inventory[i].level < gl && !(player.reality.glyphs.inventory[i].type == "reality" || player.reality.glyphs.inventory[i].type == "cursed") ){
+      if((player.reality.glyphs.inventory[i].level < gl || player.reality.glyphs.inventory[i].level > 100000) && !(player.reality.glyphs.inventory[i].type == "reality" || player.reality.glyphs.inventory[i].type == "cursed") ){
         player.reality.glyphs.inventory[i].level = gl;
       }
     }
     for (let i=0; i < player.reality.glyphs.active.length; i++){
-      if(player.reality.glyphs.active[i].level < gl && !(player.reality.glyphs.active[i].type == "reality" || player.reality.glyphs.active[i].type == "cursed") ){
+      if((player.reality.glyphs.active[i].level < gl || player.reality.glyphs.active[i].level > 100000) && !(player.reality.glyphs.active[i].type == "reality" || player.reality.glyphs.active[i].type == "cursed") ){
       player.reality.glyphs.active[i].level = gl;
       }
     }
