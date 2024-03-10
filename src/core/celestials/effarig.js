@@ -82,7 +82,7 @@ export const Effarig = {
     let shards = Math.floor(Math.pow(Currency.eternityPoints.exponent / 7500, this.glyphEffectAmount)) *
       AlchemyResource.effarig.effectValue;
     if (shards >= Number.MAX_VALUE) shards = Number.MAX_VALUE;
-    return shards;
+    return shards / 1e28; //safety
   },
   get maxRarityBoost() {
     return 5 * Math.log10(Math.log10(Currency.relicShards.value + 10));
