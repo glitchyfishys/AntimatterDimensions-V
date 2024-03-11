@@ -73,7 +73,7 @@ export class DimBoost {
       // this case would trigger when we're in IC1.
       return 5;
     }
-    return Infinity;
+    return 1e16;
   }
 
   static get canBeBought() {
