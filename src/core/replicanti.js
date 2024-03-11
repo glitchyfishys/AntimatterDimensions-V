@@ -414,7 +414,7 @@ export const ReplicantiUpgrade = {
   galaxies: new class ReplicantiGalaxiesUpgrade extends ReplicantiUpgradeState {
     get id() { return 3; }
 
-    get value() { return player.replicanti.boughtGalaxyCap; }
+    get value() { return Math.min(player.replicanti.boughtGalaxyCap, this.max); }
     set value(value) { player.replicanti.boughtGalaxyCap = value; }
 
     get nextValue() {
@@ -436,6 +436,10 @@ export const ReplicantiUpgrade = {
       return 1000 + Effects.sum(GlyphSacrifice.replication);
     }
 
+    get max() {
+      return 100000;
+    }
+    
     get costIncrease() {
       const galaxies = this.value;
       let increase = EternityChallenge(6).isRunning
@@ -472,6 +476,7 @@ export const ReplicantiUpgrade = {
     }
 
     baseCostAfterCount(count) {
+      count = Math.min(count, this.max)
       const logBase = 170;
       const logBaseIncrease = EternityChallenge(6).isRunning ? 2 : 25;
       const logCostScaling = EternityChallenge(6).isRunning ? 2 : 5;
@@ -566,11 +571,14 @@ export const Replicanti = {
     get gain() {
       if (!this.canBuyMore) return 0;
       if (Achievement(126).isUnlocked) {
-        const maxGain = Replicanti.galaxies.max - player.replicanti.galaxies;
+        const maxGain = Math.min(Replicanti.galaxies.max, this.galaxycap) - player.replicanti.galaxies;
         const logReplicanti = Replicanti.amount.log10();
         return Math.min(maxGain, Math.floor(logReplicanti / LOG10_MAX_VALUE));
       }
       return 1;
+    },
+    get galaxycap{
+        return 100000;
     },
   },
   get isUncapped() {
