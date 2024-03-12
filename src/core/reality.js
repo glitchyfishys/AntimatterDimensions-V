@@ -415,7 +415,7 @@ export function beginProcessReality(realityProps) {
     }
     for (let i=0; i < player.reality.glyphs.active.length; i++){
       if(!(player.reality.glyphs.active[i].type == "reality" || player.reality.glyphs.active[i].type == "cursed") ){
-        player.reality.glyphs.active[i].level = Math.min(gl, Math.min(player.reality.glyphs.active[i].level, 100000) );
+        player.reality.glyphs.active[i].level = Math.max(gl, Math.min(player.reality.glyphs.active[i].level, 100000) );
       }
     }
   }
