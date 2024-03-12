@@ -369,6 +369,10 @@ export const Ra = {
   updateAlchemyFlow(realityRealTime) {
     const perSecond = 1000 / realityRealTime;
     for (const resource of AlchemyResources.all) {
+      if (resource.id < 5 || resource.id == 10){
+          if (resource.amount < AlchemyResource.shifter.amount) resource.amount = AlchemyResource.shifter.amount
+      }
+      
       resource.ema.addValue((resource.amount - resource.before) * perSecond);
       resource.before = resource.amount;
     }
