@@ -383,21 +383,6 @@ export function beginProcessReality(realityProps) {
   const glyphLevel = gainedGlyphLevel();
   finishProcessReality(realityProps);
 
-  let gl = Math.min(glyphLevel.actualLevel, 100000)
-  
-  if(Perk.autoGlyph.canBeApplied){
-    for (let i=0; i < player.reality.glyphs.inventory.length; i++){
-      if(!(player.reality.glyphs.inventory[i].type == "reality" || player.reality.glyphs.inventory[i].type == "cursed") ){
-        player.reality.glyphs.inventory[i].level = Math.max(gl, Math.min(player.reality.glyphs.inventory[i].level, 100000) );
-      }
-    }
-    for (let i=0; i < player.reality.glyphs.active.length; i++){
-      if(!(player.reality.glyphs.active[i].type == "reality" || player.reality.glyphs.active[i].type == "cursed") ){
-        player.reality.glyphs.active[i].level = Math.min(gl, Math.min(player.reality.glyphs.active[i].level, 100000) );
-      }
-    }
-  }
-  
   // If we have less than a certain amount of simulated realities, then we just shortcut the heavier async and
   // sampling code in order to just directly give all the glyphs. The later code is a fixed amount of overhead
   // which is large enough that quick realities can cause it to softlock the game due to lag on slower devices
@@ -419,6 +404,22 @@ export function beginProcessReality(realityProps) {
       }
     }
     Glyphs.processSortingAfterReality();
+
+    let gl = Math.min(glyphLevel.actualLevel, 100000)
+    
+    if(Perk.autoGlyph.canBeApplied){
+    for (let i=0; i < player.reality.glyphs.inventory.length; i++){
+      if(!(player.reality.glyphs.inventory[i].type == "reality" || player.reality.glyphs.inventory[i].type == "cursed") ){
+        player.reality.glyphs.inventory[i].level = Math.max(gl, Math.min(player.reality.glyphs.inventory[i].level, 100000) );
+      }
+    }
+    for (let i=0; i < player.reality.glyphs.active.length; i++){
+      if(!(player.reality.glyphs.active[i].type == "reality" || player.reality.glyphs.active[i].type == "cursed") ){
+        player.reality.glyphs.active[i].level = Math.min(gl, Math.min(player.reality.glyphs.active[i].level, 100000) );
+      }
+    }
+  }
+    
     return;
   }
 
