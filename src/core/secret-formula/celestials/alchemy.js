@@ -469,8 +469,8 @@ export const alchemyResources = {
     tier: 5,
     uiOrder: 2,
     unlockedAt: 30,
-    description: "unkown",
-    formatEffect: value => `unkown`,
+    description: "all basic alchemy resources amounts mininum ",
+    formatEffect: value => `boost all basic resources mininum of ${formatInt(value)} `,
     reagents: [
       {
         resource: ALCHEMY_RESOURCE.CARDINALITY,
