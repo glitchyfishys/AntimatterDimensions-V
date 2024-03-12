@@ -577,7 +577,7 @@ export const Replicanti = {
       }
       return 1;
     },
-    get galaxycap{
+    get galaxycap() {
         return 100000;
     },
   },
