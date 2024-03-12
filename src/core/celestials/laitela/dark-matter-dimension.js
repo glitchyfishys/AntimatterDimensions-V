@@ -98,7 +98,7 @@ export class DarkMatterDimensionState extends DimensionState {
         SingularityMilestone.multFromInfinitied
       ).times(realityUGs.all[10].effectOrDefault(1)).toNumber() * destabilizeBoost;
     
-      if (DEmult >= 1e150) return 1e150;
+    Math.min(DEmult, 1e150);
     return DEmult
   }
 
