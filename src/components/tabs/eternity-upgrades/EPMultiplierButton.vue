@@ -38,7 +38,7 @@ export default {
       return {
         "o-eternity-upgrade": true,
         "o-eternity-upgrade--available": this.isAffordable && !this.iscapped,
-        "o-eternity-upgrade--unavailable": !this.isAffordable && this.iscapped;
+        "o-eternity-upgrade--unavailable": !this.isAffordable && this.iscapped,
       };
     },
     isDoomed: () => Pelle.isDoomed,
