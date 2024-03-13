@@ -14,7 +14,8 @@ export default {
       isAutoUnlocked: false,
       isAffordable: false,
       multiplier: new Decimal(),
-      cost: new Decimal()
+      cost: new Decimal(),
+      amount: 0
     };
   },
   computed: {
@@ -35,8 +36,8 @@ export default {
       }
       return {
         "o-eternity-upgrade": true,
-        "o-eternity-upgrade--available": this.isAffordable,
-        "o-eternity-upgrade--unavailable": !this.isAffordable
+        "o-eternity-upgrade--available": this.isAffordable && this.amount !>= 1000000000,
+        "o-eternity-upgrade--unavailable": !this.isAffordable && this.amount >= 1000000000;
       };
     },
     isDoomed: () => Pelle.isDoomed,
@@ -54,6 +55,7 @@ export default {
       this.multiplier.copyFrom(upgrade.effectValue);
       this.cost.copyFrom(upgrade.cost);
       this.isAffordable = upgrade.isAffordable;
+      this.amount = player.epmultUpgrades;
     },
     purchaseUpgrade() {
       if (RealityUpgrade(15).isLockingMechanics) RealityUpgrade(15).tryShowWarningModal();
