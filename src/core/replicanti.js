@@ -471,7 +471,7 @@ export const ReplicantiUpgrade = {
       }, this.value);
       if (this.value >= this.max) return;
       if (!bulk) return;
-      Currency.infinityPoints.subtract(bulk.purchasePrice);
+      if (Currency.infinityPoints.value.e <1e10) Currency.infinityPoints.subtract(bulk.purchasePrice);
       this.value += bulk.quantity;
       this.baseCost = this.baseCostAfterCount(this.value);
     }
