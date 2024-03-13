@@ -465,11 +465,11 @@ export const alchemyResources = {
     name: "Sifter",
     symbol: "∬",
     isBaseResource: false,
-    effect: amount => Math.floor(amount),
+    effect: amount => Math.floor(amount / 2),
     tier: 5,
     uiOrder: 2,
     unlockedAt: 30,
-    description: "all basic alchemy resources amounts mininum ",
+    description: "boost all basic alchemy resources amounts to a mininum",
     formatEffect: value => `boost all basic resources mininum of ${formatInt(value)} `,
     reagents: [
       {
