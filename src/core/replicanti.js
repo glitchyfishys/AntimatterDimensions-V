@@ -414,8 +414,8 @@ export const ReplicantiUpgrade = {
   galaxies: new class ReplicantiGalaxiesUpgrade extends ReplicantiUpgradeState {
     get id() { return 3; }
 
-    get value() { return Math.min(player.replicanti.boughtGalaxyCap, this.max); }
-    set value(value) { player.replicanti.boughtGalaxyCap = Math.min(value, this.max); }
+    get value() { return Math.min(player.replicanti.boughtGalaxyCap, this.cap); }
+    set value(value) { player.replicanti.boughtGalaxyCap = Math.min(value, this.cap); }
 
     get nextValue() {
       return this.value + 1;
@@ -434,10 +434,6 @@ export const ReplicantiUpgrade = {
 
     get remoteRGStart() {
       return 1000 + Effects.sum(GlyphSacrifice.replication);
-    }
-
-    get max() {
-      return 100000;
     }
     
     get costIncrease() {
@@ -462,8 +458,16 @@ export const ReplicantiUpgrade = {
       return Effects.max(0, TimeStudy(131)) + Effects.max(0, TimeStudy(132)) + PelleRifts.decay.milestones[2].effectOrDefault(0);
     }
 
+    get cap() {
+      return 100000;
+    }
+
+    get isCapped() {
+      return this.value <= this.cap;
+    }
+    
     autobuyerTick() {
-      if (this.value >= this.max) return;
+      if (this.value >= this.cap) return;
       // This isn't a hot enough autobuyer to worry about doing an actual inverse.
       const bulk = bulkBuyBinarySearch(Currency.infinityPoints.value, {
         costFunction: x => this.baseCostAfterCount(x).dividedByEffectOf(TimeStudy(233)),
