@@ -63,7 +63,7 @@ export default {
     capTooltip() {
       if (this.enslavedRunning) return `Nameless prevents the purchase of more than ${format(10)} Infinity Dimensions`;
       if (this.isCapped) return `Cap reached at ${format(this.capIP)} IP`;
-      return `Purchased ${format(this.this.purchases)} times`;
+      return `Purchased ${format(this.purchases)} times`;
     },
     showRow() {
       return this.eternityReached || this.isUnlocked || this.canUnlock || this.amount.gt(0) ||
