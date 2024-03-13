@@ -38,8 +38,8 @@ export const MachineHandler = {
   },
 
   get baseIMCap() {
-    return (Math.pow(Math.clampMin(this.uncappedRM.log10() - 1000, 0), 2)) *
-      (Math.pow(Math.clampMin(this.uncappedRM.log10() - 100000, 1), 0.2));
+    return Math.min( (Math.pow(Math.clampMin(this.uncappedRM.log10() - 1000, 0), 2)) *
+      (Math.pow(Math.clampMin(this.uncappedRM.log10() - 100000, 1), 0.2)), 1e300 );
   },
 
   get currentIMCap() {
