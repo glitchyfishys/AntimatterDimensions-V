@@ -96,7 +96,7 @@ export class DarkMatterDimensionState extends DimensionState {
         SingularityMilestone.darkEnergyMult,
         SingularityMilestone.realityDEMultiplier,
         SingularityMilestone.multFromInfinitied
-      ).times(realityUGs.all[10].effectOrDefault(1)).toNumber() * destabilizeBoost;
+      ).times(realityUGs.all[10].effectOrDefault(1)).toNumber() * destabilizeBoost * AlchemyResource.alter.amount;
     
     Math.min(DEmult, 1e150);
     return DEmult
