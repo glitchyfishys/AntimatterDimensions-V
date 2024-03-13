@@ -14,12 +14,12 @@ const rebuyable = props => {
   const { effect } = props;
   props.effect = () => Math.min( Math.pow(
     effect + ImaginaryUpgrade(props.id).effectOrDefault(0),
-    player.reality.rebuyables[props.id] * getAdjustedGlyphEffect("realityrow1pow")), 1e308);
+    player.reality.rebuyables[props.id] * getAdjustedGlyphEffect("realityrow1pow")), 1e250);
   props.description = () => props.textTemplate.replace("{value}",
     ImaginaryUpgrade(props.id).effectValue === 0
       ? formatInt(effect)
       : format(effect + ImaginaryUpgrade(props.id).effectValue, 2, 2));
-  props.formatEffect = value => formatX( Math.min(value, 1e308) , 2, 0);
+  props.formatEffect = value => formatX( Math.min(value, 1e250) , 2, 0);
   props.formatCost = value => format(value, 2, 0);
   return props;
 };
