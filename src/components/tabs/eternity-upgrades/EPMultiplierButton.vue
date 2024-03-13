@@ -26,6 +26,9 @@ export default {
     autobuyer() {
       return Autobuyer.epMult;
     },
+    hitlimit() {
+        return this.iscapped;
+    },
     classObject() {
       if (this.isDoomed) {
         return {
@@ -79,8 +82,8 @@ export default {
         Currently: {{ formatX(multiplier, 2, 0) }}
       </div>
       <br>
-      <div v-if"this.iscapped">
-        (capped at 1000000000 perchases)
+      <div v-if"hitlimit">
+        (capped at {{ format(1000000000) }} perchases)
       </div>
       Cost: {{ quantify("Eternity Point", cost, 2, 0) }}
     </button>
