@@ -71,7 +71,7 @@ export default {
       return `${prefix}${this.costDisplay} ${suffix}`;
     },
     hasLongText() {
-      return this.buttonValue.length > 20;
+      return this.buttonValue.length > 15;
     },
   },
   methods: {
