@@ -415,7 +415,7 @@ export const ReplicantiUpgrade = {
     get id() { return 3; }
 
     get value() { return Math.min(player.replicanti.boughtGalaxyCap, this.max); }
-    set value(value) { player.replicanti.boughtGalaxyCap = value; }
+    set value(value) { player.replicanti.boughtGalaxyCap = Math.min(value, this.max); }
 
     get nextValue() {
       return this.value + 1;
@@ -469,6 +469,7 @@ export const ReplicantiUpgrade = {
         firstCost: this.cost,
         cumulative: true,
       }, this.value);
+      if (this.value >= this.max)
       if (!bulk) return;
       Currency.infinityPoints.subtract(bulk.purchasePrice);
       this.value += bulk.quantity;
@@ -476,7 +477,6 @@ export const ReplicantiUpgrade = {
     }
 
     baseCostAfterCount(count) {
-      count = Math.min(count, this.max)
       const logBase = 170;
       const logBaseIncrease = EternityChallenge(6).isRunning ? 2 : 25;
       const logCostScaling = EternityChallenge(6).isRunning ? 2 : 5;
