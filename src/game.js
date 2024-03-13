@@ -1135,7 +1135,7 @@ export function init() {
   GameStorage.load();
   Tabs.all.find(t => t.config.id === player.options.lastOpenTab).show(true);
   Payments.init();
-  Decimal.MAX_VALUE.e = 1000000000000000000;
+  Decimal.MAX_VALUE.e = 1e25;
 }
 
 window.tweenTime = 0;
