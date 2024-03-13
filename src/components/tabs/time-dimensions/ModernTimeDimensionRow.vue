@@ -66,7 +66,7 @@ export default {
       return `Unlock: ${format(this.ttCost)} TT`;
     },
     formattedEPCost() {
-      return this.isCapped ? "Capped" : `${this.showCostTitle ? "Cost: " : ""}${format(this.cost, 2)} EP`;
+      return (this.isCapped || this.isoverloaded) ? "Capped" : `${this.showCostTitle ? "Cost: " : ""}${format(this.cost, 2)} EP`;
     },
     hasLongText() {
       return this.buttonContents.length > 15;
@@ -143,7 +143,7 @@ export default {
         <span v-html="tooltipContents" />
       </div>
       <PrimaryButton
-        :enabled="isAvailableForPurchase && !isCapped"
+        :enabled="isAvailableForPurchase && !isCapped && !isoverloaded"
         class="o-primary-btn--buy-td o-primary-btn o-primary-btn--new o-primary-btn--buy-dim"
         :class="{ 'l-dim-row-small-text': hasLongText }"
         @click="buyTimeDimension"
@@ -158,7 +158,7 @@ export default {
       />
       <PrimaryButton
         v-else
-        :enabled="isAvailableForPurchase && !isCapped"
+        :enabled="isAvailableForPurchase && !isCapped && !isoverloaded"
         class="o-primary-btn--buy-td-auto"
         @click="buyMaxTimeDimension"
       >
