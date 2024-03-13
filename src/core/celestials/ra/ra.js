@@ -209,13 +209,13 @@ class RaPetState extends GameMechanicState {
 
   tick(realDiff, generateChunks) {
     const seconds = realDiff / 1000;
-    const newMemoryChunks = generateChunks
+    const newMemoryChunks = Math.min(generateChunks
       ? seconds * this.memoryChunksPerSecond
-      : 0;
+      : 0, 1e150);
     // Adding memories from half of the gained chunks this tick results in the best mathematical behavior
     // for very long simulated ticks
-    const newMemories = seconds * (this.memoryChunks + newMemoryChunks / 2) * Ra.productionPerMemoryChunk *
-      this.memoryUpgradeCurrentMult;
+    const newMemories = MAth.min(seconds * (this.memoryChunks + newMemoryChunks / 2) * Ra.productionPerMemoryChunk *
+      this.memoryUpgradeCurrentMult, 1e150);
     this.memoryChunks += newMemoryChunks;
     this.memories += newMemories;
     if(this.memories > this.maxmemories) this.memories = this.maxmemories
