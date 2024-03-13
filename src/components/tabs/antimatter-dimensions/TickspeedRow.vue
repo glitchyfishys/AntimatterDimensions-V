@@ -36,14 +36,14 @@ export default {
       return `Tickspeed: ${format(this.tickspeed, 2, 3)} / sec`;
     },
     continuumString() {
-      if (this.continuumValue >= 1e6) return format(this.continuumValue);
+      if (this.continuumValue >= 1e6) return format(this.continuumValue, 2);
       return formatFloat(this.continuumValue, 2);
     },
     upgradeCount() {
       const purchased = this.purchasedTickspeed;
       if (!this.freeTickspeed) return format(purchased) + "Purchased Upgrades";
       if (purchased === 0 || this.isContinuumActive) return `${format(this.freeTickspeed)} Free Upgrades`;
-      return `${format(purchased)} Purchased + ${format(this.freeTickspeed)} Free`;
+      return `${format(purchased)} Purchased + ${format(this.freeTickspeed, 2)} Free`;
     }
   },
   methods: {
