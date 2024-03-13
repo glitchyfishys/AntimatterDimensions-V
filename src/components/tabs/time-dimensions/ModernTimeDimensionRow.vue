@@ -24,6 +24,7 @@ export default {
     return {
       isUnlocked: false,
       isCapped: false,
+      isoverloaded: false;
       multiplier: new Decimal(0),
       amount: new Decimal(0),
       bought: 0,
@@ -54,8 +55,9 @@ export default {
     },
     tooltipContents() {
       if (this.showTTCost) return `${this.formattedEPCost}<br>${this.timeEstimate}`;
+      if (this.isoverloaded) return `you can not purchase any more than ${format(1e18)} Time Dimension`;
       if (this.isCapped) return `Nameless prevents the purchase of more than ${format(1)} Time Dimension`;
-      return `Purchased ${quantifyInt("time", this.bought)}`;
+      return `Purchased ${format(this.bought)} times`;
     },
     showRow() {
       return this.realityUnlocked || this.isUnlocked || this.requirementReached;
@@ -87,7 +89,8 @@ export default {
     update() {
       const tier = this.tier;
       const dimension = TimeDimension(tier);
-      this.isCapped = (Enslaved.isRunning && dimension.bought > 0 || dimension.bought >= 1e18);
+      this.isCapped = Enslaved.isRunning && dimension.bought > 0;
+      this.isoverloaded = dimension.bought >= 1e18;
       this.isUnlocked = dimension.isUnlocked;
       this.multiplier.copyFrom(dimension.multiplier);
       this.amount.copyFrom(dimension.amount);
