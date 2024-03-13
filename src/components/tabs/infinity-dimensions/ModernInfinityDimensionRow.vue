@@ -87,7 +87,7 @@ export default {
       this.canUnlock = dimension.canUnlock;
       this.multiplier.copyFrom(dimension.multiplier);
       this.baseAmount = dimension.baseAmount;
-      this.purchases = dimension.purchases;
+      this.purchases = dimension.baseAmount / 10;
       this.amount.copyFrom(dimension.amount);
       this.rateOfChange.copyFrom(dimension.rateOfChange);
       this.isAutobuyerUnlocked = Autobuyer.infinityDimension(tier).isUnlocked;
