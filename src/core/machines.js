@@ -43,12 +43,12 @@ export const MachineHandler = {
   },
 
   get currentIMCap() {
-    return player.reality.iMCap * ImaginaryUpgrade(13).effectOrDefault(1);
+    return Math.min(player.reality.iMCap * ImaginaryUpgrade(13).effectOrDefault(1), 1e300);
   },
 
   // This is iM cap based on in-game values at that instant, may be lower than the actual cap
   get projectedIMCap() {
-    return this.baseIMCap * ImaginaryUpgrade(13).effectOrDefault(1);
+    return Math.min(this.baseIMCap * ImaginaryUpgrade(13).effectOrDefault(1), 1e300);
   },
 
   // Use iMCap to store the base cap; applying multipliers separately avoids some design issues the 3xTP upgrade has
