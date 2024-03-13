@@ -463,13 +463,13 @@ export const ReplicantiUpgrade = {
     }
 
     autobuyerTick() {
+      if (this.value >= this.max) return;
       // This isn't a hot enough autobuyer to worry about doing an actual inverse.
       const bulk = bulkBuyBinarySearch(Currency.infinityPoints.value, {
         costFunction: x => this.baseCostAfterCount(x).dividedByEffectOf(TimeStudy(233)),
         firstCost: this.cost,
         cumulative: true,
       }, this.value);
-      if (this.value >= this.max) return;
       if (!bulk) return;
       if (Currency.infinityPoints.value.e <1e10) Currency.infinityPoints.subtract(bulk.purchasePrice);
       this.value += bulk.quantity;
