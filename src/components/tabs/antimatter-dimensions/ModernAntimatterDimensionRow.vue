@@ -43,6 +43,7 @@ export default {
       return this.buyUntil10 ? format(this.until10Cost) : format(this.singleCost);
     },
     continuumString() {
+      if (this.continuumValue >= 1e6) return ${format(this.continuumValue)};
       return formatFloat(this.continuumValue, 2);
     },
     showRow() {
@@ -51,7 +52,7 @@ export default {
     boughtTooltip() {
       if (this.isCapped) return `Nameless prevents the purchase of more than ${format(1)} 8th Antimatter Dimension`;
       if (this.isContinuumActive) return "Continuum produces all your Antimatter Dimensions";
-      return `Purchased ${quantifyInt("time", this.bought)}`;
+      return `Purchased ${format(this.bought)} times`;
     },
     costUnit() {
       return `${AntimatterDimension(this.tier - 2).shortDisplayName} AD`;
