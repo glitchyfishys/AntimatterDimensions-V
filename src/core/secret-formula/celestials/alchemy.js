@@ -504,8 +504,8 @@ export const alchemyResources = {
     tier: 5,
     uiOrder: 3,
     unlockedAt: 35,
-    description: "unkown",
-    formatEffect: value => `unkown`,
+    description: "gain more singularities",
+    formatEffect: value => `${formatX(value)} Singularities`,
     reagents: [
       {
         resource: ALCHEMY_RESOURCE.DECOHERENCE,
