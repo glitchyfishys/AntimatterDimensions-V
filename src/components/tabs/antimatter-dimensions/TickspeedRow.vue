@@ -36,6 +36,7 @@ export default {
       return `Tickspeed: ${format(this.tickspeed, 2, 3)} / sec`;
     },
     continuumString() {
+      if (this.continuumValue >= 1e6) return format(this.continuumValue);
       return formatFloat(this.continuumValue, 2);
     },
     upgradeCount() {
