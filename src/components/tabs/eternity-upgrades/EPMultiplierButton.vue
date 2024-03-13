@@ -81,9 +81,7 @@ export default {
         <br>
         Currently: {{ formatX(multiplier, 2, 0) }}
       </div>
-      <div v-if"hitlimit">
-        (capped at {{ format(1000000000) }} perchases)
-      </div>
+      <br>
       Cost: {{ quantify("Eternity Point", cost, 2, 0) }}
     </button>
     <PrimaryButton
