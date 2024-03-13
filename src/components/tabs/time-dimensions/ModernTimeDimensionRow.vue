@@ -24,7 +24,7 @@ export default {
     return {
       isUnlocked: false,
       isCapped: false,
-      isoverloaded: false;
+      isoverloaded: false,
       multiplier: new Decimal(0),
       amount: new Decimal(0),
       bought: 0,
