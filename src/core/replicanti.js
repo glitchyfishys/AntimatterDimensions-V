@@ -463,7 +463,7 @@ export const ReplicantiUpgrade = {
     }
 
     get isCapped() {
-      return this.value <= this.cap;
+      return this.value >= this.cap;
     }
     
     autobuyerTick() {
