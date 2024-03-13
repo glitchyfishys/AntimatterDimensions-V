@@ -578,7 +578,7 @@ export const Replicanti = {
       return 1;
     },
     get galaxycap() {
-        return 100000;
+        return 1000000;
     },
   },
   get isUncapped() {
