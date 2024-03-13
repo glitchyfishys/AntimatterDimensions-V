@@ -82,7 +82,6 @@ export default {
         <br>
         Currently: {{ formatX(multiplier, 2, 0) }}
       </div>
-      <br>
       <div v-if="hitlimit">
         (capped at {{ format(1000000000) }} perchases)
       </div>
