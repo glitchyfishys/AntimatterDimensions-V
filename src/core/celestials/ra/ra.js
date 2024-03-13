@@ -112,7 +112,7 @@ class RaPetState extends GameMechanicState {
   }
 
   set memories(value) {
-    this.data.memories = value;
+    this.data.memories = Math.min(value, 1e150);
   }
 
   get memoryChunks() {
@@ -120,7 +120,7 @@ class RaPetState extends GameMechanicState {
   }
 
   set memoryChunks(value) {
-    this.data.memoryChunks = value;
+    this.data.memoryChunks = Math.min(value, 1e100);
   }
 
   get requiredMemories() {
