@@ -469,7 +469,7 @@ export const ReplicantiUpgrade = {
         firstCost: this.cost,
         cumulative: true,
       }, this.value);
-      if (this.value >= this.max)
+      if (this.value >= this.max) return;
       if (!bulk) return;
       Currency.infinityPoints.subtract(bulk.purchasePrice);
       this.value += bulk.quantity;
