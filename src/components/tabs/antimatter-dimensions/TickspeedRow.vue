@@ -41,9 +41,9 @@ export default {
     },
     upgradeCount() {
       const purchased = this.purchasedTickspeed;
-      if (!this.freeTickspeed) return quantifyInt("Purchased Upgrade", purchased);
-      if (purchased === 0 || this.isContinuumActive) return `${formatInt(this.freeTickspeed)} Free Upgrades`;
-      return `${formatInt(purchased)} Purchased + ${formatInt(this.freeTickspeed)} Free`;
+      if (!this.freeTickspeed) return format(purchased) + "Purchased Upgrades";
+      if (purchased === 0 || this.isContinuumActive) return `${format(this.freeTickspeed)} Free Upgrades`;
+      return `${format(purchased)} Purchased + ${format(this.freeTickspeed)} Free`;
     }
   },
   methods: {
