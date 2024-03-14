@@ -12,6 +12,7 @@ export default {
       currLog10EP: 0,
       cheapestLog10TD: 0,
       multEPLog10Cost: 0,
+      multEPamount: 0,
       purchasableTS: 0,
       hasDilated: 0,
       availableCharges: 0,
@@ -32,7 +33,7 @@ export default {
       if (this.currLog10EP > 1.3 * this.cheapestLog10TD) {
         arr.push(`Purchase more TDs (cheapest: ${format(Decimal.pow10(this.cheapestLog10TD))} EP)`);
       }
-      if (this.currLog10EP > 1.3 * this.multEPLog10Cost) {
+      if (this.currLog10EP > 1.3 * this.multEPLog10Cost && 1000000000 < this.multEPamount) {
         arr.push(`Purchase more ${formatX(5)} EP (cost: ${format(Decimal.pow10(this.multEPLog10Cost))} EP)`);
       }
       if (this.ecCount < 60) {
@@ -87,6 +88,7 @@ export default {
       this.currLog10EP = player.eternityPoints.log10();
       this.cheapestLog10TD = Math.min(...TimeDimensions.all.map(x => x.cost.log10()));
       this.multEPLog10Cost = EternityUpgrade.epMult.cost.log10();
+      this.multEPamount = player.epmultUpgrades;
       this.purchasableTS = NormalTimeStudyState.studies.countWhere(s => s && s.canBeBought && !s.isBought);
       this.hasDilated = Perk.startTP.canBeApplied ? player.dilation.lastEP.gt(0)
         : player.dilation.tachyonParticles.gt(0);
