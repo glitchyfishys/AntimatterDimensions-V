@@ -57,7 +57,7 @@ export const ShopPurchaseData = {
     }
   },
 
-  async respecAll() {
+  respecAll() {
     if (!this.canRespec) {
       // This case only happens if the player is cheating and using the console to make the game think it has a respec
       // when on the backend they don't. Nevertheless, responsive UI rarely hurts
@@ -140,7 +140,7 @@ class ShopPurchaseState extends RebuyableMechanicState {
     return this.config.formatEffect?.(effect) || formatX(effect, 2, 0);
   }
 
-  async purchase() {
+  purchase() {
     if (!this.canBeBought) return false;
     if (GameEnd.creditsEverClosed) return false;
     if (this.config.instantPurchase && ui.$viewModel.modal.progressBar) return false;
@@ -162,11 +162,15 @@ export const ShopPurchase = mapGameDataToObject(
 );
 
 shop.purchaseTimeSkip = function() {
+  let time = 3600 * 6;
   Speedrun.setSTDUse(true);
-  simulateTime(3600 * 6);
+  ShopPurchaseData.totalSTD -= time / (6 * 4)
+  simulateTime(time);
 };
 
 shop.purchaseLongerTimeSkip = function() {
+  let time = 3600 * 24;
   Speedrun.setSTDUse(true);
-  simulateTime(3600 * 24);
+  ShopPurchaseData.totalSTD -= time / (24 * 4)
+  simulateTime(time);
 };
