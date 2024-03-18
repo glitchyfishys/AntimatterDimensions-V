@@ -90,7 +90,7 @@ export default {
       const tier = this.tier;
       const dimension = TimeDimension(tier);
       this.isCapped = Enslaved.isRunning && dimension.bought > 0;
-      this.isoverloaded = dimension.bought >= 1e18;
+      this.isoverloaded = dimension.bought >= 1e15;
       this.isUnlocked = dimension.isUnlocked;
       this.multiplier.copyFrom(dimension.multiplier);
       this.amount.copyFrom(dimension.amount);
