@@ -1,5 +1,4 @@
 import { RebuyableMechanicState } from "./game-mechanics";
-import { SteamRuntime } from "@/steam";
 
 import Payments from "./payments";
 
@@ -17,13 +16,13 @@ export const ShopPurchaseData = {
   },
 
   get isIAPEnabled() {
-    return Cloud.loggedIn && this.availableSTD >= 0 && player.IAP.enabled;
+    return this.availableSTD >= 0 && player.IAP.enabled;
   },
 
-  // We also allow for respecs if it's been at least 3 days since the last one
+  // We also allow for respecs if it's been at least 15 min since the last one
   get timeUntilRespec() {
     const msSinceLast = Date.now() - new Date(ShopPurchaseData.lastRespec).getTime();
-    return TimeSpan.fromMilliseconds(3 * 86400 * 1000 - msSinceLast);
+    return TimeSpan.fromMilliseconds(900 * 1000 - msSinceLast);
   },
 
   get canRespec() {
@@ -50,25 +49,6 @@ export const ShopPurchaseData = {
     for (const key of Object.keys(GameDatabase.shopPurchases)) this[key] = 0;
   },
 
-  // Reads STD props from the cloud and sets local cached values with the result
-  async syncSTD(showNotification = true, fetchedData = undefined) {
-    if (!Cloud.loggedIn) return;
-    let newSTDData;
-    if (fetchedData) {
-      newSTDData = fetchedData;
-    } else {
-      try {
-        const statusRes = await fetch(`${STD_BACKEND_URL}/STDData?user=${Cloud.user.id}`);
-        newSTDData = await statusRes.json();
-      } catch (e) {
-        GameUI.notify.error("Could not sync STD purchases!", 10000);
-        return;
-      }
-    }
-    if (showNotification && newSTDData.totalSTD > 0) GameUI.notify.info("STD purchases successfully loaded!", 10000);
-    this.updateLocalSTD(newSTDData);
-  },
-
   respecRequest() {
     if (player.options.confirmations.respecIAP) {
       Modal.respecIAP.show();
@@ -81,23 +61,9 @@ export const ShopPurchaseData = {
     if (!this.canRespec) {
       // This case only happens if the player is cheating and using the console to make the game think it has a respec
       // when on the backend they don't. Nevertheless, responsive UI rarely hurts
-      GameUI.notify.error("You do not have a respec available", 10000);
+      GameUI.notify.error("You do not have a respec available, because this only happens when using the console", 10000);
       return;
     }
-    let res;
-    try {
-      res = await fetch(`${STD_BACKEND_URL}/respec`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ user: Cloud.user.id })
-      });
-    } catch (e) {
-      GameUI.notify.error("Unable to respec STD purchases!", 10000);
-      return;
-    }
-    const stdData = await res.json();
     if (stdData.success) GameUI.notify.info("STD respec successful!", 10000);
     else GameUI.notify.error("No purchases to respec!", 10000);
     this.updateLocalSTD(stdData.data);
@@ -182,12 +148,6 @@ class ShopPurchaseState extends RebuyableMechanicState {
     const cosmeticId = this.config.key === "singleCosmeticSet"
       ? GlyphAppearanceHandler.chosenFromModal?.id
       : undefined;
-
-    // Contact the purchase provider to verify the purchase
-    const success = SteamRuntime.isActive
-      ? await SteamRuntime.purchaseShopItem(this.config.key, this.cost, cosmeticId)
-      : await Payments.buyUpgrade(this.config.key, cosmeticId);
-    if (!success) return false;
 
     if (player.IAP.enabled) Speedrun.setSTDUse(true);
     if (this.config.instantPurchase) this.config.onPurchase();
