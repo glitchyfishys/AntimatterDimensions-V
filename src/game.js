@@ -408,6 +408,7 @@ export function getGameSpeedupForDisplay() {
 // true if the rest of the game loop should be skipped
 export function realTimeMechanics(realDiff) {
   ShopPurchaseData.totalSTD += realDiff / (1000 * 900);
+  player.IAP.STDcoins = ShopPurchaseData.totalSTD
   // Ra memory generation bypasses stored real time, but memory chunk generation is disabled when storing real time.
   // This is in order to prevent players from using time inside of Ra's reality for amplification as well
   Ra.memoryTick(realDiff, !Enslaved.isStoringRealTime);
@@ -1134,7 +1135,8 @@ export function init() {
   GameStorage.load();
   Tabs.all.find(t => t.config.id === player.options.lastOpenTab).show(true);
   Payments.init();
-  Decimal.MAX_VALUE.e = 1e25;
+  Decimal.MAX_VALUE.e = 1e300;
+  ShopPurchaseData.totalSTD = player.IAP.STDcoins;
 }
 
 window.tweenTime = 0;
