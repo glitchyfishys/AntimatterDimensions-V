@@ -93,7 +93,7 @@ class ShopPurchaseState extends RebuyableMechanicState {
     const cost = this.config.cost;
     return typeof cost === "function" ? cost() : cost;
   }
-
+  
   // ShopPurchaseData for any particular key is undefined in between page load and STD load,
   // so we need to guard against that causing NaNs to propagate through the save
   get purchases() {
@@ -141,9 +141,9 @@ class ShopPurchaseState extends RebuyableMechanicState {
   formatEffect(effect) {
     return this.config.formatEffect?.(effect) || formatX(effect, 2, 0);
   }
-
+  
   async purchase() {
-    if (!this.canBeBought) return false;
+    if (!this.isAffordable) return false;
     if (GameEnd.creditsEverClosed) return false;
     if (this.config.instantPurchase && ui.$viewModel.modal.progressBar) return false;
 
