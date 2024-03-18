@@ -1,17 +1,16 @@
-import { STEAM } from "@/env";
 
 // NOTE: IF ANY COSTS ARE CHANGED HERE, THEY ALSO NEED TO BE CHANGED ON THE BACKEND TOO
 export const shopPurchases = {
   dimPurchases: {
     key: "dimPurchases",
-    cost: 30,
+    cost: 15,
     description: "Double all your Antimatter Dimension multipliers. Forever.",
     multiplier: purchases => Math.pow(2, purchases),
     formatEffect: x => `×${x > 1000 ? Notation.scientific.formatDecimal(new Decimal(x), 2) : x.toFixed(0)}`,
   },
   allDimPurchases: {
     key: "allDimPurchases",
-    cost: 60,
+    cost: 30,
     description: () => {
       const dims = ["Antimatter"];
       if (InfinityDimension(1).isUnlocked || PlayerProgress.eternityUnlocked()) dims.push("Infinity");
@@ -23,7 +22,7 @@ export const shopPurchases = {
   },
   IPPurchases: {
     key: "IPPurchases",
-    cost: 40,
+    cost: 20,
     description: "Double your Infinity Point gain from all sources. (additive)",
     multiplier: purchases => (purchases === 0 ? 1 : 2 * purchases),
     formatEffect: x => `×${x.toFixed(0)}`,
@@ -32,7 +31,7 @@ export const shopPurchases = {
   },
   replicantiPurchases: {
     key: "replicantiPurchases",
-    cost: 60,
+    cost: 30,
     description: "Increase your Replicanti gain by 50%. (additive)",
     multiplier: purchases => (purchases === 0 ? 1 : 1 + 0.5 * purchases),
     formatEffect: x => `×${x.toFixed(1)}`,
@@ -41,7 +40,7 @@ export const shopPurchases = {
   },
   EPPurchases: {
     key: "EPPurchases",
-    cost: 50,
+    cost: 25,
     description: "Triple your Eternity Point gain from all sources. (additive)",
     multiplier: purchases => (purchases === 0 ? 1 : 3 * purchases),
     formatEffect: x => `×${x.toFixed(0)}`,
@@ -50,7 +49,7 @@ export const shopPurchases = {
   },
   dilatedTimePurchases: {
     key: "dilatedTimePurchases",
-    cost: 40,
+    cost: 20,
     description: "Increase your Dilated Time gain by 50%. (additive)",
     multiplier: purchases => (purchases === 0 ? 1 : 1 + 0.5 * purchases),
     formatEffect: x => `×${x.toFixed(1)}`,
@@ -59,7 +58,7 @@ export const shopPurchases = {
   },
   RMPurchases: {
     key: "RMPurchases",
-    cost: 60,
+    cost: 30,
     description: "Increase your Reality Machine gain by 100%. (additive)",
     multiplier: purchases => purchases + 1,
     formatEffect: x => `×${x.toFixed(0)}`,
@@ -86,7 +85,7 @@ export const shopPurchases = {
   },
   singleCosmeticSet: {
     key: "singleCosmeticSet",
-    cost: 20,
+    cost: 1,
     description: "Unlock a Glyph cosmetic set of your choice",
     instantPurchase: true,
     onPurchase: () => {
@@ -104,7 +103,7 @@ export const shopPurchases = {
     key: "allCosmeticSets",
     cost: () => {
       // Both of these are also on the payment backend, which would need to be changed as well
-      const baseCost = 420;
+      const baseCost = 21;
       const totalSets = Object.keys(GameDatabase.reality.glyphCosmeticSets).length;
 
       // Using this instead of the actual set count maintains consistency with the backend price,
@@ -123,7 +122,3 @@ export const shopPurchases = {
     lockText: "Reality",
   },
 };
-
-if (STEAM) {
-  delete shopPurchases.allCosmeticSets;
-}
