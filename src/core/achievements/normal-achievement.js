@@ -84,7 +84,6 @@ class AchievementState extends GameMechanicState {
       GameUI.notify.reality(`Automatically unlocked: ${this.name}`);
     } else {
       GameUI.notify.success(`Achievement: ${this.name}`);
-      SteamRuntime.activateAchievement(this.id);
     }
     if (player.speedrun.isActive && !player.speedrun.achievementTimes[this.id]) {
       // This stores a lot of data in the savefile and seems particularly suceptible to floating-point rounding issues
