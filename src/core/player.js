@@ -694,7 +694,7 @@ top.player = {
         showCompleted: 0,
         sortOrder: 0,
       },
-      singularities: 100,
+      singularities: 0,
       singularityCapIncreases: 0,
       lastCheckedMilestones: 0,
       milestoneGlow: true,
@@ -941,6 +941,9 @@ top.player = {
       upgradebits: 0
     },
     reality:{
+      upgradebits: 0
+    },
+    pelle{
       upgradebits: 0
     }
   }
