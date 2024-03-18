@@ -153,7 +153,10 @@ class ShopPurchaseState extends RebuyableMechanicState {
 
     if (player.IAP.enabled) Speedrun.setSTDUse(true);
     if (this.config.instantPurchase) this.config.onPurchase();
+    
     this.purchases++;
+    ShopPurchaseData.totalSTD -= this.cost;
+    
     GameUI.update();
     return true;
   }
