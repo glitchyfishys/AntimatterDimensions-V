@@ -81,7 +81,7 @@ export class DarkMatterDimensionState extends DimensionState {
       .times(this.commonDarkMult)
       .times(Math.pow(this.powerDMPerAscension, this.ascensions))
       .timesEffectsOf(SingularityMilestone.darkMatterMult, SingularityMilestone.multFromInfinitied)
-      .dividedBy(Math.pow(1e4, Math.pow(this.tier - 1, 0.5)));
+      .dividedBy(Math.pow(1e4, Math.pow(this.tier - 1, 0.5))).min(1e300);
   }
 
   get powerDE() {
@@ -96,7 +96,7 @@ export class DarkMatterDimensionState extends DimensionState {
         SingularityMilestone.darkEnergyMult,
         SingularityMilestone.realityDEMultiplier,
         SingularityMilestone.multFromInfinitied
-      ).times(realityUGs.all[10].effectOrDefault(1)).toNumber() * destabilizeBoost * AlchemyResource.alter.amount;
+      ).times(realityUGs.all[10].effectOrDefault(1)).min(1e200).toNumber() * destabilizeBoost * AlchemyResource.alter.amount;
     
     return Math.min(DEmult, 1e150);
   }
@@ -109,7 +109,7 @@ export class DarkMatterDimensionState extends DimensionState {
   }
 
   get adjustedStartingCost() {
-    const tiers = [null, 0, 2, 5, 13];
+    const tiers = [null, 0, 2, 5, 13, 25];
     return 10 * Math.pow(COST_MULT_PER_TIER, tiers[this.tier]) *
       SingularityMilestone.darkDimensionCostReduction.effectOrDefault(1);
   }
@@ -255,7 +255,7 @@ export const DarkMatterDimensions = {
       dim.timeSinceLastUpdate += realDiff;
       if (dim.interval < dim.timeSinceLastUpdate) {
         const ticks = Math.floor(dim.timeSinceLastUpdate / dim.interval);
-        const productionDM = dim.amount.times(ticks).times(dim.powerDM);
+        const productionDM = dim.amount.times(ticks).times(dim.powerDM).min(1e308);
         if (tier === 1) {
           Currency.darkMatter.add(productionDM);
         } else {
