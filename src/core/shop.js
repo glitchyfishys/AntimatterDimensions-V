@@ -38,6 +38,7 @@ export const ShopPurchaseData = {
     for (const key of Object.keys(GameDatabase.shopPurchases)) this[key] = newData[key] ?? 0;
     if (this.allCosmeticSets > 0) this.unlockedCosmetics = Object.keys(GameDatabase.reality.glyphCosmeticSets);
     if (ShopPurchaseData.isIAPEnabled) Speedrun.setSTDUse(true);
+    player.IAP.STDcoins = this.totalSTD - this.spentSTD;
     GameStorage.save();
   },
 
