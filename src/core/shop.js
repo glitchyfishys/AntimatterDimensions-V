@@ -166,13 +166,13 @@ export const ShopPurchase = mapGameDataToObject(
 shop.purchaseTimeSkip = function() {
   let time = 3600 * 6;
   Speedrun.setSTDUse(true);
-  ShopPurchaseData.totalSTD -= 23;
+  ShopPurchaseData.totalSTD -= 34;
   simulateTime(time);
 };
 
 shop.purchaseLongerTimeSkip = function() {
   let time = 3600 * 24;
   Speedrun.setSTDUse(true);
-  ShopPurchaseData.totalSTD -= 95;
+  ShopPurchaseData.totalSTD -= 116;
   simulateTime(time);
 };
