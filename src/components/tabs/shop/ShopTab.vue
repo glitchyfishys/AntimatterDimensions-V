@@ -45,7 +45,7 @@ export default {
   },
   methods: {
     update() {
-      this.availableSTD = ShopPurchaseData.availableSTD;
+      this.availableSTD = Math.floor(ShopPurchaseData.availableSTD);
       this.spentSTD = ShopPurchaseData.spentSTD;
       this.isLoading = Boolean(player.IAP.checkoutSession.id);
       this.IAPsEnabled = player.IAP.enabled;
