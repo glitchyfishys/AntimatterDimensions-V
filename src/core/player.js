@@ -943,7 +943,7 @@ top.player = {
     reality:{
       upgradebits: 0
     },
-    pelle{
+    pelle: {
       upgradebits: 0
     }
   }
