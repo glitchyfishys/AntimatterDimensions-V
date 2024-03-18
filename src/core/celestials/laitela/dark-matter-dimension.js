@@ -81,7 +81,7 @@ export class DarkMatterDimensionState extends DimensionState {
       .times(this.commonDarkMult)
       .times(Math.pow(this.powerDMPerAscension, this.ascensions))
       .timesEffectsOf(SingularityMilestone.darkMatterMult, SingularityMilestone.multFromInfinitied)
-      .dividedBy(Math.pow(1e4, Math.pow(this.tier - 1, 0.5))).min(1e300);
+      .dividedBy(Math.pow(1e4, Math.pow(this.tier - 1, 0.5))).min("1e1000000");
   }
 
   get powerDE() {
@@ -98,7 +98,7 @@ export class DarkMatterDimensionState extends DimensionState {
         SingularityMilestone.multFromInfinitied
       ).times(realityUGs.all[10].effectOrDefault(1)).min(1e200).toNumber() * destabilizeBoost * AlchemyResource.alter.amount;
     
-    return Math.min(DEmult, 1e150);
+    return Math.min(DEmult, 1e200);
   }
 
   get intervalAfterAscension() {
