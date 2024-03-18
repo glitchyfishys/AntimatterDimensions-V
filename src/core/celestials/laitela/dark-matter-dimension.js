@@ -255,7 +255,7 @@ export const DarkMatterDimensions = {
       dim.timeSinceLastUpdate += realDiff;
       if (dim.interval < dim.timeSinceLastUpdate) {
         const ticks = Math.floor(dim.timeSinceLastUpdate / dim.interval);
-        const productionDM = dim.amount.times(ticks).times(dim.powerDM).min(1e308);
+        const productionDM = dim.amount.times(ticks).times(dim.powerDM).min("1e1000000");
         if (tier === 1) {
           Currency.darkMatter.add(productionDM);
         } else {
