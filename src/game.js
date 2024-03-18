@@ -1,4 +1,5 @@
 import TWEEN from "tween.js";
+import { ElectronRuntime, SteamRuntime } from "@/steam";
 import { DC } from "./core/constants";
 import { deepmergeAll } from "@/utility/deepmerge";
 import { DEV } from "@/env";
@@ -1127,6 +1128,8 @@ export function init() {
     // eslint-disable-next-line no-console
     console.log("👨‍💻 Development Mode 👩‍💻");
   }
+  ElectronRuntime.initialize();
+  SteamRuntime.initialize();
   Cloud.init();
   GameStorage.load();
   Tabs.all.find(t => t.config.id === player.options.lastOpenTab).show(true);
