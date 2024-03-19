@@ -38,7 +38,7 @@ export default {
       return {
         min: 0,
         max: 1,
-        interval: 0.01,
+        interval: 0.15,
         width: "98%",
         tooltip: false
       };
@@ -46,7 +46,7 @@ export default {
     sliderPropsSpeed() {
       return {
         min: 0.5,
-        max: 2,
+        max: 10,
         interval: 0.01,
         width: "98%",
         tooltip: false
