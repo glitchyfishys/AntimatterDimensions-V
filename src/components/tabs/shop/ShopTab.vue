@@ -60,7 +60,7 @@ export default {
     showStore() {
       if (this.creditsClosed) return;
       SecretAchievement(33).unlock();
-      Modal.message.show("You cannot purchase STD coins, they are gain over time");
+      Modal.message.show("You cannot purchase STD coins, they are gained over time");
     },
     onCancel() {
       Payments.cancelPurchase(false);
