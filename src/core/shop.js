@@ -5,8 +5,6 @@ import Payments from "./payments";
 export const shop = {};
 
 export const ShopPurchaseData = {
-  totalSTD: 0,
-  spentSTD: 0,
   respecAvailable: false,
   lastRespec: "",
   unlockedCosmetics: [],
@@ -30,8 +28,6 @@ export const ShopPurchaseData = {
   },
 
   async updateLocalSTD(newData) {
-    this.totalSTD = newData.totalSTD;
-    this.spentSTD = newData.spentSTD;
     this.respecAvailable = newData.respecAvailable;
     this.lastRespec = newData.lastRespec ?? 0;
     this.unlockedCosmetics = [...(newData.unlockedCosmetics ?? [])];
@@ -77,7 +73,7 @@ for (const key of Object.keys(GameDatabase.shopPurchases)) ShopPurchaseData[key]
 
 class ShopPurchaseState extends RebuyableMechanicState {
   get currency() {
-    return ShopPurchaseData.availableSTD;
+    return player.IAP.STDcoinss;
   }
 
   get isAffordable() {
@@ -163,7 +159,7 @@ class ShopPurchaseState extends RebuyableMechanicState {
     if (this.config.instantPurchase) this.config.onPurchase();
     if (!this.config.instantPurchase) this.playerpurchases++;
     this.purchases++;
-    ShopPurchaseData.totalSTD -= this.cost;
+    player.IAP.STDcoins -= this.cost;
     
     
     GameUI.update();
@@ -179,13 +175,13 @@ export const ShopPurchase = mapGameDataToObject(
 shop.purchaseTimeSkip = function() {
   let time = 3600 * 6;
   Speedrun.setSTDUse(true);
-  ShopPurchaseData.totalSTD -= 24;
+  player.IAP.STDcoins -= 24;//remove due to gain over time
   simulateTime(time);
 };
 
 shop.purchaseLongerTimeSkip = function() {
   let time = 3600 * 24;
   Speedrun.setSTDUse(true);
-  ShopPurchaseData.totalSTD -= 96;
+  player.IAP.STDcoins -= 96;
   simulateTime(time);
 };
