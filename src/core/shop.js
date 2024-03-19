@@ -14,7 +14,7 @@ export const ShopPurchaseData = {
   },
 
   get isIAPEnabled() {
-    return this.availableSTD >= 0 && player.IAP.enabled;
+    return player.IAP.enabled;
   },
 
   // We also allow for respecs if it's been at least 15 min since the last one
