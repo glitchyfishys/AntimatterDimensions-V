@@ -71,7 +71,7 @@ for (const key of Object.keys(GameDatabase.shopPurchases)) ShopPurchaseData[key]
 
 class ShopPurchaseState extends RebuyableMechanicState {
   get currency() {
-    return player.IAP.STDcoinss;
+    return player.IAP.STDcoins;
   }
 
   get isAffordable() {
