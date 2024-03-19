@@ -409,13 +409,6 @@ export function getGameSpeedupForDisplay() {
 export function realTimeMechanics(realDiff) {
   ShopPurchaseData.totalSTD += realDiff / (1000 * 900);
   player.IAP.STDcoins = ShopPurchaseData.totalSTD
-  player.IAP.allDimPurchases = ShopPurchaseData.allDimPurchases;
-  player.IAP.dimPurchases = ShopPurchaseData.dimPurchases;
-  player.IAP.replicantiPurchases = ShopPurchaseData.replicantiPurchases;
-  player.IAP.dilatedTimePurchases = ShopPurchaseData.dilatedTimePurchases;
-  player.IAP.IPPurchases = ShopPurchaseData.IPPurchases;
-  player.IAP.EPPurchases = ShopPurchaseData.EPPurchases;
-  player.IAP.RMPurchases = ShopPurchaseData.RMPurchases;
 
   // Ra memory generation bypasses stored real time, but memory chunk generation is disabled when storing real time.
   // This is in order to prevent players from using time inside of Ra's reality for amplification as well
