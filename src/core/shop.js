@@ -99,11 +99,19 @@ class ShopPurchaseState extends RebuyableMechanicState {
   get purchases() {
     return ShopPurchaseData[this.config.key] ?? 0;
   }
-
+  get playerpurchases() {
+    return player.IAP[this.config.key] ?? 0;
+  }
+  
   set purchases(value) {
     if (!Number.isFinite(value)) return;
     ShopPurchaseData[this.config.key] = value;
   }
+  set playerpurchases(value) {
+    if (!Number.isFinite(value)) return;
+    player.IAP[this.config.key] = value;
+  }
+  
 
   isUnlocked() {
     return player.records.fullGameCompletions > 0 || (this.config.isUnlocked?.() ?? true);
@@ -153,9 +161,10 @@ class ShopPurchaseState extends RebuyableMechanicState {
 
     if (player.IAP.enabled) Speedrun.setSTDUse(true);
     if (this.config.instantPurchase) this.config.onPurchase();
-    
+    if (!this.config.instantPurchase) this.playerpurchases++;
     this.purchases++;
     ShopPurchaseData.totalSTD -= this.cost;
+    
     
     GameUI.update();
     return true;
