@@ -10,7 +10,7 @@ export const ShopPurchaseData = {
   unlockedCosmetics: [],
 
   get availableSTD() {
-    return this.totalSTD - this.spentSTD;
+    return player.IAP.STDcoins;
   },
 
   get isIAPEnabled() {
@@ -40,8 +40,6 @@ export const ShopPurchaseData = {
 
   clearLocalSTD() {
     return;
-    this.totalSTD = 0;
-    this.spentSTD = 0;
     this.respecAvailable = false;
     this.unlockedCosmetics = [];
     for (const key of Object.keys(GameDatabase.shopPurchases)) this[key] = 0;
