@@ -921,6 +921,13 @@ top.player = {
   },
   IAP: {
     STDcoins: 0,
+    allDimPurchases: 0,
+    dimPurchases,
+    dilatedTimePurchases: 0,
+    replicantiPurchases: 0,
+    IPPurchases: 0,
+    EPpurchases: 0,
+    RMPerchases: 0,
     enabled: false,
     checkoutSession: {
       id: false,
