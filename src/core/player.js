@@ -922,7 +922,7 @@ top.player = {
   IAP: {
     STDcoins: 0,
     allDimPurchases: 0,
-    dimPurchases,
+    dimPurchases: 0,
     dilatedTimePurchases: 0,
     replicantiPurchases: 0,
     IPPurchases: 0,
