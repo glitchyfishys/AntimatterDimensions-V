@@ -18,7 +18,6 @@ export default {
   data() {
     return {
       availableSTD: 0,
-      spentSTD: 0,
       isLoading: false,
       IAPsEnabled: false,
       creditsClosed: false,
@@ -45,8 +44,7 @@ export default {
   },
   methods: {
     update() {
-      this.availableSTD = Math.floor(ShopPurchaseData.availableSTD);
-      this.spentSTD = ShopPurchaseData.spentSTD;
+      this.availableSTD = Math.floor(player.IAP.STDcoins);
       this.isLoading = Boolean(player.IAP.checkoutSession.id);
       this.IAPsEnabled = player.IAP.enabled;
       this.creditsClosed = GameEnd.creditsEverClosed;
