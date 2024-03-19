@@ -407,8 +407,7 @@ export function getGameSpeedupForDisplay() {
 // Separated out for organization; however this is also used in more than one spot in gameLoop() as well. Returns
 // true if the rest of the game loop should be skipped
 export function realTimeMechanics(realDiff) {
-  ShopPurchaseData.totalSTD += realDiff / (1000 * 900);
-  player.IAP.STDcoins = ShopPurchaseData.totalSTD
+  player.IAP.STDcoins += realDiff / (1000 * 900);
 
   // Ra memory generation bypasses stored real time, but memory chunk generation is disabled when storing real time.
   // This is in order to prevent players from using time inside of Ra's reality for amplification as well
