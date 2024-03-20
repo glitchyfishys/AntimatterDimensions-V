@@ -64,7 +64,7 @@ export function getTickSpeedMultiplier() {
 
   galaxies *= Pelle.specialGlyphEffect.power;
   const perGalaxy = DC.D0_965;
-  return perGalaxy.pow(galaxies - 2).times(baseMultiplier);
+  return Decimal.min(perGalaxy.pow(galaxies - 2).times(baseMultiplier), Decimal.MAX_VALUE) ;
 }
 
 export function buyTickSpeed() {
@@ -172,8 +172,7 @@ export const Tickspeed = {
       Achievement(45),
       Achievement(66),
       Achievement(83)
-    )
-      .times(getTickSpeedMultiplier().pow(this.totalUpgrades));
+    ).times(getTickSpeedMultiplier().pow(this.totalUpgrades));
   },
 
   get totalUpgrades() {
