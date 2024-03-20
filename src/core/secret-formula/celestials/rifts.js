@@ -226,7 +226,7 @@ export const pelleRifts = {
     name: ["Stars", "Cluster", "Filament"],
     drainResource: "Galaxies",
     baseEffect: x => `AD  ${formatPow(x, 2, 2)}`,
-    strike: () => true,
+    strike: () => PelleStrikes.glitch,
     percentage: totalFill => totalFill / 1000000,
     percentageToFill: percentage => 1000000 * percentage,
     effect: totalFill => 1 + totalFill.plus(1).log10() * 0.015,
