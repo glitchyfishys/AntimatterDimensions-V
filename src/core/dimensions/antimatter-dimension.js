@@ -50,7 +50,7 @@ export function antimatterDimensionCommonMultiplier() {
   multiplier = multiplier.dividedByEffectOf(InfinityChallenge(6));
   multiplier = multiplier.times(getAdjustedGlyphEffect("powermult"));
   multiplier = multiplier.times(Currency.realityMachines.value.powEffectOf(AlchemyResource.force));
-
+  
   if (Pelle.isDoomed) multiplier = multiplier.dividedBy(10);
 
   return multiplier;
@@ -88,7 +88,7 @@ export function getDimensionFinalMultiplierUncached(tier) {
   if (AlchemyResource.inflation.isUnlocked && multiplier.gte(AlchemyResource.inflation.effectValue)) {
     multiplier = multiplier.pow(1.05);
   }
-
+  
   return multiplier;
 }
 
@@ -166,7 +166,8 @@ function applyNDPowers(mult, tier) {
       InfinityUpgrade.thisInfinityTimeMult.chargedEffect,
       AlchemyResource.power,
       Achievement(183),
-      PelleRifts.paradox
+      PelleRifts.paradox,
+      PelleRifts.glitch
     );
 
   multiplier = multiplier.pow(getAdjustedGlyphEffect("curseddimensions"));
