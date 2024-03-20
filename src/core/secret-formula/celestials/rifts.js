@@ -242,17 +242,17 @@ export const pelleRifts = {
     galaxyGeneratorThreshold: 10,
     milestones: [
       {
-        resource: "self",
+        resource: "glitch",
         requirement: 0.25,
         description: "you"
       },
       {
-        resource: "self",
+        resource: "glitch",
         requirement: 0.5,
         description: "get"
       },
       {
-        resource: "self",
+        resource: "glitch",
         requirement: 1,
         description: "nothing"
       },
