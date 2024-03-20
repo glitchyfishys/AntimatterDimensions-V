@@ -167,6 +167,16 @@ export default {
         :show-sacrifice="canSacrifice"
         @click.native="select(index)"
       />
+       </div>
+	    <div
+      v-if="!firstReality"
+      class="l-glyph-selection__row"
+    >
+      <PrimaryButton
+	  class="l-glyph-equip-button"
+        v-for="(glyph, index) in glyphs"
+        @click.native="select(index)"
+      >Select glyph {{index+1}}</PrimaryButton>
     </div>
     <div v-if="!firstReality">
       {{ levelStats }}
