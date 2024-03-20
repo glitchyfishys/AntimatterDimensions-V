@@ -171,7 +171,7 @@ export const v = {
       description: value => `Get ${formatInt(400000)} Time Theorems with a /${format(Decimal.pow10(value), 2, 2)}
         Black Hole or slower, without discharging or entering EC12.`,
       values: [ 50, 100, 150, 200, 250, 300],
-      condition: () => V.isRunning,
+      condition: () => V.isRunning  && Ra.unlocks.unlockHardV.isUnlocked,
       currentValue: () => (
         // Dirty hack I know lmao
         Currency.timeTheorems.gte(400000)
@@ -190,7 +190,7 @@ export const v = {
       name: "Shutter Glyph",
       description: value => `Reach a Glyph of level ${formatInt(value)}.`,
       values: [6500, 7000, 8000, 9000, 10000, 15000, 20000, 25000],
-      condition: () => V.isRunning,
+      condition: () => V.isRunning && Ra.unlocks.unlockHardV.isUnlocked,
       currentValue: () => gainedGlyphLevel().actualLevel,
       formatRecord: x => formatInt(x),
       shardReduction: tiers => Math.floor(500 * tiers),
@@ -204,7 +204,7 @@ export const v = {
       name: "glitched",
       description: value => `Reach ${formatInt(value)} antimatter without time studies or dilation unlocked`,
       values: [1e9, 5e9, 1e10, 5e10, 1e11, 5e11, 1e12],
-      condition: () => V.isRunning && player.timestudy.studies.length == 0 && !PlayerProgress.dilationUnlocked(),
+      condition: () => V.isRunning && player.timestudy.studies.length == 0 && !PlayerProgress.dilationUnlocked()  && Ra.unlocks.unlockHardV.isUnlocked,
       currentValue: () => Currency.antimatter.value.log10(),
       formatRecord: x => formatInt(x),
       shardReduction: tiers => Math.floor(500 * tiers),
