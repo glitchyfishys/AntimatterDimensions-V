@@ -1944,12 +1944,13 @@ export const celestialNavigation = {
   "pelle-galaxy-generator-path": {
     visible: () => Pelle.hasGalaxyGenerator,
     complete: () => {
+      let gal = Math.min( 1e100, GalaxyGenerator.generatedGalaxies);
       const riftCaps = PelleRifts.all.map(r => r.config.galaxyGeneratorThreshold);
-      const brokenRifts = riftCaps.countWhere(n => GalaxyGenerator.generatedGalaxies >= n);
+      const brokenRifts = riftCaps.countWhere(n => gal >= n);
       if (brokenRifts === 5) return 1;
-      const prevRift = riftCaps.filter(n => GalaxyGenerator.generatedGalaxies >= n).max();
-      const nextRift = riftCaps.filter(n => GalaxyGenerator.generatedGalaxies < n).min();
-      const currRiftProp = Math.sqrt((GalaxyGenerator.generatedGalaxies - prevRift) / (nextRift - prevRift));
+      const prevRift = riftCaps.filter(n => gal >= n).max();
+      const nextRift = riftCaps.filter(n => gal < n).min();
+      const currRiftProp = Math.sqrt((gal - prevRift) / (nextRift - prevRift));
       return (brokenRifts + currRiftProp) / 5;
     },
     connector: (function() {
