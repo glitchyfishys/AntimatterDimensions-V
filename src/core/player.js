@@ -747,6 +747,11 @@ top.player = {
           fill: DC.D0,
           active: false,
           reducedTo: 1
+        },
+        glitch: {
+          fill: 0,
+          active: false,
+          reducedTo: 1
         }
       },
       progressBits: 0,
