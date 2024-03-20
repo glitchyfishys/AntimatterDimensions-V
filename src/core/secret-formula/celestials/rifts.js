@@ -219,5 +219,44 @@ export const pelleRifts = {
       },
     ],
     galaxyGeneratorText: "It should be possible to create more, but Pelle has restricted you. Disregard the $value"
+  },
+  glitch: {
+    id: 6,
+    key: "glitch",
+    name: ["Stars", "Cluster", "Filament"],
+    drainResource: "Galaxies",
+    baseEffect: x => `AD  ${formatPow(x, 2, 2)}`,
+    strike: () => true,
+    percentage: totalFill => totalFill / 1000000,
+    percentageToFill: percentage => 1000000 * percentage,
+    effect: totalFill => 1 + totalFill.plus(1).log10() * 0.015,
+    currency: () => ({
+      get value() {
+        return player.galaxies;
+      },
+      set value(val) {
+        const spent = player.galaxies - val;
+        player.celestials.pelle.rifts.glitch.percentageSpent += spent;
+      }
+    }),
+    galaxyGeneratorThreshold: 10,
+    milestones: [
+      {
+        resource: "self",
+        requirement: 0.25,
+        description: "you"
+      },
+      {
+        resource: "self",
+        requirement: 0.5,
+        description: "get"
+      },
+      {
+        resource: "self",
+        requirement: 1,
+        description: "nothing"
+      },
+    ],
+    galaxyGeneratorText: "get more galaxies"
   }
 };
