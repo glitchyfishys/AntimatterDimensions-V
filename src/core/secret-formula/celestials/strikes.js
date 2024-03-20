@@ -40,5 +40,12 @@ export const pelleStrikes = {
     rewardDescription: () => `Keep the Time Dilation study across Armageddon, boost Remnant gain, and unlock
       ${wordShift.wordCycle(PelleRifts.paradox.name)}`,
     rift: () => PelleRifts.paradox
+  },
+  glitch: {
+    id: 6,
+    requirementDescription: "destroy pelle",
+    penaltyDescription: () => `nothing bad`,
+    rewardDescription: () => `Unlock ${wordShift.wordCycle(PelleRifts.glitch.name)}`,
+    rift: () => PelleRifts.glitch
   }
 };
