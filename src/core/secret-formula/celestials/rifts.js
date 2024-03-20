@@ -229,7 +229,7 @@ export const pelleRifts = {
     strike: () => PelleStrikes.glitch,
     percentage: totalFill => totalFill / 1000000,
     percentageToFill: percentage => 1000000 * percentage,
-    effect: totalFill => 1 + Math.log10(totalFill + 1) * 0.015,
+    effect: totalFill => 1 + Math.sqrt(totalFill) * 0.015,
     currency: () => ({
       get value() {
         return player.galaxies;
