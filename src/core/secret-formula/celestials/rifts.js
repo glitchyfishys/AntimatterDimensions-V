@@ -244,17 +244,20 @@ export const pelleRifts = {
       {
         resource: "glitch",
         requirement: 0.25,
-        description: "you"
+        description: "not yet"
       },
       {
         resource: "glitch",
         requirement: 0.5,
-        description: "get"
+        description: "unlock galaxy generator"
       },
       {
         resource: "glitch",
         requirement: 1,
-        description: "nothing"
+        description: "lower dilation penalty by galaxys generated"
+        effect: () => Math.log10(Math.log10(player.celestials.pelle.galaxyGenerator.generatedGalaxies))/4;
+        ),
+        formatEffect: x => `dilation effect ${0.75 + formatX(x, 2, 2)}`
       },
     ],
     galaxyGeneratorText: "get more galaxies"
