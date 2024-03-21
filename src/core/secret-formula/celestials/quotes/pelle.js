@@ -41,6 +41,7 @@ const usurper =      ["Usurper",       "Deity",         "Monarch"];
 const pride =        ["Pride",         "Deity",         "Monarch"];
 const forgotten =    ["Forgotten",     "Deity",         "Monarch"];
 const paramount =    ["Paramount",     "Deity",         "Monarch"];
+const resolve =      ["resolve",       "fix",            "repair"];
 const never =        ["never",   "gonna",   "give",  "you",  "up"];
 /* eslint-enable no-multi-spaces */
 
@@ -437,6 +438,21 @@ export const pelleQuotes = {
         text: "$1", 1: never,
         background: flashCelestial,
       },
+    ],
+  },
+  strike6: {
+    id: 12,
+    lines: [
+      { text: "What are you doing $1. Why can't we reminisce about this?", 1: destroyer },
+      { text: "The many $1 in the past. Can't we just $2 this", 1: battles, 2: resolve },
+      { text: "We have done this for $1", 1: forever },
+      { text: "You have done this $1.", 1: destroyer },
+      "SO",
+      "NEVER",
+      "GONNA",
+      "GIVE",
+      "YOU",
+      "UP",
     ],
   },
 };
