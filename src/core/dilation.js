@@ -216,9 +216,9 @@ export function getDilationTimeEstimate(goal) {
 }
 
 export function dilatedValueOf(value) {
-  if(player.celestials.pelle.galaxyGenerator.generatedGalaxies >= 1e10) return Math.log10(Math.log10(player.celestials.pelle.galaxyGenerator.generatedGalaxies))/4;
+  let ex = Math.max(Math.log10(Math.log10(player.celestials.pelle.galaxyGenerator.generatedGalaxies + 1))/4, 0);
   const log10 = value.log10();
-  const dilationPenalty = 0.75 * Effects.product(DilationUpgrade.dilationPenalty);
+  const dilationPenalty = (0.75 + ex) * Effects.product(DilationUpgrade.dilationPenalty);
   return Decimal.pow10(Math.sign(log10) * Math.pow(Math.abs(log10), dilationPenalty));
 }
 
