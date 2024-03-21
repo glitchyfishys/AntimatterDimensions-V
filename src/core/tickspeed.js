@@ -64,7 +64,7 @@ export function getTickSpeedMultiplier() {
 
   galaxies *= Pelle.specialGlyphEffect.power;
   const perGalaxy = DC.D0_965;
-  return Decimal.min(perGalaxy.pow(galaxies - 2).times(baseMultiplier), Decimal.MAX_VALUE) ;
+  return Decimal.min(perGalaxy.pow(galaxies - 2).times(baseMultiplier), "1e1E300") ;
 }
 
 export function buyTickSpeed() {
@@ -145,7 +145,7 @@ export const Tickspeed = {
     const tickspeed = Effarig.isRunning
       ? Effarig.tickspeed
       : this.baseValue.powEffectOf(DilationUpgrade.tickspeedPower);
-    return Decimal.min(player.dilation.active || PelleStrikes.dilation.hasStrike ? dilatedValueOf(tickspeed) : tickspeed, Decimal.MAX_VALUE);
+    return Decimal.min(player.dilation.active || PelleStrikes.dilation.hasStrike ? dilatedValueOf(tickspeed) : tickspeed, "1e1E300");
   },
 
   get cost() {
