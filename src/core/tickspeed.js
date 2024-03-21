@@ -143,10 +143,8 @@ export const Tickspeed = {
   },
 
   get current() {
-    let tickspeed = Effarig.isRunning
-      ? Effarig.tickspeed
-      : this.baseValue.powEffectOf(DilationUpgrade.tickspeedPower);
-    tickspeed = player.dilation.active || PelleStrikes.dilation.hasStrike ? dilatedValueOf(tickspeed) : tickspeed;
+    let tickspeed = Effarig.isRunning ? Effarig.tickspeed : this.baseValue.powEffectOf(DilationUpgrade.tickspeedPower);
+    if(player.dilation.active || PelleStrikes.dilation.hasStrike) tickspeed = dilatedValueOf(tickspeed);
     if (tickspeed.eq(0)) return new Decimal("1e1E300");
     return tickspeed;
   },
