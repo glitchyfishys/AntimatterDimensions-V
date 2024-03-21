@@ -254,9 +254,8 @@ export const pelleRifts = {
       {
         resource: "glitch",
         requirement: 1,
-        description: "lower dilation penalty by galaxys generated"
-        effect: () => Math.log10(Math.log10(player.celestials.pelle.galaxyGenerator.generatedGalaxies))/4;
-        ),
+        description: "lower dilation penalty by galaxys generated",
+        effect: () => Math.log10(Math.log10(player.celestials.pelle.galaxyGenerator.generatedGalaxies))/4,
         formatEffect: x => `dilation effect ${0.75 + formatX(x, 2, 2)}`
       },
     ],
