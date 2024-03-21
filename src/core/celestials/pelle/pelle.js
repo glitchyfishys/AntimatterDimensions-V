@@ -380,6 +380,9 @@ EventHub.logic.on(GAME_EVENT.PELLE_STRIKE_UNLOCKED, () => {
   if (PelleStrikes.dilation.hasStrike) {
     Pelle.quotes.strike5.show();
   }
+  if (PelleStrikes.glitch.hasStrike) {
+    Pelle.quotes.strike6.show();
+  }
 });
 
 export class RebuyablePelleUpgradeState extends RebuyableMechanicState {
