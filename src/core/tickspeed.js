@@ -146,7 +146,7 @@ export const Tickspeed = {
     let tickspeed = Effarig.isRunning ? Effarig.tickspeed : this.baseValue.powEffectOf(DilationUpgrade.tickspeedPower);
     if(player.dilation.active || PelleStrikes.dilation.hasStrike) tickspeed = dilatedValueOf(tickspeed);
     tickspeed.e = Math.abs(tickspeed.e);
-    if(tickspeed.q(0)) return new Decminal("1e1E300")
+    if(tickspeed.eq(0)) return new Decminal("1e1E300")
     return tickspeed;
   },
 
