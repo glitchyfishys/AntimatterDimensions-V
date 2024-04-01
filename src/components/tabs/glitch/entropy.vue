@@ -8,7 +8,14 @@ export default {
 <template>
     <div class="c-entropy-infotext">
       hello destroyer.
+      fill these please.
     </div>
+
+  <GlicthRift
+          v-for="rift in strikes"
+          :key="rift.config.id"
+          :rift="rift"
+        />
 </template>
 
 <style scoped>
