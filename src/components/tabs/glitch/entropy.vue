@@ -19,11 +19,7 @@ export default {
       fill these please.
     </div>
 
-  <GlitchRift
-    v-for="rift in strikes"
-    :key="rift.config.id"
-    :rift="rift"
-  />
+  
   
 </template>
 
