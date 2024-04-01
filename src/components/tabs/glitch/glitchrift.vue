@@ -5,7 +5,7 @@ import GlitchRiftBar from "./GlitchRiftBar";
 export default {
   name: "GlitchRift",
   components: {
-    PelleRiftBar
+    GlitchRiftBar
   },
   data() {
     return {
