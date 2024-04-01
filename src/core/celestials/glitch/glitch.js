@@ -4,6 +4,7 @@ import { Quotes } from "./quotes";
 export const glitch = {
   displayName: "Glitch",
   possessiveName: "Glitch's",
+  rifts: "",
   get isUnlocked() {
     return true;
   },
