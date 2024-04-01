@@ -8,7 +8,7 @@ export default {
     GlitchRift
   },
   rifts() {
-      return PelleRift.all;
+      return GlitchRift.all;
     }
 };
 </script>
@@ -18,12 +18,6 @@ export default {
       hello destroyer.
       fill these please.
     </div>
-
-  <GlitchRift
-    v-for="rift in rifts"
-    :key="rift.config.id"
-    :rift="rift"
-  />
   
 </template>
 
