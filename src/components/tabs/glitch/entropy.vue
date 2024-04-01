@@ -8,7 +8,7 @@ export default {
     GlitchRift
   },
   strikes() {
-      return GlitchRift.all;
+      return PelleRift.all;
     }
 };
 </script>
