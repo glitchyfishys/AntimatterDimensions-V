@@ -795,7 +795,8 @@ top.player = {
           fill: 0,
           reducedTo: 1
         },
-    }
+      }
+    },
   },
   isGameEnd: false,
   tabNotifications: new Set(),
