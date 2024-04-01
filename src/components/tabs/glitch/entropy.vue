@@ -1,7 +1,12 @@
 <script>
-
+  
+import glitchrift from "./glitchrift";
+  
 export default {
-  name: "entropy"
+  name: "entropy",
+  components: {
+    GlitchRift
+  },
 };
 </script>
 
