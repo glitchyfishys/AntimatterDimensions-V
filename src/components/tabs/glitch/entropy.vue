@@ -7,8 +7,8 @@ export default {
   components: {
     GlitchRift
   },
-  strikes() {
-      return PelleRift.all;
+  rifts() {
+      return GlitchRift.all;
     }
 };
 </script>
@@ -19,7 +19,11 @@ export default {
       fill these please.
     </div>
 
-  
+  <GlitchRift
+    v-for="rift in rifts"
+    :key="rift.config.id"
+    :rift="rift"
+  />
   
 </template>
 
