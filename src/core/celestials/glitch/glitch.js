@@ -1,5 +1,5 @@
-import { GameDatabase } from "../secret-formula/game-database";
-import { Quotes } from "./quotes";
+import { GameDatabase } from ".../secret-formula/game-database";
+import { Quotes } from "../quotes";
 
 export const glitch = {
   displayName: "Glitch",
