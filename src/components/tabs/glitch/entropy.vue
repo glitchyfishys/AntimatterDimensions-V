@@ -20,7 +20,7 @@ export default {
     </div>
 
   <GlitchRift
-          v-for="rift in strikes" :key="rift.config.id" :rift="rift"
+          v-for="rift in strikes" :key="rift.config.id" :rift="GlitchRift"
         />
   
 </template>
