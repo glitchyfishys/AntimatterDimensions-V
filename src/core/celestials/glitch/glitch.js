@@ -1,4 +1,4 @@
-import { GameDatabase } from ".../secret-formula/game-database";
+import { GameDatabase } from "../../secret-formula/game-database";
 import { Quotes } from "../quotes";
 
 export const glitch = {
