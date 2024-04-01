@@ -19,7 +19,6 @@ export default {
       percentage: 0,
       reducedTo: 0,
       hasEffectiveFill: false,
-      selectedHoverMilestone: this.rift.milestones[0],
       // Converts 1 rem to number of px
       remToPx: parseInt(getComputedStyle(document.documentElement).fontSize, 10),
       effects: [],
@@ -114,7 +113,6 @@ export default {
   >
     <div class="l-overflow-hidden">
       <!-- Note: These are separate because permanent and animated fill both use the same positional attributes -->
-      <div :class="barOverlay()" />
       <div
         class="o-pelle-rift-bar-fill"
         :style="{
