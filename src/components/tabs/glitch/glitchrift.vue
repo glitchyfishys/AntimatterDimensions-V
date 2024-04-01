@@ -19,7 +19,7 @@ export default {
     rift() {
       return this.glitchrift;
       };
-    },
+    }
   },
   methods: {
     update() {
