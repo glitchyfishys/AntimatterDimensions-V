@@ -145,8 +145,6 @@ export const Tickspeed = {
   get current() {
     let tickspeed = Effarig.isRunning ? Effarig.tickspeed : this.baseValue.powEffectOf(DilationUpgrade.tickspeedPower);
     if(player.dilation.active || PelleStrikes.dilation.hasStrike) tickspeed = dilatedValueOf(tickspeed);
-    tickspeed.e = Math.abs(tickspeed.e);
-    if(tickspeed.eq(0)) return new Decimal("1e1E300")
     return tickspeed;
   },
 
@@ -175,9 +173,6 @@ export const Tickspeed = {
       Achievement(66),
       Achievement(83)
     ).times(getTickSpeedMultiplier().pow(this.totalUpgrades));
-    
-    v.e = Math.abs(v.e)
-    if (v.eq(0)) return new Decimal("1e1E300");
     return v;
   },
 
