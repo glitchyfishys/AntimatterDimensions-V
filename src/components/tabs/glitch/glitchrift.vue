@@ -19,8 +19,8 @@ export default {
     rift() {
       return this.glitchrift;
       }
-    }
-  },
+    },
+  };
   methods: {
     update() {
       const rift = this.rift;
