@@ -18,8 +18,8 @@ export default {
   computed: {
     rift() {
       return this.glitchrift;
-      }
-    };
+      };
+    },
   },
   methods: {
     update() {
