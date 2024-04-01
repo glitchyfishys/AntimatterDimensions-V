@@ -102,7 +102,7 @@ export default {
 
 <template>
   <div
-    ref="pelleRiftBar"
+    ref="GlitchRiftBar"
     class="c-pelle-rift-bar"
     :class="{
       'c-pelle-rift-bar-overfill-container': percentage > 1,
