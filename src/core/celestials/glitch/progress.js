@@ -68,17 +68,10 @@ class RiftState extends GameMechanicState {
     return this.rift.fill;
   }
 
-  set totalFill(value) {
-    this.rift.fill = value;
-  }
-
   get realPercentage() {
     return this.config.percentage(this.totalFill);
   }
 
-  get spentPercentage() {
-    return this.rift.percentageSpent || 0;
-  }
 
   get percentage() {
     if (this.reducedTo > 1) return this.reducedTo;
@@ -118,16 +111,6 @@ class RiftState extends GameMechanicState {
     return this.percentage >= 1;
   }
 
-  get galaxyGeneratorText() {
-    return this.config.galaxyGeneratorText;
-  }
-
-  toggle() {
-    const active = PelleRifts.all.filter(r => r.isActive).length;
-    if (!this.isActive && active === 3) GameUI.notify.error(`You can only have 3 rifts active at the same time!`);
-    else this.rift.active = !this.rift.active;
-  }
-
   checkMilestoneStates() {
     this.milestones.forEach(x => x.checkMilestoneState());
   }
@@ -136,9 +119,9 @@ class RiftState extends GameMechanicState {
     this.id;
 }
 
-export const PelleRifts = mapGameDataToObject(
-  GameDatabase.celestials.pelle.rifts,
+export const GlitchRifts = mapGameDataToObject(
+  GameDatabase.celestials.glitch.rifts,
   config => new RiftState(config)
 );
 
-PelleRifts.totalMilestones = () => PelleRifts.all.flatMap(x => x.milestones).countWhere(x => x.canBeApplied);
+GlitchRifts.totalMilestones = () => GlitchRifts.all.flatMap(x => x.milestones).countWhere(x => x.canBeApplied);
