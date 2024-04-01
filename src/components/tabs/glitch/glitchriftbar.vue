@@ -14,7 +14,6 @@ export default {
   },
   data() {
     return {
-      isActive: false,
       isMaxed: false,
       percentage: 0,
       reducedTo: 0,
@@ -37,7 +36,6 @@ export default {
     update() {
       const rift = this.rift;
       this.effects = rift.effects;
-      this.isActive = rift.isActive;
       this.isMaxed = rift.isMaxed;
       this.percentage = rift.percentage;
       this.reducedTo = rift.reducedTo;
@@ -50,9 +48,7 @@ export default {
     },
     milestoneResourceText(milestone) {
       const rift = this.rift;
-      return `${formatPercents(milestone.requirement)}
-      (${this.formatRift(rift.config.percentageToFill(milestone.requirement))} \
-      ${rift.id === 3 ? wordShift.wordCycle(PelleRifts.decay.name) : rift.drainResource})`;
+      return `${formatPercents(milestone.requirement)}`;
     },
     milestoneDescriptionText(milestone) {
       if (typeof milestone.description === "string") return milestone.description;
@@ -106,8 +102,6 @@ export default {
     class="c-pelle-rift-bar"
     :class="{
       'c-pelle-rift-bar-overfill-container': percentage > 1,
-      'c-pelle-rift-bar--idle': !isActive && !isMaxed,
-      'c-pelle-rift-bar--filling': isActive
     }"
     @mousemove="handleMilestoneRequirementTooltipDisplay"
   >
