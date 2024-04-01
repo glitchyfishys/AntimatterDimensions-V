@@ -219,7 +219,9 @@ export function dilatedValueOf(value) {
   let ex = Math.max(Math.log10(Math.log10(player.celestials.pelle.galaxyGenerator.generatedGalaxies + 1))/4, 0);
   const log10 = value.log10();
   const dilationPenalty = (0.75 + ex) * Effects.product(DilationUpgrade.dilationPenalty);
-  return Decimal.pow10(Math.sign(log10) * Math.pow(Math.abs(log10), dilationPenalty));
+  let effect = Decimal.pow10(Math.sign(log10) * Math.pow(Math.abs(log10), dilationPenalty));
+  if ( value.gte("1e1E308") || value.eq(0)) effect = new Decimal("1e1E308");
+  return effect
 }
 
 class DilationUpgradeState extends SetPurchasableMechanicState {
