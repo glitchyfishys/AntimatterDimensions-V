@@ -7,6 +7,9 @@ export default {
   components: {
     GlitchRift
   },
+  strikes() {
+      return GlitchRift.all;
+    }
 };
 </script>
 
