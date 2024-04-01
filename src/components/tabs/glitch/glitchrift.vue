@@ -68,7 +68,7 @@ export default {
           </div>
         </div>
         <div class="c-pelle-rift-column">
-          <PelleRiftBar :rift="rift" />
+          <GlitchRiftBar :rift="rift" />
         </div>
         <div class="c-pelle-rift-status">
           <div class="c-pelle-rift-fill-status">
@@ -76,17 +76,9 @@ export default {
               {{ riftName() }}
             </h2>
             <div class="c-pelle-rift-rift-info-container">
-              Drains {{ drainResource() }} to fill.
-              <span
-                v-if="specialRift"
-                :ach-tooltip="infoTooltip"
-              >
+              filled by completing {{ drainResource() }}.
                 <i class="fas fa-question-circle" />
               </span>
-              <br>
-              <template v-if="!isMaxed">
-                Current Amount: {{ formatRift(resource) }}
-              </template>
               <br>
               Total Filled: {{ formatRift(rift.totalFill) }}
             </div>
