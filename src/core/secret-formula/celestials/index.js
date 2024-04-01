@@ -14,6 +14,7 @@ import { pelleStrikes } from "./strikes";
 import { teresa } from "./teresa";
 import { quotes } from "./quotes";
 import { v } from "./v";
+import { GlitchRifts } from "./glitchrift";
 
 export const celestials = {
   effarig: {
@@ -40,5 +41,6 @@ export const celestials = {
   singularityMilestones,
   teresa,
   quotes,
-  v
+  v,
+  GlitchRifts
 };
