@@ -8,7 +8,7 @@ export default {
     GlitchRift
   },
   rifts() {
-      return GlitchRift.all;
+      return PelleRift.all;
     }
 };
 </script>
