@@ -1,6 +1,6 @@
 <script>
   
-import PelleRiftBar from "./PelleRiftBar";
+import GlitchRiftBar from "./GlitchRiftBar";
 
 export default {
   name: "GlitchRift",
