@@ -1,6 +1,6 @@
 <script>
   
-import GlitchRiftBar from "./GlitchRiftBar";
+import GlitchRiftBar from "./glitchriftbar";
 
 export default {
   name: "GlitchRift",
