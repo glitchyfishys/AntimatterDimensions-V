@@ -774,6 +774,27 @@ top.player = {
       quoteBits: 0,
       unlockBits: 0,
       run: false,
+      rifts: {
+        alpha: {
+          fill: 0,
+          reducedTo: 1
+        },
+        beta: {
+          fill: 0,
+          reducedTo: 1
+        },
+        delta: {
+          fill: 0,
+          reducedTo: 1
+        },
+        gamma: {
+          fill: 0,
+          reducedTo: 1
+        },
+        epsilon: {
+          fill: 0,
+          reducedTo: 1
+        },
     },
   },
   isGameEnd: false,
