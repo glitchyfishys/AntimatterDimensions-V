@@ -136,26 +136,6 @@ export default {
 
 <template>
   <div class="l-time-studies-tab">
-    <div class="c-subtab-option-container">
-      <PrimaryButton
-        class="o-primary-btn--subtab-option"
-        @click="exportStudyTree"
-      >
-        Export tree
-      </PrimaryButton>
-      <PrimaryButton
-        :class="respecClassObject"
-        @click="respec = !respec"
-      >
-        Respec Time Studies on next Eternity
-      </PrimaryButton>
-      <PrimaryButton
-        class="o-primary-btn--subtab-option"
-        onclick="Modal.studyString.show({ id: -1 })"
-      >
-        Import tree
-      </PrimaryButton>
-    </div>
     <div
       class="l-time-study-tree l-time-studies-tab__tree"
       :style="treeStyleObject"
