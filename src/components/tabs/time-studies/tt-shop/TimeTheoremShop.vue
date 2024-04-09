@@ -2,10 +2,13 @@
 import PrimaryToggleButton from "@/components/PrimaryToggleButton";
 import TimeStudySaveLoadButton from "./TimeStudySaveLoadButton";
 import TimeTheoremBuyButton from "./TimeTheoremBuyButton";
+import PrimaryButton from "@/components/PrimaryButton";
+
 
 export default {
   name: "TimeTheoremShop",
   components: {
+    PrimaryButton,
     PrimaryToggleButton,
     TimeTheoremBuyButton,
     TimeStudySaveLoadButton
