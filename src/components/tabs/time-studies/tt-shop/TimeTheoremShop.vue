@@ -128,8 +128,10 @@ export default {
     buyMaxTheorems() {
       TimeTheorems.buyMax(false);
     },
+    respec() {
+      player.respec = !player.respec
+    },
     update() {
-      this.respec = player.respec;
       this.theoremAmount.copyFrom(Currency.timeTheorems);
       this.theoremGeneration.copyFrom(getTTPerSecond().times(getGameSpeedupForDisplay()));
       this.totalTimeTheorems.copyFrom(Currency.timeTheorems.max);
@@ -276,7 +278,7 @@ export default {
       </PrimaryButton>
       <PrimaryButton
         :class="respecClassObject"
-        @click="player.respec = !player.respec"
+        @click="respec"
       >
         Respec
       </PrimaryButton>
