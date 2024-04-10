@@ -101,7 +101,7 @@ export default {
     respecClassObject() {
       return {
         "o-primary-btn--subtab-option": true,
-        "o-primary-btn--respec-active": this.respec
+        "o-primary-btn--respec-active": player.respec
       };
     },
     minimize() {
