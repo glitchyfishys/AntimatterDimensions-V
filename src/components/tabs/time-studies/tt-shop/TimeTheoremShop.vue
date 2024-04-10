@@ -272,13 +272,13 @@ export default {
     <div class="c-subtab-option-container">
       <PrimaryButton
         class="o-primary-btn--subtab-option"
-        @click="exportStudyTree"
+        @click="exportStudyTree()"
       >
         Export
       </PrimaryButton>
       <PrimaryButton
-        :class="respecClassObject"
-        @click="respec"
+        :class="respecClassObject()"
+        @click="respec()"
       >
         Respec
       </PrimaryButton>
