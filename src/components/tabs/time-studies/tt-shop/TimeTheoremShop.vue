@@ -88,9 +88,6 @@ export default {
     invertTTgenDisplay(newValue) {
       player.options.invertTTgenDisplay = newValue;
     },
-    respec(newValue) {
-      player.respec = newValue;
-    },
   },
   methods: {
     exportStudyTree() {
@@ -279,7 +276,7 @@ export default {
       </PrimaryButton>
       <PrimaryButton
         :class="respecClassObject"
-        @click="respec = !respec"
+        @click="player.respec = !player.respec"
       >
         Respec
       </PrimaryButton>
