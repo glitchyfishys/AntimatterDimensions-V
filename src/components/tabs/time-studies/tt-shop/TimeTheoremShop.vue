@@ -101,6 +101,12 @@ export default {
         GameUI.notify.info("Exported current Time Studies to your clipboard");
       }
     },
+    respecClassObject() {
+      return {
+        "o-primary-btn--subtab-option": true,
+        "o-primary-btn--respec-active": this.respec
+      };
+    },
     minimize() {
       player.timestudy.shopMinimized = !player.timestudy.shopMinimized;
     },
