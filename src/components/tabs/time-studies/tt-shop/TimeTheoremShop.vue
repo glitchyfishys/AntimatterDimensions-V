@@ -88,6 +88,9 @@ export default {
     invertTTgenDisplay(newValue) {
       player.options.invertTTgenDisplay = newValue;
     },
+    respec(newValue) {
+      player.respec = newValue;
+    },
   },
   methods: {
     minimize() {
