@@ -791,7 +791,7 @@ button:focus {
 }
 
 .o-tab-btn--glitch {
-  color: var(--color-glitc);
+  color: var(--color-glitch);
   background-color: var(--color-prestige--accent);
   border-color: var(--color-glitch);
 }
