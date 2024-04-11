@@ -465,12 +465,12 @@ export const alchemyResources = {
     name: "Sifter",
     symbol: "∬",
     isBaseResource: false,
-    effect: amount => Math.floor(amount / 2),
+    effect: amount => Math.floor(amount * 0.8),
     tier: 5,
     uiOrder: 2,
     unlockedAt: 30,
-    description: "boost all basic alchemy resources amounts to a mininum",
-    formatEffect: value => `boost all basic resources mininum of ${formatInt(value)} `,
+    description: "boost all basic alchemy resources amounts to a mininum amount",
+    formatEffect: value => `boost all basic resources to a mininum of ${formatInt(value)} `,
     reagents: [
       {
         resource: ALCHEMY_RESOURCE.CARDINALITY,
@@ -505,7 +505,7 @@ export const alchemyResources = {
     uiOrder: 3,
     unlockedAt: 35,
     description: "gain more singularities",
-    formatEffect: value => `${formatX(value)} Singularities`,
+    formatEffect: value => `${formatX(value)} Dark Matter gain`,
     reagents: [
       {
         resource: ALCHEMY_RESOURCE.DECOHERENCE,
