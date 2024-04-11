@@ -284,11 +284,11 @@ export default {
          @click="tsrespec"
       >
         <span v-if="respec">
-              Respec next eternity
-            </span>
-            <span v-else>
-              Respecing on eternity
-            </span>
+            Respec
+        </span>
+        <span v-else>
+            Respec
+        </span>
         
         Respec
       </PrimaryButton>
