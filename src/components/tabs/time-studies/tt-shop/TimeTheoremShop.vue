@@ -188,7 +188,7 @@ export default {
           <div class="l-tree-load-button-wrapper">
             <span class="c-ttshop__save-load-text">{{ saveLoadText }}</span>
             <TimeStudySaveLoadButton
-              v-for="saveslot in 6"
+              v-for="saveslot in 8"
               :key="saveslot"
               :saveslot="saveslot"
             />
@@ -279,8 +279,8 @@ export default {
         Export
       </PrimaryButton>
       <PrimaryButton
-        :class="respecClassObject()"
-        @click="tsrespec"
+         @click="tsrespec"
+        :class="respecClassObject"
       >
         Respec
       </PrimaryButton>
