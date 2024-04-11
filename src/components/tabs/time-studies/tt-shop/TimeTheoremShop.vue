@@ -277,7 +277,7 @@ export default {
         Export
       </PrimaryButton>
       <PrimaryButton
-        :class="respecClassObject"
+        :class="respecClassObject()"
         @click="respec"
       >
         Respec
