@@ -369,7 +369,7 @@ export const Ra = {
   updateAlchemyFlow(realityRealTime) {
     const perSecond = 1000 / realityRealTime;
     
-    let primeboost = AlchemyResource.shifter.amount / 2;
+    let primeboost = AlchemyResource.shifter.effectOrDefault(0);
     
     for (const resource of AlchemyResources.all) {
       if (resource.id < 5 || resource.id == 10){
