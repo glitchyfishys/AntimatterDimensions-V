@@ -84,6 +84,10 @@ html {
   --color-celestials: #5151ec;
   --color-prestige--accent: white;
 
+  --color-glitch: #7504d1;
+  --color-glitch-light: #ce91ff;
+  --color-glitch-dark: #480182;
+
   --color-teresa--base: #5151ec;
   --color-teresa--accent: white;
 
@@ -123,6 +127,10 @@ html {
   --color-reality: #3a823d;
   --color-reality-light: #d5ffd7;
   --color-celestials: #00bcd4;
+  
+  --color-glitch: #7504d1;
+  --color-glitch-light: #ce91ff;
+  --color-glitch-dark: #480182;
 }
 
 :root .t-dark {
@@ -142,6 +150,10 @@ html {
 
   --color-laitela--base: black;
   --color-laitela--accent: white;
+
+  --color-glitch: #7504d1;
+  --color-glitch-light: #ce91ff;
+  --color-glitch-dark: #480182;
 }
 
 :root .t-dark-metro {
@@ -167,6 +179,10 @@ html {
 
   --color-laitela--base: black;
   --color-laitela--accent: white;
+  
+  --color-glitch: #7504d1;
+  --color-glitch-light: #ce91ff;
+  --color-glitch-dark: #480182;
 }
 
 :root .t-amoled {
@@ -185,6 +201,10 @@ html {
 
   --color-laitela--base: black;
   --color-laitela--accent: white;
+
+  --color-glitch: #7504d1;
+  --color-glitch-light: #ce91ff;
+  --color-glitch-dark: #480182;
 }
 
 :root .t-amoled-metro {
@@ -207,6 +227,10 @@ html {
 
   --color-laitela--base: black;
   --color-laitela--accent: white;
+
+  --color-glitch: #7504d1;
+  --color-glitch-light: #ce91ff;
+  --color-glitch-dark: #480182;
 }
 
 :root .t-s1 {
@@ -228,6 +252,10 @@ html {
   --color-prestige--accent: #dbd242;
 
   --color-pelle--base: #7cb727;
+
+  --color-glitch: #7504d1;
+  --color-glitch-light: #ce91ff;
+  --color-glitch-dark: #480182;
 }
 
 :root .t-s4 {
@@ -256,6 +284,10 @@ html {
 
   --color-laitela--base: black;
   --color-laitela--accent: white;
+
+  --color-glitch: #7504d1;
+  --color-glitch-light: #ce91ff;
+  --color-glitch-dark: #480182;
 }
 
 :root .t-s11 {
@@ -272,6 +304,10 @@ html {
 
   --color-laitela--base: black;
   --color-laitela--accent: white;
+
+  --color-glitch: #7504d1;
+  --color-glitch-light: #ce91ff;
+  --color-glitch-dark: #480182;
 }
 
 :root .s-base--metro {
@@ -752,6 +788,16 @@ button:focus {
 
 .o-tab-btn--celestial:hover {
   background: var(--color-celestials);
+}
+
+.o-tab-btn--glitch {
+  color: var(--color-glitc);
+  background-color: var(--color-prestige--accent);
+  border-color: var(--color-glitch);
+}
+
+.o-tab-btn--glitch:hover {
+  background: var(--color-glitch);
 }
 
 /* #endregion tab buttons */
