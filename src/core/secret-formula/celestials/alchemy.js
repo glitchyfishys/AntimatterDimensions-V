@@ -500,7 +500,7 @@ export const alchemyResources = {
     name: "Alter",
     symbol: "∴",
     isBaseResource: false,
-    effect: amount => Math.floor(amount),
+    effect: amount => Math.max(1,Math.floor(amount)),
     tier: 5,
     uiOrder: 3,
     unlockedAt: 35,
