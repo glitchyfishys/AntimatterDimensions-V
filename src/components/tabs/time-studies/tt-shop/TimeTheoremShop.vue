@@ -130,8 +130,8 @@ export default {
       TimeTheorems.buyMax(false);
     },
     tsrespec() {
+      respec = !player.respec;
       player.respec = !player.respec;
-      update();
     },
     update() {
       this.respec = player.respec;
