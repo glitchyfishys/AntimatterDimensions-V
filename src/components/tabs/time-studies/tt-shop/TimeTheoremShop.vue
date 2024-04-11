@@ -133,7 +133,7 @@ export default {
       player.respec = !player.respec
     },
     update() {
-      respec = player.respec;
+      this.respec = player.respec;
       this.theoremAmount.copyFrom(Currency.timeTheorems);
       this.theoremGeneration.copyFrom(getTTPerSecond().times(getGameSpeedupForDisplay()));
       this.totalTimeTheorems.copyFrom(Currency.timeTheorems.max);
