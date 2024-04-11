@@ -129,7 +129,7 @@ export default {
     buyMaxTheorems() {
       TimeTheorems.buyMax(false);
     },
-    respec() {
+    tsrespec() {
       player.respec = !player.respec
     },
     update() {
@@ -280,7 +280,7 @@ export default {
       </PrimaryButton>
       <PrimaryButton
         :class="respecClassObject()"
-        @click="respec"
+        @click="tsrespec"
       >
         Respec
       </PrimaryButton>
