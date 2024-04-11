@@ -15,6 +15,7 @@ export default {
   },
   data() {
     return {
+      respec: false,
       theoremAmount: new Decimal(0),
       theoremGeneration: new Decimal(0),
       totalTimeTheorems: new Decimal(0),
@@ -132,6 +133,7 @@ export default {
       player.respec = !player.respec
     },
     update() {
+      respec = player.respec;
       this.theoremAmount.copyFrom(Currency.timeTheorems);
       this.theoremGeneration.copyFrom(getTTPerSecond().times(getGameSpeedupForDisplay()));
       this.totalTimeTheorems.copyFrom(Currency.timeTheorems.max);
