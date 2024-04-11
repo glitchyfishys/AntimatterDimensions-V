@@ -130,7 +130,8 @@ export default {
       TimeTheorems.buyMax(false);
     },
     tsrespec() {
-      player.respec = !player.respec
+      player.respec = !player.respec;
+      update();
     },
     update() {
       this.respec = player.respec;
@@ -188,7 +189,7 @@ export default {
           <div class="l-tree-load-button-wrapper">
             <span class="c-ttshop__save-load-text">{{ saveLoadText }}</span>
             <TimeStudySaveLoadButton
-              v-for="saveslot in 8"
+              v-for="saveslot in 6"
               :key="saveslot"
               :saveslot="saveslot"
             />
@@ -280,7 +281,7 @@ export default {
       </PrimaryButton>
       <PrimaryButton
          @click="tsrespec"
-        :class="respecClassObject"
+        :class="respecClassObject()"
       >
         Respec
       </PrimaryButton>
