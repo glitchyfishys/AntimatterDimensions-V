@@ -280,9 +280,16 @@ export default {
         Export
       </PrimaryButton>
       <PrimaryButton
-         @click="tsrespec"
         :class="respecClassObject()"
+         @click="tsrespec"
       >
+        <span v-if="respec">
+              Respec next eternity
+            </span>
+            <span v-else>
+              Respecing on eternity
+            </span>
+        
         Respec
       </PrimaryButton>
       <PrimaryButton
@@ -291,7 +298,9 @@ export default {
       >
         Import
       </PrimaryButton>
+      
     </div>
+    
   </div>
 </template>
 
