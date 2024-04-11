@@ -505,7 +505,7 @@ export const alchemyResources = {
     uiOrder: 3,
     unlockedAt: 35,
     description: "gain more singularities",
-    formatEffect: value => `${formatX(value)} Dark Matter gain`,
+    formatEffect: value => `${formatX(value)} Dark Energy gain`,
     reagents: [
       {
         resource: ALCHEMY_RESOURCE.DECOHERENCE,
