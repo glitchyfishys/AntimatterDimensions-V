@@ -137,7 +137,7 @@ class RaPetState extends GameMechanicState {
   }
 
   get canGetMemoryChunks() {
-    if(Ra.unlocks.gainoutside.isUnlocked){
+    if(Ra.unlocks.gainoutside.isUnlocked && !Pelle.isDoomed){
       return true;
     }
     return this.isUnlocked && Ra.isRunning;
