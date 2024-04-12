@@ -149,8 +149,8 @@ export default {
 }
 
 .o-tab-btn--subtab:last-child {
-  border-top-right-radius: var(--var-border-radius, 0.5rem);
-  border-bottom-right-radius: var(--var-border-radius, 0.5rem);
+  border-top-right-radius: var(--var-border-radius, 1rem);
+  border-bottom-right-radius: var(--var-border-radius, 1rem);
   transition: border-radius 0s;
 }
 </style>
