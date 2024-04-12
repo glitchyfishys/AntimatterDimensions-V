@@ -135,6 +135,10 @@ export default {
 .o-tab-btn--celestial::before {
   background-color: var(--color-celestials);
 }
+  
+o-tab-btn--glitch::before {
+  background-color: var(--color-glitch);
+}
 
 .o-subtab-btn--active {
   border-bottom-width: 0.5rem;
