@@ -41,7 +41,7 @@ export default {
     },
     bulk() {
       if(this.ADbulk) {
-       player.auto.antimatterDims.all.every(x => x.mode = 10) 
+       player.auto.antimatterDims.all.every(x => x.mode = 10)
       }
       else{
         player.auto.antimatterDims.all.every(x => x.mode = 1)
@@ -67,17 +67,15 @@ export default {
     
     <PrimaryButton
       class="o-primary-btn--subtab-option"
-      @click="toggleAllAutobuyers()"
+      @click="toggleAllAutobuyers()">
       {{ allAutobuyersDisabled ? "Enable" : "Disable" }} all autobuyers
-    />
+    </PrimaryButton>
     
       <PrimaryToggleButton
-      v-model="ADbulk"
-      on="AD buy max"
-      off="AD buy single"
       class="o-primary-btn--subtab-option"
-      @click="bulk()"
-    />
+      @click="bulk()">
+        {{ ADbulk ? "AD buy max" : "AD buy single" }}
+    </PrimaryToggleButton>
     
     <span v-if="isDoomed">
       <PrimaryButton
