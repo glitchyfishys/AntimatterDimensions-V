@@ -121,7 +121,10 @@ export default {
   width: 0.5rem;
 }
 
-
+.o-tab-btn--infinity::before {
+  background-color: var(--color-infinity);
+}
+  
 .o-tab-btn--eternity::before {
   background-color: var(--color-eternity);
 }
