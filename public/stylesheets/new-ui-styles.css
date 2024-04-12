@@ -338,7 +338,7 @@ body.t-s12 {
   border-top-color: var(--color-celestials);
 }
 
-.o-tab-btn--glitch .-subtab__tooltip {
+.o-tab-btn--glitch .o-subtab__tooltip {
   color: var(--color-glitch);
   background: var(--color-glitch);
   border-color: var(--color-glitch);
