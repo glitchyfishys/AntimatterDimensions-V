@@ -136,7 +136,7 @@ export default {
   background-color: var(--color-celestials);
 }
   
-o-tab-btn--glitch::before {
+.o-tab-btn--glitch::before {
   background-color: var(--color-glitch);
 }
 
