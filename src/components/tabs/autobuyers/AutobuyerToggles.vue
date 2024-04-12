@@ -64,11 +64,12 @@ export default {
       off="Resume autobuyers"
       class="o-primary-btn--subtab-option"
     />
-    <PrimaryButton>
+    
+    <PrimaryButton
       class="o-primary-btn--subtab-option"
       @click="toggleAllAutobuyers()"
       {{ allAutobuyersDisabled ? "Enable" : "Disable" }} all autobuyers
-    </PrimaryButton>
+    />
     
       <PrimaryToggleButton
       v-model="ADbulk"
@@ -85,6 +86,7 @@ export default {
       >
         Continuum is disabled
       </PrimaryButton>
+      
     </span>
     <span v-else>
       <PrimaryToggleButton
@@ -96,6 +98,7 @@ export default {
       />
     </span>
   </div>
+  
 </template>
 
 <style scoped>
