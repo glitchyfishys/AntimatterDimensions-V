@@ -71,11 +71,11 @@ export default {
       {{ allAutobuyersDisabled ? "Enable" : "Disable" }} all autobuyers
     </PrimaryButton>
     
-      <PrimaryToggleButton
+      <PrimaryButton
       class="o-primary-btn--subtab-option"
       @click="bulk()">
         AD buy {{ ADbulk ? "max" : "single" }}
-    </PrimaryToggleButton>
+    </PrimaryButton>
     
     <span v-if="isDoomed">
       <PrimaryButton
