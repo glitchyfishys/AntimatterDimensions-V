@@ -75,7 +75,7 @@ export default {
     </div>
     <div
       v-if="showSubtabs"
-      
+      class="subtabs"
     >
       <template
         v-for="(subtab, index) in tab.subtabs"
