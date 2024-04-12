@@ -340,7 +340,7 @@ body.t-s12 {
 
 .o-tab-btn--glitch .o-subtab__tooltip {
   color: var(--color-glitch);
-  background: var(--color-glitch);
+  background: var(--color-prestige--accent);
   border-color: var(--color-glitch);
 }
 
