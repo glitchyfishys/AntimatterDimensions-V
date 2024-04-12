@@ -28,7 +28,9 @@ export default {
         "o-tab-btn--infinity": this.parentName === "Infinity",
         "o-tab-btn--eternity": this.parentName === "Eternity",
         "o-tab-btn--reality": this.parentName === "Reality",
-        "o-tab-btn--celestial": this.parentName === "Celestials"
+        "o-tab-btn--celestial": this.parentName === "Celestials",
+        "o-tab-btn--glitch": this.parentName === "Glitch"
+}
       };
     },
   },
