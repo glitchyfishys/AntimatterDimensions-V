@@ -74,7 +74,7 @@ export default {
       <PrimaryToggleButton
       class="o-primary-btn--subtab-option"
       @click="bulk()">
-        {{ ADbulk ? "AD buy max" : "AD buy single" }}
+        AD buy {{ ADbulk ? "max" : "single" }}
     </PrimaryToggleButton>
     
     <span v-if="isDoomed">
