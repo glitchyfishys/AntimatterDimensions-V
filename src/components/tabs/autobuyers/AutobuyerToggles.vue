@@ -34,17 +34,17 @@ export default {
     update() {
       this.isDoomed = Pelle.isDoomed;
       this.autobuyersOn = player.auto.autobuyersOn;
-      this.ADbulk = player.auto.antimatterDims.all.filter(auto => auto.mode == 10).length > 0;
+      this.ADbulk = player.auto.antimatterDims.all.filter(auto => auto.mode == 1).length > 0;
       this.showContinuum = Laitela.isUnlocked;
       this.disableContinuum = player.auto.disableContinuum;
       this.allAutobuyersDisabled = Autobuyers.unlocked.every(autobuyer => !autobuyer.isActive);
     },
     bulk() {
-      if(player.auto.antimatterDims.all.filter(auto => auto.mode == 10).length > 0) {
-       player.auto.antimatterDims.all.every(x => x.mode = 1) 
+      if(this.ADbulk) {
+       player.auto.antimatterDims.all.every(x => x.mode = 10) 
       }
       else{
-        player.auto.antimatterDims.all.every(x => x.mode = 10)
+        player.auto.antimatterDims.all.every(x => x.mode = 1)
       }
     },
     toggleAllAutobuyers() {
@@ -64,12 +64,12 @@ export default {
       off="Resume autobuyers"
       class="o-primary-btn--subtab-option"
     />
-    <PrimaryButton
+    <PrimaryButton>
       class="o-primary-btn--subtab-option"
       @click="toggleAllAutobuyers()"
       {{ allAutobuyersDisabled ? "Enable" : "Disable" }} all autobuyers
     </PrimaryButton>
-    >
+    
       <PrimaryToggleButton
       v-model="ADbulk"
       on="AD buy max"
@@ -77,6 +77,7 @@ export default {
       class="o-primary-btn--subtab-option"
       @click="bulk()"
     />
+    
     <span v-if="isDoomed">
       <PrimaryButton
         v-if="showContinuum"
