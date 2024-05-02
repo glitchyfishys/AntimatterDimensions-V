@@ -42,11 +42,11 @@ export default {
       this.disableContinuum = player.auto.disableContinuum;
       this.allAutobuyersDisabled = Autobuyers.unlocked.every(autobuyer => !autobuyer.isActive);
       
-      this.maxed = false;
+      this.maxed = true;
       let m = 0;
       this.ADs.forEach(ad => {
         if(ad.bulk >= 512 && ad.interval <= 100) m++;
-        if(m == 8) this.maxed = true;
+        if(m == 8) this.maxed = false;
       })
     },
     bulk() {
