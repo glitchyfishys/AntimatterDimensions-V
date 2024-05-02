@@ -90,9 +90,9 @@ dev.giveAllAchievementsButLast = function() {
 
 dev.giveLongAchevments = function() {
   player.achievementBits[2] |= 16;
-  player.achievementBits[3] | 4;
-  player.achievementBits[6] | 32;
-  player.achievementBits[7] | 64;
+  player.achievementBits[3] |= 4;
+  player.achievementBits[6] |= 32;
+  player.achievementBits[7] |= 64;
 }
 
 // Know that both dev.doubleEverything and dev.tripleEverything are both broken
