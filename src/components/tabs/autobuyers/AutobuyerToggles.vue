@@ -13,6 +13,8 @@ export default {
       isDoomed: false,
       autobuyersOn: false,
       ADbulk: false,
+      ADs: [],
+      maxed: false,
       showContinuum: false,
       disableContinuum: false,
       allAutobuyersDisabled: false
@@ -35,9 +37,17 @@ export default {
       this.isDoomed = Pelle.isDoomed;
       this.autobuyersOn = player.auto.autobuyersOn;
       this.ADbulk = player.auto.antimatterDims.all.filter(auto => auto.mode == 1).length > 0;
+      this.ADs = Autobuyer.antimatterDimension.zeroIndexed;
       this.showContinuum = Laitela.isUnlocked;
       this.disableContinuum = player.auto.disableContinuum;
       this.allAutobuyersDisabled = Autobuyers.unlocked.every(autobuyer => !autobuyer.isActive);
+      
+      this.maxed = false;
+      let m = 0;
+      this.ADs.forEach(ad => {
+        if(ad.bulk >= 512 && ad.interval <= 100) m++;
+        if(m == 8) this.maxed = true;
+      })
     },
     bulk() {
       if(this.ADbulk) {
@@ -45,6 +55,15 @@ export default {
       }
       else{
         player.auto.antimatterDims.all.every(x => x.mode = 1)
+      }
+    },
+    upmax() {
+      if(this.admaxed) return;
+      for (const ab of this.ADs) {
+        if(ab.isUnlocked) {
+          if(!ab.interval <= 100) ab.upgradeInterval();
+          if(ab.interval <= 100 && ab.bulk < 512) ab.upgradeBulk();
+        }
       }
     },
     toggleAllAutobuyers() {
@@ -94,6 +113,14 @@ export default {
         off="Disable Continuum"
         class="o-primary-btn--subtab-option"
       />
+    </span>
+
+    <span v-if="maxed">
+        <PrimaryButton
+          class="o-primary-btn--subtab-option"
+          @click="upmax()">
+          upgrade all AD autobuyers
+        </PrimaryButton>
     </span>
   </div>
   
