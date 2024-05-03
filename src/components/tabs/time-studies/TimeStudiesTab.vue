@@ -135,7 +135,8 @@ export default {
 </script>
 
 <template>
-  <div class="c-subtab-option-container">
+  <div class="l-time-studies-tab">
+    <div class="c-subtab-option-container">
       <PrimaryButton
         class="o-primary-btn--subtab-option"
         @click="exportStudyTree"
@@ -163,8 +164,7 @@ export default {
       </PrimaryButton>
       
     </div>
-  
-  <div class="l-time-studies-tab">
+    
     <div
       class="l-time-study-tree l-time-studies-tab__tree"
       :style="treeStyleObject"
