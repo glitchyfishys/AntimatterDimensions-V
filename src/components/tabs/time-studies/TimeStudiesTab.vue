@@ -135,6 +135,35 @@ export default {
 </script>
 
 <template>
+  <div class="c-subtab-option-container">
+      <PrimaryButton
+        class="o-primary-btn--subtab-option"
+        @click="exportStudyTree"
+      >
+        Export
+      </PrimaryButton>
+      <PrimaryButton
+        :class="respecClassObject()"
+         @click="tsrespec"
+      >
+        <span v-if="respec">
+            Respec
+        </span>
+        <span v-else>
+            Respec
+        </span>
+        
+        Respec
+      </PrimaryButton>
+      <PrimaryButton
+        class="o-primary-btn--subtab-option"
+        onclick="Modal.studyString.show({ id: -1 })"
+      >
+        Import
+      </PrimaryButton>
+      
+    </div>
+  
   <div class="l-time-studies-tab">
     <div
       class="l-time-study-tree l-time-studies-tab__tree"
