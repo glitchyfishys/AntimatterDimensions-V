@@ -289,8 +289,6 @@ export default {
         <span v-else>
             Respec
         </span>
-        
-        Respec
       </PrimaryButton>
       <PrimaryButton
         class="o-primary-btn--subtab-option"
