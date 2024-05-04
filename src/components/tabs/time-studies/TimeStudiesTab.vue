@@ -132,7 +132,7 @@ export default {
       let h=0;
       for(let i=1; i <= 12; i++){
         if( !Currency.eternityPoints.gte(Decimal.mul("1e500","1e" + i + "00")) ) break;
-        player.eternityChalls.["eterc" + i] = 5;
+        player.eternityChalls["eterc" + i] = 5;
         h= i;
       }
       GameUI.notify.eternity("full completed EC's up to " + h "<br> next at " + Decimal.mul("1e500","1e" + i + "00")).toString() + " EP",5000);
