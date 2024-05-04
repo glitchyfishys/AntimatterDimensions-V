@@ -34,7 +34,6 @@ export default {
     };
   },
   computed: {
-    isEnslaved: () => Enslaved.isRunning,
     layout() {
       return TimeStudyTreeLayout.create(this.layoutType);
     },
