@@ -31,6 +31,7 @@ export default {
       renderedConnectionCount: 0,
       isEnslaved: false,
       delayTimer: 0,
+      allowECcomplete: false,
     };
   },
   computed: {
@@ -108,6 +109,7 @@ export default {
       this.layoutType = STUDY_TREE_LAYOUT_TYPE.current;
       this.vLevel = Ra.pets.v.level;
       this.isEnslaved = Enslaved.isRunning || Date.now() - this.delayTimer < 1000;
+      this.allowECcomplete = PlayerProgress.realityUnlocked();
     },
     studyComponent(study) {
       switch (study.type) {
@@ -125,7 +127,15 @@ export default {
         copyToClipboard(GameCache.currentStudyTree.value.exportString);
         GameUI.notify.info("Exported current Time Studies to your clipboard");
       }
-    }
+    },
+    ECcomplete(upto){
+      let h=0;
+      for(let i=1; i <= 12; i++){
+        if( !Currency.eternityPoints.gte(Decimal.mul("1e500","1e" + i + "00")) ) break;
+        player.eternityChalls.["eterc" + i] = 5;
+        h= i;
+      }
+      GameUI.notify.eternity("full completed EC's up to " + h "<br> next at " + Decimal.mul("1e500","1e" + i + "00")).toString() + " EP",5000);
   }
 };
 </script>
@@ -150,6 +160,15 @@ export default {
       >
         Import tree
       </PrimaryButton>
+
+      <PrimaryButton
+        v-if"allowECcomplete"
+        class="o-primary-btn--subtab-option"
+        onclick="ECcomplete"
+      >
+        complete EC's
+      </PrimaryButton>
+      
     </div>
     <div
       class="l-time-study-tree l-time-studies-tab__tree"
