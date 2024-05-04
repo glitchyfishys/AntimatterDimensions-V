@@ -1,6 +1,5 @@
 <script>
 import { STUDY_TREE_LAYOUT_TYPE, TimeStudyTreeLayout } from "./time-study-tree-layout";
-
 import DilationTimeStudy from "./DilationTimeStudy";
 import ECTimeStudy from "./ECTimeStudy";
 import EnslavedTimeStudy from "./EnslavedTimeStudy";
@@ -10,7 +9,6 @@ import PrimaryButton from "@/components/PrimaryButton";
 import SecretTimeStudy from "./SecretTimeStudy";
 import TimeStudyConnection from "./TimeStudyConnection";
 import TriadTimeStudy from "./TriadTimeStudy";
-
 export default {
   name: "TimeStudiesTab",
   components: {
@@ -36,6 +34,7 @@ export default {
     };
   },
   computed: {
+    isEnslaved: () => Enslaved.isRunning,
     layout() {
       return TimeStudyTreeLayout.create(this.layoutType);
     },
@@ -89,7 +88,6 @@ export default {
       }
     };
     incrementRenderedCount();
-
     // CSS controlling the fade in/out for the Enslaved study is an animation happening over the course of 1 second.
     // Removing it normally via key-switching ends up getting rid of it immediately without animating, which we do if it
     // wasn't purchased - otherwise it animates to the unbought state and then remove it after the animation finishes.
@@ -98,7 +96,6 @@ export default {
         ? Date.now()
         : 0;
     });
-
     // Scroll to top because time studies tab is rendered progressively
     // and we don't want the player to see empty space while it's loading.
     document.body.scrollTop = 0;
@@ -133,7 +130,6 @@ export default {
   }
 };
 </script>
-
 <template>
   <div class="l-time-studies-tab">
     <div class="c-subtab-option-container">
@@ -141,30 +137,21 @@ export default {
         class="o-primary-btn--subtab-option"
         @click="exportStudyTree"
       >
-        Export
+        Export tree
       </PrimaryButton>
       <PrimaryButton
-        :class="respecClassObject()"
-         @click="tsrespec"
+        :class="respecClassObject"
+        @click="respec = !respec"
       >
-        <span v-if="respec">
-            Respec
-        </span>
-        <span v-else>
-            Respec
-        </span>
-        
-        Respec
+        Respec Time Studies on next Eternity
       </PrimaryButton>
       <PrimaryButton
         class="o-primary-btn--subtab-option"
         onclick="Modal.studyString.show({ id: -1 })"
       >
-        Import
+        Import tree
       </PrimaryButton>
-      
     </div>
-    
     <div
       class="l-time-study-tree l-time-studies-tab__tree"
       :style="treeStyleObject"
@@ -199,7 +186,5 @@ export default {
     </div>
   </div>
 </template>
-
 <style scoped>
-
 </style>
