@@ -162,8 +162,7 @@ export default {
         Import tree
       </PrimaryButton>
 
-      <PrimaryButton
-        v-if"allowECcomplete"
+      <v-if"allowECcomplete" PrimaryButton
         class="o-primary-btn--subtab-option"
         onclick="ECcomplete"
       >
