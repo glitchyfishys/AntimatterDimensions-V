@@ -33,6 +33,7 @@ export default {
       delayTimer: 0,
       allowECcomplete: false,
       ECreq: [],
+      remaine: 60,
     };
   },
   computed: {
@@ -111,7 +112,8 @@ export default {
       this.vLevel = Ra.pets.v.level;
       this.isEnslaved = Enslaved.isRunning || Date.now() - this.delayTimer < 1000;
       this.allowECcomplete = PlayerProgress.realityUnlocked();
-      this.ECreq = [undefined,"1e20", "1e20", "1e20", "1e40", "1e50", "1e60", "1e70", "1e80", "1e100","1e150","1e1300","1e1400"]
+      this.ECreq = [undefined,"1e20", "1e20", "1e20", "1e40", "1e50", "1e60", "1e70", "1e80", "1e100","1e150","1e1300","1e1400"];
+      this.remaine = EternityChallenges.remainingCompletions;
     },
     studyComponent(study) {
       switch (study.type) {
@@ -131,7 +133,7 @@ export default {
       }
     },
     ECc(){
-      if(EternityChallenges.remainingCompletions == 0) return;
+      if(this.remaine == 0) return;
       let h=0;
       for(let i=1; i <= 12; i++){
         if( !Currency.eternityPoints.gte(this.ECreq[i]) ) break;
