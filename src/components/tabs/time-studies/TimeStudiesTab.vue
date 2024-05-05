@@ -165,13 +165,14 @@ export default {
         Import tree
       </PrimaryButton>
 
+
+    <span v-if="allowECcomplete">
       <PrimaryButton
-        v-if="allowECcomplete"
-        
-        class="o-primary-btn--subtab-option"
-        onclick="ECcomplete">
-          complete EC's
+      class="o-primary-btn--subtab-option"
+      onclick="ECcomplete">
+        complete EC's
       </PrimaryButton>
+    </span>
       
     </div>
     <div
