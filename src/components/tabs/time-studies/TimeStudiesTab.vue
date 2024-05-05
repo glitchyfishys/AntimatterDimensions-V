@@ -32,6 +32,7 @@ export default {
       isEnslaved: false,
       delayTimer: 0,
       allowECcomplete: false,
+      ECreq: [],
     };
   },
   computed: {
@@ -110,6 +111,7 @@ export default {
       this.vLevel = Ra.pets.v.level;
       this.isEnslaved = Enslaved.isRunning || Date.now() - this.delayTimer < 1000;
       this.allowECcomplete = PlayerProgress.realityUnlocked();
+      this.ECreq = [undefined,"1e20", "1e20", "1e20", "1e40", "1e50", "1e60", "1e70", "1e80", "1e100","1e150","1e1300","1e1400"]
     },
     studyComponent(study) {
       switch (study.type) {
@@ -129,13 +131,14 @@ export default {
       }
     },
     ECcomplete(upto){
+      if(EternityChallenges.remainingCompletions == 0) return;
       let h=0;
       for(let i=1; i <= 12; i++){
-        if( !Currency.eternityPoints.gte(Decimal.mul("1e500","1e" + i + "00")) ) break;
-        player.eternityChalls["eterc" + i] = 5;
-        h= i;
+        if( !Currency.eternityPoints.gte(this.ECreq[i]) ) break;
+        if(player.eternityChalls["eterc" + i] < 5) player.eternityChalls["eterc" + i] = 5;
+        h = i;
       }
-      GameUI.notify.eternity("full completed EC's up to " + h + "<br> next at " + Decimal.mul("1e500","1e" + i + "00").toString() + " EP",5000);
+      GameUI.notify.eternity("full completed EC's up to " + h + "<br> next at " + (new Decimal(this.ECreq[h])).toString() + " EP",5000);
     }
   }
 }
@@ -165,9 +168,10 @@ export default {
       <v-if"allowECcomplete" PrimaryButton
         class="o-primary-btn--subtab-option"
         onclick="ECcomplete"
-      >
-        complete EC's
-      </PrimaryButton>
+        <span>
+          complete EC's
+        </span>
+      />
       
     </div>
     <div
