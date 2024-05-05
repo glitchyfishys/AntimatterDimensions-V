@@ -136,6 +136,7 @@ export default {
         h= i;
       }
       GameUI.notify.eternity("full completed EC's up to " + h + "<br> next at " + Decimal.mul("1e500","1e" + i + "00").toString() + " EP",5000);
+    }
   }
 }
 </script>
