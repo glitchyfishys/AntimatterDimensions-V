@@ -130,7 +130,7 @@ export default {
         GameUI.notify.info("Exported current Time Studies to your clipboard");
       }
     },
-    ECcomplete(upto){
+    ECc(){
       if(EternityChallenges.remainingCompletions == 0) return;
       let h=0;
       for(let i=1; i <= 12; i++){
@@ -138,7 +138,7 @@ export default {
         if(player.eternityChalls["eterc" + i] < 5) player.eternityChalls["eterc" + i] = 5;
         h = i;
       }
-      GameUI.notify.eternity("full completed EC's up to " + h + "<br> next at " + (new Decimal(this.ECreq[h])).toString() + " EP",5000);
+      GameUI.notify.eternity("full completed EC's up to " + h + "<br> next at " + (new Decimal(this.ECreq[h++])).toString() + " EP",5000);
     }
   }
 }
@@ -169,7 +169,7 @@ export default {
     <span v-if="allowECcomplete">
       <PrimaryButton
       class="o-primary-btn--subtab-option"
-      onclick="ECcomplete">
+      @onclick="ECc">
         complete EC's
       </PrimaryButton>
     </span>
