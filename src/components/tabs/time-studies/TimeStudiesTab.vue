@@ -136,7 +136,8 @@ export default {
       if(this.remaine == 0) return;
       let h=0;
       for(let i=1; i <= 12; i++){
-        if( !Currency.eternityPoints.gte(this.ECreq[i]) ) break;
+        GameUI.notify.eternity("EC" + i + " req " + this.ECreq[i] + " EP => " +  Currency.eternityPoints.gte(this.ECreq[i]) ,5000)
+        if(!Currency.eternityPoints.gte(this.ECreq[i])) break;
         if(player.eternityChalls["eterc" + i] < 5) {
           player.eternityChalls["eterc" + i] = 5;
           h = i;
