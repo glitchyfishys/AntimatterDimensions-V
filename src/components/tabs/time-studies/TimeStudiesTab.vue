@@ -112,7 +112,7 @@ export default {
       this.vLevel = Ra.pets.v.level;
       this.isEnslaved = Enslaved.isRunning || Date.now() - this.delayTimer < 1000;
       this.allowECcomplete = PlayerProgress.realityUnlocked();
-      this.ECreq = [undefined,"1e20", "1e20", "1e20", "1e40", "1e50", "1e60", "1e70", "1e80", "1e100","1e150","1e1300","1e1400"];
+      this.ECreq = [undefined,"1e20", "1e20", "1e20", "1e40", "1e50", "1e60", "1e70", "1e80", "1e100","1e150","1e1300","1e1400","1e1E300"];
       this.remaine = EternityChallenges.remainingCompletions;
     },
     studyComponent(study) {
@@ -139,10 +139,10 @@ export default {
         if(!Currency.eternityPoints.gte(this.ECreq[i])) break;
         if(player.eternityChalls["eterc" + i] < 5 || player.eternityChalls["eterc" + i] == undefined) {
           player.eternityChalls["eterc" + i] = 5;
-          h = i;
         }
+          h = i;
       }
-       (h++ == 13 || h == 0) ?  GameUI.notify.eternity("All EC's are completed",5000) : GameUI.notify.eternity("full completed EC's up to " + h + ", next ec" + h++ + " at " + format( new Decimal(this.ECreq[h++])) + " EP",5000);
+       h++ == 13 ?  GameUI.notify.eternity("All EC's are completed",5000) : GameUI.notify.eternity("full completed EC's up to " + h + ", next ec" + h++ + " at " + format( new Decimal(this.ECreq[h++])) + " EP",5000);
     },
   }
 }
