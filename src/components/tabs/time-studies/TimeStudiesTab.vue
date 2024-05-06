@@ -173,7 +173,7 @@ export default {
     <span v-if="allowECcomplete">
       <PrimaryButton
       class="o-primary-btn--subtab-option"
-      @onclick="ECc">
+      @onclick="ECc()">
         complete EC's
       </PrimaryButton>
     </span>
