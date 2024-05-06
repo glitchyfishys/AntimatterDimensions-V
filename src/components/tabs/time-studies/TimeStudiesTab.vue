@@ -142,7 +142,7 @@ export default {
         }
           h = i;
       }
-       h++ == 13 ?  GameUI.notify.eternity("All EC's are completed",5000) : GameUI.notify.eternity("full completed EC's up to " + h + ", next ec" + h++ + " at " + format( new Decimal(this.ECreq[h++])) + " EP",5000);
+       h == 12 ?  GameUI.notify.eternity("All EC's are completed",5000) : GameUI.notify.eternity("full completed EC's up to " + h + ", next ec" + h++ + " at " + format( new Decimal(this.ECreq[h++])) + " EP",5000);
     },
   }
 }
