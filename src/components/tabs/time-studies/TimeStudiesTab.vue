@@ -133,7 +133,6 @@ export default {
       }
     },
     ECc(){
-      if(this.remaine == 0) return;
       let h=0;
       for(let i=1; i <= 12; i++){
         if(!Currency.eternityPoints.gte(this.ECreq[i])) break;
@@ -142,7 +141,7 @@ export default {
         }
           h = i;
       }
-       h == 13 ?  GameUI.notify.eternity("All EC's are completed",5000) : GameUI.notify.eternity("full completed EC's up to " + h + ", next ec" + h++ + " at " + format( new Decimal(this.ECreq[h])) + " EP",5000);
+       h == 13 ?  GameUI.notify.eternity("All EC's are completed",5000) : GameUI.notify.eternity("full completed EC's up to " + (h-1) + ", next ec" + (h) + " at " + format( new Decimal(this.ECreq[h])) + " EP",5000);
     },
   }
 }
