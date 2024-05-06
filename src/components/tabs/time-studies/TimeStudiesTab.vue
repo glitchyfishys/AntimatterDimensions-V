@@ -133,7 +133,9 @@ export default {
       }
     },
     ECc(){
+       GameUI.notify.eternity("EC's",5000);
       if(this.remaine == 0) return;
+      GameUI.notify.eternity("EC'v",5000);
       let h=0;
       for(let i=1; i <= 12; i++){
         if( !Currency.eternityPoints.gte(this.ECreq[i]) ) break;
@@ -141,7 +143,7 @@ export default {
         h = i;
       }
       GameUI.notify.eternity("full completed EC's up to " + h + "<br> next at " + (new Decimal(this.ECreq[h++])).toString() + " EP",5000);
-    }
+    },
   }
 }
 </script>
