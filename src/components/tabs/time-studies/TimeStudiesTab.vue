@@ -133,6 +133,8 @@ export default {
       }
     },
     ECc(){
+      if(this.isEnslaved) return GameUI.notify.error("can't be used in the Namelessones' reality",5000)
+      if(Effarig.currentStage >= 4) return GameUI.notify.error("can't be used in the Effarig's reality, untill reality layer is complete",3000)
       let h=0;
       for(let i=1; i <= 12; i++){
         if(!Currency.eternityPoints.gte(this.ECreq[i])) break;
@@ -174,7 +176,13 @@ export default {
       class="o-primary-btn--subtab-option"
       @click="ECc"
         >
+        <span v-if="isEnslaved">
+        broken by compaction of this reality
+        </span>
+        <span v-else>
         complete EC's
+        </span>
+        
       </PrimaryButton>
     </span>
       
