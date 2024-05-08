@@ -106,7 +106,6 @@ export default {
       @click="$emit('progress-in', 'right')"
     />
     <i
-      v-if="closeVisible"
       class="c-modal-celestial-quote__end fas fa-check-circle"
       @click="emitClose"
     />
