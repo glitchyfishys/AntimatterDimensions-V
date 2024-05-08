@@ -24,6 +24,7 @@ export default {
       allReactionsDisabled: false,
       // Used to force a re-render of reaction lines when reality glyphs are created
       realityAmount: 0,
+      alc: false,
     };
   },
   computed: {
@@ -70,6 +71,7 @@ export default {
       this.createdRealityGlyph = player.reality.glyphs.createdRealityGlyph;
       this.allReactionsDisabled = this.reactions.every(reaction => !reaction.isActive);
       this.realityAmount = AlchemyResource.reality.amount;
+      this.alc = player.options.animations.background;
     },
     orbitSize(orbit) {
       const maxRadius = this.layout.orbits.map(o => o.radius).max();
@@ -248,30 +250,33 @@ export default {
           :class="orbitClass"
         />
       </svg>
-      <AlchemyCircleNode
-        v-for="(node, i) in layout.nodes"
-        :key="i"
-        :node="node"
-        :is-focused="isFocusedNode(node)"
-        :class="nodeClass(node)"
-        @mouseenter="handleMouseEnter(node)"
-        @mouseleave="handleMouseLeave"
-        @click="handleClick(node)"
-      />
-      <svg class="l-alchemy-arrow-canvas">
-        <line
-          v-for="(reactionArrow, idx) in layout.reactionArrows"
-          :key="'arrow-' + idx + realityAmount"
-          v-bind="reactionArrowPaths(reactionArrow)"
-          :class="reactionPathClass(reactionArrow)"
+      
+      <span v-if="alc">
+        <AlchemyCircleNode
+          v-for="(node, i) in layout.nodes"
+          :key="i"
+          :node="node"
+          :is-focused="isFocusedNode(node)"
+          :class="nodeClass(node)"
+          @mouseenter="handleMouseEnter(node)"
+          @mouseleave="handleMouseLeave"
+          @click="handleClick(node)"
         />
-        <line
-          v-for="(reactionArrow, idx) in layout.reactionArrows"
-          :key="'arrow2-' + idx + realityAmount"
-          v-bind="reactionArrowPositions(reactionArrow)"
-          :class="reactionArrowClass(reactionArrow)"
-        />
+        <svg class="l-alchemy-arrow-canvas">
+          <line
+            v-for="(reactionArrow, idx) in layout.reactionArrows"
+            :key="'arrow-' + idx + realityAmount"
+            v-bind="reactionArrowPaths(reactionArrow)"
+            :class="reactionPathClass(reactionArrow)"
+          />
+          <line
+            v-for="(reactionArrow, idx) in layout.reactionArrows"
+            :key="'arrow2-' + idx + realityAmount"
+            v-bind="reactionArrowPositions(reactionArrow)"
+            :class="reactionArrowClass(reactionArrow)"
+          />
       </svg>
+      </span>
     </div>
   </div>
 </template>
