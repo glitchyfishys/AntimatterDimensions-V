@@ -133,7 +133,7 @@ export default {
       }
     },
     ECc(){
-      if(this.isEnslaved) return GameUI.notify.error("can't be used in the Namelessones' reality",5000)
+      if(this.isEnslaved) return GameUI.notify.error("can't be used in the Namelessones' reality",3000)
       if(Effarig.isRunning && Effarig.currentStage < 4) return GameUI.notify.error("can't be used in the Effarig's reality, untill reality layer is complete",3000)
       let h=0;
       for(let i=1; i <= 12; i++){
@@ -143,7 +143,7 @@ export default {
         }
           h = i;
       }
-       h == 12 ?  GameUI.notify.eternity("All EC's are completed",5000) : GameUI.notify.eternity("full completed EC's up to " + (h) + ", next ec" + (h+1) + " at " + format( new Decimal(this.ECreq[h+1])) + " EP",5000);
+       if(!Currency.eternityPoints.gte("1e4000")) h == 12 ?  GameUI.notify.eternity("All EC's are completed",3000) : GameUI.notify.eternity("full completed EC's up to " + (h) + ", next ec" + (h+1) + " at " + format( new Decimal(this.ECreq[h+1])) + " EP",3000);
     },
   }
 }
