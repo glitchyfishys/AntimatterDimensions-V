@@ -251,17 +251,18 @@ export default {
         />
       </svg>
       
+      
+      <AlchemyCircleNode
+         v-for="(node, i) in layout.nodes"
+        :key="i"
+        :node="node"
+        :is-focused="isFocusedNode(node)"
+        :class="nodeClass(node)"
+        @mouseenter="handleMouseEnter(node)"
+        @mouseleave="handleMouseLeave"
+        @click="handleClick(node)"
+      />
       <span v-if="alc">
-        <AlchemyCircleNode
-          v-for="(node, i) in layout.nodes"
-          :key="i"
-          :node="node"
-          :is-focused="isFocusedNode(node)"
-          :class="nodeClass(node)"
-          @mouseenter="handleMouseEnter(node)"
-          @mouseleave="handleMouseLeave"
-          @click="handleClick(node)"
-        />
         <svg class="l-alchemy-arrow-canvas">
           <line
             v-for="(reactionArrow, idx) in layout.reactionArrows"
