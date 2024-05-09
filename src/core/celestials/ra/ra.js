@@ -172,11 +172,11 @@ class RaPetState extends GameMechanicState {
   }
 
   get memoryUpgradeCapped() {
-    return this.memoryUpgradeCost >= 0.5 * Ra.requiredMemoriesForLevel(Ra.levelCap);
+    return this.memoryUpgradeCost >= 0.25 * Ra.requiredMemoriesForLevel(Ra.levelCap);
   }
 
   get chunkUpgradeCapped() {
-    return this.chunkUpgradeCost >= 0.5 * Ra.requiredMemoriesForLevel(Ra.levelCap);
+    return this.chunkUpgradeCost >= 0.25 * Ra.requiredMemoriesForLevel(Ra.levelCap);
   }
 
   purchaseMemoryUpgrade() {
@@ -244,7 +244,7 @@ export const Ra = {
   remembrance: {
     multiplier: 15,
     nerf: 0.8,
-    requiredLevels: 25,
+    requiredLevels: 15,
     get isUnlocked() {
       return Ra.totalPetLevel >= this.requiredLevels;
     }
