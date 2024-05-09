@@ -133,6 +133,7 @@ export function getDilationGainPerSecond() {
       Ra.unlocks.continuousTTBoost.effects.dilatedTime,
       Ra.unlocks.peakGamespeedDT,
     );
+  if(player.realities < 5)dtRate = dtRate.times(3);
   dtRate = dtRate.times(realityUGs.all[1].effectOrDefault(1));
   dtRate = dtRate.times(getAdjustedGlyphEffect("dilationDT"));
   dtRate = dtRate.times(ShopPurchase.dilatedTimePurchases.currentMult);
