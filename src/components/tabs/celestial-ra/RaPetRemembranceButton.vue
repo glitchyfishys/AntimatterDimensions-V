@@ -31,7 +31,7 @@ export default {
   methods: {
     update() {
       const pet = this.pet;
-      this.isUnlocked = (pet.isUnlocked || pet.isUnlocked == undefined);
+      this.isUnlocked = pet.isUnlocked;
       if (!this.isUnlocked) return;
       this.hasRemembrance = pet.hasRemembrance;
     },
