@@ -284,7 +284,7 @@ export const Ra = {
   },
   // This is the exp required ON "level" in order to reach "level + 1"
   requiredMemoriesForLevel(level) {
-    if (level >= Ra.levelCap) return Infinity;
+    if (level > Ra.levelCap) return Infinity;
     const adjustedLevel = level + Math.pow(level, 2) / 10;
     const post15Scaling = Math.pow(1.4, Math.max(0, level - 15));
     return Math.floor(Math.pow(adjustedLevel, 5.52) * post15Scaling * 1e6);
