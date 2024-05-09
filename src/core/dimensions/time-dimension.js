@@ -149,7 +149,7 @@ class TimeDimensionState extends DimensionState {
     this._baseCost = BASE_COSTS[tier];
     const COST_MULTS = [null, 3, 9, 27, 81, 24300, 72900, 218700, 656100];
     this._costMultiplier = COST_MULTS[tier];
-    const E6000_SCALING_AMOUNTS = player.realities == 0 ? [null, 3661, 2313, 1791, 1332, 417, 344, 281, 228] : [null, 7322, 4627, 3382, 2665, 833, 689, 562, 456];
+    const E6000_SCALING_AMOUNTS = player.realities == 0 ? [null, 3600, 2400, 1800, 900, 300, 150, 100, 50] : [null, 7322, 4627, 3382, 2665, 833, 689, 562, 456];
     this._e6000ScalingAmount = E6000_SCALING_AMOUNTS[tier];
     const COST_THRESHOLDS = [Decimal.NUMBER_MAX_VALUE, DC.E1300, DC.E6000];
     this._costIncreaseThresholds = COST_THRESHOLDS;
