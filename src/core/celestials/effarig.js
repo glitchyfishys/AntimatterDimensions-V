@@ -9,7 +9,8 @@ export const EFFARIG_STAGES = {
   INFINITY: 1,
   ETERNITY: 2,
   REALITY: 3,
-  COMPLETED: 4
+  COMPLETED: 4,
+  OVERRIDE: 5
 };
 
 export const Effarig = {
@@ -43,8 +44,11 @@ export const Effarig = {
       case EFFARIG_STAGES.ETERNITY:
         return "Eternity";
       case EFFARIG_STAGES.REALITY:
-      default:
         return "Reality";
+        case EFFARIG_STAGES.OVERDRIVE:
+        return "Overdrive";
+      default:
+        return "Overdrive";
     }
   },
   get eternityCap() {
@@ -57,8 +61,11 @@ export const Effarig = {
       case EFFARIG_STAGES.ETERNITY:
         return 1500;
       case EFFARIG_STAGES.REALITY:
-      default:
         return 2000;
+        case EFFARIG_STAGES.OVERDRIVE:
+        return 15000;
+      default:
+        return 15000;
     }
   },
   get uniqueglyphs() {
@@ -81,7 +88,7 @@ export const Effarig = {
     if (!TeresaUnlocks.effarig.canBeApplied) return 0;
     let shards = Math.floor(Math.pow(Currency.eternityPoints.exponent / 7500, this.glyphEffectAmount)) *
       AlchemyResource.effarig.effectValue;
-    if (shards >= Number.MAX_VALUE) shards = Number.MAX_VALUE / 1e28;
+    if (shards >= Number.MAX_VALUE) shards = Number.MAX_VALUE / (Glyphs.activeWithoutCompanion.filter(g => !generatedTypes.includes(g.type)).filter(k => k.type == "reality" ).length > 0) ? 1 : 1e28;
     return shards / 100; //better for glyphs
   },
   get maxRarityBoost() {
@@ -97,8 +104,13 @@ export const Effarig = {
         c = 29.29;
         break;
       case EFFARIG_STAGES.REALITY:
+        c = 29.29;
+      break;
+        case EFFARIG_STAGES.OVERDRIVE:
+        c = 15;
+        break;
       default:
-        c = 25;
+        c = 15;
         break;
     }
     return 3 * (1 - c / (c + Math.sqrt(power.pLog10())));
