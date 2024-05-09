@@ -148,7 +148,8 @@ class InfinityDimensionState extends DimensionState {
         tier === 4 ? TimeStudy(72) : null,
         tier === 1 ? EternityChallenge(2).reward : null
       );
-    mult = mult.times(Decimal.pow(this.powerMultiplier, Math.floor(this.baseAmount / 10)));
+    const bought = tier === 8 ? Math.clampMax(this.baseAmount / 10, 1e10) : this.baseAmount / 10;
+    mult = mult.times(Decimal.pow(this.powerMultiplier, Math.floor(bought)));
 
 
     if (tier === 1) {
