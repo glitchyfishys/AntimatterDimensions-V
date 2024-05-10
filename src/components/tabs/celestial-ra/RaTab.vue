@@ -16,7 +16,6 @@ export default {
       showReality: false,
       isRaCapped: false,
       totalLevels: 0,
-      showRemembrance: false,
       hasRemembrance: false,
       remembranceReq: 0,
       remembranceMult: 1,
@@ -95,7 +94,6 @@ export default {
       this.memoriesPerChunk = Ra.productionPerMemoryChunk;
       this.isRaCapped = Ra.totalPetLevel === 125;
       this.totalLevels = Ra.totalPetLevel;
-      this.showRemembrance = Ra.unlocks.effarigUnlock.canBeApplied;
       this.hasRemembrance = Ra.remembrance.isUnlocked;
       this.remembranceReq = Ra.remembrance.requiredLevels;
       this.remembranceMult = Ra.remembrance.multiplier;
@@ -170,7 +168,7 @@ export default {
         </span>
       </button>
       <div
-        v-if="showRemembrance && !isRaCapped"
+        v-if="!isRaCapped"
         class="c-ra-remembrance-unlock"
       >
         <h1 :style="petStyle">
