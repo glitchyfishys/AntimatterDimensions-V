@@ -587,7 +587,7 @@ export const perkConnections = (function() {
     [p.retroactiveTP1, p.bypassTGReset, p.startTP, p.retroactiveTP2],
     [p.retroactiveTP2, p.retroactiveTP3],
     [p.retroactiveTP3, p.retroactiveTP4],
-    [p.autobuyerDilation, p.autounlockEU2, p.autounlockDilation1, p.bypassECDilation, p.bypassTGReset],
+    [p.autobuyerDilation, p.autounlockEU2, p.autounlockDilation1, p.bypassECDilation, p.bypassTGReset, p.dilationAutobuyerBulk],
     [p.autobuyerFasterID],
     [p.ttBuySingle, p.ttFree],
     [p.ttFree, p.ttBuyMax],
