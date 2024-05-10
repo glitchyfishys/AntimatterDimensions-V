@@ -87,6 +87,7 @@ export function buyDilationUpgrade(id, bulk = 1) {
       player.dilation.totalTachyonGalaxies = 0;
     }
 
+    if(id === 3 && Pelle.isDoomed) return false;
     if (id === 3 && !Pelle.isDisabled("tpMults")) {
       let retroactiveTPFactor = Effects.max(
         1,
