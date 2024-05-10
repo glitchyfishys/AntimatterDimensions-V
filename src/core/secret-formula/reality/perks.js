@@ -164,14 +164,14 @@ export const perks = {
     label: "DU1",
     family: PERK_FAMILY.DILATION,
     description: "After unlocking Dilation, automatically unlock the second row of Dilation Upgrades for free.",
-    layoutPosList: [125433, 81801, 79803, 79398, 80200, 97510],
+    layoutPosList: [125433, 81801, 79403, 79398, 80200, 97510],
   },
   autounlockDilation2: {
     id: 43,
     label: "DU2",
     family: PERK_FAMILY.DILATION,
     description: "After unlocking Dilation, automatically unlock the third row of Dilation Upgrades for free.",
-    layoutPosList: [128662, 82201, 79403, 79397, 80203, 85513],
+    layoutPosList: [128662, 82201, 79003, 79397, 80203, 85513],
   },
   autounlockDilation3: {
     id: 44,
@@ -461,7 +461,7 @@ export const perks = {
     effect: 3,
     automatorPoints: 5,
     shortDescription: () => "Dilation Autobuyer bulk",
-    layoutPosList: [127384, 81400, 79803, 79399, 81000, 103048],
+    layoutPosList: [128985, 81800, 79803, 78999, 80998.5, 103048],
   },
   achievementGroup1: {
     id: 201,
