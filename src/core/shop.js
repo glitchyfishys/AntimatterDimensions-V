@@ -158,6 +158,9 @@ class ShopPurchaseState extends RebuyableMechanicState {
     if (!this.config.instantPurchase) this.playerpurchases++;
     this.purchases++;
     player.IAP.STDcoins -= this.cost;
+
+    if(this.config.key === "singleCosmeticSet") player.reality.glyphs.cosmetics.unlockedFromNG.push(GlyphAppearanceHandler.chosenFromModal.id);
+    if(this.config.key === "allCosmeticSets") dev.unlockAllCosmeticSets();
     
     
     GameUI.update();
