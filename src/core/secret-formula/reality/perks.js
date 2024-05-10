@@ -450,6 +450,19 @@ export const perks = {
     shortDescription: () => "Max TT Autobuyer",
     layoutPosList: [30272, 78598, 80997, 81003, 77803, 65739],
   },
+  dilationAutobuyerBulk: {
+    id: 107,
+    label: "DAB",
+    family: PERK_FAMILY.AUTOMATION,
+    get description() {
+      return `Buy three times as many Dilation Upgrades at once.`;
+      return `Dilation Upgrade autobuyers buy three times as many Dilation Upgrades at once.`;
+    },
+    effect: 3,
+    automatorPoints: 5,
+    shortDescription: () => "Dilation Autobuyer bulk",
+    layoutPosList: [127384, 81400, 79803, 79399, 81000, 103048],
+  },
   achievementGroup1: {
     id: 201,
     label: "ACH1",
