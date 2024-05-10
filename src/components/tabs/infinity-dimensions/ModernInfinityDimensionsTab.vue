@@ -147,7 +147,7 @@ export default {
     <div v-else>
       All Infinity Dimensions except for the 8th are limited to a maximum of {{ format(totalDimCap, 2) }}
       purchases each.<br>
-      but 8th dimentions do not give a multiplier past {{ format(1e10, 2) }} times brought
+      but 8th dimentions do not give a multiplier past {{ format(1e12, 2) }} times brought
     </div>
     <div>You are getting {{ format(powerPerSecond, 2, 0) }} {{ incomeType }} per second.</div>
     <b
