@@ -92,7 +92,7 @@ export default {
   methods: {
     update() {
       this.memoriesPerChunk = Ra.productionPerMemoryChunk;
-      this.isRaCapped = Ra.totalPetLevel === 125;
+      this.isRaCapped = Ra.totalPetLevel === 300;
       this.totalLevels = Ra.totalPetLevel;
       this.hasRemembrance = Ra.remembrance.isUnlocked;
       this.remembranceReq = Ra.remembrance.requiredLevels;
