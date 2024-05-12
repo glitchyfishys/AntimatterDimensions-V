@@ -70,7 +70,7 @@ export const realityUG = [
 {
     name: "exteral dilation",
     id: 6,
-    requirement: "reach 1.8e308 antimater in effarigs reality (infinity layer) with three glyphs maxium??",
+    requirement: "reach 1.8e308 antimater in effarigs reality (infinity layer) with three glyphs maxium",
     hasFailed: () => Effarig.currentStage > 1 || player.reality.glyphs.active.length > 3,
     checkRequirement: () => player.antimatter.greaterThanOrEqualTo(1.79e308) && Effarig.isRunning && Effarig.currentStage == 1 && player.reality.glyphs.active.length <= 3,
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
@@ -131,7 +131,28 @@ export const realityUG = [
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
     description: "singularities gain is boosted by their amount",
     effect: () => Math.log(player.celestials.laitela.singularities + 10),
+    formatEffect: () => value => format(value, 2, 2)
+  },
+  {
+    name: "pre galatic ",
+    id: 12,
+    requirement: "reach 1T antimatter in effarig's reality with 5 cursed glyphs, before destablizing latela's reality once",
+    hasFailed: () => Glyphs.activeWithoutCompanion.filter(x => x.type == "cursed") < 5 && Effarig.isRunning || Laitela.difficultyTier > 0,
+    checkRequirement: () =>  Glyphs.activeWithoutCompanion.filter(x => x.type == "cursed") >= 5 && Effarig.isRunning && Laitela.difficultyTier == 0,
+    checkevent: GAME_EVENT.GAME_TICK_BEFORE,
+    description: "unlock two new treasa shop items",
+    effect: () => 1,
     formatEffect: () => "active"
   },
-  
+  {
+    name: "overlight powerforce",
+    id: 13,
+    requirement: "complete all other glitch challanges",
+    hasFailed: () => false,
+    checkRequirement: () =>  ,
+    checkevent: GAME_EVENT.GAME_TICK_BEFORE,
+    description: "unlock glitch the celestial of creativity, having unque goals",
+    effect: () => 1,
+    formatEffect: () => "unlocked"
+  },
 ];
