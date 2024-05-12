@@ -9,7 +9,11 @@ export default {
   },
   rifts() {
       return GlitchRift.all;
+    },
+  totalrifts() {
+      return GlitchRift.all.length;
     }
+  
 };
 </script>
 
@@ -17,6 +21,12 @@ export default {
     <div class="c-entropy-infotext">
       hello destroyer.
       fill these please.
+
+      <GlitchRift
+          v-for="r in totalrifts"
+          :key="r.config.id"
+          :strike="r"
+        />
     </div>
   
 </template>
