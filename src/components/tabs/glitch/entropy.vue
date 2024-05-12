@@ -7,10 +7,12 @@ export default {
   components: {
     GlitchRift
   },
-  methods: {
+  computed: {
     rifts() {
       return GlitchRift.all;
     },
+  },
+  methods: {
     totalrifts() {
       return GlitchRift.all.length;
     }
@@ -24,7 +26,7 @@ export default {
       fill these please.
 
       <GlitchRift
-          v-for="rift in 4"
+          v-for="rift in rifts"
           :key="rift.config.id"
           :strike="rift"
         />
