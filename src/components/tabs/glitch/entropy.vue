@@ -24,9 +24,9 @@ export default {
       fill these please.
 
       <GlitchRift
-          v-for="r in totalrifts"
-          :key="r.config.id"
-          :strike="r"
+          v-for="rift in 4"
+          :key="rift.config.id"
+          :strike="rift"
         />
     </div>
   
