@@ -7,13 +7,14 @@ export default {
   components: {
     GlitchRift
   },
-  rifts() {
+  methods: {
+    rifts() {
       return GlitchRift.all;
     },
-  totalrifts() {
+    totalrifts() {
       return GlitchRift.all.length;
     }
-  
+  },
 };
 </script>
 
