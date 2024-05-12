@@ -49,7 +49,7 @@ export default {
       class="l-pelle-content-container"
     >
       Rifts can be activated by clicking on their bars.
-      <span v-if="strikes.length > 1">You cannot activate more than three Rifts at once.</span>
+      <span v-if="strikes.length > 3">You cannot activate more than three Rifts at once.</span>
       <br v-else>
       When active, Rifts consume {{ formatPercents(decayRate) }} of another resource per second.
       <br>
