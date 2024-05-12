@@ -181,9 +181,4 @@ export const PelleRifts = mapGameDataToObject(
   config => new RiftState(config)
 );
 
-export const GlitchRifts = mapGameDataToObject(
-  GameDatabase.celestials.GlitchRifts,
-  config => new RiftState(config)
-);
-
 PelleRifts.totalMilestones = () => PelleRifts.all.flatMap(x => x.milestones).countWhere(x => x.canBeApplied);
