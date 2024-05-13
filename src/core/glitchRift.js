@@ -39,7 +39,7 @@ class RiftMilestoneState extends GameMechanicState {
   }
 }
 
-class RiftState extends GameMechanicState {
+class Glitchrift extends GameMechanicState {
   constructor(config) {
     super(config);
     this._milestones = this.config.milestones.map(x => new RiftMilestoneState(x));
@@ -141,5 +141,5 @@ class RiftState extends GameMechanicState {
 
 export const GlitchRifts = mapGameDataToObject(
   GameDatabase.celestials.GlitchRifts,
-  config => new RiftState(config)
+  config => new Glitchrift(config)
 );
