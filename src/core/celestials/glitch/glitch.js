@@ -1,6 +1,6 @@
 import { GameDatabase } from "../../secret-formula/game-database";
 import { Quotes } from "../quotes";
-import { GlitchRifts } from "./GlitchRifts"
+import { GlitchRifts } from "./GlitchRifts";
 
 export const glitch = {
   displayName: "Glitch",
