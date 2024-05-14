@@ -125,6 +125,9 @@ export default {
       if (this.STCost && this.showStCost) costs.push(stStr);
       return costs.join(" + ");
     },
+    isDisabledByEnslaved() {
+      return this.study.id === 192 && Enslaved.isRunning;
+    },
     doomedRealityStudy() {
       return this.study.type === TIME_STUDY_TYPE.DILATION && this.study.id === 6 && Pelle.isDoomed;
     }
@@ -143,6 +146,7 @@ export default {
       this.isCompleteEC = this.study.type === TIME_STUDY_TYPE.ETERNITY_CHALLENGE &&
         EternityChallenge(this.study.id).remainingCompletions === 0;
     },
+    
     handleClick() {
       if (this.specialClick === null || !this.study.isBought) this.study.purchase();
       else this.specialClick();
@@ -188,7 +192,7 @@ export class TimeStudySetup {
       :config="config"
       name="Time Theorem"
     />
-    <div v-else-if="!doomedRealityStudy">
+    <div v-else-if="!doomedRealityStudy && !isDisabledByEnslaved">
       Cost: {{ customCostStr }}
     </div>
   </button>
