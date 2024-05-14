@@ -343,7 +343,7 @@ export const normalTimeStudies = [
     requirement: [122],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     requiresST: [131, 133],
-   () => (Pelle.isDoomed
+    description: () => (Pelle.isDoomed
       ? `Replicanti Galaxies are ${formatPercents(0.25)} stronger and can get ${formatPercents(0.25)} more`
       : `Replicanti Galaxies are ${formatPercents(0.25)} stronger and can get ${formatPercents(0.25)} more, Replicanti are also  
         ${Perk.studyPassive.isBought ? formatX(3) : formatX(1.5, 1, 1)} faster`),
