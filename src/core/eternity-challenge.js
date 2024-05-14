@@ -245,8 +245,8 @@ export class EternityChallengeState extends GameMechanicState {
     eternity(true);
   }
 
-  fail(false) {
-    this.exit();
+  fail(auto = false) {
+    this.exit(false);
     let reason;
     if (auto) {
       if (this.id === 4) {
