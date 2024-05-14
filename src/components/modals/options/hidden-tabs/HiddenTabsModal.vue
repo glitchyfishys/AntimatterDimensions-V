@@ -1,6 +1,7 @@
 <script>
 import HiddenTabGroup from "@/components/modals/options/hidden-tabs/HiddenTabGroup";
 import ModalWrapperOptions from "@/components/modals/options/ModalWrapperOptions";
+import PrimaryButton from "@/components/PrimaryButton";
 
 export default {
   name: "HiddenTabsModal",
@@ -22,6 +23,13 @@ export default {
       this.isEnslaved = Enslaved.isRunning;
       this.isAlmostEnd = Pelle.hasGalaxyGenerator;
     },
+     resetAllTabs() {
+      for (const tab of this.tabs) {
+        tab.unhideTab();
+        for (const subtab of tab.subtabs)
+          subtab.unhideTab();
+      }
+    }
   },
 };
 </script>
@@ -48,6 +56,11 @@ export default {
         <br>
         (You cannot hide your tabs within this Reality)
       </div>
+      <PrimaryButton
+        @click="resetAllTabs"
+      >
+        Reset all tabs
+      </PrimaryButton>
       <HiddenTabGroup
         v-for="(tab, index) in tabs"
         :key="index"
