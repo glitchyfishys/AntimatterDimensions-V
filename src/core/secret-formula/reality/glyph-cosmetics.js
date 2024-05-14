@@ -137,7 +137,7 @@ export const glyphCosmeticSets = {
   celestial: {
     id: "celestial",
     name: "Celestial Icons",
-    symbol: ["\uF0C1", "⌬", "ᛝ", "♅"],
+    symbol: ["\uF0C1", "⌬", "\uF185", "ᛝ", "♅"],
     color: ["B#00BCD4"],
   },
   alchemy: {
@@ -222,5 +222,12 @@ export const glyphCosmeticSets = {
     symbol: ["𓆏", "𓆉", "𓅬", "𓅃", "𓃲", "𓆣", "𓆊", "𓃰"],
     preventBlur: true,
     color: ["W#0000AA"],
+  },
+  fish: {
+    id: "fish",
+    name: "you know what that means",
+    symbol: ["🐟", "🐠", "🐡", "🦐", "🦑", "🐙", "🦞", "🦀"],
+    preventBlur: true,
+    color: ["W#6CA0C6","B#15639D"],
   },
 };
