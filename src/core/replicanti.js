@@ -161,6 +161,7 @@ export function totalReplicantiSpeedMult(overCap) {
 
   return totalMult;
 }
+}
 
 export function replicantiCap() {
   return EffarigUnlock.infinity.canBeApplied
