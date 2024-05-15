@@ -88,9 +88,13 @@ export * from "./shop";
 export * from "./tabs";
 export * from "./tab-notifications";
 export * from "./speedrun";
+
+// mod
 export * from "./glitchpreinfinityUG";
 export * from "./glitchbreakinfinityupgrade";
 export * from "./glitcheternityUG";
 export * from "./glitchrealityUG";
+
+export * from "./celestials/glitch/glitchrift";
 
 export * from "./automator/script-templates";
