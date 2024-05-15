@@ -37,17 +37,15 @@ export default {
   },
   methods: {
     isPreferred(name) {
-      let n = name == "Hybrid" ? "Passive" : name
-      return this.paceOptions[n] === this.pacePath || this.dimensionPath.indexOf(this.dimensionOptions[n]) + 1;
+      return this.paceOptions[name] === this.pacePath || this.dimensionPath.indexOf(this.dimensionOptions[name]) + 1;
     },
     select(name) {
-      let n = name == "Hybrid" ? "Passive" : name;
-      if (this.dimensionOptions[n]) {
+      if (this.dimensionOptions[name]) {
         if (!this.usePriority || this.dimensionPath.length > 1) this.dimensionPath.shift();
         if (!this.dimensionPath.includes(this.dimensionOptions[name]))
-          this.dimensionPath.push(this.dimensionOptions[n]);
+          this.dimensionPath.push(this.dimensionOptions[name]);
       }
-      if (this.paceOptions[n]) this.pacePath = this.paceOptions[n];
+      if (this.paceOptions[name]) this.pacePath = this.paceOptions[name];
     },
     confirmPrefs() {
       TimeStudy.preferredPaths.dimension.path = this.dimensionPath;
