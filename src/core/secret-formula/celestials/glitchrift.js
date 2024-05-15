@@ -11,7 +11,8 @@ export const GlitchRifts = {
       {
         resource: "alpha",
         requirement: 0.1,
-        description: "fish"
+        description: "fish",
+        effect: 5
       },
     ],
   },
@@ -26,7 +27,8 @@ export const GlitchRifts = {
       {
         resource: "beta",
         requirement: 0.1,
-        description: "fish"
+        description: "fish",
+        effect: 5
       },
     ],
   },
@@ -41,7 +43,8 @@ export const GlitchRifts = {
       {
         resource: "delta",
         requirement: 0.1,
-        description: "fish"
+        description: "fish",
+        effect: 5
       },
     ],
   },
@@ -56,7 +59,8 @@ export const GlitchRifts = {
       {
         resource: "gamma",
         requirement: 0.1,
-        description: "fish"
+        description: "fish",
+        effect: 5
       },
     ],
   },
