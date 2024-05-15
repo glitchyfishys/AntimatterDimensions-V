@@ -146,12 +146,10 @@ export function totalReplicantiSpeedMult(overCap) {
     breakinfinityUGs.all[4]
   );
   totalMult = totalMult.times(preCelestialEffects);
-  if (TimeStudy(132).isBought) {
-    totalMult = totalMult.times(Perk.studyPassive.isBought ? 3 : 1.5);
+  if (TimeStudy(132).isBought) totalMult = totalMult.times(Perk.studyPassive.isBought ? 3 : 1.5);
 
-  if (!overCap && Achievement(134).isUnlocked) {
-    totalMult = totalMult.times(2);
-  }
+  if (!overCap && Achievement(134).isUnlocked) totalMult = totalMult.times(2);
+
   totalMult = totalMult.times(getAdjustedGlyphEffect("replicationspeed"));
   if (GlyphAlteration.isAdded("replication")) {
     totalMult = totalMult.times(
@@ -160,7 +158,6 @@ export function totalReplicantiSpeedMult(overCap) {
   totalMult = totalMult.timesEffectsOf(AlchemyResource.replication, Ra.unlocks.continuousTTBoost.effects.replicanti);
 
   return totalMult;
-}
 }
 
 export function replicantiCap() {
