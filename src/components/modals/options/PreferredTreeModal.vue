@@ -23,7 +23,7 @@ export default {
     paceOptions() {
       return {
         "Active": TIME_STUDY_PATH.ACTIVE,
-        "Passive": TIME_STUDY_PATH.PASSIVE,
+        "Hybrid": TIME_STUDY_PATH.PASSIVE,
         "Idle": TIME_STUDY_PATH.IDLE
       };
     },
@@ -37,33 +37,36 @@ export default {
   },
   methods: {
     isPreferred(name) {
-      return this.paceOptions[name] === this.pacePath || this.dimensionPath.indexOf(this.dimensionOptions[name]) + 1;
+      let n = name == "Hybrid" ? "Passive" : name
+      return this.paceOptions[n] === this.pacePath || this.dimensionPath.indexOf(this.dimensionOptions[n]) + 1;
     },
     select(name) {
-      if (this.dimensionOptions[name]) {
+      let n = name == "Hybrid" ? "Passive" : name;
+      if (this.dimensionOptions[n]) {
         if (!this.usePriority || this.dimensionPath.length > 1) this.dimensionPath.shift();
         if (!this.dimensionPath.includes(this.dimensionOptions[name]))
-          this.dimensionPath.push(this.dimensionOptions[name]);
+          this.dimensionPath.push(this.dimensionOptions[n]);
       }
-      if (this.paceOptions[name]) this.pacePath = this.paceOptions[name];
+      if (this.paceOptions[n]) this.pacePath = this.paceOptions[n];
     },
     confirmPrefs() {
       TimeStudy.preferredPaths.dimension.path = this.dimensionPath;
       TimeStudy.preferredPaths.pace.path = this.pacePath;
     },
     classList(name) {
-      const pref = this.isPreferred(name);
+      let n = name == "Hybrid" ? "Passive" : name;
+      const pref = this.isPreferred(n);
       const types = {
         "Antimatter": "antimatter-dim",
         "Infinity": "infinity-dim",
         "Time": "time-dim",
         "Active": "active",
-        "Hybrid": "passive",
+        "Passive": "passive",
         "Idle": "idle"
       };
       return [
         "o-time-study-selection-btn",
-        `o-time-study-${types[name]}--${pref ? "bought" : "available"}`,
+        `o-time-study-${types[n]}--${pref ? "bought" : "available"}`,
         `o-time-study--${pref ? "bought" : "available"}`
       ];
     },
