@@ -8,6 +8,7 @@ export default {
   components: {
     HiddenTabGroup,
     ModalWrapperOptions,
+    PrimaryButton,
   },
   data() {
     return {
