@@ -1,5 +1,6 @@
 import { GameDatabase } from "../../secret-formula/game-database";
 import { Quotes } from "../quotes";
+import { GlitchRifts } from "./glitchrift";
 
 export const glitch = {
   displayName: "Glitch",
@@ -14,5 +15,6 @@ export const glitch = {
     return player.celestials.glitch.run;
   },
   quotes: Quotes.glitch,
-  symbol: "ὡ"
+  symbol: "ὡ",
+  rifts: GlitchRifts,
 };
