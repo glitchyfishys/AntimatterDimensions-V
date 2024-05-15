@@ -23,7 +23,7 @@ export default {
     paceOptions() {
       return {
         "Active": TIME_STUDY_PATH.ACTIVE,
-        "Hybrid": TIME_STUDY_PATH.PASSIVE,
+        "Passive": TIME_STUDY_PATH.PASSIVE,
         "Idle": TIME_STUDY_PATH.IDLE
       };
     },
@@ -58,7 +58,7 @@ export default {
         "Infinity": "infinity-dim",
         "Time": "time-dim",
         "Active": "active",
-        "Hybrid": "hybrid",
+        "Hybrid": "passive",
         "Idle": "idle"
       };
       return [
