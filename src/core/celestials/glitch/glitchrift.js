@@ -20,7 +20,6 @@ class RiftMilestoneState extends GameMechanicState {
   }
 
   get isUnlocked() {
-    if (this.resource === "decay" && GlitchRifts.chaos.milestones[0].isEffectActive) return true;
     return this.requirement <= GlitchRifts[this.resource].percentage;
   }
 
@@ -70,7 +69,7 @@ class GRift extends GameMechanicState {
   }
 
   get rift() {
-    return player.celestials.pelle.rifts[this.config.key];
+    return player.celestials.glitch.rifts[this.config.key];
   }
 
   get totalFill() {
