@@ -137,7 +137,8 @@ class GRift extends GameMechanicState {
   checkMilestoneStates() {
     this.milestones.forEach(x => x.checkMilestoneState());
   }
-
+  
+}
 export const GlitchRifts = mapGameDataToObject(
   GameDatabase.celestials.GlitchRifts,
   config => new GRift(config)
