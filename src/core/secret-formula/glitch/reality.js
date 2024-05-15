@@ -148,7 +148,7 @@ export const realityUG = [
     name: "overlight powerforce",
     id: 13,
     requirement: "complete all other glitch challanges",
-    hasFailed: () => player.glitch.preinfinity.upgradebits != 255 || player.glitch.breakinfinity.upgradebits != 63 || player.glitch.eternity.upgradebits != 63 || player.glitch.reality.upgradebits != 2047,
+    hasFailed: () => player.glitch.preinfinity.upgradebits != 255 || player.glitch.breakinfinity.upgradebits != 63 || player.glitch.eternity.upgradebits != 63 || player.glitch.reality.upgradebits != 8191,
     checkRequirement: () =>  player.glitch.preinfinity.upgradebits == 255 && player.glitch.breakinfinity.upgradebits == 63 && player.glitch.eternity.upgradebits == 63 && player.glitch.reality.upgradebits >= 8191,
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
     description: "unlock glitch the celestial of creativity, having unque goals",
