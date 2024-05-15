@@ -131,7 +131,7 @@ export const realityUG = [
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
     description: "singularities gain is boosted by their amount",
     effect: () => Math.log(player.celestials.laitela.singularities + 10),
-    formatEffect: () => value => format(value, 2, 2)
+    formatEffect: value => format(value, 2, 2)
   },
   {
     name: "pre galatic ",
