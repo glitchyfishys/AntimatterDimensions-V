@@ -19,7 +19,7 @@ export default {
 </script>
 
 <template>
-  <div>
+  <div class="l-reality-upgrade-grid">
     <div class="c-preinfinity-infotext">
       progressing fast
       <br>
