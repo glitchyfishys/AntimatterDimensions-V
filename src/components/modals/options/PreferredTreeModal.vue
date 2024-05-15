@@ -52,19 +52,18 @@ export default {
       TimeStudy.preferredPaths.pace.path = this.pacePath;
     },
     classList(name) {
-      let n = name == "Hybrid" ? "Passive" : name;
-      const pref = this.isPreferred(n);
+      const pref = this.isPreferred(name);
       const types = {
         "Antimatter": "antimatter-dim",
         "Infinity": "infinity-dim",
         "Time": "time-dim",
         "Active": "active",
-        "Passive": "passive",
+        "Hybrid": "passive",
         "Idle": "idle"
       };
       return [
         "o-time-study-selection-btn",
-        `o-time-study-${types[n]}--${pref ? "bought" : "available"}`,
+        `o-time-study-${types[name]}--${pref ? "bought" : "available"}`,
         `o-time-study--${pref ? "bought" : "available"}`
       ];
     },
