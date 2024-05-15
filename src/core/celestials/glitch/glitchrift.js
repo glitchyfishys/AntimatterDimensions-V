@@ -20,7 +20,7 @@ class RiftMilestoneState extends GameMechanicState {
   }
 
   get isUnlocked() {
-    return this.requirement <= GlitchRifts[this.resource].percentage;
+    return this.requirement <= GlitchRifts.all[this.resource].percentage;
   }
 
   get isEffectActive() {
@@ -46,10 +46,6 @@ class GRift extends GameMechanicState {
 
   get fillCurrency() {
     return this.config.currency();
-  }
-
-  get strike() {
-    return this.config.strike();
   }
 
   get canBeApplied() {
@@ -106,21 +102,11 @@ class GRift extends GameMechanicState {
     return this.config.description;
   }
 
-  get drainResource() {
-    return this.config.drainResource;
-  }
-
   get effects() {
-    const base = this.config.baseEffect(this.effectValue);
-    const additional = this.config.additionalEffects?.().map(x => x.formattedEffect) ?? [];
-    return [base, ...additional];
+    return 1;
   }
 
   get isCustomEffect() { return true; }
-
-  get effectValue() {
-    return this.config.effect(this.config.percentageToFill(this.percentage));
-  }
 
   get maxValue() {
     return this.config.percentageToFill(2 + this.spentPercentage);
@@ -128,10 +114,6 @@ class GRift extends GameMechanicState {
 
   get isMaxed() {
     return this.percentage >= 1;
-  }
-
-  get galaxyGeneratorText() {
-    return this.config.galaxyGeneratorText;
   }
 
   checkMilestoneStates() {
