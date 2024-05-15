@@ -16,5 +16,4 @@ export const glitch = {
   },
   quotes: Quotes.glitch,
   symbol: "ὡ",
-  rifts: GlitchRifts,
 };
