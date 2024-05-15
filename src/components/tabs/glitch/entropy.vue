@@ -9,12 +9,12 @@ export default {
   },
   computed: {
     rifts() {
-      return GlitchRift.all;
+      return GlitchRifts.all;
     },
   },
   methods: {
     totalrifts() {
-      return GlitchRift.all.length;
+      return GlitchRifts.all.length;
     }
   },
 };
