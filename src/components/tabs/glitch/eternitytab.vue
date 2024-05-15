@@ -19,7 +19,7 @@ export default {
 </script>
 
 <template>
-  <div>
+  <div class="l-reality-upgrade-grid">
     <div class="c-eternity-infotext">
       this is the biggest threshold
       <br>
