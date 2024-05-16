@@ -75,7 +75,7 @@ export const Effarig = {
     if (Glyphs.activeWithoutCompanion.filter(g => generatedTypes.includes(g.type)).filter(k => k.type == "infinity" ).length > 0) c+=4;
     if (Glyphs.activeWithoutCompanion.filter(g => generatedTypes.includes(g.type)).filter(k => k.type == "dilation" ).length > 0) c+=4;
     if (Glyphs.activeWithoutCompanion.filter(g => generatedTypes.includes(g.type)).filter(k => k.type == "replication" ).length > 0) c+=4;
-    if (Glyphs.activeWithoutCompanion.filter(g => generatedTypes.includes(g.type)).filter(k => k.type == "effarig" ).length > 0) c+=4;
+    if (Glyphs.activeWithoutCompanion.filter(g => generatedTypes.includes(g.type)).filter(k => k.type == "effarig" ).length > 0) c+=7;
     if (Glyphs.activeWithoutCompanion.filter(g => !generatedTypes.includes(g.type)).filter(k => k.type == "reality" ).length > 0) c+=4;
     if (Glyphs.activeWithoutCompanion.filter(g => !generatedTypes.includes(g.type)).filter(k => k.type == "cursed" ).length > 0) c+=4;
     if (Glyphs.activeWithoutCompanion.filter(g => !generatedTypes.includes(g.type)).filter(k => k.type == "glitch" ).length > 0) c+=4;
