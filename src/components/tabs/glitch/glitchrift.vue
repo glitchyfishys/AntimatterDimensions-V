@@ -15,6 +15,12 @@ export default {
       effects: []
     };
   },
+  props: {
+    rift: {
+      type: Object,
+      required: true
+    },
+  },
   computed: {
     rift() {
       return this.glitchrift;
