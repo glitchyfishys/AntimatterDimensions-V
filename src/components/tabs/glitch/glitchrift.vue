@@ -23,12 +23,12 @@ export default {
   },
   computed: {
     Grift() {
-      return this.rift.rift;
+      return this.rift;
     },
   },
   methods: {
     update() {
-      const rift = this.Grift;
+      const rift = this.Grift.rift;
       this.isMaxed = rift.isMaxed;
       this.setValue("totalFill", rift.totalFill);
       this.effects = this.rift.effects;
