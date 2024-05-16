@@ -34,7 +34,7 @@ export default {
   },
   methods: {
     update() {
-      const rift = this.rift;
+      const rift = this.rift.rift;
       this.effects = rift.effects;
       this.isMaxed = rift.isMaxed;
       this.percentage = rift.percentage;
