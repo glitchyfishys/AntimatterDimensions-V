@@ -20,7 +20,7 @@ class RiftMilestoneState extends GameMechanicState {
   }
 
   get isUnlocked() {
-    return this.requirement <= GlitchRifts.all[this.resource].percentage;
+    return this.requirement <= GlitchRifts[this.resource].percentage;
   }
 
   get isEffectActive() {
@@ -84,10 +84,6 @@ class GRift extends GameMechanicState {
     return this.config.percentage(this.totalFill);
   }
 
-  get spentPercentage() {
-    return this.rift.percentageSpent || 0;
-  }
-
   get percentage() {
     if (this.reducedTo > 1) return this.reducedTo;
     if (!this.config.spendable) return Math.min(this.realPercentage, this.reducedTo);
@@ -104,14 +100,14 @@ class GRift extends GameMechanicState {
 
   get effects() {
     let effects = [];
-    this.milestones.forEach(x => x.forEach(milestone => effects.push(milestone.effectOrDefault(1))));
+    this.milestones.forEach(x => x.forEach(milestone => effects.push(milestone.effectOrDefault(1)) ));
     return effects;
   }
 
   get isCustomEffect() { return true; }
 
   get maxValue() {
-    return this.config.percentageToFill(2 + this.spentPercentage);
+    return this.config.percentageToFill(2);
   }
 
   get isMaxed() {
