@@ -28,7 +28,7 @@ export default {
       <GlitchRift
           v-for="rift in rifts"
           :key="rift.config.id"
-          :strike="rift"
+          :rift="rift"
         />
     </div>
   
