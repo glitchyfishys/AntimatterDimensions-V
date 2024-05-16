@@ -38,9 +38,6 @@ export default {
     },
     riftName() {
       return this.rift.name;
-    },
-    drainResource() {
-      return this.rift.drainResource;
     }
   },
 };
@@ -61,7 +58,7 @@ export default {
               v-for="(effect, idx) in effects"
               :key="idx"
             >
-              {{ effect || "" }}
+              {{ effect.toString() || "" }}
             </div>
           </div>
         </div>
@@ -74,9 +71,6 @@ export default {
               {{ riftName() }}
             </h2>
             <div class="c-pelle-rift-rift-info-container">
-              filled by completing {{ drainResource() }}.
-                <i class="fas fa-question-circle" />
-              </span>
               <br>
               Total Filled: {{ formatRift(rift.totalFill) }}
             </div>
