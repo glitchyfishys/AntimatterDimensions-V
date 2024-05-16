@@ -58,7 +58,7 @@ export default {
               v-for="(effect, idx) in effects"
               :key="idx"
             >
-              {{ effect.toString() || "" }}
+              {{ effect || "" }}
             </div>
           </div>
         </div>
