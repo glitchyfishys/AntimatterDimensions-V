@@ -22,13 +22,13 @@ export default {
     },
   },
   computed: {
-    rift() {
+    Grift() {
       return this.rift.rift;
     },
   },
   methods: {
     update() {
-      const rift = this.rift;
+      const rift = this.Grift;
       this.isMaxed = rift.isMaxed;
       this.setValue("totalFill", rift.totalFill);
       this.effects = this.rift.effects;
