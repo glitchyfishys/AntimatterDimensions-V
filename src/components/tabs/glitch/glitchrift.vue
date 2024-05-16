@@ -23,11 +23,9 @@ export default {
   methods: {
     update() {
       const rift = this.rift;
-      this.effects = this.rift.effects;
-      this.isActive = rift.isActive;
+      this.effects = this.rift.effects("dis");
       this.isMaxed = rift.isMaxed;
       this.setValue("totalFill", rift.totalFill);
-      this.setValue("resource", rift.fillCurrency.value);
     },
     // One rift has a number and the others are all Decimals; this reduces boilerplate for setting multiple values
     setValue(key, value) {
