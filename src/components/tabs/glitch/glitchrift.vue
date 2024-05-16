@@ -23,7 +23,7 @@ export default {
   methods: {
     update() {
       const rift = this.rift;
-      this.effects = this.rift.effects("dis");
+      this.effects = this.rift.effects;
       this.isMaxed = rift.isMaxed;
       this.setValue("totalFill", rift.totalFill);
     },
