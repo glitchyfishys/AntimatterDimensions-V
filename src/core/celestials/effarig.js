@@ -88,8 +88,8 @@ export const Effarig = {
     if (!TeresaUnlocks.effarig.canBeApplied) return 0;
     let shards = Math.floor(Math.pow(Currency.eternityPoints.exponent / 7500, this.glyphEffectAmount)) *
       AlchemyResource.effarig.effectValue;
-    if (shards >= Number.MAX_VALUE) shards = Number.MAX_VALUE / (Glyphs.activeWithoutCompanion.filter(g => !generatedTypes.includes(g.type)).filter(k => k.type == "reality" ).length > 0) ? 1 : 1e28;
-    return shards / 100; //better for glyphs
+    if (shards >= Number.MAX_VALUE) shards = Number.MAX_VALUE 1e28;
+    return shards / player.reality.glyphs.createdRealityGlyph ? 1 : 100; //better for glyphs
   },
   get maxRarityBoost() {
     return 5 * Math.log10(Math.log10(Currency.relicShards.value + 10));
