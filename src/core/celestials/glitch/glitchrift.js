@@ -98,9 +98,9 @@ class GRift extends GameMechanicState {
     return this.config.description;
   }
 
-  get effects() {
+  get effects(s ="") {
     let effects = [];
-    this.milestones.forEach(milestone => effects.push(milestone.effectOrDefault(1)) );
+    this.milestones.forEach(milestone => effects.push( s != "" ? milestone.effectOrDefault(1).toString() : milestone.effectOrDefault(1).toString()) );
     return effects;
   }
 
