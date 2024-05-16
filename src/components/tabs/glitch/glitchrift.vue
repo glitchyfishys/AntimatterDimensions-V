@@ -23,7 +23,7 @@ export default {
   },
   computed: {
     rift() {
-      return this.glitchrift;
+      return this.rift.rift;
     },
   },
   methods: {
