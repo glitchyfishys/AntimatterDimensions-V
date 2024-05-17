@@ -39,6 +39,7 @@ export default {
       this.isMaxed = rift.isMaxed;
       this.percentage = rift.percentage;
       this.reducedTo = rift.reducedTo;
+            console.log(this.rift);
 
       this.selectedMilestoneResourceText = this.milestoneResourceText(this.selectedHoverMilestone);
       this.selectedMilestoneDescriptionText = this.milestoneDescriptionText(this.selectedHoverMilestone);
