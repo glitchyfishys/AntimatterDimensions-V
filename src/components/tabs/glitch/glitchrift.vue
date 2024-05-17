@@ -32,7 +32,6 @@ export default {
       this.isMaxed = rift.isMaxed;
       this.setValue("totalFill", rift.totalFill);
       this.effects = this.rift.effects;
-      console.log(this.rift);
     },
     // One rift has a number and the others are all Decimals; this reduces boilerplate for setting multiple values
     setValue(key, value) {
