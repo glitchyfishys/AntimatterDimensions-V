@@ -69,7 +69,7 @@ export default {
           </div>
         </div>
         <div class="c-pelle-rift-column">
-          <GlitchRiftBar :rift="Grift" />
+          <GlitchRiftBar :rift="rift" />
         </div>
         <div class="c-pelle-rift-status">
           <div class="c-pelle-rift-fill-status">
