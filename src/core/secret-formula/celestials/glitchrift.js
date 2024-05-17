@@ -32,11 +32,10 @@ export const GlitchRifts = {
       },
     ],
   },
-  detla: {
+  delta: {
     id: 3,
     key: "delta",
     name: "eternity",
-    drainResource: "IP",
     percentage: totalFill => player.glitch.eternity.upgradebits & 255,
     percentageToFill: 6,
     milestones: [
@@ -52,7 +51,6 @@ export const GlitchRifts = {
     id: 4,
     key: "gamma",
     name: "reality",
-    drainResource: "IP",
     percentage: totalFill => player.glitch.reality.upgradebits & 255,
     percentageToFill: 6,
     milestones: [
