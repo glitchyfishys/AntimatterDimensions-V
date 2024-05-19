@@ -22,7 +22,7 @@ export const perkShop = {
     id: 6,
     initialCost: 1000000,
     increment: 10,
-    description: `Increase infinity dimentions by a power of ${format(0.05)}`,
+    description: `Increase infinity dimentions by a power of ${format(0.05, 2)}`,
     effect: bought =>  (1 + 0.05 * bought),
     formatEffect: value => formatX(value, 2),
     formatCost: value => format(value, 2),
