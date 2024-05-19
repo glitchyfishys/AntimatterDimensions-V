@@ -34,6 +34,8 @@ export default {
       showInstability: false,
       instabilityThreshold: 0,
       hyperInstabilityThreshold: 0,
+      glitchInstabilityThreshold: 0,
+      showglitch: false,
       isInCelestialReality: false,
       canAmplify: false,
       glyphTextColors: true,
@@ -59,8 +61,10 @@ export default {
     update() {
       this.resetRealityDisplayed = PlayerProgress.realityUnlocked();
       this.showInstability = player.records.bestReality.glyphLevel > 800;
+      this.showglitch = player.records.bestReality.glyphLevel > 100000;
       this.instabilityThreshold = Glyphs.instabilityThreshold;
       this.hyperInstabilityThreshold = Glyphs.hyperInstabilityThreshold;
+      this.glitchInstabilityThreshold = Glyphs.glitchInstabilityThreshold;
       this.isInCelestialReality = isInCelestialReality();
       this.canAmplify = Enslaved.isUnlocked && !this.isInCelestialReality;
       this.autoRestartCelestialRuns = player.options.retryCelestial;
@@ -155,7 +159,11 @@ export default {
           <br>
           Glyph levels higher than {{ formatInt(instabilityThreshold) }} are harder to reach.
           <br>
-          This effect is even stronger above level {{ formatInt(hyperInstabilityThreshold) }}.
+          This effect is significantly stronger above level {{ formatInt(hyperInstabilityThreshold) }}.
+          <div v-if="showglitch">
+            <br>
+            and even stronger above level {{ formatInt(glitchInstabilityThreshold) }}.
+          </div>
         </div>
         <SingleGlyphCustomzationPanel />
         <ExpandingControlBox
