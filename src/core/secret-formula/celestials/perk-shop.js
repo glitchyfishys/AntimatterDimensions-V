@@ -18,6 +18,28 @@ function rebuyable(config) {
 }
 
 export const perkShop = {
+  infinityPow: rebuyable({
+    id: 6,
+    initialCost: 1000000,
+    increment: 10,
+    description: "Increase infinity dimentions by a power of ${format(0.05,)}",
+    effect: bought =>  1 + (0.05 *bought),
+    formatEffect: value => formatX(value, 2),
+    formatCost: value => format(value, 2),
+    costCap: () => (1000000000),
+    cap: () => (1.3),
+  }),
+  maxGlyphLevel: rebuyable({
+    id: 7,
+    initialCost: 10000,
+    increment: 1.25,
+    description: "Increase max level of gylphs by ${formatPercents(0.01)}",
+    effect: bought =>  Math.pow(1.01, bought),
+    formatEffect: value => formatX(value, 2),
+    formatCost: value => format(value, 2),
+    costCap: () => (93132.2575),
+    cap: () => (10),
+  }),
   glyphLevel: rebuyable({
     id: 0,
     initialCost: 1,
