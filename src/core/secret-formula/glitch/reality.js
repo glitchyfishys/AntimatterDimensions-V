@@ -85,8 +85,8 @@ export const realityUG = [
     hasFailed: () =>false,
     checkRequirement: () =>  player.celestials.enslaved.storedReal >= Enslaved.storedRealTimeCap,
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
-    description: "real time storing is fulled automatically and 100 times faster",
-    effect: 100,
+    description: "real time storing is fulled automatically and 60 times faster",
+    effect: 60,
     formatEffect: value => format(value, 2, 2)
   },
   {
@@ -136,9 +136,9 @@ export const realityUG = [
   {
     name: "pre galatic ",
     id: 12,
-    requirement: "reach 1T antimatter in effarig's reality with 5 cursed glyphs, before destablizing latela's reality once",
-    hasFailed: () => Glyphs.activeWithoutCompanion.filter(x => x.type == "cursed") < 5 && Effarig.isRunning || Laitela.difficultyTier > 0,
-    checkRequirement: () =>  Glyphs.activeWithoutCompanion.filter(x => x.type == "cursed") >= 5 && Effarig.isRunning && Laitela.difficultyTier == 0,
+    requirement: "reach 1e66.66 B antimatter in effarig's reality with 5 cursed glyphs, before destablizing latela's reality once",
+    hasFailed: () => Laitela.difficultyTier > 0,
+    checkRequirement: () =>  Glyphs.activeWithoutCompanion.filter(x => x.type == "cursed").length >= 5 && Effarig.isRunning && Laitela.difficultyTier == 0 && Currency.antimatter.gt("1e6.66E10"),
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
     description: "unlock two new treasa shop items",
     effect: () => 1,
