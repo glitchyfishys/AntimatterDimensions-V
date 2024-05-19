@@ -107,19 +107,19 @@ export const Effarig = {
         c = 29.29;
       break;
         case EFFARIG_STAGES.OVERDRIVE:
-        c = 15;
+        c = 12.5;
         break;
       default:
-        c = 15;
+        c = 12.5;
         break;
     }
     return 3 * (1 - c / (c + Math.sqrt(power.pLog10())));
   },
   get tickDilation() {
-    return 0.7 + 0.1 * this.nerfFactor(Currency.timeShards.value);
+    return Math.min(0.7 + 0.1 * this.nerfFactor(Currency.timeShards.value), 0.9999);
   },
   get multDilation() {
-    return 0.25 + 0.25 * this.nerfFactor(Currency.infinityPower.value);
+    return Math.min(0.25 + 0.25 * this.nerfFactor(Currency.infinityPower.value), 0.9999);
   },
   get tickspeed() {
     const base = 3 + Tickspeed.baseValue.reciprocal().log10();
