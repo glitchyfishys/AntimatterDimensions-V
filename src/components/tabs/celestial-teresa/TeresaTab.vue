@@ -52,6 +52,10 @@ export default {
         PerkShopUpgrade.musicGlyph,
       ];
       if (this.raisedPerkShop) upgrades.push(PerkShopUpgrade.fillMusicGlyph);
+      if (realityUGs.all[12].isBought){
+        upgrades.push(PerkShopUpgrade.infinityPow);
+        upgrades.push(PerkShopUpgrade.maxGlyphLevel);
+      }
       return upgrades;
     },
     runButtonClassObject() {
