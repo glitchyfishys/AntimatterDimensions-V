@@ -559,7 +559,7 @@ top.player = {
       run: false,
       bestRunAM: DC.D1,
       bestAMSet: [],
-      perkShop: Array.repeat(0, 5),
+      perkShop: Array.repeat(0, 7),
       lastRepeatedMachines: DC.D0
     },
     effarig: {
