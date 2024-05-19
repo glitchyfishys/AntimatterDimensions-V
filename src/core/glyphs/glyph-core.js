@@ -648,7 +648,7 @@ export const Glyphs = {
     }
   },
   get levelCap() {
-    return 100000 * PerkShopUpgrade.all[1].effectValue;
+    return 100000 * PerkShopUpgrade.maxGlyphLevel.effectOrDefault(1);
   },
   get instabilityThreshold() {
     return 1500 + getAdjustedGlyphEffect("effarigglyph") + ImaginaryUpgrade(7).effectOrDefault(0);
