@@ -648,7 +648,7 @@ export const Glyphs = {
     }
   },
   get levelCap() {
-    return 1000000;
+    return 100000 * PerkShopUpgrade.all[1].effectValue;
   },
   get instabilityThreshold() {
     return 1500 + getAdjustedGlyphEffect("effarigglyph") + ImaginaryUpgrade(7).effectOrDefault(0);
@@ -656,6 +656,10 @@ export const Glyphs = {
   get hyperInstabilityThreshold() {
     return 4000 + this.instabilityThreshold;
   },
+  get glitchInstabilityThreshold() {
+    return 100000;
+  },
+  
   clearUndo() {
     player.reality.glyphs.undo = [];
   },
