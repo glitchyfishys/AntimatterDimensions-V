@@ -163,7 +163,7 @@ class InfinityDimensionState extends DimensionState {
     mult = mult.powEffectOf(AlchemyResource.infinity);
     mult = mult.pow(Ra.momentumValue);
     mult = mult.powEffectOf(PelleRifts.paradox);
-    mult = mult.powEffectOf(PerkShopUpgrade.all[0].effectValue);
+    mult = mult.pow(PerkShopUpgrade.all[0].effectValue);
 
     if (player.dilation.active || PelleStrikes.dilation.hasStrike) {
       mult = dilatedValueOf(mult);
