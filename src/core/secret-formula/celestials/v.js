@@ -65,7 +65,7 @@ export const v = {
       id: 7,
       name: "Antimatter",
       resource: () => Currency.antimatter.value,
-      requirement: DC.E100000000,
+      requirement: DC.E5000000000,
       format: x => format(x, 2),
       progress: () => emphasizeEnd(Currency.antimatter.value.pLog10() / 100000000),
     },
