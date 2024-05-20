@@ -405,7 +405,7 @@ export function beginProcessReality(realityProps) {
     }
     Glyphs.processSortingAfterReality();
 
-    let gl = Math.min(glyphLevel.actualLevel, 100000)
+    let gl = Math.min(glyphLevel.actualLevel, Math.floor(Glyphs.levelCap))
     
     if(Perk.autoGlyph.canBeApplied){
     for (let i=0; i < player.reality.glyphs.inventory.length; i++){
