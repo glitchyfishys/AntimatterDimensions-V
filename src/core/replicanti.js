@@ -432,6 +432,10 @@ export const ReplicantiUpgrade = {
     get remoteRGStart() {
       return 1000 + Effects.sum(GlyphSacrifice.replication);
     }
+
+    get maxgalcost(){
+      return new Decimal("1e105148431840");
+    }
     
     get costIncrease() {
       const galaxies = this.value;
@@ -465,6 +469,11 @@ export const ReplicantiUpgrade = {
     
     autobuyerTick() {
       if (this.value >= this.cap) return;
+      if(this.galcostcap.lt(Currency.infinityPoints.value)){
+        this.baseCost = this.galcostcap;
+        this.value = 100000;
+        return
+      }
       // This isn't a hot enough autobuyer to worry about doing an actual inverse.
       const bulk = bulkBuyBinarySearch(Currency.infinityPoints.value, {
         costFunction: x => this.baseCostAfterCount(x).dividedByEffectOf(TimeStudy(233)),
