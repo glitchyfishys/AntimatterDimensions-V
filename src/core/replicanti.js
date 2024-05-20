@@ -469,8 +469,8 @@ export const ReplicantiUpgrade = {
     
     autobuyerTick() {
       if (this.value >= this.cap) return;
-      if(this.galcostcap.lt(Currency.infinityPoints.value)){
-        this.baseCost = this.galcostcap;
+      if(new Decimal("1e105148431840").lt(Currency.infinityPoints.value)){
+        this.baseCost = new Decimal("1e105148431840");
         this.value = 100000;
         return
       }
