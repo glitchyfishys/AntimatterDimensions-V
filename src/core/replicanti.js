@@ -433,7 +433,7 @@ export const ReplicantiUpgrade = {
       return 1000 + Effects.sum(GlyphSacrifice.replication);
     }
 
-    get maxgalcost(){
+    get galcostcap(){
       return new Decimal("1e105148431840");
     }
     
