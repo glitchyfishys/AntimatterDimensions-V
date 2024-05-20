@@ -138,7 +138,7 @@ export const realityUG = [
     id: 12,
     requirement: "reach 1e66.66 B antimatter in effarig's reality with 5 cursed glyphs, before destablizing latela's reality thrice",
     hasFailed: () => Laitela.difficultyTier > 2,
-    checkRequirement: () =>  Glyphs.activeWithoutCompanion.filter(x => x.type == "cursed").length >= 5 && Effarig.isRunning && Laitela.difficultyTier <= 2 && Currency.antimatter.gt("1e6.666E10"),
+    checkRequirement: () =>  player.requirementChecks.reality.maxGlyphs <= -15 && Effarig.isRunning && Laitela.difficultyTier <= 2 && Currency.antimatter.gt("1e6.666E10"),
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
     description: "unlock two new treasa shop items",
     effect: () => 1,
