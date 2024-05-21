@@ -708,7 +708,7 @@ function updatePrestigeRates() {
 
 function passivePrestigeGen() {
   let eternitiedGain = 0;
-  if (RealityUpgrade(14).isBought) {
+  if (RealityUpgrade(14).isBought || EffarigUnlock.eternity.isUnlocked) {
     eternitiedGain = DC.D1.timesEffectsOf(
       Achievement(113),
       RealityUpgrade(3),
@@ -744,7 +744,7 @@ function passivePrestigeGen() {
       // infinities and eternities gained overall will be the same
       // for two ticks as for one tick of twice the length.
       infGen = infGen.plus(gainedInfinities().times(
-        Currency.eternities.value.minus(eternitiedGain.div(2).floor())).times(Time.deltaTime));
+        Currency.eternities.value.minus(eternitiedGain.div(2).floor())).add(1).times(Time.deltaTime));
     }
     infGen = infGen.plus(player.partInfinitied);
     Currency.infinities.add(infGen.floor());
