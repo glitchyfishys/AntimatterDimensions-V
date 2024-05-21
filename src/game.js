@@ -125,9 +125,7 @@ export function gainedInfinityPoints() {
   } else if (V.isRunning) {
     ip = ip.pow(0.5);
   } else if (Laitela.isRunning) {
-    console.log(ip);
     ip = dilatedValueOf(ip);
-    console.log(ip);
   }
   if (GlyphAlteration.isAdded("infinity")) {
     ip = ip.pow(getSecondaryGlyphEffect("infinityIP"));
