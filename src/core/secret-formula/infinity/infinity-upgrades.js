@@ -159,8 +159,9 @@ export const infinityUpgrades = {
     checkRequirement: () => InfinityUpgrade.dimboostMult.isBought,
     description: () => `Passively generate Infinity Points ${formatInt(10)} times slower than your fastest Infinity`,
     // Cutting corners: this is not actual effect, but it is totalIPMult that is displyed on upgrade
-    effect: () => (Teresa.isRunning || V.isRunning || Pelle.isDoomed ? DC.D0 : GameCache.totalIPMult.value),
+    effect: () => (Teresa.isRunning || V.isRunning || Laitela.isRunning || Pelle.isDoomed ? DC.D0 : GameCache.totalIPMult.value),
     formatEffect: value => {
+      if(Laitela.isRunning) return "Laitela brakes this upgrades some how (at gamespeed 1 B game speed, it sets IP to 1e308)"
       if (Teresa.isRunning || V.isRunning) return "Disabled in this reality";
       if (Pelle.isDoomed) return "Disabled";
       if (player.records.bestInfinity.time >= 999999999999) return "Too slow to generate";
