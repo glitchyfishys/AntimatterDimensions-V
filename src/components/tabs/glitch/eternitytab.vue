@@ -41,7 +41,7 @@ export default {
 </template>
 
 <style scoped>
-.c-preinfinity-infotext {
+.c-eternity-infotext {
   color: var(--color-text);
   margin: 1.5rem 0 1.5rem;
 }
