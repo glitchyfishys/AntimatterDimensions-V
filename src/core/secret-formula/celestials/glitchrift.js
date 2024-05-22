@@ -3,10 +3,14 @@ export const GlitchRifts = {
   alpha: {
     id: 1,
     key: "alpha",
-    name: "pre-infinity",
+    name: "pre-break/infinity",
     drainResource: "IP",
-    percentage: totalFill => player.glitch.preinfinity.upgradebits & 255,
-    percentageToFill: 6,
+    percentage: totalFill => {
+      let a = 0;
+      preinfinityUGs.all.forEach(x => x.isBought ? a++ : false);
+      return a
+    },
+    percentageToFill: 8,
     milestones: [
       {
         resource: "alpha",
@@ -19,9 +23,13 @@ export const GlitchRifts = {
   beta: {
     id: 2,
     key: "beta",
-    name: "post-infinity",
+    name: "post-break-infinity",
     drainResource: "IP",
-    percentage: totalFill => player.glitch.breakinfinity.upgradebits & 255,
+    percentage: totalFill => {
+      let a = 0;
+      breakinfinityUGs.all.forEach(x => x.isBought ? a++ : false);
+      return a
+    },,
     percentageToFill: 6,
     milestones: [
       {
@@ -36,7 +44,11 @@ export const GlitchRifts = {
     id: 3,
     key: "delta",
     name: "eternity",
-    percentage: totalFill => player.glitch.eternity.upgradebits & 255,
+    percentage: totalFill => {
+      let a = 0;
+      eternityUGs.all.forEach(x => x.isBought ? a++ : false);
+      return a
+    },
     percentageToFill: 6,
     milestones: [
       {
@@ -51,8 +63,12 @@ export const GlitchRifts = {
     id: 4,
     key: "gamma",
     name: "reality",
-    percentage: totalFill => player.glitch.reality.upgradebits & 255,
-    percentageToFill: 6,
+    percentage: totalFill => {
+      let a = 0;
+      realityUGs.all.forEach(x => x.isBought ? a++ : false);
+      return a
+    },
+    percentageToFill: 15,
     milestones: [
       {
         resource: "gamma",
