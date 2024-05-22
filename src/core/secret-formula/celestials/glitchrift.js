@@ -5,11 +5,7 @@ export const GlitchRifts = {
     key: "alpha",
     name: "pre-break/infinity",
     drainResource: "IP",
-    percentage: totalFill => {
-      let a = 0;
-      preinfinityUGs.all.forEach(x => x.isBought ? a++ : false);
-      return a
-    },
+    percentage: totalFill => { let a = 0; preinfinityUGs.all.forEach(x => x.isBought ? a++ : false); return a; },
     percentageToFill: 8,
     milestones: [
       {
@@ -29,7 +25,7 @@ export const GlitchRifts = {
       let a = 0;
       breakinfinityUGs.all.forEach(x => x.isBought ? a++ : false);
       return a
-    },,
+    },
     percentageToFill: 6,
     milestones: [
       {
