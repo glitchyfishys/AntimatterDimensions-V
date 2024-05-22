@@ -66,7 +66,7 @@ export default {
       };
     },
     handleMilestoneRequirementTooltipDisplay(event) {
-      const mouseX = event.clientX - this.$refs.pelleRiftBar.getBoundingClientRect().x;
+      const mouseX = event.clientX - this.$refs.GlitchRiftBar.getBoundingClientRect().x;
 
       const milestonesCloseTo = this.rift.milestones.filter(m => {
         // Gets distance from the milestone bar in terms of rem
