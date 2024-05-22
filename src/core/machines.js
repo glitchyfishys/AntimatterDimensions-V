@@ -19,8 +19,8 @@ export const MachineHandler = {
   get uncappedRM() {
     let log10FinalEP = player.records.thisReality.maxEP.plus(gainedEternityPoints()).log10();
     if (!PlayerProgress.realityUnlocked()) {
-      if (log10FinalEP > 10000) log10FinalEP = 10000;
       if (log10FinalEP > 8000) log10FinalEP -= (log10FinalEP - 8000) * 0.5;
+      if (log10FinalEP > 10000) log10FinalEP = 10000;
     }
     let rmGain = DC.E3.pow(log10FinalEP / 4000 - 1);
     // Increase base RM gain if <10 RM
