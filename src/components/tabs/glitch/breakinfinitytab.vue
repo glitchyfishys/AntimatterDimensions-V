@@ -20,7 +20,7 @@ export default {
 
 <template>
   <div class="l-reality-upgrade-grid">
-    <div class="c-preinfinity-infotext">
+    <div class="c-breakinfinity-infotext">
       progressing fast
       <br>
       these should slow you down
@@ -41,7 +41,7 @@ export default {
 </template>
 
 <style scoped>
-.c-preinfinity-infotext {
+.c-breakinfinity-infotext {
   color: var(--color-text);
   margin: 1.5rem 0 1.5rem;
 }
