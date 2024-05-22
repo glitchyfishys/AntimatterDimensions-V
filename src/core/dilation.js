@@ -222,7 +222,7 @@ export function dilatedValueOf(value) {
   const log10 = value.log10();
   const dilationPenalty = (0.75 + ex) * Effects.product(DilationUpgrade.dilationPenalty);
   let effect = Decimal.pow10(Math.sign(log10) * Math.pow(Math.abs(log10), dilationPenalty));
-  if ( value.gte("1e1E308") || value.eq(0)) effect = new Decimal("1e1E308");
+  if ( value.gte("1e1E308")) effect = new Decimal("1e1E308");
   return effect
 }
 
