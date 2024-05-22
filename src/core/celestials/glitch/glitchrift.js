@@ -44,12 +44,8 @@ class GRift extends GameMechanicState {
     this._milestones = this.config.milestones.map(x => new RiftMilestoneState(x));
   }
 
-  get fillCurrency() {
-    return this.config.currency();
-  }
-
   get canBeApplied() {
-    return this.strike.hasStrike;
+    return true;
   }
 
   get name() {
@@ -69,7 +65,7 @@ class GRift extends GameMechanicState {
   }
 
   get totalFill() {
-    return this.rift.fill;
+    return this.config.percentage();
   }
 
   set totalFill(value) {
@@ -107,7 +103,7 @@ class GRift extends GameMechanicState {
   get isCustomEffect() { return true; }
 
   get maxValue() {
-    return this.config.percentageToFill(2);
+    return this.config.percentageToFill;
   }
 
   get isMaxed() {
