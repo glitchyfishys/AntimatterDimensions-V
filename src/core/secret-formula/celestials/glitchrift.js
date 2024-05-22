@@ -68,7 +68,7 @@ export const GlitchRifts = {
       realityUGs.all.forEach(x => x.isBought ? a++ : false);
       return a
     },
-    percentageToFill: 15,
+    percentageToFill: 14,
     milestones: [
       {
         resource: "gamma",
