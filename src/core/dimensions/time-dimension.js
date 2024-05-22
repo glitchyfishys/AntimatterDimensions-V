@@ -154,7 +154,7 @@ class TimeDimensionState extends DimensionState {
     this._costIncreaseThresholds = COST_THRESHOLDS;
   }
 
-  const E6000_SCALING_AMOUNTS = player.realities == 0 ? [null, 8859, 5599, 4092, 3222, 1006, 833, 678, 552] : [null, 7322, 4627, 3382, 2665, 833, 689, 562, 456];
+  E6000_SCALING_AMOUNTS = player.realities == 0 ? [null, 8859, 5599, 4092, 3222, 1006, 833, 678, 552] : [null, 7322, 4627, 3382, 2665, 833, 689, 562, 456];
   
   /** @returns {Decimal} */
   get cost() {
