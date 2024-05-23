@@ -49,13 +49,13 @@ export class DarkMatterDimensionState extends DimensionState {
   get rawInterval() {
     const perUpgrade = INTERVAL_PER_UPGRADE;
     const tierFactor = Math.pow(4, this.tier - 1);
-    return new Decimal("1000").times(tierFactor).times(Math.pow(perUpgrade, this.data.intervalUpgrades)).times
+    return new Decimal("1000").times(tierFactor).times(Decimal.pow(perUpgrade, this.data.intervalUpgrades)).times
       (Math.pow(SingularityMilestone.ascensionIntervalScaling.effectOrDefault(1200), this.ascensions)).times
       (SingularityMilestone.darkDimensionIntervalReduction.effectOrDefault(1));
   }
 
   get interval() {
-    return Decimal.clampMin(this.intervalPurchaseCap, this.rawInterval);
+    return Math.clampMin(this.intervalPurchaseCap, this.rawInterval);
   }
 
   get commonDarkMult() {
