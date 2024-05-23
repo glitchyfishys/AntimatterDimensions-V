@@ -87,7 +87,7 @@ export const GlitchRifts = {
         resource: "delta",
         requirement: 0.66,
         description: " 25 free tick speed per time study brought",
-        effect: () => (25 * (player.timestudy.studies.length - 10))
+        effect: () => (25 * (player.timestudy.studies.length))
       },
       {
         resource: "delta",
