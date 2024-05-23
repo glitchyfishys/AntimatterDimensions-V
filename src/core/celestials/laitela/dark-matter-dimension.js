@@ -110,7 +110,7 @@ export class DarkMatterDimensionState extends DimensionState {
 
   get adjustedStartingCost() {
     const tiers = [null, 0, 2, 5, 13, 25];
-    return 10 * Decimal.pow(COST_MULT_PER_TIER, (tiers[this.tier]).times(
+    return 10 * Decimal.pow(COST_MULT_PER_TIER, tiers[this.tier]).times(
       SingularityMilestone.darkDimensionCostReduction.effectOrDefault(1));
   }
 
