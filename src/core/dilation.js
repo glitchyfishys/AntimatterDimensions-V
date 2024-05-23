@@ -220,7 +220,7 @@ export function getDilationTimeEstimate(goal) {
 export function dilatedValueOf(value) {
   let ex = Math.max(Math.log10(Math.log10(player.celestials.pelle.galaxyGenerator.generatedGalaxies + 1))/4, 0);
   const log10 = value.log10();
-  const dilationPenalty = (0.75 + ex) * Effects.product(DilationUpgrade.dilationPenalty);
+  const dilationPenalty = (0.75 + ex + GlitchRifts.delta.milestones[2].effectOrDefault(0)) * Effects.product(DilationUpgrade.dilationPenalty);
   let effect = Decimal.pow10(Math.sign(log10) * Math.pow(Math.abs(log10), dilationPenalty));
   if ( value.gte("1e1E308")) effect = new Decimal("1e1E308");
   return effect
