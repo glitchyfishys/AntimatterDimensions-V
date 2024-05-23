@@ -121,11 +121,13 @@ function applyNDMultipliers(mult, tier) {
         Achievement(31),
         Achievement(68),
         Achievement(71),
-        TimeStudy(234)
+        TimeStudy(234),
+        GlitchRifts.alpha.milestones[0]
       );
   }
   if (tier === 8) {
     multiplier = multiplier.times(Sacrifice.totalBoost);
+    multiplier = multiplier.times(GlitchRifts.alpha.milestones[1].effectOrDefault(1));
   }
 
   multiplier = multiplier.timesEffectsOf(
