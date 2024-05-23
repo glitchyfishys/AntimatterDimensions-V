@@ -213,6 +213,7 @@ export const FreeTickspeed = {
     x += preinfinityUGs.all[4].effectOrDefault(0);
     x += preinfinityUGs.all[5].effectOrDefault(0);
     x += eternityUGs.all[3].effectOrDefault(0);
+    x += GlitchRifts.delta.milestones[1].effectOrDefault(0);
     if (!Pelle.isDoomed) x += eternityUGs.all[5].effectOrDefault(0);
     
     return player.totalTickGained + x;
