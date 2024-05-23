@@ -61,7 +61,7 @@ class SingularityMilestoneState extends GameMechanicState {
   get rawCompletions() {
     if (this.isUnique) return this.isUnlocked ? 1 : 0;
     if (!this.isUnlocked) return 0;
-    return 1 + (Math.log(Currency.singularities.value) - Math.log(this.start)) / Math.log(this.repeat);
+    return 1 + (Decimal.log(Currency.singularities.value, Math.E) - Math.log(this.start)) / Math.log(this.repeat);
   }
 
   get completions() {
