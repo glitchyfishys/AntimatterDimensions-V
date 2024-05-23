@@ -81,7 +81,7 @@ export const GlitchRifts = {
         resource: "delta",
         requirement: 0.33,
         description: "replicanti is 1% faster per antimatter galaxy past 125 up to 5x",
-        effect: () => Math.min(1.01 ** player.galaxies - 125, 5)
+        effect: () => Math.min(1.01 ** (player.galaxies - 125), 5)
       },
       {
         resource: "delta",
