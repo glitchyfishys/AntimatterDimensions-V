@@ -135,6 +135,7 @@ export function totalReplicantiSpeedMult(overCap) {
   totalMult = totalMult.times(Pelle.specialGlyphEffect.replication);
   totalMult = totalMult.times(ShopPurchase.replicantiPurchases.currentMult);
   totalMult = totalMult.times(breakinfinityUGs.all[5].effectOrDefault(1));
+  totalMult = totalMult.times(GlitchRifts.delta.milestones[0].effectOrDefault(1));
   if (Pelle.isDisabled("replicantiIntervalMult")) return totalMult;
 
   const preCelestialEffects = Effects.product(
