@@ -1137,10 +1137,10 @@ export function init() {
   ElectronRuntime.initialize();
   SteamRuntime.initialize();
   Cloud.init();
+  Decimal.MAX_VALUE.e = 1e300;
   GameStorage.load();
   Tabs.all.find(t => t.config.id === player.options.lastOpenTab).show(true);
   Payments.init();
-  Decimal.MAX_VALUE.e = 1e300;
   ShopPurchaseData.totalSTD = player.IAP.STDcoins;
   player.IAP.STDcoins = ShopPurchaseData.totalSTD;
   ShopPurchaseData.allDimPurchases = player.IAP.allDimPurchases;
