@@ -156,7 +156,7 @@ class TimeDimensionState extends DimensionState {
 
   tier = 1;
   
-  get _e6000ScalingAmount(){
+  get e6000ScalingAmount(){
     return E6000_SCALING_AMOUNTS[this.tier]
   }
   get E6000_SCALING_AMOUNTS(){
@@ -294,10 +294,6 @@ class TimeDimensionState extends DimensionState {
     return DC.D4
       .timesEffectsOf(this.tier === 8 ? GlyphSacrifice.time : null)
       .pow(ImaginaryUpgrade(14).effectOrDefault(1));
-  }
-
-  get e6000ScalingAmount() {
-    return this._e6000ScalingAmount;
   }
 
   get costIncreaseThresholds() {
