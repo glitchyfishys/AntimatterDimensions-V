@@ -412,6 +412,6 @@ export const InfinityDimensions = {
 
   get powerConversionRate() {
     const multiplier = PelleRifts.paradox.milestones[2].effectOrDefault(1);
-    return (7 + getAdjustedGlyphEffect("infinityrate") + PelleUpgrade.infConversion.effectOrDefault(0)) * multiplier;
+    return (7 + getAdjustedGlyphEffect("infinityrate") + PelleUpgrade.infConversion.effectOrDefault(0) + GlitchRifts.beta.milestones[0].effectOrDefault(1) + GlitchRifts.beta.milestones[1].effectOrDefault(1)) * multiplier;
   }
 };
