@@ -35,13 +35,11 @@ export default {
   },
   methods: {
     update() {
-      const rift = this.rift.rift;
+      const rift = this.rift;
       this.effects = rift.effects;
       this.isMaxed = rift.isMaxed;
       this.percentage = rift.percentage;
       this.reducedTo = rift.reducedTo;
-      
-      console.log(rift, rift.percentage, rift.reducedTo)
 
       this.selectedMilestoneResourceText = this.milestoneResourceText(this.selectedHoverMilestone);
       this.selectedMilestoneDescriptionText = this.milestoneDescriptionText(this.selectedHoverMilestone);
