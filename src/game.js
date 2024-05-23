@@ -366,6 +366,8 @@ export function getGameSpeedupFactor(effectsToConsider, blackHolesActiveOverride
     factor = Math.pow(factor, getAdjustedGlyphEffect("effarigblackhole"));
   }
 
+  factor *= GlitchRifts.alpha.milestones[2].effectOrDefault(1)
+  
   if (Enslaved.isStoringGameTime && effects.includes(GAME_SPEED_EFFECT.TIME_STORAGE)) {
     const storedTimeWeight = Ra.unlocks.autoPulseTime.canBeApplied ? 0.99 : 1;
     factor = factor * (1 - storedTimeWeight) + storedTimeWeight;
