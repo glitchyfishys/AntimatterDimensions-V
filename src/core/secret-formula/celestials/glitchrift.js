@@ -14,6 +14,24 @@ export const GlitchRifts = {
         description: "first AD gains x3 multiplier",
         effect: () => 3
       },
+      {
+        resource: "alpha",
+        requirement: 0.5,
+        description: "eigth AD gains x10 multiplier",
+        effect: () => 10
+      },
+      {
+        resource: "alpha",
+        requirement: 0.75,
+        description: "small game speed multiplier",
+        effect: () => 1.5
+      },
+      {
+        resource: "alpha",
+        requirement: 1,
+        description: "very small dimension boost multiplier based on IP multiplier perchases (caped at 5)",
+        effect: () => Math.min(player.IPMultPurchases ** 0.11,5)
+      },
     ],
   },
   beta: {
@@ -30,9 +48,21 @@ export const GlitchRifts = {
     milestones: [
       {
         resource: "beta",
-        requirement: 0.1,
-        description: "fish",
-        effect: 5
+        requirement: 0.33,
+        description: "+0.02 to infinity conversion rate",
+        effect: () => 0.02
+      },
+      {
+        resource: "beta",
+        requirement: 0.833,
+        description: "+0.03 to infinity conversion rate",
+        effect: () => 0.02
+      },
+      {
+        resource: "beta",
+        requirement: 0.33,
+        description: "-0.05 to free tick speed threshhold",
+        effect: () => 0.05
       },
     ],
   },
@@ -49,9 +79,21 @@ export const GlitchRifts = {
     milestones: [
       {
         resource: "delta",
-        requirement: 0.1,
-        description: "fish",
-        effect: 5
+        requirement: 0.33,
+        description: "replicanti is 1% faster per antimatter galaxy past 125 up to 5x",
+        effect: () => Math.min(1.01 ** player.galaxies - 125, 5)
+      },
+      {
+        resource: "delta",
+        requirement: 0.66,
+        description: " 25 free tick speed per time study brought",
+        effect: () => (25 * (player.timestudy.studies.length - 10))
+      },
+      {
+        resource: "delta",
+        requirement: 1,
+        description: "dilation is slightly weaker by 0.01",
+        effect: () => 0.01
       },
     ],
   },
