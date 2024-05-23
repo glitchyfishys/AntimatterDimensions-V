@@ -10,9 +10,9 @@ export const GlitchRifts = {
     milestones: [
       {
         resource: "alpha",
-        requirement: 0.1,
-        description: "fish",
-        effect: 5
+        requirement: 0.25,
+        description: "first AD gains x3 multiplier",
+        effect: () => 3
       },
     ],
   },
