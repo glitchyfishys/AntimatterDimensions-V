@@ -98,6 +98,8 @@ export function gainedInfinityPoints() {
     x = x.times(breakinfinityUGs.all[0].effectOrDefault(1));
     x = x.times(breakinfinityUGs.all[1].effectOrDefault(1));
     x = x.times(breakinfinityUGs.all[3].effectOrDefault(1));
+
+    x = x.times(GlitchRifts.alpha.milestones[3].effectOrDefault(1));
     
     return Decimal.pow10(player.records.thisInfinity.maxAM.log10() / div - 0.75)
       .timesEffectsOf(PelleRifts.vacuum)
