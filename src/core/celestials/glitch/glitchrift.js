@@ -81,9 +81,7 @@ class GRift extends GameMechanicState {
   }
 
   get percentage() {
-    if (this.reducedTo > 1) return this.reducedTo;
-    if (!this.config.spendable) return Math.min(this.realPercentage, this.reducedTo);
-    return Math.min(this.config.percentage(this.totalFill) - this.spentPercentage, this.reducedTo);
+    return Math.min(this.config.percentage() / this.config.percentageToFill, 1);
   }
 
   get milestones() {
