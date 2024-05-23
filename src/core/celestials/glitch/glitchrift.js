@@ -77,7 +77,7 @@ class GRift extends GameMechanicState {
   }
 
   get realPercentage() {
-    return this.config.percentage(this.totalFill);
+    return this.config.percentage() / this.config.percentageToFill;
   }
 
   get percentage() {
