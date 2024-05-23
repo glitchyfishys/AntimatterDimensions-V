@@ -60,7 +60,7 @@ export const GlitchRifts = {
       },
       {
         resource: "beta",
-        requirement: 0.33,
+        requirement: 1,
         description: "-0.05 to free tick speed threshhold",
         effect: () => 0.05
       },
