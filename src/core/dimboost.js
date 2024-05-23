@@ -18,14 +18,13 @@ export class DimBoost {
       return DC.D1;
     }
 
-    let boost = Effects.max(
+    let boost = (Effects.max(
       2,
       InfinityUpgrade.dimboostMult,
       InfinityChallenge(7).reward,
       InfinityChallenge(7),
-      TimeStudy(81)
-    )
-      .toDecimal()
+      TimeStudy(81),
+    ) * GlitchRifts.alpha.milestones[3].effectOrDefault(1)).toDecimal()
       .timesEffectsOf(
         TimeStudy(83),
         TimeStudy(231),
