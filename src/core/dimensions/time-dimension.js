@@ -149,24 +149,13 @@ class TimeDimensionState extends DimensionState {
     this._baseCost = BASE_COSTS[tier];
     const COST_MULTS = [null, 3, 9, 27, 81, 24300, 72900, 218700, 656100];
     this._costMultiplier = COST_MULTS[tier];
+    const E6000_SCALING_AMOUNTS = player.realities == 0 ? [null, 8859, 5599, 4092, 3222, 1006, 833, 678, 552] : [null, 7322, 4627, 3382, 2665, 833, 689, 562, 456];
+    this.e6000ScalingAmount = E6000_SCALING_AMOUNTS[tier]
     const COST_THRESHOLDS = [Decimal.NUMBER_MAX_VALUE, DC.E1300, DC.E6000];
     this._costIncreaseThresholds = COST_THRESHOLDS;
     this.tier = tier;
   }
-
-  tier = 1;
   
-  get e6000ScalingAmount(){
-    return E6000_SCALING_AMOUNTS[this.tier]
-  }
-
-  get _e6000ScalingAmount(){
-    return E6000_SCALING_AMOUNTS[this.tier]
-  }
-  
-  get E6000_SCALING_AMOUNTS(){
-    return player.realities == 0 ? [null, 8859, 5599, 4092, 3222, 1006, 833, 678, 552] : [null, 7322, 4627, 3382, 2665, 833, 689, 562, 456];
-  }
   /** @returns {Decimal} */
   get cost() {
     return this.data.cost;
@@ -202,7 +191,7 @@ class TimeDimensionState extends DimensionState {
   }
 
   get isUnlocked() {
-    return this.tier < 5 || TimeStudy.timeDimension(this.tier).isBought;
+    return this._tier < 5 || TimeStudy.timeDimension(this._tier).isBought;
   }
 
   get isAvailableForPurchase() {
@@ -214,7 +203,7 @@ class TimeDimensionState extends DimensionState {
   }
 
   get multiplier() {
-    const tier = this.tier;
+    const tier = this._tier;
 
     if (EternityChallenge(11).isRunning) return DC.D1;
     let mult = GameCache.timeDimensionCommonMultiplier.value
@@ -251,7 +240,7 @@ class TimeDimensionState extends DimensionState {
 
   get productionPerSecond() {
     if (EternityChallenge(1).isRunning || EternityChallenge(10).isRunning ||
-    (Laitela.isRunning && this.tier > Laitela.maxAllowedDimension)) {
+    (Laitela.isRunning && this._tier > Laitela.maxAllowedDimension)) {
       return DC.D0;
     }
     if (EternityChallenge(11).isRunning) {
@@ -261,14 +250,14 @@ class TimeDimensionState extends DimensionState {
     if (EternityChallenge(7).isRunning) {
       production = production.times(Tickspeed.perSecond);
     }
-    if (this.tier === 1 && !EternityChallenge(7).isRunning) {
+    if (this._tier === 1 && !EternityChallenge(7).isRunning) {
       production = production.pow(getAdjustedGlyphEffect("timeshardpow"));
     }
     return production;
   }
 
   get rateOfChange() {
-    const tier = this.tier;
+    const tier = this._tier;
     if (tier === 8) {
       return DC.D0;
     }
@@ -297,7 +286,7 @@ class TimeDimensionState extends DimensionState {
 
   get powerMultiplier() {
     return DC.D4
-      .timesEffectsOf(this.tier === 8 ? GlyphSacrifice.time : null)
+      .timesEffectsOf(this._tier === 8 ? GlyphSacrifice.time : null)
       .pow(ImaginaryUpgrade(14).effectOrDefault(1));
   }
 
@@ -306,13 +295,13 @@ class TimeDimensionState extends DimensionState {
   }
 
   get requirementReached() {
-    return this.tier < 5 ||
-      (TimeStudy.timeDimension(this.tier).isAffordable && TimeStudy.timeDimension(this.tier - 1).isBought);
+    return this._tier < 5 ||
+      (TimeStudy.timeDimension(this._tier).isAffordable && TimeStudy.timeDimension(this._tier - 1).isBought);
   }
 
   tryUnlock() {
     if (this.isUnlocked) return;
-    TimeStudy.timeDimension(this.tier).purchase();
+    TimeStudy.timeDimension(this._tier).purchase();
   }
 }
 
