@@ -442,8 +442,9 @@ Currency.darkEnergy = new class extends DecimalCurrency {
 
   get productionPerSecond() {
     let sum = DC.D0;
-    return DarkMatterDimensions.all
+    DarkMatterDimensions.all
       .map(d => sum = sum.add(d.productionPerSecond));
+    return sum;
   }
 }();
 
