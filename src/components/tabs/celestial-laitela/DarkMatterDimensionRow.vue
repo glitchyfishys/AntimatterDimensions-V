@@ -78,7 +78,7 @@ export default {
       const str = `DM ${formatX(dm, 2, 2)}`;
       const line1 = this.hoverOverAscension ? `<b>${str}</b>` : str;
 
-      const ascMult = this.powerDMPerAscension * this.interval / this.intervalAfterAscension;
+      const ascMult = this.powerDMPerAscension.times(this.interval).div(this.intervalAfterAscension);
       const line2 = this.hoverOverAscension
         ? `${formatX(ascMult, 2, 2)} / sec`
         : `Cost: ${this.formatDMCost(this.powerDMCost)} DM`;
