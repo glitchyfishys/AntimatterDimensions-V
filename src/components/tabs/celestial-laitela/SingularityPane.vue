@@ -90,8 +90,8 @@ export default {
       this.perStepFactor = Singularity.gainPerCapIncrease;
       this.isAutoEnabled = player.auto.singularity.isActive && SingularityMilestone.autoCondense.canBeApplied;
       this.hasAutoSingularity = Number.isFinite(this.autoSingularityFactor);
-      this.nextLowerStep = (this.singularityCap).mult(this.autoSingularityFactor).div(10);
-      this.willCondenseOnDecrease = this.isAutoEnabled && this.darkEnergy.gt(this.nextLowerStep);
+      this.nextLowerStep = Singularity.cap.mult(this.autoSingularityFactor).div(10);
+      this.willCondenseOnDecrease = this.isAutoEnabled && Singularity.cap.mult(this.autoSingularityFactor).div(10).gt(this.nextLowerStep);
     },
     doSingularity() {
       Singularity.perform();
