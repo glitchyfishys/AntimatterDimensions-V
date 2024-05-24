@@ -51,7 +51,7 @@ export default {
       return {
         "c-laitela-milestone": true,
         "o-laitela-milestone--glow": !this.suppressGlow &&
-          this.milestone.previousGoal > this.lastCheckedMilestones
+          this.milestone.previousGoal.lt(this.lastCheckedMilestones)
       };
     },
     upgradeDirectionIcon() {
@@ -70,7 +70,7 @@ export default {
       return `${formatInt(this.completions)}/${maxStr} ${pluralize("completion", this.completions)}`;
     },
     progressDisplay() {
-      const condenseCount = this.remainingSingularities / this.singularitiesPerCondense;
+      const condenseCount = this.remainingSingularities.div(this.singularitiesPerCondense).toNumber();
       let thisSingularityTime, extraTime, timeText;
       switch (this.milestoneMode) {
         case SINGULARITY_MILESTONE_RESOURCE.SINGULARITIES:
