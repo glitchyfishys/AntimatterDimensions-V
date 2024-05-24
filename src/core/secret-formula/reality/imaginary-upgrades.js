@@ -193,7 +193,7 @@ export const imaginaryUpgrades = [
     requirement: () => `Automatically condense at least ${formatInt(20)} Singularities at once`,
     hasFailed: () => false,
     checkRequirement: () => Singularity.singularitiesGained.gte(20) &&
-      Currency.darkEnergy.gte(Singularity.cap * SingularityMilestone.autoCondense.effectOrDefault(Infinity)),
+      Currency.darkEnergy.gte(Singularity.cap.times(SingularityMilestone.autoCondense.effectOrDefault(Infinity))),
     checkEvent: GAME_EVENT.SINGULARITY_RESET_BEFORE,
     description: "Unlock the 3rd Dark Matter Dimension",
   },
