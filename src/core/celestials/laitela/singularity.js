@@ -50,12 +50,12 @@ class SingularityMilestoneState extends GameMechanicState {
   get previousGoal() {
     if (this.isUnique) return 1;
     if (!this.isUnlocked) return 0;
-    return this.start * Math.pow(this.repeat, this.unnerfCompletions(this.completions) - 1);
+    return Decimal.pow(this.repeat, this.unnerfCompletions(this.completions) - 1).times(this.start);
   }
 
   get nextGoal() {
     if (this.isUnique) return this.start;
-    return this.start * Math.pow(this.repeat, this.unnerfCompletions(this.completions + 1) - 1);
+    return Decimal.pow(this.repeat, this.unnerfCompletions(this.completions + 1) - 1).times(this.start);
   }
 
   get rawCompletions() {
@@ -82,7 +82,7 @@ class SingularityMilestoneState extends GameMechanicState {
   }
 
   get effectDisplay() {
-    if (Number.isFinite(this.effectValue)) return this.config.effectFormat(this.effectValue);
+    if (Decimal.lt(this.effectValue, Decimal.NUMBER_MAX_VALUE)) return this.config.effectFormat(this.effectValue);
     return "N/A";
   }
 
@@ -109,7 +109,7 @@ export const SingularityMilestones = {
   lastNotified: player.celestials.laitela.lastCheckedMilestones,
 
   get sorted() {
-    return this.all.sort((a, b) => a.remainingSingularities - b.remainingSingularities);
+    return this.all.sort((a, b) => a.remainingSingularities.sub(b.remainingSingularities));
   },
 
   sortedForCompletions(moveNewToTop) {
@@ -122,16 +122,16 @@ export const SingularityMilestones = {
       case SINGULARITY_MILESTONE_SORT.SINGULARITIES_TO_NEXT:
         sortFn = m => {
           // If it's maxed, we order based on the final goal value - higher goals are sorted later
-          if (m.isMaxed) return 1 + Math.log10(m.isUnique ? m.nextGoal : m.previousGoal) / 1000;
-          return Math.log10(m.remainingSingularities) / 100;
+          if (m.isMaxed) return 1 + Decimal.log10(m.isUnique ? m.nextGoal : m.previousGoal) / 1000;
+          return Decimal.log10(m.remainingSingularities) / 100;
         };
         break;
       case SINGULARITY_MILESTONE_SORT.CURRENT_COMPLETIONS:
         // Also counts partial completion on the current step
         sortFn = m => {
           // For never-completed repeatable milestones, this is zero and will cause NaN bugs if we don't set it to 1
-          const prev = Math.clampMin(m.previousGoal, 1);
-          const part = Math.clamp(Math.log(Currency.singularities.value / prev) / Math.log(m.nextGoal / prev), 0, 1);
+          const prev = Decimal.clampMin(m.previousGoal, 1);
+          const part = Decimal.clamp(Decimal.log(Currency.singularities.value / prev) / Decimal.log(m.nextGoal / prev), 0, 1).toNumber();
           return (m.completions + part) / 20;
         };
         break;
@@ -139,25 +139,25 @@ export const SingularityMilestones = {
         // Orders infinite milestones based on completion count, putting them after all limited ones even if
         // they're completed
         sortFn = m => {
-          const limit = Number.isFinite(m.limit) ? m.limit : 100;
-          const currComp = Math.log(Currency.singularities.value / m.previousGoal) /
-            Math.log(m.nextGoal / m.previousGoal);
-          return Math.clampMax((m.completions + currComp) / limit, 1) + (Number.isFinite(m.limit) ? 0 : 1);
+          const limit = Decimal.lte(m.limit, Decimal.NUMBER_MAX_VALUE) ? m.limit : 100;
+          const currComp = Decimal.log(Currency.singularities.value.div(m.previousGoal)) /
+            Decimal.log(m.nextGoal / m.previousGoal);
+          return Decimal.clampMax((m.completions + currComp) / limit, 1).toNumber() + (Decimal.lte(m.limit, Decimal.NUMBER_MAX_VALUE) ? 0 : 1).toNumber();
         };
         break;
       case SINGULARITY_MILESTONE_SORT.FINAL_COMPLETION:
         // Sorts infinite milestones as if they end at 50 steps; for any given number of completions, this
         // treats infinite milestones with larger steps as if they complete at a higher value
         sortFn = m => {
-          const limit = Number.isFinite(m.limit) ? m.limit : 50;
-          return Math.log10(m.config.start * Math.pow(m.config.repeat, limit - 1)) / 100;
+          const limit = Decinal.lte(m.limit, Decimal.NUMBER_MAX_VALUE) ? m.limit : 50;
+          return Decimal.log10(Decimal.pow(m.config.repeat, limit - 1).times(m.config.start)) / 100;
         };
         break;
       case SINGULARITY_MILESTONE_SORT.MOST_RECENT:
         sortFn = m => {
-          if (!m.isUnlocked) return 1 + Math.log10(m.start) / 1000;
+          if (!m.isUnlocked) return 1 + Decimal.log10(m.start) / 1000;
           // For unique milestones, previousGoal is actually 1 and nextGoal contains the completion amount
-          return Math.log10(m.isUnique ? m.nextGoal : m.previousGoal) / 100;
+          return Decimal.log10(m.isUnique ? m.nextGoal : m.previousGoal) / 100;
         };
         break;
       default:
