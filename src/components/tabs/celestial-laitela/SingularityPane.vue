@@ -103,8 +103,8 @@ export default {
       Singularity.decreaseCap();
     },
     formatRate(rate) {
-      if (rate < 1 / 60) return `${format(Decimal.times(3600 * rate), 2, 3)} per hour`;
-      if (rate < 1) return `${format(Decimal.times(60 * rate), 2, 3)} per minute`;
+      if (rate.lt(1 / 60)) return `${format(Decimal.times(3600, rate), 2, 3)} per hour`;
+      if (rate.lt(1)) return `${format(Decimal.times(60, rate), 2, 3)} per minute`;
       return `${format(rate, 2, 3)} per second`;
     },
     condenseClassObject() {
