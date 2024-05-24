@@ -267,7 +267,7 @@ export const DarkMatterDimensions = {
     }
     if (SingularityMilestone.dim4Generation.canBeApplied && Laitela.annihilationUnlocked) {
       DarkMatterDimension(4).amount = DarkMatterDimension(4).amount
-        .plus(SingularityMilestone.dim4Generation.effectValue * realDiff / 1000);
+        .plus(SingularityMilestone.dim4Generation.effectValue.times(realDiff / 1000));
     }
   },
 
