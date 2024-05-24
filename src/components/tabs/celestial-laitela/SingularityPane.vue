@@ -51,23 +51,23 @@ export default {
     },
     manualSingularityRate() {
       const totalTime = this.baseTimeToSingularity;
-      return this.formatRate(this.singularitiesGained / totalTime);
+      return this.formatRate(this.singularitiesGained.div(totalTime));
     },
     autoSingularityRate() {
       if (this.hasAutoSingularity && !this.isAutoEnabled) return "Auto-Singularity is OFF";
       const totalTime = this.baseTimeToSingularity + this.extraTimeAfterSingularity;
-      return this.formatRate(this.singularitiesGained / totalTime);
+      return this.formatRate(this.singularitiesGained.div(totalTime));
     },
     decreaseTooltip() {
       if (this.singularityCapIncreases === 0) return "You cannot decrease the cap any further!";
-      const singularities = this.singularitiesGained / this.perStepFactor;
+      const singularities = this.singularitiesGained.div(this.perStepFactor);
       return this.willCondenseOnDecrease
         ? `Decreasing the cap will immediately auto-condense for
           ${quantify("Singularity", singularities, 2)}!`
         : null;
     },
     increaseTooltip() {
-      return this.singularityCapIncreases >= 50
+      return this.singularityCapIncreases >= 80
         ? "You cannot increase the cap any further!"
         : null;
     }
@@ -103,8 +103,8 @@ export default {
       Singularity.decreaseCap();
     },
     formatRate(rate) {
-      if (rate < 1 / 60) return `${format(3600 * rate, 2, 3)} per hour`;
-      if (rate < 1) return `${format(60 * rate, 2, 3)} per minute`;
+      if (rate < 1 / 60) return `${format(Decimal.times(3600 * rate), 2, 3)} per hour`;
+      if (rate < 1) return `${format(Decimal.times(60 * rate), 2, 3)} per minute`;
       return `${format(rate, 2, 3)} per second`;
     },
     condenseClassObject() {
