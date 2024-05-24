@@ -28,7 +28,7 @@ class SingularityMilestoneState extends GameMechanicState {
   }
 
   get isUnlocked() {
-    return Currency.singularities.gte(this.start);
+    return Currency.singularities.value.gte(this.start);
   }
 
   get increaseThreshold() {
