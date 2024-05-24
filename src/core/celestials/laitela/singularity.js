@@ -48,8 +48,8 @@ class SingularityMilestoneState extends GameMechanicState {
   }
 
   get previousGoal() {
-    if (this.isUnique) return 1;
-    if (!this.isUnlocked) return 0;
+    if (this.isUnique) return new Decimal(1);
+    if (!this.isUnlocked) return new Decimal(0);
     return Decimal.pow(this.repeat, this.unnerfCompletions(this.completions) - 1).times(this.start);
   }
 
@@ -131,7 +131,7 @@ export const SingularityMilestones = {
         sortFn = m => {
           // For never-completed repeatable milestones, this is zero and will cause NaN bugs if we don't set it to 1
           const prev = Decimal.clampMin(m.previousGoal, 1);
-          const part = Decimal.clamp(Decimal.log(Currency.singularities.value / prev) / Decimal.log(m.nextGoal / prev), 0, 1).toNumber();
+          const part = Decimal.clamp(Decimal.log(Currency.singularities.value.div(prev), Math.E) / Decimal.log(m.nextGoal.div(prev)), 0, 1).toNumber();
           return (m.completions + part) / 20;
         };
         break;
@@ -141,8 +141,8 @@ export const SingularityMilestones = {
         sortFn = m => {
           const limit = Decimal.lte(m.limit, Decimal.NUMBER_MAX_VALUE) ? m.limit : 100;
           const currComp = Decimal.log(Currency.singularities.value.div(m.previousGoal)) /
-            Decimal.log(m.nextGoal / m.previousGoal);
-          return Decimal.clampMax((m.completions + currComp) / limit, 1).toNumber() + (Decimal.lte(m.limit, Decimal.NUMBER_MAX_VALUE) ? 0 : 1).toNumber();
+            Decimal.log(m.nextGoal.div(m.previousGoal));
+          return Math.clampMax((m.completions + currComp) / limit, 1) + (Decimal.lte(m.limit, Decimal.NUMBER_MAX_VALUE) ? 0 : 1);
         };
         break;
       case SINGULARITY_MILESTONE_SORT.FINAL_COMPLETION:
@@ -183,7 +183,7 @@ export const SingularityMilestones = {
 
     // Compose the functions together; possibly reverse the final order and bring new milestones to the top
     const isNew = m => ((m.previousGoal.lt(player.celestials.laitela.lastCheckedMilestones) && moveNewToTop) ? 20 : 0);
-    const compFn = m => (m.isMaxed ? completedVal : 0) + (options.sortOrder ? sortFn(m) : -Decimal.sub(sortFn(m),isNew(m)).toNumber());
+    const compFn = m => (m.isMaxed ? completedVal : 0) + (options.sortOrder ? sortFn(m) : -(sortFn(m)- isNew(m)));
     return this.sorted.sort((a, b) => compFn(b) - compFn(a));
   },
 
