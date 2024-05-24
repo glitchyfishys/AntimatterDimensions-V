@@ -86,7 +86,7 @@ export default {
       this.currentTimeToSingularity = Singularity.timeUntilCap;
       this.extraTimeAfterSingularity = Singularity.timeDelayFromAuto;
       this.singularitiesGained = Singularity.singularitiesGained;
-      this.autoSingularityFactor = SingularityMilestone.autoCondense.effectOrDefault(Infinity);
+      this.autoSingularityFactor = SingularityMilestone.autoCondense.effectOrDefault("1e1000000000");
       this.perStepFactor = Singularity.gainPerCapIncrease;
       this.isAutoEnabled = player.auto.singularity.isActive && SingularityMilestone.autoCondense.canBeApplied;
       this.hasAutoSingularity = Number.isFinite(this.autoSingularityFactor);
