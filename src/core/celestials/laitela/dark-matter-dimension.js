@@ -261,7 +261,7 @@ export const DarkMatterDimensions = {
         } else {
           DarkMatterDimension(tier - 1).amount = DarkMatterDimension(tier - 1).amount.plus(productionDM);
         }
-        Currency.darkEnergy.add(Decimal.times(ticks).times(dim.powerDE));
+        Currency.darkEnergy.add(Decimal.times(ticks, dim.powerDE));
         dim.timeSinceLastUpdate -= dim.interval * ticks;
       }
     }
