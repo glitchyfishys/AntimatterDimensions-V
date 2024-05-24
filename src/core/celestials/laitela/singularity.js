@@ -198,7 +198,7 @@ export const SingularityMilestones = {
   },
 
   get unnotifiedMilestones() {
-    return SingularityMilestoneThresholds.filter(s => s > this.lastNotified && Currency.singularities.gte(s));
+    return SingularityMilestoneThresholds.filter(s => s.gt(this.lastNotified) && Currency.singularities.gte(s));
   }
 };
 
