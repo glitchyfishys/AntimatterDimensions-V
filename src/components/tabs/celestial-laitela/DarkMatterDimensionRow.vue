@@ -85,7 +85,7 @@ export default {
       return `${line1}<br>${line2}`;
     },
     darkEnergyText() {
-      const de = this.powerDE * (this.hoverOverAscension ? POWER_DE_PER_ASCENSION : 1);
+      const de = this.powerDE.times(this.hoverOverAscension ? POWER_DE_PER_ASCENSION : 1);
       const str = `DE +${format(de, 2, 4)}`;
       const line1 = this.hoverOverAscension ? `<b>${str}</b>` : str;
       const ascMult = POWER_DE_PER_ASCENSION * this.interval / this.intervalAfterAscension;
