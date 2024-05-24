@@ -125,12 +125,12 @@ export const realityUG = [
   {
     name: "galatic overload",
     id: 11,
-    requirement: "have 10000 singularities",
-    hasFailed: () => false,
-    checkRequirement: () =>  player.celestials.laitela.singularities >= 10000,
+    requirement: "have 10000 singularities without desablizing once",
+    hasFailed: () => Laitela.difficultyTier == 0,
+    checkRequirement: () =>  player.celestials.laitela.singularities.gte(10000) && Laitela.difficultyTier == 0,
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
     description: "singularities gain is boosted by their amount",
-    effect: () => Math.log(player.celestials.laitela.singularities + 10),
+    effect: () => Decimal.log10(player.celestials.laitela.singularities).add(1),
     formatEffect: value => format(value, 2, 2)
   },
   {
