@@ -27,7 +27,7 @@ export class DarkMatterDimensionState extends DimensionState {
   }
 
   // Does not include DM, only DE per second
-  get productionPerSecond() { return this.powerDE * 1000 / this.interval; }
+  get productionPerSecond() { return Decimal.times(this.powerDE, 1000).div(this.interval); }
 
   get unlockUpgrade() {
     // The 15th Imaginary Upgrade unlocked Laitela and the 1st DMD
