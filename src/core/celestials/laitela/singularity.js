@@ -208,9 +208,8 @@ const SingularityMilestoneThresholds = (function() {
     .map(m => Array.range(0, Math.min(50, m.limit))
       .filter(r => !m.increaseThreshold || r <= m.increaseThreshold ||
         (r > m.increaseThreshold && ((r - m.increaseThreshold) % 3) === 2))
-      .map(r => m.start * Math.pow(m.repeat, r)))
+      .map(r => Decimal.pow(m.repeat, r).times(m.start)))
     .flat(Infinity)
-    .filter(n => n < 1e100)
     .sort((a, b) => a - b);
 }());
 
