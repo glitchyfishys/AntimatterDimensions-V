@@ -216,7 +216,7 @@ const SingularityMilestoneThresholds = (function() {
 
 export const Singularity = {
   get cap() {
-    return 200 * Math.pow(10, player.celestials.laitela.singularityCapIncreases);
+    return Decimal.pow(10, player.celestials.laitela.singularityCapIncreases).times(200);
   },
 
   get gainPerCapIncrease() {
@@ -224,19 +224,19 @@ export const Singularity = {
   },
 
   get singularitiesGained() {
-    return Math.floor(Math.pow(this.gainPerCapIncrease, player.celestials.laitela.singularityCapIncreases) *
-      SingularityMilestone.singularityMult.effectOrDefault(1) *
-      (1 + ImaginaryUpgrade(10).effectOrDefault(0)) * realityUGs.all[11].effectOrDefault(1));
+    return Decimal.pow(this.gainPerCapIncrease, player.celestials.laitela.singularityCapIncreases).times(
+      SingularityMilestone.singularityMult.effectOrDefault(1)).times(
+      (1 + ImaginaryUpgrade(10).effectOrDefault(0))).times(realityUGs.all[11].effectOrDefault(1)).floor();
   },
 
   // Time (in seconds) to go from 0 DE to the condensing requirement
   get timePerCondense() {
-    return this.cap / Currency.darkEnergy.productionPerSecond;
+    return this.cap.div(Currency.darkEnergy.productionPerSecond).toNumber();
   },
 
   // Time (in seconds) to reach the condensing requirement from *current* DE
   get timeUntilCap() {
-    return (this.cap - Currency.darkEnergy.value) / Currency.darkEnergy.productionPerSecond;
+    return this.cap.sub(Currency.darkEnergy.value).div(Currency.darkEnergy.productionPerSecond);
   },
 
   // Total additional time auto-condense will wait after reaching the condensing requirement
