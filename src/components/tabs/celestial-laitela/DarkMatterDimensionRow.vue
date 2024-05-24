@@ -123,7 +123,7 @@ export default {
       this.intervalAscensionBump = SingularityMilestone.ascensionIntervalScaling.effectOrDefault(1200);
       this.intervalAfterAscension = dim.intervalAfterAscension;
       this.darkEnergyPerSecond = dim.productionPerSecond;
-      this.portionDE = this.darkEnergyPerSecond.div(Currency.darkEnergy.productionPerSecond);
+      this.portionDE = this.darkEnergyPerSecond.div(Currency.darkEnergy.productionPerSecond).toNumber();
       this.productionPerSecond = this.dimensionProduction(this.tier);
       this.percentPerSecond = Decimal.divide(this.productionPerSecond, this.amount).toNumber();
       if (!this.isIntervalCapped) this.hoverOverAscension = false;
@@ -141,6 +141,7 @@ export default {
     // All the values are internally Decimals and technically allowed to go above Infinity. This is a special case
     // however; it looks better in-game if we just format it as Infinity instead, as the resource used for these costs
     // is itself hardcapped at e308 and we specifically want to format here (and nowhere else) as Infinity.
+    // not any more
     formatDMCost(cost) {
       return format(cost, 2);
     },
