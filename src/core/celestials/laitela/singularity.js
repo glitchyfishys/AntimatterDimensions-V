@@ -183,8 +183,8 @@ export const SingularityMilestones = {
 
     // Compose the functions together; possibly reverse the final order and bring new milestones to the top
     const isNew = m => ((m.previousGoal.lt(player.celestials.laitela.lastCheckedMilestones) && moveNewToTop) ? 20 : 0);
-    const compFn = m => (m.isMaxed ? completedVal : 0) + (options.sortOrder ? sortFn(m) : -sortFn(m)) + isNew(m);
-    return this.sorted.sort((a, b) => compFn(b).sub(compFn(a)).toNumber());
+    const compFn = m => (m.isMaxed ? completedVal : 0) + (options.sortOrder ? sortFn(m) : -Decimal.sub(sortFn(m),isNew(m)).toNumber());
+    return this.sorted.sort((a, b) => compFn(b) - compFn(a));
   },
 
   get nextMilestoneGroup() {
