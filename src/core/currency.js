@@ -427,7 +427,7 @@ Currency.imaginaryMachines = new class extends NumberCurrency {
 Currency.darkMatter = new class extends DecimalCurrency {
   get value() { return player.celestials.laitela.darkMatter; }
   set value(value) {
-    const capped = Decimal.min(value, "1e3080000");
+    const capped = Decimal.min(value, "1e1000000000");
     player.celestials.laitela.darkMatter = capped;
     player.celestials.laitela.maxDarkMatter = player.celestials.laitela.maxDarkMatter.max(capped);
   }
@@ -436,7 +436,7 @@ Currency.darkMatter = new class extends DecimalCurrency {
   set max(value) { player.celestials.laitela.maxDarkMatter = value; }
 }();
 
-Currency.darkEnergy = new class extends NumberCurrency {
+Currency.darkEnergy = new class extends DecimalCurrency {
   get value() { return player.celestials.laitela.darkEnergy; }
   set value(value) { player.celestials.laitela.darkEnergy = value; }
 
@@ -447,7 +447,7 @@ Currency.darkEnergy = new class extends NumberCurrency {
   }
 }();
 
-Currency.singularities = new class extends NumberCurrency {
+Currency.singularities = new class extends DecimalCurrency {
   get value() { return player.celestials.laitela.singularities; }
   set value(value) { player.celestials.laitela.singularities = value; }
 }();
