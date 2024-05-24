@@ -123,7 +123,7 @@ export default {
       this.intervalAscensionBump = SingularityMilestone.ascensionIntervalScaling.effectOrDefault(1200);
       this.intervalAfterAscension = dim.intervalAfterAscension;
       this.darkEnergyPerSecond = dim.productionPerSecond;
-      this.portionDE = this.darkEnergyPerSecond / Currency.darkEnergy.productionPerSecond;
+      this.portionDE = this.darkEnergyPerSecond.div(Currency.darkEnergy.productionPerSecond);
       this.productionPerSecond = this.dimensionProduction(this.tier);
       this.percentPerSecond = Decimal.divide(this.productionPerSecond, this.amount).toNumber();
       if (!this.isIntervalCapped) this.hoverOverAscension = false;
