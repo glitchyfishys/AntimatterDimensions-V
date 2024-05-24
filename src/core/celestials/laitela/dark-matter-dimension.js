@@ -96,7 +96,7 @@ export class DarkMatterDimensionState extends DimensionState {
         SingularityMilestone.darkEnergyMult,
         SingularityMilestone.realityDEMultiplier,
         SingularityMilestone.multFromInfinitied
-      ).times(realityUGs.all[10].effectOrDefault(1)).min(1e200).times(destabilizeBoost).times(AlchemyResource.alter.effectOrDefault(1));
+      ).times(realityUGs.all[10].effectOrDefault(1)).times(destabilizeBoost).times(AlchemyResource.alter.effectOrDefault(1));
     
     return DEmult;
   }
@@ -180,7 +180,7 @@ export class DarkMatterDimensionState extends DimensionState {
   buyManyInterval(x) {
     if (x > this.maxIntervalPurchases) return false;
     const cost = this.rawIntervalCost.times(
-      Decimal.pow(this.intervalCostIncrease, x).minus(1)).div(this.intervalCostIncrease - 1).floor();
+      Decimal.pow(this.intervalCostIncrease, x).minus(1)).div( this.intervalCostIncrease.sub(1)).floor();
     if (!Currency.darkMatter.purchase(cost)) return false;
     this.data.intervalUpgrades += x;
     return true;
@@ -188,7 +188,7 @@ export class DarkMatterDimensionState extends DimensionState {
 
   buyManyPowerDM(x) {
     const cost = this.rawPowerDMCost.times(
-      Decimal.pow(this.powerDMCostIncrease, x).minus(1)).div(this.powerDMCostIncrease - 1).floor();
+      Decimal.pow(this.powerDMCostIncrease, x).minus(1)).div(this.powerDMCostIncrease.sub(1)).floor();
     if (!Currency.darkMatter.purchase(cost)) return false;
     this.data.powerDMUpgrades += x;
     return true;
@@ -196,7 +196,7 @@ export class DarkMatterDimensionState extends DimensionState {
 
   buyManyPowerDE(x) {
     const cost = this.rawPowerDECost.times(
-      Decimal.pow(this.powerDECostIncrease, x).minus(1)).div(this.powerDECostIncrease - 1).floor();
+      Decimal.pow(this.powerDECostIncrease, x).minus(1)).div(this.powerDECostIncrease.sub(1)).floor();
     if (!Currency.darkMatter.purchase(cost)) return false;
     this.data.powerDEUpgrades += x;
     return true;
