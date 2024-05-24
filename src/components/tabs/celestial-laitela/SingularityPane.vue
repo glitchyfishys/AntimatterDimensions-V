@@ -83,7 +83,7 @@ export default {
       this.unlockedBulkSingularity = Currency.singularities.gte(10);
       this.singularityCap = Singularity.cap;
       this.baseTimeToSingularity = Singularity.timePerCondense;
-      this.currentTimeToSingularity = Singularity.timeUntilCap;
+      this.currentTimeToSingularity = Singularity.timeUntilCap.toNumber();
       this.extraTimeAfterSingularity = Singularity.timeDelayFromAuto;
       this.singularitiesGained = Singularity.singularitiesGained;
       this.autoSingularityFactor = SingularityMilestone.autoCondense.effectOrDefault("1e1000000000");
