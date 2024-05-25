@@ -6,7 +6,7 @@ export const glitch = {
   displayName: "Glitch",
   possessiveName: "Glitch's",
   get isUnlocked() {
-    return true;
+    return GlitchRifts.gamma.milestones[5].effectOrDefault(0) == 0 ? false : true;
   },
   initializeRun() {
     player.celestials.glitch.run = true;
