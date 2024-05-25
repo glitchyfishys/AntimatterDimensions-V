@@ -81,7 +81,7 @@ export class DarkMatterDimensionState extends DimensionState {
       .times(this.commonDarkMult)
       .times(Decimal.pow(this.powerDMPerAscension, this.ascensions))
       .timesEffectsOf(SingularityMilestone.darkMatterMult, SingularityMilestone.multFromInfinitied)
-      .dividedBy(Math.pow(1e4, Math.pow(this.tier - 1, 0.5))).min("1e1000000");
+      .dividedBy(Math.pow(1e4, Math.pow(this.tier - 1, 0.5))).pow(GlitchRifts.gamma.milestones[3].effectOrDefault(1));
   }
 
   get powerDE() {
@@ -96,7 +96,7 @@ export class DarkMatterDimensionState extends DimensionState {
         SingularityMilestone.darkEnergyMult,
         SingularityMilestone.realityDEMultiplier,
         SingularityMilestone.multFromInfinitied
-      ).times(realityUGs.all[10].effectOrDefault(1)).times(destabilizeBoost).times(AlchemyResource.alter.effectOrDefault(1));
+      ).times(realityUGs.all[10].effectOrDefault(1)).times(destabilizeBoost).times(AlchemyResource.alter.effectOrDefault(1)).pow(GlitchRifts.gamma.milestones[3].effectOrDefault(1));
     
     return DEmult;
   }
