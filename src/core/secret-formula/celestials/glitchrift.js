@@ -135,7 +135,7 @@ export const GlitchRifts = {
       {
         resource: "gamma",
         requirement: 0.9,
-        description: "an aditional 100 RA memory cap",
+        description: "an aditional 50 RA memory cap",
         effect: () => 100
       },
       {
