@@ -55,7 +55,7 @@ export default {
     },
     tooltipContents() {
       if (this.showTTCost) return `${this.formattedEPCost}<br>${this.timeEstimate}`;
-      if (this.isoverloaded) return `you can not purchase any more than ${format(1e18)} Time Dimension`;
+      if (this.isoverloaded) return `you can not purchase any more than ${format(1e15)} Time Dimension`;
       if (this.isCapped) return `Nameless prevents the purchase of more than ${format(1)} Time Dimension`;
       return `Purchased ${format(this.bought)} times`;
     },
