@@ -16,7 +16,7 @@ export default {
   data: () => ({
     isMaxed: false,
     progressToNext: "",
-    remainingSingularities: DC.D0,
+    remainingSingularities: new Decimal(0),
     description: "",
     effectDisplay: "",
     isUnique: false,
@@ -25,7 +25,7 @@ export default {
     completions: 0,
     limit: 0,
     milestoneMode: false,
-    singularitiesPerCondense: DC.D0,
+    singularitiesPerCondense: new Decimal(0),
     baseCondenseTime: 0,
     currentCondenseTime: 0,
     autoCondenseDelay: 0,
