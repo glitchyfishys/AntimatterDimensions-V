@@ -54,7 +54,7 @@ export default {
     class="c-pelle-single-bar"
   >
     <div class="c-pelle-rift">
-      <div class="c-pelle-rift-row">
+      <div">
         <div class="c-pelle-rift-column c-pelle-rift-status">
           <h2 class="c-pelle-rift-name-header">
             {{ riftName() }}
@@ -95,7 +95,6 @@ export default {
 }
 
 .c-pelle-rift {
-  display: flex;
   flex-direction: column;
   align-items: center;
   border: var(--var-border-width, 0.2rem) solid var(--color-pelle--base);
@@ -104,7 +103,7 @@ export default {
   /* transparent crimson */
   box-shadow: inset 0 0 1rem 0.1rem rgba(237, 20, 61, 45%), 0 0 1rem 0.1rem rgba(237, 20, 61, 45%);
   margin-top: 1.2rem;
-  padding: 3.5rem;
+  padding: 1.5rem;
 }
 
 .t-s1 .c-pelle-rift {
