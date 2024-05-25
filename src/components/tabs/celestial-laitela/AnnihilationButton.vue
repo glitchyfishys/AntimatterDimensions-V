@@ -62,7 +62,7 @@ export default {
     </button>
     <br>
     <br>
-    <span v-if="darkMatterMult > 1">
+    <span v-if="darkMatterMult.gt(1)">
       Current multiplier to all Dark Matter Dimensions: <b>{{ formatX(darkMatterMult, 2, 2) }}</b>
       <br>
       <br>
