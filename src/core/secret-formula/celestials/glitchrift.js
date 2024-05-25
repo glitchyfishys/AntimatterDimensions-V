@@ -123,7 +123,7 @@ export const GlitchRifts = {
       {
         resource: "gamma",
         requirement: 0.5,
-        description: "+10 glyph rarity",
+        description: "+10% glyph rarity",
         effect: 10
       },
       {
