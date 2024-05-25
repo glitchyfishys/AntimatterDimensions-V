@@ -75,9 +75,9 @@ export default {
   methods: {
     update() {
       const laitela = player.celestials.laitela;
-      this.darkEnergy = Currency.darkEnergy.value;
-      this.darkEnergyGainPerSecond = Currency.darkEnergy.productionPerSecond;
-      this.singularities = Currency.singularities.value;
+      this.darkEnergy.copyFrom(Currency.darkEnergy);
+      this.darkEnergyGainPerSecond.copyFrom(Currency.darkEnergy.productionPerSecond);
+      this.singularities.copyFrom(Currency.singularities);
       this.singularityCapIncreases = laitela.singularityCapIncreases;
       this.canPerformSingularity = Singularity.capIsReached;
       this.unlockedBulkSingularity = Currency.singularities.gte(10);
