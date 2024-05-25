@@ -71,17 +71,6 @@ export default {
         <div class="c-pelle-rift-column">
           <GlitchRiftBar :rift="rift" />
         </div>
-        <div class="c-pelle-rift-status">
-          <div class="c-pelle-rift-fill-status">
-            <h2 class="c-pelle-rift-name-header">
-              {{ riftName() }}
-            </h2>
-            <div class="c-pelle-rift-rift-info-container">
-              <br>
-              Total Filled: {{ formatRift(rift.totalFill) }}
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
