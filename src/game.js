@@ -599,7 +599,7 @@ export function gameLoop(passDiff, options = {}) {
 
   const uncountabilityGain = AlchemyResource.uncountability.effectValue * Time.unscaledDeltaTime.totalSeconds;
   Currency.realities.add(uncountabilityGain);
-  Currency.perkPoints.add(uncountabilityGain * GlitchRifts.gamma.milestones[1].effectValue(1));
+  Currency.perkPoints.add(uncountabilityGain * GlitchRifts.gamma.milestones[1].effectOrDefault(1));
 
   if (Perk.autocompleteEC1.canBeApplied) player.reality.lastAutoEC += realDiff;
 
