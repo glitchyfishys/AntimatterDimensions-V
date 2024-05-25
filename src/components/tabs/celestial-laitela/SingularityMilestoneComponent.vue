@@ -21,7 +21,7 @@ export default {
     effectDisplay: "",
     isUnique: false,
     nextEffectDisplay: "",
-    start: DC.D0,
+    start: new Decimal(0),
     completions: 0,
     limit: 0,
     milestoneMode: false,
