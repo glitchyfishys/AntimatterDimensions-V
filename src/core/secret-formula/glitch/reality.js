@@ -151,7 +151,7 @@ export const realityUG = [
     hasFailed: () => player.glitch.preinfinity.upgradebits != 255 || player.glitch.breakinfinity.upgradebits != 63 || player.glitch.eternity.upgradebits != 63 || player.glitch.reality.upgradebits != 8191,
     checkRequirement: () =>  player.glitch.preinfinity.upgradebits >= 255 && player.glitch.breakinfinity.upgradebits >= 63 && player.glitch.eternity.upgradebits >= 63 && player.glitch.reality.upgradebits >= 8191,
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
-    description: "unlock glitch the celestial of creativity, having unque goals and upgrades",
+    description: "unlock pelle rift",
     effect: () => 1,
     formatEffect: () => "unlocked"
   },
