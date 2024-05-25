@@ -309,7 +309,7 @@ export const Ra = {
     return this.pets.all.map(pet => (pet.isUnlocked ? pet.level : 0)).sum();
   },
   get levelCap() {
-    return 50;
+    return 50 + GlitchRifts.gamma.milestones[4].effectOrDefault(0);
   },
   get maxTotalPetLevel() {
     return (this.levelCap / 2) * (this.pets.all.length);
