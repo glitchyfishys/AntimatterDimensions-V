@@ -110,9 +110,39 @@ export const GlitchRifts = {
     milestones: [
       {
         resource: "gamma",
-        requirement: 0.1,
-        description: "fish",
-        effect: 5
+        requirement: 0.15,
+        description: "TDs gain a 1.01 power",
+        effect: 1.01
+      },
+      {
+        resource: "gamma",
+        requirement: 0.3,
+        description: "10 times perkpoint gain",
+        effect: 10
+      },
+      {
+        resource: "gamma",
+        requirement: 0.5,
+        description: "+10 glyph rarity",
+        effect: 10
+      },
+      {
+        resource: "gamma",
+        requirement: 0.75,
+        description: "DMDs gain a 1.05 power",
+        effect: 1.05
+      },
+      {
+        resource: "gamma",
+        requirement: 0.9,
+        description: "an aditional 100 RA memory cap",
+        effect: 100
+      },
+      {
+        resource: "gamma",
+        requirement: 1,
+        description: "unlock glitch, celestral of creativity",
+        effect: 1.01
       },
     ],
   },
