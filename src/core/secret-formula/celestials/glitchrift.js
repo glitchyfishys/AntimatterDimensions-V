@@ -112,37 +112,37 @@ export const GlitchRifts = {
         resource: "gamma",
         requirement: 0.15,
         description: "TDs gain a 1.01 power",
-        effect: 1.01
+        effect: () => 1.01
       },
       {
         resource: "gamma",
         requirement: 0.3,
         description: "10 times perkpoint gain",
-        effect: 10
+        effect: () => 10
       },
       {
         resource: "gamma",
         requirement: 0.5,
         description: "+10% glyph rarity",
-        effect: 10
+        effect: () => 10
       },
       {
         resource: "gamma",
         requirement: 0.75,
         description: "DMDs gain a 1.05 power",
-        effect: 1.05
+        effect: () => 1.05
       },
       {
         resource: "gamma",
         requirement: 0.9,
         description: "an aditional 100 RA memory cap",
-        effect: 100
+        effect: () => 100
       },
       {
         resource: "gamma",
         requirement: 1,
         description: "unlock glitch the celestial of creativity, having unque goals and upgrades",
-        effect: 1
+        effect: () => 1
       },
     ],
   },
