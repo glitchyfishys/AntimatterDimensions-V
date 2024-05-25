@@ -194,7 +194,7 @@ export const SingularityMilestones = {
   get unseenMilestones() {
     const laitela = player.celestials.laitela;
     return SingularityMilestoneThresholds
-      .filter(s => s > laitela.lastCheckedMilestones && Currency.singularities.gte(s));
+      .filter(s => s.gt(laitela.lastCheckedMilestones && Currency.singularities.gte(s)));
   },
 
   get unnotifiedMilestones() {
