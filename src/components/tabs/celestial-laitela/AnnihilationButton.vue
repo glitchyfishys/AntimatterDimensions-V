@@ -30,7 +30,7 @@ export default {
       this.matterRequirement = Laitela.annihilationDMRequirement;
       this.darkMatterMultRatio = Laitela.darkMatterMultRatio;
       this.isEnabled = player.auto.annihilation.isActive;
-      this.allow = DMM.gt(1);
+      this.allow = this.DMM.gt(1);
     },
     annihilate() {
       Laitela.annihilate();
