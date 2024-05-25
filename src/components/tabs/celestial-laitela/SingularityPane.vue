@@ -80,7 +80,7 @@ export default {
       this.singularities.copyFrom(Currency.singularities);
       this.singularityCapIncreases = laitela.singularityCapIncreases;
       this.canPerformSingularity = Singularity.capIsReached;
-      this.unlockedBulkSingularity = Currency.singularities.gte(10);
+      this.unlockedBulkSingularity = this.singularities.gte(10);
       this.singularityCap = Singularity.cap;
       this.baseTimeToSingularity = Singularity.timePerCondense;
       this.currentTimeToSingularity = Singularity.timeUntilCap.toNumber();
