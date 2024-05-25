@@ -109,7 +109,7 @@ export default {
       this.baseCondenseTime = Singularity.timePerCondense;
       this.currentCondenseTime = Singularity.timeUntilCap;
       this.autoCondenseDelay = Singularity.timeDelayFromAuto;
-      this.lastCheckedMilestones.copyFrom(player.celestials.laitela.lastCheckedMilestones);
+      this.lastCheckedMilestones = (player.celestials.laitela.lastCheckedMilestones);
       this.isMetro = Theme.current().isMetro;
     },
   }
