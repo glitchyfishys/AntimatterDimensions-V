@@ -58,7 +58,7 @@ export const Laitela = {
   },
   get darkMatterMultGain() {
     return Decimal.pow(Currency.darkMatter.value.dividedBy(this.annihilationDMRequirement)
-      .plus(1).log10(), 1.5).toNumber() * ImaginaryUpgrade(21).effectOrDefault(1);
+      .plus(1).log10(), 1.5).times(ImaginaryUpgrade(21).effectOrDefault(1));
   },
   get darkMatterMult() {
     return this.celestial.darkMatterMult;
