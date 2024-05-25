@@ -696,7 +696,7 @@ top.player = {
       },
       singularities: DC.D0,
       singularityCapIncreases: 0,
-      lastCheckedMilestones: 0,
+      lastCheckedMilestones: DC.D0,
       milestoneGlow: false,
     },
     pelle: {
