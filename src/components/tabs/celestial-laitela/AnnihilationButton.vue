@@ -22,7 +22,7 @@ export default {
   methods: {
     update() {
       this.darkMatter.copyFrom(Currency.darkMatter);
-      this.darkMatterMult = Laitela.darkMatterMult;
+      this.darkMatterMult.copyFrom(Laitela.darkMatterMult);
       this.darkMatterMultGain = Laitela.darkMatterMultGain;
       this.autobuyerUnlocked = Autobuyer.annihilation.isUnlocked;
       this.annihilationButtonVisible = Laitela.canAnnihilate || this.autobuyerUnlocked;
