@@ -142,7 +142,7 @@ export const GlitchRifts = {
         resource: "gamma",
         requirement: 1,
         description: "unlock glitch the celestial of creativity, having unque goals and upgrades",
-        effect: 1.01
+        effect: 1
       },
     ],
   },
