@@ -112,7 +112,7 @@ export const Laitela = {
   },
   reset() {
     this.annihilate(true);
-    this.celestial.darkMatterMult = 1;
+    this.celestial.darkMatterMult = DC.D1;
     Currency.darkMatter.max = DC.D1;
     Currency.darkMatter.reset();
     Currency.singularities.reset();
