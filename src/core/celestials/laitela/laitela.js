@@ -61,7 +61,7 @@ export const Laitela = {
       .plus(1).log10(), 1.5).times(ImaginaryUpgrade(21).effectOrDefault(1));
   },
   get darkMatterMult() {
-    return this.celestial.darkMatterMult;
+    return new Decimal(this.celestial.darkMatterMult);
   },
   get darkMatterMultRatio() {
     return this.celestial.darkMatterMult.add(this.darkMatterMultGain).div(this.celestial.darkMatterMult).toNumber();
