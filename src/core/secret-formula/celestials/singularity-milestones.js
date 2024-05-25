@@ -275,7 +275,7 @@ export const singularityMilestones = {
     repeat: new Decimal(0),
     limit: 1,
     description: "Infinities gain a power effect based on Singularities",
-    effect: () => 1 + decimal.log10(Currency.singularities.value + 1) / 300,
+    effect: () => 1 + Decimal.log10(Currency.singularities.value + 1) / 300,
     effectFormat: x => formatPow(x, 2, 3),
     upgradeDirection: LAITELA_UPGRADE_DIRECTION.BOOSTS_MAIN,
   },
