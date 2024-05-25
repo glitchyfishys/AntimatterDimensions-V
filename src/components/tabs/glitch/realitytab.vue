@@ -29,12 +29,12 @@ export default {
     </div>
   
       <div
-      v-for="row in 3"
+      v-for="row in 7"
       :key="row"
       class="l-reality-upgrade-grid__row">
         
       <preinfinityupgradebutton
-        v-for="column in 4"
+        v-for="column in 2"
         :key="id(row, column)"
         :upgrade="upgrades[id(row, column)]"/>
     </div>
