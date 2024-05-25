@@ -50,7 +50,7 @@ export default {
       this.darkMatter.copyFrom(Currency.darkMatter);
       this.isDMCapped = this.darkMatter.eq("1e1000000000");
       this.maxDarkMatter.copyFrom(Currency.darkMatter.max);
-      this.darkEnergy = player.celestials.laitela.darkEnergy;
+      this.darkEnergy.copyFrom(Currency.darkEnergy);
       this.matterExtraPurchasePercentage = Laitela.matterExtraPurchaseFactor - 1;
       this.autobuyersUnlocked = SingularityMilestone.darkDimensionAutobuyers.canBeApplied ||
         SingularityMilestone.darkDimensionAutobuyers.canBeApplied ||
