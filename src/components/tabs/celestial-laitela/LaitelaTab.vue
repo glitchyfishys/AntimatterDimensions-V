@@ -34,7 +34,8 @@ export default {
       singularitiesUnlocked: false,
       singularityCap: 0,
       singularityWaitTime: 0,
-      showAnnihilation: false
+      showAnnihilation: false,
+      dmam: new Decimal(0)
     };
   },
   computed: {
@@ -51,11 +52,12 @@ export default {
       this.isDMCapped = this.darkMatter.eq("1e1000000000");
       this.maxDarkMatter.copyFrom(Currency.darkMatter.max);
       this.darkEnergy.copyFrom(Currency.darkEnergy);
+      this.dmam.copyFrom(Laitela.darkMatterMult);
       this.matterExtraPurchasePercentage = Laitela.matterExtraPurchaseFactor - 1;
       this.autobuyersUnlocked = SingularityMilestone.darkDimensionAutobuyers.canBeApplied ||
         SingularityMilestone.darkDimensionAutobuyers.canBeApplied ||
         SingularityMilestone.autoCondense.canBeApplied ||
-        Laitela.darkMatterMult.gte(1);
+        this.dmam.gte(1);
       this.singularityPanelVisible = Currency.singularities.gt(0);
       this.singularitiesUnlocked = Singularity.capIsReached || this.singularityPanelVisible;
       this.singularityCap = Singularity.cap;
