@@ -4,7 +4,8 @@ export default {
   data() {
     return {
       darkMatter: new Decimal(0),
-      darkMatterMult: new Decimal(0),
+      DMM: new Decimal(0),
+      allow: false,
       darkMatterMultGain: new Decimal(0),
       autobuyerUnlocked: false,
       annihilationButtonVisible: false,
@@ -22,13 +23,14 @@ export default {
   methods: {
     update() {
       this.darkMatter.copyFrom(Currency.darkMatter);
-      this.darkMatterMult.copyFrom(Laitela.darkMatterMult);
+      this.DMM.copyFrom(Laitela.darkMatterMult);
       this.darkMatterMultGain.copyFrom(Laitela.darkMatterMultGain);
       this.autobuyerUnlocked = Autobuyer.annihilation.isUnlocked;
       this.annihilationButtonVisible = Laitela.canAnnihilate || this.autobuyerUnlocked;
       this.matterRequirement = Laitela.annihilationDMRequirement;
       this.darkMatterMultRatio = Laitela.darkMatterMultRatio;
       this.isEnabled = player.auto.annihilation.isActive;
+      this.allow = DMM.gt(1);
     },
     annihilate() {
       Laitela.annihilate();
@@ -62,8 +64,8 @@ export default {
     </button>
     <br>
     <br>
-    <span v-if="darkMatterMult.gt(1)">
-      Current multiplier to all Dark Matter Dimensions: <b>{{ formatX(darkMatterMult, 2, 2) }}</b>
+    <span v-if="allow">
+      Current multiplier to all Dark Matter Dimensions: <b>{{ formatX(DMM, 2, 2) }}</b>
       <br>
       <br>
       Annihilation will reset your Dark Matter and Dark Matter Dimension amounts, but also add
