@@ -317,7 +317,7 @@ function giveRealityRewards(realityProps) {
     realityProps.gainedGlyphLevel.actualLevel, realityAndPPMultiplier, multiplier,
     MachineHandler.projectedIMCap);
   Currency.realities.add(realityAndPPMultiplier);
-  Currency.perkPoints.add(realityAndPPMultiplier * GlitchRifts.gamma.milestones[1].effectValue(1) + realityUGs.all[5].effectOrDefault(1) );
+  Currency.perkPoints.add(realityAndPPMultiplier * GlitchRifts.gamma.milestones[1].effectOrDefault(1) + realityUGs.all[5].effectOrDefault(1) );
   if (TeresaUnlocks.effarig.canBeApplied) {
     Currency.relicShards.add(realityProps.gainedShards * multiplier);
   }
