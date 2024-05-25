@@ -64,7 +64,7 @@ export const Laitela = {
     return this.celestial.darkMatterMult;
   },
   get darkMatterMultRatio() {
-    return (this.celestial.darkMatterMult + this.darkMatterMultGain) / this.celestial.darkMatterMult;
+    return this.celestial.darkMatterMult.add(this.darkMatterMultGain).div(this.celestial.darkMatterMult).toNumber();
   },
   get annihilationUnlocked() {
     return ImaginaryUpgrade(19).isBought;
