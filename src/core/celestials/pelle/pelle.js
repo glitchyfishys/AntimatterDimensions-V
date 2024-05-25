@@ -60,8 +60,8 @@ export const Pelle = {
 
   // This is called upon initial Dooming and after every Armageddon when using the modal
   initializeRun() {
-    if (this.isDoomed) {
       realityUGs.all[13].isBought ? PelleStrikes.all[5].trigger() : false
+    if (this.isDoomed) {
       Pelle.armageddon(true);
       return;
     }
