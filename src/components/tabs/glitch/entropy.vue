@@ -25,11 +25,13 @@ export default {
       hello destroyer.
       fill these please.
 
+      <div>
       <GlitchRift
           v-for="rift in rifts"
           :key="rift.config.id"
           :rift="rift"
         />
+        </div>
     </div>
   
 </template>
