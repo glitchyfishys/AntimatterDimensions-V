@@ -91,8 +91,6 @@ export default {
   box-shadow: inset 0 0 1rem 0.1rem rgba(237, 20, 61, 45%), 0 0 1rem 0.1rem rgba(237, 20, 61, 45%);
   margin-top: 0.8rem;
   padding: 0.5rem;
-  width: 50%;
-  align-self: center;
 }
 
 .t-s1 .c-pelle-rift {
