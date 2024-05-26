@@ -77,6 +77,7 @@ export function buyMaxTimeDimension(tier, portionToSpend = 1, isMaxAll = false) 
   }, dim.bought);
   if (!bulk) return false;
   Currency.eternityPoints.subtract(bulk.purchasePrice);
+  bulk.quantity = Math.min(bulk.quantity, 1e15 - dim.bought);
   dim.amount = dim.amount.plus(bulk.quantity);
   dim.bought += bulk.quantity;
   dim.cost = dim.nextCost(dim.bought);
