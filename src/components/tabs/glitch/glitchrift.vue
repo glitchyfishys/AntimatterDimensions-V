@@ -54,8 +54,8 @@ export default {
     class="c-pelle-single-bar"
   >
     <div class="c-pelle-rift">
-      <div">
-        <div class="c-pelle-rift-column c-pelle-rift-status">
+      <div>
+        <div class="c-pelle-rift-status">
           <h2 class="c-pelle-rift-name-header">
             {{ riftName() }}
           </h2>
@@ -68,7 +68,7 @@ export default {
             </div>
           </div>
         </div>
-        <div class="c-pelle-rift-column">
+        <div>
           <GlitchRiftBar :rift="rift" />
         </div>
       </div>
@@ -92,7 +92,9 @@ export default {
   /* transparent crimson */
   box-shadow: inset 0 0 1rem 0.1rem rgba(237, 20, 61, 45%), 0 0 1rem 0.1rem rgba(237, 20, 61, 45%);
   margin-top: 1.2rem;
-  padding: 1.5rem;
+  padding: 0.2rem;
+  width: 50%;
+  align-self: center;
 }
 
 .t-s1 .c-pelle-rift {
@@ -105,12 +107,6 @@ export default {
   align-items: center;
 }
 
-.c-pelle-rift-column {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .c-pelle-rift-rift-info-container {
   height: 5rem;
   font-weight: 400;
@@ -118,8 +114,8 @@ export default {
 }
 
 .c-pelle-rift-status {
-  display: flex;
-  flex-direction: column;
+  display: inline-flex;
+  flex-direction: row;
   width: 28rem;
   align-items: center;
 }
