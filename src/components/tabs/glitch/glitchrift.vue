@@ -78,9 +78,7 @@ export default {
 
 <style scoped>
 .c-pelle-single-bar {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  display: inline-table;
 }
 
 .c-pelle-rift {
@@ -91,8 +89,8 @@ export default {
 
   /* transparent crimson */
   box-shadow: inset 0 0 1rem 0.1rem rgba(237, 20, 61, 45%), 0 0 1rem 0.1rem rgba(237, 20, 61, 45%);
-  margin-top: 1.2rem;
-  padding: 0.2rem;
+  margin-top: 0.8rem;
+  padding: 0.5rem;
   width: 50%;
   align-self: center;
 }
@@ -114,10 +112,7 @@ export default {
 }
 
 .c-pelle-rift-status {
-  display: inline-flex;
-  flex-direction: row;
-  width: 28rem;
-  align-items: center;
+  display: inline-block;
 }
 
 .c-pelle-rift-name-header {
