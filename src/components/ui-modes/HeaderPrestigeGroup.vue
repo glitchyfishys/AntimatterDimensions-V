@@ -31,7 +31,6 @@ export default {
   color: var(--color-text);
   position: sticky;
   z-index: 5;
-  background: black;
   top: 0px
 }
 
