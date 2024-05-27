@@ -24,7 +24,7 @@ export default {
 </script>
 
 <template>
-  <span  v-if="shouldDisplay">
+  <span  v-if="shouldDisplay" class="abs">
     <div v-if="isModern">
       <h3
         v-if="!smallCrunch"
@@ -68,17 +68,19 @@ export default {
 .uper{
   margin-top: 1rem;
 }
-.stick{
-    position: sticky;
-    top: 0px;
-    z-index: 6;
+  
+.abs{
+  display: block;
+  position: sticky;
+  z-index: 6;
+  top: 0px;
 }
+  
 .btn-big-crunch-s {
-    position: absolute;
-    top: 4.3rem;
-    font-size: 3rem;
-    transform: translateX(-50%);
-    margin-top: -20px;
-    width: 22rem;
+  font-size: 3rem;
+  margin-top: 20px;
+  width: 22rem;
+  position: absolute;
+  transform: translateX(-50%);
 }
 </style>
