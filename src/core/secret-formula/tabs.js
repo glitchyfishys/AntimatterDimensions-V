@@ -402,7 +402,7 @@ export const tabs = [
     name: "Celestials",
     hideAt: 2.4,
     UIClass: "o-tab-btn--celestial",
-    condition: () => Teresa.isUnlocked,
+    condition: () => (Teresa.isUnlocked || GlitchRifts.gamma.milestones[5].effectOrDefault(0)),
     id: 9,
     hidable: true,
     subtabs: [
@@ -474,6 +474,15 @@ export const tabs = [
         component: "PelleTab",
         condition: () => Pelle.isUnlocked,
         id: 7,
+        hidable: true,
+      },
+      {
+        key: "glitch",
+        name: "glitch",
+        symbol: "ὡ",
+        component: "GlitchTab",
+        condition: () => (GlitchRifts.gamma.milestones[5].effectOrDefault(0)),
+        id: 8,
         hidable: true,
       }
     ]
