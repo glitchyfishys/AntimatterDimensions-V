@@ -28,6 +28,10 @@ export default {
   height: 14rem;
   width: 100%;
   color: var(--color-text);
+  position: sticky;
+  z-index: 5;
+  background: black;
+  top: 0px
 }
 
 .l-game-header__eternity {
