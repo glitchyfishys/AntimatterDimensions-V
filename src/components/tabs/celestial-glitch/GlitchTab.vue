@@ -49,7 +49,7 @@ export default {
 <template>
   <div class="l-glitch-tab">
     blank for now
-    <BlackHoleChargingSliders>
+    <BlackHoleChargingSliders />
   </div>
 </template>
 
