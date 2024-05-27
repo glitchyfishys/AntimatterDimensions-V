@@ -47,6 +47,8 @@ import glitchbreak from "./glitch/breakinfinitytab";
 import glitcheternity from "./glitch/eternitytab";
 import glitchreality from "./glitch/realitytab";
 
+import GlitchTab from "./celestial-glitch/GlitchTab";
+
 const TabComponents = {
   AntimatterDimensionsTab,
   InfinityDimensionsTab,
@@ -94,7 +96,8 @@ const TabComponents = {
   preinfinity,
   glitchbreak,
   glitcheternity,
-  glitchreality
+  glitchreality,
+  GlitchTab
 };
 
 export default TabComponents;
