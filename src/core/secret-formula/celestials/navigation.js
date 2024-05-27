@@ -1553,7 +1553,7 @@ export const celestialNavigation = {
     visible: () => Laitela.isUnlocked,
     complete: () => (Currency.singularities.gte(1)
       ? 1
-      : Math.clampMax(0.999, Currency.darkEnergy.value / Singularity.cap)),
+      : Decimal.clampMax(0.999, Currency.darkEnergy.value.div(Singularity.cap)),
     node: {
       clickAction: () => Tab.celestials.laitela.show(true),
       incompleteClass: "c-celestial-nav__test-incomplete",
@@ -1594,7 +1594,7 @@ export const celestialNavigation = {
       if (upgrade.canBeBought || upgrade.isBought) return 1;
       if (upgrade.isAvailableForPurchase) return upgrade.currency.value / upgrade.cost;
       if (!player.auto.singularity.isActive) return 0.5;
-      return Math.clampMax(0.999, Singularity.singularitiesGained / 20);
+      return Decimal.clampMax(0.999, Singularity.singularitiesGained.div(20)).toNumber();
     },
     node: {
       clickAction: () => Tab.celestials.laitela.show(true),
