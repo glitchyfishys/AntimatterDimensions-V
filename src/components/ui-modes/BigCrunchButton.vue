@@ -24,18 +24,18 @@ export default {
 </script>
 
 <template>
-  <span v-if="shouldDisplay">
+  <span  v-if="shouldDisplay">
     <div v-if="isModern">
       <h3
         v-if="!smallCrunch"
-        class="l-spacing"
+        class="uper"
       >
         The world has collapsed due to excess antimatter.
       </h3>
       <button
         :class="{
           'btn-big-crunch': true,
-          'btn-big-crunch--small': smallCrunch
+          'btn-big-crunch-s': smallCrunch
         }"
         @click="handleClick"
       >
@@ -65,7 +65,20 @@ export default {
 </template>
 
 <style scoped>
-.l-spacing {
+.uper{
   margin-top: 1rem;
+}
+.stick{
+    position: sticky;
+    top: 0px;
+    z-index: 6;
+}
+.btn-big-crunch-s {
+    position: absolute;
+    top: 4.3rem;
+    font-size: 3rem;
+    transform: translateX(-50%);
+    margin-top: -20px;
+    width: 22rem;
 }
 </style>
