@@ -1553,7 +1553,7 @@ export const celestialNavigation = {
     visible: () => Laitela.isUnlocked,
     complete: () => (Currency.singularities.gte(1)
       ? 1
-      : Decimal.clampMax(0.999, Currency.darkEnergy.value.div(Singularity.cap)),
+      : Decimal.clampMax(0.999, Currency.darkEnergy.value.div(Singularity.cap))),
     node: {
       clickAction: () => Tab.celestials.laitela.show(true),
       incompleteClass: "c-celestial-nav__test-incomplete",
