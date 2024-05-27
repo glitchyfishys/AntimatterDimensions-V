@@ -236,7 +236,7 @@ export const GlyphGenerator = {
     let result = GlyphGenerator.gaussianBellCurve(rng) * GlyphGenerator.strengthMultiplier;
     const relicShardFactor = Ra.unlocks.extraGlyphChoicesAndRelicShardRarityAlwaysMax.canBeApplied ? 1 : rng.uniform();
     const increasedRarity = relicShardFactor * Effarig.maxRarityBoost +
-      Effects.sum(Achievement(146), GlyphSacrifice.effarig, GlitchRifts.gamma.milestones[2].effectOrDefault(0));
+      Effects.sum(Achievement(146), GlyphSacrifice.effarig, GlitchRifts.gamma.milestones[2]);
     // Each rarity% is 0.025 strength.
     result += increasedRarity / 40;
     // Raise the result to the next-highest 0.1% rarity.
