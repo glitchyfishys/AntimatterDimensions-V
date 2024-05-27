@@ -23,6 +23,7 @@ export default {
 
 <style scoped>
 .c-prestige-info-blocks {
+  background-color: rgba(0, 0, 0, 0.75);
   display: flex;
   flex-direction: row;
   height: 14rem;
