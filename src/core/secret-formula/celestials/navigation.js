@@ -2025,7 +2025,7 @@ export const celestialNavigation = {
       path: LinearPath.connectCircles(Positions.laitelaThirdCenter, 17, Positions.glitchUnlock, 19),
       completeWidth: 6,
       incompleteWidth: 4,
-      fill: "#00ff00",
+      fill: "url(#gradGlitchLaitela)",
     }
   },
 };
