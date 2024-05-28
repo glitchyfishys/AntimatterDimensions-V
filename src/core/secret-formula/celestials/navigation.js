@@ -2022,7 +2022,7 @@ export const celestialNavigation = {
     connector: {
       pathStart: 0,
       pathEnd: 1,
-      path: LinearPath.connectCircles(Positions.laitelaThirdCenter, 19, Positions.glitchUnlock, 19),
+      path: LinearPath.connectCircles(Positions.laitelaThirdCenter, 17, Positions.glitchUnlock, 19),
       completeWidth: 6,
       incompleteWidth: 4,
       fill: "#00ff00",
