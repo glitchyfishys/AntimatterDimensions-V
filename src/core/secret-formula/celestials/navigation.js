@@ -122,6 +122,8 @@ const Positions = Object.freeze({
   pelleParadox: pelleStarPosition(4, 150),
 
   pelleGalaxyGen: pelleStarPosition(0, 0),
+
+  glitchUnlock: new Vector(500, 650)
 });
 
 // Reduces boilerplate for rift line objects, but needs quite a few parameters to do so since there are three separate
@@ -1161,7 +1163,7 @@ export const celestialNavigation = {
       legend: {
         text: () => {
           const level = Ra.pets.teresa.level;
-          if (level === 25) return `Ra's Teresa Memories have all been returned`;
+          if (level === Ra.levelCap) return `Ra's Teresa Memories have all been returned`;
           return [
             "Ra's Teresa Memory level",
             `${formatInt(level)} / ${formatInt(25)}`
@@ -1183,7 +1185,7 @@ export const celestialNavigation = {
   },
   "teresa-pet-to-teresa": {
     visible: () => VUnlocks.raUnlock.isUnlocked,
-    complete: () => Ra.pets.teresa.level / 25,
+    complete: () => Ra.pets.teresa.level / Ra.levelCap,
     drawOrder: -1,
     connector: {
       pathStart: 0.05,
@@ -1212,10 +1214,10 @@ export const celestialNavigation = {
           const unlocked = Ra.pets.teresa.level;
           const level = Ra.pets.effarig.level;
           if (complete < 1) return `Ra's Teresa Memory level ${unlocked} / ${formatInt(8)}`;
-          if (level === 25) return `Ra's Effarig Memories have all been returned`;
+          if (level === Ra.levelCap) return `Ra's Effarig Memories have all been returned`;
           return [
             "Ra's Effarig Memory level",
-            `${formatInt(level)} / ${formatInt(25)}`
+            `${formatInt(level)} / ${formatInt(Ra.levelCap)}`
           ];
         },
         angle: 142,
@@ -1234,7 +1236,7 @@ export const celestialNavigation = {
   },
   "effarig-pet-to-effarig": {
     visible: () => Ra.unlocks.effarigUnlock.isUnlocked,
-    complete: () => Ra.pets.effarig.level / 25,
+    complete: () => Ra.pets.effarig.level / Ra.levelCap,
     drawOrder: -1,
     connector: {
       pathStart: 0.05,
@@ -1263,10 +1265,10 @@ export const celestialNavigation = {
           const unlocked = Ra.pets.effarig.level;
           const level = Ra.pets.enslaved.level;
           if (complete < 1) return `Ra's Effarig Memory level ${unlocked} / ${formatInt(8)}`;
-          if (level === 25) return `Ra's Nameless Memories have all been returned`;
+          if (level === Ra.levelCap) return `Ra's Nameless Memories have all been returned`;
           return [
             "Ra's Nameless Memory level",
-            `${formatInt(level)} / ${formatInt(25)}`
+            `${formatInt(level)} / ${formatInt(Ra.levelCap)}`
           ];
         },
         angle: 142,
@@ -1285,7 +1287,7 @@ export const celestialNavigation = {
   },
   "enslaved-pet-to-enslaved": {
     visible: () => Ra.unlocks.enslavedUnlock.isUnlocked,
-    complete: () => Ra.pets.enslaved.level / 25,
+    complete: () => Ra.pets.enslaved.level / Ra.levelCap,
     drawOrder: -1,
     connector: {
       pathStart: 0.05,
@@ -1314,10 +1316,10 @@ export const celestialNavigation = {
           const unlocked = Ra.pets.enslaved.level;
           const level = Ra.pets.v.level;
           if (complete < 1) return `Ra's Nameless Memory level ${unlocked} / ${formatInt(8)}`;
-          if (level === 25) return `Ra's V Memories have all been returned`;
+          if (level === Ra.levelCap) return `Ra's V Memories have all been returned`;
           return [
             "Ra's V Memory level",
-            `${formatInt(level)} / ${formatInt(25)}`
+            `${formatInt(level)} / ${formatInt(Ra.levelCap)}`
           ];
         },
         angle: 142,
@@ -1336,7 +1338,7 @@ export const celestialNavigation = {
   },
   "v-pet-to-v": {
     visible: () => Ra.unlocks.vUnlock.isUnlocked,
-    complete: () => Ra.pets.v.level / 25,
+    complete: () => Ra.pets.v.level / Ra.levelCap,
     drawOrder: -1,
     connector: {
       pathStart: 0.05,
@@ -1553,7 +1555,7 @@ export const celestialNavigation = {
     visible: () => Laitela.isUnlocked,
     complete: () => (Currency.singularities.gte(1)
       ? 1
-      : Decimal.clampMax(0.999, Currency.darkEnergy.value.div(Singularity.cap))),
+      : Decimal.clampMax(0.999, Currency.darkEnergy.value.div(Singularity.cap)).toNumber()),
     node: {
       clickAction: () => Tab.celestials.laitela.show(true),
       incompleteClass: "c-celestial-nav__test-incomplete",
@@ -1989,5 +1991,35 @@ export const celestialNavigation = {
         noBG: true,
       };
     }()),
+  },
+  "glitch-unlock": {
+    visible: () => Pelle.isUnlocked,
+    complete: () => (GlitchRifts.gamma.percentage),
+    node: {
+      clickAction: () => Tab.celestials.glitch.show(true),
+      completeClass: "c-celestial-nav__test-complete",
+      incompleteClass: "c-celestial-nav__test-incomplete",
+      position: Positions.pelleUnlock,
+      legend: {
+        text: complete => {
+          if (complete >= 1) return "Glitch's Reality";
+          const rift = GlitchRifts.gamma.percentage;
+          return [
+            "unlock glitch",
+            `${format(rift, 2, 2)} Reality Rift filled`
+          ];
+        },
+        angle: -35,
+        diagonal: 16,
+        horizontal: 16,
+      },
+    },
+    connector: {
+      pathStart: 0,
+      pathEnd: 1,
+      path: LinearPath.connectCircles(Positions.pelleUnlock, 78 - 1, Positions.glitchUnlock, 16 - 1),
+      completeWidth: 6,
+      incompleteWidth: 4,
+    }
   },
 };
