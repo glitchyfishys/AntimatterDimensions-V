@@ -2015,8 +2015,8 @@ export const celestialNavigation = {
           ];
         },
         angle: -55,
-        diagonal: 16,
-        horizontal: 16,
+        diagonal: 25,
+        horizontal: -36,
       },
     },
     connector: {
