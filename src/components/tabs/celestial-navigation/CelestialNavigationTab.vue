@@ -341,6 +341,21 @@ const CelestialNavigationViewportCache = {
             stop-color="crimson"
           />
         </linearGradient>
+        <linearGradient
+          id="gradGlitchLaitela"
+          y2="0"
+          x2="1"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop
+            offset="0"
+            stop-color="#00ff00"
+          />
+          <stop
+            offset="1"
+            stop-color="white"
+          />
+        </linearGradient>
         <mask
           id="fade"
           maskContentUnits="objectBoundingBox"
