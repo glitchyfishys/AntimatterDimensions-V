@@ -2000,6 +2000,10 @@ export const celestialNavigation = {
       completeClass: "c-celestial-nav__test-complete",
       incompleteClass: "c-celestial-nav__test-incomplete",
       position: Positions.pelleUnlock,
+      ring: {
+        rMajor: 20,
+        rMinor: 10,
+      },
       legend: {
         text: complete => {
           if (complete >= 1) return "Glitch's Reality";
