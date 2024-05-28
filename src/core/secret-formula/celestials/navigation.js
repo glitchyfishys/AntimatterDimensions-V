@@ -1635,7 +1635,7 @@ export const celestialNavigation = {
           return [
             dmdText,
             `Automatically Condense ${format(20)} Singularities at once`,
-            `${format(Decimal.clampMax(Singularity.singularitiesGained, 20)).toNumber()} / ${format(20)}`
+            `${format(Decimal.clampMax(Singularity.singularitiesGained, 20))} / ${format(20)}`
           ];
         },
         angle: 15,
@@ -2013,7 +2013,7 @@ export const celestialNavigation = {
             `${format(rift, 2, 2)} Reality Rift filled`
           ];
         },
-        angle: -35,
+        angle: -55,
         diagonal: 16,
         horizontal: 16,
       },
