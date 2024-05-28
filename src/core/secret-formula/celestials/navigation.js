@@ -1997,9 +1997,9 @@ export const celestialNavigation = {
     complete: () => (GlitchRifts.gamma.percentage),
     node: {
       clickAction: () => Tab.celestials.glitch.show(true),
-      completeClass: "c-celestial-nav__test-complete",
+      fill: "#00ff00",
       incompleteClass: "c-celestial-nav__test-incomplete",
-      position: Positions.pelleUnlock,
+      position: Positions.glitchUnlock,
       ring: {
         rMajor: 20,
         rMinor: 10,
@@ -2021,9 +2021,10 @@ export const celestialNavigation = {
     connector: {
       pathStart: 0,
       pathEnd: 1,
-      path: LinearPath.connectCircles(Positions.pelleUnlock, 78 - 1, Positions.glitchUnlock, 16 - 1),
+      path: LinearPath.connectCircles(Positions.laitelaThirdCenter, 19, Positions.glitchUnlock, 19),
       completeWidth: 6,
       incompleteWidth: 4,
+      fill: "#00ff00",
     }
   },
 };
