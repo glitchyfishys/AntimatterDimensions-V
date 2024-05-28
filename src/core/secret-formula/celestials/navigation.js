@@ -2011,7 +2011,7 @@ export const celestialNavigation = {
           const rift = GlitchRifts.gamma.percentage;
           return [
             "unlock glitch",
-            `${format(rift, 2, 2)} Reality Rift filled`
+            `${formatPercents(rift)} Reality Rift filled`
           ];
         },
         angle: -55,
