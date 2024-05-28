@@ -123,7 +123,7 @@ const Positions = Object.freeze({
 
   pelleGalaxyGen: pelleStarPosition(0, 0),
 
-  glitchUnlock: new Vector(500, 650)
+  glitchUnlock: new Vector(150, 850)
 });
 
 // Reduces boilerplate for rift line objects, but needs quite a few parameters to do so since there are three separate
