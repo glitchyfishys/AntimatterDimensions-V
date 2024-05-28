@@ -2004,6 +2004,7 @@ export const celestialNavigation = {
         rMajor: 20,
         rMinor: 10,
       },
+      alwaysShowLegend: true,
       legend: {
         text: complete => {
           if (complete >= 1) return "Glitch's Reality";
