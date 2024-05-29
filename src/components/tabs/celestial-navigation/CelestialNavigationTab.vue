@@ -349,11 +349,11 @@ const CelestialNavigationViewportCache = {
         >
           <stop
             offset="0"
-            stop-color="#00ff00"
+            stop-color="white"
           />
           <stop
             offset="1"
-            stop-color="white"
+            stop-color="#00ff00"
           />
         </linearGradient>
         <mask
