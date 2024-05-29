@@ -1,12 +1,8 @@
 
 <script>
-import GlyphSetPreview from "@/components/GlyphSetPreview";
 
 export default {
   name: "GlitchRunButton",
-  components: {
-    GlyphSetPreview
-  },
   data() {
     return {
       isRunning: false,
@@ -27,11 +23,12 @@ export default {
       this.isRunning = Glitch.isRunning;
       this.tier = Glitch.tier;
     },
+    
     startRun() {
       if (this.isDoomed) return;
       Modal.celestials.show({ name: "glitch's", number: 6 });
     },
-    },
+    
     runButtonClassObject() {
       return {
         "o-glitch-run-button__icon": true,
@@ -40,6 +37,7 @@ export default {
         "o-pelle-disabled-pointer": this.isDoomed
       };
     },
+    
   }
 };
 </script>
