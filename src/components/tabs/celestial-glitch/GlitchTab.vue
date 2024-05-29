@@ -35,8 +35,8 @@ export default {
 </script>
 
 <template>
- work in progress
   <div class="l-glitch-celestial-tab">
+   work in progress
     
   <CelestialQuoteHistory celestial="glitch"/>
     
