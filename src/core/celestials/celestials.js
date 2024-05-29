@@ -115,7 +115,9 @@ GameDatabase.celestials.descriptions = [
   {
     name: "Glitch",
     effects() {
-      return "this is the end";
+      return () => {
+        return "this with reset everything";
+      }
     },
   },
 ];
