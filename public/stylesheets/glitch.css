@@ -1,0 +1,69 @@
+.l-glitch-celestial-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.o-glitch-run-button {
+  width: 24rem;
+  height: 84rem;
+  font-family: Typewriter;
+  font-size: 1.1rem;
+  color: var(--color-glitch--accent);
+  background: var(--color-glitch--base);
+  border: var(--var-border-width, 0.2rem) solid var(--color-glitch--accent);
+  border-radius: var(--var-border-radius, 0.5rem);
+  margin-right: 1rem;
+  padding: 2rem;
+}
+
+
+.o-glitch-riftforce-amount {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+@keyframes a-lime-energy-glow {
+  0% { box-shadow: 0 0 0 rgb(0, 255, 0); }
+  50% { box-shadow: 0 0 5px rgb(0, 255, 0); }
+  100% { box-shadow: 0 0 0 rgb(0, 255, 0); }
+}
+
+.o-glitch-run-button__icon {
+  width: 12rem;
+  height: 12rem;
+  align-items: center;
+  background-color: black;
+  background-image: url("../images/glitch-icon.svg");
+  background-position: center;
+  background-repeat: repeat-y;
+  background-size: 4.95rem;
+  border: var(--var-border-width, 0.4rem) solid var(--color-glitch--accent);
+  border-radius: 50%;
+  margin: 1.5rem auto;
+  transition-duration: 0.2s;
+  animation: a-glitch-run-button__icon--scroll 15s infinite linear;
+}
+
+.o-glitch-run-button__icon:hover {
+  background-color: white;
+  background-image: url("../images/glitch-icon-dark.svg");
+}
+
+.o-glitch-run-button__icon--running {
+  animation: a-glitch-run-button__icon--scroll 5s infinite linear;
+}
+
+@keyframes a-glitch-run-button__icon--scroll {
+  0% { background-position-y: 0; }
+  100% { background-position-y: 24rem; }
+}
+
+.c-glitch-automation-toggle:hover {
+  color: var(--color-glitch--base);
+  background: var(--color-glitch--accent) !important;
+}
+
+.s-base--metro .c-glitch-automation-toggle {
+  box-shadow: none;
+}
