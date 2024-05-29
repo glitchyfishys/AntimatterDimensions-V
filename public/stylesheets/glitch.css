@@ -44,7 +44,7 @@
   height: 12rem;
   align-items: center;
   background-color: black;
-  background-image: url("../images/glitch-icon.svg");
+  background-image: url("../images/laitela-icon.svg");
   background-position: center;
   background-repeat: repeat-y;
   background-size: 5rem;
@@ -57,7 +57,7 @@
 
 .o-glitch-run-button__icon:hover {
   background-color: white;
-  background-image: url("../images/laitela-icon.svg");
+  background-image: url("../images/laitela-icon-dark.svg");
 }
 
 .o-glitch-run-button__icon--running {
