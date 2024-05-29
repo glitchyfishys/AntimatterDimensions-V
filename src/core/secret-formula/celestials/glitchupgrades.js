@@ -2,21 +2,18 @@ import { DC } from "../../constants";
 
 const rebuyable = props => {
   props.cost = () => getHybridCostScaling(
-    player.augment.rebuyables[props.id],
-    1e10,
+    player.celestials.glitch.augment.rebuyables[props.id],
+    1e50,
     props.initialCost,
     props.costMult,
     props.costMult / 10,
-    DC.E100,
+    DC.E309,
     1e3,
     props.initialCost * props.costMult
   );
   const { effect } = props;
-  props.effect = () =>  player.augmented.rebuyables[props.id]);
-  props.description = () => props.textTemplate.replace("{value}",
-    ImaginaryUpgrade(props.id).effectValue === 0
-      ? formatInt(effect)
-      : format(effect + ImaginaryUpgrade(props.id).effectValue, 2, 2));
+  props.effect = () =>  player.celestials.glitch.augmented.rebuyables[props.id];
+  props.description = () => props.textTemplate.replace("{value}", formatInt(effect));
   props.formatEffect = value => formatX( Math.min(value, 1e250) , 2, 0);
   props.formatCost = value => format(value, 2, 0);
   return props;
