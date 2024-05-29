@@ -364,6 +364,10 @@ function giveRealityRewards(realityProps) {
   if (Enslaved.isRunning) Enslaved.completeRun();
 
   if (V.isRunning) V.quotes.realityComplete.show();
+
+  if (Glitch.isRunning) {
+    
+  };
 }
 
 // Due to simulated realities taking a long time in late game, this function might not immediately
@@ -788,6 +792,9 @@ function restoreCelestialRuns(celestialRunState) {
   if (player.celestials.ra.run) Ra.initializeRun();
   player.celestials.laitela.run = celestialRunState.laitela;
   if (player.celestials.laitela.run) Laitela.initializeRun();
+  
+  player.celestials.glitch.run = celestialRunState.glitch;
+  if (player.celestials.glitch.run) Glitch.initializeRun();
 }
 
 // This is also called when the upgrade is purchased, be aware of potentially having "default" values overwrite values
@@ -834,6 +841,7 @@ export function clearCelestialRuns() {
     v: player.celestials.v.run,
     ra: player.celestials.ra.run,
     laitela: player.celestials.laitela.run,
+    glitch: player.celestials.glitch.run,
   };
   player.celestials.teresa.run = false;
   player.celestials.effarig.run = false;
@@ -851,6 +859,8 @@ export function clearCelestialRuns() {
   player.celestials.v.run = false;
   player.celestials.ra.run = false;
   player.celestials.laitela.run = false;
+  
+  player.celestials.glitch.run = false;
   return saved;
 }
 
