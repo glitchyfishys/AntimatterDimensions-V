@@ -119,14 +119,13 @@ GameDatabase.celestials.descriptions = [
         if(Glitch.tier == 0){
           return "all Celestials realitys at once";
         }
-        
         return "null";
-      },
-    },
+      }
+    }
     description() {
       if(Glitch.tier == 0){
         return "enter all Celestials realitys at once";
-      }  
+      }
     }
       
   },
