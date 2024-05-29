@@ -15,8 +15,8 @@
 }
 
 .o-glitch-run-button {
-  width: 24rem;
-  height: 84rem;
+  width: 84rem;
+  height: 34rem;
   font-family: Typewriter;
   font-size: 1.1rem;
   color: var(--color-glitch--accent);
