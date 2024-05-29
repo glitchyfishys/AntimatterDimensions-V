@@ -94,3 +94,51 @@
 .s-base--metro .c-glitch-automation-toggle {
   box-shadow: none;
 }
+
+.c-glitch-run-button__icon--running {
+  color: var(--color-glitch--accent);
+  background-color: var(--color-glitch--base);
+  border-color: var(--color-glitch--accent);
+  animation: a-glitch-run-button__icon--super-glow 1.2s infinite, a-glitch-run-button__icon--spin 5s infinite;
+}
+
+.c-celestial-run-button--clickable {
+  cursor: pointer;
+}
+
+@keyframes a-glitch-run-button__icon--glow {
+  0% { text-shadow: 0.1rem 0.1rem 0.3rem; }
+  50% { text-shadow: 0.1rem 0.1rem 0.8rem; }
+  100% { text-shadow: 0.1rem 0.1rem 0.3rem; }
+}
+
+@keyframes a-glitch-run-button__icon--super-glow {
+  0% {
+    text-shadow: 0.1rem 0.1rem 0.3rem;
+    box-shadow: 0 0 0.3rem var(--color-glitch--base);
+  }
+
+  50% {
+    text-shadow: 0.1rem 0.1rem 0.9rem;
+    box-shadow: 0 0 1rem var(--color-glitch--base);
+  }
+
+  100% {
+    text-shadow: 0.1rem 0.1rem 0.3rem;
+    box-shadow: 0 0 0.3rem var(--color-glitch--base);
+  }
+}
+
+@keyframes a-glitch-run-button__icon--spin {
+  0% { transform: rotate(61deg); }
+  10% { transform: rotate(322deg); }
+  20% { transform: rotate(235deg); }
+  30% { transform: rotate(222deg); }
+  40% { transform: rotate(105deg); }
+  50% { transform: rotate(33deg); }
+  60% { transform: rotate(103deg); }
+  70% { transform: rotate(158deg); }
+  80% { transform: rotate(41deg); }
+  90% { transform: rotate(73deg); }
+  100% { transform: rotate(61deg); }
+}
