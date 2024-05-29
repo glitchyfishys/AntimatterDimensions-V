@@ -2,14 +2,13 @@ import { GameDatabase } from "../../secret-formula/game-database";
 import { Quotes } from "../quotes";
 import { GlitchRifts } from "./glitchrift";
 
-export const glitch = {
+export const Glitch = {
   displayName: "Glitch",
   possessiveName: "Glitch's",
   get isUnlocked() {
     return GlitchRifts.gamma.milestones[5].effectOrDefault(0) == 0 ? false : true;
   },
   initializeRun() {
-    reality()
     if(player.celestials.glitch.layer == 0){
       player.celestials.glitch.run = true;
       player.celestials.teresa.run = true;
