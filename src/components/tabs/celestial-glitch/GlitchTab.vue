@@ -26,8 +26,8 @@ export default {
   },
   methods: {
     update() {
-      this.isRunning = Enslaved.isRunning;
-      this.quote = Enslaved.quote;
+      this.isRunning = Glitch.isRunning;
+      this.quote = Glitch.quote;
     },
     startRun() {
       if (this.isDoomed) return;
