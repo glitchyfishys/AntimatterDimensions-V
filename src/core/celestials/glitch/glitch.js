@@ -33,6 +33,10 @@ export const Glitch = {
     player.celestials.laitela.run = false;
     
   },
+
+  get discription() {
+    return GameDatabase.celestials.descriptions[6].effects()
+  }
   
   get tier(){
     return player.celestials.glitch.tier;
