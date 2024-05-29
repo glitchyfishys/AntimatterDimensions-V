@@ -18,21 +18,25 @@ export default {
   data: () => ({
     isRunning: false,
     quote: "",
+    time: 0,
   }),
   methods: {
     update() {
       this.isRunning = Glitch.isRunning;
       this.quote = Glitch.quote;
+      this.time = player.records.thisReality.realTime;
     },
     startRun() {
       if (this.isDoomed) return;
-      Modal.celestials.show({ name: "The Nameless Ones'", number: 2 });
+      Modal.celestials.show({ name: "glitch'", number: 6 });
     }
   },
 };
 </script>
 
 <template>
+
+  <CelestialQuoteHistory celestial="glitch"/>
   <div class="l-glitch-celestial-tab">
     blank for now
     
