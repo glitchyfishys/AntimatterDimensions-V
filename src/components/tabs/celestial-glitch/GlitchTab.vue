@@ -27,17 +27,6 @@ export default {
     startRun() {
       if (this.isDoomed) return;
       Modal.celestials.show({ name: "The Nameless Ones'", number: 2 });
-    },
-    glitchStyle(x) {
-      const xScale = 15 / 19;
-      const yScale = 6;
-      const dx = (x - 13) * xScale + (Math.random() * 2 - 1) * 0.9;
-      const dy = (Math.random() * 2 - 1) * yScale;
-      const height = (Math.pow(Math.random(), 1.5) + 0.25) * 3 * yScale;
-      return {
-        transform: `translate(${dx}rem, ${dy}rem)`,
-        height: `${height}rem`,
-      };
     }
   },
 };
