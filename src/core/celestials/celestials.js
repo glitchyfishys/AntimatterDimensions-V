@@ -15,7 +15,7 @@ export const Celestials = {
   ra: Ra,
   laitela: Laitela,
   pelle: Pelle,
-  glitch: glitch
+  glitch: glitch,
 };
 
 GameDatabase.celestials.descriptions = [
