@@ -8,6 +8,7 @@ export const Glitch = {
   get isUnlocked() {
     return GlitchRifts.gamma.milestones[5].effectOrDefault(0) == 0 ? false : true;
   },
+  
   initializeRun() {
     if(this.tier == 0){
       player.celestials.glitch.run = true;
@@ -21,7 +22,6 @@ export const Glitch = {
     if(this.tier == 1){
       
     }
-    
   },
   leaveRun() {
     player.celestials.glitch.run = false;
@@ -36,7 +36,7 @@ export const Glitch = {
 
   get discription() {
     return GameDatabase.celestials.descriptions[6].effects()
-  }
+  },
   
   get tier(){
     return player.celestials.glitch.tier;
