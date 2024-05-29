@@ -13,7 +13,7 @@ export default {
     PrimaryButton,
     PrimaryToggleButton,
     BlackHoleChargingSliders,
-    GlitchRunButton
+    GlitchRunButton,
   },
   data: () => ({
     isRunning: false,
@@ -38,7 +38,7 @@ export default {
         transform: `translate(${dx}rem, ${dy}rem)`,
         height: `${height}rem`,
       };
-    },
+    }
   },
 };
 </script>
