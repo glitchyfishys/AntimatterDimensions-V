@@ -15,6 +15,7 @@ import { teresa } from "./teresa";
 import { quotes } from "./quotes";
 import { v } from "./v";
 import { GlitchRifts } from "./glitchrift";
+import { glitchRealityUpgrades } from "./glitchupgrades";
 
 export const celestials = {
   effarig: {
@@ -42,5 +43,6 @@ export const celestials = {
   teresa,
   quotes,
   v,
-  GlitchRifts
+  GlitchRifts,
+  glitchRealityUpgrades,
 };
