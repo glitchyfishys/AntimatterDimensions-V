@@ -1,3 +1,13 @@
+:root {
+  --color-glitch: #7504d1;
+  --color-glitch: #000000;
+  --color-glitch-light: #ce91ff;
+  --color-glitch-dark: #480182;
+
+  --color-glitch--accent: #00ff00;
+  --color-glitch--base: #00aa00;
+}
+
 .l-glitch-celestial-tab {
   display: flex;
   flex-direction: column;
@@ -23,10 +33,10 @@
   margin-bottom: 0.5rem;
 }
 
-@keyframes a-lime-energy-glow {
-  0% { box-shadow: 0 0 0 rgb(0, 255, 0); }
-  50% { box-shadow: 0 0 5px rgb(0, 255, 0); }
-  100% { box-shadow: 0 0 0 rgb(0, 255, 0); }
+@keyframes a-purple-energy-glow {
+  0% { box-shadow: 0 0 0 rgb(0, 255, 255); }
+  50% { box-shadow: 0 0 5px rgb(0, 255, 255); }
+  100% { box-shadow: 0 0 0 rgb(0, 255, 255); }
 }
 
 .o-glitch-run-button__icon {
@@ -37,17 +47,17 @@
   background-image: url("../images/glitch-icon.svg");
   background-position: center;
   background-repeat: repeat-y;
-  background-size: 4.95rem;
-  border: var(--var-border-width, 0.4rem) solid var(--color-glitch--accent);
+  background-size: 5rem;
+  border: 0.4rem solid var(--color-glitch--accent);
   border-radius: 50%;
   margin: 1.5rem auto;
   transition-duration: 0.2s;
-  animation: a-glitch-run-button__icon--scroll 15s infinite linear;
+  animation: a-glitch-run-button__icon--scroll 3s infinite linear;
 }
 
 .o-glitch-run-button__icon:hover {
   background-color: white;
-  background-image: url("../images/glitch-icon-dark.svg");
+  background-image: url("../images/laitela-icon-dark.svg");
 }
 
 .o-glitch-run-button__icon--running {
