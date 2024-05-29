@@ -2014,7 +2014,7 @@ export const celestialNavigation = {
             `${formatPercents(rift)} Reality Rift filled`
           ];
         },
-        angle: -55,
+        angle: 230,
         diagonal: 25,
         horizontal: -36,
       },
