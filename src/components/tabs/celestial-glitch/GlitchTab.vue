@@ -4,6 +4,7 @@ import BlackHoleChargingSliders from "@/components/tabs/black-hole/BlackHoleChar
 import CelestialQuoteHistory from "@/components/CelestialQuoteHistory";
 import PrimaryButton from "@/components/PrimaryButton";
 import PrimaryToggleButton from "@/components/PrimaryToggleButton";
+import GlitchRunButton from "./panel";
 
 export default {
   name: "GlitchTab",
@@ -11,7 +12,8 @@ export default {
     CelestialQuoteHistory,
     PrimaryButton,
     PrimaryToggleButton,
-    BlackHoleChargingSliders
+    BlackHoleChargingSliders,
+    GlitchRunButton
   },
   data: () => ({
     isRunning: false,
@@ -49,7 +51,11 @@ export default {
 <template>
   <div class="l-glitch-tab">
     blank for now
+    
+    <GlitchRunButton />
+    
     <BlackHoleChargingSliders />
+    
   </div>
 </template>
 
