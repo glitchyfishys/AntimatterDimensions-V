@@ -35,10 +35,10 @@ export default {
 </script>
 
 <template>
-
-  <CelestialQuoteHistory celestial="glitch"/>
+ work in progress
   <div class="l-glitch-celestial-tab">
-    blank for now
+    
+  <CelestialQuoteHistory celestial="glitch"/>
     
     <GlitchRunButton />
     
