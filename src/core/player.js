@@ -774,7 +774,9 @@ top.player = {
       quoteBits: 0,
       unlockBits: 0,
       run: false,
+      tier: 0,
       upgradeBits: 0,
+      riftforce: DC.D0,
       rifts: {
         alpha: {
           fill: 0,
