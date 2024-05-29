@@ -9,7 +9,7 @@ export const Glitch = {
     return GlitchRifts.gamma.milestones[5].effectOrDefault(0) == 0 ? false : true;
   },
   initializeRun() {
-    if(player.celestials.glitch.layer == 0){
+    if(this.tier == 0){
       player.celestials.glitch.run = true;
       player.celestials.teresa.run = true;
       player.celestials.effarig.run = true;
@@ -18,7 +18,7 @@ export const Glitch = {
       player.celestials.ra.run = true;
       player.celestials.laitela.run = true;
     }
-    if(player.celestials.glitch.layer == 1){
+    if(this.tier == 1){
       
     }
     
@@ -33,9 +33,9 @@ export const Glitch = {
     player.celestials.laitela.run = false;
     
   },
-
-  get layer(){
-    return player.celestials.glitch.layer;
+  
+  get tier(){
+    return player.celestials.glitch.tier;
   },
   get isRunning() {
     return player.celestials.glitch.run;
