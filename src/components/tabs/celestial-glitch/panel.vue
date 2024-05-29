@@ -43,7 +43,7 @@ export default {
 </script>
 
 <template>
-  <button :class="classObject()">
+  <button class="c-glitch-run-button">
     <span :class="{ 'o-pelle-disabled': isDoomed }">
       <b>Start Glitch's Reality</b>
     </span>
