@@ -774,6 +774,7 @@ top.player = {
       quoteBits: 0,
       unlockBits: 0,
       run: false,
+      upgradeBits: 0,
       rifts: {
         alpha: {
           fill: 0,
