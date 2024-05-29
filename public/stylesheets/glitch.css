@@ -69,6 +69,23 @@
   100% { background-position-y: 24rem; }
 }
 
+.c-glitch-run-button__icon__glitch {
+  width: 0.1rem;
+  position: absolute;
+  background-image:
+    linear-gradient(
+      rgba(0, 0, 0, 0%) 0%,
+      var(--color-glitch--base) 20%,
+      var(--color-glitch--base) 80%,
+      rgba(0, 0, 0, 0%) 100%
+    );
+  border: none;
+}
+
+.c-glitch-run-button__icon:hover .c-glitch-run-button__icon__glitch {
+  background-image: linear-gradient(rgba(0, 0, 0, 0%) 0%, black 20%, black 80%, rgba(0, 0, 0, 0%) 100%);
+}
+
 .c-glitch-automation-toggle:hover {
   color: var(--color-glitch--base);
   background: var(--color-glitch--accent) !important;
