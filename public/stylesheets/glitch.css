@@ -57,11 +57,11 @@
 
 .o-glitch-run-button__icon:hover {
   background-color: white;
-  background-image: url("../images/laitela-icon-dark.svg");
+  background-image: url("../images/laitela-icon.svg");
 }
 
 .o-glitch-run-button__icon--running {
-  animation: a-glitch-run-button__icon--scroll 5s infinite linear;
+  animation: a-glitch-run-button__icon--scroll 5s infinite linear, a-glitch-run-button__icon--super-glow 1.2s infinite, a-glitch-run-button__icon--spin 5s infinite;
 }
 
 @keyframes a-glitch-run-button__icon--scroll {
@@ -93,13 +93,6 @@
 
 .s-base--metro .c-glitch-automation-toggle {
   box-shadow: none;
-}
-
-.c-glitch-run-button__icon--running {
-  color: var(--color-glitch--accent);
-  background-color: var(--color-glitch--base);
-  border-color: var(--color-glitch--accent);
-  animation: a-glitch-run-button__icon--super-glow 1.2s infinite, a-glitch-run-button__icon--spin 5s infinite;
 }
 
 .c-celestial-run-button--clickable {
