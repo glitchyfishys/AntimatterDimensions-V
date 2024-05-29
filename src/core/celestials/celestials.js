@@ -116,13 +116,13 @@ GameDatabase.celestials.descriptions = [
     name: "Glitch",
     effects() {
         if(Glitch.tier == 0){
-          return "all Celestials realitys at once";
+          return "all Celestials realitys at once.";
         }
         return "null";
     },
     description() {
       if(Glitch.tier == 0){
-        return "enter all Celestials realitys at once";
+        return "enter all Celestials realitys at once.";
       }
     },
       
