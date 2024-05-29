@@ -64,7 +64,7 @@ export default {
       <div
       v-for="x in (isRunning ? 25 : 0)"
       :key="x"
-      class="c-enslaved-run-button__icon__glitch"
+      class="c-glitch-run-button__icon__glitch"
       :style="glitchStyle(x)"
       />
     </div>
