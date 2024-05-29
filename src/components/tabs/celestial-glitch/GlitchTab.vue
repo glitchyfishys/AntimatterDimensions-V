@@ -44,7 +44,7 @@ export default {
 </script>
 
 <template>
-  <div class="l-glitch-tab">
+  <div class="l-glitch-celestial-tab">
     blank for now
     
     <GlitchRunButton />
