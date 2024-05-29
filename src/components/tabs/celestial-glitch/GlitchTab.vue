@@ -19,11 +19,6 @@ export default {
     isRunning: false,
     quote: "",
   }),
-  computed: {
- 
-  },
-  watch: {
-  },
   methods: {
     update() {
       this.isRunning = Glitch.isRunning;
@@ -43,7 +38,7 @@ export default {
         transform: `translate(${dx}rem, ${dy}rem)`,
         height: `${height}rem`,
       };
-    }
+    },
   },
 };
 </script>
