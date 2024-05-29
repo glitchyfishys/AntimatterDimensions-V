@@ -34,6 +34,10 @@ export const Glitch = {
     
   },
 
+
+  get ADnerf(){
+    return 0.5;
+  },
   get discription() {
     return GameDatabase.celestials.descriptions[6].effects()
   },
