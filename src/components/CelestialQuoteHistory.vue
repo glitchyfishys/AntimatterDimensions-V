@@ -17,15 +17,16 @@ export default {
       return this.celestial === "laitela" ? `var(--color-laitela--accent)` : `var(--color-${this.celestial}--base)`;
     },
     possessiveForm() {
-      return Celestials[this.celestial].possessiveName;
+      
+      return this.celestial == "glitch" ? "Glitch" : Celestials[this.celestial].possessiveName;
     }
   },
   methods: {
     update() {
-      this.isShown = Celestials[this.celestial].quotes.all.some(x => x.isUnlocked);
+      this.isShown = this.celestial == "glitch" ? Glitch.quotes.all.some(x => x.isUnlocked) : Celestials[this.celestial].quotes.all.some(x => x.isUnlocked);
     },
     show() {
-      Quote.showHistory(Celestials[this.celestial].quotes.all);
+      Quote.showHistory(this.celestial == "glitch" ? Glitch.quotes.all : Celestials[this.celestial].quotes.all);
     },
   }
 };
