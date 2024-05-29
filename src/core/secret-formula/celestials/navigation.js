@@ -2000,9 +2000,9 @@ export const celestialNavigation = {
       fill: "#00ff00",
       incompleteClass: "c-celestial-nav__test-incomplete",
       position: Positions.glitchUnlock,
+      symbol: "ὡ",
       ring: {
-        rMajor: 20,
-        rMinor: 10,
+        rMajor: 30,
       },
       alwaysShowLegend: true,
       legend: {
@@ -2022,7 +2022,7 @@ export const celestialNavigation = {
     connector: {
       pathStart: 0,
       pathEnd: 1,
-      path: LinearPath.connectCircles(Positions.laitelaThirdCenter, 17, Positions.glitchUnlock, 19),
+      path: LinearPath.connectCircles(Positions.laitelaThirdCenter, 14, Positions.glitchUnlock, 29),
       completeWidth: 6,
       incompleteWidth: 4,
       fill: "url(#gradGlitchLaitela)",
