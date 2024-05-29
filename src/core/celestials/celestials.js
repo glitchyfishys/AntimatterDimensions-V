@@ -5,7 +5,7 @@ import { Pelle } from "./pelle/pelle";
 import { Ra } from "./ra/ra";
 import { Teresa } from "./teresa";
 import { V } from "./V";
-import { glitch } from "./glitch/glitch";
+import { Glitch } from "./glitch/glitch";
 
 export const Celestials = {
   teresa: Teresa,
@@ -15,7 +15,7 @@ export const Celestials = {
   ra: Ra,
   laitela: Laitela,
   pelle: Pelle,
-  glitch: glitch,
+  glitch: Glitch
 };
 
 GameDatabase.celestials.descriptions = [
