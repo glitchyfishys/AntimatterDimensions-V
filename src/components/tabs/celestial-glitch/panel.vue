@@ -51,8 +51,14 @@ export default {
     </span>
     <div
       :class="runButtonClassObject()"
-      @click="startRun"
-    />
+      @click="startRun">
+      <div
+      v-for="x in (isRunning ? 25 : 0)"
+      :key="x"
+      class="c-enslaved-run-button__icon__glitch"
+      :style="glitchStyle(x)"
+      />
+    </div>
     <br>
     <p>
       run tier {{tier}} of Glitch's Reality
