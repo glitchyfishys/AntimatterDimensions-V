@@ -70,7 +70,7 @@ glitchUGState.index = mapGameData(
 
 export const eternityUG = id => eternityUGState.index[id];
 
-export const glitchupgradess = {
+export const glitchupgrades = {
   all: glitchUGState.index.compact(),
   get allBought() {
     return (player.celestials.glitch.upgradeBits >> 1) + 1 === 1 << (GameDatabase.celestials.glitchRealityUpgrades.length);
