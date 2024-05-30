@@ -23,7 +23,7 @@ export default {
       return this.augments;
     },
     isDoomed: () => Pelle.isDoomed,
-    effect(id){
+    effectname(id){
       Glitch.augmenteffects(id);
     },
   },
@@ -71,10 +71,10 @@ export default {
       @click="effects(x)">
       
       <p v-if="activeaugment(x)">
-        remove {{efect(x)}}
+        remove {{effectname(x)}}
       </p>
       <p v-else>
-        enable {{efect(x)}}
+        enable {{effectname(x)}}
       </p>
       
     </PrimaryButton>
