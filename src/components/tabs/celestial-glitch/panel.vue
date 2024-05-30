@@ -84,6 +84,6 @@ export default {
       run tier {{tier}} of Glitch's Reality
     </p>
     <br><br>
-    <div v-if="isRunning"> time in this reality {{timeDisplayShort(player.records.thisReality.realTime)}}</div>
+    <div v-if="isRunning"> time in this reality {{timeDisplayShort(time)}}</div>
   </button>
 </template>
