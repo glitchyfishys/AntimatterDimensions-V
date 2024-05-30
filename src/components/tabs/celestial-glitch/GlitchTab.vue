@@ -44,6 +44,7 @@ export default {
         "o-enslaved-shop-button--bought": this.isRunning,
         "o-primary-btn--subtab-option": !this.isRunning
       };
+    },
   },
 };
 </script>
