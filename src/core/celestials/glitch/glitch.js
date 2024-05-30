@@ -10,11 +10,11 @@ export const Glitch = {
   },
 
   augmenteffectactive(id = 0){
-    return (player.celestials.glitch.augment.effects & (1 << id)) > 0;
+    return (player.celestials.glitch.augment.effectbits & (1 << id)) > 0;
   },
 
-  get augmenteffects(){
-    return player.celestials.glitch.augment.effects;
+  get augmenteffectbits(){
+    return player.celestials.glitch.augment.effectbits;
   },
 
   augmenteffects(id = 0){
