@@ -50,8 +50,7 @@ export default {
       v-model="effects(0)"
       on="remove Teresa's Reality"
       off="enable Teresa's Reality"
-      class="o-primary-btn--subtab-option"
-    />
+      class="o-primary-btn--subtab-option"/>
     
     <BlackHoleChargingSliders />
     
