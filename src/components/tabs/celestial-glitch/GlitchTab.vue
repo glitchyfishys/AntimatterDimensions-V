@@ -84,7 +84,7 @@ export default {
     class="o-primary-btn--subtab-option"
     @click="effects(1)">
       
-    <p v-if="activeaugment(0)">
+    <p v-if="activeaugment(1)">
       remove Effarig's Reality
     </p>
     <p v-else>
@@ -92,7 +92,8 @@ export default {
     </p>
 
     </PrimaryButton>
-      
+
+      glitch's reality effects {{runDescription}}
     </div>
     
     <BlackHoleChargingSliders />
