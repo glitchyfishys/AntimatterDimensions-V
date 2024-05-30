@@ -20,6 +20,12 @@ export default {
     quote: "",
     time: 0,
   }),
+  watch: {
+    effects(id){
+      if ((player.celestials.glitch.augment.effectbits & (1 << id)) > 0) player.celestials.glitch.augment.effectbits |= (1 << id);
+      else player.celestials.glitch.augment.effectbits &= ~(1 << id);
+    }
+  },
   methods: {
     update() {
       this.isRunning = Glitch.isRunning;
@@ -30,10 +36,6 @@ export default {
       if (this.isDoomed) return;
       Modal.celestials.show({ name: "glitch'", number: 6 });
     },
-    effects(id){
-      if ((player.celestials.glitch.augment.effectbits & (1 << id)) > 0) player.celestials.glitch.augment.effectbits |= (1 << id);
-      else player.celestials.glitch.augment.effectbits &= ~(1 << id)
-    }
   },
 };
 </script>
