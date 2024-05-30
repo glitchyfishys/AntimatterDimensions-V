@@ -20,22 +20,23 @@ export default {
       return GameDatabase.celestials.descriptions[6].effects().split("\n");
     },
     runDescription() {
-      return Glitch.activeaugments;
+      return this.augments;
     },
     isDoomed: () => Pelle.isDoomed,
-    augments: () => Glitch.augmenteffectbits,
     
   },
   data: () => ({
     isRunning: false,
     quote: "",
     bits: 0,
+    augments: Glitch.activeaugments,
   }),
   methods: {
     update() {
       this.isRunning = Glitch.isRunning;
       this.quote = Glitch.quote;
       this.bits = Glitch.augmenteffectbits;
+      this.augments = Glitch.activeaugments,
     },
     startRun() {
       if (this.isDoomed) return;
