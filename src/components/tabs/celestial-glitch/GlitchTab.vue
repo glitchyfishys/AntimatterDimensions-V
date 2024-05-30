@@ -19,12 +19,14 @@ export default {
     isRunning: false,
     quote: "",
     time: 0,
+    bits: 0,
   }),
   methods: {
     update() {
       this.isRunning = Glitch.isRunning;
       this.quote = Glitch.quote;
       this.time = player.records.thisReality.realTime;
+      this.bits = Glitch.augmenteffectbits;
     },
     startRun() {
       if (this.isDoomed) return;
@@ -35,12 +37,12 @@ export default {
       else player.celestials.glitch.augment.effectbits |= (1 << id);
     },
     activeaugment(id){
-      return (player.celestials.glitch.augment.effectbits & (1 << id)) > 0;
+      return Glitch.augmenteffectactive(id);
     },
     test() {
       return {
         "o-enslaved-shop-button--bought": this.isRunning,
-        "o-primary-btn--subtab-option"": !this.isRunning
+        "o-primary-btn--subtab-option": !this.isRunning
       };
   },
 };
