@@ -49,6 +49,7 @@ export default {
     
     <GlitchRunButton />
 
+    <div>
     <PrimaryButton
       v-if="activeaugment(0)"
       class="o-primary-btn--subtab-option"
@@ -62,7 +63,21 @@ export default {
       @click="effects(0)">
       enable Teresa's Reality
     </PrimaryButton>
+
+      <PrimaryButton
+      v-if="activeaugment(1)"
+      class="o-primary-btn--subtab-option"
+      @click="effects(1)">
+    remove Effarig's Reality
+    </PrimaryButton>
     
+    <PrimaryButton
+      v-else
+      class="o-primary-btn--subtab-option"
+      @click="effects(1)">
+      enable Effarig's Reality
+    </PrimaryButton>
+    </div>
     
     <BlackHoleChargingSliders />
     
