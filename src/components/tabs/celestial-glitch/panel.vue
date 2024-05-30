@@ -52,8 +52,10 @@ export default {
         transform: `translate(${dx}rem, ${dy}rem)`,
         height: `${height}rem`,
       };
-    }
-    
+    },
+    render(){
+      return 15 + Math.floor(Math.random() * 11);
+    },
   }
 };
 </script>
@@ -63,16 +65,18 @@ export default {
     <span :class="{ 'o-pelle-disabled': isDoomed }">
       <b>Start Glitch's Reality</b>
     </span>
-    <div
+      <div
       :class="runButtonClassObject"
       @click="startRun">
+      
       <div
-      v-for="x in (isRunning ? 25 : 0)"
+      v-for="x in (isRunning ? render() : 0)"
       :key="x"
       class="c-glitch-run-button__icon__glitch"
       :style="glitchStyle(x)"
       />
     </div>
+    
     <br>
     <p>
       run tier {{tier}} of Glitch's Reality
