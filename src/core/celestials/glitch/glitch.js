@@ -19,14 +19,14 @@ export const Glitch = {
 
   augmenteffects(id = 0){
       if(id == 0) return "Teresa Reality";
-      if(id == 1) ? return "Effarig Reality";
-      if(id == 2) ? return "Nameless one's Reality";
-      if(id == 3) ? return "Nameless one's dim limit";
-      if(id == 4) ? return "Nameless one's low tachyon gain";
-      if(id == 5) ? return "V's Reality";
-      if(id == 6) ? return "Ra's no dim boost";
-      if(id == 7) ? return "Ra's static tickspeed";
-      if(id == 8) ? return "Lai'tela's Reality";
+      if(id == 1) return "Effarig Reality";
+      if(id == 2) return "Nameless one's Reality";
+      if(id == 3) return "Nameless one's dim limit";
+      if(id == 4) return "Nameless one's low tachyon gain";
+      if(id == 5) return "V's Reality";
+      if(id == 6) return "Ra's no dim boost";
+      if(id == 7) return "Ra's static tickspeed";
+      if(id == 8) return "Lai'tela's Reality";
       return "out of range";
   }
 
