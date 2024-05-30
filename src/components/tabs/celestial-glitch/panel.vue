@@ -14,7 +14,7 @@ export default {
       return GameDatabase.celestials.descriptions[6].effects().split("\n");
     },
     runDescription() {
-      return GameDatabase.celestials.descriptions[6].description();
+      return Glitch.augmenteffects();
     },
     isDoomed: () => Pelle.isDoomed,
     runButtonClassObject() {
