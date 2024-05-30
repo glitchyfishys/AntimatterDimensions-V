@@ -1096,6 +1096,7 @@ window.onload = function() {
   const supportedBrowser = browserCheck();
   GameUI.initialized = supportedBrowser;
   ui.view.initialized = supportedBrowser;
+  Decimal.MAX_VALUE.e = 1e300;
   setTimeout(() => {
     ElectronRuntime.updateZoom();
     document.getElementById("loading").style.display = "none";
