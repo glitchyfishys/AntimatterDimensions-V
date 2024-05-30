@@ -60,31 +60,32 @@ export default {
     <div>
     <PrimaryButton
       v-if="activeaugment(0)"
-      :class="test()"
+      class="o-primary-btn--subtab-option"
       @click="effects(0)">
-    remove Teresa's Reality
-    </PrimaryButton>
-    
-    <PrimaryButton
-      v-else
-      :class="test()"
-      @click="effects(0)">
-      enable Teresa's Reality
+      
+      <p v-if="activeaugment(0)">
+        remove Teresa's Reality
+      </p>
+      <p v-else>
+        enable Teresa's Reality
+      </p>
+      
     </PrimaryButton>
 
-      <PrimaryButton
-      v-if="activeaugment(1)"
-      class="o-primary-btn--subtab-option"
-      @click="effects(1)">
-    remove Effarig's Reality
-    </PrimaryButton>
-    
     <PrimaryButton
-      v-else
-      class="o-primary-btn--subtab-option"
-      @click="effects(1)">
+    v-if="activeaugment(1)"
+    class="o-primary-btn--subtab-option"
+    @click="effects(1)">
+      
+    <p v-if="activeaugment(0)">
+      remove Effarig's Reality
+    </p>
+    <p v-else>
       enable Effarig's Reality
+    </p>
+
     </PrimaryButton>
+      
     </div>
     
     <BlackHoleChargingSliders />
