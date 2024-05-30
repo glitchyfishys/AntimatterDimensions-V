@@ -7,6 +7,7 @@ export default {
     return {
       isRunning: false,
       tier: 0,
+      time: 0,
     };
   },
   computed: {
@@ -36,6 +37,7 @@ export default {
     update() {
       this.isRunning = Glitch.isRunning;
       this.tier = Glitch.tier;
+      this.time = player.records.thisReality.realTime;
     },
     
     startRun() {
@@ -70,7 +72,7 @@ export default {
       @click="startRun">
       
       <div
-      v-for="x in (isRunning ? render() : 0)"
+      v-for="x in (isRunning ? 25 : 0)"
       :key="x"
       class="c-glitch-run-button__icon__glitch"
       :style="glitchStyle(x)"
@@ -81,8 +83,7 @@ export default {
     <p>
       run tier {{tier}} of Glitch's Reality
     </p>
-    <div>{{ runEffects }}</div>
     <br><br>
-    <div>{{ runDescription }}</div>
+    <div v-if="isRunning"> time in this reality {{timeDisplayShort(player.records.thisReality.realTime)}}</div>
   </button>
 </template>
