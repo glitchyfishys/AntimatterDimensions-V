@@ -20,12 +20,6 @@ export default {
     quote: "",
     time: 0,
   }),
-  watch: {
-    effects(id){
-      if ((player.celestials.glitch.augment.effectbits & (1 << id)) > 0) player.celestials.glitch.augment.effectbits &= ~(1 << id);
-      else player.celestials.glitch.augment.effectbits |= (1 << id);
-    }
-  },
   methods: {
     update() {
       this.isRunning = Glitch.isRunning;
@@ -36,6 +30,13 @@ export default {
       if (this.isDoomed) return;
       Modal.celestials.show({ name: "glitch'", number: 6 });
     },
+    effects(id){
+      if ((player.celestials.glitch.augment.effectbits & (1 << id)) > 0) player.celestials.glitch.augment.effectbits &= ~(1 << id);
+      else player.celestials.glitch.augment.effectbits |= (1 << id);
+    },
+    activeaugment(id){
+      return (player.celestials.glitch.augment.effectbits & (1 << id)) > 0;
+    }
   },
 };
 </script>
@@ -49,12 +50,12 @@ export default {
     <GlitchRunButton />
 
     <PrimaryToggleButton
-      v-model="true"
-        @onclick="effects(0)"
+      v-model="activeaugment"
       on="remove Teresa's Reality"
       off="enable Teresa's Reality"
-      class="o-primary-btn--subtab-option"/>
-    
+      class="o-primary-btn--subtab-option"
+      @onClick="effects(0)"
+    />
     <BlackHoleChargingSliders />
     
   </div>
