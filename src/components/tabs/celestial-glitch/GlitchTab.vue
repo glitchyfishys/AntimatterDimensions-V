@@ -15,17 +15,25 @@ export default {
     BlackHoleChargingSliders,
     GlitchRunButton,
   },
+  computed: {
+    runEffects() {
+      return GameDatabase.celestials.descriptions[6].effects().split("\n");
+    },
+    runDescription() {
+      return Glitch.activeaugments;
+    },
+    isDoomed: () => Pelle.isDoomed,
+    
+  },
   data: () => ({
     isRunning: false,
     quote: "",
-    time: 0,
     bits: 0,
   }),
   methods: {
     update() {
       this.isRunning = Glitch.isRunning;
       this.quote = Glitch.quote;
-      this.time = player.records.thisReality.realTime;
       this.bits = Glitch.augmenteffectbits;
     },
     startRun() {
