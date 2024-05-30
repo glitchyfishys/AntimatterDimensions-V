@@ -36,7 +36,7 @@ export default {
       this.isRunning = Glitch.isRunning;
       this.quote = Glitch.quote;
       this.bits = Glitch.augmenteffectbits;
-      this.augments = Glitch.activeaugments,
+      this.augments = Glitch.activeaugments;
     },
     startRun() {
       if (this.isDoomed) return;
