@@ -40,7 +40,7 @@ export default {
     test() {
       return {
         "o-enslaved-shop-button--bought": this.isRunning,
-        "o-enslaved-shop-button--available": !this.isRunning
+        "o-primary-btn--subtab-option"": !this.isRunning
       };
   },
 };
@@ -57,14 +57,14 @@ export default {
     <div>
     <PrimaryButton
       v-if="activeaugment(0)"
-      class="o-primary-btn--subtab-option"
+      :class="test()"
       @click="effects(0)">
     remove Teresa's Reality
     </PrimaryButton>
     
     <PrimaryButton
       v-else
-      class="o-primary-btn--subtab-option"
+      :class="test()"
       @click="effects(0)">
       enable Teresa's Reality
     </PrimaryButton>
