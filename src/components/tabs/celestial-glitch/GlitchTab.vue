@@ -52,14 +52,14 @@ export default {
     <PrimaryButton
       v-if="activeaugment(0)"
       class="o-primary-btn--subtab-option"
-      @onClick="effects(0)">
+      @click="effects(0)">
     remove Teresa's Reality
     </PrimaryButton>
     
     <PrimaryButton
       v-else
       class="o-primary-btn--subtab-option"
-      @onClick="effects(0)">
+      @click="effects(0)">
       enable Teresa's Reality
     </PrimaryButton>
     
