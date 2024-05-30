@@ -64,7 +64,7 @@ export default {
       <b>Start Glitch's Reality</b>
     </span>
     <div
-      :class="runButtonClassObject()"
+      :class="runButtonClassObject"
       @click="startRun">
       <div
       v-for="x in (isRunning ? 25 : 0)"
