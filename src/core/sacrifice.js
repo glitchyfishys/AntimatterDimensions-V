@@ -109,7 +109,7 @@ export class Sacrifice {
       prePowerBoost = new Decimal(player.sacrificed.log10() / 10);
     }
 
-    let postPowerSacrifice = prePowerSacrifice.clampMin(1).pow(this.sacrificeExponent);
+    let postPowerSacrifice = prePowerBoost.clampMin(1).pow(this.sacrificeExponent);
 
     let softcap = postPowerSacrifice.div("1e1E16").pow(0.9);
     return postPowerSacrifice.gte("1e1E16") ? postPowerSacrifice.div(softcap) : postPowerSacrifice;
