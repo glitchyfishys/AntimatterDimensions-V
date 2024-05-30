@@ -22,8 +22,8 @@ export default {
   }),
   watch: {
     effects(id){
-      if ((player.celestials.glitch.augment.effectbits & (1 << id)) > 0) player.celestials.glitch.augment.effectbits |= (1 << id);
-      else player.celestials.glitch.augment.effectbits &= ~(1 << id);
+      if ((player.celestials.glitch.augment.effectbits & (1 << id)) > 0) player.celestials.glitch.augment.effectbits &= ~(1 << id);
+      else player.celestials.glitch.augment.effectbits |= (1 << id);
     }
   },
   methods: {
