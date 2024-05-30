@@ -18,28 +18,29 @@ export const Glitch = {
   },
 
   augmenteffects(id = 0){
-      id == 0 ? return "Teresa Reality" : undefined;
-      id == 1 ? return "Effarig Reality" : undefined;
-      id == 2 ? return "Nameless one's Reality" : undefined;
-      id == 3 ? return "Nameless one's dim limit" : undefined;
-      id == 4 ? return "Nameless one's low tachyon gain" : undefined;
-      id == 5 ? return "V's Reality" : undefined;
-      id == 6 ? return "Ra's no dim boost" : undefined;
-      id == 7 ? return "Ra's static tickspeed" : undefined;
-      id == 8 ? return "Lai'tela's Reality" : undefined;
+      if(id == 0) return "Teresa Reality";
+      if(id == 1) ? return "Effarig Reality";
+      if(id == 2) ? return "Nameless one's Reality";
+      if(id == 3) ? return "Nameless one's dim limit";
+      if(id == 4) ? return "Nameless one's low tachyon gain";
+      if(id == 5) ? return "V's Reality";
+      if(id == 6) ? return "Ra's no dim boost";
+      if(id == 7) ? return "Ra's static tickspeed";
+      if(id == 8) ? return "Lai'tela's Reality";
+      return "out of range";
   }
 
   get activeaugments(){
       let effect = [];
-      augmenteffectactive(0) ? return effect.push("Teresa Reality") : undefined;
-      augmenteffectactive(1) ? return effect.push("Effarig Reality") : undefined;
-      augmenteffectactive(2) ? return effect.push("Nameless one's Reality") : undefined;
-      augmenteffectactive(3) ? return effect.push("Nameless one's dim limit") : undefined;
-      augmenteffectactive(4) ? return effect.push("Nameless one's low tachyon gain") : undefined;
-      augmenteffectactive(5) ? return effect.push("V's Reality") : undefined;
-      augmenteffectactive(6) ? return effect.push("Ra's no dim boost") : undefined;
-      augmenteffectactive(7) ? return effect.push("Ra's static tickspeed") : undefined;
-      augmenteffectactive(8) ? return effect.push("Lai'tela's Reality") : undefined;
+      augmenteffectactive(0) ? effect.push("Teresa Reality") : undefined;
+      augmenteffectactive(1) ? effect.push("Effarig Reality") : undefined;
+      augmenteffectactive(2) ? effect.push("Nameless one's Reality") : undefined;
+      augmenteffectactive(3) ? effect.push("Nameless one's dim limit") : undefined;
+      augmenteffectactive(4) ? effect.push("Nameless one's low tachyon gain") : undefined;
+      augmenteffectactive(5) ? effect.push("V's Reality") : undefined;
+      augmenteffectactive(6) ? effect.push("Ra's no dim boost") : undefined;
+      augmenteffectactive(7) ? effect.push("Ra's static tickspeed") : undefined;
+      augmenteffectactive(8) ? effect.push("Lai'tela's Reality") : undefined;
       return effect;
   },
 
