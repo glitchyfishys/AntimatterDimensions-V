@@ -6,7 +6,7 @@ import PrimaryButton from "@/components/PrimaryButton";
 import PrimaryToggleButton from "@/components/PrimaryToggleButton";
 import GlitchRunButton from "./panel";
 
-export default {
+export default GlitchTab{
   name: "GlitchTab",
   components: {
     CelestialQuoteHistory,
