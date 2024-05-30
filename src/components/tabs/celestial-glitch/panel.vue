@@ -17,6 +17,15 @@ export default {
       return GameDatabase.celestials.descriptions[6].description();
     },
     isDoomed: () => Pelle.isDoomed,
+    runButtonClassObject() {
+      return {
+        "o-glitch-run-button__icon": true,
+        "o-glitch-run-button__icon--running": this.isRunning,
+        "c-celestial-run-button--clickable": !this.isDoomed,
+        "o-pelle-disabled-pointer": this.isDoomed
+      };
+    },
+    
   },
   watch: {
     autoRelease(newValue) {
@@ -32,15 +41,6 @@ export default {
     startRun() {
       if (this.isDoomed) return;
       Modal.celestials.show({ name: "glitch's", number: 6 });
-    },
-    
-    runButtonClassObject() {
-      return {
-        "o-glitch-run-button__icon": true,
-        "o-glitch-run-button__icon--running": this.isRunning,
-        "c-celestial-run-button--clickable": !this.isDoomed,
-        "o-pelle-disabled-pointer": this.isDoomed
-      };
     },
     glitchStyle(x) {
       const xScale = 15 / 27;
