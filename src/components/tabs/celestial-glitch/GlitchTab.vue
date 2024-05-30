@@ -36,7 +36,12 @@ export default {
     },
     activeaugment(id){
       return (player.celestials.glitch.augment.effectbits & (1 << id)) > 0;
-    }
+    },
+    test() {
+      return {
+        "o-enslaved-shop-button--bought": this.isRunning,
+        "o-enslaved-shop-button--available": !this.isRunning
+      };
   },
 };
 </script>
