@@ -28,7 +28,7 @@ export const Glitch = {
       if(id == 7) return "Ra's static tickspeed";
       if(id == 8) return "Lai'tela's Reality";
       return "out of range";
-  }
+  },
 
   get activeaugments(){
       let effect = [];
@@ -70,6 +70,7 @@ export const Glitch = {
       
     }
   },
+  
   leaveRun() {
     player.celestials.glitch.run = false;
     player.celestials.teresa.run = false;
