@@ -23,7 +23,9 @@ export default {
       return this.augments;
     },
     isDoomed: () => Pelle.isDoomed,
-    
+    effect(id){
+      Glitch.augmenteffects(id);
+    },
   },
   data: () => ({
     isRunning: false,
@@ -49,12 +51,7 @@ export default {
     activeaugment(id){
       return Glitch.augmenteffectactive(id);
     },
-    test() {
-      return {
-        "o-enslaved-shop-button--bought": this.isRunning,
-        "o-primary-btn--subtab-option": !this.isRunning
-      };
-    },
+    
   },
 };
 </script>
@@ -69,29 +66,17 @@ export default {
 
     <div>
     <PrimaryButton
+      v-for="x in 8"
       class="o-primary-btn--subtab-option"
-      @click="effects(0)">
+      @click="effects(x)">
       
-      <p v-if="activeaugment(0)">
-        remove Teresa's Reality
+      <p v-if="activeaugment(x)">
+        remove {{efect(x)}}
       </p>
       <p v-else>
-        enable Teresa's Reality
+        enable {{efect(x)}}
       </p>
       
-    </PrimaryButton>
-
-    <PrimaryButton
-    class="o-primary-btn--subtab-option"
-    @click="effects(1)">
-      
-    <p v-if="activeaugment(1)">
-      remove Effarig's Reality
-    </p>
-    <p v-else>
-      enable Effarig's Reality
-    </p>
-
     </PrimaryButton>
 
       <br>
