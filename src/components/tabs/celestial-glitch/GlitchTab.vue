@@ -50,7 +50,7 @@ export default {
     <GlitchRunButton />
 
     <PrimaryToggleButton
-      v-model="activeaugment"
+      v-model="activeaugment(0)"
       on="remove Teresa's Reality"
       off="enable Teresa's Reality"
       class="o-primary-btn--subtab-option"
