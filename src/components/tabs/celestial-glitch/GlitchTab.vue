@@ -23,6 +23,7 @@ export default {
       return Glitch.activeaugments;
     },
     isDoomed: () => Pelle.isDoomed,
+    augments: () => Glitch.augmenteffectbits,
     
   },
   data: () => ({
@@ -67,7 +68,6 @@ export default {
 
     <div>
     <PrimaryButton
-      v-if="activeaugment(0)"
       class="o-primary-btn--subtab-option"
       @click="effects(0)">
       
@@ -81,7 +81,6 @@ export default {
     </PrimaryButton>
 
     <PrimaryButton
-    v-if="activeaugment(1)"
     class="o-primary-btn--subtab-option"
     @click="effects(1)">
       
