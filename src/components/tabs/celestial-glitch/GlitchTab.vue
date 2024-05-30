@@ -94,6 +94,7 @@ export default {
 
     </PrimaryButton>
 
+      <br>
       glitch's reality effects {{runDescription}}
     </div>
     
