@@ -32,15 +32,15 @@ export const Glitch = {
 
   get activeaugments(){
       let effect = [];
-      augmenteffectactive(0) ? effect.push("Teresa Reality") : undefined;
-      augmenteffectactive(1) ? effect.push("Effarig Reality") : undefined;
-      augmenteffectactive(2) ? effect.push("Nameless one's Reality") : undefined;
-      augmenteffectactive(3) ? effect.push("Nameless one's dim limit") : undefined;
-      augmenteffectactive(4) ? effect.push("Nameless one's low tachyon gain") : undefined;
-      augmenteffectactive(5) ? effect.push("V's Reality") : undefined;
-      augmenteffectactive(6) ? effect.push("Ra's no dim boost") : undefined;
-      augmenteffectactive(7) ? effect.push("Ra's static tickspeed") : undefined;
-      augmenteffectactive(8) ? effect.push("Lai'tela's Reality") : undefined;
+      this.augmenteffectactive(0) ? effect.push("Teresa Reality") : undefined;
+      this.augmenteffectactive(1) ? effect.push("Effarig Reality") : undefined;
+      this.augmenteffectactive(2) ? effect.push("Nameless one's Reality") : undefined;
+      this.augmenteffectactive(3) ? effect.push("Nameless one's dim limit") : undefined;
+      this.augmenteffectactive(4) ? effect.push("Nameless one's low tachyon gain") : undefined;
+      this.augmenteffectactive(5) ? effect.push("V's Reality") : undefined;
+      this.augmenteffectactive(6) ? effect.push("Ra's no dim boost") : undefined;
+      this.augmenteffectactive(7) ? effect.push("Ra's static tickspeed") : undefined;
+      this.augmenteffectactive(8) ? effect.push("Lai'tela's Reality") : undefined;
       return effect;
   },
 
@@ -48,23 +48,23 @@ export const Glitch = {
     if(this.tier == 0){
       player.celestials.glitch.run = true;
       // active
-      augmenteffectactive(0) ?  player.celestials.teresa.run = true : undefined;
+      this.augmenteffectactive(0) ?  player.celestials.teresa.run = true : undefined;
       // active
-      augmenteffectactive(1) ? player.celestials.effarig.run = true : undefined;
+      this.augmenteffectactive(1) ? player.celestials.effarig.run = true : undefined;
       //active
-      augmenteffectactive(2) ? player.celestials.enslaved.run = true : undefined;
+      this.augmenteffectactive(2) ? player.celestials.enslaved.run = true : undefined;
       // dim limit
-      augmenteffectactive(3) ? player.celestials.enslaved.run = true : undefined;
+      this.augmenteffectactive(3) ? player.celestials.enslaved.run = true : undefined;
       // low tachyon gain
-      augmenteffectactive(4) ? player.celestials.enslaved.run = true : undefined;
+      this.augmenteffectactive(4) ? player.celestials.enslaved.run = true : undefined;
       // active
-      augmenteffectactive(5) ? player.celestials.v.run = true : undefined;
+      this.augmenteffectactive(5) ? player.celestials.v.run = true : undefined;
       // no dim boost
-      augmenteffectactive(6) ? player.celestials.ra.run = true : undefined;
+      this.augmenteffectactive(6) ? player.celestials.ra.run = true : undefined;
       // static tick speed
-      augmenteffectactive(7) ? player.celestials.ra.run = true : undefined;
+      this.augmenteffectactive(7) ? player.celestials.ra.run = true : undefined;
       // active
-      augmenteffectactive(8) ? player.celestials.laitela.run = true : undefined;
+      this.augmenteffectactive(8) ? player.celestials.laitela.run = true : undefined;
     }
     if(this.tier == 1){
       
