@@ -18,6 +18,11 @@ export default {
     },
     isDoomed: () => Pelle.isDoomed,
   },
+  watch: {
+    autoRelease(newValue) {
+      player.celestials.enslaved.isAutoReleasing = newValue;
+    }
+  },
   methods: {
     update() {
       this.isRunning = Glitch.isRunning;
