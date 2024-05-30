@@ -87,7 +87,10 @@ export class Sacrifice {
       prePowerSacrificeMult = new Decimal((nd1Amount.log10() / 10) / Math.max(sacrificed.log10() / 10, 1));
     }
 
-    return prePowerSacrificeMult.clampMin(1).pow(this.sacrificeExponent);
+    let postPowerSacrificeMult = prePowerSacrificeMult.clampMin(1).pow(this.sacrificeExponent);
+
+    let softcap = (postPowerSacrificeMult).div("1e1E16").pow(0.9);
+    return postPowerSacrificeMult.gte("1e1E16") ? postPowerSacrificeMult.div(softcap) : postPowerSacrificeMult;
   }
 
   static get totalBoost() {
@@ -106,7 +109,10 @@ export class Sacrifice {
       prePowerBoost = new Decimal(player.sacrificed.log10() / 10);
     }
 
-    return prePowerBoost.clampMin(1).pow(this.sacrificeExponent);
+    let postPowerSacrificeMult = prePowerSacrificeMult.clampMin(1).pow(this.sacrificeExponent);
+
+    let softcap = postPowerSacrificeMult.div("1e1E16").pow(0.9);
+    return postPowerSacrificeMult.gte("1e1E16") ? postPowerSacrificeMult.div(softcap) : postPowerSacrificeMult;
   }
 }
 
