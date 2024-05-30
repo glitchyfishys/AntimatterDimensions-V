@@ -26,6 +26,9 @@ export default {
         "o-pelle-disabled-pointer": this.isDoomed
       };
     },
+    realitytime(){
+      return timeDisplayShort(this.time)
+    },
     
   },
   watch: {
@@ -84,6 +87,6 @@ export default {
       run tier {{tier}} of Glitch's Reality
     </p>
     <br><br>
-    <div v-if="isRunning"> time in this reality {{timeDisplayShort(time)}}</div>
+    <div v-if="isRunning"> time in this reality {{realitytime}}</div>
   </button>
 </template>
