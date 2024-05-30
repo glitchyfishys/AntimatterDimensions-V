@@ -49,13 +49,21 @@ export default {
     
     <GlitchRunButton />
 
-    <PrimaryToggleButton
-      v-model="activeaugment(0)"
-      on="remove Teresa's Reality"
-      off="enable Teresa's Reality"
+    <PrimaryButton
+      v-if="activeaugment(0)"
       class="o-primary-btn--subtab-option"
-      @onClick="effects(0)"
-    />
+      @onClick="effects(0)">
+    remove Teresa's Reality
+    </PrimaryButton>
+    
+    <PrimaryButton
+      v-else
+      class="o-primary-btn--subtab-option"
+      @onClick="effects(0)">
+      enable Teresa's Reality
+    </PrimaryButton>
+    
+    
     <BlackHoleChargingSliders />
     
   </div>
