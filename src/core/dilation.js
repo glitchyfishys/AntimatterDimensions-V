@@ -96,7 +96,9 @@ export function buyDilationUpgrade(id, bulk = 1) {
         Perk.retroactiveTP3,
         Perk.retroactiveTP4
       );
-      if (Enslaved.isRunning) {
+      const allow = (Enslaved.isRunning && !Glitch.isRunning);
+      const allowed = (allow || Glitch.augmenteffectactive(4));
+      if (allowed) {
         retroactiveTPFactor = Math.pow(retroactiveTPFactor, Enslaved.tachyonNerf);
       }
       Currency.tachyonParticles.multiply(Decimal.pow(retroactiveTPFactor, buying));
