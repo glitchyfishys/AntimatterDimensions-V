@@ -142,15 +142,20 @@ export function getDilationGainPerSecond() {
   dtRate = dtRate.times(ShopPurchase.dilatedTimePurchases.currentMult);
   dtRate = dtRate.times(
     Math.clampMin(Decimal.log10(Replicanti.amount) * getAdjustedGlyphEffect("replicationdtgain"), 1));
-  if (Enslaved.isRunning && !dtRate.eq(0)) dtRate = Decimal.pow10(Math.pow(dtRate.plus(1).log10(), 0.85) - 1);
+  const allow = (Enslaved.isRunning && !Glitch.isRunning);
+  const allowed = (allow || Glitch.augmenteffectactive(4));
+  
+  if (allowed && !dtRate.eq(0)) dtRate = Decimal.pow10(Math.pow(dtRate.plus(1).log10(), 0.85) - 1);
   if (V.isRunning) dtRate = dtRate.pow(0.5);
   return dtRate;
 }
 
 export function tachyonGainMultiplier() {
+  const allow = (Enslaved.isRunning && !Glitch.isRunning);
+  const allowed = (allow || Glitch.augmenteffectactive(4));
   
   if (Pelle.isDisabled("tpMults")) return new Decimal(1).times(realityUGs.all[1].effectOrDefault(1));
-  const pow = Enslaved.isRunning ? Enslaved.tachyonNerf : 1;
+  const pow = allowed ? Enslaved.tachyonNerf : 1;
   return DC.D1.timesEffectsOf(
     DilationUpgrade.tachyonGain,
     GlyphSacrifice.dilation,
@@ -176,7 +181,11 @@ export function getBaseTP(antimatter, requireEternity) {
     ? antimatter
     : Ra.unlocks.unlockDilationStartingTP.effectOrDefault(antimatter);
   let baseTP = Decimal.pow(Decimal.log10(am) / 400, 1.5);
-  if (Enslaved.isRunning) baseTP = baseTP.pow(Enslaved.tachyonNerf);
+
+  const allow = (Enslaved.isRunning && !Glitch.isRunning);
+  const allowed = (allow || Glitch.augmenteffectactive(4));
+  
+  if (allowed) baseTP = baseTP.pow(Enslaved.tachyonNerf);
   return baseTP;
 }
 
@@ -193,8 +202,11 @@ export function getTachyonGain(requireEternity) {
 
 // Returns the minimum antimatter needed in order to gain more TP; used only for display purposes
 export function getTachyonReq() {
+  const allow = (Enslaved.isRunning && !Glitch.isRunning);
+  const allowed = (allow || Glitch.augmenteffectactive(4));
+  
   let effectiveTP = Currency.tachyonParticles.value.dividedBy(tachyonGainMultiplier());
-  if (Enslaved.isRunning) effectiveTP = effectiveTP.pow(1 / Enslaved.tachyonNerf);
+  if (allowed) effectiveTP = effectiveTP.pow(1 / Enslaved.tachyonNerf);
   return Decimal.pow10(
     effectiveTP
       .times(Math.pow(400, 1.5))
