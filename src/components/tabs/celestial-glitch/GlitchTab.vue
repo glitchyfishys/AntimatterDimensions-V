@@ -15,6 +15,7 @@ export default {
     PrimaryToggleButton,
     BlackHoleChargingSliders,
     GlitchRunButton,
+    GlitchUpgrade,
   },
   computed: {
     runEffects() {
@@ -101,7 +102,7 @@ export default {
       :key="row"
       class="l-reality-upgrade-grid__row">
         
-      <glitchupgradebutton
+      <GlitchUpgrade
         v-for="column in 4"
         :key="id(row, column)"
         :upgrade="upgrades[id(row, column)]"/>
