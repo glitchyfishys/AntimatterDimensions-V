@@ -67,6 +67,7 @@ export default {
     <div>
     <PrimaryButton
       v-for="x in 8"
+      :key="x"
       class="o-primary-btn--subtab-option"
       @click="effects(x)">
       
