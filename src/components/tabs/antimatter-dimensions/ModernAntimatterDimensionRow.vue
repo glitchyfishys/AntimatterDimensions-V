@@ -81,7 +81,10 @@ export default {
       const dimension = AntimatterDimension(tier);
       this.isUnlocked = dimension.isAvailableForPurchase;
       const buyUntil10 = player.buyUntil10;
-      this.isCapped = tier === 8 && Enslaved.isRunning && dimension.bought >= 1;
+
+      const allow = (Enslaved.isRunning && !Glitch.isRunning) || Glitch.augmenteffectactive(3);
+      
+      this.isCapped = tier === 8 && allow && dimension.bought >= 1;
       this.multiplier.copyFrom(AntimatterDimension(tier).multiplier);
       this.amount.copyFrom(dimension.totalAmount);
       this.bought = dimension.bought;
