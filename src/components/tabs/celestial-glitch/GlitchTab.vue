@@ -42,6 +42,7 @@ export default {
       Modal.celestials.show({ name: "glitch'", number: 6 });
     },
     effects(id){
+      if(this.isRunning) return false;
       if ((player.celestials.glitch.augment.effectbits & (1 << id)) > 0) player.celestials.glitch.augment.effectbits &= ~(1 << id);
       else player.celestials.glitch.augment.effectbits |= (1 << id);
     },
