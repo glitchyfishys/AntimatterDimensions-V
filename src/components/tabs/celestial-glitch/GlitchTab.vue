@@ -28,7 +28,7 @@ export default {
     isRunning: false,
     quote: "",
     bits: 0,
-    augments: Glitch.activeaugments,
+    augments: makeEnumeration(Glitch.activeaugments),
   }),
   methods: {
     update() {
