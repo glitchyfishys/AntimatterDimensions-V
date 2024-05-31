@@ -75,6 +75,10 @@ export const Glitch = {
     
   },
 
+  get riftForce(){
+    const rf = player.celestials.glitch.riftforce;
+    return rf;
+  },
 
   get ADnerf(){
     return 0.5;
