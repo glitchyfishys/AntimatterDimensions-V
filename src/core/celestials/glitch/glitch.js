@@ -9,11 +9,8 @@ export const Glitch = {
     return GlitchRifts.gamma.milestones[5].effectOrDefault(0) == 0 ? false : true;
   },
 
-  augmenteffectactive(id = 0){
-    if(!this.isRunning) return false;
-    return (player.celestials.glitch.augment.effectbits & (1 << id)) > 0;
-  },
-  augmenteffectactiveinreality(id = 0){
+  augmenteffectactive(id = 0, force = false){
+    if(!this.isRunning && !force) return false;
     return (player.celestials.glitch.augment.effectbits & (1 << id)) > 0;
   },
 
@@ -36,15 +33,15 @@ export const Glitch = {
 
   get activeaugments(){
       let effect = [];
-      this.augmenteffectactive(0) ? effect.push("Teresa Reality") : undefined;
-      this.augmenteffectactive(1) ? effect.push("Effarig Reality") : undefined;
-      this.augmenteffectactive(2) ? effect.push("Nameless one's Reality") : undefined;
-      this.augmenteffectactive(3) ? effect.push("Nameless one's dim limit") : undefined;
-      this.augmenteffectactive(4) ? effect.push("Nameless one's low tachyon gain") : undefined;
-      this.augmenteffectactive(5) ? effect.push("V's Reality") : undefined;
-      this.augmenteffectactive(6) ? effect.push("Ra's no dim boost") : undefined;
-      this.augmenteffectactive(7) ? effect.push("Ra's static tickspeed") : undefined;
-      this.augmenteffectactive(8) ? effect.push("Lai'tela's Reality") : undefined;
+      this.augmenteffectactive(0, true) ? effect.push("Teresa Reality") : undefined;
+      this.augmenteffectactive(1, true) ? effect.push("Effarig Reality") : undefined;
+      this.augmenteffectactive(2, true) ? effect.push("Nameless one's Reality") : undefined;
+      this.augmenteffectactive(3, true) ? effect.push("Nameless one's dim limit") : undefined;
+      this.augmenteffectactive(4, true) ? effect.push("Nameless one's low tachyon gain") : undefined;
+      this.augmenteffectactive(5, true) ? effect.push("V's Reality") : undefined;
+      this.augmenteffectactive(6, true) ? effect.push("Ra's no dim boost") : undefined;
+      this.augmenteffectactive(7, true) ? effect.push("Ra's static tickspeed") : undefined;
+      this.augmenteffectactive(8, true) ? effect.push("Lai'tela's Reality") : undefined;
       return effect;
   },
 
