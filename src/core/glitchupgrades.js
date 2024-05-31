@@ -1,6 +1,6 @@
 import { BitPurchasableMechanicState, RebuyableMechanicState } from "./game-mechanics";
 
-class RealityUpgradeState extends BitPurchasableMechanicState {
+class GlitchRealityUpgradeState extends BitPurchasableMechanicState {
   constructor(config) {
     super(config);
     this.registerEvents(config.checkEvent, () => this.tryUnlock());
@@ -56,7 +56,7 @@ class RealityUpgradeState extends BitPurchasableMechanicState {
   
 }
 
-class RebuyableRealityUpgradeState extends RebuyableMechanicState {
+class RebuyableGlitchRealityUpgradeState extends RebuyableMechanicState {
   get currency() {
     return Currency.riftForce;
   }
@@ -73,8 +73,8 @@ class RebuyableRealityUpgradeState extends RebuyableMechanicState {
 GlitchRealityUpgradeState.index = mapGameData(
   GameDatabase.celestials.glitchRealityUpgrades,
   config => (config.id < 5
-    ? new RebuyableRealityUpgradeState(config)
-    : new RealityUpgradeState(config))
+    ? new RebuyableGlitchRealityUpgradeState(config)
+    : new GlitchRealityUpgradeState(config))
 );
 
 /**
