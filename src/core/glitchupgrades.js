@@ -1,9 +1,13 @@
 import { BitPurchasableMechanicState, RebuyableMechanicState } from "./game-mechanics";
 
-class glitchUGState extends BitPurchasableMechanicState {
+class RealityUpgradeState extends BitPurchasableMechanicState {
   constructor(config) {
     super(config);
     this.registerEvents(config.checkEvent, () => this.tryUnlock());
+  }
+
+  get automatorPoints() {
+    return this.config.automatorPoints ? this.config.automatorPoints : 0;
   }
 
   get name() {
@@ -23,7 +27,7 @@ class glitchUGState extends BitPurchasableMechanicState {
   }
 
   get currency() {
-    return Currency.antimatter;
+    return Currency.riftForce;
   }
 
   get bitIndex() {
@@ -31,48 +35,60 @@ class glitchUGState extends BitPurchasableMechanicState {
   }
 
   get bits() {
-    return player.celestials.glitch.upgradeBits;
+    return player.celestials.glitch.upgrades.broughtbits;
   }
 
   set bits(value) {
-    player.celestials.glitch.upgradeBits = value;
+    player.reality.upgradeBits = value;
+  }
+
+  get isAvailableForPurchase() {
+    return (player.celestials.glitch.upgrades.unlockbits & (1 << this.id)) !== 0;
   }
 
   get isPossible() {
     return this.config.hasFailed ? !this.config.hasFailed() : true;
   }
-  
-  get isAvailableForPurchase() {
-    return (player.celestials.glitch.upgradeBits & (1 << this.id)) !== 0;
-  }
-
-  get isUseless() {
-    if(typeof this.config.isUseless != "undefined") return (this.config.isUseless() && Pelle.isDoomed)
-    return false;
-  }
-  
-  tryUnlock() {
-    if (!this.config.checkRequirement()) return;
-    player.celestials.glitch.upgradeBits |= (1 << this.id);
-    GameUI.notify.error(`You've unlocked glitched Upgrade: ${this.config.name}`);
-  }
 
   onPurchased() {
-    const id = this.id;
-    console.log(id)
+
+  }
+  
+}
+
+class RebuyableRealityUpgradeState extends RebuyableMechanicState {
+  get currency() {
+    return Currency.riftForce;
+  }
+
+  get boughtAmount() {
+    return player.celestials.glitch.upgrades.rebuyable[this.id];
+  }
+
+  set boughtAmount(value) {
+    player.celestials.glitch.upgrades.rebuyable[this.id] = value;
   }
 }
 
-glitchUGState.index = mapGameData(
+GlitchRealityUpgradeState.index = mapGameData(
   GameDatabase.celestials.glitchRealityUpgrades,
-  config => (new eternityUGState(config))
+  config => (config.id < 5
+    ? new RebuyableRealityUpgradeState(config)
+    : new RealityUpgradeState(config))
 );
 
-export const eternityUG = id => eternityUGState.index[id];
+/**
+ * @param {number} id
+ * @return {RealityUpgradeState|RebuyableRealityUpgradeState}
+ */
+export const GlitchRealityUpgrade = id => RealityUpgradeState.index[id];
 
-export const glitchupgrades = {
-  all: glitchUGState.index.compact(),
+export const GlitchRealityUpgrades = {
+  /**
+   * @type {(RealityUpgradeState|RebuyableRealityUpgradeState)[]}
+   */
+  all: GlitchRealityUpgradeState.index.compact(),
   get allBought() {
-    return (player.celestials.glitch.upgradeBits >> 1) + 1 === 1 << (GameDatabase.celestials.glitchRealityUpgrades.length);
+    return (player.celestials.glitch.upgrades.broughtbits >> 6) + 1 === 1 << (GameDatabase.celestials.glitchRealityUpgrades - 4);
   }
 };
