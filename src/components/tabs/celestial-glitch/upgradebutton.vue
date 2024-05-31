@@ -30,8 +30,6 @@ export default {
       isPossible: false,
       isAutoUnlocked: false,
       isAutobuyerOn: false,
-      canBeLocked: false,
-      hasRequirementLock: false,
     };
   },
   computed: {
@@ -44,16 +42,12 @@ export default {
         "c-reality-upgrade-btn--bought": this.isBought && !this.isUseless,
         "c-reality-upgrade-btn--unavailable": !this.isBought && !this.canBeBought && this.isAvailableForPurchase,
         "c-reality-upgrade-btn--possible": !this.isAvailableForPurchase && this.isPossible,
-        "c-reality-upgrade-btn--locked": !this.isAvailableForPurchase && !this.isPossible,
       };
     },
     requirementConfig() {
       return {
         description: this.config.requirement
       };
-    },
-    canLock() {
-      return this.config.canLock && !(this.isAvailableForPurchase || this.isBought);
     },
     isUseless() {
       return Pelle.disabledRUPGs.includes(this.upgrade.id) && Pelle.isDoomed;
@@ -74,14 +68,8 @@ export default {
       this.isBought = !upgrade.isRebuyable && upgrade.isBought;
       this.isPossible = upgrade.isPossible;
       this.isAutoUnlocked = false;
-      this.canBeLocked = upgrade.config.canLock && !this.isAvailableForPurchase;
-      this.hasRequirementLock = upgrade.hasPlayerLock;
       if (this.isRebuyable) this.isAutobuyerOn = Autobuyer.realityUpgrade(upgrade.id).isActive;
     },
-    toggleLock(upgrade) {
-      if (this.isRebuyable) return;
-      upgrade.toggleMechanicLock();
-    }
   }
 };
 </script>
@@ -91,7 +79,6 @@ export default {
     <button
       :class="classObject"
       class="l-reality-upgrade-btn c-reality-upgrade-btn"
-      @click.shift.exact="toggleLock(upgrade)"
       @click.exact="upgrade.purchase()"
     >
       <HintText
@@ -127,19 +114,6 @@ export default {
         </b>
       </span>
     </button>
-    <div
-      v-if="canBeLocked"
-      class="o-requirement-lock"
-    >
-      <i
-        v-if="hasRequirementLock"
-        class="fas fa-lock"
-      />
-      <i
-        v-else-if="canLock"
-        class="fas fa-lock-open"
-      />
-    </div>
     <PrimaryToggleButton
       v-if="isRebuyable && isAutoUnlocked"
       v-model="isAutobuyerOn"
