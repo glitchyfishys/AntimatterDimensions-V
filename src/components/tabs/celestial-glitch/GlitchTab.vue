@@ -56,7 +56,7 @@ export default {
       return Glitch.augmenteffects(id);
     },
     id(row, column) {
-      return (row - 1) * 3 + column - 1;
+      return (row - 1) * 4 + column - 1;
     },
   },
 };
