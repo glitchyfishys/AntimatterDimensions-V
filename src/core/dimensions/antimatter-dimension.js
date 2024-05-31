@@ -211,7 +211,10 @@ export function buyOneDimension(tier) {
 
   const cost = dimension.cost;
 
-  if (tier === 8 && Enslaved.isRunning && AntimatterDimension(8).bought >= 1) return false;
+  const allow = (Enslaved.isRunning && !Glitch.isRunning);
+  const allowed = (allow || Glitch.augmenteffectactive(3));
+  
+  if (tier === 8 && allowed && AntimatterDimension(8).bought >= 1) return false;
 
   dimension.currencyAmount = dimension.currencyAmount.minus(cost);
 
