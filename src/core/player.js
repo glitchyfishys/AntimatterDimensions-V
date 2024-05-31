@@ -772,16 +772,14 @@ top.player = {
     },
     glitch: {
       quoteBits: 0,
-      unlockBits: 0,
       run: false,
       tier: 0,
-      upgradeBits: 0,
       riftforce: DC.D0,
       augment: {
         effectbits: 0,
       },
       upgrades: {
-        rebuyable: [0, 0, 0, 0],
+        rebuyable: [0, 0, 0, 0, 0],
         unlockbits: 0,
         broughtbits: 0,
       },
