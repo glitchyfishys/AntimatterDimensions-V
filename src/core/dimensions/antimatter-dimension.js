@@ -71,6 +71,7 @@ export function getDimensionFinalMultiplierUncached(tier) {
   multiplier = applyNDPowers(multiplier, tier);
 
   const glyphDilationPowMultiplier = getAdjustedGlyphEffect("dilationpow");
+  
   if (player.dilation.active || PelleStrikes.dilation.hasStrike) {
     multiplier = dilatedValueOf(multiplier.pow(glyphDilationPowMultiplier));
   } else if (Enslaved.isRunning) {
@@ -239,7 +240,10 @@ export function buyManyDimension(tier) {
   if (Laitela.continuumActive || !dimension.isAvailableForPurchase || !dimension.isAffordableUntil10) return false;
   const cost = dimension.costUntil10;
 
-  if (tier === 8 && Enslaved.isRunning) return buyOneDimension(8);
+  const allow = (Enslaved.isRunning && !Glitch.isRunning);
+  const allowed = (allow || Glitch.augmenteffectactive(3));
+  
+  if (tier === 8 && allowed) return buyOneDimension(8);
 
   dimension.currencyAmount = dimension.currencyAmount.minus(cost);
   dimension.challengeCostBump();
@@ -257,7 +261,10 @@ export function buyAsManyAsYouCanBuy(tier) {
   const howMany = dimension.howManyCanBuy;
   const cost = dimension.cost.times(howMany);
 
-  if (tier === 8 && Enslaved.isRunning) return buyOneDimension(8);
+  const allow = (Enslaved.isRunning && !Glitch.isRunning);
+  const allowed = (allow || Glitch.augmenteffectactive(3));
+  
+  if (tier === 8 && allowed) return buyOneDimension(8);
 
   dimension.currencyAmount = dimension.currencyAmount.minus(cost);
   dimension.challengeCostBump();
@@ -301,7 +308,10 @@ export function buyMaxDimension(tier, bulk = Infinity) {
   const goal = Player.infinityGoal;
   if (dimension.cost.gt(goal) && Player.isInAntimatterChallenge) return;
 
-  if (tier === 8 && Enslaved.isRunning) {
+  const allow = (Enslaved.isRunning && !Glitch.isRunning);
+  const allowed = (allow || Glitch.augmenteffectactive(3));
+  
+  if (tier === 8 && allowed) {
     buyOneDimension(8);
     return;
   }
@@ -484,7 +494,10 @@ class AntimatterDimensionState extends DimensionState {
     if (!this.isAvailableForPurchase) return 0;
     // Nameless limits dim 8 purchases to 1 only
     // Continuum should be no different
-    if (this.tier === 8 && Enslaved.isRunning) return 1;
+    const allow = (Enslaved.isRunning && !Glitch.isRunning);
+    const allowed = (allow || Glitch.augmenteffectactive(3));
+    
+    if (this.tier === 8 && allowed) return 1;
     // It's safe to use dimension.currencyAmount because this is
     // a dimension-only method (so don't just copy it over to tickspeed).
     // We need to use dimension.currencyAmount here because of different costs in NC6.
