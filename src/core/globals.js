@@ -100,5 +100,5 @@ export * from "./celestials/glitch/glitchrift";
 
 export * from "./celestials/glitch/glitch";
 
-export * from "./GlitchRealityUpgrades";
+export * from "./glitchupgrades";
 
