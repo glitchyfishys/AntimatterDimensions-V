@@ -67,6 +67,8 @@ export default {
 <template>
   <div class="l-glitch-celestial-tab">
    work in progress
+
+    <p>you have {{ riftforce}} riftforce </p>
     
   <CelestialQuoteHistory celestial="glitch"/>
     
