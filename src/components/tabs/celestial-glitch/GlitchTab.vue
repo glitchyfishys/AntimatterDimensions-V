@@ -23,9 +23,6 @@ export default {
       return this.augments;
     },
     isDoomed: () => Pelle.isDoomed,
-    effectname(id){
-      Glitch.augmenteffects(id);
-    },
   },
   data: () => ({
     isRunning: false,
@@ -50,6 +47,9 @@ export default {
     },
     activeaugment(id){
       return Glitch.augmenteffectactive(id);
+    },
+    effectname(id){
+      Glitch.augmenteffects(id);
     },
   },
 };
