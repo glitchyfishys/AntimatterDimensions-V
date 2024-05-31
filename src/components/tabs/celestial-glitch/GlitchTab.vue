@@ -40,7 +40,7 @@ export default {
       this.quote = Glitch.quote;
       this.bits = Glitch.augmenteffectbits;
       this.augments = Glitch.activeaugments;
-      this.riftforce = player.celestials.glitch.riftforce
+      this.riftforce = Glitch.riftForce;
     },
     startRun() {
       if (this.isDoomed) return;
@@ -68,13 +68,13 @@ export default {
   <div class="l-glitch-celestial-tab">
    work in progress
 
-    <p>you have {{ riftforce}} riftforce </p>
+    <p>you have <span class="o-riftforce">{{ riftforce}}</span> riftforce </p>
     
   <CelestialQuoteHistory celestial="glitch"/>
     
     <GlitchRunButton />
 
-    <div>
+    <div class="o-reality-effects">
     <PrimaryButton
       v-for="x in 9"
       :key="x"
@@ -127,4 +127,14 @@ export default {
   color: var(--color-text);
   margin: 1.5rem 0 1.5rem;
 }
+
+.o-riftforce{
+  color: lime;
+  font-size: 2rem;
+}
+
+.o-reality-effects{
+    display: grid
+}
+  
 </style>
