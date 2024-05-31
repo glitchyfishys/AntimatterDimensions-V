@@ -30,7 +30,7 @@ export const glitchRealityUpgrades = [
     effect: 2
   }),
   rebuyable({
-    name: "Rift OverDrive",
+    name: "Rift SideDrive",
     id: 2,
     initialCost: 1e308,
     costMult: 20,
@@ -38,7 +38,7 @@ export const glitchRealityUpgrades = [
     effect: 2
   }),
   rebuyable({
-    name: "Rift OverDrive",
+    name: "Rift SubLoad",
     id: 3,
     initialCost: 1e308,
     costMult: 20,
@@ -46,7 +46,7 @@ export const glitchRealityUpgrades = [
     effect: 2
   }),
   rebuyable({
-    name: "Rift OverDrive",
+    name: "Rift CosmicFlight",
     id: 4,
     initialCost: 1e308,
     costMult: 20,
@@ -62,11 +62,11 @@ export const glitchRealityUpgrades = [
     checkRequirement: () => player.infinities.gt(0) && Glitch.isRuning,
     checkEvent: GAME_EVENT.BIG_CRUNCH_AFTER,
     description: "rift multiplies AD  while augmented",
-    effect: () =>  Glitch.riftforce.pow(1.5),
+    effect: () =>  Currency.riftForce.value.pow(1.5),
     formatEffect: value => formatX(value, 2, 2)
   },
   {
-    name: "augmented Infinity",
+    name: "augmented eternity",
     id: 6,
     cost: 1e308,
     requirement: "reach Infinity",
@@ -74,11 +74,11 @@ export const glitchRealityUpgrades = [
     checkRequirement: () => player.infinities.gt(0) && Glitch.isRuning,
     checkEvent: GAME_EVENT.BIG_CRUNCH_AFTER,
     description: "rift multiplies AD  while augmented",
-    effect: () =>  Glitch.riftforce.pow(1.5),
+    effect: () =>  Currency.riftForce.value.pow(1.5),
     formatEffect: value => formatX(value, 2, 2)
   },
   {
-    name: "augmented Infinity",
+    name: "augmented dilation",
     id: 7,
     cost: 1e308,
     requirement: "reach Infinity",
@@ -86,11 +86,11 @@ export const glitchRealityUpgrades = [
     checkRequirement: () => player.infinities.gt(0) && Glitch.isRuning,
     checkEvent: GAME_EVENT.BIG_CRUNCH_AFTER,
     description: "rift multiplies AD  while augmented",
-    effect: () =>  Glitch.riftforce.pow(1.5),
+    effect: () =>  Currency.riftForce.value.pow(1.5),
     formatEffect: value => formatX(value, 2, 2)
   },
   {
-    name: "augmented Infinity",
+    name: "augmented reality",
     id: 8,
     cost: 1e308,
     requirement: "reach Infinity",
@@ -98,7 +98,7 @@ export const glitchRealityUpgrades = [
     checkRequirement: () => player.infinities.gt(0) && Glitch.isRuning,
     checkEvent: GAME_EVENT.BIG_CRUNCH_AFTER,
     description: "rift multiplies AD  while augmented",
-    effect: () =>  Glitch.riftforce.pow(1.5),
+    effect: () =>  Currency.riftForce.value.pow(1.5),
     formatEffect: value => formatX(value, 2, 2)
   },
 
