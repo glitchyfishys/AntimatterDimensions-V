@@ -49,7 +49,7 @@ export default {
       return Glitch.augmenteffectactive(id);
     },
     effectname(id){
-      Glitch.augmenteffects(id);
+      return Glitch.augmenteffects(id);
     },
   },
 };
