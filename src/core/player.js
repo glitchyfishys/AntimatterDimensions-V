@@ -780,6 +780,11 @@ top.player = {
       augment: {
         effectbits: 0,
       },
+      upgrades: {
+        rebuyable: [0, 0, 0, 0],
+        unlockbits: 0,
+        broughtbits: 0,
+      },
       rifts: {
         alpha: {
           fill: 0,
