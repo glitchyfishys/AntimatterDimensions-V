@@ -13,9 +13,9 @@ const rebuyable = props => {
   );
   const { effect } = props;
   props.effect = () =>  player.celestials.glitch.upgrades.rebuyable[props.id];
-  props.description = () => props.textTemplate.replace("{value}", formatInt(effect));
+  props.description = () => props.textTemplate.replace("{value}", formatX(effect));
   props.formatEffect = value => formatX(value, 2, 0);
-  props.formatCost = value => formatX(value, 2, 0);
+  props.formatCost = value => format(value, 2, 0);
   return props;
 };
 
