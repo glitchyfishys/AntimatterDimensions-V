@@ -10,6 +10,7 @@ export const Glitch = {
   },
 
   augmenteffectactive(id = 0){
+    if(!this.isRunning) return false;
     return (player.celestials.glitch.augment.effectbits & (1 << id)) > 0;
   },
 
@@ -47,23 +48,15 @@ export const Glitch = {
   initializeRun() {
     if(this.tier == 0){
       player.celestials.glitch.run = true;
-      // active
+      
       this.augmenteffectactive(0) ?  player.celestials.teresa.run = true : undefined;
-      // active
+      
       this.augmenteffectactive(1) ? player.celestials.effarig.run = true : undefined;
-      //active
+      
       this.augmenteffectactive(2) ? player.celestials.enslaved.run = true : undefined;
-      // dim limit
-      this.augmenteffectactive(3) ? player.celestials.enslaved.run = true : undefined;
-      // low tachyon gain
-      this.augmenteffectactive(4) ? player.celestials.enslaved.run = true : undefined;
-      // active
+
       this.augmenteffectactive(5) ? player.celestials.v.run = true : undefined;
-      // no dim boost
-      this.augmenteffectactive(6) ? player.celestials.ra.run = true : undefined;
-      // static tick speed
-      this.augmenteffectactive(7) ? player.celestials.ra.run = true : undefined;
-      // active
+      
       this.augmenteffectactive(8) ? player.celestials.laitela.run = true : undefined;
     }
     if(this.tier == 1){
