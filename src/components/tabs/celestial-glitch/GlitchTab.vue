@@ -32,6 +32,7 @@ export default {
     quote: "",
     bits: 0,
     augments: makeEnumeration(Glitch.activeaugments),
+    riftforce: new Decimal(0),
   }),
   methods: {
     update() {
@@ -39,6 +40,7 @@ export default {
       this.quote = Glitch.quote;
       this.bits = Glitch.augmenteffectbits;
       this.augments = Glitch.activeaugments;
+      this.riftforce = player.celestials.glitch.riftforce
     },
     startRun() {
       if (this.isDoomed) return;
