@@ -332,7 +332,7 @@ function giveRealityRewards(realityProps) {
     Enslaved.boostReality = false;
   }
 
-  if (Teresa.isRunning) {
+  if (Teresa.isRunning && !Glitch.isRunning) {
     const current = Teresa.runRewardMultiplier;
     const newMultiplier = Teresa.rewardMultiplier(player.antimatter);
     const isHigher = newMultiplier > current;
@@ -366,6 +366,9 @@ function giveRealityRewards(realityProps) {
   if (V.isRunning) V.quotes.realityComplete.show();
 
   if (Glitch.isRunning) {
+
+    const modalText = `You have completed Glitch's Reality! with ${ makeEnumeration(Glitch.activeaugments) } active, congratulations`;
+    Modal.message.show(modalText, {}, 2);
     
   };
 }
