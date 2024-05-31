@@ -478,3 +478,8 @@ Currency.galaxyGeneratorGalaxies = new class extends NumberCurrency {
     player.celestials.pelle.galaxyGenerator.spentGalaxies += spent;
   }
 }();
+
+Currency.riftForce = new class extends DecimalCurrency {
+  get value() { return player.celestials.glitch.riftforce; }
+  set value(value) { player.celestials.glitch.riftforce = value; }
+}();
