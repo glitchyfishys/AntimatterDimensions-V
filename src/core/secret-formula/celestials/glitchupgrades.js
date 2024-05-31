@@ -2,7 +2,7 @@ import { DC } from "../../constants";
 
 const rebuyable = props => {
   props.cost = () => getHybridCostScaling(
-    player.celestials.glitch.augment.rebuyables[props.id],
+    player.celestials.glitch.upgrades.rebuyable[props.id],
     1e50,
     props.initialCost,
     props.costMult,
@@ -12,10 +12,10 @@ const rebuyable = props => {
     props.initialCost * props.costMult
   );
   const { effect } = props;
-  props.effect = () =>  player.celestials.glitch.augmented.rebuyables[props.id];
+  props.effect = () =>  player.celestials.glitch.upgrades.rebuyable[props.id];
   props.description = () => props.textTemplate.replace("{value}", formatInt(effect));
-  props.formatEffect = value => formatX( Math.min(value, 1e250) , 2, 0);
-  props.formatCost = value => format(value, 2, 0);
+  props.formatEffect = value => formatX(value, 2, 0);
+  props.formatCost = value => formatX(value, 2, 0);
   return props;
 };
 
