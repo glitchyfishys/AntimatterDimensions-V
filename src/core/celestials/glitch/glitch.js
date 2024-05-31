@@ -13,6 +13,9 @@ export const Glitch = {
     if(!this.isRunning) return false;
     return (player.celestials.glitch.augment.effectbits & (1 << id)) > 0;
   },
+  augmenteffectactiveinreality(id = 0){
+    return (player.celestials.glitch.augment.effectbits & (1 << id)) > 0;
+  },
 
   get augmenteffectbits(){
     return player.celestials.glitch.augment.effectbits;
