@@ -5,6 +5,7 @@ import CelestialQuoteHistory from "@/components/CelestialQuoteHistory";
 import PrimaryButton from "@/components/PrimaryButton";
 import PrimaryToggleButton from "@/components/PrimaryToggleButton";
 import GlitchRunButton from "./panel";
+import GlitchUpgrade from "./GlitchUpgrade";
 
 export default {
   name: "GlitchTab",
@@ -23,6 +24,7 @@ export default {
       return this.augments;
     },
     isDoomed: () => Pelle.isDoomed,
+    upgrades: () => GlitchRealityUpgrades.all,
   },
   data: () => ({
     isRunning: false,
@@ -51,6 +53,9 @@ export default {
     },
     effectname(id){
       return Glitch.augmenteffects(id);
+    },
+    id(row, column) {
+      return (row - 1) * 3 + column - 1;
     },
   },
 };
@@ -85,6 +90,24 @@ export default {
     </div>
     
     <BlackHoleChargingSliders />
+
+    <div class="l-reality-upgrade-grid">
+    <div class="c-glitch-upgrade-infotext">
+      the first 4 are repeatable, the others are like reality upgrades but can't be locked
+    </div>
+  
+      <div
+      v-for="row in 2"
+      :key="row"
+      class="l-reality-upgrade-grid__row">
+        
+      <glitchupgradebutton
+        v-for="column in 4"
+        :key="id(row, column)"
+        :upgrade="upgrades[id(row, column)]"/>
+    </div>
+    
+  </div>
     
   </div>
 </template>
@@ -93,5 +116,10 @@ export default {
 
 .l-glitch-tab {
   margin-top: 1rem;
+}
+
+.c-glitch-upgrade-infotext {
+  color: var(--color-text);
+  margin: 1.5rem 0 1.5rem;
 }
 </style>
