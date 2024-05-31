@@ -26,9 +26,6 @@ export default {
     effectname(id){
       Glitch.augmenteffects(id);
     },
-    activeaugment(id){
-      return Glitch.augmenteffectactive(id);
-    },
   },
   data: () => ({
     isRunning: false,
@@ -51,7 +48,9 @@ export default {
       if ((player.celestials.glitch.augment.effectbits & (1 << id)) > 0) player.celestials.glitch.augment.effectbits &= ~(1 << id);
       else player.celestials.glitch.augment.effectbits |= (1 << id);
     },
-    
+    activeaugment(id){
+      return Glitch.augmenteffectactive(id);
+    },
   },
 };
 </script>
