@@ -101,7 +101,7 @@ export default {
       this.isEC8Running = EternityChallenge(8).isRunning;
       this.isAutobuyerOn = Autobuyer.infinityDimension(tier).isActive;
       this.eternityReached = PlayerProgress.eternityUnlocked();
-      this.enslavedRunning = Enslaved.isRunning;
+      this.enslavedRunning = (Enslaved.isRunning && !Glitch.isRunning) || Glitch.augmenteffectactive(3);;
     },
     buySingleInfinityDimension() {
       InfinityDimension(this.tier).buySingle();
