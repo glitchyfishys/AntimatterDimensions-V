@@ -6,7 +6,7 @@ import HintText from "@/components/HintText";
 import PrimaryToggleButton from "@/components/PrimaryToggleButton";
 
 export default {
-  name: "RealityUpgradeButton",
+  name: "GlitchUpgrade",
   components: {
     PrimaryToggleButton,
     DescriptionDisplay,
