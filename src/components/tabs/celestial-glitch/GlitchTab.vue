@@ -65,16 +65,16 @@ export default {
 
     <div>
     <PrimaryButton
-      v-for="x in 8"
+      v-for="x in 9"
       :key="x"
       class="o-primary-btn--subtab-option"
-      @click="effects(x)">
+      @click="effects(x-1)">
       
-      <p v-if="activeaugment(x)">
-        remove {{effectname(x)}}
+      <p v-if="activeaugment(x-1)">
+        remove {{effectname(x-1)}}
       </p>
       <p v-else>
-        enable {{effectname(x)}}
+        enable {{effectname(x-1)}}
       </p>
       
     </PrimaryButton>
