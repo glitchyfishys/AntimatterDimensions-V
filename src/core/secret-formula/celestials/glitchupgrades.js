@@ -29,10 +29,70 @@ export const glitchRealityUpgrades = [
     textTemplate: "You gain {value} more rift force",
     effect: 2
   }),
+  rebuyable({
+    name: "Rift OverDrive",
+    id: 2,
+    initialCost: 1e308,
+    costMult: 20,
+    textTemplate: "You gain {value} more rift force",
+    effect: 2
+  }),
+  rebuyable({
+    name: "Rift OverDrive",
+    id: 3,
+    initialCost: 1e308,
+    costMult: 20,
+    textTemplate: "You gain {value} more rift force",
+    effect: 2
+  }),
+  rebuyable({
+    name: "Rift OverDrive",
+    id: 4,
+    initialCost: 1e308,
+    costMult: 20,
+    textTemplate: "You gain {value} more rift force",
+    effect: 2
+  }),
+  {
+    name: "augmented Infinity",
+    id: 5,
+    cost: 10,
+    requirement: "reach Infinity",
+    hasFailed: () => false,
+    checkRequirement: () => player.infinities.gt(0) && Glitch.isRuning,
+    checkEvent: GAME_EVENT.BIG_CRUNCH_AFTER,
+    description: "rift multiplies AD  while augmented",
+    effect: () =>  Glitch.riftforce.pow(1.5),
+    formatEffect: value => formatX(value, 2, 2)
+  },
+  {
+    name: "augmented Infinity",
+    id: 6,
+    cost: 1e308,
+    requirement: "reach Infinity",
+    hasFailed: () => false,
+    checkRequirement: () => player.infinities.gt(0) && Glitch.isRuning,
+    checkEvent: GAME_EVENT.BIG_CRUNCH_AFTER,
+    description: "rift multiplies AD  while augmented",
+    effect: () =>  Glitch.riftforce.pow(1.5),
+    formatEffect: value => formatX(value, 2, 2)
+  },
+  {
+    name: "augmented Infinity",
+    id: 7,
+    cost: 1e308,
+    requirement: "reach Infinity",
+    hasFailed: () => false,
+    checkRequirement: () => player.infinities.gt(0) && Glitch.isRuning,
+    checkEvent: GAME_EVENT.BIG_CRUNCH_AFTER,
+    description: "rift multiplies AD  while augmented",
+    effect: () =>  Glitch.riftforce.pow(1.5),
+    formatEffect: value => formatX(value, 2, 2)
+  },
   {
     name: "augmented Infinity",
     id: 8,
-    cost: 10,
+    cost: 1e308,
     requirement: "reach Infinity",
     hasFailed: () => false,
     checkRequirement: () => player.infinities.gt(0) && Glitch.isRuning,
