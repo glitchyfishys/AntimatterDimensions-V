@@ -46,7 +46,7 @@ export default {
       else player.celestials.glitch.augment.effectbits |= (1 << id);
     },
     activeaugment(id){
-      return Glitch.augmenteffectactive(id);
+      return Glitch.augmenteffectactiveinreality(id);
     },
     effectname(id){
       return Glitch.augmenteffects(id);
