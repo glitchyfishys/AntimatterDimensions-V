@@ -176,6 +176,8 @@ class InfinityDimensionState extends DimensionState {
       mult = mult.pow(0.5);
     }
 
+    if(Glitch.isRunning) mult = mult.pow(Glitch.IDnerf);
+
     if (PelleStrikes.powerGalaxies.hasStrike) {
       mult = mult.pow(0.5);
     }
