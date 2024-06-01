@@ -135,7 +135,7 @@ export default {
 
 .o-reality-effect{
   display: inline-table;
-  width: 33%;
+  width: 30%;
 }
   
 </style>
