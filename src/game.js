@@ -384,7 +384,8 @@ export function getGameSpeedupFactor(effectsToConsider, blackHolesActiveOverride
   if (effects.includes(GAME_SPEED_EFFECT.NERFS)) {
     if (Effarig.isRunning) {
       factor = Effarig.multiplier(factor).toNumber();
-    } else if (Laitela.isRunning) {
+    }
+    if (Laitela.isRunning) {
       const nerfModifier = Math.clampMax(Time.thisRealityRealTime.totalMinutes / 10, 1);
       factor = Math.pow(factor, nerfModifier);
     }
@@ -907,7 +908,7 @@ export function getTTPerSecond() {
   if (GlyphAlteration.isAdded("dilation")) ttMult *= getSecondaryGlyphEffect("dilationTTgen");
 
   // Glyph TT generation
-  const glyphTT = Teresa.isRunning || Enslaved.isRunning || Pelle.isDoomed
+  const glyphTT = Teresa.isRunning || Enslaved.isRunning || Glitch.isRunning || Pelle.isDoomed
     ? 0
     : getAdjustedGlyphEffect("dilationTTgen") * ttMult;
 
