@@ -64,6 +64,7 @@ export class InfinityUpgradeState extends SetPurchasableMechanicState {
   }
 
   get canCharge() {
+    if(Glitch.isRunning) return false;
     return this.isBought &&
       this.hasChargeEffect &&
       !this.isCharged &&
