@@ -3,7 +3,7 @@ export const realityUG = [
   {
     name: "realitize",
     id: 0,
-    requirement: "reach 1e6000 eternity points before your first reality",
+    requirement: `reach ${format("1e6000")} eternity points before your first reality`,
     hasFailed: () => player.realities != 0,
     checkRequirement: () => player.eternityPoints.e >= 6000 && player.realities == 0,
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
@@ -15,7 +15,7 @@ export const realityUG = [
   {
   name: "dialated",
     id: 1,
-    requirement: "reach 1e1050 (pending) EP while dialated before your first reality (check multiplier breakdown)",
+    requirement: `reach ${format("1e1050")} (pending) EP while dialated before your first reality (check multiplier breakdown)`,
     hasFailed: () => player.realities != 0,
     checkRequirement: () => gainedEternityPoints().greaterThanOrEqualTo("1e1050") && player.dilation.active && player.realities == 0,
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
@@ -26,7 +26,7 @@ export const realityUG = [
   {
     name: "real time complex",
     id: 2,
-    requirement: "reach 1e8000 eternity points before your first reality",
+    requirement: `reach ${format("1e8000")} eternity points before your first reality`,
     hasFailed: () => player.realities != 0,
     checkRequirement: () => player.eternityPoints.e >= 8000 && player.realities == 0,
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
@@ -37,7 +37,7 @@ export const realityUG = [
   {
     name: "immisinity",
     id: 3,
-    requirement: "reach 1e6 RM",
+    requirement: `reach ${format(1e6)} RM`,
     hasFailed: () =>false,
     checkRequirement: () => player.reality.realityMachines.e >= 6,
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
@@ -48,7 +48,7 @@ export const realityUG = [
   {
     name: "sacrifisal power",
     id: 4,
-    requirement: "reach 1e5000 eternity points in teresa's reality the first time",
+    requirement: `reach ${format("1e5000")} eternity points in teresa's reality the first time`,
     hasFailed: () => player.celestials.teresa.bestRunAM.e >= 10000,
     checkRequirement: () => player.eternityPoints.e >= 5000 && Teresa.isRunning && player.celestials.teresa.bestRunAM.e < 10000,
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
@@ -59,7 +59,7 @@ export const realityUG = [
   {
     name: "limiting reality",
     id: 5,
-    requirement: "reach 1e24 RM",
+    requirement: `reach ${format(1e24)} RM`,
     hasFailed: () =>false,
     checkRequirement: () => player.reality.realityMachines.e >= 24,
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
@@ -70,7 +70,7 @@ export const realityUG = [
 {
     name: "exteral dilation",
     id: 6,
-    requirement: "reach 1.8e308 antimater in effarigs reality (infinity layer) with three glyphs maxium",
+    requirement: `reach ${format(1.79e308)} antimater in effarigs reality (infinity layer) with three glyphs maxium`,
     hasFailed: () => Effarig.currentStage > 1 || player.reality.glyphs.active.length > 3,
     checkRequirement: () => player.antimatter.greaterThanOrEqualTo(1.79e308) && Effarig.isRunning && Effarig.currentStage == 1 && player.reality.glyphs.active.length <= 3,
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
@@ -125,7 +125,7 @@ export const realityUG = [
   {
     name: "galatic overload",
     id: 11,
-    requirement: "have 10000 singularities without desablizing once",
+    requirement: `have ${format(10000)} singularities without desablizing once`,
     hasFailed: () => Laitela.difficultyTier == 0,
     checkRequirement: () =>  player.celestials.laitela.singularities.gte(10000) && Laitela.difficultyTier == 0,
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
@@ -136,7 +136,7 @@ export const realityUG = [
   {
     name: "pre galatic ",
     id: 12,
-    requirement: "reach 1e66.66 B antimatter in effarig's reality with 5 cursed glyphs, before destablizing latela's reality thrice",
+    requirement: `reach ${format("1e66.66E9")} antimatter in effarig's reality with 5 cursed glyphs, before destablizing latela's reality thrice`,
     hasFailed: () => Laitela.difficultyTier > 2,
     checkRequirement: () =>  player.requirementChecks.reality.maxGlyphs <= -15 && Effarig.isRunning && Laitela.difficultyTier <= 2 && Currency.antimatter.gt("1e6.666E10"),
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
