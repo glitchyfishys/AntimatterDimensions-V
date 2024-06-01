@@ -50,7 +50,7 @@ export function playerInfinityUpgradesOnReset() {
     return;
   }
 
-  if (RealityUpgrade(10).isBought || EternityMilestone.keepBreakUpgrades.isReached) {
+  if ((RealityUpgrade(10).isBought && !Glitch.isRunning) || EternityMilestone.keepBreakUpgrades.isReached) {
     player.infinityUpgrades = breakInfinityUpgrades;
     player.infinityRebuyables = [8, 7, 10];
   } else if (EternityMilestone.keepInfinityUpgrades.isReached) {
@@ -717,7 +717,7 @@ function updatePrestigeRates() {
 
 function passivePrestigeGen() {
   let eternitiedGain = 0;
-  if (RealityUpgrade(14).isBought || EffarigUnlock.eternity.isUnlocked) {
+  if ((RealityUpgrade(14).isBought && !Glitch.isRunning) || (EffarigUnlock.eternity.isUnlocked && !Glitch.isRunning)) {
     eternitiedGain = DC.D1.timesEffectsOf(
       Achievement(113),
       RealityUpgrade(3),
@@ -731,7 +731,7 @@ function passivePrestigeGen() {
     player.reality.partEternitied = player.reality.partEternitied.sub(player.reality.partEternitied.floor());
   }
 
-  if (!EternityChallenge(4).isRunning) {
+  if (!EternityChallenge(4).isRunning && !Glitch.isRunning) {
     let infGen = DC.D0;
     if (BreakInfinityUpgrade.infinitiedGen.isBought) {
       // Multipliers are done this way to explicitly exclude ach87 and TS32
@@ -743,10 +743,10 @@ function passivePrestigeGen() {
       );
       infGen = infGen.times(getAdjustedGlyphEffect("infinityinfmult"));
     }
-    if (RealityUpgrade(11).isBought) {
+    if (RealityUpgrade(11).isBought && !Glitch.isRunning) {
       infGen = infGen.plus(RealityUpgrade(11).effectValue.times(Time.deltaTime));
     }
-    if (EffarigUnlock.eternity.isUnlocked) {
+    if (EffarigUnlock.eternity.isUnlocked && !Glitch.isRunning) {
       // We consider half of the eternities we gained above this tick
       // to have been gained before the infinities, and thus not to
       // count here. This gives us the desirable behavior that
