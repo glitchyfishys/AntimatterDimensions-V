@@ -74,11 +74,11 @@ export default {
     
     <GlitchRunButton />
 
-    <div class="o-reality-effects">
+    <div>
     <PrimaryButton
       v-for="x in 9"
       :key="x"
-      class="o-primary-btn--subtab-option"
+      class="o-primary-btn--subtab-option  o-reality-effect"
       @click="effects(x-1)">
       
       <p v-if="activeaugment(x-1)">
@@ -133,8 +133,9 @@ export default {
   font-size: 2rem;
 }
 
-.o-reality-effects{
-    display: grid
+.o-reality-effect{
+  display: inline-table;
+  width: 33%;
 }
   
 </style>
