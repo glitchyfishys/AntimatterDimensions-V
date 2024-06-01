@@ -238,13 +238,12 @@ class TimeDimensionState extends DimensionState {
       mult = dilatedValueOf(mult);
     }
 
-    if (Effarig.isRunning) {
-      mult = Effarig.multiplier(mult);
-    }
-    if (V.isRunning) {
-      mult = mult.pow(0.5);
-    }
+    if (Effarig.isRunning) mult = Effarig.multiplier(mult);
+    
+    if (V.isRunning) mult = mult.pow(0.5);
 
+    if(Glitch.isRunning) mult = mult.pow(Glitch.TDnerf);
+    
     return mult;
   }
 
