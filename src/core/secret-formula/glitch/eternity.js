@@ -3,7 +3,7 @@ export const eternityUG = [
   {
     name: "eternal forces",
     id: 0,
-    requirement: `reach ${format("1e350")} infinity points on your first eternity`,
+    requirement: () => `reach ${format("1e350")} infinity points on your first eternity`,
     hasFailed: () => PlayerProgress.eternityUnlocked(),
     checkRequirement: () => player.infinityPoints.e >= 350 && !PlayerProgress.eternityUnlocked(),
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
@@ -26,7 +26,7 @@ export const eternityUG = [
   {
   name: "rifted",
     id: 2,
-    requirement: `have exactly ${format(15)} replacnti galaxys`,
+    requirement: () => `have exactly ${format(15)} replacnti galaxys`,
     hasFailed: () => false,
     checkRequirement: () => player.replicanti.galaxies == 15,
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
@@ -37,7 +37,7 @@ export const eternityUG = [
   {
     name: "study forever",
     id: 3,
-    requirement: `reach ${format(1e20)} EP`,
+    requirement: () => `reach ${format(1e20)} EP`,
     hasFailed: () => false,
     checkRequirement: () => player.eternityPoints.greaterThanOrEqualTo(1e20),
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
