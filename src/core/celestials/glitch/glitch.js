@@ -50,6 +50,11 @@ export const Glitch = {
   },
   
   initializeRun() {
+    player.celestials.glitch.run = true;
+
+    Currency.eternityPoints.reset();
+    Currency.infinityPoints.reset();
+    
     if(this.tier == 0){
       //could be bad
       disChargeAll();
@@ -63,7 +68,6 @@ export const Glitch = {
       
       player.reality.glyphs.undo=[];
       
-      player.celestials.glitch.run = true;
       
       this.augmenteffectactive(0) ?  player.celestials.teresa.run = true : undefined;
       
