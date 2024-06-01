@@ -1093,10 +1093,11 @@ export function simulateTime(seconds, real, fast) {
 }
 
 window.onload = function() {
+  Decimal.MAX_VALUE.e = 1e300;
+  Decimal.MIN_VALUE.e = -1e300;
   const supportedBrowser = browserCheck();
   GameUI.initialized = supportedBrowser;
   ui.view.initialized = supportedBrowser;
-  Decimal.MAX_VALUE.e = 1e300;
   setTimeout(() => {
     ElectronRuntime.updateZoom();
     document.getElementById("loading").style.display = "none";
@@ -1138,7 +1139,6 @@ export function init() {
   ElectronRuntime.initialize();
   SteamRuntime.initialize();
   Cloud.init();
-  Decimal.MAX_VALUE.e = 1e300;
   GameStorage.load();
   Tabs.all.find(t => t.config.id === player.options.lastOpenTab).show(true);
   Payments.init();
