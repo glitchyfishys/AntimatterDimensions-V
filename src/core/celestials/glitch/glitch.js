@@ -51,6 +51,13 @@ export const Glitch = {
   
   initializeRun() {
     if(this.tier == 0){
+      //could be bad
+      disChargeAll();
+      Glyphs.unequipAll(true);
+      for(i=0;i<5;i++) if((Glyphs.inventory.filter(x => x == null ? false :(x.type == "cursed")).length + Glyphs.active.filter(x => x == null ? false :(x.type == "cursed")).length) < 6) Glyphs.addToInventory(GlyphGenerator.cursedGlyph());
+      for(i=0;i<5;i++) Glyphs.equip(player.reality.glyphs.inventory.filter(x=> x.type == "cursed")[0],i);
+
+      
       player.celestials.glitch.run = true;
       
       this.augmenteffectactive(0) ?  player.celestials.teresa.run = true : undefined;
@@ -76,6 +83,22 @@ export const Glitch = {
     player.celestials.v.run = false;
     player.celestials.ra.run = false;
     player.celestials.laitela.run = false;
+    Glyphs.unequipAll(true);
+
+    player.celestials.ra.charged = new Set([
+    "timeMult2",
+    "dimMult",
+    "timeMult",
+    "18Mult",
+    "27Mult",
+    "unspentBonus",
+    "resetMult",
+    "45Mult",
+    "36Mult",
+    "resetBoost",
+    "galaxyBoost",
+    "passiveGen"
+]);
     
   },
 
