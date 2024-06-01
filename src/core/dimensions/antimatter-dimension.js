@@ -81,8 +81,14 @@ export function getDimensionFinalMultiplierUncached(tier) {
 
   if (Effarig.isRunning) {
     multiplier = Effarig.multiplier(multiplier);
-  } else if (V.isRunning) {
+  }
+  
+  if (V.isRunning) {
     multiplier = multiplier.pow(0.5);
+  }
+
+  if (Glitch.isRunning) {
+    multiplier = multiplier.pow(Glitch.ADnerf);
   }
 
   // This power effect goes intentionally after all the nerf effects and shouldn't be moved before them
