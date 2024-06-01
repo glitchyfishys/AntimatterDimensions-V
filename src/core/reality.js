@@ -367,7 +367,7 @@ function giveRealityRewards(realityProps) {
 
   if (Glitch.isRunning) {
 
-    const effects = Glitch.activeaugments.length > 0 ? (makeEnumeration(Glitch.activeaugments) + "active, congratulations"): "nothing active, try making a new reality";
+    const effects = Glitch.activeaugments.length > 0 ? (makeEnumeration(Glitch.activeaugments) + " active, congratulations"): "nothing active, try making a new reality";
     const modalText = `You have completed Glitch's Reality! with ${ effects }`;
     Modal.message.show(modalText, {}, 2);
     
