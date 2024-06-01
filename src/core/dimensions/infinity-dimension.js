@@ -171,7 +171,8 @@ class InfinityDimensionState extends DimensionState {
 
     if (Effarig.isRunning) {
       mult = Effarig.multiplier(mult);
-    } else if (V.isRunning) {
+    }
+    if (V.isRunning) {
       mult = mult.pow(0.5);
     }
 
