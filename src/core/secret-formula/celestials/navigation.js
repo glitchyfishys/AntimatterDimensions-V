@@ -2016,7 +2016,7 @@ export const celestialNavigation = {
         },
         angle: 230,
         diagonal: 25,
-        horizontal: -36,
+        horizontal: 36,
       },
     },
     connector: {
