@@ -124,9 +124,11 @@ export function gainedInfinityPoints() {
   
   if (Teresa.isRunning) {
     ip = ip.pow(0.55);
-  } else if (V.isRunning) {
+  }
+  if (V.isRunning) {
     ip = ip.pow(0.5);
-  } else if (Laitela.isRunning) {
+  }
+  if (Laitela.isRunning) {
     ip = dilatedValueOf(ip);
   }
   if (GlyphAlteration.isAdded("infinity")) {
@@ -161,9 +163,11 @@ export function gainedEternityPoints() {
   
   if (Teresa.isRunning) {
     ep = ep.pow(0.55);
-  } else if (V.isRunning) {
+  }
+  if (V.isRunning) {
     ep = ep.pow(0.5);
-  } else if (Laitela.isRunning) {
+  }
+  if (Laitela.isRunning) {
     ep = dilatedValueOf(ep);
   }
   if (GlyphAlteration.isAdded("time")) {
@@ -275,7 +279,7 @@ export function getOfflineEPGain(ms) {
 // eslint-disable-next-line max-params
 export function addRealityTime(time, realTime, rm, level, realities, ampFactor, projIM) {
   let reality = "";
-  const celestials = [Teresa, Effarig, Enslaved, V, Ra, Laitela];
+  const celestials = [Teresa, Effarig, Enslaved, V, Ra, Laitela, Glitch];
   for (const cel of celestials) {
     if (cel.isRunning) reality = cel.displayName;
   }
