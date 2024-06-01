@@ -3,7 +3,7 @@ export const eternityUG = [
   {
     name: "eternal forces",
     id: 0,
-    requirement: `reach ${format(1e350)} infinity points on your first eternity`,
+    requirement: `reach ${format("1e350")} infinity points on your first eternity`,
     hasFailed: () => PlayerProgress.eternityUnlocked(),
     checkRequirement: () => player.infinityPoints.e >= 350 && !PlayerProgress.eternityUnlocked(),
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
