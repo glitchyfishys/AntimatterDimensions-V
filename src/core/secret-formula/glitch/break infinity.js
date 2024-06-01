@@ -3,7 +3,7 @@ export const breakinfinityUG = [
   {
     name: "limited space",
     id: 0,
-    requirement: `reach ${format(1e500)} antimater up to 4 dimboosts, one galaxy`,
+    requirement: `reach ${format("1e500")} antimater up to 4 dimboosts, one galaxy`,
     hasFailed: () => player.dimensionBoosts > 4 || player.galaxies > 1,
     checkRequirement: () => player.antimatter.e >= 500 && player.dimensionBoosts <= 4 && player.galaxies <= 1,
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
