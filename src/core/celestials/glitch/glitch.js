@@ -45,6 +45,10 @@ export const Glitch = {
       return effect;
   },
 
+  get totalaugmentsactive(){
+    return activeaugments().length;
+  },
+  
   initializeRun() {
     if(this.tier == 0){
       player.celestials.glitch.run = true;
