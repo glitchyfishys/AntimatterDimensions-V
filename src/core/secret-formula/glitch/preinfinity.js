@@ -69,7 +69,7 @@ export const preinfinityUG = [
   {
     name: "galatic capacity",
     id: 6,
-    requirement: `reach ${format(1.8e308)} antimatter with only one antimatter galaxy`,
+    requirement: `reach ${format(1.79e308)} antimatter with only one antimatter galaxy`,
     hasFailed: () => player.galaxies > 1 || PlayerProgress.infinityUnlocked(),
     checkRequirement: () => player.antimatter.greaterThan(1.79e308) && player.galaxies <= 1 && !PlayerProgress.infinityUnlocked(),
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
