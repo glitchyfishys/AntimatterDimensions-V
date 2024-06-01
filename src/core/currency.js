@@ -281,7 +281,7 @@ Currency.infinityPoints = new class extends DecimalCurrency {
   }
 
   get startingValue() {
-    if (Pelle.isDisabled()) return new Decimal(0);
+    if (Pelle.isDisabled() || Glitch.isRunning) return new Decimal(0);
     return Effects.max(
       0,
       Perk.startIP1,
@@ -306,7 +306,7 @@ Currency.eternities = new class extends DecimalCurrency {
   set value(value) { player.eternities = value; }
 
   get startingValue() {
-    if (Pelle.isDoomed) return new Decimal(0);
+    if (Pelle.isDoomed || Glitch.isRunning) return new Decimal(0);
     return Effects.max(
       0,
       RealityUpgrade(10)
@@ -331,7 +331,7 @@ Currency.eternityPoints = new class extends DecimalCurrency {
   }
 
   get startingValue() {
-    if (Pelle.isDisabled()) return new Decimal(0);
+    if (Pelle.isDisabled() || Glitch.isRunning) return new Decimal(0);
     return Effects.max(
       0,
       Perk.startEP1,
@@ -427,7 +427,7 @@ Currency.imaginaryMachines = new class extends NumberCurrency {
 Currency.darkMatter = new class extends DecimalCurrency {
   get value() { return player.celestials.laitela.darkMatter; }
   set value(value) {
-    const capped = Decimal.min(value, "1e1000000");
+    const capped = Decimal.min(value, "1e10000000");
     player.celestials.laitela.darkMatter = capped;
     player.celestials.laitela.maxDarkMatter = player.celestials.laitela.maxDarkMatter.max(capped);
   }
