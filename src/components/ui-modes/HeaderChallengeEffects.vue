@@ -52,6 +52,8 @@ export default {
       const rawMsUntilHints = 5 * 3600 * 1000 - player.celestials.enslaved.hintUnlockProgress;
       this.enslavedTimer = TimeSpan.fromMilliseconds(rawMsUntilHints / (Enslaved.isRunning ? 1 : 0.4))
         .toStringShort();
+
+      this.GlitchReality = Glitch.isRunning;
     },
     updateChallengePower() {
       const isC2Running = NormalChallenge(2).isRunning;
@@ -85,7 +87,7 @@ export default {
       <br>
       Tickspeed is Dilated {{ effarigTickNerfText }}
     </div>
-    <div v-if="isInLaitela">
+    <div v-if="isInLaitela && !GlitchReality">
       Entropy: {{ laitelaEntropy }} ({{ laitelaTimer }})
     </div>
     <div v-if="isInMatterChallenge">
