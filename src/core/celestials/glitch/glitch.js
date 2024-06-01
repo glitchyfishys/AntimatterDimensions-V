@@ -76,8 +76,7 @@ export const Glitch = {
   },
 
   get riftForce(){
-    const rf = player.celestials.glitch.riftforce;
-    return rf;
+    return new Decimal(player.celestials.glitch.riftforce);
   },
 
   get ADnerf(){
