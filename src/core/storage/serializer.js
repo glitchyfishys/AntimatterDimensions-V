@@ -8,26 +8,22 @@ Decimal.prototype.toString = function () {
   if (isNaN(this.m) || isNaN(this.e)) {
     return "NaN";
   }
+
   if (this.e >= Infinity) {
     return this.m > 0 ? "Infinity" : "-Infinity";
   }
+
   if (this.e <= -Infinity || this.m === 0) {
     return "0";
   }
+
   if (this.e < 21 && this.e > -7) {
     return this.toNumber().toString();
-  }
-  const decimalOfE = new Decimal(this.e);
-
-  if (decimalOfE.e > 20){
-    const places = decimalOfE.m.toString().split(".")[1].length
-    return `${this.m}e${(this.e >= 0 ? "+" : "")}${decimalOfE.m.toString().split(".")[0]}${decimalOfE.m.toString().split(".")[1]}${"0".repeat(decimalOfE.e - places)}`
-    const places = (decimalOfE.m.toString().split(".")[1] ?? "").length
-    return `${this.m}e${(this.e >= 0 ? "+" : "")}${decimalOfE.m.toString().split(".")[0]}${decimalOfE.m.toString().split(".")[1] ?? ""}${"0".repeat(decimalOfE.e - places)}`
   }
 
   return this.m + "e" + (this.e >= 0 ? "+" : "") + this.e;
 };
+
 
 export const GameSaveSerializer = {
   serialize(save) {
