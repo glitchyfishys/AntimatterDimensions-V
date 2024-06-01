@@ -31,6 +31,4 @@ again if needed.
 
 2 new Ra memorys, one to speed up Ra
 
-maybe a new celestal
-
 ...
