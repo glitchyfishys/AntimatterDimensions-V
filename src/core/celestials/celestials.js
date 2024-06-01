@@ -122,7 +122,7 @@ GameDatabase.celestials.descriptions = [
     },
     description() {
       if(Glitch.tier == 0){
-        return () => `enter all Glitch's reality with ${makeEnumeration(Glitch.activeaugments)} active.`;
+        return `enter all Glitch's reality with ${makeEnumeration(Glitch.activeaugments)} active.`;
       }
     },
       
