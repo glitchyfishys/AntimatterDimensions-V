@@ -54,8 +54,13 @@ export const Glitch = {
       //could be bad
       disChargeAll();
       Glyphs.unequipAll(true);
-      for(i=0;i<5;i++) if((Glyphs.inventory.filter(x => x == null ? false :(x.type == "cursed")).length + Glyphs.active.filter(x => x == null ? false :(x.type == "cursed")).length) < 5) Glyphs.addToInventory(GlyphGenerator.cursedGlyph());
-      for(i=0;i<5;i++) Glyphs.equip(player.reality.glyphs.inventory.filter(x=> x.type == "cursed")[0],i);
+      for(i=0;i<5;i++) {
+        if((Glyphs.inventory.filter(x => x == null ? false :(x.type == "cursed")).length + Glyphs.active.filter(x => x == null ? false :(x.type == "cursed")).length) < 5) Glyphs.addToInventory(GlyphGenerator.cursedGlyph());
+      };
+      for(i=0;i<5;i++) {
+        Glyphs.equip(player.reality.glyphs.inventory.filter(x=> x.type == "cursed")[0],i);
+      };
+      
       player.reality.glyphs.undo=[];
       
       player.celestials.glitch.run = true;
