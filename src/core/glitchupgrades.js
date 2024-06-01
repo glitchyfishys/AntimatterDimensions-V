@@ -39,7 +39,7 @@ class GlitchRealityUpgradeState extends BitPurchasableMechanicState {
   }
 
   set bits(value) {
-    player.reality.upgradeBits = value;
+    player.celestials.glitch.upgrades.broughtbits = value;
   }
 
   get isAvailableForPurchase() {
