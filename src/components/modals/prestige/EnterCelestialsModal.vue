@@ -27,6 +27,7 @@ export default {
       effarigLayer: "",
       enslavedDone: false,
       laitelaTime: "",
+      augments: makeEnumeration(Glitch.activeaugments),
     };
   },
   computed: {
@@ -63,7 +64,7 @@ export default {
         case 5: return this.laitelaFastest >= 300
           ? "You have not completed Lai'tela at this tier."
           : `Your fastest completion on this tier is ${this.laitelaTime}.`;
-        case 6: return Glitch.description;
+        case 6: return "start Glitch's reality with " + makeEnumeration(Glitch.activeaugments) + " active?";
         default: throw new Error(`Attempted to start an Unknown Celestial in Celestial Modal Confirmation.`);
       }
     }
@@ -74,10 +75,11 @@ export default {
       this.teresaRunMult = Teresa.runRewardMultiplier;
       const effarigStage = Effarig.currentStage;
       this.effarigDone = effarigStage === EFFARIG_STAGES.COMPLETED;
-      this.effarigLayer = [null, "Infinity", "Eternity", "Reality"][effarigStage];
+      this.effarigLayer = [null, "Infinity", "Eternity", "Reality", "OVERDRIVE"][effarigStage];
       this.enslavedDone = Enslaved.isCompleted;
       this.laitelaFastest = player.celestials.laitela.fastestCompletion;
       this.laitelaTime = TimeSpan.fromSeconds(this.laitelaFastest).toStringShort();
+      this.augments = makeEnumeration(Glitch.activeaugments);
     },
     handleYesClick() {
       beginProcessReality(getRealityProps(true));
