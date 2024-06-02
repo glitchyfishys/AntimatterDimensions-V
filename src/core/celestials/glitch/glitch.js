@@ -54,6 +54,7 @@ export const Glitch = {
 
     Currency.eternityPoints.reset();
     Currency.infinityPoints.reset();
+    Currency.eternities.reset();
     
     if(this.tier == 0){
       //could be bad
