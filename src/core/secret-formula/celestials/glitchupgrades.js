@@ -68,7 +68,7 @@ export const glitchRealityUpgrades = [
   {
     name: "augmentation of IP",
     id: 6,
-    cost: 1e308,
+    cost: 20,
     requirement: () => `infinity for ${format("1.8e308")} infinity points`,
     hasFailed: () => false,
     checkRequirement: () => Currency.infinityPoints.gte("1.8e308") && Glitch.isRunning && Glitch.activeaugments.length >= 9,
