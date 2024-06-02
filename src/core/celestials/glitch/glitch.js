@@ -27,7 +27,7 @@ export const Glitch = {
       if(id == 5) return "V's Reality";
       if(id == 6) return "Ra's no dim boost";
       if(id == 7) return "Ra's static tickspeed";
-      if(id == 8) return "Lai'tela's Reality (at 5dims)";
+      if(id == 8) return `Lai'tela's Reality (at ${this.laitelamaxdim}dims)`;
       return "out of range";
   },
 
@@ -41,7 +41,7 @@ export const Glitch = {
       this.augmenteffectactive(5, true) ? effect.push("V's Reality") : undefined;
       this.augmenteffectactive(6, true) ? effect.push("Ra's no dim boost") : undefined;
       this.augmenteffectactive(7, true) ? effect.push("Ra's static tickspeed") : undefined;
-      this.augmenteffectactive(8, true) ? effect.push("Lai'tela's Reality (at 5dims)") : undefined;
+      this.augmenteffectactive(8, true) ? effect.push(`Lai'tela's Reality (at ${this.laitelamaxdim}dims)`) : undefined;
       return effect;
   },
 
