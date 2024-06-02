@@ -91,7 +91,7 @@ export function getDimensionFinalMultiplierUncached(tier) {
     multiplier = multiplier.pow(Glitch.ADnerf);
   }
 
-  multiplier = multiplier.times(GlitchRealityUpgrades.all[5].effectOrDefault(1));
+  multiplier = multiplier.times(GlitchRealityUpgrades.all[4].effectOrDefault(1));
   
   // This power effect goes intentionally after all the nerf effects and shouldn't be moved before them
   if (AlchemyResource.inflation.isUnlocked && multiplier.gte(AlchemyResource.inflation.effectValue)) {
