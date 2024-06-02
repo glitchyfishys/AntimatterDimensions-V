@@ -126,7 +126,7 @@ export const Glitch = {
   },
 
   get riftForceGain(){
-    if(!this.isRunning && this.activeaugments.length < 9) return new Decimal(0);
+    if(!this.isRunning && !this.activeaugments.length < 9) return new Decimal(0);
     const AM = Math.max(Math.log10(Currency.antimatter.value.log10()),0);
     const IP = Math.max(Math.log10(Currency.infinityPoints.value.log10()),0);
     const EP = Math.max(Math.log10(Currency.eternityPoints.value.log10()),0);
