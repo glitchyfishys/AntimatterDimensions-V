@@ -26,7 +26,7 @@ export const Laitela = {
     player.celestials.laitela.difficultyTier = tier;
   },
   get maxAllowedDimension() {
-    return Glitch.isRunning ? 5 : 8 - this.difficultyTier;
+    return Glitch.isRunning ? Glitch.laitelamaxdim : 8 - this.difficultyTier;
   },
   get isFullyDestabilized() {
     return Laitela.maxAllowedDimension === 0;
