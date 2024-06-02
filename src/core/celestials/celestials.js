@@ -124,8 +124,8 @@ GameDatabase.celestials.descriptions = [
         you are forced to have 5 cursed glyphs equiped\
         plus the effects you have chosen`;
       }
-        }
-        return "null";
+      
+      return "null";
     },
     description() {
       if(Glitch.tier == 0){
