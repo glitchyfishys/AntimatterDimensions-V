@@ -57,7 +57,9 @@ export const Glitch = {
     Currency.eternities.reset();
     
     player.eternityUpgrades.clear();
+    player.replicanti.unl=false;
     Currency.replicanti.bumpTo(1);
+
     
     if(this.tier == 0){
       //could be bad
@@ -91,6 +93,7 @@ export const Glitch = {
   leaveRun() {
   
     for(let i=1; i<7;i++)player.eternityUpgrades.add(i);
+    player.replicanti.unl=true;
     
     player.celestials.glitch.run = false;
     player.celestials.teresa.run = false;
@@ -123,7 +126,7 @@ export const Glitch = {
   },
 
   get ADnerf(){
-    return 0.133;
+    return 0.15;
   },
   get IDnerf(){
     return 0.25;
