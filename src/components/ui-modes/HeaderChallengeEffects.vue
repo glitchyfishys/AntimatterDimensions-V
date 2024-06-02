@@ -34,8 +34,8 @@ export default {
 
       this.isInEffarig = Effarig.isRunning;
       if (this.isInEffarig) {
-        this.effarigMultNerfText = `${formatPow( Math.clampMin(0.25 + 0.25 * Effarig.nerfFactor(Currency.infinityPower.value), 0.9999), 0, 5)}`;
-        this.effarigTickNerfText = `${formatPow( Math.clampMin(0.7 + 0.1 * Effarig.nerfFactor(Currency.timeShards.value), 0.9999) , 0, 5)}`;
+        this.effarigMultNerfText = `${formatPow( Math.clampMax(0.25 + 0.25 * Effarig.nerfFactor(Currency.infinityPower.value), 0.9999), 0, 4)}`;
+        this.effarigTickNerfText = `${formatPow( Math.clampMax(0.7 + 0.1 * Effarig.nerfFactor(Currency.timeShards.value), 0.9999) , 0, 4)}`;
       }
       this.isInLaitela = Laitela.isRunning;
       if (this.isInLaitela && !Glitch.isRunning) {
