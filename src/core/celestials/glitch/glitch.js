@@ -132,7 +132,7 @@ export const Glitch = {
     const EP = Math.max(Math.log10(Currency.eternityPoints.value.log10()),0);
     const total = (isNaN(AM) ? 0 : AM) + (isNaN(IP) ? 0 : IP) + (isNaN(EP) ? 0 : EP);
     
-    return new Decimal(total / 25);
+    return new Decimal(total / 25).times(GlitchRealityUpgrades.all[0].effectOrDefault(1));
   },
   
   get ADnerf(){
