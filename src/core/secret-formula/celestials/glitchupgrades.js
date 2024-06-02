@@ -59,23 +59,23 @@ export const glitchRealityUpgrades = [
     cost: 10,
     requirement: "reach Infinity",
     hasFailed: () => false,
-    checkRequirement: () => player.infinities.gt(0) && Glitch.isRunning,
+    checkRequirement: () => player.infinities.gt(0) && Glitch.isRunning && Glitch.activeaugments.length >= 9,
     checkEvent: GAME_EVENT.BIG_CRUNCH_AFTER,
     description: "riftforce multiplies AD while augmented uneffected by Celestial Reality's",
     effect: () =>  Currency.riftForce.value.pow(2.5),
     formatEffect: value => formatX(value, 2, 2)
   },
   {
-    name: "augmented eternity",
+    name: "augmentation of IP",
     id: 6,
     cost: 1e308,
-    requirement: "reach Infinity",
+    requirement: () => `infinity for ${format("1.8e308")} infinity points`,
     hasFailed: () => false,
-    checkRequirement: () => false && Glitch.isRunning,
+    checkRequirement: () => Currency.infinityPoints.gte("1.8e308") && Glitch.isRunning && Glitch.activeaugments.length >= 9,
     checkEvent: GAME_EVENT.BIG_CRUNCH_AFTER,
-    description: "rift multiplies AD  while augmented",
-    effect: () =>  Currency.riftForce.value.pow(1.5),
-    formatEffect: value => formatX(value, 2, 2)
+    description: "while augmented laitela's max Dimension count is one higher",
+    effect: () =>  1,
+    formatEffect: value => formatX(value)
   },
   {
     name: "augmented dilation",
