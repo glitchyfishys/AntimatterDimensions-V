@@ -123,7 +123,8 @@ const Positions = Object.freeze({
 
   pelleGalaxyGen: pelleStarPosition(0, 0),
 
-  glitchUnlock: new Vector(150, 850)
+  glitchUnlock: new Vector(150, 850),
+  glitchugone: new Vector(225, 800),
 });
 
 // Reduces boilerplate for rift line objects, but needs quite a few parameters to do so since there are three separate
@@ -2026,6 +2027,53 @@ export const celestialNavigation = {
       completeWidth: 6,
       incompleteWidth: 4,
       fill: "url(#gradGlitchLaitela)",
+    }
+  },
+  "glitch-ug-1": {
+    visible: () => Glitch.isUnlocked,
+    complete: () => {
+      if(GlitchRealityUpgrades.all[4].isBought) return 1;
+      if(GlitchRealityUpgrades.all[4].isAvailableForPurchase) return 0.5 + GlitchRealityUpgrades.all[4].cost / 40;
+      return Currency.antimatter.value.log10()/616;
+    },
+    node: {
+      clickAction: () => Tab.celestials.glitch.show(true),
+      fill: "#00ff00",
+      incompleteClass: "c-celestial-nav__test-incomplete",
+      position: Positions.glitchugone,
+      symbol: "ὡ",
+      ring: {
+        rMajor: 20,
+      },
+      legend: {
+        text: complete => {
+          if (complete >= 1) return "Glitch's first upgrade";
+
+          if(GlitchRealityUpgrades.all[5].isAvailableForPurchase) {
+            let v =  GlitchRealityUpgrades.all[4].cost;
+            let out = "20 RiftForce";
+          }else{
+            let v = Currency.antimatter.value;
+            let out = "1.8e308 antimatter";
+          }
+          
+          return [
+            "unlock first upgrade",
+            `${format(Currency.antimatter.value)} / ${out}`
+          ];
+        },
+        angle: 150,
+        diagonal: 25,
+        horizontal: 36,
+      },
+    },
+    connector: {
+      pathStart: 0,
+      pathEnd: 1,
+      path: LinearPath.connectCircles(Positions.glitchUnlock, 29, Positions.glitchugone, 19),
+      completeWidth: 4,
+      incompleteWidth: 3,
+      fill: "#00ff00",
     }
   },
 };
