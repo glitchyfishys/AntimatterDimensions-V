@@ -2049,12 +2049,14 @@ export const celestialNavigation = {
         text: complete => {
           if (complete >= 1) return "Glitch's first upgrade";
 
+          let v = 0
+          let out = 0
           if(GlitchRealityUpgrades.all[5].isAvailableForPurchase) {
-            let v =  GlitchRealityUpgrades.all[4].cost;
-            let out = "20 RiftForce";
+            v =  GlitchRealityUpgrades.all[4].cost;
+            out = "20 RiftForce";
           }else{
-            let v = Currency.antimatter.value;
-            let out = "1.8e308 antimatter";
+            v = Currency.antimatter.value;
+            out = "1.8e308 antimatter";
           }
           
           return [
@@ -2062,7 +2064,7 @@ export const celestialNavigation = {
             `${format(Currency.antimatter.value)} / ${out}`
           ];
         },
-        angle: 150,
+        angle: 290,
         diagonal: 25,
         horizontal: 36,
       },
