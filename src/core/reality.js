@@ -639,7 +639,7 @@ export function finishProcessReality(realityProps) {
     AutomatorBackend.start(AutomatorBackend.state.topLevelScript);
   }
 
-  const Glitchrun = Glitch.isRunning;
+  if(Glitch.isRunning) Glitch.leaveRun();
   const celestialRunState = clearCelestialRuns();
   recalculateAllGlyphs();
   Glyphs.updateMaxGlyphCount(true);
@@ -757,16 +757,16 @@ export function finishProcessReality(realityProps) {
   AchievementTimers.marathon2.reset();
   Currency.infinityPoints.reset();
 
-  if (RealityUpgrade(10).isBought && !Glitchrun) applyRUPG10();
+  if (RealityUpgrade(10).isBought) applyRUPG10();
   else Tab.dimensions.antimatter.show();
 
   Lazy.invalidateAll();
   ECTimeStudyState.invalidateCachedRequirements();
   EventHub.dispatch(GAME_EVENT.REALITY_RESET_AFTER);
 
-  if (TeresaUnlocks.startEU.canBeApplied && !Glitchrun) {
+  if (TeresaUnlocks.startEU.canBeApplied) {
     for (const id of [1, 2, 3, 4, 5, 6]) player.eternityUpgrades.add(id);
-  } else if (RealityUpgrade(14).isBought && !Glitchrun) {
+  } else if (RealityUpgrade(14).isBought) {
     // Eternal flow will always give eternities after the first tick,
     // better to try apply EU1 immediately once at the start rather than on every tick
     applyEU1();
