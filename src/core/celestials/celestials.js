@@ -116,7 +116,7 @@ GameDatabase.celestials.descriptions = [
     name: "Glitch",
     effects() {
         if(Glitch.tier == 0){
-        return `AD's ^0.85\
+        return `AD's ^0.95\
         ID's ^0.25\
         TD's ^0.33\
         you only start with break/infinity upgrades and you can not charge them\
