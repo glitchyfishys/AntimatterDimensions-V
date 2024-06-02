@@ -125,6 +125,15 @@ export const Glitch = {
     return new Decimal(player.celestials.glitch.riftforce);
   },
 
+  get riftForceGain(){
+    const AM = Math.max(Math.log10(Currency.antimatter.value.log10()),0);
+    const IP = Math.max(Math.log10(Currency.infinityPoints.value.log10()),0);
+    const EP = Math.max(Math.log10(Currency.eternityPoints.value.log10()),0);
+    const total = (isNaN(AM) ? 0 : AM) + (isNaN(IP) ? 0 : IP) + (isNaN(EP) ? 0 : EP);
+    
+    return total / 25;
+  },
+  
   get ADnerf(){
     return 0.8;
   },
