@@ -136,7 +136,7 @@ export const Glitch = {
   },
 
   get laitelamaxdim(){
-    return 5 + GlitchRealityUpgrades.all[0].effectOrDefault(0);
+    return 5 + GlitchRealityUpgrades.all[5].effectOrDefault(0);
   },
   
   get ADnerf(){
