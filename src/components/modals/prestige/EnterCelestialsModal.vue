@@ -32,7 +32,7 @@ export default {
   },
   computed: {
     effects() {
-      return this.number == 6 ? "" :GameDatabase.celestials.descriptions[this.number].effects().split("\n");
+      return GameDatabase.celestials.descriptions[this.number].effects().split("\n");
     },
     description() {
       const description = GameDatabase.celestials.descriptions[this.number].description;
