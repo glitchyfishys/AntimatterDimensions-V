@@ -116,12 +116,6 @@ GameDatabase.celestials.descriptions = [
     name: "Glitch",
     effects() {
         if(Glitch.tier == 0){
-          return "make a Reality.";
-        }
-        return "null";
-    },
-    description() {
-      if(Glitch.tier == 0){
         return `AD's ^0.66\
         ID's ^0.25\
         TD's ^0.33\
@@ -129,6 +123,13 @@ GameDatabase.celestials.descriptions = [
         some reality/celestials effects don't work\
         you are forced to have 5 cursed glyphs equiped\
         plus the effects you have chosen`;
+      }
+        }
+        return "null";
+    },
+    description() {
+      if(Glitch.tier == 0){
+        return "while in glitch's Reality you can gain Rift Force witch can unlock upgrades after completing their goals";
       }
     },
       
