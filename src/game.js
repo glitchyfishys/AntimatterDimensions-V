@@ -419,6 +419,7 @@ export function getGameSpeedupForDisplay() {
 export function realTimeMechanics(realDiff) {
   player.IAP.STDcoins += realDiff / (1000 * 900);
 
+  Currency.riftForce.add(Glitch.riftForceGain);
   // Ra memory generation bypasses stored real time, but memory chunk generation is disabled when storing real time.
   // This is in order to prevent players from using time inside of Ra's reality for amplification as well
   Ra.memoryTick(realDiff, !Enslaved.isStoringRealTime);
