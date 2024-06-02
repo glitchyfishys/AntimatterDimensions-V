@@ -61,8 +61,8 @@ export const glitchRealityUpgrades = [
     hasFailed: () => false,
     checkRequirement: () => player.infinities.gt(0) && Glitch.isRunning,
     checkEvent: GAME_EVENT.BIG_CRUNCH_AFTER,
-    description: "rift multiplies AD  while augmented",
-    effect: () =>  Currency.riftForce.value.pow(1.5),
+    description: "rift multiplies AD while augmented uneffected by Celestial Reality'ss",
+    effect: () =>  Currency.riftForce.value.pow(2.5),
     formatEffect: value => formatX(value, 2, 2)
   },
   {
