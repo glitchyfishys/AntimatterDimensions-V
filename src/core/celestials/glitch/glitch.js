@@ -126,13 +126,13 @@ export const Glitch = {
   },
 
   get ADnerf(){
-    return 0.2;
+    return 0.5;
   },
   get IDnerf(){
-    return 0.15;
+    return 0.25;
   },
   get TDnerf(){
-    return 0.2;
+    return 0.33;
   },
   
   get discription() {
