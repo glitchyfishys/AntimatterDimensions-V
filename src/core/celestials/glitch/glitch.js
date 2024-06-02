@@ -134,6 +134,10 @@ export const Glitch = {
     
     return new Decimal(total / 25).times(GlitchRealityUpgrades.all[0].effectOrDefault(1));
   },
+
+  get laitelamaxdim(){
+    return 5 + GlitchRealityUpgrades.all[0].effectOrDefault(0);
+  },
   
   get ADnerf(){
     return 0.95;
@@ -148,7 +152,6 @@ export const Glitch = {
   get discription() {
     return GameDatabase.celestials.descriptions[6].effects()
   },
-  
   get tier(){
     return player.celestials.glitch.tier;
   },
