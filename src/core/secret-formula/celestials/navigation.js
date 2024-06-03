@@ -2049,8 +2049,8 @@ export const celestialNavigation = {
         text: complete => {
           if (complete >= 1) return "Glitch's first upgrade";
 
-          let v = 0
-          let out = 0
+          let v = 0;
+          let out = "";
           if(GlitchRealityUpgrades.all[5].isAvailableForPurchase) {
             v =  GlitchRealityUpgrades.all[4].cost;
             out = "20 RiftForce";
