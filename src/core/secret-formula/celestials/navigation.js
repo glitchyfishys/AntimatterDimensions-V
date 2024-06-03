@@ -2051,7 +2051,7 @@ export const celestialNavigation = {
 
           let v = 0;
           let out = "";
-          if(GlitchRealityUpgrades.all[5].isAvailableForPurchase) {
+          if(GlitchRealityUpgrades.all[4].isAvailableForPurchase) {
             v =  GlitchRealityUpgrades.all[4].cost;
             out = "20 RiftForce";
           }else{
