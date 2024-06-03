@@ -78,13 +78,13 @@ export const glitchRealityUpgrades = [
     formatEffect: value => formatX(value)
   },
   {
-    name: "reinforcemint",
+    name: "reinforcement",
     id: 7,
     cost: 50,
-    requirement: "reach Infinity",
+    requirement: `reach ${format("1e1E13")} antimatter with Teresa, Nameless dim limit and Lai'tela`,
     hasFailed: () => false,
-    checkRequirement: () => false && Glitch.isRunning,
-    checkEvent: GAME_EVENT.BIG_CRUNCH_AFTER,
+    checkRequirement: () => Currency.antimatter.gte("1e1E13") && Glitch.isRunning && player.celestials.glitch.augment.effectbits == 265,
+    checkEvent: GAME_EVENT.GAME_TICK_AFTER,
     description: "you only are forced to have 4 cursed glyphs",
     effect: () =>  1,
     formatEffect: value => formatX(value)
