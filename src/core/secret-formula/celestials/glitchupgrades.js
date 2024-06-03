@@ -12,7 +12,7 @@ const rebuyable = props => {
     props.initialCost * props.costMult
   );
   const { effect } = props;
-  props.effect = () =>  props.id == 3 ? Decimal.mul(effect, player.celestials.glitch.upgrades.rebuyable[props.id]) : Decimal.pow(effect,player.celestials.glitch.upgrades.rebuyable[props.id]);
+  props.effect = () =>  props.id == 3 ? (effect * player.celestials.glitch.upgrades.rebuyable[props.id]) : Decimal.pow(effect,player.celestials.glitch.upgrades.rebuyable[props.id]);
   props.description = () => props.textTemplate.replace("{value}", formatX(effect));
   props.formatEffect = value => props.id == 3 ? ("+" + format(value, 2, 0)) : formatX(value, 2, 0);
   props.formatCost = value => format(value, 2, 0);
