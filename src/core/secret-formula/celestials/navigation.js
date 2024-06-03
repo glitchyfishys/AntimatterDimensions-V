@@ -2061,7 +2061,7 @@ export const celestialNavigation = {
           
           return [
             "unlock first upgrade",
-            `${format(Currency.antimatter.value)} / ${out}`
+            `${format(Currency.antimatter.value,2,2)} / ${out}`
           ];
         },
         angle: 250,
