@@ -12,9 +12,9 @@ const rebuyable = props => {
     props.initialCost * props.costMult
   );
   const { effect } = props;
-  props.effect = () =>  Decimal.pow(effect,player.celestials.glitch.upgrades.rebuyable[props.id]);
+  props.effect = () =>  props.id == 3 ? Decimal.mul(effect, player.celestials.glitch.upgrades.rebuyable[props.id]) : Decimal.pow(effect,player.celestials.glitch.upgrades.rebuyable[props.id]);
   props.description = () => props.textTemplate.replace("{value}", formatX(effect));
-  props.formatEffect = value => formatX(value, 2, 0);
+  props.formatEffect = value => props.id == 3 ? ("+" + format(value, 2, 0)) : formatX(value, 2, 0);
   props.formatCost = value => format(value, 2, 0);
   return props;
 };
@@ -40,10 +40,10 @@ export const glitchRealityUpgrades = [
   rebuyable({
     name: "Rift SubLoad",
     id: 3,
-    initialCost: 1e308,
-    costMult: 20,
-    textTemplate: "You gain {value} more rift force",
-    effect: 2
+    initialCost: 100,
+    costMult: 50,
+    textTemplate: "glyph refinment is {value} more rift force",
+    effect: 50
   }),
   rebuyable({
     name: "Rift CosmicFlight",
