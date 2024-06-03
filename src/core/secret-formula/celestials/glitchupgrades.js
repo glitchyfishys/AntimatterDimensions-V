@@ -81,7 +81,7 @@ export const glitchRealityUpgrades = [
     name: "reinforcement",
     id: 7,
     cost: 50,
-    requirement: `reach ${format("1e1E13")} antimatter with Teresa, Nameless dim limit and Lai'tela`,
+    requirement: () => `reach ${format("1e1E13")} antimatter with Teresa, Nameless dim limit and Lai'tela`,
     hasFailed: () => false,
     checkRequirement: () => Currency.antimatter.gte("1e1E13") && Glitch.isRunning && player.celestials.glitch.augment.effectbits == 265,
     checkEvent: GAME_EVENT.GAME_TICK_AFTER,
