@@ -127,11 +127,11 @@ export const Glitch = {
   },
 
   get riftForceGain(){
-    if(this.activeaugments.length < 9) return new Decimal(0);
-    if(!this.isRunning) return new Decimal(0);
-    const AM = Math.max(Math.log10(Currency.antimatter.value.log10()) ** 1.25,0);
-    const IP = Math.max(Math.log10(Currency.infinityPoints.value.log10() ** 1.5),0);
-    const EP = Math.max(Math.log10(Currency.eternityPoints.value.log10()) ** 2,0);
+    if(!this.isRunning || this.activeaugments.length < 9) return new Decimal(0);
+    
+    const AM = Math.log10(Currency.antimatter.value.log10() ** 1.25);
+    const IP = Math.log10(Currency.infinityPoints.value.log10() ** 1.5);
+    const EP = Math.log10(Currency.eternityPoints.value.log10() ** 2);
     const total = (isNaN(AM) ? 0 : AM) + (isNaN(IP) ? 0 : IP) + (isNaN(EP) ? 0 : EP);
     
     return new Decimal(total * 25).times(GlitchRealityUpgrades.all[0].effectOrDefault(1));
