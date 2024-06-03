@@ -2,7 +2,7 @@
 export const GlyphSacrificeHandler = {
   // Anything scaling on sacrifice caps at this value, even though the actual sacrifice values can go higher
   get maxSacrificeForEffects() {
-    return 1e100 * GlitchRealityUpgrades.all[1].effectOrDefault(1);
+    return Math.min(1e100 * GlitchRealityUpgrades.all[1].effectOrDefault(1).toNumber(), 1e300);
     },
   // This is used for glyph UI-related things in a few places, but is handled here as a getter which is only called
   // sparingly - that is, whenever the cache is invalidated after a glyph is sacrificed. Thus it only gets recalculated
