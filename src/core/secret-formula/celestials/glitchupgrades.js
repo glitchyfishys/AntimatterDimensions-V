@@ -30,12 +30,12 @@ export const glitchRealityUpgrades = [
     effect: 2
   }),
   rebuyable({
-    name: "Rift SideDrive",
+    name: "Glyph ForcedOver",
     id: 2,
-    initialCost: 1e308,
-    costMult: 20,
-    textTemplate: "You gain {value} more rift force",
-    effect: 2
+    initialCost: 5,
+    costMult: 40,
+    textTemplate: "glyph sacrifice is {value} times higher",
+    effect: 1e10
   }),
   rebuyable({
     name: "Rift SubLoad",
@@ -69,7 +69,7 @@ export const glitchRealityUpgrades = [
     name: "augmentation of IP",
     id: 6,
     cost: 20,
-    requirement: () => `infinity for ${format("1.8e308")} infinity points`,
+    requirement: () => `infinity for ${format("1.8e308",2,2)} infinity points`,
     hasFailed: () => false,
     checkRequirement: () => Currency.infinityPoints.gte("1.8e308") && Glitch.isRunning && Glitch.activeaugments.length >= 9,
     checkEvent: GAME_EVENT.BIG_CRUNCH_AFTER,
@@ -78,16 +78,16 @@ export const glitchRealityUpgrades = [
     formatEffect: value => formatX(value)
   },
   {
-    name: "augmented dilation",
+    name: "reinforcemint",
     id: 7,
-    cost: 1e308,
+    cost: 50,
     requirement: "reach Infinity",
     hasFailed: () => false,
     checkRequirement: () => false && Glitch.isRunning,
     checkEvent: GAME_EVENT.BIG_CRUNCH_AFTER,
-    description: "rift multiplies AD  while augmented",
-    effect: () =>  Currency.riftForce.value.pow(1.5),
-    formatEffect: value => formatX(value, 2, 2)
+    description: "you only are forced to have 4 cursed glyphs",
+    effect: () =>  1,
+    formatEffect: value => formatX(value)
   },
   {
     name: "augmented reality",
