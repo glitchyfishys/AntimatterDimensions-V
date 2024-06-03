@@ -64,11 +64,12 @@ export const Glitch = {
     if(this.tier == 0){
       //could be bad
       disChargeAll();
+      const cga = 5 - GlitchRealityUpgrades.all[6].effectOrDefault(0);
       Glyphs.unequipAll(true);
-      for(let i=0;i<5;i++) {
-        if((Glyphs.inventory.filter(x => x == null ? false :(x.type == "cursed")).length + Glyphs.active.filter(x => x == null ? false :(x.type == "cursed")).length) < 5) Glyphs.addToInventory(GlyphGenerator.cursedGlyph());
+      for(let i=0;i<cga;i++) {
+        if((Glyphs.inventory.filter(x => x == null ? false :(x.type == "cursed")).length + Glyphs.active.filter(x => x == null ? false :(x.type == "cursed")).length) < cga) Glyphs.addToInventory(GlyphGenerator.cursedGlyph());
       };
-      for(let i=0;i<5;i++) {
+      for(let i=0;i<cga;i++) {
         Glyphs.equip(player.reality.glyphs.inventory.filter(x=> x.type == "cursed")[0],i);
       };
       
