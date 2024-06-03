@@ -5,7 +5,7 @@ export const glyphSacrifice = {
       if (Pelle.isDisabled("glyphsac")) return 0;
       const sac = player.reality.glyphs.sac.power + (added ?? 0);
       const capped = Math.clampMax(sac, GlyphSacrificeHandler.maxSacrificeForEffects);
-      const base = Math.log10(capped + 1) / Math.log10(GlyphSacrificeHandler.maxSacrificeForEffects);
+      const base = Math.log10(capped + 1) / Math.log10( Math.min(GlyphSacrificeHandler.maxSacrificeForEffects, 1e100) );
       return Math.floor(750 * Math.pow(base, 1.2));
     },
     description: amount => {
@@ -44,7 +44,7 @@ export const glyphSacrifice = {
       if (Pelle.isDisabled("glyphsac")) return 0;
       const sac = player.reality.glyphs.sac.replication + (added ?? 0);
       const capped = Math.clampMax(sac, GlyphSacrificeHandler.maxSacrificeForEffects);
-      const base = Math.log10(capped + 1) / Math.log10(GlyphSacrificeHandler.maxSacrificeForEffects);
+      const base = Math.log10(capped + 1) / Math.log10(Math.min(GlyphSacrificeHandler.maxSacrificeForEffects,1e100));
       return Math.floor(1500 * Math.pow(base, 1.2));
     },
     description: amount => {
