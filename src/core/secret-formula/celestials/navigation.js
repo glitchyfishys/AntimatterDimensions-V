@@ -2064,9 +2064,9 @@ export const celestialNavigation = {
             `${format(Currency.antimatter.value)} / ${out}`
           ];
         },
-        angle: 290,
-        diagonal: 25,
-        horizontal: 36,
+        angle: 250,
+        diagonal: 20,
+        horizontal: 25,
       },
     },
     connector: {
