@@ -10,10 +10,8 @@ export const glyphSacrifice = {
     },
     description: amount => {
       const sacCap = GlyphSacrificeHandler.maxSacrificeForEffects;
-      const nextDistantGalaxy = Math.pow(10, Math.pow((amount + 1) / 750, 1 / 1.2) * Math.log10(sacCap)) - 1;
-      const nextGalaxyText = amount < 750
-        ? ` (next at ${format(nextDistantGalaxy, 2, 2)})`
-        : "";
+      const nextDistantGalaxy = Math.pow(10, Math.pow((amount + 1) / 750, 1 / 1.2) * Math.log10(Math.min(sacCap, 1e100))) - 1;
+      const nextGalaxyText = ` (next at ${format(nextDistantGalaxy, 2, 2)})`
       return `Distant Galaxy scaling starts ${formatInt(amount)} later${nextGalaxyText}`;
     },
     cap: () => GlyphSacrificeHandler.maxSacrificeForEffects
@@ -51,10 +49,8 @@ export const glyphSacrifice = {
     },
     description: amount => {
       const sacCap = GlyphSacrificeHandler.maxSacrificeForEffects;
-      const nextDistantGalaxy = Math.pow(10, Math.pow((amount + 1) / 1500, 1 / 1.2) * Math.log10(sacCap)) - 1;
-      const nextGalaxyText = amount < 1500
-        ? ` (next at ${format(nextDistantGalaxy, 2, 2)})`
-        : "";
+      const nextDistantGalaxy = Math.pow(10, Math.pow((amount + 1) / 1500, 1 / 1.2) * Math.log10(Math.min(sacCap, 1e100))) - 1;
+      const nextGalaxyText = ` (next at ${format(nextDistantGalaxy, 2, 2)})`
       return `Replicanti Galaxy scaling starts ${formatInt(amount)} later${nextGalaxyText}`;
     },
     cap: () => GlyphSacrificeHandler.maxSacrificeForEffects
