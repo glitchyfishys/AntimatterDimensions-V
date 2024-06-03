@@ -120,7 +120,7 @@ class RaPetState extends GameMechanicState {
   }
 
   set memoryChunks(value) {
-    this.data.memoryChunks = Math.min(value, 1e100);
+    this.data.memoryChunks = Math.min(value, 1e150);
   }
 
   get requiredMemories() {
@@ -391,7 +391,7 @@ export const Ra = {
     this.updateAlchemyFlow(realityRealTime);
   },
   get alchemyResourceCap() {
-    return 30000;
+    return 30000 + GlitchRealityUpgrades.all[2].effectOrDefault(0).toNumber();
   },
   get momentumValue() {
     const hoursFromUnlock = TimeSpan.fromMilliseconds(player.celestials.ra.momentumTime).totalHours;
