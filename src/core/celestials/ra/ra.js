@@ -391,7 +391,7 @@ export const Ra = {
     this.updateAlchemyFlow(realityRealTime);
   },
   get alchemyResourceCap() {
-    return 30000 + GlitchRealityUpgrades.all[2].effectOrDefault(0).toNumber();
+    return 30000 + GlitchRealityUpgrades.all[2].effectOrDefault(0);
   },
   get momentumValue() {
     const hoursFromUnlock = TimeSpan.fromMilliseconds(player.celestials.ra.momentumTime).totalHours;
