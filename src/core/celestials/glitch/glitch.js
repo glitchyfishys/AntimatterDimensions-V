@@ -132,7 +132,7 @@ export const Glitch = {
     const AM = Math.log10(Currency.antimatter.value.log10() ** 1.25);
     const IP = Math.log10(Currency.infinityPoints.value.log10() ** 1.5);
     const EP = Math.log10(Currency.eternityPoints.value.log10() ** 2);
-    const total = (isNaN(AM) ? 0 : AM) + (isNaN(IP) ? 0 : IP) + (isNaN(EP) ? 0 : EP);
+    const total = ((isNaN(AM) || AM == Infinity) ? 0 : AM) + ((isNaN(IP) || IP == Infinity) ? 0 : IP) + ((isNaN(EP) || EP == Infinity )? 0 : EP);
     
     return new Decimal(total * 25).times(GlitchRealityUpgrades.all[0].effectOrDefault(1));
   },
