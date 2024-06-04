@@ -102,7 +102,7 @@ export default {
     </div>
   
       <div
-      v-for="row in 2"
+      v-for="row in 3"
       :key="row"
       class="l-reality-upgrade-grid__row">
         
