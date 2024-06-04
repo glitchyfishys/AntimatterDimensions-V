@@ -51,7 +51,7 @@ export const glitchRealityUpgrades = [
     initialCost: 15,
     costMult: 32,
     textTemplate: "You gain {value} more singularitys",
-    effect: 1.33
+    effect: 2.5
   }),
   {
     name: "augmented Infinity",
