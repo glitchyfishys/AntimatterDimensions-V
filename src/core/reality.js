@@ -639,7 +639,7 @@ export function finishProcessReality(realityProps) {
     AutomatorBackend.start(AutomatorBackend.state.topLevelScript);
   }
 
-  if(Glitch.isRunning) Glitch.leaveRun();
+  if(Glitch.isRunning && !player.options.retryCelestial) Glitch.leaveRun();
   const celestialRunState = clearCelestialRuns();
   recalculateAllGlyphs();
   Glyphs.updateMaxGlyphCount(true);
