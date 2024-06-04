@@ -223,7 +223,7 @@ export const Singularity = {
   get singularitiesGained() {
     return Decimal.pow(this.gainPerCapIncrease, player.celestials.laitela.singularityCapIncreases).times(
       SingularityMilestone.singularityMult.effectOrDefault(1)).times(
-      (1 + ImaginaryUpgrade(10).effectOrDefault(0))).times(realityUGs.all[11].effectOrDefault(1)).floor();
+      (1 + ImaginaryUpgrade(10).effectOrDefault(0))).times(realityUGs.all[11].effectOrDefault(1).times(GlitchRealityUpgrades.all[3].effectOrDefault(1))).floor();
   },
 
   // Time (in seconds) to go from 0 DE to the condensing requirement
