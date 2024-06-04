@@ -134,11 +134,11 @@ export const Glitch = {
     if(!this.isRunning || this.activeaugments.length < 9) return new Decimal(0);
     
     const AM = Math.log10(Currency.antimatter.value.log10() ** 1.25);
-    const IP = Math.log10(Currency.infinityPoints.value.log10() ** 1.5);
-    const EP = Math.log10(Currency.eternityPoints.value.log10() ** 2);
+    const IP = Math.log10(Currency.infinityPoints.value.log10() ** 2);
+    const EP = Math.log10(Currency.eternityPoints.value.log10() ** 3.5);
     const total = ((isNaN(AM) || AM == Infinity || AM < 1) ? 1 : AM) * ((isNaN(IP) || IP == Infinity || IP < 1) ? 1 : IP) * ((isNaN(EP) || EP == Infinity || EP < 1)? 1 : EP);
     
-    return new Decimal(total / 25).times(GlitchRealityUpgrades.all[0].effectOrDefault(1)).pow(1.15);
+    return new Decimal(total / 25).times(GlitchRealityUpgrades.all[0].effectOrDefault(1)).pow(3);
   },
 
   get laitelamaxdim(){
