@@ -138,7 +138,7 @@ export const Glitch = {
     const EP = Math.log10(Currency.eternityPoints.value.log10() ** 2);
     const total = ((isNaN(AM) || AM == Infinity || AM < 1) ? 1 : AM) * ((isNaN(IP) || IP == Infinity || IP < 1) ? 1 : IP) * ((isNaN(EP) || EP == Infinity || EP < 1)? 1 : EP);
     
-    return new Decimal(total / 25).times(GlitchRealityUpgrades.all[0].effectOrDefault(1)) ** 1.15;
+    return new Decimal(total / 25).times(GlitchRealityUpgrades.all[0].effectOrDefault(1)).pow(1.15);
   },
 
   get laitelamaxdim(){
