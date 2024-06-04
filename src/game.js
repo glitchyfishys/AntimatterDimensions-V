@@ -385,7 +385,7 @@ export function getGameSpeedupFactor(effectsToConsider, blackHolesActiveOverride
     if (Effarig.isRunning) {
       factor = Effarig.multiplier(factor).toNumber();
     }
-    if (Laitela.isRunning) {
+    if (Laitela.isRunning && !GlitchRealityUpgrades.all[7].isBought) {
       const nerfModifier = Math.clampMax(Time.thisRealityRealTime.totalMinutes / 10, 1);
       factor = Math.pow(factor, nerfModifier);
     }
