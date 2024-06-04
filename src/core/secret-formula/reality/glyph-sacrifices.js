@@ -22,7 +22,7 @@ export const glyphSacrifice = {
       if (Pelle.isDisabled("glyphsac")) return 1;
       const sac = player.reality.glyphs.sac.infinity + (added ?? 0);
       const capped = Math.clampMax(sac, GlyphSacrificeHandler.maxSacrificeForEffects);
-      return 1 + Math.log10(1 + Math.pow(capped, 0.2) / 100);
+      return 1 + Math.log10(1 + Math.pow(capped, 0.2) / 100) * (GlitchRealityUpgrades.all[2].boughtAmount - 20 > 0 ? ( (GlitchRealityUpgrades.all[2].boughtAmount ** 1.1): 1);
     },
     description: amount => `${formatX(amount, 2, 2)} bigger multiplier when buying 8th Infinity Dimension`,
     cap: () => GlyphSacrificeHandler.maxSacrificeForEffects
@@ -33,7 +33,7 @@ export const glyphSacrifice = {
       if (Pelle.isDisabled("glyphsac")) return 1;
       const sac = player.reality.glyphs.sac.time + (added ?? 0);
       const capped = Math.clampMax(sac, GlyphSacrificeHandler.maxSacrificeForEffects);
-      return Math.pow(1 + Math.pow(capped, 0.2) / 100, 2);
+      return Math.pow(1 + Math.pow(capped, 0.2) / 100, 2) * (GlitchRealityUpgrades.all[2].boughtAmount - 20 > 0 ? ( (GlitchRealityUpgrades.all[2].boughtAmount ** 1.1): 1);
     },
     description: amount => `${formatX(amount, 2, 2)} bigger multiplier when buying 8th Time Dimension`,
     cap: () => GlyphSacrificeHandler.maxSacrificeForEffects
@@ -63,7 +63,7 @@ export const glyphSacrifice = {
       const capped = Math.clampMax(sac, GlyphSacrificeHandler.maxSacrificeForEffects);
       const exponent = 0.32 * Math.pow(Math.log10(capped + 1) /
         Math.log10(GlyphSacrificeHandler.maxSacrificeForEffects), 0.1);
-      return Math.pow(Math.clampMin(capped, 1), exponent);
+      return Math.pow(Math.clampMin(capped, 1), exponent) * (GlitchRealityUpgrades.all[2].boughtAmount - 20 > 0 ? ( (GlitchRealityUpgrades.all[2].boughtAmount ** 1.1): 1);
     },
     description: amount => `Multiply Tachyon Particle gain by ${formatX(amount, 2, 2)}`,
     cap: () => GlyphSacrificeHandler.maxSacrificeForEffects
