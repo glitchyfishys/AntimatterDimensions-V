@@ -57,7 +57,7 @@ export const glitchRealityUpgrades = [
     name: "augmented Infinity",
     id: 5,
     cost: 30,
-    requirement: "reach Infinity",
+    requirement: "reach Infinity (all effects)",
     hasFailed: () => !(Glitch.activeaugments.length >= 9),
     checkRequirement: () => player.infinities.gt(0) && Glitch.isRunning && Glitch.activeaugments.length >= 9,
     checkEvent: GAME_EVENT.BIG_CRUNCH_AFTER,
@@ -69,7 +69,7 @@ export const glitchRealityUpgrades = [
     name: "augmentation of IP",
     id: 6,
     cost: 100,
-    requirement: () => `infinity for ${format("1.8e308",2,2)} infinity points`,
+    requirement: () => `infinity for ${format("1.8e308",2,2)} infinity points (all effects)`,
     hasFailed: () => !(Glitch.activeaugments.length >= 9),
     checkRequirement: () => Currency.infinityPoints.gte("1.8e308") && Glitch.isRunning && Glitch.activeaugments.length >= 9,
     checkEvent: GAME_EVENT.BIG_CRUNCH_AFTER,
@@ -99,7 +99,54 @@ export const glitchRealityUpgrades = [
     checkEvent: GAME_EVENT.GAME_TICK_AFTER,
     description: "you start with 5 dim boost and lai'tela Reality at 10 minutes",
     effect: () =>  1,
-    formatEffect: value => formatX(value, 2, 2)
+    formatEffect: value => "acive"
   },
-
+  {
+    name: "lai'tela rebound",
+    id: 9,
+    cost: 1e8,
+    requirement: () => `reach ${format("1e4E6")} antimatter (all effects)`,
+    hasFailed: () => Glitch.augmenteffectbits != 320,
+    checkRequirement: () => Currency.antimatter.gte("1e4E6") && Glitch.isRunning && Glitch.activeaugments.length >= 9,
+    checkEvent: GAME_EVENT.GAME_TICK_AFTER,
+    description: "infinity dimensions are not effected by lai'tela",
+    effect: () =>  1,
+    formatEffect: value => "active"
+  },
+  {
+    name: "1",
+    id: 10,
+    cost: 1e8,
+    requirement: () => `reach ${format("1e4E6")} antimatter (all effects)`,
+    hasFailed: () => false,
+    checkRequirement: () => false && Glitch.isRunning && Glitch.activeaugments.length >= 9,
+    checkEvent: GAME_EVENT.GAME_TICK_AFTER,
+    description: "infinity dimensions are not effected by lai'tela",
+    effect: () =>  1,
+    formatEffect: value => "active"
+  },
+  {
+    name: "2",
+    id: 11,
+    cost: 1e8,
+    requirement: () => `reach ${format("1e4E6")} antimatter (all effects)`,
+    hasFailed: () => false,
+    checkRequirement: () => false && Glitch.isRunning && Glitch.activeaugments.length >= 9,
+    checkEvent: GAME_EVENT.GAME_TICK_AFTER,
+    description: "infinity dimensions are not effected by lai'tela",
+    effect: () =>  1,
+    formatEffect: value => "active"
+  },
+  {
+    name: "3",
+    id: 12,
+    cost: 1e8,
+    requirement: () => `reach ${format("1e4E6")} antimatter (all effects)`,
+    hasFailed: () => false,
+    checkRequirement: () => false && Glitch.isRunning && Glitch.activeaugments.length >= 9,
+    checkEvent: GAME_EVENT.GAME_TICK_AFTER,
+    description: "infinity dimensions are not effected by lai'tela",
+    effect: () =>  1,
+    formatEffect: value => "active"
+  },
 ];
