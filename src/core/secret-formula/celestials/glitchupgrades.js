@@ -46,12 +46,12 @@ export const glitchRealityUpgrades = [
     effect: 100
   }),
   rebuyable({
-    name: "Rift CosmicFlight",
+    name: "CosmicFlight",
     id: 4,
-    initialCost: 1e308,
-    costMult: 20,
-    textTemplate: "You gain {value} more rift force",
-    effect: 2
+    initialCost: 15,
+    costMult: 32,
+    textTemplate: "You gain {value} more singularitys",
+    effect: 1.33
   }),
   {
     name: "augmented Infinity",
