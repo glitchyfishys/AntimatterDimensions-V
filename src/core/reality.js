@@ -828,7 +828,7 @@ export function applyRUPG10() {
     if (autobuyer.data.interval !== undefined) autobuyer.data.interval = 100;
   }
 
-  player.dimensionBoosts = Math.max(4, player.dimensionBoosts);
+  player.dimensionBoosts = Math.max(4 + GlitchRealityUpgrades.all[7].isBought, player.dimensionBoosts);
   player.galaxies = Math.max(1, player.galaxies);
   player.break = true;
   Currency.eternities.bumpTo(100);
