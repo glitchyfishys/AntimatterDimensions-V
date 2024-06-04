@@ -201,8 +201,8 @@ export function softReset(tempBulk, forcedADReset = false, forcedAMReset = false
 
 export function skipResetsIfPossible(enteringAntimatterChallenge) {
   if (enteringAntimatterChallenge || Player.isInAntimatterChallenge) return;
-  if (InfinityUpgrade.skipResetGalaxy.isBought && player.dimensionBoosts < 4) {
-    player.dimensionBoosts = 4;
+  if ((InfinityUpgrade.skipResetGalaxy.isBought || GlitchRealityUpgrades.all[7].isBought) && player.dimensionBoosts < 4) {
+    player.dimensionBoosts = (4 + GlitchRealityUpgrades.all[7].isBought);
     if (player.galaxies === 0) player.galaxies = 1;
   } else if (InfinityUpgrade.skipReset3.isBought && player.dimensionBoosts < 3) player.dimensionBoosts = 3;
   else if (InfinityUpgrade.skipReset2.isBought && player.dimensionBoosts < 2) player.dimensionBoosts = 2;
