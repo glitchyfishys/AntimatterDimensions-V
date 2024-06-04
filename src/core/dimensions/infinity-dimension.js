@@ -126,7 +126,7 @@ class InfinityDimensionState extends DimensionState {
 
   get productionPerSecond() {
     if (EternityChallenge(2).isRunning || EternityChallenge(10).isRunning ||
-      (Laitela.isRunning && this.tier > Laitela.maxAllowedDimension)) {
+      (Laitela.isRunning && this.tier > Laitela.maxAllowedDimension && !GlitchRealityUpgrades.all[8].isBought)) {
       return DC.D0;
     }
     let production = this.amount;
@@ -189,7 +189,7 @@ class InfinityDimensionState extends DimensionState {
     const tier = this.tier;
     if (EternityChallenge(2).isRunning ||
       EternityChallenge(10).isRunning ||
-      (Laitela.isRunning && tier > Laitela.maxAllowedDimension)) {
+      (Laitela.isRunning && tier > Laitela.maxAllowedDimension && !GlitchRealityUpgrades.all[8].isBought)) {
       return false;
     }
     return this.amount.gt(0);
