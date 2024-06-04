@@ -117,11 +117,11 @@ GameDatabase.celestials.descriptions = [
     effects() {
         if(Glitch.tier == 0){
         return `AD's ^0.95
-        ID's ^0.25
+        ID's ^0.15
         TD's ^0.33
         you only start with break/infinity upgrades and you can not charge them
         some reality/celestials effects don't work
-        you are forced to have 5 cursed glyphs equiped
+        you are forced to have ${Glitch.forceglyphs} cursed glyphs equiped
         plus the effects you have chosen`;
       }
       
