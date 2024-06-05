@@ -52,9 +52,11 @@ export const Glitch = {
   initializeRun() {
     player.celestials.glitch.run = true;
 
-    GlitchRealityUpgrades.all[9].isBought ? false : Currency.eternityPoints.reset();
-    GlitchRealityUpgrades.all[9].isBought ? false : Currency.infinityPoints.reset();
-    Currency.eternities.reset();
+    if(!GlitchRealityUpgrades.all[9].isBought) {
+      Currency.eternityPoints.reset();
+      Currency.infinityPoints.reset();
+      Currency.eternities.reset();
+    }
     
     player.eternityUpgrades.clear();
     player.replicanti.unl=false;
