@@ -121,7 +121,7 @@ export const glitchRealityUpgrades = [
     hasFailed: () => Glitch.augmenteffectbits != 202,
     checkRequirement: () => Currency.antimatter.gte("1e1.66E9") && Glitch.isRunning && Glitch.augmenteffectbits == 202,
     checkEvent: GAME_EVENT.GAME_TICK_AFTER,
-    description: "you start with default currencys (IP and EP)",
+    description: "you start with default currencys (IP, EP and Eternities)",
     effect: () =>  1,
     formatEffect: value => "active"
   },
