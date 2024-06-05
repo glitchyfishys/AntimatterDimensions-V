@@ -3,7 +3,7 @@ export const eternityUG = [
   {
     name: "eternal forces",
     id: 0,
-    requirement: () => `reach ${format("1e350")} infinity points on your first eternity`,
+    requirement: () => `reach ${format("1e350")} infinity points on your first eternity (pre-eternity)`,
     hasFailed: () => PlayerProgress.eternityUnlocked(),
     checkRequirement: () => player.infinityPoints.e >= 350 && !PlayerProgress.eternityUnlocked(),
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
@@ -48,7 +48,7 @@ export const eternityUG = [
   {
     name: "wrong timeline",
     id: 4,
-    requirement: "complete any other EC first rather than EC1 ",
+    requirement: "complete any other EC first rather than EC1 (pre-reality)",
     hasFailed: () => EternityChallenges.all[0].completions > 0 || PlayerProgress.realityUnlocked(),
     checkRequirement: () => EternityChallenges.completions >= 1 && EternityChallenges.all[0].completions == 0 && !PlayerProgress.realityUnlocked(),
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
@@ -59,7 +59,7 @@ export const eternityUG = [
   {
     name: "logical tictonics",
     id: 5,
-    requirement: "get time study 181 without fully compleing EC1, EC2, E3",
+    requirement: "get time study 181 without fully compleing EC1, EC2, E3 (pre-reality)",
     hasFailed: () => EternityChallenges.all[0].completions == 5 || EternityChallenges.all[1].completions == 5 || EternityChallenges.all[2].completions == 5 || PlayerProgress.realityUnlocked(),
     checkRequirement: () => player.timestudy.studies.includes(181) && !(EternityChallenges.all[0].completions == 5) && !(EternityChallenges.all[1].completions == 5) && !(EternityChallenges.all[2].completions == 5) && !PlayerProgress.realityUnlocked(),
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
