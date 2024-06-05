@@ -114,14 +114,14 @@ export const glitchRealityUpgrades = [
     formatEffect: value => "active"
   },
   {
-    name: "1",
+    name: "cosmic reconstructor",
     id: 10,
-    cost: 1e8,
-    requirement: () => `reach ${format("1e4E6")} antimatter (all effects)`,
-    hasFailed: () => false,
-    checkRequirement: () => false && Glitch.isRunning && Glitch.activeaugments.length >= 9,
+    cost: 1e13,
+    requirement: () => `reach ${format("1e1.66E9", 2, 2)} antimatter with Effarig, one dim limit, both Ra effects active`,
+    hasFailed: () => Glitch.augmenteffectbits != 202,
+    checkRequirement: () => Currency.antimatter.gte("1e1.66E9") && Glitch.isRunning && Glitch.augmenteffectbits == 202,
     checkEvent: GAME_EVENT.GAME_TICK_AFTER,
-    description: "infinity dimensions are not effected by lai'tela",
+    description: "you start with default currencys (IP and EP)",
     effect: () =>  1,
     formatEffect: value => "active"
   },
