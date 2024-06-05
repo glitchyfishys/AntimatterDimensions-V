@@ -126,14 +126,14 @@ export const glitchRealityUpgrades = [
     formatEffect: value => "active"
   },
   {
-    name: "",
+    name: "unaligned",
     id: 11,
     cost: 1e15,
     requirement: () => `reach ${format("1e5E10")} antimatter with Teresa Reality, Effarig Reality, Nameless one's Reality, Nameless one's dim limit, Nameless one's low tachyon gain, and V's Reality active`,
     hasFailed: () => Glitch.augmenteffectbits != 63,
     checkRequirement: () => Currency.antimatter.gte("1e5E10") && Glitch.isRunning && Glitch.augmenteffectbits == 63,
     checkEvent: GAME_EVENT.GAME_TICK_AFTER,
-    description: "infinity dimensions are not effected by lai'tela",
+    description: "game speed from black holes are in effect",
     effect: () =>  1,
     formatEffect: value => "active"
   },
