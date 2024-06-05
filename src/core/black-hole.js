@@ -146,7 +146,7 @@ class BlackHoleState {
   }
 
   get isUnlocked() {
-    return this._data.unlocked && !Enslaved.isRunning && !Pelle.isDisabled("blackhole");
+    return this._data.unlocked && (!Enslaved.isRunning && !GlitchRealityUpgrades.all[10].isBought) && !Pelle.isDisabled("blackhole");
   }
 
   get isCharged() {
@@ -390,7 +390,7 @@ export const BlackHoles = {
   },
 
   get areNegative() {
-    return this.arePaused && !Laitela.isRunning && player.blackHoleNegative < 1;
+    return this.arePaused && (!Laitela.isRunning && !GlitchRealityUpgrades.all[10].isBought) && player.blackHoleNegative < 1;
   },
 
   get arePermanent() {
