@@ -106,7 +106,7 @@ export const glitchRealityUpgrades = [
     id: 9,
     cost: 1e8,
     requirement: () => `reach ${format("1e4E6")} antimatter (all effects)`,
-    hasFailed: () => Glitch.activeaugments.length >= 9,
+    hasFailed: () => Glitch.activeaugments.length < 9,
     checkRequirement: () => Currency.antimatter.gte("1e4E6") && Glitch.isRunning && Glitch.activeaugments.length >= 9,
     checkEvent: GAME_EVENT.GAME_TICK_AFTER,
     description: "infinity dimensions are not effected by lai'tela",
