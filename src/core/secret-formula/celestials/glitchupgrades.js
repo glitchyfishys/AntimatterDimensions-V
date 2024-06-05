@@ -126,12 +126,12 @@ export const glitchRealityUpgrades = [
     formatEffect: value => "active"
   },
   {
-    name: "2",
+    name: "",
     id: 11,
-    cost: 1e8,
-    requirement: () => `reach ${format("1e4E6")} antimatter (all effects)`,
-    hasFailed: () => false,
-    checkRequirement: () => false && Glitch.isRunning && Glitch.activeaugments.length >= 9,
+    cost: 1e15,
+    requirement: () => `reach ${format("1e5E10")} antimatter with Teresa Reality, Effarig Reality, Nameless one's Reality, Nameless one's dim limit, Nameless one's low tachyon gain, and V's Reality active`,
+    hasFailed: () => Glitch.augmenteffectbits != 63,
+    checkRequirement: () => Currency.antimatter.gte("1e5E10") && Glitch.isRunning && Glitch.augmenteffectbits == 63,
     checkEvent: GAME_EVENT.GAME_TICK_AFTER,
     description: "infinity dimensions are not effected by lai'tela",
     effect: () =>  1,
@@ -140,7 +140,7 @@ export const glitchRealityUpgrades = [
   {
     name: "3",
     id: 12,
-    cost: 1e8,
+    cost: 1e17,
     requirement: () => `reach ${format("1e4E6")} antimatter (all effects)`,
     hasFailed: () => false,
     checkRequirement: () => false && Glitch.isRunning && Glitch.activeaugments.length >= 9,
