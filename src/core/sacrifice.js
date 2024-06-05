@@ -10,7 +10,7 @@ export class Sacrifice {
   static get canSacrifice() {
     return DimBoost.purchasedBoosts > 4 && !EternityChallenge(3).isRunning && this.nextBoost.gt(1) &&
       AntimatterDimension(8).totalAmount.gt(0) && Currency.antimatter.lt(Player.infinityLimit) &&
-      !Enslaved.isRunning;
+      (!Enslaved.isRunning || GlitchRealityUpgrades.all[7].isBought);
   }
 
   static get disabledCondition() {
