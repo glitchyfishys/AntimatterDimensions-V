@@ -754,6 +754,11 @@ export const Glyphs = {
     }
   },
   swapIntoActive(glyph, targetSlot) {
+
+    if(Glyphs.active[targetSlot].type == "cursed" && Glyphs.active.filter(x => x == null ? false : x.type == "cursed" ).length <= Glitch.forceglyphs && Glitch.isRunning) {
+        Modal.message.show(`you can swap due to being forced have at least ${Glitch.forceglyphs} cursed glyphs`, { closeEvent: GAME_EVENT.GLYPHS_CHANGED });
+      return
+    }
     this.removeFromInventory(glyph);
     this.unequip(targetSlot, glyph.idx);
     finishProcessReality({
