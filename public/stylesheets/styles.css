@@ -2787,7 +2787,7 @@ br {
   height: 5.5rem;
   position: absolute;
   opacity: 0;
-  margin: -1.9rem -2rem;
+  left: 150rem;
 }
 
 .c-file-import::before {
