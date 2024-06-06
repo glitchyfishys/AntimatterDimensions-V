@@ -125,7 +125,7 @@ export const glyphEffects = {
     singleDesc: "Tachyon Galaxy threshold multiplier ×{value}",
     genericDesc: "Tachyon Galaxy cost multiplier",
     shortDesc: "TG threshold ×{value}",
-    effect: (level, strength) => 1 - Math.pow(level, 0.17) * Math.pow(strength, 0.35) / (100 -
+    effect: (level, strength) => 1 - Math.pow(level, 0.17) * Math.pow(strength, 0.35) / (100 +
       GlyphAlteration.sacrificeBoost("dilation") / 50),
     formatEffect: x => format(x, 3, 3),
     alteredColor: () => GlyphAlteration.getBoostColor("dilation"),
