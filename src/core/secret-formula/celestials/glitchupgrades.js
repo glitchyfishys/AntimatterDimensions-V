@@ -145,8 +145,8 @@ export const glitchRealityUpgrades = [
     hasFailed: () => Glitch.augmenteffectbits != 464,
     checkRequirement: () => player.dilation.studies.includes(6) && Glitch.isRunning && Glitch.augmenteffectbits == 464,
     checkEvent: GAME_EVENT.GAME_TICK_AFTER,
-    description: "teresa sacrifice is powered by 1.5 and DMDs have a 2.5 power",
+    description: "teresa sacrifice is powered by 1.5 and DMDs have a 2.5 power and singulatity gain power of 1.25",
     effect: () =>  1,
-    formatEffect: value => "1.5 and 2.5"
+    formatEffect: value => "1.5, 2.5, 1.25"
   },
 ];
