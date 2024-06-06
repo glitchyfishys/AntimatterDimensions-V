@@ -180,7 +180,7 @@ export class DarkMatterDimensionState extends DimensionState {
   }
 
   get maxIntervalPurchases() {
-    return Math.ceil(Decimal.log(INTERVAL_PER_UPGRADE, Math.E));
+    return 1e9;
   }
 
   buyManyInterval(x) {
