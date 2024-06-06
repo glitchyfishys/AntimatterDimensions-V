@@ -580,7 +580,7 @@ export function gameLoop(passDiff, options = {}) {
     player.records.thisInfinity.time += diff;
     player.records.thisEternity.realTime += realDiff;
     if (Enslaved.isRunning && Enslaved.feltEternity && !EternityChallenge(12).isRunning) {
-      player.records.thisEternity.time += diff * (1 + Currency.eternities.value.clampMax(1e66).toNumber());
+      player.records.thisEternity.time += Math.min(diff * (1 + Currency.eternities.value.clampMax(1e66).toNumber()), 1e300);
     } else {
       player.records.thisEternity.time += diff;
     }
