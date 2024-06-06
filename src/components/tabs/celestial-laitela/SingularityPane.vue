@@ -67,7 +67,7 @@ export default {
         : null;
     },
     increaseTooltip() {
-      return this.singularityCapIncreases >= 80
+      return this.singularityCapIncreases >= 1000
         ? "You cannot increase the cap any further!"
         : null;
     }
