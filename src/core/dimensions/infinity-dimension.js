@@ -182,6 +182,8 @@ class InfinityDimensionState extends DimensionState {
       mult = mult.pow(0.5);
     }
 
+    if(mult.gte("1e1E21") && tier == 8) mult = mult.div(mult.div("1e1E21").pow(0.99));
+
     return mult;
   }
 
