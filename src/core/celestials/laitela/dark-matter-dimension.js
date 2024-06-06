@@ -168,7 +168,7 @@ export class DarkMatterDimensionState extends DimensionState {
   }
 
   get canBuyInterval() {
-    return Currency.darkMatter.gte(this.intervalCost) && (this.interval > this.intervalPurchaseCap);
+    return Currency.darkMatter.gte(this.intervalCost);
   }
 
   get canBuyPowerDM() {
@@ -184,6 +184,7 @@ export class DarkMatterDimensionState extends DimensionState {
   }
 
   buyManyInterval(x) {
+    
     const cost = this.rawIntervalCost.times(
       Decimal.pow(this.intervalCostIncrease, x).minus(1)).div( this.intervalCostIncrease.sub(1)).floor();
     if (!Currency.darkMatter.purchase(cost)) return false;
