@@ -107,7 +107,7 @@ export default {
             v-if="!isBought"
             :config="config"
             br
-            name="Reality Machine"
+            name="Rift Force"
           />
         </template>
         <b v-if="automatorPoints && !isBought">
