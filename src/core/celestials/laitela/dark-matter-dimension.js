@@ -224,7 +224,7 @@ export class DarkMatterDimensionState extends DimensionState {
     if (this.interval > this.intervalPurchaseCap || this.data.ascensionCount >= 10000) return;
     
     for(let x=0; x < 5; x++) {
-      if(this.interval < this.intervalPurchaseCap && this.data.ascensionCount < 10000) this.data.ascensionCount++
+      if(this.interval <= this.intervalPurchaseCap && this.data.ascensionCount < 10000) this.data.ascensionCount++
     };
 
     // Immediately buy as many interval upgrades as possible
