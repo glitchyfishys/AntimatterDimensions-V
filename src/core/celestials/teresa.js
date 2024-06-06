@@ -32,7 +32,7 @@ export const Teresa = {
   },
   rewardMultiplier(antimatter) {
     let effect = Decimal.max(Decimal.pow(antimatter.plus(1).log10() / 1.5e8, 12), 1).toNumber();
-    if (effect >= 1e100) return effect * (effect / 1e100);
+    if (effect >= 1e100) return effect * ((effect / 1e100) ** 2);
     return effect;
   },
   get pouredAmount() {
