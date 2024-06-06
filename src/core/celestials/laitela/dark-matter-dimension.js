@@ -55,7 +55,7 @@ export class DarkMatterDimensionState extends DimensionState {
   }
 
   get interval() {
-    return Math.clampMin(this.intervalPurchaseCap, this.rawInterval);
+    return Math.clamp(this.intervalPurchaseCap, this.rawInterval, 10000);
   }
 
   get commonDarkMult() {
