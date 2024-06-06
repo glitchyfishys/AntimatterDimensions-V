@@ -75,13 +75,17 @@ export class DarkMatterDimensionState extends DimensionState {
 
   get powerDM() {
     if (!this.isUnlocked) return new Decimal(0);
-    return Decimal.pow(1.15, this.data.powerDMUpgrades).times(2).add(1)
+    let DMmult = Decimal.pow(1.15, this.data.powerDMUpgrades).times(2).add(1)
       .times(Laitela.realityReward)
       .times(Laitela.darkMatterMult)
       .times(this.commonDarkMult)
       .times(Decimal.pow(this.powerDMPerAscension, this.ascensions))
       .timesEffectsOf(SingularityMilestone.darkMatterMult, SingularityMilestone.multFromInfinitied)
       .dividedBy(Math.pow(1e4, Math.pow(this.tier - 1, 0.5))).pow(GlitchRifts.gamma.milestones[3].effectOrDefault(1));
+
+    if(GlitchRealityUpgrades.all[11].isBought) DMmult = DMmult.pow(2.5);
+    
+    return DMmult;
   }
 
   get powerDE() {
@@ -98,6 +102,8 @@ export class DarkMatterDimensionState extends DimensionState {
         SingularityMilestone.multFromInfinitied
       ).times(realityUGs.all[10].effectOrDefault(1)).times(destabilizeBoost).times(AlchemyResource.alter.effectOrDefault(1)).pow(GlitchRifts.gamma.milestones[3].effectOrDefault(1));
     
+    if(GlitchRealityUpgrades.all[11].isBought) DEmult = DEmult.pow(2.5);
+
     return DEmult;
   }
 
