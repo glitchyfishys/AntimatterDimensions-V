@@ -228,7 +228,7 @@ export class DarkMatterDimensionState extends DimensionState {
     };
 
     // Immediately buy as many interval upgrades as possible
-    while (this.buyInterval());
+    this.buyManyInterval(this.maxIntervalPurchases);
   }
 
   static get dimensionCount() { return 4; }
