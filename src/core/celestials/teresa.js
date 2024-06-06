@@ -31,7 +31,8 @@ export const Teresa = {
     player.celestials.teresa.run = true;
   },
   rewardMultiplier(antimatter) {
-    return Decimal.max(Decimal.pow(antimatter.plus(1).log10() / 1.5e8, 12), 1).toNumber();
+    let effect = Decimal.max(Decimal.pow(antimatter.plus(1).log10() / 1.5e8, 12), 1).toNumber();
+    return effect >= 1e100 ? effect * (Teresa.runRewardMultiplier / 1e100) : effect;
   },
   get pouredAmount() {
     return player.celestials.teresa.pouredAmount;
