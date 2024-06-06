@@ -42,8 +42,8 @@ export const glitchRealityUpgrades = [
     id: 3,
     initialCost: 100,
     costMult: 50,
-    textTemplate: "glyph refinment is {value} more rift force",
-    effect: 100
+    textTemplate: "glyph refinment is {value} higher",
+    effect: 250
   }),
   rebuyable({
     name: "CosmicFlight",
