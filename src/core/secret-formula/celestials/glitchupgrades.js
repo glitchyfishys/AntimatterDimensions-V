@@ -138,15 +138,15 @@ export const glitchRealityUpgrades = [
     formatEffect: value => "active"
   },
   {
-    name: "3",
+    name: "overdrive",
     id: 12,
     cost: 1e17,
-    requirement: () => `reach ${format("1e4E6")} antimatter (all effects)`,
-    hasFailed: () => false,
-    checkRequirement: () => false && Glitch.isRunning && Glitch.activeaugments.length >= 9,
+    requirement: () => `reach reality with Nameless one's low tachyon gain, Ra's no dim boost, Ra's static tickspeed, and Lai'tela's Reality`,
+    hasFailed: () => Glitch.augmenteffectbits != 464,
+    checkRequirement: () => player.dilation.studies.includes(6) && Glitch.isRunning && Glitch.augmenteffectbits == 464,
     checkEvent: GAME_EVENT.GAME_TICK_AFTER,
-    description: "infinity dimensions are not effected by lai'tela",
+    description: "teresa sacrifice is powered by 1.5 and DMDs have a 2.5 power",
     effect: () =>  1,
-    formatEffect: value => "active"
+    formatEffect: value => "1.5 and 2.5"
   },
 ];
