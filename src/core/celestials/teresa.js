@@ -33,7 +33,7 @@ export const Teresa = {
   rewardMultiplier(antimatter) {
     let effect = Decimal.max(Decimal.pow(antimatter.plus(1).log10() / 1.5e8, 12), 1).toNumber();
     if (effect >= 1e100) return effect * ((effect / 1e100) ** 2);
-    return effect;
+    return GlitchRealityUpgrades.all[11].isBought ? effect ** 1.5 : effect;
   },
   get pouredAmount() {
     return player.celestials.teresa.pouredAmount;
