@@ -273,7 +273,9 @@ export const Tesseracts = {
   },
 
   get extra() {
-    return this.bought * (SingularityMilestone.tesseractMultFromSingularities.effectOrDefault(1) - 1);
+    const ex = this.bought * (SingularityMilestone.tesseractMultFromSingularities.effectOrDefault(1) - 1);
+    if(ex > 50) return ex - ((ex - 50) / 1.5);
+    return ex;
   },
 
   get effectiveCount() {
