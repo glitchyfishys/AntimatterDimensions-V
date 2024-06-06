@@ -180,7 +180,7 @@ export class DarkMatterDimensionState extends DimensionState {
   }
 
   get maxIntervalPurchases() {
-    return Math.ceil(Math.log(this.intervalPurchaseCap / this.interval) / Decimal.log(INTERVAL_PER_UPGRADE, Math.E));
+    return Math.ceil(Decimal.log(INTERVAL_PER_UPGRADE, Math.E));
   }
 
   buyManyInterval(x) {
@@ -222,6 +222,7 @@ export class DarkMatterDimensionState extends DimensionState {
 
   ascend() {
     if (this.interval > this.intervalPurchaseCap || this.data.ascensionCount > 10000) return;
+    
     this.data.ascensionCount++;
 
     // Immediately buy as many interval upgrades as possible
