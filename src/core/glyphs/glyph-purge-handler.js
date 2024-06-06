@@ -48,7 +48,7 @@ export const GlyphSacrificeHandler = {
     const pre10kFactor = Math.pow(Math.clampMax(glyph.level, 10000) + 10, 2.5);
     const post10kFactor = 1 + Math.clampMin(glyph.level - 10000, 0) / 100;
     const power = Ra.unlocks.maxGlyphRarityAndShardSacrificeBoost.effectOrDefault(1);
-    return Math.clampMin(Math.pow(pre10kFactor * post10kFactor * glyph.strength *
+    return Math.min(Math.pow(pre10kFactor * post10kFactor * glyph.strength *
       Teresa.runRewardMultiplier * Achievement(171).effectOrDefault(1), power), 1e299);
   },
   sacrificeGlyph(glyph, force = false) {
