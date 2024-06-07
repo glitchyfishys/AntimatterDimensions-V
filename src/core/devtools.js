@@ -15,6 +15,31 @@ dev.giveAllAchievements = function() {
   for (const achievement of allAchievements) achievement.unlock();
 };
 
+dev.completeuptoglitch(){
+
+
+  player.celestials.teresa.unlockBits=255;
+  player.celestials.effarig.unlockBits=255;
+  player.celestials.enslaved.completed=true;
+  player.celestials.enslaved.unlocks=[1,2];
+  player.celestials.v.unlockBits=255;
+  player.celestials.v.runUnlocks = [6,8,8,8,9,9,5,6,8,7];
+  player.celestials.ra.unlockBits=(2**36)-1;
+  player.celestials.ra.pets.teresa.level=100;
+  player.celestials.ra.pets.effarig.level=100;
+  player.celestials.ra.pets.enslaved.level=100;
+  player.celestials.ra.pets.v.level=100;
+  player.celestials.ra.pets.glitchyfishys.level=100;
+
+  player.reality.imaginaryUpgReqs=(2**26)-1;
+  player.reality.imaginaryUpgradeBits=(2**26)-1;
+
+  player.celestials.laitela.difficultyTier=8;
+  player.celestials.laitela.singularities = new Decimal(1e60);
+  
+  dev.completereality();
+}
+
 dev.disableComformations = function() {
       player.options.confirmations.armageddon = false;
       player.options.confirmations.sacrifice = false;
