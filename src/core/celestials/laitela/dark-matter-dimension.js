@@ -228,7 +228,7 @@ export class DarkMatterDimensionState extends DimensionState {
     if(raw == 0 ) {
       this.data.ascensionCount += Math.floor(Math.abs(Decimal.log(1e-323, gain)));
     }else{
-      this.data.ascensionCount += Decimal.log(raw, gain);
+      this.data.ascensionCount += Math.floor(Math.abs(Decimal.log(raw, gain)));
     }
 
     // Immediately buy as many interval upgrades as possible
