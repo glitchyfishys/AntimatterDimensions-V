@@ -125,8 +125,8 @@ export const glyphEffects = {
     singleDesc: "Tachyon Galaxy threshold multiplier ×{value}",
     genericDesc: "Tachyon Galaxy cost multiplier",
     shortDesc: "TG threshold ×{value}",
-    effect: (level, strength) => 1 - Math.pow(level, 0.17) * Math.pow(strength, 0.35) / (100 +
-      GlyphAlteration.sacrificeBoost("dilation") / 50),
+    effect: (level, strength) => 1 / (Math.pow(3000000, 0.17) * Math.pow(3.5, 0.35) * (100 +
+      GlyphAlteration.sacrificeBoost("dilation") / 50) / 10),
     formatEffect: x => format(x, 3, 3),
     alteredColor: () => GlyphAlteration.getBoostColor("dilation"),
     alterationType: ALTERATION_TYPE.BOOST,
@@ -280,7 +280,7 @@ export const glyphEffects = {
     shortDesc: "ID power +{value}",
     effect: (level, strength) => 1.007 + Math.pow(level, 0.21) * Math.pow(strength, 0.4) / 75 +
       GlyphAlteration.sacrificeBoost("infinity") / 50,
-    softcap: value => ((effect > 1.8) ? ( value / ((value - 1.8) ** 0.75)) : value),
+    softcap: value => ((value > 1.8) ? ( value / ((value - 1.8) ** 0.75)) : value),
     formatEffect: x => format(x, 3, 3),
     formatSingleEffect: x => format(x - 1, 3, 3),
     combine: GlyphCombiner.addExponents,
@@ -366,7 +366,7 @@ export const glyphEffects = {
       ? "AD power +{value} and AG cost ×{value2}"
       : "AD power +{value}"),
     effect: (level, strength) => 1.015 + Math.pow(level, 0.2) * Math.pow(strength, 0.4) / 75,
-    softcap: value => ((effect > 1.8) ? ( value / ((value - 1.8) ** 0.75)) : value),
+    softcap: value => ((value > 1.8) ? ( value / ((value - 1.8) ** 0.75)) : value),
     formatEffect: x => format(x, 3, 3),
     formatSingleEffect: x => format(x - 1, 3, 3),
     combine: GlyphCombiner.addExponents,
