@@ -222,10 +222,13 @@ export class DarkMatterDimensionState extends DimensionState {
 
   ascend() {
     if (this.interval > this.intervalPurchaseCap || this.data.ascensionCount >= 10000) return;
-    
-    for(let x=0; x < 5; x++) {
-      if(this.interval <= this.intervalPurchaseCap && this.data.ascensionCount < 10000) this.data.ascensionCount++
-    };
+    const gain = SingularityMilestone.ascensionIntervalScaling.effectValue;
+    const raw = this.rawInterval;
+    if(raw == 0 ) {
+      this.data.ascensionCount += Math.floor(Decimal.log(1e-323, gain));
+    }else{
+      this.data.ascensionCount += Decimal.log(raw, gain);
+    }
 
     // Immediately buy as many interval upgrades as possible
     this.buyManyInterval(this.maxIntervalPurchases);
