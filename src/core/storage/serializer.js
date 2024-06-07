@@ -20,8 +20,10 @@ Decimal.prototype.toString = function () {
   if (this.e < 21 && this.e > -7) {
     return this.toNumber().toString();
   }
+  
+  const e = this.e.toString().replace("e+", "E+");
 
-  return this.m + "e" + (this.e >= 0 ? "+" : "") + this.e;
+  return this.m + "e" + (this.e >= 0 ? "+" : "") + e;
 };
 
 
