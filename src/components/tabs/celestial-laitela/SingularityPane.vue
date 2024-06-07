@@ -155,8 +155,8 @@ export default {
           class="c-laitela-singularity__cap-control"
           :class="{ 'c-laitela-singularity__cap-control--available' : singularityCapIncreases < 80 }"
           :ach-tooltip="increaseTooltip"
-          @click="increaseCap"
-          @click.shift.exact="increaseCap(true)"
+          @click="increaseCap(false)"
+          @click.shift="increaseCap(true)"
         >
           Increase Singularity cap.
         </button>
