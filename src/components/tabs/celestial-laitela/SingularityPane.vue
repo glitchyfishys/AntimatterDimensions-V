@@ -64,12 +64,12 @@ export default {
       return this.willCondenseOnDecrease
         ? `Decreasing the cap will immediately auto-condense for
           ${quantify("Singularity", singularities, 2)}!`
-        : null;
+        : "You can shift click to decrease the cap to zero";
     },
     increaseTooltip() {
       return this.singularityCapIncreases >= 1000
         ? "You cannot increase the cap any further!"
-        : null;
+        : "You can shift click to increase the cap to when it would take 1s";
     }
   },
   methods: {
@@ -99,8 +99,8 @@ export default {
     increaseCap(t = false) {
       Singularity.increaseCap(t);
     },
-    decreaseCap() {
-      Singularity.decreaseCap();
+    decreaseCap(t = false) {
+      Singularity.decreaseCap(t);
     },
     formatRate(rate) {
       if (rate.lt(1 / 60)) return `${format(Decimal.times(3600, rate), 2, 3)} per hour`;
@@ -147,7 +147,8 @@ export default {
           class="c-laitela-singularity__cap-control"
           :class="{ 'c-laitela-singularity__cap-control--available' : singularityCapIncreases > 0 }"
           :ach-tooltip="decreaseTooltip"
-          @click="decreaseCap"
+          @click="decreaseCap(true)"
+          @click.shift="decreaseCap(true)"
         >
           Decrease Singularity cap.
         </button>
