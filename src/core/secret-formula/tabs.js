@@ -544,7 +544,7 @@ export const tabs = [
         name: "eternity",
         symbol: "Δ",
         component: "glitcheternity",
-        condition: () => PlayerProgress.eternityUnlocked(),
+        condition: () => PlayerProgress.eternityUnlocked() || Currency.infinityPoints.gte(Decimal.NUMBER_MAX_VALUE),
         id: 3,
         hidable: true
       },
