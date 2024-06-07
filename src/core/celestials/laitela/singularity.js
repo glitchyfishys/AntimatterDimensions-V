@@ -252,7 +252,7 @@ export const Singularity = {
   increaseCap(t = false) {
     if (player.celestials.laitela.singularityCapIncreases >= 1000) return;
     if(t){
-      player.celestials.laitela.singularityCapIncreases = Math.min(Currency.darkEnergy.productionPerSecond.div(200).log10(), 1000);
+      player.celestials.laitela.singularityCapIncreases = Math.min(Math.floor(Currency.darkEnergy.productionPerSecond.div(200).log10()), 1000);
     }
     else{
       player.celestials.laitela.singularityCapIncreases++;
