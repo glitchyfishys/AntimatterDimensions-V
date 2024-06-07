@@ -15,7 +15,7 @@ dev.giveAllAchievements = function() {
   for (const achievement of allAchievements) achievement.unlock();
 };
 
-dev.completeuptoglitch(){
+dev.completeuptoglitch = function() {
 
 
   player.celestials.teresa.unlockBits = 255;
