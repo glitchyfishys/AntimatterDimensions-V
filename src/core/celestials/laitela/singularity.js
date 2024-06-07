@@ -259,9 +259,10 @@ export const Singularity = {
     }
   },
 
-  decreaseCap() {
+  decreaseCap(t = false) {
     if (player.celestials.laitela.singularityCapIncreases === 0) return;
-    player.celestials.laitela.singularityCapIncreases--;
+    if(t) player.celestials.laitela.singularityCapIncreases--;
+    else  player.celestials.laitela.singularityCapIncreases = 0;
   },
 
   perform() {
