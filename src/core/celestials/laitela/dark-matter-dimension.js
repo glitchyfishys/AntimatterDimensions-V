@@ -225,10 +225,10 @@ export class DarkMatterDimensionState extends DimensionState {
     const gain = SingularityMilestone.ascensionIntervalScaling.effectValue;
     const raw = this.rawInterval;
     
-    if(raw == 0 ) {
+    if(raw / (gain * 10) == 0 ) {
       this.data.ascensionCount += Math.floor(Math.abs(Decimal.log(1e-323, gain)));
     }else{
-      this.data.ascensionCount += Math.floor(Math.abs(Decimal.log(raw / 8000, gain)));
+      this.data.ascensionCount += Math.floor(Math.abs(Decimal.log(raw / (gain * 10), gain)));
     }
 
     // Immediately buy as many interval upgrades as possible
