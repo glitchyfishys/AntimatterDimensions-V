@@ -280,7 +280,7 @@ export const glyphEffects = {
     shortDesc: "ID power +{value}",
     effect: (level, strength) => 1.007 + Math.pow(level, 0.21) * Math.pow(strength, 0.4) / 75 +
       GlyphAlteration.sacrificeBoost("infinity") / 50,
-    softcap: value => ((value > 6.5) ? ( value / ((value / 6.5) ** 0.75)) : value),
+    softcap: value => ((value > 6.5) ? Math.min( value / ((value / 6.5) ** 0.95),8) : value),
     formatEffect: x => format(x, 3, 3),
     formatSingleEffect: x => format(x - 1, 3, 3),
     combine: GlyphCombiner.addExponents,
@@ -366,7 +366,7 @@ export const glyphEffects = {
       ? "AD power +{value} and AG cost ×{value2}"
       : "AD power +{value}"),
     effect: (level, strength) => 1.015 + Math.pow(level, 0.2) * Math.pow(strength, 0.4) / 75,
-    softcap: value => ((value > 1.8) ? ( value / ((value / 1.8) ** 0.5)) : value),
+    softcap: value => ((value > 1.8) ? Math.min( value / ((value / 1.8) ** 0.95),1.9) : value),
     formatEffect: x => format(x, 3, 3),
     formatSingleEffect: x => format(x - 1, 3, 3),
     combine: GlyphCombiner.addExponents,
