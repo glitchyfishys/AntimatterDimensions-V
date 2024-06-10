@@ -231,6 +231,8 @@ export class DarkMatterDimensionState extends DimensionState {
       this.data.ascensionCount += Math.floor(Math.abs(Decimal.log(raw / (gain * 10), gain)));
     }
 
+    this.data.ascensionCount = Math.min(this.data.ascensionCount, 10000);
+
     // Immediately buy as many interval upgrades as possible
     this.buyManyInterval(this.maxIntervalPurchases);
   }
