@@ -12,7 +12,7 @@ const rebuyable = props => {
     props.initialCost * props.costMult
   );
   const { effect } = props;
-  props.effect = () =>  props.id == 3 ? (effect * player.celestials.glitch.upgrades.rebuyable[props.id]) : Decimal.pow(effect,player.celestials.glitch.upgrades.rebuyable[props.id]);
+  props.effect = () =>  props.id == 3 ? (effect * player.celestials.glitch.upgrades.rebuyable[props.id]) : Decimal.pow( (typeof effect == "function") ? effect() : effect ,player.celestials.glitch.upgrades.rebuyable[props.id]);
   props.description = () => props.id == 3 ? props.textTemplate.replace("{value}", "+" + format(effect)) : props.textTemplate.replace("{value}", formatX(effect));
   props.formatEffect = value => props.id == 3 ? ("+" + format(value, 2, 2)) : formatX(value, 2, 2);
   props.formatCost = value => format(value, 2, 2);
@@ -27,7 +27,7 @@ export const glitchRealityUpgrades = [
     initialCost: 1,
     costMult: 20,
     textTemplate: "You gain {value} more rift force",
-    effect: 2
+    effect: () => (GlitchRealityUpgrades.all[12].isBought ? 2.5 : 2)
   }),
   rebuyable({
     name: "Glyph ForcedOver",
@@ -147,6 +147,54 @@ export const glitchRealityUpgrades = [
     checkEvent: GAME_EVENT.GAME_TICK_AFTER,
     description: "teresa sacrifice is powered by 1.5 and DMDs have a 2.5 power and singulatity gain power of 1.25",
     effect: () =>  1,
-    formatEffect: value => "1.5, 2.5, 1.25"
+    formatEffect: value => "^1.5, ^2.5, ^1.25"
+  },
+  {
+    name: "the darkness arizes",
+    id: 13,
+    cost: 1e25,
+    requirement: () => `reach ${"1e8E12"} antimatter with all but Ra's no dim boost`,
+    hasFailed: () => Glitch.augmenteffectbits != 447,
+    checkRequirement: () =>  Currency.antimatter.gte("1e8E12") && Glitch.isRunning && Glitch.augmenteffectbits == 447,
+    checkEvent: GAME_EVENT.GAME_TICK_AFTER,
+    description: "rift force gain is squred, Rift OverDrive effect from 2 to 2.5 per upgrade, augmented Infinity is cubed",
+    effect: () =>  1,
+    formatEffect: value => "^2, +0.5, ^3"
+  },
+    {
+    name: "1",
+    id: 14,
+    cost: 1e25,
+    requirement: () => `reach ${"1e8E12"} antimatter with all but Ra's no dim boost`,
+    hasFailed: () => Glitch.augmenteffectbits != 447,
+    checkRequirement: () =>  false && Glitch.isRunning && Glitch.augmenteffectbits == 447,
+    checkEvent: GAME_EVENT.GAME_TICK_AFTER,
+    description: "rift force gain is squred, riftoverdrive effect from 2 to 2.5",
+    effect: () =>  1,
+    formatEffect: value => "2"
+  },
+    {
+    name: "2",
+    id: 15,
+    cost: 1e25,
+    requirement: () => `reach ${"1e8E12"} antimatter with all but Ra's no dim boost`,
+    hasFailed: () => Glitch.augmenteffectbits != 447,
+    checkRequirement: () =>  false && Glitch.isRunning && Glitch.augmenteffectbits == 447,
+    checkEvent: GAME_EVENT.GAME_TICK_AFTER,
+    description: "rift force gain is squred, riftoverdrive effect from 2 to 2.5",
+    effect: () =>  1,
+    formatEffect: value => "2"
+  },
+    {
+    name: "3",
+    id: 16,
+    cost: 1e25,
+    requirement: () => `reach ${"1e8E12"} antimatter with all but Ra's no dim boost`,
+    hasFailed: () => Glitch.augmenteffectbits != 447,
+    checkRequirement: () =>  false && Glitch.isRunning && Glitch.augmenteffectbits == 447,
+    checkEvent: GAME_EVENT.GAME_TICK_AFTER,
+    description: "rift force gain is squred, riftoverdrive effect from 2 to 2.5",
+    effect: () =>  1,
+    formatEffect: value => "2"
   },
 ];
