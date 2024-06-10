@@ -258,6 +258,7 @@ export function buyManyDimension(tier) {
   dimension.amount = dimension.amount.plus(dimension.remainingUntil10);
   dimension.bought += dimension.remainingUntil10;
 
+    
   onBuyDimension(tier);
 
   return true;
@@ -273,11 +274,20 @@ export function buyAsManyAsYouCanBuy(tier) {
   const allowed = (allow || Glitch.augmenteffectactive(3));
   
   if (tier === 8 && allowed) return buyOneDimension(8);
-
+  const adtotal = (dimension.bought + howMany);
+  
   dimension.currencyAmount = dimension.currencyAmount.minus(cost);
   dimension.challengeCostBump();
-  dimension.amount = dimension.amount.plus(howMany);
-  dimension.bought += howMany;
+  
+  if(adtotal >= 1e18) {
+    howMany = Math.max(howMany / Math.log(howMany - 1e18), 1e18);
+    dimension.bought = howMany;
+    dimension.amount = new Decimal(howMany);
+  }else{
+    dimension.bought += howMany;
+    dimension.amount = dimension.amount.plus(howMany);
+  }
+  
 
   onBuyDimension(tier);
 
