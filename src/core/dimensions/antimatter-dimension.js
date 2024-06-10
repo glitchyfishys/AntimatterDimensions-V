@@ -521,7 +521,7 @@ class AntimatterDimensionState extends DimensionState {
     // We need to use dimension.currencyAmount here because of different costs in NC6.
     let amount = this.costScale.getContinuumValue(this.currencyAmount, 10) * Laitela.matterExtraPurchaseFactor;
 
-    if(amount > 1e18) amount = Math.max(amount / Math.log(amount / 1e18), 1e18);
+    if(amount > 1e18) amount = Math.max(amount / (amount / 1e18) ** 0.9, 1e18);
     
     return amount;
   }
