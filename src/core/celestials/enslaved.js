@@ -274,7 +274,7 @@ export const Tesseracts = {
 
   get extra() {
     const ex = this.bought * (SingularityMilestone.tesseractMultFromSingularities.effectOrDefault(1) - 1);
-    if(ex > 50) return ex - ((ex - 50) / 1.1);
+    if(ex > 20) return Math.min(ex - ((ex - 20) / 1.1), 50);
     return ex;
   },
 
