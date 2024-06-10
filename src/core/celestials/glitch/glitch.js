@@ -140,7 +140,10 @@ export const Glitch = {
     const EP = Math.log10(Currency.eternityPoints.value.log10() ** 3.5);
     let total = ((isNaN(AM) || AM == Infinity || AM < 1) ? 1 : AM) * ((isNaN(IP) || IP == Infinity || IP < 1) ? 1 : IP) * ((isNaN(EP) || EP == Infinity || EP < 1)? 1 : EP);
 
+    GlitchRealityUpgrades.all[12].isBought ? total = (total ** 2) : total;
+    
     if(total > 200) total = total * ((total /200) ** 1.25);
+    
     return new Decimal(total / 24).times(GlitchRealityUpgrades.all[0].effectOrDefault(1)).pow(3.33);
   },
 
