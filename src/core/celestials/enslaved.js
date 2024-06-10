@@ -310,7 +310,7 @@ export const Tesseracts = {
   },
 
   capIncrease(count = this.bought) {
-    const totalCount = count * Math.min(SingularityMilestone.tesseractMultFromSingularities.effectOrDefault(1), 8);
+    const totalCount = count * Math.min(SingularityMilestone.tesseractMultFromSingularities.effectOrDefault(1), 3.5);
     const base = totalCount < 1 ? 0 : 250e3 * Math.pow(2, totalCount);
     return base * (AlchemyResource.boundless.effectValue + 1);
   },
