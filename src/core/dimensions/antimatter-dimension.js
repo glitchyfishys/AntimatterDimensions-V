@@ -97,6 +97,8 @@ export function getDimensionFinalMultiplierUncached(tier) {
   if (AlchemyResource.inflation.isUnlocked && multiplier.gte(AlchemyResource.inflation.effectValue)) {
     multiplier = multiplier.pow(1.05);
   }
+
+  if(multiplier.gt("1e1E26")) multiplier = multiplier.pow( 1 / (multiplier.log10() / 1e26) );
   
   return multiplier;
 }
