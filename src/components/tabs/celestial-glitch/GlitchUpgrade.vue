@@ -43,6 +43,7 @@ export default {
         "c-reality-upgrade-btn--unavailable": !this.isBought && !this.canBeBought && this.isAvailableForPurchase,
         "c-reality-upgrade-btn--possible": !this.isAvailableForPurchase && this.isPossible,
         "c-reality-upgrade-btn--locked": !this.isAvailableForPurchase && !this.isPossible,
+        "o-size": true,
       };
     },
     requirementConfig() {
