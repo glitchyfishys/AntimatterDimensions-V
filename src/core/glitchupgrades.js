@@ -11,7 +11,7 @@ class GlitchRealityUpgradeState extends BitPurchasableMechanicState {
   }
 
   get name() {
-    return this.config.name;
+    return typeof this.config.name == "function" ? this.config.name() : this.config.name;
   }
 
   get shortDescription() {
