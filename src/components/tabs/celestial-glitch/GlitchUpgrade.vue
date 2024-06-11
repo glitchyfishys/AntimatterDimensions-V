@@ -36,8 +36,8 @@ export default {
     config() {
       return this.upgrade.config;
     },
-    name(){
-      return this.config.name == "function" ? this.config.name() : this.config.name;
+    ugname() {
+      return ((this.config.name == "function") ? this.config.name() : this.config.name);
     },
     classObject() {
       return {
@@ -50,11 +50,11 @@ export default {
     },
     requirementConfig() {
       return {
-        description: this.config.requirement
+        description: this.config.requirement;
       };
     },
     isUseless() {
-      return Pelle.disabledRUPGs.includes(this.upgrade.id) && Pelle.isDoomed;
+      return false && Pelle.isDoomed;
     },
   },
   watch: {
@@ -89,7 +89,7 @@ export default {
         type="realityUpgrades"
         class="l-hint-text--reality-upgrade c-hint-text--reality-upgrade"
       >
-        {{ name }}
+        {{ ugname }}
       </HintText>
       <span :class="{ 'o-pelle-disabled': isUseless }">
         <DescriptionDisplay :config="config" />
