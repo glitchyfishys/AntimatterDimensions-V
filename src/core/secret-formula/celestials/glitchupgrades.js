@@ -27,7 +27,7 @@ export const glitchRealityUpgrades = [
     initialCost: 1,
     costMult: 20,
     textTemplate: "You gain {value} more rift force",
-    effect: () => (GlitchRealityUpgrades.all[12].isBought ? 2.5 : 2)
+    effect: () => ((GlitchRealityUpgrades.all[12].isBought ? 2.5 : 2) * GlitchRealityUpgrades.all[13].effectOrDefault(1))
   }),
   rebuyable({
     name: "Glyph ForcedOver",
@@ -150,7 +150,7 @@ export const glitchRealityUpgrades = [
     formatEffect: value => "^1.5, ^2.5, ^1.25"
   },
   {
-    name: "the darkness arizes",
+    name: () => (GlitchRealityUpgrades.all[12].isBought ? "the darkness arizes" : "locked") ,
     id: 13,
     cost: 1e25,
     requirement: () => `reach ${format("1e1E9")} antimatter with all but Ra's no dim boost`,
@@ -162,16 +162,16 @@ export const glitchRealityUpgrades = [
     formatEffect: value => "^2, +0.5, ^3"
   },
     {
-    name: "1",
+    name: () => (GlitchRealityUpgrades.all[13].isBought ? "the darkness overcomes" : "locked"),
     id: 14,
-    cost: 1e25,
-    requirement: () => `reach ${"1e8E12"} antimatter with all but Ra's no dim boost`,
-    hasFailed: () => Glitch.augmenteffectbits != 447,
-    checkRequirement: () =>  false && Glitch.isRunning && Glitch.augmenteffectbits == 447,
+    cost: 1e175,
+    requirement: () => `reach ${"1e2E18"} antimatter with Effarig Reality, Nameless one's dim limit and low tachyon gain, V's Reality, and Lai'tela's Reality (also unlock the darkness arizes)`,
+    hasFailed: () => !GlitchRealityUpgrades.all[12].isBought || Glitch.augmenteffectbits != 314,
+    checkRequirement: () =>  GlitchRealityUpgrades.all[12].isBought && Currency.antimatter.gte("1e2E18") && Glitch.isRunning && Glitch.augmenteffectbits == 314,
     checkEvent: GAME_EVENT.GAME_TICK_AFTER,
-    description: "rift force gain is squred, riftoverdrive effect from 2 to 2.5",
-    effect: () =>  1,
-    formatEffect: value => "2"
+    description: "riftoverdrive effect is doubled, glyphs softcap 3 (at 100k)is disabled",
+    effect: () =>  2,
+    formatEffect: value => "4, glyph softcap 3 is disabled"
   },
     {
     name: "2",
