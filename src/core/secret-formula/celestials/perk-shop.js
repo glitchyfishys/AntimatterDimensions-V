@@ -37,8 +37,8 @@ export const perkShop = {
     effect: bought =>  Math.pow(1.05, bought),
     formatEffect: value => formatX(value, 2, 2),
     formatCost: value => format(value, 2 , 2),
-    costCap: () => (1e15),
-    cap: () => (10),
+    costCap: () => (1e300),
+    cap: () => (1e300),
   }),
   glyphLevel: rebuyable({
     id: 0,
