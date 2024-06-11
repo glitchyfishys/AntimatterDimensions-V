@@ -74,6 +74,11 @@ class RebuyableGlitchRealityUpgradeState extends RebuyableMechanicState {
   set boughtAmount(value) {
     player.celestials.glitch.upgrades.rebuyable[this.id] = value;
   }
+
+  get name() {
+    return typeof this.config.name == "function" ? this.config.name() : this.config.name;
+  }
+  
 }
 
 GlitchRealityUpgradeState.index = mapGameData(
