@@ -76,7 +76,7 @@ export default {
 </script>
 
 <template>
-  <div class="l-spoon-btn-group">
+  <div class="l-spoon-btn-group o-size">
     <button
       :class="classObject"
       class="l-reality-upgrade-btn c-reality-upgrade-btn"
@@ -88,7 +88,7 @@ export default {
       >
         {{ upgrade.name }}
       </HintText>
-      <span class="o-size">
+      <span>
         <DescriptionDisplay :config="config" />
         <template v-if="($viewModel.shiftDown === isAvailableForPurchase) && !isRebuyable">
           <br>
