@@ -50,7 +50,7 @@ export default {
     },
     requirementConfig() {
       return {
-        description: this.config.requirement;
+        description: this.config.requirement
       };
     },
     isUseless() {
