@@ -76,9 +76,9 @@ export default {
 </script>
 
 <template>
-  <div class="l-spoon-btn-group o-size">
+  <div class="l-spoon-btn-group">
     <button
-      :class="classObject"
+      :class="classObject o-size"
       class="l-reality-upgrade-btn c-reality-upgrade-btn"
       @click.exact="upgrade.purchase()"
     >
