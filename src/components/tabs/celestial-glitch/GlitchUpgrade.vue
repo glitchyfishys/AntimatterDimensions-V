@@ -88,7 +88,7 @@ export default {
       >
         {{ upgrade.name }}
       </HintText>
-      <span :class="{ 'o-pelle-disabled': isUseless; 'o-size': true }">
+      <span class="o-size">
         <DescriptionDisplay :config="config" />
         <template v-if="($viewModel.shiftDown === isAvailableForPurchase) && !isRebuyable">
           <br>
