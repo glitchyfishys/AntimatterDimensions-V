@@ -36,10 +36,6 @@ export default {
     config() {
       return this.upgrade.config;
     },
-    ugname() {
-      if (this.upgrade.config.name == "function") return this.upgrade.config.name();
-      else return this.upgrade.config.name;
-    },
     classObject() {
       return {
         "c-reality-upgrade-btn--useless": this.isUseless,
@@ -90,7 +86,7 @@ export default {
         type="realityUpgrades"
         class="l-hint-text--reality-upgrade c-hint-text--reality-upgrade"
       >
-        {{ ugname }}
+        {{ upgrade.name }}
       </HintText>
       <span :class="{ 'o-pelle-disabled': isUseless }">
         <DescriptionDisplay :config="config" />
