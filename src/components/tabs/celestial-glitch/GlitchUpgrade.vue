@@ -37,7 +37,7 @@ export default {
       return this.upgrade.config;
     },
     ugname() {
-      return ((this.config.name == "function") ? this.config.name() : this.config.name);
+      return ((this.upgrade.config.name == "function") ? this.upgrade.config.name() : this.upgrade.config.name);
     },
     classObject() {
       return {
