@@ -71,6 +71,9 @@ export default {
       this.isAutoUnlocked = false;
       if (this.isRebuyable) this.isAutobuyerOn = Autobuyer.realityUpgrade(upgrade.id).isActive;
     },
+    name(){
+      return config.name == "function" ? config.name() : config.name;
+    },
   }
 };
 </script>
@@ -86,7 +89,7 @@ export default {
         type="realityUpgrades"
         class="l-hint-text--reality-upgrade c-hint-text--reality-upgrade"
       >
-        {{ config.name }}
+        {{ name }}
       </HintText>
       <span :class="{ 'o-pelle-disabled': isUseless }">
         <DescriptionDisplay :config="config" />
