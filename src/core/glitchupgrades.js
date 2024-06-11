@@ -57,7 +57,7 @@ class GlitchRealityUpgradeState extends BitPurchasableMechanicState {
   tryUnlock() {
     if ( this.isAvailableForPurchase  || !this.config.checkRequirement()) return;
     player.celestials.glitch.upgrades.unlockbits |= (1 << this.id);
-    GameUI.notify.error(`You've unlocked ${this.config.name} from Glitch's Reality`, 5000);
+    GameUI.notify.error(`You've unlocked ${this.name} from Glitch's Reality`, 5000);
   }
   
 }
@@ -87,7 +87,7 @@ GlitchRealityUpgradeState.index = mapGameData(
  * @param {number} id
  * @return {RealityUpgradeState|RebuyableRealityUpgradeState}
  */
-export const GlitchRealityUpgrade = id => RealityUpgradeState.index[id];
+export const GlitchRealityUpgrade = id => GlitchRealityUpgradeState.index[id];
 
 export const GlitchRealityUpgrades = {
   /**
