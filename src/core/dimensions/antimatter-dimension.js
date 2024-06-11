@@ -98,7 +98,7 @@ export function getDimensionFinalMultiplierUncached(tier) {
     multiplier = multiplier.pow(1.05);
   }
 
-  if(multiplier.gt("1e1E26")) multiplier = multiplier.pow( 1 / (multiplier.log10() / 1e26) );
+  if(multiplier.gt("1e1E26")) multiplier = multiplier.pow( 1 / Math.sqrt(multiplier.log10() / 1e26) );
   
   return multiplier;
 }
