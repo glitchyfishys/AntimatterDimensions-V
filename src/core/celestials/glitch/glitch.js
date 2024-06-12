@@ -125,7 +125,7 @@ export const Glitch = {
   },
 
   get forceglyphs(){
-    return 5 - GlitchRealityUpgrades.all[6].effectOrDefault(0);
+    return 5 - GlitchRealityUpgrades.all[6].effectOrDefault(0) - GlitchRealityUpgrades.all[14].effectOrDefault(0);
   },
 
   get riftForce(){
