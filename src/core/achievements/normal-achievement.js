@@ -180,7 +180,7 @@ export const Achievements = {
       .countWhere(row => row.every(ach => ach.isUnlocked));
     const basePower = Math.pow(1.25, unlockedRows) * Math.pow(1.03, Achievements.effectiveCount);
     const exponent = getAdjustedGlyphEffect("effarigachievement") * Ra.unlocks.achievementPower.effectOrDefault(1);
-    return Math.pow(basePower, exponent);
+    return Math.min(Math.pow(basePower, exponent),1e308);
   }),
 
   get power() {
