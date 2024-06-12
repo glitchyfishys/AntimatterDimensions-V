@@ -161,31 +161,31 @@ export const glitchRealityUpgrades = [
     effect: () =>  1,
     formatEffect: value => "^2, +0.5, ^3"
   },
-    {
+  {
     name: () => (GlitchRealityUpgrades.all[13].isBought ? "the darkness overcomes" : "locked"),
     id: 14,
     cost: 1e175,
-    requirement: () => `reach ${"1e2E15"} antimatter with Effarig Reality, Nameless one's dim limit and low tachyon gain, V's Reality, and Lai'tela's Reality (also unlock the darkness arizes)`,
+    requirement: () => `reach ${"1e2E15"} antimatter with Effarig Reality, Nameless one's dim limit and low tachyon gain, V's Reality, and Lai'tela's Reality (also reqires the darkness arizes)`,
     hasFailed: () => !GlitchRealityUpgrades.all[12].isBought || Glitch.augmenteffectbits != 314,
     checkRequirement: () =>  GlitchRealityUpgrades.all[12].isBought && Currency.antimatter.gte("1e2E15") && Glitch.isRunning && Glitch.augmenteffectbits == 314,
     checkEvent: GAME_EVENT.GAME_TICK_AFTER,
     description: "riftoverdrive effect is doubled, glyphs softcap 3 (at 100k)is disabled",
     effect: () =>  2,
-    formatEffect: value => "4, glyph softcap 3 is disabled"
+    formatEffect: value => "x2, glyph softcap 3 is disabled"
   },
-    {
-    name: "2",
-    id: 15,
-    cost: 1e25,
-    requirement: () => `reach ${"1e8E12"} antimatter with all but Ra's no dim boost`,
-    hasFailed: () => Glitch.augmenteffectbits != 447,
-    checkRequirement: () =>  false && Glitch.isRunning && Glitch.augmenteffectbits == 447,
+  {
+    name: () => (GlitchRealityUpgrades.all[14].isBought ? "the darkness is coming" : "locked"),
+    id: 14,
+    cost: 1e175,
+    requirement: () => `reach ${"1e500E15"} antimatter (also reqires the darkness overcomes)`,
+    hasFailed: () => !GlitchRealityUpgrades.all[13].isBought || Glitch.augmenteffectbits != 0,
+    checkRequirement: () =>  GlitchRealityUpgrades.all[13].isBought && Currency.antimatter.gte("1e500E15") && Glitch.isRunning && Glitch.augmenteffectbits == 0,
     checkEvent: GAME_EVENT.GAME_TICK_AFTER,
-    description: "rift force gain is squred, riftoverdrive effect from 2 to 2.5",
-    effect: () =>  1,
-    formatEffect: value => "2"
+    description: "2 less forced cursed glyphs",
+    effect: () =>  2,
+    formatEffect: value => "-2"
   },
-    {
+  {
     name: "3",
     id: 16,
     cost: 1e25,
