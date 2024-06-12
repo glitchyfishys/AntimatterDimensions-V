@@ -79,7 +79,7 @@ export default {
 <template>
   <div class="l-spoon-btn-group">
     <button
-      :class="classObject o-size"
+      :class="classObject"
       class="l-reality-upgrade-btn c-reality-upgrade-btn"
       @click.exact="upgrade.purchase()"
     >
@@ -111,9 +111,6 @@ export default {
             name="Rift Force"
           />
         </template>
-        <b v-if="automatorPoints && !isBought">
-          (+{{ formatInt(automatorPoints) }} AP)
-        </b>
       </span>
     </button>
     <PrimaryToggleButton
