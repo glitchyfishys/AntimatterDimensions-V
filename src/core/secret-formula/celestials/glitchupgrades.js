@@ -176,7 +176,7 @@ export const glitchRealityUpgrades = [
   {
     name: () => (GlitchRealityUpgrades.all[14].isBought ? "the darkness is coming" : "locked"),
     id: 15,
-    cost: 1e400,
+    cost: new Decimal("1e400"),
     requirement: () => `reach ${"1e500E15"} antimatter (also reqires the darkness overcomes)`,
     hasFailed: () => !GlitchRealityUpgrades.all[13].isBought || Glitch.augmenteffectbits != 0,
     checkRequirement: () =>  GlitchRealityUpgrades.all[13].isBought && Currency.antimatter.gte("1e500E15") && Glitch.isRunning && Glitch.augmenteffectbits == 0,
