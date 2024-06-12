@@ -475,7 +475,7 @@ export const glyphEffects = {
     shortDesc: "Achievement mult. power +{value}",
     effect: (level, strength) => 1 + Math.pow(level, 0.4) * Math.pow(strength, 0.6) / 60 +
       GlyphAlteration.sacrificeBoost("effarig") / 10,
-    softcap: value => ((value > 5) ? Math.min( value / ((value / 5) ** 0.66),10) : value),
+    softcap: value => ((value > 5) ? Math.min( value / ((value / 5) ** 0.75),10) : value),
     formatEffect: x => format(x, 3, 3),
     formatSingleEffect: x => format(x - 1, 3, 3),
     combine: GlyphCombiner.addExponents,
@@ -530,7 +530,7 @@ export const glyphEffects = {
     genericDesc: "Antimatter production exponent power",
     shortDesc: "AM production exponent ^{value}",
     effect: (level, strength) => 1 + Math.pow(level, 0.25) * Math.pow(strength, 0.4) / 5000,
-    softcap: value => ((value > 1.08) ? Math.min( value / ((value / 1.08) ** 0.95),1.2) : value),
+    softcap: value => ((value > 1.008) ? Math.min( value / ((value / 1.008) ** 0.95),1.2) : value),
     formatEffect: x => format(x, 4, 4),
     combine: GlyphCombiner.multiply,
   },
