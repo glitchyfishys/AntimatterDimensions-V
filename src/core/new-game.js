@@ -67,6 +67,8 @@ export const NG = {
     const companions = JSON.stringify(Glyphs.allGlyphs.filter(g => g.type === "companion"));
     const celglitch = JSON.stringify(player.celestials.glitch);
     const glitch = JSON.stringify(player.glitch);
+
+    const glitchsave = GlitchRealityUpgrades.all[15].isBought;
     
     Modal.hideAll();
     Quote.clearAll();
@@ -97,7 +99,7 @@ export const NG = {
     ADNotations.Settings.exponentCommas.max = 10 ** player.options.notationDigits.notation;
     player.lastUpdate = Date.now();
 
-    if(GlitchRealityUpgrades.all[15].isBought) {
+    if(glitchsave) {
       player.celestials.glitch = JSON.parse(celglitch);
       player.glitch = JSON.parse(glitch);
     }
