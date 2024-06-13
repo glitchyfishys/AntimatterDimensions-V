@@ -74,7 +74,7 @@ export default {
       return ` ${line1}<br>${line2}`;
     },
     darkMatterText() {
-      const dm = this.powerDM.times(this.hoverOverAscension ? this.powerDMPerAscension : new Decimal(1));
+      const dm = this.powerDM.times(this.hoverOverAscension ? this.powerDMPerAscension : 1);
       const str = `DM ${formatX(dm, 2, 2)}`;
       const line1 = this.hoverOverAscension ? `<b>${str}</b>` : str;
 
@@ -85,7 +85,7 @@ export default {
       return `${line1}<br>${line2}`;
     },
     darkEnergyText() {
-      const de = this.powerDE.times(this.hoverOverAscension ? POWER_DE_PER_ASCENSION : new Decimal(1));
+      const de = this.powerDE.times(this.hoverOverAscension ? POWER_DE_PER_ASCENSION : 1);
       const str = `DE +${format(de, 2, 4)}`;
       const line1 = this.hoverOverAscension ? `<b>${str}</b>` : str;
       const ascMult = POWER_DE_PER_ASCENSION.times(this.interval).div(this.intervalAfterAscension);
