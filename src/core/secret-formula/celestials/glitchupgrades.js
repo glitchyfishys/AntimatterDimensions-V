@@ -153,7 +153,7 @@ export const glitchRealityUpgrades = [
     name: () => (GlitchRealityUpgrades.all[12].isBought ? "the darkness arizes" : "locked") ,
     id: 13,
     cost: 1e25,
-    requirement: () => `reach ${format("1e1E9")} antimatter with all but Ra's no dim boost`,
+    requirement: () => `reach ${format("1e1E9")} antimatter with all but nameless one's reality`,
     hasFailed: () => Glitch.augmenteffectbits != 507,
     checkRequirement: () =>  Currency.antimatter.gte("1e1E9") && Glitch.isRunning && Glitch.augmenteffectbits == 507,
     checkEvent: GAME_EVENT.GAME_TICK_AFTER,
