@@ -72,6 +72,9 @@ export default {
       this.isAutoUnlocked = false;
       if (this.isRebuyable) this.isAutobuyerOn = Autobuyer.realityUpgrade(upgrade.id).isActive;
     },
+    bulk(){
+      for(let x=0; x < 10; x++) this.upgrade.purchase();
+    },
   }
 };
 </script>
@@ -82,6 +85,7 @@ export default {
       :class="classObject"
       class="l-reality-upgrade-btn c-reality-upgrade-btn"
       @click.exact="upgrade.purchase()"
+      @click.shift.exact="bulk()"
     >
       <HintText
         type="realityUpgrades"
