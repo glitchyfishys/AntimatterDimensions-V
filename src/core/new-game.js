@@ -65,6 +65,8 @@ export const NG = {
     const hasSpeedrun = player.speedrun.isUnlocked;
     const presets = JSON.stringify(player.timestudy.presets);
     const companions = JSON.stringify(Glyphs.allGlyphs.filter(g => g.type === "companion"));
+    const celglitch = JSON.stringify(player.celestials.glitch);
+    const glitch = JSON.stringify(player.glitch);
     
     Modal.hideAll();
     Quote.clearAll();
@@ -95,6 +97,8 @@ export const NG = {
     ADNotations.Settings.exponentCommas.max = 10 ** player.options.notationDigits.notation;
     player.lastUpdate = Date.now();
 
+    player.celestials.glitch = JSON.parse(celglitch);
+    player.glitch = JSON.parse(glitch);
     
   }
 };
