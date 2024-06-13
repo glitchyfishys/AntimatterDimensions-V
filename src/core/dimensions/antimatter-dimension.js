@@ -90,8 +90,9 @@ export function getDimensionFinalMultiplierUncached(tier) {
   if (Glitch.isRunning) {
     multiplier = multiplier.pow(Glitch.ADnerf);
   }
-
-  multiplier = multiplier.times(GlitchRealityUpgrades.all[4].effectOrDefault(new Decimal(1)).pow(GlitchRealityUpgrades.all[12].isBought ? 2 : 1));
+  let mul = GlitchRealityUpgrades.all[4].effectOrDefault(new Decimal(1)).pow(GlitchRealityUpgrades.all[12].isBought ? 2 : 1);
+  if(Pelle.isDoomed) mul = mul.pow((1 / ((1e60 / Math.max(Currency.realityShards.value.toNumber(),1e60)) ** .16)));
+  multiplier = multiplier.times(mul);
   
   // This power effect goes intentionally after all the nerf effects and shouldn't be moved before them
   if (AlchemyResource.inflation.isUnlocked && multiplier.gte(AlchemyResource.inflation.effectValue)) {
