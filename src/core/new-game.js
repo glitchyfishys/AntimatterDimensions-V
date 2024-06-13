@@ -102,6 +102,7 @@ export const NG = {
     if(glitchsave) {
       player.celestials.glitch = JSON.parse(celglitch);
       player.glitch = JSON.parse(glitch);
+      player.celestials.glitch.riftforce = new Decimal(0);
     }
     
   }
