@@ -530,7 +530,7 @@ export const glyphEffects = {
     genericDesc: "Antimatter production exponent power",
     shortDesc: "AM production exponent ^{value}",
     effect: (level, strength) => 1 + Math.pow(level, 0.25) * Math.pow(strength, 0.4) / 5000,
-    softcap: value => ((value > 1.008) ? Math.min( value / ((value / 1.008) ** 0.95),1.2) : value),
+    softcap: value => ((value > 1.015) ? Math.min( value / ((value / 1.015) ** 0.8),1.2) : value),
     formatEffect: x => format(x, 4, 4),
     combine: GlyphCombiner.multiply,
   },
