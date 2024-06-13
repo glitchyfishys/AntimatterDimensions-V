@@ -475,7 +475,7 @@ export const glyphEffects = {
     shortDesc: "Achievement mult. power +{value}",
     effect: (level, strength) => 1 + Math.pow(level, 0.4) * Math.pow(strength, 0.6) / 60 +
       GlyphAlteration.sacrificeBoost("effarig") / 10,
-    softcap: value => ((value > 5) ? Math.min( value / ((value / 5) ** 0.75),10) : value),
+    softcap: value => ((value > 8) ? Math.min( value / ((value / 8) ** 0.75),15) : value),
     formatEffect: x => format(x, 3, 3),
     formatSingleEffect: x => format(x - 1, 3, 3),
     combine: GlyphCombiner.addExponents,
