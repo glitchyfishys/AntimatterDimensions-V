@@ -419,6 +419,7 @@ export const tabs = [
         name: "Teresa",
         symbol: "Ϟ",
         component: "TeresaTab",
+        condition: () => Teresa.isUnlocked,
         id: 1,
         hidable: true,
       },
