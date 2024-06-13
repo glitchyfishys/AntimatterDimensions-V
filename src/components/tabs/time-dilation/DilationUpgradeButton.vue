@@ -66,7 +66,7 @@ export default {
       };
     },
     isUseless() {
-      const tp = this.upgrade.id === 3 && !this.rebuyableBoost;
+      const tp = this.upgrade.id === 3;
       const ip = this.upgrade.id === 7;
       return Pelle.isDoomed && (tp || ip);
     }
@@ -88,7 +88,6 @@ export default {
         this.isCapped = upgrade.isCapped;
         const autobuyer = Autobuyer.dilationUpgrade(upgrade.id);
         this.boughtAmount = upgrade.boughtAmount;
-        this.rebuyableBoost = PelleRifts.paradox.milestones[2].canBeApplied;
         if (!autobuyer) return;
         this.isAutoUnlocked = autobuyer.isUnlocked;
         this.isAutobuyerOn = autobuyer.isActive;
