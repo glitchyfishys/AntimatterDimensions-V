@@ -194,7 +194,7 @@ export const glitchRealityUpgrades = [
     checkRequirement: () =>  GlitchRealityUpgrades.all[14].isBought && Currency.antimatter.gte("1e25E15") && Glitch.isRunning && Glitch.augmenteffectbits == 315,
     checkEvent: GAME_EVENT.GAME_TICK_AFTER,
     description: "glitch stays compleate past Pelle and unlock glitch second layer",
-    effect: () =>  true,
-    formatEffect: value => value ? "unlocked" : "locked"
+    effect: () =>  1,
+    formatEffect: value => (GlitchRealityUpgrades.all[15].isBought ? "unlocked" : "locked")
   },
 ];
