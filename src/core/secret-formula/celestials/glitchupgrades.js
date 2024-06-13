@@ -186,15 +186,15 @@ export const glitchRealityUpgrades = [
     formatEffect: value => "-2"
   },
   {
-    name: "3",
+    name: () => (GlitchRealityUpgrades.all[15].isBought ? "the darkness has arived" : "locked"),
     id: 16,
-    cost: 1e25,
-    requirement: () => `reach ${"1e8E12"} antimatter with all but Ra's no dim boost`,
-    hasFailed: () => Glitch.augmenteffectbits != 447,
-    checkRequirement: () =>  false && Glitch.isRunning && Glitch.augmenteffectbits == 447,
+    cost: new Decimal("4.44e444"),
+    requirement: () => `reach ${"1e25E15"} antimatter all effects excluding ra's and nameless one's reality (also reqires the darkness is coming)`,
+    hasFailed: () => !GlitchRealityUpgrades.all[14].isBought || Glitch.augmenteffectbits != 315,
+    checkRequirement: () =>  GlitchRealityUpgrades.all[14].isBought && Currency.antimatter.gte("1e25E15") && Glitch.isRunning && Glitch.augmenteffectbits == 315,
     checkEvent: GAME_EVENT.GAME_TICK_AFTER,
-    description: "rift force gain is squred, riftoverdrive effect from 2 to 2.5",
-    effect: () =>  1,
-    formatEffect: value => "2"
+    description: "glitch stays compleate past Pelle and unlock glitch second layer",
+    effect: () =>  true,
+    formatEffect: value => value ? "unlocked" : "locked"
   },
 ];
