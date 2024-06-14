@@ -14,17 +14,17 @@ export const END_STATE_MARKERS = {
 
 export const GameEnd = {
   get endState() {
-    if (this.removeAdditionalEnd) return this.additionalEnd;
+    if (this.removeAdditionalEnd && Pelle.isDoomed) return this.additionalEnd;
     return Math.max((Math.log10(player.celestials.pelle.records.totalAntimatter.plus(1).log10() + 1) - 8.7) /
       (Math.log10(1e300) - 8.7) + this.additionalEnd, 0);
   },
 
   _additionalEnd: 0,
   get additionalEnd() {
-    return (player.isGameEnd || this.removeAdditionalEnd) ? this._additionalEnd : 0;
+    return (player.isGameEnd || (this.removeAdditionalEnd && Pelle.isDoomed)) ? this._additionalEnd : 0;
   },
   set additionalEnd(x) {
-    this._additionalEnd = (player.isGameEnd || this.removeAdditionalEnd) ? x : 0;
+    this._additionalEnd = (player.isGameEnd || (this.removeAdditionalEnd && Pelle.isDoomed)) ? x : 0;
   },
 
   removeAdditionalEnd: false,
@@ -33,7 +33,8 @@ export const GameEnd = {
   creditsEverClosed: false,
 
   gameLoop(diff) {
-    if (this.removeAdditionalEnd) {
+    if(!Pelle.isDoomed) player.isGameEnd = false;
+    if ((this.removeAdditionalEnd && Pelle.isDoomed)) {
       this.additionalEnd -= Math.min(diff / 200, 0.5);
       if (this.additionalEnd < 4) {
         this.additionalEnd = 0;
