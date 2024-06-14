@@ -572,7 +572,7 @@ export function gameLoop(passDiff, options = {}) {
   // These need to all be done consecutively in order to minimize the chance of a reset occurring between real time
   // updating and game time updating. This is only particularly noticeable when game speed is 1 and the player
   // expects to see identical numbers. We also don't increment the timers if the game has been beaten (Achievement 188)
-  if (!(Achievement(188).isUnlocked && Pelle.isDoomed)) {
+  if (!(Achievement(188).isUnlocked && Pelle.isDoomed && Currency.antimatter.gte("1e1E300"))) {
     player.records.realTimeDoomed += realDiff;
     player.records.realTimePlayed += realDiff;
     player.records.totalTimePlayed += diff;
