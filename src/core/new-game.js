@@ -103,6 +103,11 @@ export const NG = {
       player.celestials.glitch = JSON.parse(celglitch);
       player.glitch = JSON.parse(glitch);
       player.celestials.glitch.riftforce = new Decimal(0);
+      player.break = true;
+      player.eternities = new Decimal(100);
+      player.realities = 10000;
+      player.reality.upgReqs = 1024;
+      player.reality.upgradeBits = 1024;
     }
     
   }
