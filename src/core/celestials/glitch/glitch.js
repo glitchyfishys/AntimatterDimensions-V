@@ -66,8 +66,8 @@ export const Glitch = {
     if(this.tier == 0){
       //could be bad
       disChargeAll();
+      const cga = this.forceglyphs;
       if(Glyphs.active.filter(x => x == null ? false :(x.type == "cursed")).length < cga){
-        const cga = this.forceglyphs;
         Glyphs.unequipAll(true);
         for(let i=0;i<cga;i++) {
           if((Glyphs.inventory.filter(x => x == null ? false :(x.type == "cursed")).length + Glyphs.active.filter(x => x == null ? false :(x.type == "cursed")).length) < cga) Glyphs.addToInventory(GlyphGenerator.cursedGlyph());
