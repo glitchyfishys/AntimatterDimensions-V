@@ -60,7 +60,6 @@ export const Pelle = {
 
   // This is called upon initial Dooming and after every Armageddon when using the modal
   initializeRun() {
-      realityUGs.all[13].isBought ? PelleStrikes.all[5].trigger() : false
     if (this.isDoomed) {
       Pelle.armageddon(true);
       return;
@@ -164,6 +163,7 @@ export const Pelle = {
     player.celestials.enslaved.isStoringReal = false;
     player.celestials.enslaved.autoStoreReal = false;
     if (PelleStrikes.dilation.hasStrike) player.dilation.active = true;
+    realityUGs.all[13].isBought ? PelleStrikes.all[5].trigger() : false
     EventHub.dispatch(GAME_EVENT.ARMAGEDDON_AFTER, gainStuff);
   },
 
