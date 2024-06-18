@@ -56,11 +56,11 @@ export const Glitch = {
       Currency.eternityPoints.reset();
       Currency.infinityPoints.reset();
       Currency.eternities.reset();
+      player.eternityUpgrades.clear();
+      player.replicanti.unl=false;
+      Currency.replicanti.bumpTo(1);
     }
     
-    player.eternityUpgrades.clear();
-    player.replicanti.unl=false;
-    Currency.replicanti.bumpTo(1);
 
     
     if(this.tier == 0){
