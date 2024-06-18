@@ -256,7 +256,7 @@ export function buyManyDimension(tier) {
   
   if (tier === 8 && allowed) return buyOneDimension(8);
 
-  dimension.currencyAmount = dimension.currencyAmount.minus(cost);
+  if(dimension.currencyAmount.e < 20) dimension.currencyAmount = dimension.currencyAmount.minus(cost);
   dimension.challengeCostBump();
   dimension.amount = dimension.amount.plus(dimension.remainingUntil10);
   dimension.bought += dimension.remainingUntil10;
@@ -279,7 +279,7 @@ export function buyAsManyAsYouCanBuy(tier) {
   if (tier === 8 && allowed) return buyOneDimension(8);
   const adtotal = (dimension.bought + howMany);
   
-  dimension.currencyAmount = dimension.currencyAmount.minus(cost);
+  if(dimension.currencyAmount.e < 20) dimension.currencyAmount = dimension.currencyAmount.minus(cost);
   dimension.challengeCostBump();
   
   if(adtotal >= 1e18) {
@@ -339,7 +339,7 @@ export function buyMaxDimension(tier, bulk = Infinity) {
 
   // Buy any remaining until 10 before attempting to bulk-buy
   if (dimension.currencyAmount.gte(cost)) {
-    dimension.currencyAmount = dimension.currencyAmount.minus(cost);
+    if(dimension.currencyAmount.e < 20) dimension.currencyAmount = dimension.currencyAmount.minus(cost);
     buyUntilTen(tier);
     bulkLeft--;
   }
@@ -351,7 +351,7 @@ export function buyMaxDimension(tier, bulk = Infinity) {
     while (dimension.isAffordableUntil10 && dimension.cost.lt(goal) && bulkLeft > 0) {
       // We can use dimension.currencyAmount or Currency.antimatter here, they're the same,
       // but it seems safest to use dimension.currencyAmount for consistency.
-      dimension.currencyAmount = dimension.currencyAmount.minus(dimension.costUntil10);
+      if(dimension.currencyAmount.e < 20) dimension.currencyAmount = dimension.currencyAmount.minus(dimension.costUntil10);
       buyUntilTen(tier);
       bulkLeft--;
     }
@@ -369,7 +369,7 @@ export function buyMaxDimension(tier, bulk = Infinity) {
   if (buying > bulkLeft) buying = bulkLeft;
   dimension.amount = dimension.amount.plus(10 * buying).round();
   dimension.bought += 10 * buying;
-  dimension.currencyAmount = dimension.currencyAmount.minus(Decimal.pow10(maxBought.logPrice));
+  if(dimension.currencyAmount.e < 20) dimension.currencyAmount = dimension.currencyAmount.minus(Decimal.pow10(maxBought.logPrice));
 }
 
 class AntimatterDimensionState extends DimensionState {
