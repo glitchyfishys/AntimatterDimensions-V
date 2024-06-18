@@ -150,7 +150,7 @@ export const glitchRealityUpgrades = [
     formatEffect: value => "^1.5, ^2.5, ^1.25"
   },
   {
-    name: () => (GlitchRealityUpgrades.all[12].isBought ? "the darkness arizes" : "locked") ,
+    name: () => (GlitchRealityUpgrades.all[12].isAvailableForPurchase ? "the darkness arizes" : "locked") ,
     id: 13,
     cost: 1e25,
     requirement: () => `reach ${format("1e1E9")} antimatter with all but nameless one's reality`,
@@ -162,7 +162,7 @@ export const glitchRealityUpgrades = [
     formatEffect: value => "^2, +0.5, ^3"
   },
   {
-    name: () => (GlitchRealityUpgrades.all[13].isBought ? "the darkness overcomes" : "locked"),
+    name: () => (GlitchRealityUpgrades.all[13].isAvailableForPurchase ? "the darkness overcomes" : "locked"),
     id: 14,
     cost: 1e175,
     requirement: () => `reach ${"1e2E15"} antimatter with Effarig Reality, Nameless one's dim limit and low tachyon gain, V's Reality, and Lai'tela's Reality (also reqires the darkness arizes)`,
@@ -174,7 +174,7 @@ export const glitchRealityUpgrades = [
     formatEffect: value => "x2, glyph softcap 3 is disabled"
   },
   {
-    name: () => (GlitchRealityUpgrades.all[14].isBought ? "the darkness is coming" : "locked"),
+    name: () => (GlitchRealityUpgrades.all[14].isAvailableForPurchase ? "the darkness is coming" : "locked"),
     id: 15,
     cost: new Decimal("1e400"),
     requirement: () => `reach ${"1e500E15"} antimatter (also reqires the darkness overcomes)`,
@@ -186,7 +186,7 @@ export const glitchRealityUpgrades = [
     formatEffect: value => "-2"
   },
   {
-    name: () => (GlitchRealityUpgrades.all[15].isBought ? "the darkness has arived" : "locked"),
+    name: () => (GlitchRealityUpgrades.all[15].isAvailableForPurchase ? "the darkness has arived" : "locked"),
     id: 16,
     cost: new Decimal("4.44e444"),
     requirement: () => `reach ${"1e25E15"} antimatter all effects excluding ra's and nameless one's reality (also reqires the darkness is coming)`,
