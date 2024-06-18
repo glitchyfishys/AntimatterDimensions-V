@@ -108,7 +108,7 @@ export const Glitch = {
     player.celestials.laitela.run = false;
     Glyphs.unequipAll(true);
 
-    player.celestials.ra.charged = new Set([
+    if (Ra.chargesLeft >= 12) player.celestials.ra.charged = new Set([
     "timeMult2",
     "dimMult",
     "timeMult",
