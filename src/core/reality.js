@@ -778,7 +778,7 @@ export function finishProcessReality(realityProps) {
   player.reality.hasCheckedFilter = false;
 
   if (realityProps.restoreCelestialState || player.options.retryCelestial) restoreCelestialRuns(celestialRunState);
-  else if (glitch) Glitch.leaveRun;
+  else if (glitch) Glitch.leaveRun();
   
   if (Pelle.isDoomed && PelleUpgrade.keepAutobuyers.canBeApplied && Autobuyer.bigCrunch.hasMaxedInterval) {
     player.break = true;
