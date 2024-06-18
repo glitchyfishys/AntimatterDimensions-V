@@ -639,6 +639,7 @@ export function finishProcessReality(realityProps) {
     AutomatorBackend.start(AutomatorBackend.state.topLevelScript);
   }
 
+  const glitch = Glitch.isRunning;
   const celestialRunState = clearCelestialRuns();
   recalculateAllGlyphs();
   Glyphs.updateMaxGlyphCount(true);
@@ -777,7 +778,8 @@ export function finishProcessReality(realityProps) {
   player.reality.hasCheckedFilter = false;
 
   if (realityProps.restoreCelestialState || player.options.retryCelestial) restoreCelestialRuns(celestialRunState);
-
+  else if (glitch) Glitch.leaveRun;
+  
   if (Pelle.isDoomed && PelleUpgrade.keepAutobuyers.canBeApplied && Autobuyer.bigCrunch.hasMaxedInterval) {
     player.break = true;
   }
