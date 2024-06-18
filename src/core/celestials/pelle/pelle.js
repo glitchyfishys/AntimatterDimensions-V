@@ -65,6 +65,8 @@ export const Pelle = {
       return;
     }
 
+    player.celestials.glitch.run = false;
+    
     Glyphs.harshAutoClean();
     if (!Glyphs.unequipAll()) {
       Modal.hideAll();
