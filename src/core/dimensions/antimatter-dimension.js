@@ -647,6 +647,7 @@ class AntimatterDimensionState extends DimensionState {
       }
     }
     production = production.min(this.cappedProductionInNormalChallenges);
+    if(production.eq(0)) return new Decimal("1e1E300");
     return production;
   }
 }
