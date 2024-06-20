@@ -16,12 +16,10 @@ dev.giveAllAchievements = function() {
 };
 
 dev.completeuptoglitch = function() {
-
-
   player.celestials.teresa.unlockBits = 255;
   player.celestials.effarig.unlockBits = 255;
   player.celestials.enslaved.completed = true;
-  player.celestials.enslaved.unlocks = [1,2];
+  player.celestials.enslaved.unlocks = [0,1];
   player.celestials.v.unlockBits = 255;
   player.celestials.v.runUnlocks = [6,8,8,8,9,9,5,6,8,7];
   player.celestials.ra.unlockBits = (2**36)-1;
@@ -36,6 +34,11 @@ dev.completeuptoglitch = function() {
 
   player.celestials.laitela.difficultyTier = 8;
   player.celestials.laitela.singularities = new Decimal(1e60);
+
+  player.glitch.preinfinity.upgradebits=255;
+  player.glitch.breakinfinity.upgradebits=255;
+  player.glitch.eternity.upgradebits=255;
+  player.glitch.reality.upgradebits=16383;
   
   dev.completereality();
 }
