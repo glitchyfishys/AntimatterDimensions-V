@@ -64,8 +64,7 @@ export function getTickSpeedMultiplier() {
 
   galaxies *= Pelle.specialGlyphEffect.power;
   const perGalaxy = DC.D0_965;
-  if (perGalaxy.pow(galaxies - 2).times(baseMultiplier).eq(0)) return new Decimal("1e1E300")
-  return perGalaxy.pow(galaxies - 2).times(baseMultiplier) ;
+  return perGalaxy.pow(galaxies - 2).times(baseMultiplier).max("1e1E-150");
 }
 
 export function buyTickSpeed() {
