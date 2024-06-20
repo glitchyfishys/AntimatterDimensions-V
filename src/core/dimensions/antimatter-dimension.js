@@ -100,8 +100,6 @@ export function getDimensionFinalMultiplierUncached(tier) {
   }
 
   if(multiplier.gt("1e1E26")) multiplier = multiplier.pow( 1 / Math.sqrt(multiplier.log10() / 1e26) );
-
-  if (multiplier.lt(1)) return new Decimal("1e1E300");
   
   return multiplier;
 }
@@ -649,7 +647,7 @@ class AntimatterDimensionState extends DimensionState {
       }
     }
     production = production.min(this.cappedProductionInNormalChallenges);
-    if(production.eq(0)) return new Decimal("1e1E300");
+    
     return production;
   }
 }
