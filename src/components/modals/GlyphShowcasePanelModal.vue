@@ -44,7 +44,7 @@ export default {
     maxGlyphEffects() {
       let maxEffects = 1;
       for (const glyph of this.glyphs) {
-        maxEffects = Math.max(getGlyphEffectsFromBitmask(glyph.effects).filter(e => e.isGenerated).length, maxEffects);
+        maxEffects = Math.max(getGlyphEffectsFromBitmask(glyph.effects, glyph.type).filter(e => e.isGenerated).length, maxEffects);
       }
       return maxEffects;
     },
