@@ -174,6 +174,7 @@ export default {
     <PrimaryButton
       class="o-primary-btn--subtab-option"
       @click="bulk()">
+      max rebuyable
     </PrimaryButton>
     
     <div class="l-dilation-upgrades-grid">
