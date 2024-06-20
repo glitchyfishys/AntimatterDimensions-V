@@ -105,7 +105,7 @@ export default {
       :ach-tooltip="timeEstimate"
       :class="classObject"
       @click="upgrade.purchase()"
-      @click.shift="upgrade.purchase(1e5)"
+      @click.shift="upgrade.purchase(1e8)"
       @mouseover="isHovering = true"
       @mouseleave="isHovering = false"
     >
