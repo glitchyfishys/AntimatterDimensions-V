@@ -79,8 +79,11 @@ export default {
       if (this.isRebuyable) this.isAutobuyerOn = Autobuyer.realityUpgrade(upgrade.id).isActive;
     },
     toggleLock(upgrade) {
-      if (this.isRebuyable) return;
-      upgrade.toggleMechanicLock();
+      if (this.isRebuyable) {
+        for(let a=0; a < 25; a++) this.upgrade.purchase();
+      }else{
+        upgrade.toggleMechanicLock();
+      }
     }
   }
 };
