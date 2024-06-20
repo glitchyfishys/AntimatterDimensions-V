@@ -365,7 +365,7 @@ export const GlyphGenerator = {
       if (countValuesFromBitmask(newMask) > maxEffects) {
         // Turn the old effect bitmask into an array of removable effects and then deterministically remove one
         // of the non-power effects based on seed and reality count
-        const replacable = getGlyphEffectsFromBitmask(newGlyph.effects)
+        const replacable = getGlyphEffectsFromBitmask(newGlyph.effects, newGlyph.type)
           .filter(eff => eff.isGenerated)
           .map(eff => eff.bitmaskIndex)
           .filter(eff => ![0, 12, 16].includes(eff));
