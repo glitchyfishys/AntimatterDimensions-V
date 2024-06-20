@@ -28,7 +28,7 @@ export default {
     <div class="c-reality-upgrade-infotext">
       Mouseover <i class="fas fa-question-circle" /> icons for additional information.
       <br>
-      The first row of upgrades can be purchased endlessly for increasing costs
+      The first row of upgrades can be purchased endlessly for increasing costs (shift click to bulk buy upto 25)
       <span :ach-tooltip="costScalingTooltip">
         <i class="fas fa-question-circle" />
       </span>
