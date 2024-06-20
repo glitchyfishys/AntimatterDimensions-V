@@ -48,12 +48,9 @@ export default {
   computed: {
     classObject() {
       if (this.isUseless) {
-        // Note: TP mult (3) is conditionally useless and IP mult (7) is always useless; we style them similarly to
-        // the rest of the game - TP appears as "currently available" while IP appears as "strictly disabled"
         return {
           "o-dilation-upgrade o-pelle-disabled-pointer": true,
-          "o-dilation-upgrade--unavailable": this.upgrade.id === 3,
-          "o-pelle-disabled o-dilation-upgrade--useless": this.upgrade.id === 7,
+          "o-pelle-disabled o-dilation-upgrade--useless": this.upgrade.id === 7 || this.upgrade.id === 3,
         };
       }
       return {
