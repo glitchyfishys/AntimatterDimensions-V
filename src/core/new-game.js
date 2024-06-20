@@ -67,6 +67,7 @@ export const NG = {
     const companions = JSON.stringify(Glyphs.allGlyphs.filter(g => g.type === "companion"));
     const celglitch = JSON.stringify(player.celestials.glitch);
     const glitch = JSON.stringify(player.glitch);
+    const ach = JSON.stringify(player.achievementBits);
 
     const glitchsave = GlitchRealityUpgrades.all[15].isBought;
     
@@ -108,6 +109,7 @@ export const NG = {
       player.realities = 10000;
       player.reality.upgReqs = 1024;
       player.reality.upgradeBits = 1024;
+      player.achievementBits = JSON.parse(ach);
     }
     
   }
