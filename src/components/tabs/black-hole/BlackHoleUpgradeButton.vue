@@ -60,7 +60,11 @@ export default {
       const autobuyer = Autobuyer.blackHolePower(this.config.upgrade.id);
       this.isAutoUnlocked = hasAutobuyer && autobuyer.isUnlocked;
       this.isAutobuyerOn = hasAutobuyer && autobuyer.isActive;
+    },
+    bulk(){
+      for(let a=0; a < 20; a++) this.config.upgrade.purchase();
     }
+    
   }
 };
 </script>
@@ -71,6 +75,7 @@ export default {
       :class="classObject"
       class="l-reality-upgrade-btn c-reality-upgrade-btn"
       @click="config.upgrade.purchase()"
+      @click.shift="bulk()"
     >
       <DescriptionDisplay :config="config" />
       <EffectDisplay
