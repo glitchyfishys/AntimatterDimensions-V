@@ -122,9 +122,9 @@ export default {
       else this.toMaxTooltip = estimateText.startsWith("<") ? "Currently Increasing" : estimateText;
     },
     bulk(){
-      DilationUpgrades.rebuyable[0].purchase(1e5);
-      DilationUpgrades.rebuyable[1].purchase(1e5);
-      DilationUpgrades.rebuyable[2].purchase(1e5);
+      DilationUpgrades.rebuyable[0].purchase(1e8);
+      DilationUpgrades.rebuyable[1].purchase(1e8);
+      DilationUpgrades.rebuyable[2].purchase(1e8);
     }
   }
 };
@@ -171,7 +171,11 @@ export default {
         class="max-accent"
       >{{ format(maxDT, 2, 1) }}</span>.
     </span>
-    <PrimaryButton/>
+    <PrimaryButton
+      class="o-primary-btn--subtab-option"
+      @click="bulk()">
+    </PrimaryButton>
+    
     <div class="l-dilation-upgrades-grid">
       <div
         v-for="(upgradeRow, row) in allRebuyables"
