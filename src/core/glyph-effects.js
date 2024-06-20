@@ -205,7 +205,11 @@ export function makeGlyphEffectBitmask(effectList) {
 }
 
 export function getGlyphEffectsFromBitmask(bitmask, type) {
-  return orderedEffectList.map(effectName => GlyphEffects[effectName]).filter(effect => (effect.glyphTypes.includes(type) && (bitmask & ( 1 << effect.bitmaskIndex))));
+  let effects = [];
+  if(Ra.unlocks.allGamespeedGlyphs.isUnlocked && type != "effarig") effects.push(GlyphEffects.timespeed);
+  if(Ra.unlocks.allGamespeedGlyphs.isUnlocked && type == "time") effects.push(GlyphEffects.timeshardpow);
+  let eff = orderedEffectList.map(effectName => GlyphEffects[effectName]).filter(effect => (effect.glyphTypes.includes(type) && (bitmask & ( 1 << effect.bitmaskIndex)))).push(effects);
+  return eff.flat();
 }
 
 export function getGlyphIDsFromBitmask(bitmask, id) {
