@@ -68,7 +68,7 @@ export function getGlyphEffectValues(effectKey) {
     throw new Error(`Unknown Glyph effect requested "${effectKey}"'`);
   }
   return player.reality.glyphs.active
-    .filter(glyph => (  GlyphEffects[effectKey].id.includes(glyph.type) || ( (Ra.unlocks.allGamespeedGlyphs.canBeApplied && glyph.type != "effarig") ? GlyphEffects[effectKey].id.includes("time") : false) ))
+    .filter(glyph => (  GlyphEffects[effectKey].id.includes(glyph.type) || ( (Ra.unlocks.allGamespeedGlyphs.canBeApplied && glyph.type != "effarig") ? GlyphEffects[effectKey].id.includes("timespeed") : false) ))
     .filter(glyph => ( (1 << GlyphEffects[effectKey].bitmaskIndex) & glyph.effects) !== 0 )
     .filter(glyph => generatedTypes.includes(glyph.type) === GlyphEffects[effectKey].isGenerated)
     .map(glyph => getSingleGlyphEffectFromBitmask(effectKey, glyph));
