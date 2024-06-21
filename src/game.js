@@ -558,7 +558,7 @@ export function gameLoop(passDiff, options = {}) {
       const beforeStore = player.celestials.enslaved.stored;
       player.celestials.enslaved.stored = Decimal.clampMax(player.celestials.enslaved.stored.add(
         (totalTimeFactor.sub(reducedTimeFactor)).mul(amplification).mul(diff)), Enslaved.timeCap);
-      Enslaved.currentBlackHoleStoreAmountPerMs = (player.celestials.enslaved.stored - beforeStore) / diff;
+      Enslaved.currentBlackHoleStoreAmountPerMs = player.celestials.enslaved.stored.sub(beforeStore).div(diff);
       speedFactor = reducedTimeFactor;
     }
     diff = speedFactor.mul(diff);
@@ -575,17 +575,17 @@ export function gameLoop(passDiff, options = {}) {
   if ( GameEnd.additionalEnd < END_STATE_MARKERS.FADE_AWAY ) {
     player.records.realTimeDoomed += realDiff;
     player.records.realTimePlayed += realDiff;
-    player.records.totalTimePlayed += diff;
+    player.records.totalTimePlayed = player.records.totalTimePlayed.add(diff);
     player.records.thisInfinity.realTime += realDiff;
-    player.records.thisInfinity.time += diff;
+    player.records.thisInfinity.time = player.records.thisInfinity.time.add(diff);
     player.records.thisEternity.realTime += realDiff;
     if (Enslaved.isRunning && Enslaved.feltEternity && !EternityChallenge(12).isRunning) {
-      player.records.thisEternity.time += Math.min(diff * (1 + Currency.eternities.value.clampMax(1e66).toNumber()), 1e300);
+      player.records.thisEternity.time = player.records.thisEternity.time.add(Currency.eternities.value.clampMax(1e66).add(1).mul(diff));
     } else {
-      player.records.thisEternity.time += diff;
+      player.records.thisEternity.time = player.records.thisEternity.time.add(diff);
     }
     player.records.thisReality.realTime += realDiff;
-    player.records.thisReality.time += diff;
+    player.records.thisReality.time = player.records.thisReality.time.add(diff);
   }
 
   DeltaTimeState.update(realDiff, diff);
@@ -599,7 +599,6 @@ export function gameLoop(passDiff, options = {}) {
   if (!Pelle.isDoomed) {
     passivePrestigeGen();
   }
-
 
   applyAutoprestige(realDiff);
   updateImaginaryMachines(realDiff);
