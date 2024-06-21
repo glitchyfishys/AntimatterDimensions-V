@@ -269,7 +269,7 @@ top.player = {
   },
   records: {
     gameCreatedTime: Date.now(),
-    totalTimePlayed: 0,
+    totalTimePlayed: DC.D0,
     timePlayedAtBHUnlock: Decimal.NUMBER_MAX_VALUE,
     realTimePlayed: 0,
     realTimeDoomed: 0,
