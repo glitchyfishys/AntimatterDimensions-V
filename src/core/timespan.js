@@ -51,7 +51,7 @@ window.TimeSpan = class TimeSpan {
    * @param {Number} ms
    */
   constructor(ms) {
-    Guard.isNumber(ms, "Value 'ms' must be a number");
+    
     this._ms = ms;
   }
 
@@ -67,7 +67,7 @@ window.TimeSpan = class TimeSpan {
    * @param {Number} ms
    */
   setFrom(ms) {
-    Guard.isNumber(ms);
+
     this._ms = ms;
   }
 
