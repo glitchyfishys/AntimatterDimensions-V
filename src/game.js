@@ -342,11 +342,11 @@ export function getGameSpeedupFactor(effectsToConsider, blackHolesActiveOverride
 
   if (effects.includes(GAME_SPEED_EFFECT.FIXED_SPEED)) {
     if (EternityChallenge(12).isRunning) {
-      return 1 / 1000;
+      return new Decimal(0.001);
     }
   }
 
-  let factor = 1;
+  let factor = new Decimal(1);
   if (effects.includes(GAME_SPEED_EFFECT.BLACK_HOLE)) {
     if (BlackHoles.areNegative) {
       factor *= player.blackHoleNegative;
@@ -357,46 +357,46 @@ export function getGameSpeedupFactor(effectsToConsider, blackHolesActiveOverride
           ? blackHole.isActive
           : blackHole.id <= blackHolesActiveOverride;
         if (!isActive) break;
-        factor *= Math.pow(blackHole.power, BlackHoles.unpauseAccelerationFactor);
-        factor *= VUnlocks.achievementBH.effectOrDefault(1);
+        factor = factor.mul(Math.pow(blackHole.power, BlackHoles.unpauseAccelerationFactor));
+        factor = factor.mul(VUnlocks.achievementBH.effectOrDefault(1));
       }
     }
   }
 
   if (effects.includes(GAME_SPEED_EFFECT.SINGULARITY_MILESTONE)) {
-    factor *= SingularityMilestone.gamespeedFromSingularities.effectOrDefault(1);
+    factor = factor.mul(SingularityMilestone.gamespeedFromSingularities.effectOrDefault(1));
   }
 
   if (effects.includes(GAME_SPEED_EFFECT.TIME_GLYPH)) {
-    factor *= getAdjustedGlyphEffect("timespeed");
-    factor = Math.pow(factor, getAdjustedGlyphEffect("effarigblackhole"));
+    factor = factor.mul(getAdjustedGlyphEffect("timespeed"));
+    factor = Decimal.pow(factor, getAdjustedGlyphEffect("effarigblackhole"));
   }
 
-  factor *= GlitchRifts.alpha.milestones[2].effectOrDefault(1)
+  factor = factor.mul(GlitchRifts.alpha.milestones[2].effectOrDefault(1))
   
   if (Enslaved.isStoringGameTime && effects.includes(GAME_SPEED_EFFECT.TIME_STORAGE)) {
     const storedTimeWeight = Ra.unlocks.autoPulseTime.canBeApplied ? 0.99 : 1;
-    factor = factor * (1 - storedTimeWeight) + storedTimeWeight;
+    factor = factor.mul(1 - storedTimeWeight).add(storedTimeWeight);
   }
 
   // These effects should always be active, but need to be disabled during offline black hole simulations because
   // otherwise it gets applied twice
   if (effects.includes(GAME_SPEED_EFFECT.NERFS)) {
     if (Effarig.isRunning) {
-      factor = Effarig.multiplier(factor).toNumber();
+      factor = Effarig.multiplier(factor);
     }
     if (Laitela.isRunning && !GlitchRealityUpgrades.all[7].isBought) {
       const nerfModifier = Math.clampMax(Time.thisRealityRealTime.totalMinutes / 10, 1);
-      factor = Math.pow(factor, nerfModifier);
+      factor = Decimal.pow(factor, nerfModifier);
     }
   }
 
 
-  factor *= PelleUpgrade.timeSpeedMult.effectValue.toNumber();
+  factor = factor.mul(PelleUpgrade.timeSpeedMult.effectValue);
 
   // 1e-300 is now possible with max inverted BH, going below it would be possible with
   // an effarig glyph.
-  factor = Math.clamp(factor, 1e-300, 1e300);
+  factor = Decimal.clamp(factor, 1e-300, 1e300);
 
   return factor;
 }
