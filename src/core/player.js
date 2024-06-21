@@ -283,7 +283,7 @@ top.player = {
     recentRealities: Array.range(0, 10).map(() =>
       [Decimal.NUMBER_MAX_VALUE, Decimal.NUMBER_MAX_VALUE, DC.D1, 1, "", 0, 0]),
     thisInfinity: {
-      time: 0,
+      time: DC.D0,
       realTime: 0,
       lastBuyTime: 0,
       maxAM: DC.D0,
@@ -291,14 +291,14 @@ top.player = {
       bestIPminVal: DC.D0,
     },
     bestInfinity: {
-      time: Decimal.NUMBER_MAX_VALUE,
-      realTime: Decimal.NUMBER_MAX_VALUE,
+      time: DC.D0,
+      realTime: Number.MAX_VALUE,
       bestIPminEternity: DC.D0,
       bestIPminReality: DC.D0,
     },
     thisEternity: {
       time: DC.D0,
-      realTime: DC.D0,
+      realTime: 0,
       maxAM: DC.D0,
       maxIP: DC.D0,
       bestIPMsWithoutMaxAll: DC.D0,
@@ -308,11 +308,11 @@ top.player = {
     },
     bestEternity: {
       time: Decimal.NUMBER_MAX_VALUE,
-      realTime: Decimal.NUMBER_MAX_VALUE,
+      realTime: Number.MAX_VALUE,
       bestEPminReality: DC.D0,
     },
     thisReality: {
-      time: DC.D0,
+      time: 0,
       realTime: DC.D0,
       maxAM: DC.D0,
       maxIP: DC.D0,
@@ -324,7 +324,7 @@ top.player = {
       bestRSminVal: 0,
     },
     bestReality: {
-      time: Decimal.NUMBER_MAX_VALUE,
+      time: Number.MAX_VALUE,
       realTime: Decimal.NUMBER_MAX_VALUE,
       glyphStrength: 0,
       RM: DC.D0,
