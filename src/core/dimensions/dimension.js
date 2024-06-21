@@ -4,7 +4,7 @@ export class DimensionState {
     this._getData = getData;
     const DISPLAY_NAMES = [null, "First", "Second", "Third", "Fourth", "Fifth", "Sixth", "Seventh", "Eighth", "Ninth", "Tenth", "Eleventh", "Twelfth"];
     this._displayName = DISPLAY_NAMES[tier];
-    const SHORT_DISPLAY_NAMES = [null, "1st", "2nd", "3rd", "4th", "5th", "6th", "7th", "8th", "9th", "10th", "11th", "12"];
+    const SHORT_DISPLAY_NAMES = [null, "1st", "2nd", "3rd", "4th", "5th", "6th", "7th", "8th", "9th", "10th", "11th", "12th"];
     this._shortDisplayName = SHORT_DISPLAY_NAMES[tier];
   }
 
