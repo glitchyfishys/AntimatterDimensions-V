@@ -312,8 +312,8 @@ top.player = {
       bestEPminReality: DC.D0,
     },
     thisReality: {
-      time: 0,
-      realTime: DC.D0,
+      time: DC.D0,
+      realTime: 0,
       maxAM: DC.D0,
       maxIP: DC.D0,
       maxEP: DC.D0,
