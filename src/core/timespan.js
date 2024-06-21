@@ -210,13 +210,14 @@ window.TimeSpan = class TimeSpan {
   toStringNoDecimals() {
     const parts = [];
     function addCheckedComponent(value, name) {
-      if (value === 0) {
+      
+      if (value instanceof Decimal ? value.eq(0) : value === 0) {
         return;
       }
       addComponent(value, name);
     }
     function addComponent(value, name) {
-      parts.push(value === 1 ? `${formatInt(value)} ${name}` : `${formatInt(value)} ${name}s`);
+      parts.push((value instanceof Decimal ? value.eq(0) : value === 0) ? `${format(value,2)} ${name}` : `${format(value,2)} ${name}s`);
     }
     addCheckedComponent(this.years, "year");
     addCheckedComponent(this.days, "day");
@@ -224,7 +225,7 @@ window.TimeSpan = class TimeSpan {
     addCheckedComponent(this.minutes, "minute");
     addCheckedComponent(this.seconds, "second");
     // Join with commas and 'and' in the end.
-    if (parts.length === 0) return `${formatInt(0)} seconds`;
+    if (parts.length === 0) return `${format(0)} seconds`;
     return [parts.slice(0, -1).join(", "), parts.slice(-1)[0]].join(parts.length < 2 ? "" : " and ");
   }
 
@@ -261,10 +262,10 @@ window.TimeSpan = class TimeSpan {
     if (totalSeconds < 60) {
       return `${format(totalSeconds, 0, 2)} seconds`;
     }
-    if (this.totalHours < 100 || (isSpeedrun && this.totalHours < 1000)) {
+    if (this.totalHours instanceof Decimal ? this.totalHours.lt(100) : this.totalHours < 100) {
       if (useHMS && !Notations.current.isPainful) {
         const sec = seconds(this.seconds, this.milliseconds);
-        if (Math.floor(this.totalHours) === 0) return `${formatHMS(this.minutes)}:${sec}`;
+        if (this.totalHours instanceof Decimal ? this.totalHours.eq(0) : this.totalHours == 0) return `${formatHMS(this.minutes)}:${sec}`;
         return `${formatHMS(Math.floor(this.totalHours))}:${formatHMS(this.minutes)}:${sec}`;
       }
       if (this.totalMinutes < 60) {
@@ -275,9 +276,9 @@ window.TimeSpan = class TimeSpan {
       }
     }
     if (this.totalDays < 500) {
-      return `${isSpeedrun ? this.totalDays.toFixed(2) : format(this.totalDays, 0, 2)} days`;
+      return `${ format(this.totalDays, 0, 2)} days`;
     }
-    return `${isSpeedrun ? this.totalYears.toFixed(3) : format(this.totalYears, 3, 2)} years`;
+    return `${format(this.totalYears, 3, 2)} years`;
 
     function formatHMS(value) {
       const s = value.toString();
@@ -286,6 +287,7 @@ window.TimeSpan = class TimeSpan {
 
     function seconds(s, ms) {
       const sec = formatHMS(s);
+      if (ms instanceof Decimal) return isSpeedrun ? `${sec}.${ms.div(100).floor()}` : sec;
       return isSpeedrun ? `${sec}.${Math.floor(ms / 100)}` : sec;
     }
   }
@@ -317,9 +319,9 @@ const Guard = {
     throw "Value is defined";
   },
   isNumber(value, message) {
-    if (typeof value === "number") return;
+    if (typeof value === "number" || value instanceof Decimal) return;
     if (message) throw message;
-    throw "Value is not a number";
+    throw "Value is not a number or decimal";
   },
   isTimeSpan(value, message) {
     if (value instanceof TimeSpan) return;
