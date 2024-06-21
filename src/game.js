@@ -603,7 +603,7 @@ export function gameLoop(passDiff, options = {}) {
   applyAutoprestige(realDiff);
   updateImaginaryMachines(realDiff);
 
-  const uncountabilityGain = AlchemyResource.uncountability.effectValue * Time.unscaledDeltaTime.totalSeconds;
+  const uncountabilityGain = AlchemyResource.uncountability.effectValue * Time.unscaledDeltaTime.totalSeconds.toNumber();
   Currency.realities.add(uncountabilityGain);
   Currency.perkPoints.add(uncountabilityGain * GlitchRifts.gamma.milestones[1].effectOrDefault(1));
 
@@ -627,11 +627,11 @@ export function gameLoop(passDiff, options = {}) {
   replicantiLoop(diff);
 
   if (PlayerProgress.dilationUnlocked()) {
-    Currency.dilatedTime.add(getDilationGainPerSecond().times(diff / 1000));
+    Currency.dilatedTime.add(getDilationGainPerSecond().times( diff.div(1000) ));
   }
 
   updateTachyonGalaxies();
-  Currency.timeTheorems.add(getTTPerSecond().times(diff / 1000));
+  Currency.timeTheorems.add(getTTPerSecond().times(diff.div(1000)));
   InfinityDimensions.tryAutoUnlock();
 
   BlackHoles.updatePhases(blackHoleDiff);
@@ -873,7 +873,7 @@ function applyAutoprestige(diff) {
   }
 
   if (PelleRifts.chaos.milestones[2].canBeApplied) {
-    Currency.eternityPoints.add(gainedEternityPoints().times(DC.D0_1).times(diff / 1000));
+    Currency.eternityPoints.add(gainedEternityPoints().times(DC.D0_1).times(diff.div(1000)));
   }
 }
 
