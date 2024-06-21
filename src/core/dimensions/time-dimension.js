@@ -333,17 +333,17 @@ export const TimeDimensions = {
 
   tick(diff) {
     for (let tier = 8; tier > 1; tier--) {
-      TimeDimension(tier).produceDimensions(TimeDimension(tier - 1), diff / 10);
+      TimeDimension(tier).produceDimensions(TimeDimension(tier - 1), diff.div(10) );
     }
 
     if (EternityChallenge(7).isRunning) {
-      TimeDimension(1).produceDimensions(InfinityDimension(8), diff);
+      TimeDimension(1).produceDimensions(InfinityDimension(8), diff.div(10));
     } else {
-      TimeDimension(1).produceCurrency(Currency.timeShards, diff);
+      TimeDimension(1).produceCurrency(Currency.timeShards, diff.div(10));
     }
 
     EternityChallenge(7).reward.applyEffect(production => {
-      InfinityDimension(8).amount = InfinityDimension(8).amount.plus(production.times(diff / 1000));
+      InfinityDimension(8).amount = InfinityDimension(8).amount.plus(production.times(diff.div(1000)));
     });
   }
 };
