@@ -386,7 +386,7 @@ export function getGameSpeedupFactor(effectsToConsider, blackHolesActiveOverride
       factor = Effarig.multiplier(factor);
     }
     if (Laitela.isRunning && !GlitchRealityUpgrades.all[7].isBought) {
-      const nerfModifier = Math.clampMax(Time.thisRealityRealTime.totalMinutes / 10, 1);
+      const nerfModifier = Math.clampMax(Time.thisRealityRealTime.totalMinutes.div(10).toNumber(), 1);
       factor = Decimal.pow(factor, nerfModifier);
     }
   }
@@ -417,6 +417,7 @@ export function getGameSpeedupForDisplay() {
 // Separated out for organization; however this is also used in more than one spot in gameLoop() as well. Returns
 // true if the rest of the game loop should be skipped
 export function realTimeMechanics(realDiff) {
+  realDiff = realDiff.toNumber();
   player.IAP.STDcoins += realDiff / (1000 * 900);
 
   Currency.riftForce.add(Glitch.riftForceGain.div(1000 / realDiff));
@@ -696,19 +697,19 @@ export function gameLoop(passDiff, options = {}) {
 }
 
 function updatePrestigeRates() {
-  const currentIPmin = gainedInfinityPoints().dividedBy(Math.clampMin(0.0005, Time.thisInfinityRealTime.totalMinutes));
+  const currentIPmin = gainedInfinityPoints().dividedBy(Decimal.clampMin(0.0005, Time.thisInfinityRealTime.totalMinutes));
   if (currentIPmin.gt(player.records.thisInfinity.bestIPmin) && Player.canCrunch) {
     player.records.thisInfinity.bestIPmin = currentIPmin;
     player.records.thisInfinity.bestIPminVal = gainedInfinityPoints();
   }
 
-  const currentEPmin = gainedEternityPoints().dividedBy(Math.clampMin(0.0005, Time.thisEternityRealTime.totalMinutes));
+  const currentEPmin = gainedEternityPoints().dividedBy(Decimal.clampMin(0.0005, Time.thisEternityRealTime.totalMinutes));
   if (currentEPmin.gt(player.records.thisEternity.bestEPmin) && Player.canEternity) {
     player.records.thisEternity.bestEPmin = currentEPmin;
     player.records.thisEternity.bestEPminVal = gainedEternityPoints();
   }
 
-  const currentRSmin = Math.min(Effarig.shardsGained / Math.clampMin(0.0005, Time.thisRealityRealTime.totalMinutes), 1e280);
+  const currentRSmin = Effarig.shardsGained.div(Decimal.clampMin(0.0005, Time.thisRealityRealTime.totalMinutes));
   if (currentRSmin > player.records.thisReality.bestRSmin && isRealityAvailable() ) {
     player.records.thisReality.bestRSmin = currentRSmin;
     player.records.thisReality.bestRSminVal = Effarig.shardsGained;
@@ -735,7 +736,7 @@ function passivePrestigeGen() {
     let infGen = DC.D0;
     if (BreakInfinityUpgrade.infinitiedGen.isBought) {
       // Multipliers are done this way to explicitly exclude ach87 and TS32
-      infGen = infGen.plus(0.5 * Time.deltaTimeMs / Math.clampMin(50, player.records.bestInfinity.time));
+      infGen = infGen.plus(Time.deltaTimeMs.div(Decimal.clampMin(50, player.records.bestInfinity.time)).mul(0.5));
       infGen = infGen.timesEffectsOf(
         RealityUpgrade(5),
         RealityUpgrade(7),
@@ -772,6 +773,7 @@ function applyAutoUnlockPerks() {
 }
 
 function laitelaRealityTick(realDiff) {
+  realDiff = realDiff.toNumber();
   const laitelaInfo = player.celestials.laitela;
   if (!Laitela.isRunning) return;
   if (laitelaInfo.entropy >= 0) {
@@ -788,11 +790,11 @@ function laitelaRealityTick(realDiff) {
       realityReward: Laitela.realityReward
     };
     laitelaInfo.thisCompletion = Time.thisRealityRealTime.totalSeconds;
-    laitelaInfo.fastestCompletion = Math.min(laitelaInfo.thisCompletion, laitelaInfo.fastestCompletion);
+    laitelaInfo.fastestCompletion = Decimal.min(laitelaInfo.thisCompletion, laitelaInfo.fastestCompletion);
     clearCelestialRuns();
-    if (Time.thisRealityRealTime.totalSeconds < 30) {
+    if (Time.thisRealityRealTime.totalSeconds.lt(30)) {
       laitelaInfo.difficultyTier++;
-      laitelaInfo.fastestCompletion = 300;
+      laitelaInfo.fastestCompletion = new Decimal(300);
       completionText += laitelaBeatText(Laitela.maxAllowedDimension + 1);
       for (const quote of Laitela.quotes.all) {
         if (quote.requirement) {
@@ -803,8 +805,8 @@ function laitelaRealityTick(realDiff) {
     if (Laitela.realityReward > oldInfo.realityReward) {
       completionText += `<br><br>Dark Matter Multiplier: ${formatX(oldInfo.realityReward, 2, 2)}
       ➜ ${formatX(Laitela.realityReward, 2, 2)}`;
-      if (oldInfo.fastestCompletion === 3600 || oldInfo.fastestCompletion === 300 && oldInfo.difficultyTier > 0) {
-        if (Time.thisRealityRealTime.totalSeconds < 30) {
+      if (oldInfo.fastestCompletion.eq(3600) || oldInfo.fastestCompletion.eq(300) && oldInfo.difficultyTier > 0) {
+        if (Time.thisRealityRealTime.totalSeconds.lt(30)) {
           // First attempt - destabilising
           completionText += `<br>Best Completion Time: None ➜ Destabilized
           <br>Highest Active Dimension: ${formatInt(8 - oldInfo.difficultyTier)} ➜
@@ -815,7 +817,7 @@ function laitelaRealityTick(realDiff) {
             ${TimeSpan.fromSeconds(laitelaInfo.fastestCompletion).toStringShort()}
             <br>Highest Active Dimension: ${formatInt(8 - laitelaInfo.difficultyTier)}`;
         }
-      } else if (Time.thisRealityRealTime.totalSeconds < 30) {
+      } else if (Time.thisRealityRealTime.totalSeconds.lt(30)) {
         // Second+ attempt - destabilising
         completionText += `<br>Best Completion Time: ${TimeSpan.fromSeconds(oldInfo.fastestCompletion).toStringShort()}
           ➜ Destabilized
