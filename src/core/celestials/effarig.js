@@ -91,7 +91,7 @@ export const Effarig = {
     return shards.div(player.reality.glyphs.createdRealityGlyph ? 1 : 100); //better for glyphs
   },
   get maxRarityBoost() {
-    return 5 * Math.log10(Math.log10(Currency.relicShards.value + 10));
+    return 5 * Math.log10(Decimal.log10(Currency.relicShards.value.add(10)));
   },
   nerfFactor(power) {
     let c;
