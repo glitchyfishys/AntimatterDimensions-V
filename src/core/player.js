@@ -563,7 +563,7 @@ top.player = {
       lastRepeatedMachines: DC.D0
     },
     effarig: {
-      relicShards: 0,
+      relicShards: DC.D0,
       unlockBits: 0,
       run: false,
       quoteBits: 0,
@@ -682,8 +682,8 @@ top.player = {
           ascensionCount: 0
         })),
       entropy: 0,
-      thisCompletion: 3600,
-      fastestCompletion: 3600,
+      thisCompletion: new Decimal(3600),
+      fastestCompletion: new Decimal(3600),
       difficultyTier: 0,
       upgrades: {},
       darkMatterMult: DC.D0,
