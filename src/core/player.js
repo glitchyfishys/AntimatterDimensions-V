@@ -285,7 +285,7 @@ top.player = {
     thisInfinity: {
       time: DC.D0,
       realTime: 0,
-      lastBuyTime: 0,
+      lastBuyTime: DC.D0,
       maxAM: DC.D0,
       bestIPmin: DC.D0,
       bestIPminVal: DC.D0,
