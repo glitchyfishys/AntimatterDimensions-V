@@ -2,9 +2,9 @@ import { DC } from "../../../constants";
 
 const thisInfinityMult = thisInfinity => {
   // All "this inf time" or "best inf time" mults are * 10
-  const scaledInfinity = thisInfinity * 10 + 1;
-  const cappedInfinity = Math.min(Math.pow(scaledInfinity, 0.125), 500);
-  return DC.D15.pow(Math.log(scaledInfinity) * cappedInfinity);
+  const scaledInfinity = thisInfinity.mul(10).add(1) ;
+  const cappedInfinity = Decimal.min(Decimal.pow(scaledInfinity, 0.125), 500);
+  return DC.D15.pow(Decimal.log(scaledInfinity) * cappedInfinity);
 };
 const passiveIPMult = () => {
   const isEffarigLimited = Effarig.isRunning && Effarig.currentStage === EFFARIG_STAGES.ETERNITY;
@@ -213,7 +213,7 @@ export const normalTimeStudies = [
     requirement: [81],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     description: "Antimatter Dimension multiplier based on time spent in this Eternity",
-    effect: () => Decimal.pow10(Math.min(Time.thisEternity.totalMinutes, 20) * 15),
+    effect: () => Decimal.pow10(Decimal.min(Time.thisEternity.totalMinutes, 20) * 15),
     cap: DC.E300,
     formatEffect: value => formatX(value, 2, 1)
   },
@@ -223,7 +223,7 @@ export const normalTimeStudies = [
     requirement: [82],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     description: "Infinity Dimension multiplier based on fastest Eternity time",
-    effect: () => DC.D2.pow(60 / Math.max(Time.bestEternity.totalSeconds, 2)),
+    effect: () => DC.D2.pow( Decimal.div(60, Decimal.max(Time.bestEternity.totalSeconds, 2))),
     cap: DC.C2P30,
     formatEffect: value => formatX(value, 2, 1)
   },
@@ -286,7 +286,7 @@ export const normalTimeStudies = [
       were${PlayerProgress.realityUnlocked() ? " (real time)" : ""}`),
     effect: () => (Perk.studyActiveEP.isBought
       ? 50
-      : Math.clamp(250 / Player.averageRealTimePerEternity, 1, 50)),
+      : Math.clamp(250 / Player.averageRealTimePerEternity.toNumber(), 1, 50)),
     formatEffect: value => (Perk.studyActiveEP.isBought ? undefined : formatX(value, 1, 1)),
     cap: 50
   },
@@ -300,12 +300,12 @@ export const normalTimeStudies = [
     description: () => `You gain more EP based on average eternity ${PlayerProgress.realityUnlocked() ? " (real time)" : "time"} and time in this eternity`,
     effect: () => {
         let a = (Perk.studyPassive.isBought ? 10 : 5);
-        let b = (Perk.studyActiveEP.isBought ? 10 : Math.clamp(5 / Player.averageRealTimePerEternity, 1, 10));
+        let b = (Perk.studyActiveEP.isBought ? 10 : Math.clamp(5 / Player.averageRealTimePerEternity.toNumber(), 1, 10));
       
         const perkEffect = TimeSpan.fromMinutes(Perk.studyIdleEP.effectOrDefault(0));
         const totalSeconds = Time.thisEternity.plus(perkEffect).totalSeconds;
                    
-        return Math.clampMin(Math.sqrt(totalSeconds / 15), 1) * a * b;
+        return Decimal.clampMin(Decimal.sqrt(totalSeconds.div(15)), 1).mul(a * b);
         },
     formatEffect: value => (formatX(value, 1, 1)),
   },
@@ -318,9 +318,9 @@ export const normalTimeStudies = [
     requiresST: [121, 122],
     description: "You gain more Eternity Points based on time spent this Eternity",
     effect: () => {
-      const perkEffect = TimeSpan.fromMinutes(Perk.studyIdleEP.effectOrDefault(0));
+      const perkEffect = TimeSpan.fromMinutes(Perk.studyIdleEP.effectOrDefault(0)).toNumber();
       const totalSeconds = Time.thisEternity.plus(perkEffect).totalSeconds;
-      return Math.sqrt(1.39 * totalSeconds);
+      return Decimal.sqrt(1.39.mul(totalSeconds));
     },
     formatEffect: value => formatX(value, 1, 1)
   },
