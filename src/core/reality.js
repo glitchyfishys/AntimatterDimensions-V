@@ -657,8 +657,8 @@ export function finishProcessReality(realityProps) {
   Currency.infinitiesBanked.reset();
   player.records.bestInfinity.time = new Decimal(999999999999);
   player.records.bestInfinity.realTime = 999999999999;
-  player.records.thisInfinity.time = 0;
-  player.records.thisInfinity.lastBuyTime = 0;
+  player.records.thisInfinity.time =  new Decimal();
+  player.records.thisInfinity.lastBuyTime = new Decimal();
   player.records.thisInfinity.realTime = 0;
   player.dimensionBoosts = 0;
   player.galaxies = 0;
@@ -675,7 +675,7 @@ export function finishProcessReality(realityProps) {
   // This has to be reset before Currency.eternities to make the bumpLimit logic work correctly
   EternityUpgrade.epMult.reset();
   if (!PelleUpgrade.eternitiesNoReset.canBeApplied) Currency.eternities.reset();
-  player.records.thisEternity.time = 0;
+  player.records.thisEternity.time = new Decimal();
   player.records.thisEternity.realTime = 0;
   player.records.bestEternity.time = new Decimal(999999999999);
   player.records.bestEternity.realTime = 999999999999;
