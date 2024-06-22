@@ -417,7 +417,6 @@ export function getGameSpeedupForDisplay() {
 // Separated out for organization; however this is also used in more than one spot in gameLoop() as well. Returns
 // true if the rest of the game loop should be skipped
 export function realTimeMechanics(realDiff) {
-  realDiff = realDiff.toNumber();
   player.IAP.STDcoins += realDiff / (1000 * 900);
 
   Currency.riftForce.add(Glitch.riftForceGain.div(1000 / realDiff));
@@ -773,7 +772,7 @@ function applyAutoUnlockPerks() {
 }
 
 function laitelaRealityTick(realDiff) {
-  realDiff = realDiff.toNumber();
+  
   const laitelaInfo = player.celestials.laitela;
   if (!Laitela.isRunning) return;
   if (laitelaInfo.entropy >= 0) {
