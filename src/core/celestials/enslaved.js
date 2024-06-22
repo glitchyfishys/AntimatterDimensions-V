@@ -180,7 +180,7 @@ export const Enslaved = {
     return EffarigUnlock.eternity.isUnlocked;
   },
   get realityBoostRatio() {
-    return Math.max(1, Math.floor(player.celestials.enslaved.storedReal.toNumber() / Math.max(1000, Time.thisRealityRealTime.totalMilliseconds.toNumber())));
+    return Math.max(1, Math.floor(player.celestials.enslaved.storedReal / Math.max(1000, Time.thisRealityRealTime.totalMilliseconds.toNumber())));
   },
   get canAmplify() {
     return this.realityBoostRatio > 1 && !Pelle.isDoomed && !isInCelestialReality();
