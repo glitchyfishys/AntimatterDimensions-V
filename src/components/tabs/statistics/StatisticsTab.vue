@@ -132,7 +132,7 @@ export default {
         reality.best.setFrom(bestReality.time);
         reality.bestReal.setFrom(bestReality.realTime);
         reality.this.setFrom(records.thisReality.time);
-        reality.totalTimePlayed.setFrom(records.totalTimePlayed);
+        reality.totalTimePlayed.setFrom(new TimeSpan(records.totalTimePlayed));
         // Real time tracking is only a thing once reality is unlocked:
         infinity.thisReal.setFrom(records.thisInfinity.realTime);
         infinity.bankRate = infinity.projectedBanked.div(Decimal.clampMin(33, records.thisEternity.realTime)).times(60000);
