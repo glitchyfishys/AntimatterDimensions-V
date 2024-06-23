@@ -85,7 +85,7 @@ export const Effarig = {
     return this.uniqueglyphs;
   },
   get shardsGained() {
-    if (!TeresaUnlocks.effarig.canBeApplied) return 0;
+    if (!TeresaUnlocks.effarig.canBeApplied) return DC.D0;
     let shards = Decimal.pow(Currency.eternityPoints.exponent / 7500, this.glyphEffectAmount).floor().mul(AlchemyResource.effarig.effectValue);
     
     return shards.div(player.reality.glyphs.createdRealityGlyph ? 1 : 100); //better for glyphs
