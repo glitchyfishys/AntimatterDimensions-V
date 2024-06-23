@@ -20,13 +20,13 @@ export default {
       return this.times.sum();
     },
     completedAllChallenges() {
-      return this.timeSum < Number.MAX_VALUE;
+      return this.timeSum.lt(Number.MAX_VALUE);
     }
   },
   methods: {
     timeDisplayShort,
     completionString(time) {
-      return time < Number.MAX_VALUE
+      return time.lt(Number.MAX_VALUE)
         ? `record time: ${timeDisplayShort(time)}`
         : "has not yet been completed";
     }
