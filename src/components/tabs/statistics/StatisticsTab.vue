@@ -85,7 +85,7 @@ export default {
       const records = player.records;
       this.totalAntimatter.copyFrom(records.totalAntimatter);
       this.realTimePlayed.setFrom(records.realTimePlayed);
-      this.fullTimePlayed = TimeSpan.fromMilliseconds(records.previousRunRealTime + records.realTimePlayed);
+      this.fullTimePlayed = TimeSpan.fromMilliseconds(records.previousRunRealTime + records.realTimePlayed).toNumber();
       this.uniqueNews = NewsHandler.uniqueTickersSeen;
       this.totalNews = player.news.totalSeen;
       this.secretAchievementCount = SecretAchievements.all.filter(a => a.isUnlocked).length;
