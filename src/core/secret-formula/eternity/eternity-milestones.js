@@ -25,10 +25,10 @@ export const eternityMilestones = {
   autoEP: {
     eternities: 6,
     reward: () => {
-      const EPmin = getOfflineEPGain(TimeSpan.fromMinutes(1).totalMilliseconds);
-      const em200 = getEternitiedMilestoneReward(TimeSpan.fromHours(1).totalMilliseconds,
+      const EPmin = getOfflineEPGain(TimeSpan.fromMinutes(1).totalMilliseconds.toNumber());
+      const em200 = getEternitiedMilestoneReward(TimeSpan.fromHours(1).totalMilliseconds.toNumber(),
         EternityMilestone.autoEternities.isReached).gt(0);
-      const em1000 = getInfinitiedMilestoneReward(TimeSpan.fromHours(1).totalMilliseconds,
+      const em1000 = getInfinitiedMilestoneReward(TimeSpan.fromHours(1).totalMilliseconds.toNumber(),
         EternityMilestone.autoInfinities.isReached).gt(0);
       if (!player.options.offlineProgress) return `This milestone would give offline EP generation, but offline progress
         is currently disabled`;
