@@ -70,7 +70,7 @@ export default {
   },
   methods: {
     update() {
-      this.relicShards = Currency.relicShards.value;
+      this.relicShards = new Decimal(Currency.relicShards.value);
       this.shardRarityBoost = Effarig.maxRarityBoost / 100;
       this.shardPower = Ra.unlocks.maxGlyphRarityAndShardSacrificeBoost.effectOrDefault(1);
       this.shardsGained = Effarig.shardsGained;
