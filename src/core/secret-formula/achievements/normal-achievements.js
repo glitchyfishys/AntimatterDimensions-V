@@ -184,7 +184,7 @@ export const normalAchievements = [
     id: 37,
     name: "That's FAST!",
     get description() { return `Infinity in under ${formatInt(2)} hours.`; },
-    checkRequirement: () => Time.thisInfinityRealTime.totalHours <= 2,
+    checkRequirement: () => Time.thisInfinityRealTime.totalHours.lte(2),
     checkEvent: GAME_EVENT.BIG_CRUNCH_BEFORE,
     get reward() { return `Start with ${formatInt(5000)} antimatter.`; },
     effect: 5000
