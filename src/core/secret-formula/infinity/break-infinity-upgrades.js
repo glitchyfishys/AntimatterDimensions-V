@@ -65,7 +65,7 @@ export const breakInfinityUpgrades = {
     id: "challengeMult",
     cost: 1e7,
     description: "Antimatter Dimensions gain a multiplier based on slowest challenge run",
-    effect: () => Decimal.clampMin(50 / Time.worstChallenge.totalMinutes, 1),
+    effect: () => Decimal.clampMin( Decimal.div(50, Time.worstChallenge.totalMinutes), 1),
     formatEffect: value => formatX(value, 2, 2),
     hasCap: true,
     cap: DC.D3E4
@@ -76,7 +76,7 @@ export const breakInfinityUpgrades = {
     description: "Passively generate Infinities based on your fastest Infinity",
     effect: () => player.records.bestInfinity.time,
     formatEffect: value => {
-      if (value === Number.MAX_VALUE && !Pelle.isDoomed) return "No Infinity generation";
+      if (value.eq(Number.MAX_VALUE) && !Pelle.isDoomed) return "No Infinity generation";
       let infinities = DC.D1;
       infinities = infinities.timesEffectsOf(
         RealityUpgrade(5),
@@ -84,7 +84,7 @@ export const breakInfinityUpgrades = {
         Ra.unlocks.continuousTTBoost.effects.infinity
       );
       infinities = infinities.times(getAdjustedGlyphEffect("infinityinfmult"));
-      const timeStr = Time.bestInfinity.totalMilliseconds <= 50
+      const timeStr = Time.bestInfinity.totalMilliseconds.lte(50)
         ? `${TimeSpan.fromMilliseconds(100).toStringShort()} (capped)`
         : `${Time.bestInfinity.times(2).toStringShort()}`;
       return `${quantify("Infinity", infinities)} every ${timeStr}`;
