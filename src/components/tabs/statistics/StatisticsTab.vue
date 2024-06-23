@@ -181,9 +181,9 @@ export default {
       </div>
       <div class="c-stats-tab-general">
         <div>You have made a total of {{ format(totalAntimatter, 2, 1) }} antimatter.</div>
-        <div>You have played for {{ realTimePlayed }}. (real time)</div>
+        <div>You have played for {{ realTimePlayed.toStringShort() }}. (real time)</div>
         <div v-if="reality.isUnlocked">
-          Your existence has spanned {{ reality.totalTimePlayed }} of time. (game time)
+          Your existence has spanned {{ reality.totalTimePlayed.toStringShort() }} of time. (game time)
         </div>
         <div>
           Your save was created on {{ startDate }} ({{ saveAge }} ago)
@@ -206,7 +206,7 @@ export default {
           <b>
             You have completed the entire game {{ quantifyInt("time", fullGameCompletions) }}.
             <br>
-            You have played for {{ fullTimePlayed }} across all playthroughs.
+            You have played for {{ fullTimePlayed.toStringShort() }} across all playthroughs.
           </b>
         </div>
       </div>
