@@ -134,7 +134,7 @@ export default {
         reality.best = new TimeSpan(bestReality.time);
         reality.bestReal = new TimeSpan(bestReality.realTime);
         reality.this = new TimeSpan(records.thisReality.time);
-        reality.totalTimePlayed = new TimeSpan(records.totalTimePlayed);
+        reality.totalTimePlayed = records.totalTimePlayed.toStringShort();
         // Real time tracking is only a thing once reality is unlocked:
         infinity.thisReal = new TimeSpan(records.thisInfinity.realTime);
         infinity.bankRate = infinity.projectedBanked.div(Decimal.clampMin(33, records.thisEternity.realTime)).times(60000);
@@ -183,7 +183,7 @@ export default {
         <div>You have made a total of {{ format(totalAntimatter, 2, 1) }} antimatter.</div>
         <div>You have played for {{ realTimePlayed.toStringShort() }}. (real time)</div>
         <div v-if="reality.isUnlocked">
-          Your existence has spanned {{ reality.totalTimePlayed.toStringShort() }} of time. (game time)
+          Your existence has spanned {{ reality.totalTimePlayed }} of time. (game time)
         </div>
         <div>
           Your save was created on {{ startDate }} ({{ saveAge }} ago)
