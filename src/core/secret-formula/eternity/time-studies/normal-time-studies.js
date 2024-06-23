@@ -4,7 +4,7 @@ const thisInfinityMult = thisInfinity => {
   // All "this inf time" or "best inf time" mults are * 10
   const scaledInfinity = thisInfinity.mul(10).add(1) ;
   const cappedInfinity = Decimal.min(Decimal.pow(scaledInfinity, 0.125), 500);
-  return DC.D15.pow(Decimal.log(scaledInfinity) * cappedInfinity);
+  return DC.D15.pow(Decimal.log(scaledInfinity, Math.E) * cappedInfinity);
 };
 const passiveIPMult = () => {
   const isEffarigLimited = Effarig.isRunning && Effarig.currentStage === EFFARIG_STAGES.ETERNITY;
@@ -213,7 +213,7 @@ export const normalTimeStudies = [
     requirement: [81],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     description: "Antimatter Dimension multiplier based on time spent in this Eternity",
-    effect: () => Decimal.pow10(Decimal.min(Time.thisEternity.totalMinutes, 20) * 15),
+    effect: () => Decimal.pow10(Decimal.min(Time.thisEternity.totalMinutes, 20).mul(15)),
     cap: DC.E300,
     formatEffect: value => formatX(value, 2, 1)
   },
@@ -318,8 +318,8 @@ export const normalTimeStudies = [
     requiresST: [121, 122],
     description: "You gain more Eternity Points based on time spent this Eternity",
     effect: () => {
-      const perkEffect = TimeSpan.fromMinutes(Perk.studyIdleEP.effectOrDefault(0)).toNumber();
-      const totalSeconds = Time.thisEternity.plus(perkEffect).totalSeconds;
+      const perkEffect = TimeSpan.fromMinutes(Perk.studyIdleEP.effectOrDefault(0));
+      const totalSeconds = Time.thisEternity.plus(perkEffect).totalSeconds.toNumber();
       return Decimal.sqrt(1.39.mul(totalSeconds));
     },
     formatEffect: value => formatX(value, 1, 1)
@@ -398,7 +398,7 @@ export const normalTimeStudies = [
     description: "Multiplier to Infinity Points, which increases over this Infinity",
     effect: () => {
       const perkEffect = TimeSpan.fromMinutes(Perk.studyIdleEP.effectOrDefault(0));
-      const totalSeconds = Time.thisInfinity.plus(perkEffect).totalSeconds;
+      const totalSeconds = Time.thisInfinity.plus(perkEffect).totalSeconds.toNumber();
       return thisInfinityMult(totalSeconds);
     },
     formatEffect: value => formatX(value, 2, 1),
