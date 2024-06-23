@@ -740,7 +740,7 @@ export function finishProcessReality(realityProps) {
   resetChallengeStuff();
   AntimatterDimensions.reset();
   secondSoftReset(false);
-  player.celestials.ra.peakGamespeed = 1;
+  player.celestials.ra.peakGamespeed = DC.DM1;
 
   InfinityDimensions.resetAmount();
   player.records.thisInfinity.bestIPmin = DC.D0;
@@ -750,8 +750,8 @@ export function finishProcessReality(realityProps) {
   player.records.thisEternity.bestIPMsWithoutMaxAll = DC.D0;
   player.records.bestEternity.bestEPminReality = DC.D0;
   player.records.thisReality.bestEternitiesPerMs = DC.D0;
-  player.records.thisReality.bestRSmin = 0;
-  player.records.thisReality.bestRSminVal = 0;
+  player.records.thisReality.bestRSmin = DC.D0;
+  player.records.thisReality.bestRSminVal = DC.D0;
   resetTimeDimensions();
   resetTickspeed();
   AchievementTimers.marathon2.reset();
