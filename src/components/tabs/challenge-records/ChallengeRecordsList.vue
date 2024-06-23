@@ -17,7 +17,9 @@ export default {
   },
   computed: {
     timeSum() {
-      return this.times.sum();
+      let y = new Decimal(0);
+      this.times.forEach(x => y = y.add(x));
+      return y;
     },
     completedAllChallenges() {
       return this.timeSum.lt(Number.MAX_VALUE);
