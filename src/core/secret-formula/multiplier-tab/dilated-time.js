@@ -98,7 +98,7 @@ export const DT = {
   gamespeed: {
     name: "Current Game speed",
     multValue: () => getGameSpeedupForDisplay(),
-    isActive: () => getGameSpeedupForDisplay() > 1 && getDilationGainPerSecond().neq(0),
+    isActive: () => getGameSpeedupForDisplay().gt(1) && getDilationGainPerSecond().neq(0),
     ignoresNerfPowers: true,
     icon: MultiplierTabIcons.GAMESPEED,
   },
