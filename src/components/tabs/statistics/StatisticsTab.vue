@@ -45,7 +45,7 @@ export default {
         bestReal: TimeSpan.zero,
         this: TimeSpan.zero,
         thisReal: TimeSpan.zero,
-        totalTimePlayed: TimeSpan.zero,
+        totalTimePlayed: "",
         bestRate: new Decimal(0),
         bestRarity: 0,
       },
