@@ -105,7 +105,7 @@ export default {
           TimeStudy(191)
         );
         infinity.bankRate = infinity.projectedBanked.div(Decimal.clampMin(33, records.thisEternity.time)).times(60000);
-        infinity.hasBest = bestInfinity.time.gt(999999999999);
+        infinity.hasBest = bestInfinity.time.lt(999999999999);
         infinity.best = new TimeSpan(bestInfinity.time);
         infinity.this = new TimeSpan(records.thisInfinity.time);
         infinity.bestRate.copyFrom(bestInfinity.bestIPminEternity);
@@ -118,7 +118,7 @@ export default {
       
       if (isEternityUnlocked) {
         eternity.count.copyFrom(Currency.eternities);
-        eternity.hasBest = bestEternity.time.gt(999999999999);
+        eternity.hasBest = bestEternity.time.lt(999999999999);
         eternity.best = new TimeSpan(bestEternity.time);
         eternity.this = new TimeSpan(records.thisEternity.time);
         eternity.bestRate.copyFrom(bestEternity.bestEPminReality);
@@ -137,7 +137,7 @@ export default {
         reality.totalTimePlayed = new TimeSpan(records.totalTimePlayed);
         // Real time tracking is only a thing once reality is unlocked:
         infinity.thisReal = new TimeSpan(records.thisInfinity.realTime);
-        infinity.bankRate = infinity.projectedBanked.div(TimeSpan.clampMin(33, records.thisEternity.realTime)).times(60000);
+        infinity.bankRate = infinity.projectedBanked.div(Decimal.clampMin(33, records.thisEternity.realTime)).times(60000);
         eternity.thisReal = new TimeSpan(records.thisEternity.realTime);
         reality.thisReal = new TimeSpan(records.thisReality.realTime);
         reality.bestRate.copyFrom(bestReality.RMmin);
