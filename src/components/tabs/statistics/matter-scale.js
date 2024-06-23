@@ -7,6 +7,14 @@ export const MatterScale = {
     if (!matter) return ["There is no antimatter yet."];
     if (matter.gt(DC.E100000)) {
       return [
+        `If you wrote ${formatInt(3)} numbers a second, you would have to start`,
+        (TimeSpan.fromYears(Date.now()).years.sub(TimeSpan.fromYears(matter.log10() / 3).years)).toString() + " year's ago",
+        `to write down your antimatter amount.`
+      ];
+    }
+    
+    if (matter.gt(DC.E100000)) {
+      return [
         `If you wrote ${formatInt(3)} numbers a second, it would take you`,
         TimeSpan.fromSeconds(matter.log10() / 3).toString(),
         "to write down your antimatter amount."
