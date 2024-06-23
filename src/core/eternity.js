@@ -187,8 +187,8 @@ export function initializeResourcesAfterEternity() {
   Currency.infinities.reset();
   player.records.bestInfinity.time = new Decimal(999999999999);
   player.records.bestInfinity.realTime = 999999999999;
-  player.records.thisInfinity.time = 0;
-  player.records.thisInfinity.lastBuyTime = 0;
+  player.records.thisInfinity.time = DC.D0;
+  player.records.thisInfinity.lastBuyTime = DC.D0;
   player.records.thisInfinity.realTime = 0;
   player.dimensionBoosts = (EternityMilestone.keepInfinityUpgrades.isReached) ? (4 + GlitchRealityUpgrades.all[7].isBought): 0;
   player.galaxies = (EternityMilestone.keepInfinityUpgrades.isReached) ? 1 : 0;
@@ -197,7 +197,7 @@ export function initializeResourcesAfterEternity() {
   player.IPMultPurchases = 0;
   Currency.infinityPower.reset();
   Currency.timeShards.reset();
-  player.records.thisEternity.time = new Decimal();
+  player.records.thisEternity.time = DC.D0;
   player.records.thisEternity.realTime = 0;
   player.totalTickGained = 0;
   player.eterc8ids = 50;
