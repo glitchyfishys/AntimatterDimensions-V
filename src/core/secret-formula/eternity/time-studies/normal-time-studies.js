@@ -213,7 +213,7 @@ export const normalTimeStudies = [
     requirement: [81],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     description: "Antimatter Dimension multiplier based on time spent in this Eternity",
-    effect: () => Decimal.pow10(Decimal.min(Time.thisEternity.totalMinutes, 20).mul(15)),
+    effect: () => Decimal.pow10(Decimal.min(Time.thisEternity.totalMinutes, 20).mul(15).toNumber()),
     cap: DC.E300,
     formatEffect: value => formatX(value, 2, 1)
   },
@@ -319,8 +319,8 @@ export const normalTimeStudies = [
     description: "You gain more Eternity Points based on time spent this Eternity",
     effect: () => {
       const perkEffect = TimeSpan.fromMinutes(Perk.studyIdleEP.effectOrDefault(0));
-      const totalSeconds = Time.thisEternity.plus(perkEffect).totalSeconds.toNumber();
-      return Decimal.sqrt(1.39.mul(totalSeconds));
+      const totalSeconds = Time.thisEternity.plus(perkEffect).totalSeconds;
+      return Decimal.sqrt(Decimal.mul(1.39, totalSeconds));
     },
     formatEffect: value => formatX(value, 1, 1)
   },
