@@ -16,9 +16,13 @@ export default {
   methods: {
     update() {
       this.infinityChallengesUnlocked = PlayerProgress.infinityChallengeCompleted() || PlayerProgress.eternityUnlocked();
+      let n = [];
+      n.push(player.challenge.normal.bestTimes);
+      this.normalChallenges = n.flat().slice(0);
       
-      this.normalChallenges = new Array(player.challenge.normal.bestTimes).flat().slice(0);
-      this.infinityChallenges = new Array(player.challenge.infinity.bestTimes).flat().slice(0);
+      let i = [];
+      i.push(player.challenge.normal.bestTimes);
+      this.infinityChallenges = i.flat().slice(0);
     }
   }
 };
