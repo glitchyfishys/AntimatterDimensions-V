@@ -38,12 +38,12 @@ top.player = {
   challenge: {
     normal: {
       current: 0,
-      bestTimes: Array.repeat(Number.MAX_VALUE, 11),
+      bestTimes: Array.repeat(Decimal.NUMBER_MAX_VALUE, 11),
       completedBits: 0,
     },
     infinity: {
       current: 0,
-      bestTimes: Array.repeat(Number.MAX_VALUE, 8),
+      bestTimes: Array.repeat(Decimal.NUMBER_MAX_VALUE, 8),
       completedBits: 0,
     },
     eternity: {
@@ -276,12 +276,9 @@ top.player = {
     fullGameCompletions: 0,
     previousRunRealTime: 0,
     totalAntimatter: DC.E1,
-    recentInfinities: Array.range(0, 10).map(() =>
-      [Decimal.NUMBER_MAX_VALUE, Decimal.NUMBER_MAX_VALUE, DC.D1, DC.D1, ""]),
-    recentEternities: Array.range(0, 10).map(() =>
-      [Decimal.NUMBER_MAX_VALUE, Decimal.NUMBER_MAX_VALUE, DC.D1, DC.D1, "", DC.D0]),
-    recentRealities: Array.range(0, 10).map(() =>
-      [Decimal.NUMBER_MAX_VALUE, Decimal.NUMBER_MAX_VALUE, DC.D1, 1, "", 0, 0]),
+    recentInfinities: Array.range(0, 10).map(() => [Decimal.NUMBER_MAX_VALUE, Decimal.NUMBER_MAX_VALUE, DC.D1, DC.D1, ""]),
+    recentEternities: Array.range(0, 10).map(() => [Decimal.NUMBER_MAX_VALUE, Decimal.NUMBER_MAX_VALUE, DC.D1, DC.D1, "", DC.D0]),
+    recentRealities: Array.range(0, 10).map(() => [Decimal.NUMBER_MAX_VALUE, Decimal.NUMBER_MAX_VALUE, DC.D1, 1, "", 0, 0]),
     thisInfinity: {
       time: DC.D0,
       realTime: 0,
@@ -291,7 +288,7 @@ top.player = {
       bestIPminVal: DC.D0,
     },
     bestInfinity: {
-      time: DC.D0,
+      time: Decimal.NUMBER_MAX_VALUE,
       realTime: Number.MAX_VALUE,
       bestIPminEternity: DC.D0,
       bestIPminReality: DC.D0,
@@ -324,8 +321,8 @@ top.player = {
       bestRSminVal: DC.D0,
     },
     bestReality: {
-      time: Number.MAX_VALUE,
-      realTime: Decimal.NUMBER_MAX_VALUE,
+      time: Decimal.NUMBER_MAX_VALUE,
+      realTime: Number.MAX_VALUE,
       glyphStrength: 0,
       RM: DC.D0,
       RMSet: [],
