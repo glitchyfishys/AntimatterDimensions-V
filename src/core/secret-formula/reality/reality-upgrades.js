@@ -12,14 +12,13 @@ const rebuyable = props => {
     props.initialCost * props.costMult
   );
   const { effect } = props;
-  props.effect = () => Math.min( Math.pow(
-    effect + ImaginaryUpgrade(props.id).effectOrDefault(0),
-    player.reality.rebuyables[props.id] * getAdjustedGlyphEffect("realityrow1pow")), 1e250);
+  props.effect = () => Decimal.pow( effect + ImaginaryUpgrade(props.id).effectOrDefault(0),
+    player.reality.rebuyables[props.id] * getAdjustedGlyphEffect("realityrow1pow"));
   props.description = () => props.textTemplate.replace("{value}",
     ImaginaryUpgrade(props.id).effectValue === 0
       ? formatInt(effect)
       : format(effect + ImaginaryUpgrade(props.id).effectValue, 2, 2));
-  props.formatEffect = value => formatX( Math.min(value, 1e250) , 2, 0);
+  props.formatEffect = value => formatX(value, 2, 0);
   props.formatCost = value => format(value, 2, 0);
   return props;
 };
@@ -320,7 +319,7 @@ export const realityUpgrades = [
     checkRequirement: () => Currency.timeShards.exponent >= 28000,
     checkEvent: GAME_EVENT.GAME_TICK_AFTER,
     description: "Time Dimension multiplier based on days spent in this Reality",
-    effect: () => Decimal.pow10(Math.pow(1 + 2 * Math.log10(Time.thisReality.totalDays + 1), 1.6)),
+    effect: () => Decimal.pow10(Math.pow(1 + 2 * Decimal.log10(Time.thisReality.totalDays.add(1)), 1.6)),
     formatEffect: value => formatX(value, 2, 2)
   },
   {
