@@ -15,10 +15,10 @@ export default {
   },
   methods: {
     update() {
-      this.infinityChallengesUnlocked = PlayerProgress.infinityChallengeCompleted() ||
-        PlayerProgress.eternityUnlocked();
-      this.normalChallenges = player.challenge.normal.bestTimes.slice(0);
-      this.infinityChallenges = player.challenge.infinity.bestTimes.slice(0);
+      this.infinityChallengesUnlocked = PlayerProgress.infinityChallengeCompleted() || PlayerProgress.eternityUnlocked();
+      
+      this.normalChallenges = new Array(player.challenge.normal.bestTimes).flat().slice(0);
+      this.infinityChallenges = new Array(player.challenge.infinity.bestTimes).flat().slice(0);
     }
   }
 };
