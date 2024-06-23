@@ -429,7 +429,7 @@ Currency.darkMatter = new class extends DecimalCurrency {
   set value(value) {
     const capped = Decimal.min(value, "1e10000000");
     player.celestials.laitela.darkMatter = capped;
-    player.celestials.laitela.maxDarkMatter = player.celestials.laitela.maxDarkMatter.max(capped);
+    player.celestials.laitela.maxDarkMatter = player.celestials.laitela.maxDarkMatter.min(capped);
   }
 
   get max() { return player.celestials.laitela.maxDarkMatter; }
