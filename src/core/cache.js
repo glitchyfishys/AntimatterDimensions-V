@@ -111,9 +111,9 @@ export const GameCache = {
 
   totalIPMult: new Lazy(() => totalIPMult()),
 
-  challengeTimeSum: new Lazy(() => player.challenge.normal.bestTimes.sum()),
+  challengeTimeSum: new Lazy(() => {let v = new Decimal(0); for (let i = 0; i < 8; i++) {(v.add(player.challenge.normal.bestTimes))}; return v}),
 
-  infinityChallengeTimeSum: new Lazy(() => player.challenge.infinity.bestTimes.sum()),
+  infinityChallengeTimeSum: new Lazy(() =>  {let v = new Decimal(0); for (let i = 0; i < 8; i++) {(v.add(player.challenge.infinity.bestTimes))}; return v} ),
 };
 
 EventHub.logic.on(GAME_EVENT.GLYPHS_CHANGED, () => {
