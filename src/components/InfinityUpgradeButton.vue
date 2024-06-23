@@ -91,8 +91,11 @@ export default {
       this.hasTS31 = TimeStudy(31).canBeApplied;
       if (!this.isDisabled && this.isImprovedByTS31) this.ts31Effect = Decimal.pow(upgrade.config.effect(), 4);
       if (upgrade.id !== "challengeMult") return;
+      let y = new Decimal(0);
+      player.challenge.normal.bestTimes.forEach(x => y = y.add(x));
+      
       this.showWorstChallenge = upgrade.effectValue !== upgrade.cap &&
-        player.challenge.normal.bestTimes.sum() < Number.MAX_VALUE;
+        y.lt(Number.MAX_VALUE);
       const worstChallengeTime = GameCache.worstChallengeTime.value;
       const worstChallengeIndex = 2 + player.challenge.normal.bestTimes.indexOf(worstChallengeTime);
       this.worstChallengeString = `(Challenge ${worstChallengeIndex}: ${timeDisplayShort(worstChallengeTime)})`;
