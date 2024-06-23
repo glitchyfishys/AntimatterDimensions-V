@@ -398,7 +398,7 @@ export const normalTimeStudies = [
     description: "Multiplier to Infinity Points, which increases over this Infinity",
     effect: () => {
       const perkEffect = TimeSpan.fromMinutes(Perk.studyIdleEP.effectOrDefault(0));
-      const totalSeconds = Time.thisInfinity.plus(perkEffect).totalSeconds.toNumber();
+      const totalSeconds = Time.thisInfinity.plus(perkEffect).totalSeconds;
       return thisInfinityMult(totalSeconds);
     },
     formatEffect: value => formatX(value, 2, 1),
