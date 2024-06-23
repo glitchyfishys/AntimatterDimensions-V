@@ -2,7 +2,7 @@
 function averageRun(allRuns) {
   // Filter out all runs which have the default infinite value for time, but if we're left with no valid runs then we
   // take just one entry so that the averages also have the same value and we don't get division by zero.
-  let runs = allRuns.filter(run => run[0] !== Number.MAX_VALUE);
+  let runs = allRuns.filter(run => run[0] !== Decimal.NUMBER_MAX_VALUE);
   if (runs.length === 0) runs = [allRuns[0]];
 
   const longestRow = allRuns.map(r => r.length).max();
