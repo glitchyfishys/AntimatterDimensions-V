@@ -285,8 +285,8 @@ export const normalTimeStudies = [
       : `You gain more EP based on how fast your last ten Eternities
       were${PlayerProgress.realityUnlocked() ? " (real time)" : ""}`),
     effect: () => (Perk.studyActiveEP.isBought
-      ? 50
-      : Math.clamp(250 / Player.averageRealTimePerEternity.toNumber(), 1, 50)),
+      ? new Decimal(50)
+      : Decimal.clamp(Decimal.div(250,Player.averageRealTimePerEternity), 1, 50)),
     formatEffect: value => (Perk.studyActiveEP.isBought ? undefined : formatX(value, 1, 1)),
     cap: 50
   },
@@ -299,13 +299,13 @@ export const normalTimeStudies = [
     requiresST: [121, 123],
     description: () => `You gain more EP based on average eternity ${PlayerProgress.realityUnlocked() ? " (real time)" : "time"} and time in this eternity`,
     effect: () => {
-        let a = (Perk.studyPassive.isBought ? 10 : 5);
-        let b = (Perk.studyActiveEP.isBought ? 10 : Math.clamp(5 / Player.averageRealTimePerEternity.toNumber(), 1, 10));
+        let a = (Perk.studyPassive.isBought ? new Decimal(10) : new Decimal(5));
+        let b = (Perk.studyActiveEP.isBought ? new Decimal(10) : Decimal.clamp(Decimal.div(5, Player.averageRealTimePerEternity), 1, 10));
       
         const perkEffect = TimeSpan.fromMinutes(Perk.studyIdleEP.effectOrDefault(0));
         const totalSeconds = Time.thisEternity.plus(perkEffect).totalSeconds;
                    
-        return Decimal.clampMin(Decimal.sqrt(totalSeconds.div(15)), 1).mul(a * b);
+        return Decimal.clampMin(Decimal.sqrt(totalSeconds.div(15)), 1).mul(a.mul(b));
         },
     formatEffect: value => (formatX(value, 1, 1)),
   },
