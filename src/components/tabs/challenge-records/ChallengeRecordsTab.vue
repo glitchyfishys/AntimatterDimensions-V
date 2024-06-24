@@ -7,10 +7,10 @@ export default {
     ChallengeRecordsList
   },
   data() {
-    normalChallenges: [],
-    infinityChallenges: []
+    this.normalChallenges = []
+    this.infinityChallenges = []
     return {
-      infinityChallengesUnlocked: false,
+      infinityChallengesUnlocked: false
     };
   },
   methods: {
