@@ -547,7 +547,7 @@ top.player = {
   blackHolePause: false,
   blackHoleAutoPauseMode: 0,
   blackHolePauseTime: 0,
-  blackHoleNegative: 1,
+  blackHoleNegative: DC.D0,
   celestials: {
     teresa: {
       pouredAmount: 0,
@@ -1079,7 +1079,7 @@ export const Player = {
           // This only gets set to the correct value when Glyphs.updateMaxGlyphCount is called, which always happens
           // before this part of the code is reached in the Reality reset. Nevertheless, we want to keep its old value.
           maxGlyphs: glyphCount,
-          slowestBH: BlackHoles.areNegative ? player.blackHoleNegative : 1,
+          slowestBH: BlackHoles.areNegative ? player.blackHoleNegative : DC.D0,
         };
       // eslint-disable-next-line no-fallthrough
       case "eternity":
