@@ -8,7 +8,8 @@ export default {
     PrimaryButton
   },
   data() {
-    this.infinity = {
+    return {
+      infinity: {
         isUnlocked: false,
         count: new Decimal(0),
         banked: new Decimal(0),
@@ -19,8 +20,8 @@ export default {
         this: TimeSpan.zero,
         thisReal: TimeSpan.zero,
         bestRate: new Decimal(0),
-      }
-      this.eternity = {
+      },
+      eternity: {
         isUnlocked: false,
         count: new Decimal(0),
         hasBest: false,
@@ -28,8 +29,8 @@ export default {
         this: TimeSpan.zero,
         thisReal: TimeSpan.zero,
         bestRate: new Decimal(0),
-      }
-      this.reality = {
+      },
+      reality: {
         isUnlocked: false,
         count: 0,
         best: TimeSpan.zero,
@@ -39,9 +40,7 @@ export default {
         totalTimePlayed: "",
         bestRate: new Decimal(0),
         bestRarity: 0,
-      }
-    
-    return {
+      },
       isDoomed: false,
       realTimeDoomed: TimeSpan.zero,
       totalAntimatter: new Decimal(0),
