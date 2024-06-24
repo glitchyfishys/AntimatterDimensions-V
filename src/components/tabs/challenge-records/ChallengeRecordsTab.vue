@@ -7,28 +7,18 @@ export default {
     ChallengeRecordsList
   },
   data() {
+    normalChallenges: [],
+    infinityChallenges: []
     return {
       infinityChallengesUnlocked: false,
-      normalChallenges: [],
-      infinityChallenges: []
     };
   },
   methods: {
     update() {
       this.infinityChallengesUnlocked = PlayerProgress.infinityChallengeCompleted() || PlayerProgress.eternityUnlocked();
  
-      this.normalChallenges = this.vul();
-      this.infinityChallenges = this.val();
-    },
-    val(){
-      let i = [];
-      i.push(player.challenge.infinity.bestTimes);
-      return i.flat().slice(0);
-    },
-    vul(){
-      let n = [];
-      n.push(player.challenge.normal.bestTimes);
-      return n.flat().slice(0);
+      this.normalChallenges = player.challenge.normal.bestTimes.slice(0);
+      this.infinityChallenges = player.challenge.infinity.bestTimes.slice(0);
     }
   }
 };
