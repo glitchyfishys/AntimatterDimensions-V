@@ -8,16 +8,7 @@ export default {
     PrimaryButton
   },
   data() {
-    return {
-      isDoomed: false,
-      realTimeDoomed: TimeSpan.zero,
-      totalAntimatter: new Decimal(0),
-      realTimePlayed: TimeSpan.zero,
-      timeSinceCreation: 0,
-      uniqueNews: 0,
-      totalNews: 0,
-      secretAchievementCount: 0,
-      infinity: {
+    this.infinity: {
         isUnlocked: false,
         count: new Decimal(0),
         banked: new Decimal(0),
@@ -28,8 +19,8 @@ export default {
         this: TimeSpan.zero,
         thisReal: TimeSpan.zero,
         bestRate: new Decimal(0),
-      },
-      eternity: {
+      }
+      this.eternity: {
         isUnlocked: false,
         count: new Decimal(0),
         hasBest: false,
@@ -37,8 +28,8 @@ export default {
         this: TimeSpan.zero,
         thisReal: TimeSpan.zero,
         bestRate: new Decimal(0),
-      },
-      reality: {
+      }
+      this.reality: {
         isUnlocked: false,
         count: 0,
         best: TimeSpan.zero,
@@ -48,7 +39,17 @@ export default {
         totalTimePlayed: "",
         bestRate: new Decimal(0),
         bestRarity: 0,
-      },
+      }
+    
+    return {
+      isDoomed: false,
+      realTimeDoomed: TimeSpan.zero,
+      totalAntimatter: new Decimal(0),
+      realTimePlayed: TimeSpan.zero,
+      timeSinceCreation: 0,
+      uniqueNews: 0,
+      totalNews: 0,
+      secretAchievementCount: 0,
       matterScale: [],
       lastMatterTime: 0,
       paperclips: 0,
