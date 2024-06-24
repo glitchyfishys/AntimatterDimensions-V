@@ -344,10 +344,10 @@ export const normalTimeStudies = [
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     requiresST: [131, 133],
     description: () => (Pelle.isDoomed
-      ? `Replicanti Galaxies are ${formatPercents(0.25)} stronger and can get ${formatPercents(0.25)} more`
-      : `Replicanti Galaxies are ${formatPercents(0.25)} stronger and can get ${formatPercents(0.25)} more, Replicanti are also  
+      ? `Replicanti Galaxies are ${formatPercents(0.2)} stronger and can get ${formatPercents(0.2)} more`
+      : `Replicanti Galaxies are ${formatPercents(0.2)} stronger and can get ${formatPercents(0.2)} more, Replicanti are also  
         ${Perk.studyPassive.isBought ? formatX(3) : formatX(1.5, 1, 1)} faster`),
-    effect: () => Math.floor(player.replicanti.boughtGalaxyCap / 4)
+    effect: () => Math.floor(player.replicanti.boughtGalaxyCap / 5)
   },
   {
     id: 133,
