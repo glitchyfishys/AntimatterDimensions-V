@@ -6,7 +6,7 @@ export function effectiveBaseGalaxies() {
   replicantiGalaxies *= (1 + Effects.sum(
     TimeStudy(133)
   ));
-  if (TimeStudy(132).isBought) replicantiGalaxies *= 1.25;
+  if (TimeStudy(132).isBought) replicantiGalaxies *= 1.2;
   
   // "extra" galaxies unaffected by the passive/idle boosts come from studies 225/226 and Effarig Infinity
   replicantiGalaxies += Replicanti.galaxies.extra;
