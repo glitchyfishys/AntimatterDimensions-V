@@ -99,8 +99,8 @@ export default {
       infinity.isUnlocked = isInfinityUnlocked;
       
       if (isInfinityUnlocked) {
-        infinity.count.copyFrom(Currency.infinities);
-        infinity.banked.copyFrom(Currency.infinitiesBanked);
+        infinity.count = Currency.infinities;
+        infinity.banked = Currency.infinitiesBanked;
         infinity.projectedBanked = new Decimal(0).plusEffectsOf(
           Achievement(131).effects.bankedInfinitiesGain,
           TimeStudy(191)
@@ -118,7 +118,7 @@ export default {
       eternity.isUnlocked = isEternityUnlocked;
       
       if (isEternityUnlocked) {
-        eternity.count.copyFrom(Currency.eternities);
+        eternity.count = Currency.eternities;
         eternity.hasBest = bestEternity.time.lt(999999999999);
         eternity.best = new TimeSpan(bestEternity.time);
         eternity.this = new TimeSpan(records.thisEternity.time);
