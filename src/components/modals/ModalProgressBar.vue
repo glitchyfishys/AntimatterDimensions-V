@@ -16,7 +16,7 @@ export default {
       };
     },
     remainingTime() {
-      const timeSinceStart = Date.now() - this.progress.startTime;
+      const timeSinceStart = Decimal.sub(Date.now(), this.progress.startTime).toNumber();
       const ms = timeSinceStart * (this.progress.max - this.progress.current) / this.progress.current;
       return TimeSpan.fromMilliseconds(ms).toStringShort();
     },
