@@ -517,9 +517,9 @@ export const BlackHoles = {
     const effectivePeriods = this.realTimePeriodsWithBlackHoleEffective(realerTime, speedups);
     // This adds in time with black holes paused at the end of the list.
     effectivePeriods[0] += realTime - realerTime;
-    return effectivePeriods
-      .map((period, i) =>  speedups[i].mul(period))
-      .sum();
+    let v = new Decimal();
+    effectivePeriods.map((period, i) =>  speedups[i].mul(period)).forEach(a => v.add(a));
+    return v;
   },
 
   /**
