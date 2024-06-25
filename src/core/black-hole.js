@@ -446,7 +446,7 @@ export const BlackHoles = {
     // binarySearch from working in the numberOfTicks = 1 case.
     // I doubt that's possible but it seems worth handling just in case.
     if (numberOfTicks === 1) {
-      return [totalRealTime, totalGameTime / totalRealTime];
+      return [totalRealTime, totalGameTime.div(totalRealTime)];
     }
     // We want calculateGameTimeFromRealTime(realTickTime, speedups) * numberOfTicks / totalGameTime to be roughly 1
     // (that is, the tick taking realTickTime real time has roughly average length in terms of game time).
@@ -458,7 +458,7 @@ export const BlackHoles = {
     const realTickTime = this.binarySearch(
       0,
       totalRealTime,
-      x => this.calculateGameTimeFromRealTime(x, speedups).mul(numberOfTicks / totalGameTime),
+      x => this.calculateGameTimeFromRealTime(x, speedups).mul(Decimal.div(numberOfTicks, totalGameTime)),
       1,
       tolerance
     );
