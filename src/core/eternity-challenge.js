@@ -349,12 +349,12 @@ export const EternityChallenges = {
       }
       const interval = this.interval;
       let next = this.nextChallenge;
-      while (player.reality.lastAutoEC - interval > 0 && next !== undefined) {
-        player.reality.lastAutoEC -= interval;
+      while (player.reality.lastAutoEC.sub(interval).gt(0) && next !== undefined) {
+        player.reality.lastAutoEC = player.reality.lastAutoEC.sub(interval);
         next.addCompletion(true);
         next = this.nextChallenge;
       }
-      player.reality.lastAutoEC %= interval;
+      player.reality.lastAutoEC %= interval.toNumber();
     },
 
     get nextChallenge() {
@@ -364,12 +364,12 @@ export const EternityChallenges = {
     get interval() {
       if (!Perk.autocompleteEC1.canBeApplied) return Infinity;
       let minutes = Effects.min(
-        Number.MAX_VALUE,
+        Decimal.NUMBER_MAX_VALUE,
         Perk.autocompleteEC1,
         Perk.autocompleteEC2,
         Perk.autocompleteEC3
       );
-      minutes /= VUnlocks.fastAutoEC.effectOrDefault(1);
+      minutes = minutes.div(VUnlocks.fastAutoEC.effectOrDefault(1));
       return TimeSpan.fromMinutes(minutes).totalMilliseconds;
     }
   }
