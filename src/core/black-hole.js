@@ -458,11 +458,11 @@ export const BlackHoles = {
     const realTickTime = this.binarySearch(
       0,
       totalRealTime,
-      x => this.calculateGameTimeFromRealTime(x, speedups) * numberOfTicks / totalGameTime,
+      x => this.calculateGameTimeFromRealTime(x, speedups).mul(numberOfTicks / totalGameTime),
       1,
       tolerance
     );
-    const blackHoleSpeedup = this.calculateGameTimeFromRealTime(realTickTime, speedups) / realTickTime;
+    const blackHoleSpeedup = this.calculateGameTimeFromRealTime(realTickTime, speedups).div(realTickTime);
     return [realTickTime, blackHoleSpeedup];
   },
 
