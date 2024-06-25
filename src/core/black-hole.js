@@ -504,7 +504,7 @@ export const BlackHoles = {
     // Crucial thing: this works even if the black holes are paused, it's just that the speedups will be 1.
     for (const blackHole of this.list) {
       if (!blackHole.isUnlocked) break;
-      speedups.push(getGameSpeedupFactor(effectsToConsider, blackHole.id) / speedupWithoutBlackHole);
+      speedups.push(getGameSpeedupFactor(effectsToConsider, blackHole.id).div(speedupWithoutBlackHole));
     }
     return speedups;
   },
