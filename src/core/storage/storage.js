@@ -250,8 +250,8 @@ export const GameStorage = {
     return !isEnd && !(isSelectingGlyph || isSimulating);
   },
 
-  save(silent = true, manual = false) {
-    if (!this.canSave()) return;
+  save(silent = true, manual = false, force = false) {
+    if (!this.canSave() && !force) return;
     this.lastSaveTime = Date.now();
     GameIntervals.save.restart();
     if (manual && ++this.saved > 99) SecretAchievement(12).unlock();
