@@ -369,7 +369,7 @@ export const EternityChallenges = {
         Perk.autocompleteEC2,
         Perk.autocompleteEC3
       );
-      minutes = minutes.div(VUnlocks.fastAutoEC.effectOrDefault(1));
+      minutes /= VUnlocks.fastAutoEC.effectOrDefault(1);
       return TimeSpan.fromMinutes(minutes).totalMilliseconds;
     }
   }
