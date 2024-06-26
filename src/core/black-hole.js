@@ -361,12 +361,12 @@ export const BlackHoles = {
 
   togglePause: (automatic = false) => {
     if (!BlackHoles.areUnlocked) return;
-    const maxInversion = player.requirementChecks.reality.slowestBH <= 1e-300;
+    const maxInversion = player.requirementChecks.reality.slowestBH.lte(1e-300);
     if (ImaginaryUpgrade(24).isLockingMechanics && Ra.isRunning && maxInversion) {
       if (!automatic) ImaginaryUpgrade(24).tryShowWarningModal("uninvert your Black Hole");
       return;
     }
-    if (player.blackHolePause) player.requirementChecks.reality.slowestBH = 1;
+    if (player.blackHolePause) player.requirementChecks.reality.slowestBH = DC.D1;
     player.blackHolePause = !player.blackHolePause;
     player.blackHolePauseTime = player.records.realTimePlayed;
     const blackHoleString = RealityUpgrade(20).isBought ? "Black Holes" : "Black Hole";
@@ -390,7 +390,7 @@ export const BlackHoles = {
   },
 
   get areNegative() {
-    return this.arePaused && (!Laitela.isRunning || GlitchRealityUpgrades.all[10].isBought) && player.blackHoleNegative < 1;
+    return this.arePaused && (!Laitela.isRunning || GlitchRealityUpgrades.all[10].isBought) && player.blackHoleNegative.lt(1);
   },
 
   get arePermanent() {
