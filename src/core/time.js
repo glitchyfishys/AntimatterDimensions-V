@@ -289,8 +289,8 @@ export const Time = {
     return this.fromMilliseconds(() => GameCache.infinityChallengeTimeSum.value);
   },
 
-  get autoECInterval(){
-  return this.fromMilliseconds(() => player.reality.autoECInterval);
+  get lastAutoEC(){
+  return this.fromMilliseconds(() => player.reality.lastAutoEC);
   }
   
 };
