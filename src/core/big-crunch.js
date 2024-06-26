@@ -172,10 +172,10 @@ export function preProductionGenerateIP(diff) {
     const genPeriod = Time.bestInfinity.totalMilliseconds.mul(10);
     let genCount;
     if (Decimal.gte(diff, genPeriod.mul(1e300))) {
-      genCount = Decimal.div(diff, genPeriod);
+      genCount = Decimal.div(diff, genPeriod).toNumber();
     } else {
       // Partial progress (fractions from 0 to 1) are stored in player.partInfinityPoint
-      player.partInfinityPoint += diff.div(genPeriod).toNumber();
+      player.partInfinityPoint += Decimal.div(diff, genPeriod).toNumber();
       genCount = Math.floor(player.partInfinityPoint);
       player.partInfinityPoint -= genCount;
     }
