@@ -459,7 +459,7 @@ export const BlackHoles = {
       0,
       totalRealTime,
       x => this.calculateGameTimeFromRealTime(x, speedups).mul(Decimal.div(numberOfTicks, totalGameTime)),
-      1,
+      DC.D1,
       tolerance
     );
     const blackHoleSpeedup = this.calculateGameTimeFromRealTime(realTickTime, speedups).div(realTickTime);
@@ -476,9 +476,9 @@ export const BlackHoles = {
     let middle;
     for (let iter = 0; iter < 100; ++iter) {
       middle = (start + end) / 2;
-      const error = evaluationFunction(middle) - target;
-      if (Math.abs(error) < tolerance) break;
-      if (error < 0) {
+      const error = evaluationFunction(middle).sub(target);
+      if (Decimal.abs(error).lt(tolerance)) break;
+      if (error.lt(0)) {
         // eslint-disable-next-line no-param-reassign
         start = middle;
       } else {
