@@ -59,7 +59,7 @@ export default {
       this.remainingECTiers = remainingCompletions;
       if (remainingCompletions !== 0) {
         const autoECInterval = EternityChallenges.autoComplete.interval;
-        const untilNextEC = new TimeSpan(Decimal.max(Decimal.sub(autoECInterval, Time.lastAutoEC), 0));
+        const untilNextEC = new TimeSpan(Decimal.max(Decimal.sub(autoECInterval, Time.lastAutoEC.milliseconds), 0));
         this.untilNextEC.copyFrom(untilNextEC);
         this.untilAllEC.copyFrom(untilNextEC.add(autoECInterval.mul(remainingCompletions - 1)));
       }
