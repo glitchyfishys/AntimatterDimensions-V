@@ -164,9 +164,9 @@ export default {
       v-if="showAutoAchieve"
       class="c-achievements-tab__header"
     >
-      <div v-if="achCountdown.gt(0)">
+      <div v-if="achCountdown > 0">
         Automatically gain the next missing Achievement in
-        {{ timeDisplayNoDecimals(achCountdown.toNumber()) }}<span v-if="!isAutoAchieveActive"> once Auto is turned on</span>.
+        {{ timeDisplayNoDecimals(achCountdown) }}<span v-if="!isAutoAchieveActive"> once Auto is turned on</span>.
         (left-to-right, top-to-bottom)
       </div>
       <div v-else-if="missingAchievements !== 0">
