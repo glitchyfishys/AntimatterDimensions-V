@@ -35,7 +35,7 @@ export default {
       this.isNegativeBHUnlocked = V.isFlipped && BlackHoles.arePermanent;
       this.isInverted = BlackHoles.areNegative;
       this.isLaitela = Laitela.isRunning;
-      this.negativeSlider = -Math.log10(player.blackHoleNegative);
+      this.negativeSlider = -Decimal.log10(player.blackHoleNegative);
       this.negativeBHDivisor = Decimal.pow10(his.negativeSlider);
       const maxInversion = player.requirementChecks.reality.slowestBH.lte(1e-300);
       this.isDisabled = ImaginaryUpgrade(24).isLockingMechanics && Ra.isRunning && maxInversion;
