@@ -172,7 +172,7 @@ export function preProductionGenerateIP(diff) {
     const genPeriod = Time.bestInfinity.totalMilliseconds.mul(10);
     let genCount;
     if (Decimal.gte(diff, genPeriod.mul(1e300))) {
-      genCount = Decimal.div(diff, genPeriod).toNumber();
+      genCount = Decimal.div(diff, genPeriod).min(1e300).toNumber();
     } else {
       // Partial progress (fractions from 0 to 1) are stored in player.partInfinityPoint
       player.partInfinityPoint += Decimal.div(diff, genPeriod).toNumber();
@@ -184,5 +184,5 @@ export function preProductionGenerateIP(diff) {
     const gainedThisTick = new Decimal(genCount).times(gainedPerGen);
     Currency.infinityPoints.add(gainedThisTick);
   }
-  Currency.infinityPoints.add(BreakInfinityUpgrade.ipGen.effectOrDefault(DC.D0).times( diff / 60000));
+  Currency.infinityPoints.add(BreakInfinityUpgrade.ipGen.effectOrDefault(DC.D0).times( Decimal.div(diff, 60000)));
 }
