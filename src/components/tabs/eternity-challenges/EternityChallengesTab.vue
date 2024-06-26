@@ -59,9 +59,9 @@ export default {
       this.remainingECTiers = remainingCompletions;
       if (remainingCompletions !== 0) {
         const autoECInterval = EternityChallenges.autoComplete.interval;
-        const untilNextEC = new TimeSpan(Decimal.max(Decimal.sub(autoECInterval, Time.lastAutoEC.milliseconds), 0));
+        const untilNextEC = new TimeSpan(Decimal.max(Decimal.sub(autoECInterval, Time.lastAutoEC.totalMilliseconds), 0));
         this.untilNextEC.copyFrom(untilNextEC);
-        this.untilAllEC.copyFrom(untilNextEC.add(autoECInterval.mul(remainingCompletions - 1)));
+        this.untilAllEC.copyFrom(untilNextEC.totalMilliseconds.add(autoECInterval.mul(remainingCompletions - 1)));
       }
       this.hasECR = Perk.studyECRequirement.isBought;
     },
