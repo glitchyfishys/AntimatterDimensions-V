@@ -123,8 +123,14 @@ export default {
     },
     bulk(){
       DilationUpgrades.rebuyable[0].purchase(1e8);
-      DilationUpgrades.rebuyable[1].purchase(1e8);
       DilationUpgrades.rebuyable[2].purchase(1e8);
+      if(PelleRifts.paradox.milestones[0].canBeApplied){
+      DilationUpgrades.rebuyable[3].purchase(1e8);
+      DilationUpgrades.rebuyable[4].purchase(1e8);
+      DilationUpgrades.rebuyable[5].purchase(1e8);
+      }
+      
+      DilationUpgrades.rebuyable[1].purchase(1e8);
     }
   }
 };
