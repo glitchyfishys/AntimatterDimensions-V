@@ -607,7 +607,7 @@ export function gameLoop(passDiff, options = {}) {
   Currency.realities.add(uncountabilityGain);
   Currency.perkPoints.add(uncountabilityGain * GlitchRifts.gamma.milestones[1].effectOrDefault(1));
 
-  if (Perk.autocompleteEC1.canBeApplied) player.reality.lastAutoEC += realDiff;
+  if (Perk.autocompleteEC1.canBeApplied) player.reality.lastAutoEC = player.reality.lastAutoEC.add(realDiff);
 
   EternityChallenge(12).tryFail();
   Achievements._power.invalidate();
