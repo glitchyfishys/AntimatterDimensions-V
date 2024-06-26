@@ -14,7 +14,7 @@ export default {
     return {
       unlockedCount: 0,
       showAllChallenges: false,
-      autoEC: false,
+      autoEC: TimeSpan.zero,
       isAutoECVisible: false,
       hasUpgradeLock: false,
       remainingECTiers: 0,
@@ -59,9 +59,9 @@ export default {
       this.remainingECTiers = remainingCompletions;
       if (remainingCompletions !== 0) {
         const autoECInterval = EternityChallenges.autoComplete.interval;
-        const untilNextEC = Math.max(autoECInterval - player.reality.lastAutoEC, 0);
-        this.untilNextEC.setFrom(untilNextEC);
-        this.untilAllEC.setFrom(untilNextEC + (autoECInterval * (remainingCompletions - 1)));
+        const untilNextEC = new TimeSpan(Decimal.max(Decimal.sub(autoECInterval, player.reality.lastAutoEC), 0));
+        this.untilNextEC.copyFrom(untilNextEC);
+        this.untilAllEC.copyFrom(untilNextEC.add(autoECInterval * (remainingCompletions - 1)));
       }
       this.hasECR = Perk.studyECRequirement.isBought;
     },
