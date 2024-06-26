@@ -49,10 +49,10 @@ export const GlyphSelection = {
     if (GlyphGenerator.isUniformityActive) {
       glyphList = GlyphGenerator.uniformGlyphs(level, rng, player.realities);
     } else {
-      for (let out = ; out < count; ++out) {
+      for (let out = 0; out < count; ++out) {
         types.push(GlyphGenerator.randomType(rng, types));
       }
-      for (let out = ; out < count; ++out) {
+      for (let out = 0; out < count; ++out) {
         glyphList.push(GlyphGenerator.randomGlyph(level, rng, types[out]));
       }
     }
