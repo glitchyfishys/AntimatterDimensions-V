@@ -259,7 +259,7 @@ top.player = {
       maxID1: DC.D0,
       maxStudies: 0,
       maxGlyphs: 0,
-      slowestBH: 1,
+      slowestBH: DC.D0,
     },
     permanent: {
       emojiGalaxies: 0,
