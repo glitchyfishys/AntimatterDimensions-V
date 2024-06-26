@@ -146,7 +146,7 @@ export function totalReplicantiSpeedMult(overCap) {
     breakinfinityUGs.all[4]
   );
   
-  totalMult = totalMult.times(preCelestialEffects).mul(RealityUpgrade(2).effectOrDefault(DD.D1));
+  totalMult = totalMult.times(preCelestialEffects).mul(RealityUpgrade(2).effectOrDefault(D.D1));
   if (TimeStudy(132).isBought) totalMult = totalMult.times(Perk.studyPassive.isBought ? 3 : 1.5);
 
   if (!overCap && Achievement(134).isUnlocked) totalMult = totalMult.times(2);
