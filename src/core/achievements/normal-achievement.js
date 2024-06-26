@@ -158,7 +158,7 @@ export const Achievements = {
     if (Achievements.preReality.every(a => a.isUnlocked)) return;
 
     player.reality.achTimer = player.reality.achTimer.add(diff);
-    if (player.reality.achTimer < this.period) return;
+    if (player.reality.achTimer.lt(this.period)) return;
 
     for (const achievement of Achievements.preReality.filter(a => !a.isUnlocked)) {
       achievement.unlock(true);
