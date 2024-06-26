@@ -863,7 +863,7 @@ function applyAutoprestige(diff) {
 
   if (TeresaUnlocks.epGen.canBeApplied) {
     Currency.eternityPoints.add(player.records.thisEternity.bestEPmin.times(DC.D0_01)
-      .times(getGameSpeedupFactor().mul(diff.div(1000))).timesEffectOf(Ra.unlocks.continuousTTBoost.effects.autoPrestige));
+      .times(getGameSpeedupFactor().mul(Decimal.div(diff, 1000))).timesEffectOf(Ra.unlocks.continuousTTBoost.effects.autoPrestige));
   }
 
   if (InfinityUpgrade.ipGen.isCharged) {
