@@ -17,7 +17,7 @@ export const ra = {
       chunkGain: "Relic Shards gained",
       memoryGain: "best Glyph level",
       requiredUnlock: () => Ra.unlocks.effarigUnlock,
-      rawMemoryChunksPerSecond: () => 4 * Math.pow(Effarig.shardsGained, 0.15),
+      rawMemoryChunksPerSecond: () => 4 * Decimal.pow(Effarig.shardsGained, 0.15).toNumber(),
       memoryProductionMultiplier: () => Ra.unlocks.effarigXP.effectOrDefault(1)
     },
     enslaved: {
@@ -177,7 +177,7 @@ export const ra = {
       id: 15,
       reward: "Stored game time is amplified and you can store more real time, increasing with Nameless levels",
       effects: {
-        gameTimeAmplification: () => Math.pow(20, Math.clampMax(Ra.pets.enslaved.level, Ra.levelCap)),
+        gameTimeAmplification: () => Decimal.pow(20, Math.clampMax(Ra.pets.enslaved.level, Ra.levelCap)),
         realTimeCap: () => 1000 * 3600 * Ra.pets.enslaved.level,
       },
       pet: "enslaved",
@@ -260,7 +260,7 @@ export const ra = {
       id: 24,
       reward: () => `Unlock Hard V-Achievements and unlock a Triad Study every ${formatInt(6)} levels.
         Triad Studies are located at the bottom of the Time Studies page`,
-      effect: () => Math.floor(Ra.pets.v.level / 6),
+      effect: () => Math.min(Math.floor(Ra.pets.v.level / 6), 4),
       pet: "v",
       level: 6,
       displayIcon: `<span class="fas fa-trophy"></span>`,
