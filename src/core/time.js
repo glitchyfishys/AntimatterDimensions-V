@@ -287,5 +287,10 @@ export const Time = {
    */
   get infinityChallengeSum() {
     return this.fromMilliseconds(() => GameCache.infinityChallengeTimeSum.value);
+  },
+
+  get autoECInterval(){
+  return this.fromMilliseconds(() => player.reality.autoECInterval);
   }
+  
 };
