@@ -354,7 +354,7 @@ export const EternityChallenges = {
         next.addCompletion(true);
         next = this.nextChallenge;
       }
-      player.reality.lastAutoEC %= interval.toNumber();
+      player.reality.lastAutoEC = new Decimal(player.reality.lastAutoEC.toNumber() % interval.toNumber());
     },
 
     get nextChallenge() {
