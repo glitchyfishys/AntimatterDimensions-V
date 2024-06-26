@@ -364,7 +364,7 @@ export const EternityChallenges = {
     get interval() {
       if (!Perk.autocompleteEC1.canBeApplied) return Decimal.NUMBER_MAX_VALUE;
       let minutes = Effects.min(
-        Decimal.NUMBER_MAX_VALUE,
+        Number.MAX_VALUE,
         Perk.autocompleteEC1,
         Perk.autocompleteEC2,
         Perk.autocompleteEC3
