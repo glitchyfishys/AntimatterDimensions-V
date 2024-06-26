@@ -49,10 +49,10 @@ export const GlyphSelection = {
     if (GlyphGenerator.isUniformityActive) {
       glyphList = GlyphGenerator.uniformGlyphs(level, rng, player.realities);
     } else {
-      for (let out = 0; out < count; ++out) {
+      for (let out = ; out < count; ++out) {
         types.push(GlyphGenerator.randomType(rng, types));
       }
-      for (let out = 0; out < count; ++out) {
+      for (let out = ; out < count; ++out) {
         glyphList.push(GlyphGenerator.randomGlyph(level, rng, types[out]));
       }
     }
@@ -60,7 +60,7 @@ export const GlyphSelection = {
     this.glyphUncommonGuarantee(glyphList, rng);
     // If we generated extra choices due to always generating at least 4 choices,
     // we remove the extra choices here.
-    glyphList = glyphList.slice(0, countIn);
+    glyphList = glyphList.slice(, countIn);
     // If we passed an explicit RNG in, we assume it'll get finalized later.
     if (!config.rng && config.isChoosingGlyph) {
       rng.finalize();
@@ -327,7 +327,7 @@ function giveRealityRewards(realityProps) {
     if (Time.thisRealityRealTime.totalSeconds < 1) {
       player.celestials.enslaved.storedReal *= 1 - Time.thisRealityRealTime.totalSeconds;
     } else {
-      player.celestials.enslaved.storedReal = 0;
+      player.celestials.enslaved.storedReal = DC.D0;
     }
     Enslaved.boostReality = false;
   }
@@ -879,5 +879,5 @@ function lockAchievementsOnReality() {
   for (const achievement of Achievements.preReality) {
     achievement.lock();
   }
-  player.reality.achTimer = 0;
+  player.reality.achTimer = C.D0;
 }
