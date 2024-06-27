@@ -146,7 +146,7 @@ export default {
       this.updateMatterScale();
 
       this.isDoomed = Pelle.isDoomed;
-      this.realTimeDoomed.setFrom(Time.realTimeDoomed);
+      this.realTimeDoomed.copyFrom(Time.realTimeDoomed);
       this.paperclips = player.news.specialTickerData.paperclips;
     },
     formatDecimalAmount(value) {
