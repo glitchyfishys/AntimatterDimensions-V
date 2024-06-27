@@ -111,27 +111,27 @@ export const Enslaved = {
   // "autoRelease" should only be true when called with the Ra upgrade
   useStoredTime(autoRelease) {
     if (!this.canRelease(autoRelease)) return;
-    const maxInversion = player.requirementChecks.reality.slowestBH <= 1e-300;
+    const maxInversion = player.requirementChecks.reality.slowestBH.lte(1e-300);
     if (ImaginaryUpgrade(24).isLockingMechanics && Ra.isRunning && maxInversion) {
       if (!autoRelease) ImaginaryUpgrade(24).tryShowWarningModal("discharge your Black Hole");
       return;
     }
-    player.requirementChecks.reality.slowestBH = 1;
+    player.requirementChecks.reality.slowestBH = DC.D1;
     let release = player.celestials.enslaved.stored;
     if (Enslaved.isRunning) {
       release = Enslaved.storedTimeInsideEnslaved(release);
-      if (Time.thisReality.totalYears + TimeSpan.fromMilliseconds(release).totalYears > 1) {
+      if (Time.thisReality.totalYears.add(TimeSpan.fromMilliseconds(release).totalYears.gt(1))) {
         EnslavedProgress.storedTime.giveProgress();
       }
     }
-    if (autoRelease) release *= 0.01;
+    if (autoRelease) release = release.mul(0.01);
     this.nextTickDiff = release;
     this.isReleaseTick = true;
     // Effective gamespeed from stored time assumes a "default" 50 ms update rate for consistency
-    const effectiveGamespeed = release / 50;
-    player.celestials.ra.peakGamespeed = Math.max(player.celestials.ra.peakGamespeed, effectiveGamespeed);
-    this.autoReleaseSpeed = release / player.options.updateRate / 5;
-    player.celestials.enslaved.stored *= autoRelease ? 0.99 : 0;
+    const effectiveGamespeed = release.div(50);
+    player.celestials.ra.peakGamespeed = Decimal.max(player.celestials.ra.peakGamespeed, effectiveGamespeed);
+    this.autoReleaseSpeed = release.div(player.options.updateRate / 5);
+    player.celestials.enslaved.stored = player.celestials.enslaved.stored.mul(autoRelease ? 0.99 : 0);
   },
   has(info) {
     return player.celestials.enslaved.unlocks.includes(info.id);
