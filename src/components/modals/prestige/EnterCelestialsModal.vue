@@ -77,7 +77,7 @@ export default {
       this.effarigDone = effarigStage === EFFARIG_STAGES.COMPLETED;
       this.effarigLayer = [null, "Infinity", "Eternity", "Reality", "OVERDRIVE"][effarigStage];
       this.enslavedDone = Enslaved.isCompleted;
-      this.laitelaFastest = Time.laitelaFastestCompletion;
+      this.laitelaFastest = Time.laitelaFastestCompletion.totalMilliseconds;
       this.laitelaTime = TimeSpan.fromSeconds(this.laitelaFastest).toStringShort();
       this.augments = makeEnumeration(Glitch.activeaugments);
     },
