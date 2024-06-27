@@ -134,7 +134,7 @@ export default {
         reality.best.copyFrom(Time.bestReality);
         reality.bestReal.copyFrom(Time.bestRealityRealTime);
         reality.this.copyFrom(Time.thisReality);
-        reality.totalTimePlayed = records.totalTimePlayed.toStringShort();
+        reality.totalTimePlayed = Time.totalTimePlayed.toStringShort();
         // Real time tracking is only a thing once reality is unlocked:
         infinity.thisReal.copyFrom(Time.bestInfinityRealTime);
         infinity.bankRate = infinity.projectedBanked.div(Decimal.clampMin(33, Time.thisEternityRealTime.totalMilliseconds)).times(60000);
