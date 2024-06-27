@@ -1,4 +1,4 @@
-limport { BitUpgradeState } from "../game-mechanics";
+import { BitUpgradeState } from "../game-mechanics";
 import { GameDatabase } from "../secret-formula/game-database";
 
 import { Quotes } from "./quotes";
