@@ -319,13 +319,13 @@ function giveRealityRewards(realityProps) {
   Currency.realities.add(realityAndPPMultiplier);
   Currency.perkPoints.add(realityAndPPMultiplier * GlitchRifts.gamma.milestones[1].effectOrDefault(1) + realityUGs.all[5].effectOrDefault(1) );
   if (TeresaUnlocks.effarig.canBeApplied) {
-    Currency.relicShards.add(realityProps.gainedShards * multiplier);
+    Currency.relicShards.add(realityProps.gainedShards.mul(multiplier));
   }
-  if (multiplier > 1 && Enslaved.boostReality) {
+  if (multiplier.gt(1) && Enslaved.boostReality) {
     // Real time amplification is capped at 1 second of reality time; if it's faster then using all time at once would
     // be wasteful. Being faster than 1 second will only use as much time as needed to get the 1-second factor instead.
-    if (Time.thisRealityRealTime.totalSeconds < 1) {
-      player.celestials.enslaved.storedReal *= 1 - Time.thisRealityRealTime.totalSeconds;
+    if (Time.thisRealityRealTime.totalSeconds.lt(1)) {
+      player.celestials.enslaved.storedReal = player.celestials.enslaved.storedReal.mul(1 - Time.thisRealityRealTime.totalSeconds.toNumber());
     } else {
       player.celestials.enslaved.storedReal = DC.D0;
     }
