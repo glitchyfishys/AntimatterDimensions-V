@@ -291,6 +291,10 @@ export const Time = {
 
   get lastAutoEC(){
   return this.fromMilliseconds(() => player.reality.lastAutoEC);
-  }
+  },
+  
+  get laitelaFastestCompletion(){
+  return this.fromMilliseconds(() => player.celestials.laitela.fastestCompletion);
+  },
   
 };
