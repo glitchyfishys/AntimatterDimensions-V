@@ -142,7 +142,7 @@ export const Enslaved = {
   buyUnlock(info) {
     if (!this.canBuy(info)) return false;
     if (info.id === ENSLAVED_UNLOCKS.RUN.id) this.quotes.unlockRun.show();
-    player.celestials.enslaved.stored = player.celestials.enslaved.stored.dub(info.price);
+    player.celestials.enslaved.stored = player.celestials.enslaved.stored.sub(info.price);
     player.celestials.enslaved.unlocks.push(info.id);
     return true;
   },
