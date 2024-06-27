@@ -321,7 +321,7 @@ function giveRealityRewards(realityProps) {
   if (TeresaUnlocks.effarig.canBeApplied) {
     Currency.relicShards.add(realityProps.gainedShards.mul(multiplier));
   }
-  if (multiplier.gt(1) && Enslaved.boostReality) {
+  if (multiplier > 1 && Enslaved.boostReality) {
     // Real time amplification is capped at 1 second of reality time; if it's faster then using all time at once would
     // be wasteful. Being faster than 1 second will only use as much time as needed to get the 1-second factor instead.
     if (Time.thisRealityRealTime.totalSeconds.lt(1)) {
