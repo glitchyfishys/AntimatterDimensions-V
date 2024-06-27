@@ -1,4 +1,4 @@
-import { BitUpgradeState } from "../game-mechanics";
+limport { BitUpgradeState } from "../game-mechanics";
 import { GameDatabase } from "../secret-formula/game-database";
 
 import { Quotes } from "./quotes";
@@ -187,7 +187,7 @@ export const Enslaved = {
   },
   storedTimeInsideEnslaved(stored) {
     if (stored.lte(1e3)) return stored;
-    return Decimal.pow(10, Math.pow(Math.log10(stored.div(1e3)), 0.55)).mul(1e3);
+    return Decimal.pow(10, Math.pow(Decimal.log10(stored.div(1e3)), 0.55)).mul(1e3);
   },
   feelEternity() {
     if (this.feltEternity) {
