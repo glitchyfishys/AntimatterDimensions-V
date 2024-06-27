@@ -107,7 +107,7 @@ export default {
         infinity.bankRate = infinity.projectedBanked.div(Decimal.clampMin(33, Time.thisEternityRealTime.totalMilliseconds)).times(60000);
         infinity.hasBest = bestInfinity.time.lt(999999999999);
         infinity.best.copyFrom(Time.bestInfinity);
-        infinity.this.copyFrom(Time.thisInfinity));
+        infinity.this.copyFrom(Time.thisInfinity);
         infinity.bestRate.copyFrom(bestInfinity.bestIPminEternity);
       }
 
