@@ -557,7 +557,7 @@ export function gameLoop(passDiff, options = {}) {
       const amplification = Ra.unlocks.improvedStoredTime.effects.gameTimeAmplification.effectOrDefault(1);
       const beforeStore = player.celestials.enslaved.stored;
       player.celestials.enslaved.stored = Decimal.clampMax(player.celestials.enslaved.stored.add(
-        (totalTimeFactor.sub(reducedTimeFactor)).mul(amplification).mul(diff)), Enslaved.timeCap);
+        (totalTimeFactor.sub(reducedTimeFactor)).mul(amplification).mul(diff)), 1e300);
       Enslaved.currentBlackHoleStoreAmountPerMs = player.celestials.enslaved.stored.sub(beforeStore).div(diff);
       speedFactor = reducedTimeFactor;
     }
