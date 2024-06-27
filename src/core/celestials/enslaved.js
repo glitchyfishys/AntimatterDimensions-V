@@ -32,7 +32,7 @@ export const Enslaved = {
   possessiveName: "The Nameless Ones'",
   boostReality: false,
   BROKEN_CHALLENGES: [2, 3, 4, 5, 7, 8, 10, 11, 12],
-  nextTickDiff: 50,
+  nextTickDiff: new Decimal(50),
   isReleaseTick: false,
   autoReleaseTick: 0,
   autoReleaseSpeed: 0,
@@ -116,7 +116,7 @@ export const Enslaved = {
       if (!autoRelease) ImaginaryUpgrade(24).tryShowWarningModal("discharge your Black Hole");
       return;
     }
-    player.requirementChecks.reality.slowestBH = DC.D1;
+    player.requirementChecks.reality.slowestBH = new Decimal(1);
     let release = player.celestials.enslaved.stored;
     if (Enslaved.isRunning) {
       release = Enslaved.storedTimeInsideEnslaved(release);
