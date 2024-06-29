@@ -293,8 +293,8 @@ export const imaginaryUpgrades = [
     // the same conditions as hard V's Post-destination
     requirement: () => `Have ${formatInt(13000)} Antimatter Galaxies in Ra's Reality
       with a fully inverted Black Hole`,
-    hasFailed: () => !Ra.isRunning || player.requirementChecks.reality.slowestBH > 1e-300,
-    checkRequirement: () => Ra.isRunning && player.requirementChecks.reality.slowestBH <= 1e-300 &&
+    hasFailed: () => !Ra.isRunning || player.requirementChecks.reality.slowestBH.gt(1e-300),
+    checkRequirement: () => Ra.isRunning && player.requirementChecks.reality.slowestBH.lte(1e-300) &&
       player.galaxies >= 13000,
     checkEvent: GAME_EVENT.GAME_TICK_AFTER,
     canLock: true,
