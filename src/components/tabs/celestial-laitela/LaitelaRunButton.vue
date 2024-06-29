@@ -32,13 +32,13 @@ export default {
   },
   methods: {
     update() {
-      this.realityTime = player.celestials.laitela.fastestCompletion;
+      this.realityTime = Time.laitelaFastestCompletion;
       this.maxDimTier = Laitela.maxAllowedDimension;
       this.realityReward = Laitela.realityReward;
       this.isRunning = Laitela.isRunning;
       this.singularitiesUnlocked = Currency.singularities.gt(0);
       this.bestSet = Glyphs.copyForRecords(player.records.bestReality.laitelaSet);
-      this.tierNotCompleted = this.realityTime === 3600 || (this.realityTime === 300 && this.maxDimTier < 8);
+      this.tierNotCompleted = this.realityTime.eq(3600) || (this.realityTime.eq(300) && this.maxDimTier < 8);
     },
     startRun() {
       if (this.isDoomed) return;
