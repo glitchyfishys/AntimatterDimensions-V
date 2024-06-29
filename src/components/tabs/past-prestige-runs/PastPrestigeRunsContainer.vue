@@ -14,7 +14,7 @@ function averageRun(allRuns) {
     }
     const isNumber = typeof runs[0][index] === "number";
     const total = runs.map(run => run[index]).reduce(isNumber ? Number.sumReducer : Decimal.sumReducer);
-    avgAttr.push(isNumber ? total / runs.length : Decimal.div(total, runs.length));
+    avgAttr.push(isNumber ? Decimal.div(total, runs.length).toNumber() : Decimal.div(total, runs.length));
   }
   return avgAttr;
 }
