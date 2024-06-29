@@ -32,7 +32,7 @@ export default {
   },
   methods: {
     update() {
-      this.realityTime = Time.laitelaFastestCompletion;
+      this.realityTime = Time.laitelaFastestCompletion.totalMilliseconds;
       this.maxDimTier = Laitela.maxAllowedDimension;
       this.realityReward = Laitela.realityReward;
       this.isRunning = Laitela.isRunning;
