@@ -1100,8 +1100,8 @@ export function simulateTime(seconds, real, fast) {
 }
 
 window.onload = function() {
-  Decimal.MAX_VALUE.e = 1e300;
-  Decimal.MIN_VALUE.e = -1e300;
+  DecimalChanges();
+  
   const supportedBrowser = browserCheck();
   GameUI.initialized = supportedBrowser;
   ui.view.initialized = supportedBrowser;
@@ -1175,6 +1175,28 @@ function animateTweens(time) {
   }
   tweenTime += delta;
   TWEEN.update(tweenTime);
+}
+
+function DecimalChanges(){
+    Decimal.MAX_VALUE.e = 1e300;
+    Decimal.MIN_VALUE.e = -1e300;
+    
+    Decimal.prototype.fromString = function(t) {
+        if(t === "") {this.m=0; this.e=0; return this;}
+        if (-1 !== t.indexOf("e")) {
+            var n = t.split("e");
+            this.m = parseFloat(n[0]),
+            this.e = parseFloat(n[1]),
+            this.normalize()
+        } else if ("NaN" === t)
+            this.m = Number.NaN,
+            this.e = Number.NaN;
+        else if (this.fromNumber(parseFloat(t)),
+        isNaN(this.m))
+            throw Error("[DecimalError] Invalid argument: " + t);
+        return this
+    }
+
 }
 
 animateTweens();
