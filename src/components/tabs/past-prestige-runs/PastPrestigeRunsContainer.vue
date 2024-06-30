@@ -13,8 +13,8 @@ function averageRun(allRuns) {
       continue;
     }
     const isNumber = typeof runs[0][index] === "number";
-    const total = runs.map(run => run[index]).reduce(isNumber ? Number.sumReducer : Decimal.sumReducer);
-    avgAttr.push(isNumber ? Decimal.div(total, runs.length).toNumber() : Decimal.div(total, runs.length));
+    const total = runs.map(run => run[index]).reduce(Decimal.sumReducer);
+    avgAttr.push(Decimal.div(total, runs.length));
   }
   return avgAttr;
 }
