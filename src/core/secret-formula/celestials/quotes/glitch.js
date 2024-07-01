@@ -1,4 +1,7 @@
 
+
+const Pelle = ["Pelle", "Creater", "Master"];
+// { text: "That you trample in pursuit of your $1.", 1: pelle }
 export const glitchQuotes = {
   start: {
     id: 0,
@@ -65,6 +68,22 @@ export const glitchQuotes = {
       "i want to see your power",
       "i want you to grow",
       "you will need it to beat HIM"
+    ],
+  },
+  reality: {
+    id: 8,
+    lines: [
+      "you know what to do",
+      "just get to it"
+    ],
+  },
+  celestials: {
+    id: 9,
+    lines: [
+      "now \"Destroyer\" i reqiure you to go in this order",
+      "Tersa, Effarig, Nameless though i call them Vela, V (yes that is his name), Ra, Lai'tela",
+      { text: "then you will show me you power before $1.", 1: Pelle },
+      "haha, the power might be enough"
     ],
   }
 };
