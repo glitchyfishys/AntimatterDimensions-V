@@ -44,7 +44,6 @@ export function startDilatedEternity(auto) {
   if (!PlayerProgress.dilationUnlocked()) return false;
   if (GameEnd.creditsEverClosed) return false;
   if (player.dilation.active) {
-    Glitch.quotes.dilation.show()
     eternity(false, auto, { switchingDilation: true });
     return false;
   }
@@ -52,6 +51,7 @@ export function startDilatedEternity(auto) {
   eternity(false, auto, { switchingDilation: true });
   player.dilation.active = true;
   if (Pelle.isDoomed) PelleStrikes.dilation.trigger();
+  Glitch.quotes.dilation.show();
   return true;
 }
 
