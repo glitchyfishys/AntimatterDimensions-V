@@ -214,3 +214,7 @@ EventHub.logic.on(GAME_EVENT.REALITY_RESET_AFTER, () => {
 EventHub.logic.on(GAME_EVENT.ACHIEVEMENT_UNLOCKED, () => {
   if(Achievement(147).isUnlocked) Glitch.quotes.celestials.show();
 });
+
+EventHub.logic.on(GAME_EVENT.TAB_CHANGED, () => {
+  if(Tab.celestials.glitch.isOpen) Glitch.quotes.glitchreality.show();
+});
