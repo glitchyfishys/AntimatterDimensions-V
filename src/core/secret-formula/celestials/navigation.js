@@ -1529,7 +1529,7 @@ export const celestialNavigation = {
             / ${format(upgrade.cost, 1)}`
           ];
 
-          if (player.celestials.laitela.fastestCompletion.gt(30) && Laitela.difficultyTier < 0) return [
+          if (Time.laitelaFastestCompletion.totalMilliseconds.gt(30) && Laitela.difficultyTier < 0) return [
             dmdText,
             `Beat Lai'tela's Reality in less that ${format(30)} seconds`
           ];
