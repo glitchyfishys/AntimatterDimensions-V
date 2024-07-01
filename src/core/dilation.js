@@ -44,6 +44,7 @@ export function startDilatedEternity(auto) {
   if (!PlayerProgress.dilationUnlocked()) return false;
   if (GameEnd.creditsEverClosed) return false;
   if (player.dilation.active) {
+    Glitch.quotes.dilation.show()
     eternity(false, auto, { switchingDilation: true });
     return false;
   }
