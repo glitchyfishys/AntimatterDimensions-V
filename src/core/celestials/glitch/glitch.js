@@ -174,3 +174,43 @@ export const Glitch = {
   quotes: Quotes.glitch,
   symbol: "ὡ",
 };
+
+EventHub.logic.on(GAME_EVENT.GAME_LOAD, () => {
+  Glitch.quotes.start.show();
+});
+
+EventHub.logic.on(GAME_EVENT.DIMBOOST_AFTER, () => {
+  Glitch.quotes.dimboost.show();
+});
+
+EventHub.logic.on(GAME_EVENT.DIMBOOST_AFTER, () => {
+  if(AntimatterDimension(8).amount.gt(0)) Glitch.quotes.dimeight.show();
+});
+
+EventHub.logic.on(GAME_EVENT.GALAXY_RESET_AFTER, () => {
+Glitch.quotes.galaxy.show();
+});
+
+EventHub.logic.on(GAME_EVENT.BIG_CRUNCH_AFTER, () => {
+  Glitch.quotes.infinity.show();
+});
+
+EventHub.logic.on(GAME_EVENT.BREAK_INFINITY, () => {
+  Glitch.quotes.break.show();
+});
+
+EventHub.logic.on(GAME_EVENT.ETERNITY_RESET_AFTER, () => {
+  Glitch.quotes.eternity.show();
+});
+
+EventHub.logic.on(GAME_EVENT.ETERNITY_RESET_AFTER, () => {
+  if(player.dilation.active) Glitch.quotes.dilation.show();
+});
+
+EventHub.logic.on(GAME_EVENT.REALITY_RESET_AFTER, () => {
+  Glitch.quotes.reality.show();
+});
+
+EventHub.logic.on(GAME_EVENT.ACHIEVEMENT_UNLOCKED, () => {
+  if(Achievement(147).isUnlocked) Glitch.quotes.celestials.show();
+});
