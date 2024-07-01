@@ -203,10 +203,6 @@ EventHub.logic.on(GAME_EVENT.ETERNITY_RESET_AFTER, () => {
   Glitch.quotes.eternity.show();
 });
 
-EventHub.logic.on(GAME_EVENT.ETERNITY_RESET_AFTER, () => {
-  if(player.dilation.active) Glitch.quotes.dilation.show();
-});
-
 EventHub.logic.on(GAME_EVENT.REALITY_RESET_AFTER, () => {
   Glitch.quotes.reality.show();
 });
