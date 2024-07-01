@@ -1,6 +1,7 @@
 
-
 const Pelle = ["Pelle", "Creater", "Master"];
+const Power = ["Power", "Strength", "Frightment", "Fear"];
+const Destroy = ["Destroy", "Annihilate", "Eliminate", "Remove"];
 // { text: "That you trample in pursuit of your $1.", 1: pelle }
 export const glitchQuotes = {
   start: {
@@ -22,7 +23,7 @@ export const glitchQuotes = {
   dimeight: {
     id: 2,
     lines: [
-      "no more than eight",
+      "only eight?",
       "it looks like your the one",
       "it took so long to find you"
     ],
@@ -81,9 +82,20 @@ export const glitchQuotes = {
     id: 9,
     lines: [
       "now \"Destroyer\" i reqiure you to go in this order",
-      "Tersa, Effarig, Nameless though i call them Vela, V (yes that is his name), Ra, Lai'tela",
+      "Teresa, Effarig, Nameless though i call them Vela, V (yes that is his name), Ra, Lai'tela",
       { text: "then you will show me you power before $1.", 1: Pelle },
-      "haha, the power might be enough"
+      "haha, the power might be enough, i will be back for my reality"
+    ],
+  },
+  glitchreality: {
+    id: 10,
+    lines: [
+      "hey \"Destroyer\" complete my reality with all the others realitys combined",
+      "please do",
+      { text: "you would need this $1 to $2 HIM.", 1: Power, 2: Destroy },
+      "you may have notest me saying \"HIM\" alot hes one of the most powerful celestial, i can not say his name here",
+      "i must be careful, i have been a bit strange, well these upgrades are broken",
+      "take your time to fix them i'll be waiting"
     ],
   }
 };
