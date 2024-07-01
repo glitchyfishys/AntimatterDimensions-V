@@ -325,9 +325,9 @@ function giveRealityRewards(realityProps) {
     // Real time amplification is capped at 1 second of reality time; if it's faster then using all time at once would
     // be wasteful. Being faster than 1 second will only use as much time as needed to get the 1-second factor instead.
     if (Time.thisRealityRealTime.totalSeconds.lt(1)) {
-      player.celestials.enslaved.storedReal = player.celestials.enslaved.storedReal.mul(1 - Time.thisRealityRealTime.totalSeconds.toNumber());
+      player.celestials.enslaved.storedReal = player.celestials.enslaved.storedReal * (1 - Time.thisRealityRealTime.totalSeconds.toNumber());
     } else {
-      player.celestials.enslaved.storedReal = DC.D0;
+      player.celestials.enslaved.storedReal = 0;
     }
     Enslaved.boostReality = false;
   }
