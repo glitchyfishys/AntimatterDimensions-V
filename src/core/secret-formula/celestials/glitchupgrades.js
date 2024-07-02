@@ -193,8 +193,8 @@ export const glitchRealityUpgrades = [
     hasFailed: () => !GlitchRealityUpgrades.all[14].isBought || Glitch.augmenteffectbits != 315,
     checkRequirement: () =>  GlitchRealityUpgrades.all[14].isBought && MachineHandler.gainedRealityMachines.gte("1.8e308") && Glitch.isRunning && Glitch.augmenteffectbits == 315,
     checkEvent: GAME_EVENT.GAME_TICK_AFTER,
-    description: "glitch stays compleate past Pelle and unlock glitch second layer",
+    description: "glitch stays compleate past Pelle and unlock glitch second layer also AD are squared",
     effect: () =>  1,
-    formatEffect: value => (GlitchRealityUpgrades.all[15].isBought ? "unlocked" : "locked")
+    formatEffect: value => (GlitchRealityUpgrades.all[15].isBought ? "unlocked" : "locked" + ", ^2 AD")
   },
 ];
