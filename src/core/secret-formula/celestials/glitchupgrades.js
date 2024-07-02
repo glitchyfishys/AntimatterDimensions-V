@@ -191,7 +191,7 @@ export const glitchRealityUpgrades = [
     cost: new Decimal("4.44e444"),
     requirement: () => `reach ${"1.8e308"} projected RM all effects excluding ra's and nameless one's reality (also reqires ${GlitchRealityUpgrades.all[14].name})`,
     hasFailed: () => !GlitchRealityUpgrades.all[14].isBought || Glitch.augmenteffectbits != 315,
-    checkRequirement: () =>  GlitchRealityUpgrades.all[14].isBought && MachineHandler.gainedRealityMachines.gte("1.8e308") && Glitch.isRunning && Glitch.augmenteffectbits == 315,
+    checkRequirement: () =>  GlitchRealityUpgrades.all[14].isBought && MachineHandler.gainedRealityMachines.times(simulatedRealityCount()).gte("1.8e308") && Glitch.isRunning && Glitch.augmenteffectbits == 315,
     checkEvent: GAME_EVENT.GAME_TICK_AFTER,
     description: "glitch stays compleate past Pelle and unlock glitch second layer also AD are squared",
     effect: () =>  1,
