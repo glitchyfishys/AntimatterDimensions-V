@@ -112,6 +112,7 @@ export const glyphEffects = {
     effect: (level, strength) => (GlyphAlteration.isEmpowered("dilation")
       ? DC.D1_005.pow(level).times(15)
       : Decimal.pow(level * strength, 1.5).times(2)),
+    softcap: value => ((value.gt("1e7500")) ? value.div((value.div("1e7500")).pow(0.8)) : value),
     formatEffect: x => format(x, 2, 1),
     combine: GlyphCombiner.multiplyDecimal,
     alteredColor: () => GlyphAlteration.getEmpowermentColor("dilation"),
@@ -125,8 +126,8 @@ export const glyphEffects = {
     singleDesc: "Tachyon Galaxy threshold multiplier ×{value}",
     genericDesc: "Tachyon Galaxy cost multiplier",
     shortDesc: "TG threshold ×{value}",
-    effect: (level, strength) => 1 / (Math.pow(level, 0.17) * Math.pow(strength, 0.35) * (100 +
-      GlyphAlteration.sacrificeBoost("dilation") / 50) / 100),
+    effect: (level, strength) => 1 / (Math.pow(level, 0.17) * Math.pow(strength, 0.35) * (40 +
+      GlyphAlteration.sacrificeBoost("dilation") / 1.5) / 100),
     formatEffect: x => format(x, 3, 3),
     alteredColor: () => GlyphAlteration.getBoostColor("dilation"),
     alterationType: ALTERATION_TYPE.BOOST,
@@ -192,6 +193,7 @@ export const glyphEffects = {
     effect: (level, strength) => (GlyphAlteration.isEmpowered("replication")
       ? DC.D1_007.pow(level).times(10)
       : Decimal.times(level, strength).times(3)),
+    softcap: ((value.gt("1e15000")) ? value.div((value.div("1e15000")).pow(0.66)) : value),
     formatEffect: x => format(x, 2, 1),
     combine: GlyphCombiner.multiplyDecimal,
     alteredColor: () => GlyphAlteration.getEmpowermentColor("replication"),
