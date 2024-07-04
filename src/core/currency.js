@@ -197,7 +197,7 @@ class DecimalCurrency extends Currency {
 window.DecimalCurrency = DecimalCurrency;
 
 Currency.antimatter = new class extends DecimalCurrency {
-  get value() { return player.antimatter; }
+  get value() { return new Decimal(player.antimatter); }
 
   set value(value) {
     if (InfinityChallenges.nextIC) InfinityChallenges.notifyICUnlock(value);
