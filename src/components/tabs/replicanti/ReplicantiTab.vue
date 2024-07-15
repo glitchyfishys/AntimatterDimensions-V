@@ -166,7 +166,7 @@ export default {
       );
       this.canSeeGalaxyButton =
         Replicanti.galaxies.max >= 1 || PlayerProgress.eternityUnlocked();
-      this.maxReplicanti.copyFrom(player.records.thisReality.maxReplicanti);
+      this.maxReplicanti.copyFrom(Currency.replicanti.maxReplicanti);
       this.estimateToMax = this.calculateEstimate();
     },
     vacuumText() {
