@@ -466,6 +466,7 @@ Currency.realityShards = new class extends DecimalCurrency {
 Currency.replicanti = new class extends DecimalCurrency {
   get value() { return player.replicanti.amount; }
   set value(value) { player.replicanti.amount = value; }
+  get maxReplicanti() {return player.records.thisReality.maxReplicanti;}
 }();
 
 Currency.galaxyGeneratorGalaxies = new class extends NumberCurrency {
