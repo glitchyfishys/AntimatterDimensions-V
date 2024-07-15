@@ -673,7 +673,7 @@ export function gameLoop(passDiff, options = {}) {
   GalaxyGenerator.loop(realDiff);
   GameEnd.gameLoop(realDiff);
 
-  player.antimatter(player.antimatter); // i have no idea what is making this reactive :(
+  player.antimatter = new Decimal(player.antimatter); // i have no idea what is making this reactive :(
 
   if (!Enslaved.canAmplify) {
     Enslaved.boostReality = false;
