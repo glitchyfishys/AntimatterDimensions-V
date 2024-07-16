@@ -28,7 +28,7 @@ export default {
         ? "fas fa-expand-arrows-alt"
         : "fas fa-compress-arrows-alt";
     },
-    isDoomed: () => Pelle.isDoomed,
+    isDoomed: () => glitch.isDoomed,
     upgrades: () => GlitchRealityUpgrades.all,
   },
 
@@ -110,8 +110,8 @@ export default {
     
     <BlackHoleChargingSliders />
 
-      <div class="l-pelle-panel-container">
-        <div class="c-pelle-panel-title">
+      <div class="l-glitch-panel-container">
+        <div class="c-glitch-panel-title">
           <i
             :class="collapseIcon"
             class="c-collapse-icon-clickable"
@@ -121,7 +121,7 @@ export default {
         </div>
       <div
         v-if="!collapsedPower"
-        class="l-pelle-content-container"
+        class="l-glitch-content-container"
       >
         
           <div class="l-reality-upgrade-grid">
@@ -181,7 +181,7 @@ export default {
   cursor: pointer;
 }
 
-.c-pelle-bar-container {
+.c-glitch-bar-container {
   display: flex;
   flex-direction: column;
   align-items: center;
