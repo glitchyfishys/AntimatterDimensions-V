@@ -140,3 +140,15 @@
   90% { transform: rotate(73deg); }
   100% { transform: rotate(61deg); }
 }
+
+
+.l-glitch-panel-container {
+  width: 98rem;
+  border: var(--var-border-width, 0.2rem) solid var(--color-glitch--base);
+  border-radius: var(--var-border-radius, 0.5rem);
+  margin: 1rem;
+  padding: 1rem;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
