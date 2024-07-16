@@ -29,7 +29,7 @@ export default {
         : "fas fa-compress-arrows-alt";
     },
     isDoomed: () => glitch.isDoomed,
-    upgrades: () => GlitchRealityUpgrades.all,
+    upgradesPower: () => GlitchRealityUpgrades.all,
   },
 
   data() {
@@ -137,7 +137,7 @@ export default {
           <GlitchUpgrade
             v-for="column in 4"
             :key="id(row, column)"
-            :upgrade="upgrades[id(row, column)]"/>
+            :upgrade="upgradesPower[id(row, column)]"/>
           </div>
       
           </div>
