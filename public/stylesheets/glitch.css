@@ -141,7 +141,6 @@
   100% { transform: rotate(61deg); }
 }
 
-
 .l-glitch-panel-container {
   width: 98rem;
   border: var(--var-border-width, 0.2rem) solid var(--color-glitch--base);
@@ -152,3 +151,9 @@
   user-select: none;
 }
 
+.c-glitch-panel-title {
+  position: relative;
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--color-glitch--base);
+}
