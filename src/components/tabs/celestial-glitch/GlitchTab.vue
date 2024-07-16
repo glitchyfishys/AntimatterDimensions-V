@@ -38,10 +38,12 @@ export default {
     augments: makeEnumeration(Glitch.activeaugments),
     riftforce: "RIP",
     collapsedPower: false,
+    collapsedSpeed: false,
   }),
   methods: {
     update() {
       this.collapsedPower = player.celestials.glitch.collapsed.forpower;
+      this.collapsedSpeed = player.celestials.glitch.collapsed.forspeed;
       this.isRunning = Glitch.isRunning;
       this.quote = Glitch.quote;
       this.bits = Glitch.augmenteffectbits;
