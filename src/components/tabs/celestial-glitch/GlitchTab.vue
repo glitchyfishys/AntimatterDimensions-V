@@ -31,15 +31,18 @@ export default {
     isDoomed: () => Pelle.isDoomed,
     upgrades: () => GlitchRealityUpgrades.all,
   },
-  data: () => ({
-    isRunning: false,
-    quote: "",
-    bits: 0,
-    augments: makeEnumeration(Glitch.activeaugments),
-    riftforce: "RIP",
-    collapsedPower: false,
-    collapsedSpeed: false,
-  }),
+
+  data() {
+    return {
+      isRunning: false,
+      quote: "",
+      bits: 0,
+      augments: makeEnumeration(Glitch.activeaugments),
+      riftforce: "RIP",
+      collapsedPower: false,
+      collapsedSpeed: false,
+    };
+  },
   methods: {
     update() {
       this.collapsedPower = player.celestials.glitch.collapsed.forpower;
@@ -48,7 +51,7 @@ export default {
       this.quote = Glitch.quote;
       this.bits = Glitch.augmenteffectbits;
       this.augments = Glitch.activeaugments;
-      this.riftforce = format(Glitch.riftForce,2);
+      this.riftforce = format(Currency.riftForce,2);
     },
     startRun() {
       if (this.isDoomed) return;
