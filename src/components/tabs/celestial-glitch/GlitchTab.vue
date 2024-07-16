@@ -1,4 +1,3 @@
-
 <script>
 import BlackHoleChargingSliders from "@/components/tabs/black-hole/BlackHoleChargingSliders";
 import CelestialQuoteHistory from "@/components/CelestialQuoteHistory";
@@ -24,6 +23,11 @@ export default {
     runDescription() {
       return this.augments;
     },
+    collapseIcon() {
+      return this.collapsedPower
+        ? "fas fa-expand-arrows-alt"
+        : "fas fa-compress-arrows-alt";
+    },
     isDoomed: () => Pelle.isDoomed,
     upgrades: () => GlitchRealityUpgrades.all,
   },
@@ -33,9 +37,11 @@ export default {
     bits: 0,
     augments: makeEnumeration(Glitch.activeaugments),
     riftforce: "RIP",
+    collapsedPower: false,
   }),
   methods: {
     update() {
+      this.collapsedpower = player.celestials.glitch.collapsed.forpower;
       this.isRunning = Glitch.isRunning;
       this.quote = Glitch.quote;
       this.bits = Glitch.augmenteffectbits;
@@ -59,6 +65,9 @@ export default {
     },
     id(row, column) {
       return (row - 1) * 4 + column - 1;
+    },
+    toggleCollapsePower() {
+      player.celestials.glitch.collapsed.forpower = !this.collapsedPower;
     },
   },
 };
@@ -96,23 +105,42 @@ export default {
     
     <BlackHoleChargingSliders />
 
-    <div class="l-reality-upgrade-grid">
-    <div class="c-glitch-upgrade-infotext">
-      the first 4 are repeatable, the others are like reality upgrades but can't be locked
+      <div class="l-pelle-panel-container">
+        <div class="c-pelle-panel-title">
+          <i
+            :class="collapseIcon"
+            class="c-collapse-icon-clickable"
+            @click="toggleCollapsePower"
+          />
+          Glitch layer one upgrades
+        </div>
+      <div
+        v-if="!collapsedPower"
+        class="l-pelle-content-container"
+      >
+        
+          <div class="l-reality-upgrade-grid">
+            <div class="c-glitch-upgrade-infotext">
+            the first 4 are repeatable, the others are like reality upgrades but can't be locked
+          </div>
+      
+          <div
+          v-for="row in 4"
+          :key="row"
+          class="l-reality-upgrade-grid__row">
+            
+          <GlitchUpgrade
+            v-for="column in 4"
+            :key="id(row, column)"
+            :upgrade="upgrades[id(row, column)]"/>
+          </div>
+      
+          </div>
+          
+        </div>
+      </div>
     </div>
   
-      <div
-      v-for="row in 4"
-      :key="row"
-      class="l-reality-upgrade-grid__row">
-        
-      <GlitchUpgrade
-        v-for="column in 4"
-        :key="id(row, column)"
-        :upgrade="upgrades[id(row, column)]"/>
-    </div>
-    
-  </div>
     
   </div>
 </template>
@@ -136,6 +164,22 @@ export default {
 .o-reality-effect{
   display: inline-table;
   width: 30%;
+}
+
+.c-collapse-icon-clickable {
+  position: absolute;
+  top: 50%;
+  left: 1.5rem;
+  width: 3rem;
+  align-content: center;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.c-pelle-bar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
   
 </style>
