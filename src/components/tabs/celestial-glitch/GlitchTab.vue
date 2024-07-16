@@ -51,7 +51,7 @@ export default {
       this.quote = Glitch.quote;
       this.bits = Glitch.augmenteffectbits;
       this.augments = Glitch.activeaugments;
-      this.riftforce = format(Currency.riftForce,2);
+      this.riftforce = format(Currency.riftForce.value,2);
     },
     startRun() {
       if (this.isDoomed) return;
