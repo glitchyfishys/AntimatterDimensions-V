@@ -103,3 +103,89 @@ export const GlitchRealityUpgrades = {
     return (player.celestials.glitch.upgrades.broughtbits >> 6) + 1 === 1 << (GameDatabase.celestials.glitchRealityUpgrades - 4);
   }
 };
+
+
+
+class GlitchSpeedUpgradeState extends BitPurchasableMechanicState {
+  constructor(config) {
+    super(config);
+    this.registerEvents(config.checkEvent, () => this.tryUnlock());
+  }
+
+  get automatorPoints() {
+    return this.config.automatorPoints ? this.config.automatorPoints : 0;
+  }
+
+  get name() {
+    return typeof this.config.name == "function" ? this.config.name() : this.config.name;
+  }
+
+  get shortDescription() {
+    return this.config.shortDescription ? this.config.shortDescription() : "";
+  }
+
+  get requirement() {
+    return typeof this.config.requirement === "function" ? this.config.requirement() : this.config.requirement;
+  }
+
+  get lockEvent() {
+    return typeof this.config.lockEvent === "function" ? this.config.lockEvent() : this.config.lockEvent;
+  }
+
+  get currency() {
+    return Currency.riftForce;
+  }
+
+  get bitIndex() {
+    return this.id;
+  }
+
+  get bits() {
+    return player.celestials.glitch.upgrades.speedbroughtbits;
+  }
+
+  set bits(value) {
+    player.celestials.glitch.upgrades.speedbroughtbits = value;
+  }
+
+  get isAvailableForPurchase() {
+    return (player.celestials.glitch.upgrades.speedunlockbits & (1 << this.id)) !== 0;
+  }
+
+  get isPossible() {
+    return this.config.hasFailed ? !this.config.hasFailed() : true;
+  }
+
+  onPurchased() {
+
+  }
+
+  tryUnlock() {
+    if ( this.isAvailableForPurchase  || !this.config.checkRequirement()) return;
+    player.celestials.glitch.upgrades.speedunlockbits |= (1 << this.id);
+    GameUI.notify.error(`You've unlocked ${this.name} from Glitch's Speedy Reality`, 5000);
+  }
+  
+}
+
+GlitchSpeedUpgradeState.index = mapGameData(
+  GameDatabase.celestials.glitchRealityUpgrades,
+  config => new GlitchSpeedUpgradeState(config)
+);
+
+/**
+ * @param {number} id
+ * @return {RealityUpgradeState|RebuyableRealityUpgradeState}
+ */
+export const GlitchSpeedUpgrade = id => GlitchSpeedUpgradeState.index[id];
+
+export const GlitchSpeedUpgrades = {
+  /**
+   * @type {(RealityUpgradeState|RebuyableRealityUpgradeState)[]}
+   */
+  all: GlitchSpeedUpgradeState.index.compact(),
+  get allBought() {
+    return (player.celestials.glitch.upgrades.broughtbits >> 6) + 1 === 1 << (GameDatabase.celestials.glitchSpeedUpgrades );
+  }
+};
+
