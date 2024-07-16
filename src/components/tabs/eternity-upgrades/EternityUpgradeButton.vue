@@ -51,8 +51,8 @@ export default {
     @click="upgrade.purchase()"
   >
     <DescriptionDisplay :config="upgrade.config" />
+    <br>
     <EffectDisplay
-      br
       :config="upgrade.config"
     />
     <div v-if="!isBought && hasEU2">
