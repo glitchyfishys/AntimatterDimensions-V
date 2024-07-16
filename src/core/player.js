@@ -780,6 +780,10 @@ top.player = {
         unlockbits: 0,
         broughtbits: 0,
       },
+      collapsed: {
+        forpower: false,
+        forspeed: false
+      },
       rifts: {
         alpha: {
           fill: 0,
