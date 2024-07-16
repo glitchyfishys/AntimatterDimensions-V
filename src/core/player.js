@@ -547,7 +547,7 @@ top.player = {
   blackHolePause: false,
   blackHoleAutoPauseMode: 0,
   blackHolePauseTime: 0,
-  blackHoleNegative: DC.D0,
+  blackHoleNegative: DC.D1,
   celestials: {
     teresa: {
       pouredAmount: 0,
