@@ -41,7 +41,7 @@ export default {
   }),
   methods: {
     update() {
-      this.collapsedpower = player.celestials.glitch.collapsed.forpower;
+      this.collapsedPower = player.celestials.glitch.collapsed.forpower;
       this.isRunning = Glitch.isRunning;
       this.quote = Glitch.quote;
       this.bits = Glitch.augmenteffectbits;
