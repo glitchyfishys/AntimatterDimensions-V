@@ -123,11 +123,11 @@ export default {
     },
     bulk(){
       DilationUpgrades.rebuyable[0].purchase(1e8);
-      if(!Pelle.isDoomed)DilationUpgrades.rebuyable[2].purchase(1e8);
+      if(!Pelle.isDoomed) DilationUpgrades.rebuyable[2].purchase(1e8);
       if(PelleRifts.paradox.milestones[0].canBeApplied){
-      DilationUpgrade.dtGainPelle.purchase(1e8);
-      DilationUpgrade.tachyonGain.purchase(1e8);
-      DilationUpgrade.tickspeedPower.purchase(1e8);
+        DilationUpgrade.dtGainPelle.purchase(1e8);
+        DilationUpgrade.galaxyMultiplier.purchase(1e8);
+        DilationUpgrade.tickspeedPower.purchase(1e8);
       }
       // reseting one last
       DilationUpgrades.rebuyable[1].purchase(1e8);
