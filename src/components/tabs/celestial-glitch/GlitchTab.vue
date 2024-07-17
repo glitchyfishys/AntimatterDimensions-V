@@ -154,12 +154,12 @@ export default {
           <i
             :class="collapseIcon"
             class="c-collapse-icon-clickable"
-            @click="toggleCollapsePower"
+            @click="toggleCollapseSpeed"
           />
           Glitch layer two upgrades (speed)
         </div>
       <div
-        v-if="!collapsedPower"
+        v-if="!collapsedSpeed"
         class="l-glitch-content-container"
       >
         
