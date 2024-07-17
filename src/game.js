@@ -123,13 +123,13 @@ export function gainedInfinityPoints() {
   ip = ip.times(breakinfinityUGs.all[3].effectOrDefault(1));
   
   if (Teresa.isRunning) {
-    ip = ip.pow(0.55);
+    ip = ip.pow(0.55 * GlitchSpeedUpgrades.all[0].effectOrDefault(1));
   }
   if (V.isRunning) {
-    ip = ip.pow(0.5);
+    ip = ip.pow(0.5 * GlitchSpeedUpgrades.all[0].effectOrDefault(1));
   }
   if (Laitela.isRunning) {
-    ip = dilatedValueOf(ip);
+    ip = dilatedValueOf(ip, true);
   }
   if (GlyphAlteration.isAdded("infinity")) {
     ip = ip.pow(getSecondaryGlyphEffect("infinityIP"));
@@ -162,13 +162,13 @@ export function gainedEternityPoints() {
     ep = ep.times(realityUGs.all[0].effectOrDefault(1));
   
   if (Teresa.isRunning) {
-    ep = ep.pow(0.55);
+    ep = ep.pow(0.55 * GlitchSpeedUpgrades.all[0].effectOrDefault(1));
   }
   if (V.isRunning) {
-    ep = ep.pow(0.5);
+    ep = ep.pow(0.5 * GlitchSpeedUpgrades.all[0].effectOrDefault(1));
   }
   if (Laitela.isRunning) {
-    ep = dilatedValueOf(ep);
+    ep = dilatedValueOf(ep, true);
   }
   if (GlyphAlteration.isAdded("time")) {
     ep = ep.pow(getSecondaryGlyphEffect("timeEP"));
