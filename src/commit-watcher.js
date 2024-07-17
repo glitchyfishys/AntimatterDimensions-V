@@ -20,8 +20,8 @@ export function watchLatestCommit() {
         }
 
         Modal.message.show(
-          `${json.author}` + " did something lets hope it's not bad" + 
-          "Refresh the page (game will be saved), we've got new stuff: " +
+          `${json.author}` + " did something, lets hope it doesn't break the game " + 
+          "<br> Refresh the page (game will be saved), we've got new stuff: " +
           `"${json.message}"`,
           {
             callback: updateRefresh,
