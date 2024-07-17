@@ -42,10 +42,12 @@ export default {
       riftforce: "RIP",
       collapsedPower: false,
       collapsedSpeed: false,
+      completions: 0,
     };
   },
   methods: {
     update() {
+      this.completions = player.records.fullGameCompletions;
       this.collapsedPower = player.celestials.glitch.collapsed.forpower;
       this.collapsedSpeed = player.celestials.glitch.collapsed.forspeed;
       this.isRunning = Glitch.isRunning;
@@ -149,7 +151,9 @@ export default {
         </div>
       </div>
 
-    <div class="l-glitch-panel-container">
+    <div
+      v-if"completions > 0"
+      class="l-glitch-panel-container">
         <div class="c-glitch-panel-title">
           <i
             :class="collapseIcon"
