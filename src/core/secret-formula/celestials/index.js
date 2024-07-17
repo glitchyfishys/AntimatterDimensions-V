@@ -16,6 +16,7 @@ import { quotes } from "./quotes";
 import { v } from "./v";
 import { GlitchRifts } from "./glitchrift";
 import { glitchRealityUpgrades } from "./glitchupgrades";
+import { glitchSpeedUpgrades } from "./glitchspeed";
 
 export const celestials = {
   effarig: {
@@ -45,4 +46,5 @@ export const celestials = {
   v,
   GlitchRifts,
   glitchRealityUpgrades,
+  glitchSpeedUpgrades,
 };
