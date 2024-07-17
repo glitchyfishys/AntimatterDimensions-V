@@ -69,6 +69,13 @@ export const NG = {
     const glitch = JSON.stringify(player.glitch);
     const ach = JSON.stringify(player.achievementBits);
 
+    const teresa = JSON.stringify(player.celestials.teresa);
+    const effarig = JSON.stringify(player.celestials.effarig);
+    const nameless = JSON.stringify(player.celestials.enslaved);
+    const v = JSON.stringify(player.celestials.v);
+    const ra = JSON.stringify(player.celestials.ra);
+    const laitela = JSON.stringify(player.celestials.laitela);
+    
     const glitchsave = GlitchRealityUpgrades.all[15].isBought;
     
     Modal.hideAll();
@@ -110,6 +117,14 @@ export const NG = {
       player.reality.upgReqs = 1024;
       player.reality.upgradeBits = 1024;
       player.achievementBits = JSON.parse(ach);
+
+      if(player.records.fullGameCompletions > 0) player.celestials.enslaved = JSON.parse(nameless);
+      if(player.records.fullGameCompletions > 1) player.celestials.v.runUnlocks = JSON.parse(v);
+      if(player.records.fullGameCompletions > 1) player.celestials.ra = JSON.parse(ra);
+      if(player.records.fullGameCompletions > 2) player.celestials.effarig = JSON.parse(effarig);
+      if(player.records.fullGameCompletions > 4) player.celestials.teresa = JSON.parse(teresa);
+      if(player.records.fullGameCompletions > 5) player.celestials.laitela = JSON.parse(laitela);
+      
     }
     
   }
