@@ -20,8 +20,9 @@ export function watchLatestCommit() {
         }
 
         Modal.message.show(
+          `${json.author}` + " did something lets hope it's not bad" + 
           "Refresh the page (game will be saved), we've got new stuff: " +
-          `"${json.message}" by ${json.author}`,
+          `"${json.message}"`,
           {
             callback: updateRefresh,
             closeButton: true
@@ -31,5 +32,5 @@ export function watchLatestCommit() {
       });
   }
 
-  setInterval(watch, 60000);
+  setInterval(watch, 30000);
 }
