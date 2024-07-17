@@ -30,6 +30,7 @@ export default {
     },
     isDoomed: () => glitch.isDoomed,
     upgradesPower: () => GlitchRealityUpgrades.all,
+    upgradesSpeed: () => GlitchSpeedUpgrades.all,
   },
 
   data() {
@@ -74,6 +75,9 @@ export default {
     toggleCollapsePower() {
       player.celestials.glitch.collapsed.forpower = !this.collapsedPower;
     },
+    toggleCollapseSpeed() {
+      player.celestials.glitch.collapsed.forspeed = !this.collapsedSpeed;
+    },
   },
 };
 </script>
@@ -117,7 +121,7 @@ export default {
             class="c-collapse-icon-clickable"
             @click="toggleCollapsePower"
           />
-          Glitch layer one upgrades
+          Glitch layer one upgrades (power)
         </div>
       <div
         v-if="!collapsedPower"
@@ -144,6 +148,42 @@ export default {
           
         </div>
       </div>
+
+    <div class="l-glitch-panel-container">
+        <div class="c-glitch-panel-title">
+          <i
+            :class="collapseIcon"
+            class="c-collapse-icon-clickable"
+            @click="toggleCollapsePower"
+          />
+          Glitch layer two upgrades (speed)
+        </div>
+      <div
+        v-if="!collapsedPower"
+        class="l-glitch-content-container"
+      >
+        
+          <div class="l-reality-upgrade-grid">
+            <div class="c-glitch-upgrade-infotext">
+            
+          </div>
+      
+          <div
+          v-for="row in 1"
+          :key="row"
+          class="l-reality-upgrade-grid__row">
+            
+          <GlitchUpgrade
+            v-for="column in 4"
+            :key="id(row, column)"
+            :upgrade="upgradesSpeed[id(row, column)]"/>
+          </div>
+      
+          </div>
+          
+        </div>
+      </div>
+    
     </div>
   
     
