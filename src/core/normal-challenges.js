@@ -101,6 +101,7 @@ class NormalChallengeState extends GameMechanicState {
     // Since breaking infinity maxes even autobuyers that aren't unlocked,
     // it's possible to get r52 or r53 from completing a challenge
     // and thus unlocking an autobuyer.
+    if (this === NormalChallenge(9)) Autobuyer.tickspeed.mode = 100;
     Achievement(52).tryUnlock();
     Achievement(53).tryUnlock();
 
