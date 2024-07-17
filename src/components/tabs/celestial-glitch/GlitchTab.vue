@@ -152,7 +152,7 @@ export default {
       </div>
 
     <div
-      v-if"completions > 0"
+      v-if="completions > 0"
       class="l-glitch-panel-container">
         <div class="c-glitch-panel-title">
           <i
