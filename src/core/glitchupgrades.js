@@ -169,7 +169,7 @@ class GlitchSpeedUpgradeState extends BitPurchasableMechanicState {
 }
 
 GlitchSpeedUpgradeState.index = mapGameData(
-  GameDatabase.celestials.glitchRealityUpgrades,
+  GameDatabase.celestials.glitchSpeedUpgrades,
   config => new GlitchSpeedUpgradeState(config)
 );
 
@@ -185,7 +185,7 @@ export const GlitchSpeedUpgrades = {
    */
   all: GlitchSpeedUpgradeState.index.compact(),
   get allBought() {
-    return (player.celestials.glitch.upgrades.broughtbits >> 6) + 1 === 1 << (GameDatabase.celestials.glitchSpeedUpgrades );
+    return (player.celestials.glitch.upgrades.speedbroughtbits >> 6) + 1 === 1 << (GameDatabase.celestials.glitchSpeedUpgrades );
   }
 };
 
