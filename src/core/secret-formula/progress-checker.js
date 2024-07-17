@@ -159,4 +159,11 @@ export const progressStages = [
     suggestedResource: "Remnants",
     subProgressValue: save => Math.log10(1 + save.celestials.pelle.remnants) / 9,
   },
+  {
+    id: 18,
+    name: "Glitch (8th Celestial)",
+    hasReached: save => save.celestials?.glitch?.rifts?.epsilon?.reducedTo == 1,
+    suggestedResource: "RiftForce and upgrades",
+    subProgressValue: save => Decimal.log10(1 + save.celestials.glitch.riftforce) / 444,
+  },
 ];
