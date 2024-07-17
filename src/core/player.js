@@ -779,6 +779,8 @@ top.player = {
         rebuyable: [0, 0, 0, 0, 0],
         unlockbits: 0,
         broughtbits: 0,
+        speedunlockbits: 0,
+        speedbroughtbits: 0,
       },
       collapsed: {
         forpower: false,
