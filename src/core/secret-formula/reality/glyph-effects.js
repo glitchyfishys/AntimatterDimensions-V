@@ -109,9 +109,9 @@ export const glyphEffects = {
     singleDesc: "Multiply Dilated Time gain by {value}",
     totalDesc: "Dilated Time gain ×{value}",
     shortDesc: "DT ×{value}",
-    effect: (level, strength) => (GlyphAlteration.isEmpowered("dilation")
+    effect: (level, strength) => Decimal.min((GlyphAlteration.isEmpowered("dilation")
       ? DC.D1_005.pow(level).times(15)
-      : Decimal.pow(level * strength, 1.5).times(2)),
+      : Decimal.pow(level * strength, 1.5).times(2)), "1e5000"),
     //softcap: value => ((value.gt("1e7500")) ? value.div((value.div("1e7500")).pow(0.8)) : value),
     formatEffect: x => format(x, 2, 1),
     combine: GlyphCombiner.multiplyDecimal,
