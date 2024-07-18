@@ -38,7 +38,7 @@ export const Enslaved = {
   autoReleaseSpeed: 0,
   glyphLevelMin: 5000,
   currentBlackHoleStoreAmountPerMs: 0,
-  tachyonNerf: 0.3,
+  get tachyonNerf(){ return ((player.records.fullGameCompletions > 0) ? 0.32 : 0.3);},
   toggleStoreBlackHole() {
     if (!this.canModifyGameTimeStorage) return;
     player.celestials.enslaved.isStoring = !player.celestials.enslaved.isStoring;
