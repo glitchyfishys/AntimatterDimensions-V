@@ -78,8 +78,6 @@ export const NG = {
     
     const glitchsave = GlitchRealityUpgrades.all[15].isBought;
     
-    const glitchsave = GlitchRealityUpgrades.all[15].isBought;
-    
     Modal.hideAll();
     Quote.clearAll();
     GameStorage.hardReset();
