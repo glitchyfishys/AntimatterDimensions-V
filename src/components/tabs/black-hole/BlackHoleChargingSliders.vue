@@ -64,11 +64,10 @@ export default {
       player.blackHoleNegative = Decimal.pow(10, -this.negativeSlider);
       player.requirementChecks.reality.slowestBH = Decimal.max(
         player.requirementChecks.reality.slowestBH,
-        player.blackHoleNegative;
+        player.blackHoleNegative);
         
       this.isFocused = false;
       event.target.blur();
-      );
     },
     sliderProps(negative) {
       return {
