@@ -190,15 +190,16 @@ export const Enslaved = {
     return Decimal.pow(10, Math.pow(Decimal.log10(stored.div(1e3)), 0.55)).mul(1e3);
   },
   feelEternity() {
+    let cap = ((player.records.fullGameCompletions > 0) ? "1e308" : "1e66");
     if (this.feltEternity) {
       Modal.message.show(`You have already exposed this crack in the Reality. Time in this Eternity is being multiplied
-        by your Eternity count, up to a maximum of ${formatX(1e66)}.`,
+        by your Eternity count, up to a maximum of ${formatX(cap)}.`,
       { closeEvent: GAME_EVENT.REALITY_RESET_AFTER }, 1);
     } else {
       EnslavedProgress.feelEternity.giveProgress();
       this.feltEternity = true;
       Modal.message.show(`Time in this Eternity will be multiplied by your Eternity count,
-        up to a maximum of ${formatX(1e66)}.`, { closeEvent: GAME_EVENT.REALITY_RESET_AFTER }, 1);
+        up to a maximum of ${formatX(cap)}.`, { closeEvent: GAME_EVENT.REALITY_RESET_AFTER }, 1);
     }
   },
   get feltEternity() {
