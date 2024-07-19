@@ -108,7 +108,7 @@ export default {
         SecretAchievement(28).unlock();
       }
       if (this.isValid) {
-        this.negativeSlider = = this.typeFunctions.copyValue(this.actualValue);
+        this.negativeSlider = this.typeFunctions.copyValue(this.actualValue);
         player.blackHoleNegative = Decimal.pow(10, -this.negativeSlider);
         player.requirementChecks.reality.slowestBH = Decimal.max(
           player.requirementChecks.reality.slowestBH,
