@@ -18,7 +18,10 @@ export default {
       maxNegativeBlackHole: 300,
       isDisabled: false,
       lowermax: false,
-      isValid: false,
+      isValid: true,
+      isFocused: false,
+      actualValue: 1,
+      displayValue: "1",
     };
   },
   computed: {
@@ -31,9 +34,16 @@ export default {
       return `Inversion strength cannot be modified due to Lock for
         "${ImaginaryUpgrade(24).name}"`;
     },
+    typeFunctions() {
+      const functions = AutobuyerInputFunctions[this.type];
+      if (functions === undefined) {
+        throw new Error("Unknown autobuyer input type");
+      }
+      return functions;
+    },
     validityClass() {
       return this.isValid ? undefined : "o-autobuyer-input--invalid";
-    },
+    }
   },
   methods: {
     update() {
@@ -46,6 +56,9 @@ export default {
       this.isDisabled = ImaginaryUpgrade(24).isLockingMechanics && Ra.isRunning && maxInversion;
       this.maxNegativeBlackHole = (GlitchSpeedUpgrades.all[0].isBought ? 1e12 : 300);
       this.lowermax = GlitchSpeedUpgrades.all[0].isBought;
+
+      if (this.isFocused) return;
+      this.updateDisplayValue();
       
     },
     adjustSliderNegative(value) {
@@ -69,6 +82,13 @@ export default {
       this.isFocused = false;
       event.target.blur();
     },
+    areEqual(value, other) {
+      if (other === undefined || value === undefined) return false;
+      return this.typeFunctions.areEqual(value, other);
+    },
+    updateDisplayValue() {
+      this.displayValue = this.typeFunctions.formatValue(this.actualValue);
+    },
     handleInput(event) {
       const input = event.target.value;
       this.displayValue = input;
@@ -83,6 +103,25 @@ export default {
     handleFocus() {
       this.isFocused = true;
     },
+    handleChange(event) {
+      if (this.displayValue === "69") {
+        SecretAchievement(28).unlock();
+      }
+      if (this.isValid) {
+        this.negativeSlider = = this.typeFunctions.copyValue(this.actualValue);
+        player.blackHoleNegative = Decimal.pow(10, -this.negativeSlider);
+        player.requirementChecks.reality.slowestBH = Decimal.max(
+          player.requirementChecks.reality.slowestBH,
+          player.blackHoleNegative);
+      } else {
+        this.updateDisplayValue();
+      }
+      this.updateDisplayValue();
+      this.isValid = true;
+
+      this.isFocused = false;
+      event.target.blur();
+    },
     sliderProps(negative) {
       return {
         min: 0,
@@ -91,9 +130,6 @@ export default {
         width: "55rem",
         tooltip: false
       };
-    },
-    handleFocus() {
-      this.isFocused = true;
     },
   }
 };
@@ -124,10 +160,11 @@ export default {
 
       <input
         v-else-if="!isDisabled && lowermax"
-        :value="negativeSlider"
+        :value="displayValue"
         :class="validityClass"
+        type="number"
         class="o-autobuyer-input"
-        @change="adjustInput"
+        @change="handleChange"
         @focus="handleFocus"
         @input="handleInput"
       >
