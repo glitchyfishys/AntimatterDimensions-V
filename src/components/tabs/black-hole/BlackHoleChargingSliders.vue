@@ -20,8 +20,8 @@ export default {
       lowermax: false,
       isValid: true,
       isFocused: false,
-      actualValue: 1,
-      displayValue: "1",
+      actualValue: -Decimal.log10(player.blackHoleNegative),
+      displayValue: (-Decimal.log10(player.blackHoleNegative)).toString(),
     };
   },
   computed: {
@@ -54,7 +54,7 @@ export default {
       this.negativeBHDivisor = Decimal.pow10(this.negativeSlider);
       const maxInversion = player.requirementChecks.reality.slowestBH.lte(1e-300);
       this.isDisabled = ImaginaryUpgrade(24).isLockingMechanics && Ra.isRunning && maxInversion;
-      this.maxNegativeBlackHole = (GlitchSpeedUpgrades.all[0].isBought ? 1e12 : 300);
+      this.maxNegativeBlackHole = (GlitchSpeedUpgrades.all[0].isBought ? 1e100 : 300);
       this.lowermax = GlitchSpeedUpgrades.all[0].isBought;
 
       if (this.isFocused) return;
