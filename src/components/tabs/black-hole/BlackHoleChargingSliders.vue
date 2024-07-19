@@ -132,6 +132,8 @@ export default {
       };
     },
   }
+};
+  
   export const AutobuyerInputFunctions = {
   decimal: {
     areEqual: (value, other) => Decimal.eq(value, other),
@@ -186,7 +188,6 @@ export default {
       return isNaN(int) || !Number.isInteger(int) ? undefined : int;
     }
   }
-};
 };
 </script>
 
