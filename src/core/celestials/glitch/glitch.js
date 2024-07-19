@@ -28,6 +28,7 @@ export const Glitch = {
       if(id == 6) return "Ra's no dim boost";
       if(id == 7) return "Ra's static tickspeed";
       if(id == 8) return `Lai'tela's Reality (at ${this.laitelamaxdim}dims)`;
+      if(id == 9) return `timed decay`;
       return "out of range";
   },
 
@@ -42,6 +43,7 @@ export const Glitch = {
       this.augmenteffectactive(6, true) ? effect.push("Ra's no dim boost") : undefined;
       this.augmenteffectactive(7, true) ? effect.push("Ra's static tickspeed") : undefined;
       this.augmenteffectactive(8, true) ? effect.push(`Lai'tela's Reality (at ${this.laitelamaxdim}dims)`) : undefined;
+      this.augmenteffectactive(9, true) ? effect.push(`timed decay`) : undefined;
       return effect;
   },
 
@@ -64,7 +66,7 @@ export const Glitch = {
 
     
     if(this.tier == 0){
-      //could be bad
+
       disChargeAll();
       const cga = this.forceglyphs;
       if(Glyphs.active.filter(x => x == null ? false :(x.type == "cursed")).length < cga){
@@ -151,15 +153,18 @@ export const Glitch = {
   get laitelamaxdim(){
     return Math.min(5 + GlitchRealityUpgrades.all[5].effectOrDefault(0),8);
   },
+  get decay(){
+    return Math.max(60 / Time.thisRealityRealTime.totalSeconds.toNumber() , 0);
+  },
   
   get ADnerf(){
-    return 0.95;
+    return (this.augmenteffectactive(9) ? (0.95 * decay) : 0.95);
   },
   get IDnerf(){
-    return 0.15;
+    return (this.augmenteffectactive(9) ? (0.15 * decay) : 0.15);
   },
   get TDnerf(){
-    return 0.3;
+    return (this.augmenteffectactive(9) ? (0.3 * decay) : 0.3);
   },
   
   get discription() {
