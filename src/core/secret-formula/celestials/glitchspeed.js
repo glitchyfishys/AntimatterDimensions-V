@@ -9,7 +9,7 @@ export const glitchSpeedUpgrades = [
     hasFailed: () => !(Glitch.activeaugments.length <= 9),
     checkRequirement: () => Glitch.isRunning && Glitch.activeaugments.length >= 9,
     checkEvent: GAME_EVENT.REALITY_RESET_BEFORE,
-    description: "some Celestial Reality's effect that neff presteage gain are weakend by 25%",
+    description: "some Celestial Reality's effect that neff presteage gain are weakend by 25% also can charge one infinity upgrade in glitch's reality",
     effect: () =>  1.25,
     formatEffect: value => formatX(1.25, 2, 2)
   },
