@@ -8,7 +8,7 @@ export const MatterScale = {
     
     if (matter.gt(DC.E100000)) {
       return [
-        `If you wrote ${formatInt(3)} numbers a second, it would take you` + (matter.gt(DC.E1E9) ? " you would have to start"  : " it would take you"),
+        `If you wrote ${formatInt(3)} numbers a second, ` + (matter.gt(DC.E1E9) ? " you would have to start"  : " it would take you"),
         TimeSpan.fromSeconds(matter.log10() / 3).toString() + (matter.gt(DC.E1E9) ? " ago"  : ""),
         "to write down your antimatter amount."
       ];
