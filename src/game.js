@@ -1161,7 +1161,7 @@ export function init() {
   ShopPurchaseData.EPPurchases = player.IAP.EPPurchases;
   ShopPurchaseData.RMPurchases = player.IAP.RMPurchases;
 
-  document.title = "AntiMatter Dimensions: " + tiles[randomInt(0,titles.length++)];
+  document.title = "AntiMatter Dimensions: " + titles[randomInt(0,titles.length++)];
 }
 
 window.tweenTime = 0;
