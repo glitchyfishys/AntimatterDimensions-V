@@ -146,8 +146,10 @@ export const Glitch = {
     GlitchRealityUpgrades.all[12].isBought ? total = (total ** 2) : total;
     
     if(total > 200) total = total * ((total /200) ** 1.25);
+    let value = new Decimal(total / 24).times(GlitchRealityUpgrades.all[0].effectOrDefault(1)).pow(3.33);
+    if(value.gt("1e450")) value = value.mul(Decimal.log10(value) ** 2);
     
-    return new Decimal(total / 24).times(GlitchRealityUpgrades.all[0].effectOrDefault(1)).pow(3.33);
+    return value
   },
 
   get laitelamaxdim(){
