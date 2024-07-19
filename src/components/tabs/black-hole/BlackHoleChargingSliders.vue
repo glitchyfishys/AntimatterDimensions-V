@@ -17,6 +17,7 @@ export default {
       negativeBHDivisor: 1,
       maxNegativeBlackHole: 300,
       isDisabled: false,
+      lowermax: false;
     };
   },
   computed: {
@@ -40,6 +41,7 @@ export default {
       const maxInversion = player.requirementChecks.reality.slowestBH.lte(1e-300);
       this.isDisabled = ImaginaryUpgrade(24).isLockingMechanics && Ra.isRunning && maxInversion;
       this.maxNegativeBlackHole = (GlitchSpeedUpgrades.all[0].isBought ? 1e12 : 300);
+      this.lowermax = GlitchSpeedUpgrades.all[0].isBought;
     },
     adjustSliderNegative(value) {
       this.negativeSlider = value;
@@ -77,12 +79,21 @@ export default {
           <i class="fas fa-question-circle l-margin-left" />
         </span>)
       </b>
+      
       <SliderComponent
-        v-if="!isDisabled"
+        v-if="!isDisabled && !lowermax"
         v-bind="sliderProps(true)"
         :value="negativeSlider"
         @input="adjustSliderNegative($event)"
       />
+
+      <SliderComponent
+        v-if="!isDisabled && lowermax"
+        v-bind="sliderProps(true)"
+        :value="negativeSlider"
+        @input="adjustSliderNegative($event)"
+      />
+      
       <div
         v-else
         class="l-lock-text"
