@@ -107,8 +107,8 @@ export default {
         v-else-if="!isDisabled && lowermax"
         :value="negativeSlider"
         :class="validityClass"
-        :type="number"
         class="o-autobuyer-input"
+        @type="number"
         @input="adjustInput"
       >
       
