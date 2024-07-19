@@ -62,9 +62,7 @@ export const Glitch = {
       player.replicanti.unl=false;
       Currency.replicanti.bumpTo(1);
     }
-    
 
-    
     if(this.tier == 0){
 
       disChargeAll();
@@ -82,13 +80,9 @@ export const Glitch = {
       
       
       this.augmenteffectactive(0) ?  player.celestials.teresa.run = true : undefined;
-      
       this.augmenteffectactive(1) ? player.celestials.effarig.run = true : undefined;
-      
       this.augmenteffectactive(2) ? player.celestials.enslaved.run = true : undefined;
-
       this.augmenteffectactive(5) ? player.celestials.v.run = true : undefined;
-      
       this.augmenteffectactive(8) ? player.celestials.laitela.run = true : undefined;
     }
     if(this.tier == 1){
@@ -147,7 +141,7 @@ export const Glitch = {
     
     if(total > 200) total = total * ((total /200) ** 1.25);
     let value = new Decimal(total / 24).times(GlitchRealityUpgrades.all[0].effectOrDefault(1)).pow(3.33);
-    if(value.gt("1e450")) value = value.mul(Decimal.log10(value) ** 5);
+    if(value.gt("1e450")) value = value.mul( new Decimal(Decimal.log10(value)).pow(25));
     
     return value
   },
