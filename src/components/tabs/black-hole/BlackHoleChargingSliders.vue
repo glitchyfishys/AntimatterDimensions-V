@@ -57,7 +57,7 @@ export default {
       );
     },
     adjustInput(value) {
-      if(Number.parseFloat(value)) Pvalue = 1; this.isValid = false}
+      if(Number.parseFloat(value)) {Pvalue = 1; this.isValid = false}
       else this.isValid = true; 
 
       this.negativeSlider = value;
