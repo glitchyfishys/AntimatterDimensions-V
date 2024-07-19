@@ -97,7 +97,7 @@ export default {
       />
 
       <input
-        v-elseif="!isDisabled && lowermax"
+        v-else-if="!isDisabled && lowermax"
         :value="displayValue"
         :class="validityClass"
         :type="inputType"
@@ -113,6 +113,7 @@ export default {
       >
         {{ reqLockText }}
       </div>
+      
       <br>
       Inverting the Black Hole only affects its own speedup, no other upgrades or effects, although
       it will also indirectly affect the Effarig Game speed power effect.
