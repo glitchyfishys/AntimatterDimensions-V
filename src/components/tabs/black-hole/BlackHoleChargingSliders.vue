@@ -96,14 +96,8 @@ export default {
         @input="adjustSliderNegative($event)"
       />
 
-      <SliderComponent
-        v-if="!isDisabled && lowermax"
-        v-bind="sliderProps(true)"
-        :value="negativeSlider"
-        @input="adjustSliderNegative($event)"
-      />
-
       <input
+        v-elseif="!isDisabled && lowermax"
         :value="displayValue"
         :class="validityClass"
         :type="inputType"
