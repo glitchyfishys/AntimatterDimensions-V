@@ -57,7 +57,7 @@ export default {
       );
     },
     adjustInput(value) {
-      if(Number.parseFloat(value)) {Pvalue = 1; this.isValid = false}
+      if(Number.parseFloat(value)) {value = 1; this.isValid = false}
       else this.isValid = true; 
 
       this.negativeSlider = value;
@@ -68,6 +68,20 @@ export default {
         
       this.isFocused = false;
       event.target.blur();
+    },
+    handleInput(event) {
+      const input = event.target.value;
+      this.displayValue = input;
+      if (input.length === 0) {
+        this.isValid = false;
+        return;
+      }
+      const parsedValue = this.typeFunctions.tryParse(input);
+      this.isValid = parsedValue !== undefined;
+      this.actualValue = this.typeFunctions.copyValue(parsedValue);
+    },
+    handleFocus() {
+      this.isFocused = true;
     },
     sliderProps(negative) {
       return {
@@ -115,6 +129,7 @@ export default {
         class="o-autobuyer-input"
         @change="adjustInput"
         @focus="handleFocus"
+        @input="handleInput"
       >
       
       <div
