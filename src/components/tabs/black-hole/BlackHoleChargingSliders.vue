@@ -218,6 +218,7 @@ export default {
         v-else-if="!isDisabled && lowermax"
         :value="displayValue"
         :class="validityClass"
+        min="0"
         type="number"
         class="o-autobuyer-input"
         @change="handleChange"
