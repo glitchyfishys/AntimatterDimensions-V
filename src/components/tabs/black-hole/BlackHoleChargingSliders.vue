@@ -108,7 +108,7 @@ export default {
         :value="negativeSlider"
         :class="validityClass"
         class="o-autobuyer-input"
-        @input="adjustInput"
+        @change="adjustInput"
       >
       
       <div
