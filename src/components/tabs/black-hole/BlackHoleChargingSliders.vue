@@ -35,7 +35,7 @@ export default {
         "${ImaginaryUpgrade(24).name}"`;
     },
     typeFunctions() {
-      const functions = AutobuyerInputFunctions[this.type];
+      const functions = AutobuyerInputFunctions["float"];
       if (functions === undefined) {
         throw new Error("Unknown autobuyer input type");
       }
