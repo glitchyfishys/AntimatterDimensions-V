@@ -60,7 +60,7 @@ export default {
       if(Number.parseFloat(value)) Pvalue = 1; this.isValid = false}
       else this.isValid = true; 
 
-      this.negativeSlider = new Decimal(value);
+      this.negativeSlider = value;
       player.blackHoleNegative = Decimal.pow(10, -this.negativeSlider);
       player.requirementChecks.reality.slowestBH = Decimal.max(
         player.requirementChecks.reality.slowestBH,
@@ -105,7 +105,7 @@ export default {
 
       <input
         v-else-if="!isDisabled && lowermax"
-        :value="displayValue"
+        :value="negativeSlider"
         :class="validityClass"
         :type="inputType"
         class="o-autobuyer-input"
