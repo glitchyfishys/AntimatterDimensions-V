@@ -108,7 +108,6 @@ export default {
         :value="negativeSlider"
         :class="validityClass"
         class="o-autobuyer-input"
-        @type="number"
         @input="adjustInput"
       >
       
