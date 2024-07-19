@@ -64,7 +64,10 @@ export default {
       player.blackHoleNegative = Decimal.pow(10, -this.negativeSlider);
       player.requirementChecks.reality.slowestBH = Decimal.max(
         player.requirementChecks.reality.slowestBH,
-        player.blackHoleNegative
+        player.blackHoleNegative;
+        
+      this.isFocused = false;
+      event.target.blur();
       );
     },
     sliderProps(negative) {
@@ -75,6 +78,9 @@ export default {
         width: "55rem",
         tooltip: false
       };
+    },
+    handleFocus() {
+      this.isFocused = true;
     },
   }
 };
@@ -109,6 +115,7 @@ export default {
         :class="validityClass"
         class="o-autobuyer-input"
         @change="adjustInput"
+        @focus="handleFocus"
       >
       
       <div
