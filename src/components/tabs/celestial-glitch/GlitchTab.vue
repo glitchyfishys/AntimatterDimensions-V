@@ -80,6 +80,11 @@ export default {
     toggleCollapseSpeed() {
       player.celestials.glitch.collapsed.forspeed = !this.collapsedSpeed;
     },
+    toggletoshow(){
+      var toggles = 9; //base
+      if(GlitchSpeedUpgrades.all[0].isBought) toggles++;
+      return toggles;
+    },
   },
 };
 </script>
