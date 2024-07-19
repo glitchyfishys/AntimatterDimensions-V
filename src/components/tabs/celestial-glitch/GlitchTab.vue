@@ -53,7 +53,7 @@ export default {
       this.isRunning = Glitch.isRunning;
       this.quote = Glitch.quote;
       this.bits = Glitch.augmenteffectbits;
-      this.augments = Glitch.activeaugments;
+      this.augments = makeEnumeration(Glitch.activeaugments);
       this.riftforce = format(Currency.riftForce.value,2);
     },
     startRun() {
@@ -116,7 +116,7 @@ export default {
     </PrimaryButton>
 
       <br>
-      glitch's reality effects {{runDescription}}
+      you have {{runDescription}} active
     </div>
     
     <BlackHoleChargingSliders />
