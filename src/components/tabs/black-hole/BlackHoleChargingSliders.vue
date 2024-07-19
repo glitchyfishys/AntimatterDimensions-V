@@ -17,7 +17,7 @@ export default {
       negativeBHDivisor: 1,
       maxNegativeBlackHole: 300,
       isDisabled: false,
-      lowermax: false;
+      lowermax: false,
     };
   },
   computed: {
@@ -63,7 +63,7 @@ export default {
     sliderProps(negative) {
       return {
         min: 0,
-        max: negative ? this.maxNegativeBlackHole : 990,
+        max: (negative ? this.maxNegativeBlackHole : 990),
         interval: 1,
         width: "55rem",
         tooltip: false
