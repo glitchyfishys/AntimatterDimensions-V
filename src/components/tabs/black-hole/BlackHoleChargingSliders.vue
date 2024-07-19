@@ -102,9 +102,7 @@ export default {
         :class="validityClass"
         :type="inputType"
         class="o-autobuyer-input"
-        @change="handleChange"
-        @focus="handleFocus"
-        @input="handleInput"
+        @input="adjustInput"
       >
       
       <div
