@@ -22,7 +22,7 @@ export const glitchSpeedUpgrades = [
     checkRequirement: () => Glitch.isRunning && Glitch.activeaugments.length >= 9 && Currency.antimatter.gte("1e1.25E11"),
     checkEvent: GAME_EVENT.GAME_TICK_AFTER,
     description: "Ra's static tickspeed is rased by 0.01 per antimatter galaxy past 10000",
-    effect: () =>  (Math.max(player.galaxies - 10000, 0) * 0.01),
+    effect: () =>  (Math.max(player.galaxies - 10000, 0) * 0.01 + 1),
     formatEffect: value => ("+" + format(value, 2, 2))
   },
   {
