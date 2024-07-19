@@ -39,7 +39,7 @@ export default {
       this.negativeBHDivisor = Decimal.pow10(this.negativeSlider);
       const maxInversion = player.requirementChecks.reality.slowestBH.lte(1e-300);
       this.isDisabled = ImaginaryUpgrade(24).isLockingMechanics && Ra.isRunning && maxInversion;
-      this.maxNegativeBlackHole = (GlitchSpeedUpgrades.all[0].isBought ? -1e10 : -300);
+      this.maxNegativeBlackHole = (GlitchSpeedUpgrades.all[0].isBought ? 1e12 : 300);
     },
     adjustSliderNegative(value) {
       this.negativeSlider = value;
