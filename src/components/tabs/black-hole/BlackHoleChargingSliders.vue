@@ -51,6 +51,15 @@ export default {
         player.blackHoleNegative
       );
     },
+    adjustInput(value) {
+      if(Number.parseFloat(value)) value = 0;
+      this.negativeSlider = new Decimal(value);
+      player.blackHoleNegative = Decimal.pow(10, -this.negativeSlider);
+      player.requirementChecks.reality.slowestBH = Decimal.max(
+        player.requirementChecks.reality.slowestBH,
+        player.blackHoleNegative
+      );
+    },
     sliderProps(negative) {
       return {
         min: 0,
@@ -93,6 +102,16 @@ export default {
         :value="negativeSlider"
         @input="adjustSliderNegative($event)"
       />
+
+      <input
+        :value="displayValue"
+        :class="validityClass"
+        :type="inputType"
+        class="o-autobuyer-input"
+        @change="handleChange"
+        @focus="handleFocus"
+        @input="handleInput"
+      >
       
       <div
         v-else
