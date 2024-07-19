@@ -104,9 +104,6 @@ export default {
       this.isFocused = true;
     },
     handleChange(event) {
-      if (this.displayValue === "69") {
-        SecretAchievement(28).unlock();
-      }
       if (this.isValid) {
         this.negativeSlider = this.typeFunctions.copyValue(this.actualValue);
         player.blackHoleNegative = Decimal.pow(10, -this.negativeSlider);
