@@ -18,6 +18,7 @@ export default {
       maxNegativeBlackHole: 300,
       isDisabled: false,
       lowermax: false,
+      isValid: false,
     };
   },
   computed: {
@@ -29,7 +30,10 @@ export default {
     reqLockText() {
       return `Inversion strength cannot be modified due to Lock for
         "${ImaginaryUpgrade(24).name}"`;
-    }
+    },
+    validityClass() {
+      return this.isValid ? undefined : "o-autobuyer-input--invalid";
+    },
   },
   methods: {
     update() {
@@ -42,6 +46,7 @@ export default {
       this.isDisabled = ImaginaryUpgrade(24).isLockingMechanics && Ra.isRunning && maxInversion;
       this.maxNegativeBlackHole = (GlitchSpeedUpgrades.all[0].isBought ? 1e12 : 300);
       this.lowermax = GlitchSpeedUpgrades.all[0].isBought;
+      
     },
     adjustSliderNegative(value) {
       this.negativeSlider = value;
@@ -52,7 +57,9 @@ export default {
       );
     },
     adjustInput(value) {
-      if(Number.parseFloat(value)) value = 0;
+      if(Number.parseFloat(value)) Pvalue = 1; this.isValid = false}
+      else this.isValid = true; 
+
       this.negativeSlider = new Decimal(value);
       player.blackHoleNegative = Decimal.pow(10, -this.negativeSlider);
       player.requirementChecks.reality.slowestBH = Decimal.max(
