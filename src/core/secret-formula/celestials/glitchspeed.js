@@ -33,7 +33,7 @@ export const glitchSpeedUpgrades = [
     hasFailed: () => !(Glitch.augmenteffectbits == 1023) && !Laitela.continuumActive,
     checkRequirement: () => Glitch.isRunning && Glitch.augmenteffectbits == 1023 && Time.thisInfinityRealTime.totalSeconds.gte(5) && Laitela.continuumActive,
     checkEvent: GAME_EVENT.GAME_TICK_AFTER,
-    description: "the RiftForce fomula is change (log<sub>2</sub>)",
+    description: "the RiftForce fomula is change (log2)",
     effect: () =>  1,
     formatEffect: value => "active"
   },
