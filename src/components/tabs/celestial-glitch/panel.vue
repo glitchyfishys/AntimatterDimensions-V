@@ -89,6 +89,6 @@ export default {
       run tier {{tier}} of Glitch's Reality
     </p>
     <br><br>
-    <div v-if="isRunning"> time in this reality {{realitytime + "<br>" + decay()}}</div>
+    <div v-if="isRunning"> time in this reality {{realitytime + " " + decay()}}</div>
   </button>
 </template>
