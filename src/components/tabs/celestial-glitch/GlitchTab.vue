@@ -101,7 +101,7 @@ export default {
 
     <div>
     <PrimaryButton
-      v-for="x in 9"
+      v-for="x in toggletoshow()"
       :key="x"
       class="o-primary-btn--subtab-option  o-reality-effect"
       @click="effects(x-1)">
