@@ -94,12 +94,12 @@ export default {
    work in progress
 
     <div class="c-glitch-compact-top">
-      <p>you have <span class="o-riftforce">{{ riftforce}}</span> RiftForce </p>
-      
-    <CelestialQuoteHistory celestial="glitch"/>
-      
-      <GlitchRunButton />
-  
+      <div>
+        <p>you have <span class="o-riftforce">{{ riftforce}}</span> RiftForce </p>
+        
+        <CelestialQuoteHistory celestial="glitch"/>
+        <GlitchRunButton />
+      </div>
       <div>
       <PrimaryButton
         v-for="x in toggletoshow()"
@@ -241,7 +241,7 @@ export default {
 
 .c-glitch-compact-top {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
 }
   
