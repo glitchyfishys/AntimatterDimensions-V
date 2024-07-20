@@ -26,16 +26,16 @@ export const glitchSpeedUpgrades = [
     formatEffect: value => ("+" + format(value, 2, 2))
   },
   {
-    name: "2",
+    name: "around and around",
     id: 3,
     cost: 1,
-    requirement: "reach reality (all effects)",
-    hasFailed: () => !(Glitch.activeaugments.length == 9),
-    checkRequirement: () => Glitch.isRunning && Glitch.activeaugments.length == 9 && false,
-    checkEvent: GAME_EVENT.REALITY_RESET_BEFORE,
-    description: "some Celestial Reality's effect that neff presteage gain are weakend by 25%",
-    effect: () =>  1.25,
-    formatEffect: value => formatX(1.25, 2, 2)
+    requirement: () => `have less than ${format(1e9)} antimatter after 5 seconds in rhis infinity (all effects, continum active)`,
+    hasFailed: () => !(Glitch.augmenteffectbits == 1023) && !Laitela.continuumActive,
+    checkRequirement: () => Glitch.isRunning && Glitch.augmenteffectbits == 1023 && Time.thisInfinityRealTime.totalSeconds.gte(5) && Laitela.continuumActive,
+    checkEvent: GAME_EVENT.GAME_TICK_AFTER,
+    description: "the RiftForce fomula is change (log<sub>2</sub>)",
+    effect: () =>  1,
+    formatEffect: value => "active"
   },
   {
     name: "3",
