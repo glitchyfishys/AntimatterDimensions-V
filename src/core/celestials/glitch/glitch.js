@@ -150,17 +150,17 @@ export const Glitch = {
     return Math.min(5 + GlitchRealityUpgrades.all[5].effectOrDefault(0),8);
   },
   get decay(){
-    return Math.max(60 / Time.thisRealityRealTime.totalSeconds.toNumber() , 0);
+    return Math.pow(2, Math.max(Time.thisRealityRealTime.totalSeconds.toNumber() / 60 , 0));
   },
   
   get ADnerf(){
-    return (this.augmenteffectactive(9) ? (0.95 * decay) : 0.95);
+    return (this.augmenteffectactive(9) ? (0.95 * this.decay) : 0.95);
   },
   get IDnerf(){
-    return (this.augmenteffectactive(9) ? (0.15 * decay) : 0.15);
+    return (this.augmenteffectactive(9) ? (0.15 * this.decay) : 0.15);
   },
   get TDnerf(){
-    return (this.augmenteffectactive(9) ? (0.3 * decay) : 0.3);
+    return (this.augmenteffectactive(9) ? (0.3 * this.decay) : 0.3);
   },
   
   get discription() {
