@@ -2,6 +2,8 @@
   --color-glitch: #7504d1;
   --color-glitch-light: #ce91ff;
   --color-glitch-dark: #480182;
+  
+  --color-glitch-darker: #004400;
 
   --color-glitch--accent: #00ff00;
   --color-glitch--base: #00aa00;
@@ -14,12 +16,12 @@
 }
 
 .o-glitch-run-button {
-  width: 84rem;
+  width: 24rem;
   height: 34rem;
   font-family: Typewriter;
   font-size: 1.1rem;
   color: var(--color-glitch--accent);
-  background: var(--color-glitch--base);
+  background: var(--color-glitch-darker);
   border: var(--var-border-width, 0.2rem) solid var(--color-glitch--accent);
   border-radius: var(--var-border-radius, 0.5rem);
   margin-right: 1rem;
