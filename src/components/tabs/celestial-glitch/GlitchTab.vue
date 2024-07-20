@@ -219,8 +219,9 @@ export default {
 }
 
 .o-reality-effect{
-  display: inline-grid;
   width: 30%;
+  height: auto;
+  display: inline-grid;
   line-height: initial;
 }
 
