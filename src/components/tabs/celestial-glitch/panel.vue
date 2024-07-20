@@ -42,7 +42,9 @@ export default {
       this.tier = Glitch.tier;
       this.time = player.records.thisReality.realTime;
     },
-    
+    decay(){
+      return Math.pow(2, Math.max(Time.thisRealityRealTime.totalSeconds.toNumber() / 60 , 0)).tostring();
+    },
     startRun() {
       if (this.isDoomed) return;
       Modal.celestials.show({ name: "glitch's", number: 6 });
@@ -87,6 +89,6 @@ export default {
       run tier {{tier}} of Glitch's Reality
     </p>
     <br><br>
-    <div v-if="isRunning"> time in this reality {{realitytime}}</div>
+    <div v-if="isRunning"> time in this reality {{realitytime + " " + decay()}}</div>
   </button>
 </template>
