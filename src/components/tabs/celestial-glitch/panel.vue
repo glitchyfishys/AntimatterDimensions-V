@@ -43,7 +43,7 @@ export default {
       this.time = player.records.thisReality.realTime;
     },
     decay(){
-      return Math.pow(2, Math.max(Time.thisRealityRealTime.totalSeconds.toNumber() / 60 , 0)).tostring();
+      return Glitch.augmenteffectactive(9) ? " and a decay of 1 /" +  format(Math.pow(2, Math.max(Decimal.div(this.time.totalSeconds, 60).toNumber(), 0)),2,2) + " to glitch's reality nerfs": "";
     },
     startRun() {
       if (this.isDoomed) return;
