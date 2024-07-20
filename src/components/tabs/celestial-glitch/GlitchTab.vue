@@ -93,32 +93,35 @@ export default {
   <div class="l-glitch-celestial-tab">
    work in progress
 
-    <p>you have <span class="o-riftforce">{{ riftforce}}</span> RiftForce </p>
-    
-  <CelestialQuoteHistory celestial="glitch"/>
-    
-    <GlitchRunButton />
-
-    <div>
-    <PrimaryButton
-      v-for="x in toggletoshow()"
-      :key="x"
-      class="o-primary-btn--subtab-option  o-reality-effect"
-      @click="effects(x-1)">
+    <div class="c-glitch-compact-top">
+      <p>you have <span class="o-riftforce">{{ riftforce}}</span> RiftForce </p>
       
-      <p v-if="activeaugment(x-1)">
-        remove {{effectname(x-1)}}
-      </p>
-      <p v-else>
-        enable {{effectname(x-1)}}
-      </p>
+    <CelestialQuoteHistory celestial="glitch"/>
       
-    </PrimaryButton>
+      <GlitchRunButton />
+  
+      <div>
+      <PrimaryButton
+        v-for="x in toggletoshow()"
+        :key="x"
+        class="o-primary-btn--subtab-option  o-reality-effect"
+        @click="effects(x-1)">
+        
+        <p v-if="activeaugment(x-1)">
+          remove {{effectname(x-1)}}
+        </p>
+        <p v-else>
+          enable {{effectname(x-1)}}
+        </p>
+        
+      </PrimaryButton>
+  
+        <br>
+        you have {{runDescription}} active
+      </div>
 
-      <br>
-      you have {{runDescription}} active
     </div>
-    
+      
     <BlackHoleChargingSliders />
 
       <div class="l-glitch-panel-container">
@@ -231,6 +234,12 @@ export default {
 }
 
 .c-glitch-bar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.c-glitch-compact-top {
   display: flex;
   flex-direction: column;
   align-items: center;
