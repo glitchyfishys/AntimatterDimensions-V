@@ -134,9 +134,9 @@ export const Glitch = {
 
     form = value => {return (GlitchSpeedUpgrades.all[2].isBought ? Decimal.log(Decimal.log(value.log(), 2), 2) : Decimal.log10(value.log10()))};
     
-    const AM = form(Currency.antimatter.value) ** 1.25);
-    const IP = form(Currency.infinityPoints.value)** 2);
-    const EP = form(Currency.eternityPoints.value) ** 3.5);
+    const AM = form(Currency.antimatter.value) ** 1.25;
+    const IP = form(Currency.infinityPoints.value)** 2;
+    const EP = form(Currency.eternityPoints.value) ** 3.5;
     let total = ((isNaN(AM) || AM == Infinity || AM < 1) ? 1 : AM) * ((isNaN(IP) || IP == Infinity || IP < 1) ? 1 : IP) * ((isNaN(EP) || EP == Infinity || EP < 1)? 1 : EP);
 
     GlitchRealityUpgrades.all[12].isBought ? total = (total ** 2) : total;
