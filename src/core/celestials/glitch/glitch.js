@@ -150,7 +150,7 @@ export const Glitch = {
     return Math.min(5 + GlitchRealityUpgrades.all[5].effectOrDefault(0),8);
   },
   get decay(){
-    return Math.pow(2, Math.max(Time.thisRealityRealTime.totalSeconds.toNumber() / 60 , 0));
+    return Math.pow(2, Math.max(Time.thisRealityRealTime.totalSeconds.toNumber() / 30 , 0));
   },
   
   get ADnerf(){
