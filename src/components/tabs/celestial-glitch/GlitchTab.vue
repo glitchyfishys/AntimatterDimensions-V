@@ -219,8 +219,9 @@ export default {
 }
 
 .o-reality-effect{
-  display: inline-table;
+  display: inline-grid;
   width: 30%;
+  line-height: initial;
 }
 
 .c-collapse-icon-clickable {
