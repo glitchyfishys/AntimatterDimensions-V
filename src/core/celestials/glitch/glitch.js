@@ -154,13 +154,13 @@ export const Glitch = {
   },
   
   get ADnerf(){
-    return (this.augmenteffectactive(9) ? (0.95 * this.decay) : 0.95);
+    return (this.augmenteffectactive(9) ? (0.95 / this.decay) : 0.95);
   },
   get IDnerf(){
-    return (this.augmenteffectactive(9) ? (0.15 * this.decay) : 0.15);
+    return (this.augmenteffectactive(9) ? (0.15 / this.decay) : 0.15);
   },
   get TDnerf(){
-    return (this.augmenteffectactive(9) ? (0.3 * this.decay) : 0.3);
+    return (this.augmenteffectactive(9) ? (0.3 / this.decay) : 0.3);
   },
   
   get discription() {
