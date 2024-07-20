@@ -68,7 +68,7 @@ export default {
 </script>
 
 <template>
-  <button class="c-glitch-run-button">
+  <div class="c-glitch-run-button">
     <span :class="{ 'o-pelle-disabled': isDoomed }">
       <b>Start Glitch's Reality</b>
     </span>
@@ -90,5 +90,5 @@ export default {
     </p>
     <br><br>
     <div v-if="isRunning"> time in this reality {{realitytime + "<br>" + decay()}}</div>
-  </button>
+  </div>
 </template>
