@@ -1207,4 +1207,7 @@ animateTweens();
 
 function randomInt(min = 0, max = 10) {return Math.floor(min + (Math.random() * (max - min)))};
 
-var titles = ["help me", "now with upgrades", "the antimater update", "uhhh, i think i broke something", "no don't do that", "now with a 9th dimension", "THERE'S NEW CONTENT?!?!?!", "also try minecraft", "you know what that means", "now with dimensions", "THE NEWS IS NOT FAKE", "now's you chance to make [ANTIMATTER]", "that's bananas"];
+var titles = ["help me", "now with upgrades", "the antimater update", "uhhh, i think i broke something", "no don't do that", "now with a 9th dimension",
+              "THERE'S NEW CONTENT?!?!?!", "also try minecraft", "you know what that means", "now with dimensions", "THE NEWS IS NOT FAKE", "now's you chance to make [ANTIMATTER]",
+              "that's bananas", "update in 5 hours", "hevipelle is good at using git hub :)", "the update that makes the game bad", " i'm now poor :(", "nerf the galaxies plz",
+              "get more antimatter", "can give me more galaxies please?", "NG+infinte", "you know what that means FISHHHHH", "when do the memes get added?", "how much is infinity?"];
