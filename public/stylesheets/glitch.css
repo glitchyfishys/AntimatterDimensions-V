@@ -26,6 +26,7 @@
   border-radius: var(--var-border-radius, 0.5rem);
   margin-right: 1rem;
   padding: 2rem;
+  margin-left: 1rem;
 }
 
 
