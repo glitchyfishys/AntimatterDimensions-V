@@ -132,7 +132,7 @@ export const Glitch = {
   get riftForceGain(){
     if(!this.isRunning || this.activeaugments.length < 9) return new Decimal(0);
 
-    function form (value) {return (GlitchSpeedUpgrades.all[2].isBought ? Decimal.log(Decimal.log(value, 2), 2) : Decimal.log10(Decimal.log10(value)))};
+    function form (value) {return (GlitchSpeedUpgrades.all[2].isBought ? (value.log10() ** 0.2) : Decimal.log10(Decimal.log10(value)))};
     
     const AM = form(Currency.antimatter.value) ** 1.25;
     const IP = form(Currency.infinityPoints.value)** 2;
