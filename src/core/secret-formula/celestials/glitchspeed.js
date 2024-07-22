@@ -21,8 +21,8 @@ export const glitchSpeedUpgrades = [
     hasFailed: () => !(Glitch.activeaugments.length <= 9),
     checkRequirement: () => Glitch.isRunning && Glitch.activeaugments.length >= 9 && Currency.antimatter.gte("1e1.25E11"),
     checkEvent: GAME_EVENT.GAME_TICK_AFTER,
-    description: () => `Ra's static tickspeed is rased by 1.5 per AG past ${format(1e4)}, RG is 1.2 per past ${format(1e4)}, TG is 1.02 per past ${format(1e3)}`,
-    effect: () =>  new Decimal(1.5 ** (Math.max(player.galaxies - 10000, 0))).mul( 1.2 ** Math.max( Replicanti.galaxies.total - 10000, 0)).mul(1.02 ** Math.max( player.dilation.totalTachyonGalaxies - 1000, 0)).max(1),
+    description: () => `Ra's static tickspeed is rased by 1.5 per AG past ${format(1e4)}, RG is 1.2 per past ${format(1e4)}, TG is 1.02 per past ${format(1e4)}`,
+    effect: () =>  Decimal.pow(1.5, (Math.max(player.galaxies - 1e4, 0))).mul( Decimal.pow(1.2, Math.max( Replicanti.galaxies.total - 1e4, 0))).mul( Decimal.pow(1.02, Math.max( player.dilation.totalTachyonGalaxies - 1e4, 0))).min(1),
     formatEffect: value => formatX(value, 2, 2)
   },
   {
