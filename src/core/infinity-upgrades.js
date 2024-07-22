@@ -65,7 +65,7 @@ export class InfinityUpgradeState extends SetPurchasableMechanicState {
 
   get canCharge() {
     let v = Ra.chargesLeft - 12;
-    if(GlitchSpeedUpgrades.all[0].isBought) v++;
+    if(GlitchSpeedUpgrades.all[2].isBought) v++;
 
     if(Glitch.isRunning && v <= 0) return false;
     
