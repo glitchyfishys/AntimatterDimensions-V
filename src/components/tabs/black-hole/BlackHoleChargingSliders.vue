@@ -165,7 +165,7 @@ export default {
   },
   float: {
     areEqual: (value, other) => value === other,
-    formatValue: value => value.toString(),
+    formatValue: value => Notation.scientific.format(value, 2, 2),
     copyValue: value => value,
     tryParse: input => {
       const float = parseFloat(input);
@@ -174,7 +174,7 @@ export default {
   },
   int: {
     areEqual: (value, other) => value === other,
-    formatValue: value => value.toString(),
+    formatValue: value => Notation.scientific.format(value, 2, 2),
     copyValue: value => value,
     tryParse: input => {
       if (!input) return undefined;
