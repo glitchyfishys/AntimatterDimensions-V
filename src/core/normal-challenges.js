@@ -114,7 +114,7 @@ class NormalChallengeState extends GameMechanicState {
 
   get goal() {
     if (Enslaved.isRunning && Enslaved.BROKEN_CHALLENGES.includes(this.id)) {
-      return DC.E1E15;
+      return (player.records.fullGameCompletions > 0) ? Decimal.MAX_VALUE : DC.E1E15;
     }
     return Decimal.NUMBER_MAX_VALUE;
   }
