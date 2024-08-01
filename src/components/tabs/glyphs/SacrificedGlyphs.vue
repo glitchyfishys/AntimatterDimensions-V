@@ -14,8 +14,8 @@ export default {
       hasDragover: false,
       hasAlteration: false,
       hideAlteration: false,
-      maxSacrifice: 0,
-      teresaMult: 0,
+      maxSacrifice: new Decimal(0),
+      teresaMult: new Decimal(0),
       lastMachinesTeresa: new Decimal(0),
     };
   },
@@ -62,8 +62,8 @@ export default {
   },
   methods: {
     update() {
-      this.anySacrifices = GameCache.logTotalGlyphSacrifice !== 0;
-      this.hasAlteration = Ra.unlocks.alteredGlyphs.canBeApplied;
+      this.anySacrifices = !GameCache.logTotalGlyphSacrifice.eq( 0);
+      this.hasAlteration = c;
       this.hideAlteration = player.options.hideAlterationEffects;
       this.maxSacrifice = GlyphSacrificeHandler.maxSacrificeForEffects;
       this.teresaMult = Teresa.runRewardMultiplier;
