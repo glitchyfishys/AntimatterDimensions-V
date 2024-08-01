@@ -1,22 +1,22 @@
 
 function extra(){
   let amount = GlitchRealityUpgrades.all[1].boughtAmount - 20;
-  return amount > 0 ? amount : 1;
+  return (amount > 0) ? amount : 1;
 }
 
 export const glyphSacrifice = {
   "power": {
     id: "power",
     effect: added => {
-      if (Pelle.isDisabled("glyphsac")) return 0;
-      const sac = player.reality.glyphs.sac.power + (added ?? 0);
-      const capped = Math.clampMax(sac, GlyphSacrificeHandler.maxSacrificeForEffects);
-      const base = Math.log10(capped + 1) / Math.log10( Math.min(GlyphSacrificeHandler.maxSacrificeForEffects, 1e100) );
-      return Math.floor(750 * Math.pow(base, 1.2));
+      if (Pelle.isDisabled("glyphsac")) return new Decimal(1);
+      const sac = player.reality.glyphs.sac.power.add(added ?? 0);
+      const capped = Decimal.clampMax(sac, GlyphSacrificeHandler.maxSacrificeForEffects);
+      const base = Decimal.log10(capped + 1).div(Decimal.log10( Decimal.min(GlyphSacrificeHandler.maxSacrificeForEffects, 1e100)));
+      return Decimal.floor(Decimal.pow(base, 1.2).mul(750));
     },
     description: amount => {
       const sacCap = GlyphSacrificeHandler.maxSacrificeForEffects;
-      const nextDistantGalaxy = Math.pow(10, Math.pow((amount + 1) / 750, 1 / 1.2) * Math.log10(Math.min(sacCap, 1e100))) - 1;
+      const nextDistantGalaxy = Decimal.pow(10, Decimal.pow((amount.add(1)).div(750), 1 / 1.2).mul(Decimal.log10(Decimal.min(sacCap, 1e100)))).sub(1);
       const nextGalaxyText = ` (next at ${format(nextDistantGalaxy, 2, 2)})`
       return `Distant Galaxy scaling starts ${formatInt(amount)} later${nextGalaxyText}`;
     },
@@ -25,10 +25,10 @@ export const glyphSacrifice = {
   "infinity": {
     id: "infinity",
     effect: added => {
-      if (Pelle.isDisabled("glyphsac")) return 1;
-      const sac = player.reality.glyphs.sac.infinity + (added ?? 0);
-      const capped = Math.clampMax(sac, GlyphSacrificeHandler.maxSacrificeForEffects);
-      return 1 + (Math.log10(1 + Math.pow(capped, 0.2) / 100) * Math.max(extra() / 5, 1));
+      if (Pelle.isDisabled("glyphsac")) return new Decimal(1);
+      const sac = player.reality.glyphs.sac.infinity.add(added ?? 0);
+      const capped = Decimal.clampMax(sac, GlyphSacrificeHandler.maxSacrificeForEffects);
+      return (Decimal.log10(Decimal.pow(capped, 0.2).div(100).add(1)).mul(Math.max(extra() / 5, 1))).add(1);
     },
     description: amount => `${formatX(amount, 2, 2)} bigger multiplier when buying 8th Infinity Dimension`,
     cap: () => GlyphSacrificeHandler.maxSacrificeForEffects
@@ -36,10 +36,10 @@ export const glyphSacrifice = {
   "time": {
     id: "time",
     effect: added => {
-      if (Pelle.isDisabled("glyphsac")) return 1;
-      const sac = player.reality.glyphs.sac.time + (added ?? 0);
-      const capped = Math.clampMax(sac, GlyphSacrificeHandler.maxSacrificeForEffects);
-      return Math.pow(1 + Math.pow(capped, 0.2) / 100, 2) * Math.clamp( 1.5 ** extra(), 1, 1e150);
+      if (Pelle.isDisabled("glyphsac")) return new Decimal(1);
+      const sac = player.reality.glyphs.sac.time.add(added ?? 0);
+      const capped = Decimal.clampMax(sac, GlyphSacrificeHandler.maxSacrificeForEffects);
+      return Decimal.pow(Decimal.pow(capped, 0.2).div(100).add(1), 2).mul(Decimal.clamp( Decimal.pow(1.5, extra()), 1, 1e150));
     },
     description: amount => `${formatX(amount, 2, 2)} bigger multiplier when buying 8th Time Dimension`,
     cap: () => GlyphSacrificeHandler.maxSacrificeForEffects
@@ -47,15 +47,15 @@ export const glyphSacrifice = {
   "replication": {
     id: "replication",
     effect: added => {
-      if (Pelle.isDisabled("glyphsac")) return 0;
-      const sac = player.reality.glyphs.sac.replication + (added ?? 0);
-      const capped = Math.clampMax(sac, GlyphSacrificeHandler.maxSacrificeForEffects);
-      const base = Math.log10(capped + 1) / Math.log10(Math.min(GlyphSacrificeHandler.maxSacrificeForEffects,1e100));
-      return Math.floor(1500 * Math.pow(base, 1.2));
+      if (Pelle.isDisabled("glyphsac")) return new Decimal(0);
+      const sac = player.reality.glyphs.sac.replication.add(added ?? 0);
+      const capped = Decimal.clampMax(sac, GlyphSacrificeHandler.maxSacrificeForEffects);
+      const base = Decimal.log10(capped + 1) / Decimal.log10(Decimal.min(GlyphSacrificeHandler.maxSacrificeForEffects,1e100));
+      return Decimal.floor(Decimal.pow(base, 1.2).mul(1500));
     },
     description: amount => {
       const sacCap = GlyphSacrificeHandler.maxSacrificeForEffects;
-      const nextDistantGalaxy = Math.pow(10, Math.pow((amount + 1) / 1500, 1 / 1.2) * Math.log10(Math.min(sacCap, 1e100))) - 1;
+      const nextDistantGalaxy = Decimal.pow(10, Decimal.pow(amount.add(1).div(1500), 1 / 1.2).mul(Decimal.log10(Decimal.min(sacCap, 1e100))) ).sub(1);
       const nextGalaxyText = ` (next at ${format(nextDistantGalaxy, 2, 2)})`
       return `Replicanti Galaxy scaling starts ${formatInt(amount)} later${nextGalaxyText}`;
     },
@@ -64,12 +64,12 @@ export const glyphSacrifice = {
   "dilation": {
     id: "dilation",
     effect: added => {
-      if (Pelle.isDisabled("glyphsac")) return 1;
+      if (Pelle.isDisabled("glyphsac")) return new Decimal(1);
       const sac = player.reality.glyphs.sac.dilation + (added ?? 0);
-      const capped = Math.clampMax(sac, GlyphSacrificeHandler.maxSacrificeForEffects);
-      const exponent = 0.32 * Math.pow(Math.log10(capped + 1) /
-        Math.log10(GlyphSacrificeHandler.maxSacrificeForEffects), 0.1);
-      return Math.pow(Math.clampMin(capped, 1), exponent) * Math.clamp( 1.6 ** extra(), 1, 1e150);
+      const capped = Decimal.clampMax(sac, GlyphSacrificeHandler.maxSacrificeForEffects);
+      const exponent = Decimal.pow(Decimal.log10(capped.add(1)).mul(0.32) /
+        Decimal.log10(GlyphSacrificeHandler.maxSacrificeForEffects), 0.1);
+      return Decimal.pow(Decimal.clampMin(capped, 1), exponent).mul(Decimal.clamp( 1.6 ** extra(), 1, 1e150));
     },
     description: amount => `Multiply Tachyon Particle gain by ${formatX(amount, 2, 2)}`,
     cap: () => GlyphSacrificeHandler.maxSacrificeForEffects
@@ -77,11 +77,11 @@ export const glyphSacrifice = {
   "effarig": {
     id: "effarig",
     effect: added => {
-      if (Pelle.isDisabled("glyphsac")) return 0;
-      const sac = player.reality.glyphs.sac.effarig + (added ?? 0);
+      if (Pelle.isDisabled("glyphsac")) return new Decimal(0);
+      const sac = player.reality.glyphs.sac.effarig.add(added ?? 0);
       // This doesn't use the GlyphSacrificeHandler cap because it hits its cap (+100%) earlier
-      const capped = Math.clampMax(sac, 1e70);
-      return 2 * Math.log10(capped / 1e20 + 1);
+      const capped = Decimal.clampMax(sac, 1e70);
+      return 2 * Decimal.log10(capped.div(1e20).add(1));
     },
     description: amount => `+${formatPercents(amount / 100, 2)} additional Glyph rarity`,
     cap: () => 1e70
@@ -89,8 +89,8 @@ export const glyphSacrifice = {
   "reality": {
     id: "reality",
     effect: added => {
-      if (Pelle.isDisabled("glyphsac")) return 0;
-      const sac = player.reality.glyphs.sac.reality + (added ?? 0);
+      if (Pelle.isDisabled("glyphsac")) return new Decimal(0);
+      const sac = player.reality.glyphs.sac.reality.toNumber() + (added ?? 0);
       // This cap is only feasibly reached with the imaginary upgrade, but we still want to cap it at a nice number
       return Math.clampMax(1 + Math.sqrt(sac) / 15, 100);
     },
@@ -100,16 +100,18 @@ export const glyphSacrifice = {
   "glitch": {
     id: "glitch",
     effect: added => {
-      if (Pelle.isDisabled("glyphsac")) return 0;
-      const sac = player.reality.glyphs.sac.power + (added ?? 0);
-      const capped = Math.clampMax(sac, GlyphSacrificeHandler.maxSacrificeForEffects);
-      const base = Math.log10(capped + 1) / Math.log10(GlyphSacrificeHandler.maxSacrificeForEffects);
-      return Math.floor(750 * Math.pow(base, 1.2));
+      if (Pelle.isDisabled("glyphsac")) return new Decimal(0);
+      const sac = player.reality.glyphs.sac.power.add(added ?? 0);
+      
+      const capped = Decimal.clampMax(sac, GlyphSacrificeHandler.maxSacrificeForEffects);
+      const base = Decimal.log10(capped.add(1)).div(Decimal.log10(GlyphSacrificeHandler.maxSacrificeForEffects));
+      
+      return Decimal.floor(Decimal.pow(base, 1.2).mul(750));
     },
     description: amount => {
       const sacCap = GlyphSacrificeHandler.maxSacrificeForEffects;
-      const nextDistantGalaxy = Math.pow(10, Math.pow((amount + 1) / 750, 1 / 1.2) * Math.log10(sacCap)) - 1;
-      const nextGalaxyText = amount < 750
+      const nextDistantGalaxy = Decimal.pow(10, Decimal.pow((amount.add(1)).div(750), 1 / 1.2).mul(Decimal.log10(sacCap))).sub(1);
+      const nextGalaxyText = amount.lt(750)
         ? ` (next at ${format(nextDistantGalaxy, 2, 2)})`
         : "";
       return `... ${formatInt(amount)} later${nextGalaxyText}`;
