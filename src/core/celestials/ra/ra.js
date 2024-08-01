@@ -427,17 +427,17 @@ export const GlyphAlteration = {
     return Ra.unlocks.alteredGlyphs.canBeApplied;
   },
   isAdded(type) {
-    return this.isUnlocked && this.getSacrificePower(type) >= this.additionThreshold;
+    return this.isUnlocked && this.getSacrificePower(type).gte(this.additionThreshold);
   },
   isEmpowered(type) {
-    return this.isUnlocked && this.getSacrificePower(type) >= this.empowermentThreshold;
+    return this.isUnlocked && this.getSacrificePower(type).gte(this.empowermentThreshold);
   },
   isBoosted(type) {
-    return this.isUnlocked && this.getSacrificePower(type) >= this.boostingThreshold;
+    return this.isUnlocked && this.getSacrificePower(type).gte(this.boostingThreshold);
   },
   sacrificeBoost(type) {
-    const capped = Math.clampMax(this.getSacrificePower(type), GlyphSacrificeHandler.maxSacrificeForEffects);
-    return Math.log10(Math.clampMin(capped / this.boostingThreshold, 1)) / 2;
+    const capped = Decimal.clampMax(this.getSacrificePower(type), GlyphSacrificeHandler.maxSacrificeForEffects);
+    return Decimal.log10(Math.clampMin(capped.div(this.boostingThreshold, 1))) / 2;
   },
   baseAdditionColor(isDark = Theme.current().isDark()) {
     return isDark ? "#CCCCCC" : "black";
