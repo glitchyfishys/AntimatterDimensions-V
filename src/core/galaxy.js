@@ -99,9 +99,8 @@ export class Galaxy {
     return 100 + TimeStudy(302).effectOrDefault(0) + Effects.sum(
       TimeStudy(223),
       TimeStudy(224),
-      EternityChallenge(5).reward,
-      GlyphSacrifice.power
-    );
+      EternityChallenge(5).reward
+    ) + GlyphSacrifice.power.effectOrDefault(DC.D0).toNumber();
   }
 
   static get type() {
