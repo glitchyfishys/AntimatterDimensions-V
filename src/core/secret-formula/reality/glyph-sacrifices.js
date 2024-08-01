@@ -11,7 +11,7 @@ export const glyphSacrifice = {
       if (Pelle.isDisabled("glyphsac")) return new Decimal(1);
       const sac = player.reality.glyphs.sac.power.add(added ?? 0);
       const capped = Decimal.clampMax(sac, GlyphSacrificeHandler.maxSacrificeForEffects);
-      const base = Decimal.log10(capped.add(1)).div(Decimal.log10( Decimal.min(GlyphSacrificeHandler.maxSacrificeForEffects, 1e100)));
+      const base = Decimal.div(Decimal.log10(capped.add(1)), Decimal.log10( Decimal.min(GlyphSacrificeHandler.maxSacrificeForEffects, 1e100)));
       return Decimal.floor(Decimal.pow(base, 1.2).mul(750));
     },
     description: amount => {
