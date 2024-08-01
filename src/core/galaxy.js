@@ -100,7 +100,7 @@ export class Galaxy {
       TimeStudy(223),
       TimeStudy(224),
       EternityChallenge(5).reward
-    ) + GlyphSacrifice.power.effectOrDefault(DC.D0).toNumber();
+    ) + GlyphSacrifice.power.effectOrDefault(new Decimal(0)).toNumber();
   }
 
   static get type() {
