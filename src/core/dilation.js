@@ -159,12 +159,11 @@ export function tachyonGainMultiplier() {
   const pow = allowed ? Enslaved.tachyonNerf : 1;
   return DC.D1.timesEffectsOf(
     DilationUpgrade.tachyonGain,
-    GlyphSacrifice.dilation,
     Achievement(132),
     RealityUpgrade(4),
     RealityUpgrade(8),
     RealityUpgrade(15),
-  ).times(realityUGs.all[1].effectOrDefault(1)).pow(pow);
+  ).mul(GlyphSacrifice.dilation.effectOrDefault(DC.D1)).times(realityUGs.all[1].effectOrDefault(1)).pow(pow);
 }
 
 export function rewardTP() {
