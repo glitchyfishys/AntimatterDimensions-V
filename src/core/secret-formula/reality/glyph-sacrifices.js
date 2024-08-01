@@ -28,7 +28,7 @@ export const glyphSacrifice = {
       if (Pelle.isDisabled("glyphsac")) return new Decimal(1);
       const sac = player.reality.glyphs.sac.infinity.add(added ?? 0);
       const capped = Decimal.clampMax(sac, GlyphSacrificeHandler.maxSacrificeForEffects);
-      return Decimal.mul(Decimal.log10(Decimal.pow(capped, 0.2).div(100).add(1)), Math.max(extra() / 5, 1)) + 1;
+      return Decimal.mul(Decimal.log10(Decimal.pow(capped, 0.2).div(100).add(1)), Math.max(extra() / 5, 1)).add(1);
     },
     description: amount => `${formatX(amount, 2, 2)} bigger multiplier when buying 8th Infinity Dimension`,
     cap: () => GlyphSacrificeHandler.maxSacrificeForEffects
@@ -89,7 +89,7 @@ export const glyphSacrifice = {
   "reality": {
     id: "reality",
     effect: added => {
-      if (Pelle.isDisabled("glyphsac")) return new Decimal(0);
+      if (Pelle.isDisabled("glyphsac")) return 0;
       const sac = player.reality.glyphs.sac.reality.toNumber() + (added ?? 0);
       // This cap is only feasibly reached with the imaginary upgrade, but we still want to cap it at a nice number
       return Math.clampMax(1 + Math.sqrt(sac) / 15, 100);
