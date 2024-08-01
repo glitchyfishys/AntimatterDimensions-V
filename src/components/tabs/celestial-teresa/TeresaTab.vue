@@ -27,7 +27,7 @@ export default {
       bestAM: new Decimal(0),
       bestAMSet: [],
       lastMachines: new Decimal(0),
-      runReward: 0,
+      runReward: new Decimal(0),
       perkPoints: 0,
       hasReality: false,
       hasEPGen: false,
