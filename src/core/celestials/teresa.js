@@ -31,9 +31,9 @@ export const Teresa = {
     player.celestials.teresa.run = true;
   },
   rewardMultiplier(antimatter) {
-    let effect = Decimal.max(Decimal.pow(antimatter.plus(1).log10() / 1.5e8, 12), 1).toNumber();
-    if (effect >= 1e100) return effect * ((effect / 1e100) ** 2);
-    return Math.min(GlitchRealityUpgrades.all[11].isBought ? effect ** 1.5 : effect, 1e300);
+    let effect = Decimal.max(Decimal.pow(antimatter.plus(1).log10() / 1.5e8, 12), 1);
+    if (effect.gte(1e100)) return effect.mul(effect.div(1e100).pow(2));
+    return GlitchRealityUpgrades.all[11].isBought ? Decimal.pow(effect, 1.5) : effect;
   },
   get pouredAmount() {
     return player.celestials.teresa.pouredAmount;
