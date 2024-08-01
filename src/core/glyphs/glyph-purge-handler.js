@@ -43,13 +43,13 @@ export const GlyphSacrificeHandler = {
     else Modal.glyphDelete.show({ idx: glyph.idx });
   },
   glyphSacrificeGain(glyph) {
-    if (!this.canSacrifice || Pelle.isDoomed) return 0;
-    if (glyph.type === "reality") return 0.01 * glyph.level * Achievement(171).effectOrDefault(1);
-    const pre10kFactor = Math.pow(Math.clampMax(glyph.level, 10000) + 10, 2.5);
-    const post10kFactor = 1 + Math.clampMin(glyph.level - 10000, 0) / 100;
+    if (!this.canSacrifice || Pelle.isDoomed) return new Decimal(0);
+    if (glyph.type === "reality") return new Decimal(0.01 * glyph.level * Achievement(171).effectOrDefault(1));
+    const pre10kFactor = Decimal.pow(Decimal.clampMax(glyph.level, 10000).add(10), 2.5);
+    const post10kFactor = Decimal.clampMin(glyph.level - 10000, 0).div(100).add(1);
     const power = Ra.unlocks.maxGlyphRarityAndShardSacrificeBoost.effectOrDefault(1);
-    return Math.min(Math.pow(pre10kFactor * post10kFactor * glyph.strength *
-      Teresa.runRewardMultiplier * Achievement(171).effectOrDefault(1), power), 1e299);
+    return Decimal.pow(pre10kFactor.mul(post10kFactor).mul(glyph.strength).mul(
+      Teresa.runRewardMultiplier.mul(Achievement(171).effectOrDefault(1))), power);
   },
   sacrificeGlyph(glyph, force = false) {
     if (Pelle.isDoomed) return;
