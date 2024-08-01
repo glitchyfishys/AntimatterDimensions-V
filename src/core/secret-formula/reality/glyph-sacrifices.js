@@ -67,7 +67,7 @@ export const glyphSacrifice = {
       if (Pelle.isDisabled("glyphsac")) return new Decimal(1);
       const sac = player.reality.glyphs.sac.dilation.add(added ?? 0);
       const capped = Decimal.clampMax(sac, GlyphSacrificeHandler.maxSacrificeForEffects);
-      const exponent = Decimal.pow(Decimal.log10(capped.add(1)).mul(0.32).div(
+      const exponent = Decimal.pow(new Decimal(Decimal.log10(capped.add(1))).mul(0.32).div(
         Decimal.log10(GlyphSacrificeHandler.maxSacrificeForEffects), 0.1));
       return Decimal.pow(Decimal.clampMin(capped, 1), exponent).mul(Decimal.pow(1.6, extra()));
     },
