@@ -44,9 +44,9 @@ export const AutoGlyphProcessor = {
       case AUTO_GLYPH_SCORE.LOWEST_SACRIFICE:
         // Picked glyphs are never kept in this mode. Sacrifice cap needs to be checked since effarig caps
         // at a lower value than the others and we don't want to uselessly pick that to sacrifice all the time
-        return player.reality.glyphs.sac[glyph.type] >= GlyphSacrifice[glyph.type].cap
-          ? -Infinity
-          : -player.reality.glyphs.sac[glyph.type];
+        return player.reality.glyphs.sac[glyph.type].gte(GlyphSacrifice[glyph.type].cap)
+          ? Decimal.NUMBER_MAX_VALUE.neg()
+          : player.reality.glyphs.sac[glyph.type].neg();
       case AUTO_GLYPH_SCORE.EFFECT_COUNT:
         // Effect count, plus a very small rarity term to break ties in favor of rarer glyphs
         return strengthToRarity(glyph.strength) / 1000 + getGlyphEffectsFromBitmask(glyph.effects, glyph.type, 0)
@@ -85,14 +85,14 @@ export const AutoGlyphProcessor = {
       case AUTO_GLYPH_SCORE.LOWEST_ALCHEMY: {
         const resource = AlchemyResource[glyph.type];
         const refinementGain = GlyphSacrificeHandler.glyphRefinementGain(glyph);
-        return resource.isUnlocked && refinementGain > 0
-          ? -resource.amount
-          : Number.NEGATIVE_INFINITY;
+        return (resource.isUnlocked && refinementGain.gt(0))
+          ? resource.amount.neg()
+          : Decimal.NUMBER_MAX_VALUE.neg();
       }
       case AUTO_GLYPH_SCORE.ALCHEMY_VALUE:
         return AlchemyResource[glyph.type].isUnlocked
           ? GlyphSacrificeHandler.glyphRefinementGain(glyph)
-          : Number.NEGATIVE_INFINITY;
+          : Decimal.NUMBER_MAX_VALUE.neg();
       default:
         throw new Error("Unknown glyph score mode in score assignment");
     }
