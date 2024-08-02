@@ -89,7 +89,7 @@ export const glyphSacrifice = {
   "reality": {
     id: "reality",
     effect: added => {
-      if (Pelle.isDisabled("glyphsac")) return 0;
+      if (Pelle.isDisabled("glyphsac")) return new Decimal(1);
       const sac = player.reality.glyphs.sac.reality.add(added ?? 0);
       // This cap is only feasibly reached with the imaginary upgrade, but we still want to cap it at a nice number
       return Decimal.clampMax(Decimal.sqrt(sac).div(15).add(1), 100);
@@ -99,23 +99,12 @@ export const glyphSacrifice = {
   },
   "glitch": {
     id: "glitch",
-    effect: added => {
-      if (Pelle.isDisabled("glyphsac")) return new Decimal(0);
-      const sac = player.reality.glyphs.sac.power.add(added ?? 0);
-      
-      const capped = Decimal.clampMax(sac, GlyphSacrificeHandler.maxSacrificeForEffects);
-      const base = Decimal.log10(capped.add(1)).div(Decimal.log10(GlyphSacrificeHandler.maxSacrificeForEffects));
-      
-      return Decimal.floor(Decimal.pow(base, 1.2).mul(750));
+    effect: added => {      
+      if (Pelle.isDisabled("glyphsac")) return new Decimal(1);
+      const sac = player.reality.glyphs.sac.reality.add(added ?? 0);
+      return Decimal.clampMax(Decimal.sqrt(sac).div(15).add(1), 100);
     },
-    description: amount => {
-      const sacCap = GlyphSacrificeHandler.maxSacrificeForEffects;
-      const nextDistantGalaxy = Decimal.pow(10, Decimal.pow((amount.add(1)).div(750), 1 / 1.2).mul(Decimal.log10(sacCap))).sub(1);
-      const nextGalaxyText = amount.lt(750)
-        ? ` (next at ${format(nextDistantGalaxy, 2, 2)})`
-        : "";
-      return `... ${formatInt(amount)} later${nextGalaxyText}`;
-    },
+    description: amount => `+${formatPercents(amount / 100, 2)} Glitchs Instability`,
     cap: () => GlyphSacrificeHandler.maxSacrificeForEffects
   }
 };
