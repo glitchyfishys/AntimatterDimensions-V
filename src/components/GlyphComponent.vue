@@ -517,7 +517,7 @@ export default {
   },
   methods: {
     update() {
-      this.logTotalSacrifice = GameCache.logTotalGlyphSacrifice.value;
+      this.logTotalSacrifice = GameCache.logTotalGlyphSacrifice.value.toNumber();
       // This needs to be reactive in order to animate while using our low-lag workaround, but we also need to make
       // sure it only animates when that color is actually active
       this.realityColor = player.reality.glyphs.cosmetics.colorMap.reality
