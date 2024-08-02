@@ -62,7 +62,7 @@ export default {
       default: 0,
     },
     changeWatcher: {
-      type: Number,
+      type: Object,
       required: true
     }
   },
