@@ -62,7 +62,7 @@ export default {
       default: 0,
     },
     changeWatcher: {
-      type: Object,
+      type: Number,
       required: true
     }
   },
@@ -290,7 +290,7 @@ export default {
     <div class="l-glyph-tooltip__effects">
       <GlyphTooltipEffect
         v-for="e in sortedEffects"
-        :key="Decimal.add(e.id, changeWatcher).toNumber()"
+        :key="e.id + changeWatcher"
         :effect="e.id"
         :value="e.value"
       />
