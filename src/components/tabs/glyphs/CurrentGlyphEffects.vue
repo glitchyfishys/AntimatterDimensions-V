@@ -26,7 +26,7 @@ export default {
       isColored: false,
       hasEffarig: false,
       hasReality: false,
-      logTotalSacrifice: 0,
+      logTotalSacrifice: new Decimal(),
       pelleChaosEffect: {},
     };
   },
@@ -114,7 +114,7 @@ export default {
     </div>
     <CurrentGlyphEffect
       v-for="effect in effects"
-      :key="effect.id + logTotalSacrifice"
+      :key="Decimal.add(effect.id, logTotalSacrifice).toNumber()"
       :effect="effect"
       :is-colored="isColored"
     />
