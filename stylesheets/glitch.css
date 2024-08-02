@@ -1,0 +1,162 @@
+:root {
+  --color-glitch: #7504d1;
+  --color-glitch-light: #ce91ff;
+  --color-glitch-dark: #480182;
+  
+  --color-glitch-darker: #004400;
+
+  --color-glitch--accent: #00ff00;
+  --color-glitch--base: #00aa00;
+}
+
+.l-glitch-celestial-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.o-glitch-run-button {
+  width: 24rem;
+  height: 34rem;
+  font-family: Typewriter;
+  font-size: 1.1rem;
+  color: var(--color-glitch--accent);
+  background: var(--color-glitch-darker);
+  border: var(--var-border-width, 0.2rem) solid var(--color-glitch--accent);
+  border-radius: var(--var-border-radius, 0.5rem);
+  margin-right: 1rem;
+  padding: 2rem;
+  margin-left: 1rem;
+}
+
+
+.o-glitch-riftforce-amount {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+@keyframes a-purple-energy-glow {
+  0% { box-shadow: 0 0 0 rgb(0, 255, 255); }
+  50% { box-shadow: 0 0 5px rgb(0, 255, 255); }
+  100% { box-shadow: 0 0 0 rgb(0, 255, 255); }
+}
+
+.o-glitch-run-button__icon {
+  display: flex;
+  width: 12rem;
+  height: 12rem;
+  align-items: center;
+  background-color: black;
+  background-image: url("../images/laitela-icon.svg");
+  background-position: center;
+  background-repeat: repeat-y;
+  background-size: 5rem;
+  border: 0.4rem solid var(--color-glitch--accent);
+  border-radius: 50%;
+  margin: 1.5rem auto;
+  transition-duration: 0.2s;
+  animation: a-glitch-run-button__icon--scroll 3s infinite linear;
+
+  flex-direction: column;
+  color: var(--color-glitch--base);
+  transition-duration: 0.2s;
+  
+}
+
+.o-glitch-run-button__icon:hover {
+  background-color: white;
+  background-image: url("../images/laitela-icon-dark.svg");
+}
+
+.o-glitch-run-button__icon--running {
+  animation: a-glitch-run-button__icon--scroll 5s infinite linear, a-glitch-run-button__icon--super-glow 1.2s infinite, a-glitch-run-button__icon--spin 5s infinite;
+}
+
+@keyframes a-glitch-run-button__icon--scroll {
+  0% { background-position-y: 0; }
+  100% { background-position-y: 24rem; }
+}
+
+.c-glitch-run-button__icon__glitch {
+  width: 0.1rem;
+  position: absolute;
+  background-image:
+    linear-gradient(
+      rgba(0, 0, 0, 0%) 0%,
+      var(--color-glitch--base) 20%,
+      var(--color-glitch--base) 80%,
+      rgba(0, 0, 0, 0%) 100%
+    );
+  border: none;
+}
+
+.c-glitch-run-button__icon:hover .c-glitch-run-button__icon__glitch {
+  background-image: linear-gradient(rgba(0, 0, 0, 0%) 0%, black 20%, black 80%, rgba(0, 0, 0, 0%) 100%);
+}
+
+.c-glitch-automation-toggle:hover {
+  color: var(--color-glitch--base);
+  background: var(--color-glitch--accent) !important;
+}
+
+.s-base--metro .c-glitch-automation-toggle {
+  box-shadow: none;
+}
+
+.c-celestial-run-button--clickable {
+  cursor: pointer;
+}
+
+@keyframes a-glitch-run-button__icon--glow {
+  0% { text-shadow: 0.1rem 0.1rem 0.3rem; }
+  50% { text-shadow: 0.1rem 0.1rem 0.8rem; }
+  100% { text-shadow: 0.1rem 0.1rem 0.3rem; }
+}
+
+@keyframes a-glitch-run-button__icon--super-glow {
+  0% {
+    text-shadow: 0.1rem 0.1rem 0.3rem;
+    box-shadow: 0 0 0.3rem var(--color-glitch--base);
+  }
+
+  50% {
+    text-shadow: 0.1rem 0.1rem 0.9rem;
+    box-shadow: 0 0 1rem var(--color-glitch--base);
+  }
+
+  100% {
+    text-shadow: 0.1rem 0.1rem 0.3rem;
+    box-shadow: 0 0 0.3rem var(--color-glitch--base);
+  }
+}
+
+@keyframes a-glitch-run-button__icon--spin {
+  0% { transform: rotate(61deg); }
+  10% { transform: rotate(322deg); }
+  20% { transform: rotate(235deg); }
+  30% { transform: rotate(222deg); }
+  40% { transform: rotate(105deg); }
+  50% { transform: rotate(33deg); }
+  60% { transform: rotate(103deg); }
+  70% { transform: rotate(158deg); }
+  80% { transform: rotate(41deg); }
+  90% { transform: rotate(73deg); }
+  100% { transform: rotate(61deg); }
+}
+
+.l-glitch-panel-container {
+  width: 98rem;
+  border: var(--var-border-width, 0.2rem) solid var(--color-glitch--base);
+  border-radius: var(--var-border-radius, 0.5rem);
+  margin: 1rem;
+  padding: 1rem;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.c-glitch-panel-title {
+  position: relative;
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--color-glitch--base);
+}
