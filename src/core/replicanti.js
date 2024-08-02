@@ -490,8 +490,8 @@ export const ReplicantiUpgrade = {
       const logBase = 170;
       const logBaseIncrease = EternityChallenge(6).isRunning ? 2 : 25;
       const logCostScaling = EternityChallenge(6).isRunning ? 2 : 5;
-      const distantReplicatedGalaxyStart = 100 + Effects.sum(GlyphSacrifice.replication);
-      const remoteReplicatedGalaxyStart = 1000 + Effects.sum(GlyphSacrifice.replication);
+      const distantReplicatedGalaxyStart = 100 + GlyphSacrifice.replication.effectOrDefault(DC.D0).toNumber();
+      const remoteReplicatedGalaxyStart = 1000 + GlyphSacrifice.replication.effectOrDefault(DC.D0).toNumber();
       let logCost = logBase + count * logBaseIncrease + (count * (count - 1) / 2) * logCostScaling;
       if (count > distantReplicatedGalaxyStart) {
         const logDistantScaling = 50;
