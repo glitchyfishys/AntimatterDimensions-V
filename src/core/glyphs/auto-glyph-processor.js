@@ -120,7 +120,7 @@ export const AutoGlyphProcessor = {
     }
   },
   wouldKeep(glyph) {
-    return this.filterValue(glyph) >= this.thresholdValue(glyph);
+    return Decimal.gte(this.filterValue(glyph), this.thresholdValue(glyph));
   },
   // Given a list of glyphs, pick the one with the highest score
   pick(glyphs) {
