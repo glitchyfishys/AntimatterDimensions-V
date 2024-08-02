@@ -90,9 +90,9 @@ export const glyphSacrifice = {
     id: "reality",
     effect: added => {
       if (Pelle.isDisabled("glyphsac")) return 0;
-      const sac = player.reality.glyphs.sac.reality.add(added ?? 0).toNumber();
+      const sac = player.reality.glyphs.sac.reality.add(added ?? 0);
       // This cap is only feasibly reached with the imaginary upgrade, but we still want to cap it at a nice number
-      return Math.clampMax(1 + Math.sqrt(sac) / 15, 100);
+      return Decimal.clampMax(Decimal.sqrt(sac).div(15).add(1), 100);
     },
     description: amount => `Multiply Memory Chunk gain by ${formatX(amount, 2, 3)}`,
     cap: () => GlyphSacrificeHandler.maxSacrificeForEffects
