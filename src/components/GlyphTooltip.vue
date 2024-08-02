@@ -290,7 +290,7 @@ export default {
     <div class="l-glyph-tooltip__effects">
       <GlyphTooltipEffect
         v-for="e in sortedEffects"
-        :key="e.id + changeWatcher"
+        :key="Decimal.add(e.id, changeWatcher).toNumber()"
         :effect="e.id"
         :value="e.value"
       />
