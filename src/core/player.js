@@ -431,7 +431,8 @@ top.player = {
         replication: DC.D0,
         dilation: DC.D0,
         effarig: DC.D0,
-        reality: DC.D0
+        reality: DC.D0,
+        glitch: DC.D0
       },
       undo: [],
       sets: new Array(7).fill({
