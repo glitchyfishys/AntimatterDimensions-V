@@ -90,7 +90,7 @@ export const glyphSacrifice = {
     id: "reality",
     effect: added => {
       if (Pelle.isDisabled("glyphsac")) return 0;
-      const sac = player.reality.glyphs.sac.reality.toNumber() + (added ?? 0);
+      const sac = player.reality.glyphs.sac.reality.add(added ?? 0).toNumber();
       // This cap is only feasibly reached with the imaginary upgrade, but we still want to cap it at a nice number
       return Math.clampMax(1 + Math.sqrt(sac) / 15, 100);
     },
