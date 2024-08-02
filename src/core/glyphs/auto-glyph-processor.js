@@ -135,7 +135,7 @@ export const AutoGlyphProcessor = {
 
     return glyphs
       .map(g => ({ glyph: g, score: glyphScore(g) }))
-      .reduce((x, y) => (x.score > y.score ? x : y))
+      .reduce((x, y) => ( Decimal.gt(x.score, y.score) ? x : y))
       .glyph;
   },
   getRidOfGlyph(glyph) {
