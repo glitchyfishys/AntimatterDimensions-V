@@ -287,7 +287,7 @@ export default {
       suppressTooltip: false,
       isTouched: false,
       tooltipEnabled: false,
-      sacrificeReward: 0,
+      sacrificeReward: new Decimal(),
       uncappedRefineReward: 0,
       refineReward: 0,
       displayLevel: 0,
