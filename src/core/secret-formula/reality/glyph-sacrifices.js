@@ -68,7 +68,7 @@ export const glyphSacrifice = {
       const sac = player.reality.glyphs.sac.dilation.add(added ?? 0);
       const capped = Decimal.clampMax(sac, GlyphSacrificeHandler.maxSacrificeForEffects);
       const exponent = Decimal.pow(new Decimal(Decimal.log10(capped.add(1))).mul(0.32).div(
-        Decimal.log10(GlyphSacrificeHandler.maxSacrificeForEffects), 0.1));
+        Decimal.log10(GlyphSacrificeHandler.maxSacrificeForEffects)), 0.1);
       return Decimal.pow(Decimal.clampMin(capped, 1), exponent).mul(Decimal.pow(1.6, extra()));
     },
     description: amount => `Multiply Tachyon Particle gain by ${formatX(amount, 2, 2)}`,
