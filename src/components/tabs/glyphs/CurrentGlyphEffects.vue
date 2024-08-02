@@ -78,7 +78,7 @@ export default {
       this.hasEffarig = Glyphs.active.some(g => g && g.type === "effarig");
       this.hasReality = Glyphs.active.some(g => g && g.type === "reality");
 
-      this.logTotalSacrifice = GameCache.logTotalGlyphSacrifice.value;
+      this.logTotalSacrifice = GameCache.logTotalGlyphSacrifice.value.toNumber();
 
       this.pelleChaosEffect = Pelle.specialGlyphEffect;
     },
@@ -114,7 +114,7 @@ export default {
     </div>
     <CurrentGlyphEffect
       v-for="effect in effects"
-      :key="Decimal.add(effect.id, logTotalSacrifice).toNumber()"
+      :key="effect.id + logTotalSacrifice"
       :effect="effect"
       :is-colored="isColored"
     />
