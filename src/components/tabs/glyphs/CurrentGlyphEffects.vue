@@ -26,7 +26,7 @@ export default {
       isColored: false,
       hasEffarig: false,
       hasReality: false,
-      logTotalSacrifice: new Decimal(),
+      logTotalSacrifice: 0,
       pelleChaosEffect: {},
     };
   },
