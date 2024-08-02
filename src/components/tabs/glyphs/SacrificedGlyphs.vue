@@ -62,7 +62,7 @@ export default {
   },
   methods: {
     update() {
-      this.anySacrifices = !GameCache.logTotalGlyphSacrifice.eq( 0);
+      this.anySacrifices = GameCache.logTotalGlyphSacrifice.value.neq(0);
       this.hasAlteration = c;
       this.hideAlteration = player.options.hideAlterationEffects;
       this.maxSacrifice = GlyphSacrificeHandler.maxSacrificeForEffects;
