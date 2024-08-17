@@ -151,8 +151,8 @@ export default {
     v-else-if="tesseractAffordable"
     class="o-prestige-button c-game-header__tesseract-available"
     :class="{ 'o-pelle-disabled-pointer': creditsClosed }"
-    @click="switchToInfinity"
-    @click.shift="buytess"
+    @click.exact="switchToInfinity"
+    @click.shift.exact="buytess"
   >
     <b>
       You have enough Infinity Points to buy a Tesseract
