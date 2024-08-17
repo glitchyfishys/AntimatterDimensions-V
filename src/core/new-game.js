@@ -131,6 +131,8 @@ export const NG = {
       player.reality.upgReqs = 67108800;
       }
       
+      GameStorage.save();
+      GameStorage.load();
     }
     
   }
