@@ -180,19 +180,16 @@ export const Glitch = {
 };
 
 EventHub.logic.on(GAME_EVENT.GAME_LOAD, () => {
-  Glitch.quotes.start.show();
+  if(player.records.fullGameCompletions == 0) Glitch.quotes.start.show();
 });
 
 EventHub.logic.on(GAME_EVENT.DIMBOOST_AFTER, () => {
   Glitch.quotes.dimboost.show();
-});
-
-EventHub.logic.on(GAME_EVENT.DIMBOOST_AFTER, () => {
   if(AntimatterDimension(8).amount.gt(0)) Glitch.quotes.dimeight.show();
 });
 
 EventHub.logic.on(GAME_EVENT.GALAXY_RESET_AFTER, () => {
-Glitch.quotes.galaxy.show();
+  Glitch.quotes.galaxy.show();
 });
 
 EventHub.logic.on(GAME_EVENT.BIG_CRUNCH_AFTER, () => {
