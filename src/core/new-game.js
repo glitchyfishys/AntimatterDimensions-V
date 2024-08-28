@@ -131,7 +131,7 @@ export const NG = {
 
       if(player.records.fullGameCompletions > 0) {player.reality.perks = new Set([0,201,10,40,57,202,30,12,41,70,71,31,203,14,13,101,100,
                     55,104,56,60,54,204,15,17,51, 102,42,53,52,107,105,61,72,205,16,80,43,106,62,73,302,81,44,303,82,103,45,83,46,301]);
-        player.blackHole.forEach( i => {i.intervalUpgrades=160; i.intervalUpgrades=160;});
+        player.blackHole.forEach( i => {i.intervalUpgrades=160; i.intervalUpgrades=160; i.unlocked=true});
         player.reality.upgReqs = 67108800;
         Currency.antimatter.reset()
         Currency.infinityPoints.reset()
