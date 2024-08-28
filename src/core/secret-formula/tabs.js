@@ -509,7 +509,7 @@ export const tabs = [
   {
     key: "glitch",
     name: "Glitch",
-    hideAt: 5,
+    hideAt: 2.5,
     UIClass: "o-tab-btn--glitch",
     condition: () => true,
     id: 11,
