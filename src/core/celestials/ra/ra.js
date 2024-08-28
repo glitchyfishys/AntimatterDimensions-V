@@ -266,7 +266,7 @@ export const Ra = {
   get productionPerMemoryChunk() {
     let res = Effects.product(Ra.unlocks.continuousTTBoost.effects.memories, Achievement(168));
     for (const pet of Ra.pets.all) {
-      if (pet.isUnlocked) res *= pet.memoryProductionMultiplier;
+      if (pet.isUnlocked) res *= Math.max(pet.memoryProductionMultiplier,1);
     }
     return res;
   },
