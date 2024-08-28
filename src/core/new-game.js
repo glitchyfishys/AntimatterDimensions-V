@@ -119,8 +119,12 @@ export const NG = {
       player.achievementBits = JSON.parse(ach);
       applyRUPG10();
       if(player.records.fullGameCompletions > 0) player.celestials.enslaved = JSON.parse(nameless);
-      if(player.records.fullGameCompletions > 1) {player.celestials.v = JSON.parse(v); player.celestials.ra = JSON.parse(ra); player.celestials.ra.charged = new Set([
-        "36Mult","galaxyBoost","resetBoost","18Mult","timeMult","dimMult","passiveGen","resetMult","timeMult2","unspentBonus","45Mult","27Mult"]);}
+      if(player.records.fullGameCompletions > 1) {
+        player.celestials.v = JSON.parse(v);
+        player.celestials.ra = JSON.parse(ra);
+        player.celestials.ra.charged = new Set([
+        "36Mult","galaxyBoost","resetBoost","18Mult","timeMult","dimMult","passiveGen","resetMult","timeMult2","unspentBonus","45Mult","27Mult"]);
+      }
       if(player.records.fullGameCompletions > 2) player.celestials.effarig = JSON.parse(effarig);
       if(player.records.fullGameCompletions > 4) player.celestials.teresa = JSON.parse(teresa);
       if(player.records.fullGameCompletions > 5) player.celestials.laitela = JSON.parse(laitela);
