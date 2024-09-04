@@ -915,7 +915,8 @@ top.player = {
       antimatterGalaxy: true,
       dimensionBoost: true,
       switchAutomatorMode: true,
-      respecIAP: true
+      respecIAP: true,
+      glitchCL: true,
     },
     awayProgress: {
       antimatter: true,

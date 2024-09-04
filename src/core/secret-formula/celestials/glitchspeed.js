@@ -38,14 +38,14 @@ export const glitchSpeedUpgrades = [
     formatEffect: value => "active"
   },
   {
-    name: "3",
+    name: "unlimited dimensions",
     id: 4,
     cost: 1,
     requirement: "reach reality (all effects)",
     hasFailed: () => !(Glitch.activeaugments.length == 9),
     checkRequirement: () => Glitch.isRunning && Glitch.activeaugments.length == 9 && false,
     checkEvent: GAME_EVENT.REALITY_RESET_BEFORE,
-    description: "some Celestial Reality's effect that neff presteage gain are weakend by 25%",
+    description: "unlock Chaos dimensions",
     effect: () =>  1.25,
     formatEffect: value => formatX(1.25, 2, 2)
   },

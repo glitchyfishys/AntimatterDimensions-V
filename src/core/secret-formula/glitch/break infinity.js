@@ -7,7 +7,7 @@ export const breakinfinityUG = [
     hasFailed: () => player.dimensionBoosts > 4 || player.galaxies > 1,
     checkRequirement: () => player.antimatter.e >= 500 && player.dimensionBoosts <= 4 && player.galaxies <= 1,
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
-    description: "IP muliplier from antimatter galaxies",
+    description: "IP multiplier from antimatter galaxies",
     effect: () => 1 + Math.pow(player.galaxies, 1.25),
     formatEffect: value => formatX(value, 2, 2)
   },
@@ -41,7 +41,7 @@ export const breakinfinityUG = [
     hasFailed: () => false,
     checkRequirement: () => player.infinityPoints.e >= 150,
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
-    description: "IP muliplier from antimatter galaxies",
+    description: "IP multiplier from antimatter galaxies",
     effect: () => 1 + Math.pow(player.galaxies, 3),
     formatEffect: value => formatX(value, 2, 2)
   },

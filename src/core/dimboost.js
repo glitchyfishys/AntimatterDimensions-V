@@ -218,6 +218,26 @@ export function manualRequestDimensionBoost(bulk) {
     Modal.dimensionBoost.show({ bulk });
     return;
   }
+  if((!preinfinityUGs.all[0].config.hasFailed() && !preinfinityUGs.all[0].isBought) && player.options.confirmations.glitchCL && player.dimensionBoosts == 0){
+    Modal.message.show(`you will fail glitch challenge ${preinfinityUGs.all[0].config.name} <br> which is to ${preinfinityUGs.all[1].config.requirement()} <br> you can disable this for <i>all</i> challenges in confirmations`);
+    return;
+  }
+  else if((!preinfinityUGs.all[1].config.hasFailed() && !preinfinityUGs.all[1].isBought) && player.options.confirmations.glitchCL && player.dimensionBoosts == 1){
+    Modal.message.show(`you will fail glitch challenge ${preinfinityUGs.all[1].config.name} <br> which is to ${preinfinityUGs.all[1].config.requirement()} <br> you can disable this for <i>all</i> challenges in confirmations`);
+    return;
+  }
+  else if((!preinfinityUGs.all[2].config.hasFailed() && !preinfinityUGs.all[2].isBought) && player.options.confirmations.glitchCL && player.dimensionBoosts == 2){
+    Modal.message.show(`you will fail glitch challenge ${preinfinityUGs.all[2].config.name} <br> which is to ${preinfinityUGs.all[2].config.requirement()} <br> you can disable this for <i>all</i> challenges in confirmations`);
+    return;
+  }
+  else if((!preinfinityUGs.all[3].config.hasFailed() && !preinfinityUGs.all[3].isBought) && player.options.confirmations.glitchCL && player.dimensionBoosts == 6){
+    Modal.message.show(`you will fail glitch challenge ${preinfinityUGs.all[3].config.name} <br> which is to ${preinfinityUGs.all[3].config.requirement()} <br> you can disable this for <i>all</i> challenges in confirmations`);
+    return;
+  }
+  else if(((!preinfinityUGs.all[5].config.hasFailed() && !preinfinityUGs.all[5].isBought) && player.options.confirmations.glitchCL && player.dimensionBoosts == 0 && player.galaxies == 1)){
+    Modal.message.show(`you will fail glitch challenge ${preinfinityUGs.all[5].config.name} <br> which is to ${preinfinityUGs.all[5].config.requirement()} <br> you can disable this for <i>all</i> challenges in confirmations`);
+    return;
+  }
   requestDimensionBoost(bulk);
 }
 

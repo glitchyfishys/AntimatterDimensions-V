@@ -7,18 +7,18 @@ export const preinfinityUG = [
     hasFailed: () => player.dimensionBoosts != 0 || player.galaxys > 0 || PlayerProgress.infinityUnlocked(),
     checkRequirement: () => player.antimatter.e >= 15 && player.dimensionBoosts == 0 && !PlayerProgress.infinityUnlocked(),
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
-    description: "AD muliplier from dimboosts",
+    description: "AD multiplier from dimboosts",
     effect: () => 1 + player.dimensionBoosts / 4,
     formatEffect: value => formatX(value, 2, 2),
   },
   {
-  name: "dimatonal limits",
+  name: "dimensional limits",
     id: 1,
     requirement: () => `have ${format(1e25)} antimatter with only one dimboost, no galaxies (pre-infinity)`,
     hasFailed: () => player.dimensionBoosts >1 || player.galaxys > 0 || PlayerProgress.infinityUnlocked(),
     checkRequirement: () => player.antimatter.e >= 25 && player.dimensionBoosts <= 1 && !PlayerProgress.infinityUnlocked(),
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
-    description: "AD muliplier from dimboosts",
+    description: "AD multiplier from dimboosts",
     effect: () => 1 + player.dimensionBoosts / 4,
     formatEffect: value => formatX(value, 2, 2)
   },
@@ -29,7 +29,7 @@ export const preinfinityUG = [
     hasFailed: () => player.dimensionBoosts > 2 || player.galaxys > 0 || PlayerProgress.infinityUnlocked(),
     checkRequirement: () => player.antimatter.e >= 35 && player.dimensionBoosts <= 2 && !PlayerProgress.infinityUnlocked(),
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
-    description: "AD muliplier from dimboosts",
+    description: "AD multiplier from dimboosts",
     effect: () => 1 + player.dimensionBoosts / 4,
     formatEffect: value => formatX(value, 2, 2)
   },
@@ -40,7 +40,7 @@ export const preinfinityUG = [
     hasFailed: () => player.galaxys == 1 || player.dimensionBoosts > 6 || player.galaxys > 0 || PlayerProgress.infinityUnlocked(),
     checkRequirement: () => player.antimatter.e >= 150 && player.dimensionBoosts <= 6 && !PlayerProgress.infinityUnlocked(),
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
-    description: "AD muliplier from dimboosts",
+    description: "AD multiplier from dimboosts",
     effect: () => 1 + player.dimensionBoosts / 4,
     formatEffect: value => formatX(value, 2, 2)
   },
@@ -51,7 +51,7 @@ export const preinfinityUG = [
     hasFailed: () => player.dimensions.antimatter[1].amount.greaterThan(10) || player.galaxys > 1 || player.dimensionBoosts > 0 || PlayerProgress.infinityUnlocked(),
     checkRequirement: () => player.antimatter.e >= 7 && !player.dimensions.antimatter[1].amount.greaterThan(20) && player.galaxies <= 1 && !player.dimensionBoosts > 0 && !PlayerProgress.infinityUnlocked(),
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
-    description: "additonal tickspeed prechases by their amount",
+    description: "additonal tickspeed perchases by their amount",
     effect: () => 1 + Math.floor(Math.log2(player.totalTickBought + 1)),
     formatEffect: value => "+" + formatInt(value)
   },
@@ -62,7 +62,7 @@ export const preinfinityUG = [
     hasFailed: () => player.dimensions.antimatter[3].amount.greaterThan(20) || player.galaxys > 1 || player.dimensionBoosts > 0 || PlayerProgress.infinityUnlocked(),
     checkRequirement: () => player.antimatter.e >= 25 && !player.dimensions.antimatter[3].amount.greaterThan(20) && player.galaxies <= 1 && !player.dimensionBoosts > 0 && !PlayerProgress.infinityUnlocked(),
     checkevent: GAME_EVENT.GAME_TICK_BEFORE,
-    description: "additonal tickspeed prechases by their amount",
+    description: "additonal tickspeed perchases by their amount",
     effect: () => 1 + Math.floor(Math.log2(player.totalTickBought + 1 )),
     formatEffect: value => "+" + formatInt(value)
   },

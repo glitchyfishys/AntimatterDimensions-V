@@ -148,7 +148,15 @@ export function manualRequestGalaxyReset(bulk) {
 // All galaxy reset requests, both automatic and manual, eventually go through this function; therefore it suffices
 // to restrict galaxy count for RUPG7's requirement here and nowhere else
 export function requestGalaxyReset(bulk, limit = Number.MAX_VALUE) {
-  const restrictedLimit = RealityUpgrade(7).isLockingMechanics ? 1 : limit;
+  let restrictedLimit = RealityUpgrade(7).isLockingMechanics ? 1 : limit;
+  if((!preinfinityUGs.all[3].config.hasFailed() && !preinfinityUGs.all[3].isBought) && player.options.confirmations.glitchCL && player.galaxies == 0){
+    Modal.message.show(`you will fail glitch challenge ${preinfinityUGs.all[3].config.name} <br> which is to ${preinfinityUGs.all[3].config.requirement()} <br> you can disable this for <i>all</i> challenges in confirmations`);
+    restrictedLimit = 0;
+  }
+  else if((!preinfinityUGs.all[6].config.hasFailed() && !preinfinityUGs.all[6].isBought) && player.options.confirmations.glitchCL && player.galaxies == 1){
+    Modal.message.show(`you will fail glitch challenge ${preinfinityUGs.all[6].config.name} <br> which is to ${preinfinityUGs.all[6].config.requirement()} <br> you can disable this for <i>all</i> challenges in confirmations`);
+    restrictedLimit = 1;
+  }
   if (EternityMilestone.autobuyMaxGalaxies.isReached && bulk) return maxBuyGalaxies(restrictedLimit);
   if (player.galaxies >= restrictedLimit || !Galaxy.canBeBought || !Galaxy.requirement.isSatisfied) return false;
   Tutorial.turnOffEffect(TUTORIAL_STATE.GALAXY);
