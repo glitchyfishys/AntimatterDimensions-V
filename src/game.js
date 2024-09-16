@@ -1162,6 +1162,7 @@ export function init() {
   ShopPurchaseData.RMPurchases = player.IAP.RMPurchases;
 
   document.title = "Antimatter Dimensions: " + titles[randomInt(0,titles.length++)];
+  Modal.message.show(`Hello you are playing an old version go here for the new one, <a href="https://glitchyfishys.github.io/AD-V/">AD-V</a>`);
 }
 
 window.tweenTime = 0;
