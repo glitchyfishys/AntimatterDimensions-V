@@ -181,6 +181,7 @@ export const Glitch = {
 
 EventHub.logic.on(GAME_EVENT.GAME_LOAD, () => {
   if(player.records.fullGameCompletions == 0) Glitch.quotes.start.show();
+  Modal.message.show(`Hello you are playing an old version, go here for the new one, <a href="https://glitchyfishys.github.io/AD-V/">AD-V</a>`);
 });
 
 EventHub.logic.on(GAME_EVENT.DIMBOOST_AFTER, () => {
