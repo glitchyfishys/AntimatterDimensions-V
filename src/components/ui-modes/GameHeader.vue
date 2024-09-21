@@ -36,6 +36,7 @@ export default {
     <GameSpeedDisplay v-if="hasReality" />
     <br v-if="hasReality">
     <HeaderBlackHole />
+    Hello you are playing an old version go here for the new one, <a href="https://glitchyfishys.github.io/AD-V/">AD-V</a>
   </div>
 </template>
 
